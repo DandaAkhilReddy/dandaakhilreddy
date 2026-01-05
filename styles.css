@@ -664,6 +664,28 @@ body {
     gap: 8px;
 }
 
+.project-links-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.project-link-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.project-link-secondary:hover {
+    color: var(--text);
+}
+
 .project-badge {
     display: inline-block;
     background: var(--gradient-accent);
