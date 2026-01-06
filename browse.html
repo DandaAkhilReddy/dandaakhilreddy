@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Reddy Danda | Senior Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="netflix-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-logo">AKHIL DANDA</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#experience">Professional</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#journey">2026 Journey</a></li>
+                <li><a href="#contact">Hire Me</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="profile-icon" id="current-profile">
+                <div class="mini-avatar avatar-recruiter">
+                    <div class="mini-face">
+                        <div class="mini-eyes">
+                            <div class="mini-eye"></div>
+                            <div class="mini-eye"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Akhil Reddy Danda - Senior Software Engineer</h1>
+            <p class="hero-description">
+                Dynamic and results-driven Senior Software Engineer with 3+ years in full-stack development across high-impact, large-scale applications.
+                I bring expertise in Python, AWS, Machine Learning, GenAI/LLMs, and Cloud Architecture. Previously at <strong>Amazon</strong>, I built computer vision models
+                processing 500K+ daily images and architected microservices handling 100K+ requests/second. Currently at <strong>HHA Medicine</strong>, building
+                RAG systems and GPT-4 powered clinical decision support serving 15+ hospitals.
+            </p>
+            <div class="hero-buttons">
+                <a href="assets/resume.pdf" target="_blank" class="btn btn-play">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Resume
+                </a>
+                <a href="https://www.linkedin.com/in/akhil-reddy-danda-1a74b214b/" target="_blank" class="btn btn-info">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+            <div class="hero-tags">
+                <span class="tag">Ex-Amazon</span>
+                <span class="tag">ML/AI Expert</span>
+                <span class="tag">MS CS - Texas A&M</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2026 Journey Banner -->
+    <section id="journey" class="journey-section">
+        <div class="container">
+            <div class="journey-banner">
+                <div class="journey-icon">🚀</div>
+                <div class="journey-content">
+                    <h2>2026 Project Journey</h2>
+                    <p>Building one project every week throughout 2026. Follow my journey from Week 1!</p>
+                    <div class="journey-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 2%;"></div>
+                        </div>
+                        <span class="progress-text">Week 1 of 52</span>
+                    </div>
+                </div>
+                <div class="journey-stats">
+                    <div class="stat">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Projects Built</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">51</span>
+                        <span class="stat-label">To Go</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Top Picks -->
+    <section id="projects" class="content-row">
+        <div class="container">
+            <h2 class="row-title">Today's Top Picks for <span id="profile-name">recruiter</span></h2>
+            <div class="row-content">
+                <div class="card project-card" onclick="window.location.href='projects/claude-peepee.html'">
+                    <div class="card-image claude-peepee-bg">
+                        <div class="card-overlay">
+                            <span class="card-badge">Week 1 - 2026</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Claude PeePee</h3>
+                        <p>Persistent Memory for Claude Code</p>
+                        <div class="card-tags">
+                            <span>Go</span>
+                            <span>SQLite</span>
+                            <span>MCP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-image adas-bg">
+                        <div class="card-overlay">
+                            <span class="card-badge">Published</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>ADAS System</h3>
+                        <p>Advanced Driver Assistance</p>
+                        <div class="card-tags">
+                            <span>Python</span>
+                            <span>OpenCV</span>
+                            <span>ML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-image sentiment-bg">
+                        <div class="card-overlay">
+                            <span class="card-badge">ML/NLP</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Financial Sentiment</h3>
+                        <p>BERT-based Market Analysis</p>
+                        <div class="card-tags">
+                            <span>BERT</span>
+                            <span>PyTorch</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-image rag-bg">
+                        <div class="card-overlay">
+                            <span class="card-badge">Production</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Healthcare RAG</h3>
+                        <p>Clinical Decision Support</p>
+                        <div class="card-tags">
+                            <span>GPT-4</span>
+                            <span>LangChain</span>
+                            <span>Azure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card coming-soon">
+                    <div class="card-image coming-soon-bg">
+                        <div class="card-overlay">
+                            <span class="card-badge">Week 2</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Coming Soon</h3>
+                        <p>Next week's project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="experience" class="content-row dark-section">
+        <div class="container">
+            <h2 class="row-title">Professional Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-company">HHA Medicine</div>
+                        <div class="exp-date">Jan 2023 - Present</div>
+                    </div>
+                    <h3 class="exp-title">Senior Software Engineer</h3>
+                    <p class="exp-location">Corpus Christi, TX</p>
+                    <ul class="exp-highlights">
+                        <li>Built <strong>RAG systems</strong> with 40% improved relevance</li>
+                        <li>Deployed <strong>GPT-4 clinical support</strong> for 50K+ daily decisions</li>
+                        <li>Processing <strong>100GB+ daily</strong> healthcare data</li>
+                    </ul>
+                    <div class="exp-tech">
+                        <span>Python</span>
+                        <span>Azure ML</span>
+                        <span>LangChain</span>
+                        <span>GPT-4</span>
+                    </div>
+                </div>
+
+                <div class="experience-card amazon">
+                    <div class="exp-header">
+                        <div class="exp-company">Amazon</div>
+                        <div class="exp-date">Feb 2022 - Jan 2023</div>
+                    </div>
+                    <h3 class="exp-title">Software Development Engineer</h3>
+                    <p class="exp-location">Seattle, WA</p>
+                    <ul class="exp-highlights">
+                        <li>Built CNN models processing <strong>500K+ daily images</strong></li>
+                        <li>Architected microservices handling <strong>100K+ req/sec</strong></li>
+                        <li>Reduced latency by <strong>65%</strong> and costs by <strong>25%</strong></li>
+                    </ul>
+                    <div class="exp-tech">
+                        <span>Python</span>
+                        <span>AWS</span>
+                        <span>Kubernetes</span>
+                        <span>TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="row-title section-title-centered">
+                <span class="title-underline">Backend</span>
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon python-icon">🐍</div>
+                    <span class="skill-name">Python</span>
+                    <span class="skill-desc">Primary Language</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon java-icon">☕</div>
+                    <span class="skill-name">Java</span>
+                    <span class="skill-desc">Enterprise Apps</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon go-icon">🔵</div>
+                    <span class="skill-name">Go</span>
+                    <span class="skill-desc">Systems Programming</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon node-icon">💚</div>
+                    <span class="skill-name">Node.js</span>
+                    <span class="skill-desc">Backend Runtime</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon sql-icon">🗄️</div>
+                    <span class="skill-name">SQL</span>
+                    <span class="skill-desc">Database Queries</span>
+                </div>
+            </div>
+
+            <h2 class="row-title section-title-centered">
+                <span class="title-underline">Cloud & DevOps</span>
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon aws-icon">☁️</div>
+                    <span class="skill-name">AWS</span>
+                    <span class="skill-desc">Cloud Platform</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon azure-icon">🔷</div>
+                    <span class="skill-name">Azure</span>
+                    <span class="skill-desc">Cloud Services</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon k8s-icon">⎈</div>
+                    <span class="skill-name">Kubernetes</span>
+                    <span class="skill-desc">Container Orchestration</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon docker-icon">🐳</div>
+                    <span class="skill-name">Docker</span>
+                    <span class="skill-desc">Containerization</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon cicd-icon">⚙️</div>
+                    <span class="skill-name">CI/CD</span>
+                    <span class="skill-desc">Automation</span>
+                </div>
+            </div>
+
+            <h2 class="row-title section-title-centered">
+                <span class="title-underline">ML & AI</span>
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon tf-icon">🧠</div>
+                    <span class="skill-name">TensorFlow</span>
+                    <span class="skill-desc">Deep Learning</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon pytorch-icon">🔥</div>
+                    <span class="skill-name">PyTorch</span>
+                    <span class="skill-desc">Neural Networks</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon langchain-icon">🦜</div>
+                    <span class="skill-name">LangChain</span>
+                    <span class="skill-desc">LLM Framework</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon gpt-icon">✨</div>
+                    <span class="skill-name">GPT-4</span>
+                    <span class="skill-desc">GenAI/LLMs</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon rag-icon">📚</div>
+                    <span class="skill-name">RAG</span>
+                    <span class="skill-desc">Retrieval Systems</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="content-row dark-section">
+        <div class="container">
+            <h2 class="row-title">Education</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-content">
+                        <h3>Master's in Computer Science</h3>
+                        <p>Texas A&M University</p>
+                        <span class="edu-date">Dec 2021</span>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-content">
+                        <h3>Bachelor's in Computer Science</h3>
+                        <p>SRM Institute of Technology, India</p>
+                        <span class="edu-date">May 2019</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="row-title" style="margin-top: 60px;">Certifications</h2>
+            <div class="cert-row">
+                <div class="cert-badge aws">AWS Solutions Architect</div>
+                <div class="cert-badge azure">Azure AI Engineer</div>
+                <div class="cert-badge google">TensorFlow Developer</div>
+                <div class="cert-badge k8s">Kubernetes Admin</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-card">
+                <div class="contact-icon">📬</div>
+                <h2>Let's Connect!</h2>
+                <p>I'm open to discussing new opportunities, innovative projects, or potential collaborations.</p>
+                <div class="contact-links">
+                    <a href="mailto:akhilreddydanda1@gmail.com" class="contact-link">
+                        <span class="link-icon">📧</span>
+                        akhilreddydanda1@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/akhil-reddy-danda-1a74b214b/" target="_blank" class="contact-link">
+                        <span class="link-icon">💼</span>
+                        LinkedIn Profile
+                    </a>
+                    <a href="https://github.com/DandaAkhilReddy" target="_blank" class="contact-link">
+                        <span class="link-icon">🐙</span>
+                        GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Akhil Reddy Danda. All rights reserved.</p>
+            <p class="footer-note">🚀 2026 Journey: Building 52 projects in 52 weeks</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get profile from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const profile = urlParams.get('profile') || 'recruiter';
+
+        // Update profile name
+        document.getElementById('profile-name').textContent = profile;
+
+        // Update profile icon color
+        const profileIcon = document.querySelector('.mini-avatar');
+        profileIcon.className = 'mini-avatar avatar-' + profile;
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Card hover effects
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.05)';
+                card.style.zIndex = '10';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+                card.style.zIndex = '1';
+            });
+        });
+    </script>
+</body>
+</html>

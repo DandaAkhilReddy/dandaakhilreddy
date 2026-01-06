@@ -1,11 +1,11 @@
-/* Project Page Styles */
+/* Project Page Styles - Netflix Theme */
 
 /* Back Link */
 .back-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--text-secondary);
+    color: var(--text-gray);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -14,14 +14,14 @@
 }
 
 .back-link:hover {
-    color: var(--primary);
+    color: var(--netflix-red);
     gap: 12px;
 }
 
 /* Project Hero */
 .project-hero {
     padding: 140px 24px 80px;
-    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #f0fdf4 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     position: relative;
     overflow: hidden;
 }
@@ -33,7 +33,7 @@
     right: -10%;
     width: 60%;
     height: 120%;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(229, 9, 20, 0.1) 0%, transparent 60%);
     pointer-events: none;
 }
 
@@ -43,10 +43,10 @@
 
 .project-badge-large {
     display: inline-block;
-    background: var(--gradient-accent);
+    background: var(--netflix-red);
     color: white;
     padding: 8px 16px;
-    border-radius: 50px;
+    border-radius: 4px;
     font-size: 0.85rem;
     font-weight: 600;
     margin-bottom: 20px;
@@ -55,21 +55,21 @@
 .project-title {
     font-size: 3.5rem;
     font-weight: 800;
-    color: var(--text);
+    color: var(--text-white);
     margin-bottom: 12px;
     line-height: 1.1;
 }
 
 .project-tagline {
     font-size: 1.5rem;
-    color: var(--primary);
+    color: var(--netflix-red);
     font-weight: 600;
     margin-bottom: 20px;
 }
 
 .project-description {
     font-size: 1.15rem;
-    color: var(--text-secondary);
+    color: var(--text-gray);
     line-height: 1.8;
     margin-bottom: 32px;
 }
@@ -83,7 +83,7 @@
 /* Tech Stack Section */
 .project-tech-section {
     padding: 80px 24px;
-    background: var(--bg);
+    background: var(--bg-dark);
 }
 
 .tech-grid {
@@ -95,9 +95,9 @@
 .tech-item {
     text-align: center;
     padding: 32px 24px;
-    background: white;
-    border-radius: 16px;
-    border: 1px solid var(--border);
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
     transition: var(--transition);
     opacity: 0;
     transform: translateY(20px);
@@ -110,7 +110,7 @@
 
 .tech-item:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    border-color: var(--netflix-red);
 }
 
 .tech-icon {
@@ -146,20 +146,20 @@
     display: block;
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--text);
+    color: var(--text-white);
     margin-bottom: 4px;
 }
 
 .tech-item p {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--text-gray);
     margin: 0;
 }
 
 /* Content Section */
 .project-content-section {
     padding: 80px 24px;
-    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    background: var(--bg-darker);
 }
 
 .content-grid {
@@ -180,7 +180,7 @@
 }
 
 .content-block p {
-    color: var(--text-secondary);
+    color: var(--text-gray);
     font-size: 1.05rem;
     line-height: 1.7;
     margin-bottom: 20px;
@@ -194,7 +194,7 @@
     padding: 12px 0;
     padding-left: 32px;
     position: relative;
-    color: var(--text-secondary);
+    color: var(--text-gray);
     font-size: 1rem;
 }
 
@@ -209,17 +209,17 @@
 }
 
 .problem-list li::before {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    background: var(--netflix-red);
 }
 
 .solution-list li::before {
-    background: var(--gradient-accent);
+    background: #10b981;
 }
 
 /* Features Section */
 .project-features-section {
     padding: 80px 24px;
-    background: var(--bg);
+    background: var(--bg-dark);
 }
 
 .features-grid {
@@ -230,9 +230,9 @@
 
 .feature-card {
     padding: 32px;
-    background: white;
-    border-radius: 16px;
-    border: 1px solid var(--border);
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
     transition: var(--transition);
     opacity: 0;
     transform: translateY(20px);
@@ -245,30 +245,30 @@
 
 .feature-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    border-color: var(--netflix-red);
 }
 
 .feature-card .feature-icon {
     width: 56px;
     height: 56px;
-    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    background: rgba(229, 9, 20, 0.1);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary);
+    color: var(--netflix-red);
     margin-bottom: 20px;
 }
 
 .feature-card h3 {
     font-size: 1.15rem;
     font-weight: 600;
-    color: var(--text);
+    color: var(--text-white);
     margin-bottom: 12px;
 }
 
 .feature-card p {
-    color: var(--text-secondary);
+    color: var(--text-gray);
     font-size: 0.95rem;
     line-height: 1.7;
     margin: 0;
@@ -277,7 +277,7 @@
 /* Installation Section */
 .project-install-section {
     padding: 80px 24px;
-    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    background: var(--bg-darker);
 }
 
 .install-steps {
@@ -302,7 +302,7 @@
 .step-number {
     width: 48px;
     height: 48px;
-    background: var(--gradient-primary);
+    background: var(--netflix-red);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -320,12 +320,12 @@
 .step-content h3 {
     font-size: 1.15rem;
     font-weight: 600;
-    color: var(--text);
+    color: var(--text-white);
     margin-bottom: 12px;
 }
 
 .step-content p {
-    color: var(--text-secondary);
+    color: var(--text-gray);
     font-size: 0.95rem;
     margin-bottom: 12px;
 }
@@ -370,7 +370,7 @@
 /* Architecture Section */
 .project-architecture-section {
     padding: 80px 24px;
-    background: var(--bg);
+    background: var(--bg-dark);
 }
 
 .architecture-diagram {
@@ -399,7 +399,7 @@
 }
 
 .arch-box.peepee {
-    background: var(--gradient-primary);
+    background: var(--netflix-red);
     color: white;
 }
 
@@ -413,7 +413,7 @@
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    color: var(--text-secondary);
+    color: var(--text-gray);
 }
 
 .arch-arrow span {
@@ -428,7 +428,7 @@
 }
 
 .arch-description p {
-    color: var(--text-secondary);
+    color: var(--text-gray);
     font-size: 1rem;
     line-height: 1.7;
 }
@@ -436,7 +436,7 @@
 /* CTA Section */
 .project-cta-section {
     padding: 100px 24px;
-    background: var(--bg-dark);
+    background: var(--bg-darker);
 }
 
 .cta-content {
@@ -453,7 +453,7 @@
 }
 
 .cta-content p {
-    color: var(--text-light);
+    color: var(--text-gray);
     font-size: 1.15rem;
     margin-bottom: 32px;
 }
