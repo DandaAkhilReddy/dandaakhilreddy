@@ -91,6 +91,7 @@
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .profile-card:hover .profile-avatar {
@@ -116,91 +117,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        /* Furry monster avatars using gradients */
-        .avatar-recruiter {
-            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
-        }
-
-        .avatar-developer {
-            background: linear-gradient(135deg, #666666 0%, #444444 100%);
-        }
-
-        .avatar-stalker {
-            background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
-        }
-
-        .avatar-adventurer {
-            background: linear-gradient(135deg, #ffaa00 0%, #ff8800 100%);
-        }
-
-        .avatar-face {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .avatar-eyes {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 15px;
-        }
-
-        .eye {
-            width: 20px;
-            height: 28px;
-            background: #000;
-            border-radius: 50%;
-            position: relative;
-        }
-
-        .eye::after {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #fff;
-            border-radius: 50%;
-            top: 5px;
-            right: 3px;
-        }
-
-        .avatar-mouth {
-            width: 50px;
-            height: 25px;
-            border: 3px solid #000;
-            border-top: none;
-            border-radius: 0 0 50px 50px;
-        }
-
-        .avatar-freckles {
-            position: absolute;
-            bottom: 45px;
-            display: flex;
-            gap: 40px;
-        }
-
-        .freckle-group {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .freckle-row {
-            display: flex;
-            gap: 3px;
-        }
-
-        .freckle {
-            width: 4px;
-            height: 4px;
-            background: rgba(255,255,255,0.8);
-            border-radius: 50%;
         }
 
         .profile-name {
@@ -229,28 +145,6 @@
             .profile-avatar {
                 width: 100px;
                 height: 100px;
-            }
-
-            .avatar-eyes {
-                gap: 20px;
-                margin-bottom: 10px;
-            }
-
-            .eye {
-                width: 14px;
-                height: 20px;
-            }
-
-            .eye::after {
-                width: 5px;
-                height: 5px;
-                top: 3px;
-                right: 2px;
-            }
-
-            .avatar-mouth {
-                width: 35px;
-                height: 18px;
             }
 
             .netflix-intro .logo-text {
@@ -284,93 +178,29 @@
         <h1 class="profile-title">Who's Watching?</h1>
         <div class="profiles-container">
             <a href="browse.html?profile=recruiter" class="profile-card">
-                <div class="profile-avatar avatar-recruiter">
-                    <div class="avatar-face">
-                        <div class="avatar-eyes">
-                            <div class="eye"></div>
-                            <div class="eye"></div>
-                        </div>
-                        <div class="avatar-mouth"></div>
-                        <div class="avatar-freckles">
-                            <div class="freckle-group">
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                            </div>
-                            <div class="freckle-group">
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="profile-avatar">
+                    <img src="https://i.imgur.com/YQK3Qby.png" alt="Recruiter" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#00d4ff,#0099cc);display:flex;align-items:center;justify-content:center;font-size:3rem;\'>&#128188;</div>';">
                 </div>
                 <p class="profile-name">Recruiter</p>
             </a>
 
             <a href="browse.html?profile=developer" class="profile-card">
-                <div class="profile-avatar avatar-developer">
-                    <div class="avatar-face">
-                        <div class="avatar-eyes">
-                            <div class="eye"></div>
-                            <div class="eye"></div>
-                        </div>
-                        <div class="avatar-mouth"></div>
-                        <div class="avatar-freckles">
-                            <div class="freckle-group">
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                            </div>
-                            <div class="freckle-group">
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="profile-avatar">
+                    <img src="https://i.imgur.com/8PjrG8O.png" alt="Developer" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#666,#444);display:flex;align-items:center;justify-content:center;font-size:3rem;\'>&#128187;</div>';">
                 </div>
                 <p class="profile-name">Developer</p>
             </a>
 
             <a href="browse.html?profile=stalker" class="profile-card">
-                <div class="profile-avatar avatar-stalker">
-                    <div class="avatar-face">
-                        <div class="avatar-eyes">
-                            <div class="eye"></div>
-                            <div class="eye"></div>
-                        </div>
-                        <div class="avatar-mouth"></div>
-                        <div class="avatar-freckles">
-                            <div class="freckle-group">
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                            </div>
-                            <div class="freckle-group">
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="profile-avatar">
+                    <img src="https://i.imgur.com/qKG0j4H.png" alt="Stalker" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#ff3333,#cc0000);display:flex;align-items:center;justify-content:center;font-size:3rem;\'>&#128065;</div>';">
                 </div>
                 <p class="profile-name">Stalker</p>
             </a>
 
             <a href="browse.html?profile=adventurer" class="profile-card">
-                <div class="profile-avatar avatar-adventurer">
-                    <div class="avatar-face">
-                        <div class="avatar-eyes">
-                            <div class="eye"></div>
-                            <div class="eye"></div>
-                        </div>
-                        <div class="avatar-mouth"></div>
-                        <div class="avatar-freckles">
-                            <div class="freckle-group">
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                            </div>
-                            <div class="freckle-group">
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                                <div class="freckle-row"><div class="freckle"></div><div class="freckle"></div></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="profile-avatar">
+                    <img src="https://i.imgur.com/vB5OQKW.png" alt="Adventurer" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#ffaa00,#ff8800);display:flex;align-items:center;justify-content:center;font-size:3rem;\'>&#127757;</div>';">
                 </div>
                 <p class="profile-name">Adventurer</p>
             </a>
@@ -386,10 +216,8 @@
         // Play Netflix sound on page load
         window.addEventListener('load', () => {
             const sound = document.getElementById('netflix-sound');
-            // Try to play sound (may be blocked by browser autoplay policy)
             setTimeout(() => {
                 sound.play().catch(() => {
-                    // Autoplay blocked, will play on first interaction
                     document.addEventListener('click', () => {
                         sound.play().catch(() => {});
                     }, { once: true });

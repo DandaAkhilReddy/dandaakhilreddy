@@ -19,29 +19,34 @@
                 <li><a href="#experience">Professional</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#journey">2026 Journey</a></li>
                 <li><a href="#contact">Hire Me</a></li>
             </ul>
         </div>
         <div class="nav-right">
-            <div class="profile-icon" id="current-profile">
-                <div class="mini-avatar avatar-recruiter">
-                    <div class="mini-face">
-                        <div class="mini-eyes">
-                            <div class="mini-eye"></div>
-                            <div class="mini-eye"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a href="index.html" class="profile-icon" id="current-profile">
+                <img src="https://i.imgur.com/YQK3Qby.png" alt="Profile" class="nav-profile-img" id="nav-profile-img">
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Dynamic Background -->
     <section id="home" class="hero">
         <div class="hero-background">
-            <video class="hero-video" autoplay muted loop playsinline>
+            <!-- Recruiter: The Office style / Professional -->
+            <video class="hero-video" id="hero-video-recruiter" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-typing-on-a-laptop-in-an-office-4833-large.mp4" type="video/mp4">
+            </video>
+            <!-- Developer: Coding/Matrix style -->
+            <video class="hero-video hidden" id="hero-video-developer" autoplay muted loop playsinline>
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4" type="video/mp4">
+            </video>
+            <!-- Stalker: Mystery/Investigation -->
+            <video class="hero-video hidden" id="hero-video-stalker" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-data-processing-cybernetic-technology-code-42756-large.mp4" type="video/mp4">
+            </video>
+            <!-- Adventurer: Travel/Adventure -->
+            <video class="hero-video hidden" id="hero-video-adventurer" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4" type="video/mp4">
             </video>
             <div class="hero-gradient"></div>
         </div>
@@ -72,6 +77,86 @@
         </div>
     </section>
 
+    <!-- Today's Top Picks Section -->
+    <section id="projects" class="content-row">
+        <div class="container">
+            <h2 class="row-title">Today's Top Picks for <span id="profile-name">recruiter</span></h2>
+            <div class="netflix-row">
+                <div class="netflix-card" onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=225&fit=crop" alt="Skills">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Skills</span>
+                    </div>
+                </div>
+                <div class="netflix-card" onclick="document.getElementById('experience').scrollIntoView({behavior: 'smooth'})">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=225&fit=crop" alt="Experience">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Experience</span>
+                    </div>
+                </div>
+                <div class="netflix-card" onclick="document.getElementById('certifications').scrollIntoView({behavior: 'smooth'})">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=225&fit=crop" alt="Certifications">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Certifications</span>
+                    </div>
+                </div>
+                <div class="netflix-card" onclick="window.open('https://www.linkedin.com/in/akhil-reddy-danda-1a74b214b/', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=225&fit=crop" alt="Recommendations">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Recommendations</span>
+                    </div>
+                </div>
+                <div class="netflix-card" onclick="window.open('https://github.com/DandaAkhilReddy', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=225&fit=crop" alt="GitHub">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue Watching Section -->
+    <section class="content-row">
+        <div class="container">
+            <h2 class="row-title">Continue Watching for <span class="profile-name-span">recruiter</span></h2>
+            <div class="netflix-row">
+                <div class="netflix-card" onclick="window.location.href='projects/claude-peepee.html'">
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=225&fit=crop" alt="Claude PeePee">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Claude PeePee</span>
+                        <span class="netflix-card-badge">Week 1 - 2026</span>
+                    </div>
+                    <div class="progress-indicator" style="width: 65%"></div>
+                </div>
+                <div class="netflix-card">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=225&fit=crop" alt="ADAS System">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">ADAS System</span>
+                        <span class="netflix-card-badge">ML Project</span>
+                    </div>
+                    <div class="progress-indicator" style="width: 100%"></div>
+                </div>
+                <div class="netflix-card">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=225&fit=crop" alt="Financial Sentiment">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Financial Sentiment</span>
+                        <span class="netflix-card-badge">NLP</span>
+                    </div>
+                    <div class="progress-indicator" style="width: 100%"></div>
+                </div>
+                <div class="netflix-card">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=225&fit=crop" alt="Healthcare RAG">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Healthcare RAG</span>
+                        <span class="netflix-card-badge">Production</span>
+                    </div>
+                    <div class="progress-indicator" style="width: 80%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 2026 Journey Banner -->
     <section id="journey" class="journey-section">
         <div class="container">
@@ -95,94 +180,6 @@
                     <div class="stat">
                         <span class="stat-number">51</span>
                         <span class="stat-label">To Go</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Today's Top Picks -->
-    <section id="projects" class="content-row">
-        <div class="container">
-            <h2 class="row-title">Today's Top Picks for <span id="profile-name">recruiter</span></h2>
-            <div class="row-content">
-                <div class="card project-card" onclick="window.location.href='projects/claude-peepee.html'">
-                    <div class="card-image claude-peepee-bg">
-                        <div class="card-overlay">
-                            <span class="card-badge">Week 1 - 2026</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3>Claude PeePee</h3>
-                        <p>Persistent Memory for Claude Code</p>
-                        <div class="card-tags">
-                            <span>Go</span>
-                            <span>SQLite</span>
-                            <span>MCP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card project-card">
-                    <div class="card-image adas-bg">
-                        <div class="card-overlay">
-                            <span class="card-badge">Published</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3>ADAS System</h3>
-                        <p>Advanced Driver Assistance</p>
-                        <div class="card-tags">
-                            <span>Python</span>
-                            <span>OpenCV</span>
-                            <span>ML</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card project-card">
-                    <div class="card-image sentiment-bg">
-                        <div class="card-overlay">
-                            <span class="card-badge">ML/NLP</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3>Financial Sentiment</h3>
-                        <p>BERT-based Market Analysis</p>
-                        <div class="card-tags">
-                            <span>BERT</span>
-                            <span>PyTorch</span>
-                            <span>AWS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card project-card">
-                    <div class="card-image rag-bg">
-                        <div class="card-overlay">
-                            <span class="card-badge">Production</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3>Healthcare RAG</h3>
-                        <p>Clinical Decision Support</p>
-                        <div class="card-tags">
-                            <span>GPT-4</span>
-                            <span>LangChain</span>
-                            <span>Azure</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card project-card coming-soon">
-                    <div class="card-image coming-soon-bg">
-                        <div class="card-overlay">
-                            <span class="card-badge">Week 2</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3>Coming Soon</h3>
-                        <p>Next week's project</p>
                     </div>
                 </div>
             </div>
@@ -416,7 +413,7 @@
     </section>
 
     <!-- Education & Certifications -->
-    <section class="content-row dark-section">
+    <section id="certifications" class="content-row dark-section">
         <div class="container">
             <h2 class="row-title">Education</h2>
             <div class="edu-grid">
@@ -482,16 +479,50 @@
     </footer>
 
     <script>
+        // Profile configuration
+        const profileConfig = {
+            recruiter: {
+                video: 'hero-video-recruiter',
+                image: 'https://i.imgur.com/YQK3Qby.png'
+            },
+            developer: {
+                video: 'hero-video-developer',
+                image: 'https://i.imgur.com/8PjrG8O.png'
+            },
+            stalker: {
+                video: 'hero-video-stalker',
+                image: 'https://i.imgur.com/qKG0j4H.png'
+            },
+            adventurer: {
+                video: 'hero-video-adventurer',
+                image: 'https://i.imgur.com/vB5OQKW.png'
+            }
+        };
+
         // Get profile from URL
         const urlParams = new URLSearchParams(window.location.search);
         const profile = urlParams.get('profile') || 'recruiter';
 
-        // Update profile name
+        // Update profile name in titles
         document.getElementById('profile-name').textContent = profile;
+        document.querySelectorAll('.profile-name-span').forEach(el => el.textContent = profile);
 
-        // Update profile icon color
-        const profileIcon = document.querySelector('.mini-avatar');
-        profileIcon.className = 'mini-avatar avatar-' + profile;
+        // Update nav profile image
+        const navImg = document.getElementById('nav-profile-img');
+        if (profileConfig[profile]) {
+            navImg.src = profileConfig[profile].image;
+        }
+
+        // Show correct hero video based on profile
+        document.querySelectorAll('.hero-video').forEach(video => {
+            video.classList.add('hidden');
+            video.pause();
+        });
+        const activeVideo = document.getElementById(profileConfig[profile]?.video || 'hero-video-recruiter');
+        if (activeVideo) {
+            activeVideo.classList.remove('hidden');
+            activeVideo.play();
+        }
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
@@ -507,18 +538,6 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-            });
-        });
-
-        // Card hover effects
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'scale(1.05)';
-                card.style.zIndex = '10';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'scale(1)';
-                card.style.zIndex = '1';
             });
         });
     </script>
