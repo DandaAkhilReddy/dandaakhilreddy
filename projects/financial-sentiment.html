@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Sentiment Analysis | NLP for Market Intelligence | Akhil Danda</title>
+    <link rel="stylesheet" href="../netflix-styles.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../browse.html" class="nav-logo">AKHIL DANDA</a>
+            <ul class="nav-menu">
+                <li><a href="../browse.html#home">Home</a></li>
+                <li><a href="../browse.html#experience">Professional</a></li>
+                <li><a href="../browse.html#skills">Skills</a></li>
+                <li><a href="../browse.html#daily-shipping">Projects</a></li>
+                <li><a href="../browse.html#contact">Hire Me</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="../browse.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Portfolio
+            </a>
+            <div class="project-hero-content">
+                <div class="project-badge-large">NLP Project</div>
+                <h1 class="project-title">Financial Sentiment Analysis</h1>
+                <p class="project-tagline">Real-Time Market Intelligence Using Advanced NLP</p>
+                <p class="project-description">I built a financial sentiment analysis system using fine-tuned BERT models to analyze news, earnings calls, and social media for market-moving insights. The system processes thousands of financial documents in real-time, providing actionable sentiment signals for trading strategies.</p>
+                <div class="project-links">
+                    <a href="https://www.linkedin.com/in/akhil-reddy-danda-1a74b214b/" target="_blank" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        Connect on LinkedIn
+                    </a>
+                    <a href="../browse.html#skills" class="btn btn-outline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        View Skills
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="project-tech-section">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #f9a825 0%, #f57f17 100%);">
+                        <span style="font-size: 1.2rem; font-weight: 700;">BERT</span>
+                    </div>
+                    <span>Transformers</span>
+                    <p>Fine-tuned NLP models</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #3776ab 0%, #2b5a8a 100%);">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width: 32px; height: 32px;">
+                    </div>
+                    <span>Python</span>
+                    <p>Core language</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);">
+                        <span style="font-size: 1.5rem;">HF</span>
+                    </div>
+                    <span>Hugging Face</span>
+                    <p>Model hub</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #009688 0%, #00796b 100%);">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" style="width: 32px; height: 32px;">
+                    </div>
+                    <span>FastAPI</span>
+                    <p>API framework</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="project-content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-block">
+                    <h2 class="section-title">The Challenge</h2>
+                    <p>Traditional sentiment analysis fails in financial contexts:</p>
+                    <ul class="feature-list problem-list">
+                        <li>Generic sentiment tools miss financial domain nuances</li>
+                        <li>"Bearish" and "bullish" aren't in standard vocabularies</li>
+                        <li>Context matters: "beat expectations" vs "beat the competition"</li>
+                        <li>Speed is critical - markets move on news in seconds</li>
+                        <li>Volume: thousands of documents daily need processing</li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <h2 class="section-title">The Solution</h2>
+                    <p>A purpose-built financial NLP pipeline:</p>
+                    <ul class="feature-list solution-list">
+                        <li>BERT fine-tuned on financial corpus (10-K, earnings calls)</li>
+                        <li>Custom financial vocabulary with domain-specific terms</li>
+                        <li>Real-time processing with sub-second latency</li>
+                        <li>Multi-source integration: news, Twitter, SEC filings</li>
+                        <li>Confidence scores with explainability for each prediction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="project-features-section">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Financial Fine-Tuning</h3>
+                    <p>BERT model fine-tuned on millions of financial documents including 10-Ks, earnings transcripts, and analyst reports.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <h3>Real-Time Processing</h3>
+                    <p>Sub-second inference latency enables real-time sentiment signals as news breaks for time-sensitive trading decisions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3>Market Signals</h3>
+                    <p>Convert sentiment scores into actionable trading signals with historical backtesting and performance metrics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    </div>
+                    <h3>Multi-Source</h3>
+                    <p>Aggregates and analyzes content from news APIs, social media, SEC EDGAR, and earnings call transcripts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </div>
+                    <h3>Explainability</h3>
+                    <p>Every prediction includes confidence scores and highlights the key phrases that drove the sentiment classification.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>API Integration</h3>
+                    <p>RESTful API with FastAPI enables easy integration with trading systems, dashboards, and alerting platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="project-architecture-section">
+        <div class="container">
+            <h2 class="section-title">System Architecture</h2>
+            <div class="architecture-diagram">
+                <div class="arch-flow">
+                    <div class="arch-box" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);">
+                        <span style="font-size: 1.3rem;">Data Sources</span>
+                        <span style="font-size: 0.8rem;">News, Social, SEC</span>
+                    </div>
+                    <div class="arch-arrow">
+                        <svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 L30 10 M25 5 L30 10 L25 15" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+                    </div>
+                    <div class="arch-box" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">
+                        <span style="font-size: 1.3rem;">Preprocessing</span>
+                        <span style="font-size: 0.8rem;">Tokenization</span>
+                    </div>
+                    <div class="arch-arrow">
+                        <svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 L30 10 M25 5 L30 10 L25 15" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+                    </div>
+                    <div class="arch-box" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <span style="font-size: 1.3rem;">FinBERT</span>
+                        <span style="font-size: 0.8rem;">Inference</span>
+                    </div>
+                    <div class="arch-arrow">
+                        <svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 L30 10 M25 5 L30 10 L25 15" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+                    </div>
+                    <div class="arch-box" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <span style="font-size: 1.3rem;">Signals</span>
+                        <span style="font-size: 0.8rem;">API Output</span>
+                    </div>
+                </div>
+            </div>
+            <div class="arch-description">
+                <p>The pipeline ingests data from multiple financial sources, preprocesses and tokenizes text, runs inference through our fine-tuned FinBERT model, and outputs actionable sentiment signals via FastAPI.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="project-install-section">
+        <div class="container">
+            <h2 class="section-title">Use Cases</h2>
+            <div class="install-steps">
+                <div class="install-step">
+                    <div class="step-number" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">1</div>
+                    <div class="step-content">
+                        <h3>Earnings Analysis</h3>
+                        <p>Automatically analyze earnings call transcripts to gauge management sentiment and identify potential market movers before the market reacts.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="step-number" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);">2</div>
+                    <div class="step-content">
+                        <h3>News Monitoring</h3>
+                        <p>Real-time sentiment tracking of financial news across thousands of sources, with alerts for significant sentiment shifts.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="step-number" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">3</div>
+                    <div class="step-content">
+                        <h3>Social Sentiment</h3>
+                        <p>Monitor Twitter, Reddit, and StockTwits for retail sentiment signals that may indicate upcoming price movements.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="step-number" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">4</div>
+                    <div class="step-content">
+                        <h3>SEC Filing Analysis</h3>
+                        <p>Parse and analyze 10-K, 10-Q, and 8-K filings for sentiment changes in management discussion and risk factors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="project-cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Interested in NLP for Finance?</h2>
+                <p>I love discussing natural language processing, transformer models, and financial applications of AI. Let's connect!</p>
+                <div class="cta-buttons">
+                    <a href="https://www.linkedin.com/in/akhil-reddy-danda-1a74b214b/" target="_blank" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        Connect on LinkedIn
+                    </a>
+                    <a href="healthcare-rag.html" class="btn btn-outline">
+                        Next: Healthcare RAG
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Akhil Reddy Danda. All rights reserved.</p>
+            <p class="footer-note">NLP Engineer | Transformers & Financial AI</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Animate on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.feature-card, .install-step, .tech-item, .content-block').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
