@@ -45,17 +45,12 @@
             position: relative;
             z-index: 1;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: #fff;
+            overflow: hidden;
         }
 
         .hero-profile-image img {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
             object-fit: cover;
         }
 
@@ -113,18 +108,12 @@
             object-fit: cover;
             border: 2px solid #333;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #fff;
+            overflow: hidden;
         }
 
         .bio-profile-image img {
             width: 100%;
             height: 100%;
-            border-radius: 14px;
             object-fit: cover;
         }
 
@@ -280,6 +269,27 @@
             color: #60a5fa;
         }
 
+        /* Cricket Stats Link */
+        .cricket-stats-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .cricket-stats-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+
         /* Cricket Gallery */
         .cricket-gallery {
             display: grid;
@@ -416,7 +426,6 @@
             .hero-profile-image {
                 width: 180px;
                 height: 180px;
-                font-size: 3rem;
             }
 
             .about-hero h1 {
@@ -449,6 +458,97 @@
                 padding: 12px 20px;
             }
         }
+
+        /* Image Lightbox Modal */
+        .image-lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .image-lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 85vh;
+            position: relative;
+            animation: lightboxZoomIn 0.3s ease;
+        }
+
+        @keyframes lightboxZoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(229, 9, 20, 0.3);
+        }
+
+        .lightbox-caption {
+            text-align: center;
+            color: #fff;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 2001;
+        }
+
+        .lightbox-close:hover {
+            color: #E50914;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(229, 9, 20, 0.8);
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: #E50914;
+        }
+
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        /* Make gallery images clickable */
+        .cricket-gallery img {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -474,11 +574,11 @@
     <!-- Hero Section -->
     <section class="about-hero">
         <div class="hero-profile-image">
-            <img src="assets/profile/hero.jpg" alt="Akhil Reddy Danda" onerror="this.style.display='none'; this.parentElement.innerHTML='AR';">
+            <img src="assets/cricket/Profilepicture.jpeg" alt="Akhil Reddy Danda">
         </div>
         <h1>DANDA AKHIL REDDY</h1>
         <p class="tagline">
-            <span>Software Engineer</span> | <span>Professional Cricketer</span> | <span>AI/ML Enthusiast</span>
+            <span>Software Engineer</span> | <span>AI/ML Enthusiast</span>
         </p>
     </section>
 
@@ -487,7 +587,7 @@
         <div class="bio-container">
             <div class="bio-image-container">
                 <div class="bio-profile-image">
-                    <img src="assets/profile/bio.jpg" alt="Akhil Reddy" onerror="this.style.display='none'; this.parentElement.innerHTML='AR';">
+                    <img src="assets/cricket/Profilepicture.jpeg" alt="Akhil Reddy">
                 </div>
                 <div class="bio-image-accent"></div>
             </div>
@@ -508,8 +608,7 @@
                 </p>
                 <p>
                     When I'm not coding or on the cricket field, you'll find me diving deep into <span class="highlight">AI research papers</span>,
-                    fine-tuning LLMs, or exploring the latest breakthroughs in machine learning. I believe in
-                    <strong>shipping daily</strong> - that's why I'm building <span class="highlight">365 projects in 2026</span>.
+                    fine-tuning LLMs, or exploring the latest breakthroughs in machine learning.
                 </p>
             </div>
         </div>
@@ -519,30 +618,6 @@
     <section class="passions-section">
         <h2>WHAT DRIVES ME</h2>
         <div class="passions-grid">
-            <!-- Cricket Card -->
-            <div class="passion-card">
-                <span class="card-bg-icon">&#127951;</span>
-                <div class="passion-card-header">
-                    <div class="passion-icon cricket">&#127951;</div>
-                    <h3>Professional Cricket</h3>
-                </div>
-                <p>
-                    Cricket runs in my blood. I play competitively in the San Antonio Cricket League,
-                    where every match is a lesson in strategy, pressure handling, and peak performance.
-                    From scoring centuries to leading teams, the cricket field is where I find my
-                    competitive edge.
-                </p>
-                <div class="passion-tags">
-                    <span class="passion-tag green">San Antonio League</span>
-                    <span class="passion-tag green">Century Scorer</span>
-                    <span class="passion-tag green">Team Leadership</span>
-                </div>
-                <div class="cricket-gallery">
-                    <img src="assets/cricket/Century_sanantonioleague.jpeg" alt="Century in San Antonio League" onerror="this.style.display='none'">
-                    <img src="assets/cricket/Cricclubs_163.jpeg" alt="Cricket Stats" onerror="this.style.display='none'">
-                </div>
-            </div>
-
             <!-- LLM Fine-tuning Card -->
             <div class="passion-card">
                 <span class="card-bg-icon">&#129504;</span>
@@ -584,6 +659,35 @@
                     <span class="passion-tag blue">ML Advancements</span>
                 </div>
             </div>
+
+            <!-- Cricket Card -->
+            <div class="passion-card">
+                <span class="card-bg-icon">&#127951;</span>
+                <div class="passion-card-header">
+                    <div class="passion-icon cricket">&#127951;</div>
+                    <h3>Professional Cricket</h3>
+                </div>
+                <p>
+                    Cricket runs in my blood. I play competitively in the San Antonio Cricket League,
+                    where every match is a lesson in strategy, pressure handling, and peak performance.
+                    From scoring centuries to leading teams, the cricket field is where I find my
+                    competitive edge.
+                </p>
+                <div class="passion-tags">
+                    <span class="passion-tag green">San Antonio League</span>
+                    <span class="passion-tag green">Century Scorer</span>
+                    <span class="passion-tag green">Team Leadership</span>
+                </div>
+                <a href="https://www.cricclubs.com/CricketofSanAntonioLeagueCSAL/viewPlayer.do?playerId=5110441&clubId=1007625"
+                   target="_blank"
+                   class="cricket-stats-link">
+                    View My Cricket Stats
+                </a>
+                <div class="cricket-gallery">
+                    <img src="assets/cricket/Century_sanantonioleague.jpeg" alt="Century in San Antonio League">
+                    <img src="assets/cricket/Cricclubs_163.jpeg" alt="Cricket Stats">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -614,7 +718,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Akhil Reddy Danda. All rights reserved.</p>
-            <p class="footer-note">Software Engineer | Professional Cricketer | AI/ML Enthusiast</p>
+            <p class="footer-note">Software Engineer | AI/ML Enthusiast</p>
         </div>
     </footer>
 
@@ -624,11 +728,70 @@
         Back to Portfolio
     </a>
 
+    <!-- Image Lightbox Modal -->
+    <div class="image-lightbox" id="imageLightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+    </div>
+
     <script>
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Lightbox functionality
+        const galleryImages = document.querySelectorAll('.cricket-gallery img');
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        let currentImageIndex = 0;
+        let imageArray = [];
+
+        // Initialize gallery images
+        galleryImages.forEach((img, index) => {
+            imageArray.push({ src: img.src, alt: img.alt });
+            img.addEventListener('click', () => openLightbox(index));
+        });
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = imageArray[index].src;
+            lightboxCaption.textContent = imageArray[index].alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex >= imageArray.length) currentImageIndex = 0;
+            if (currentImageIndex < 0) currentImageIndex = imageArray.length - 1;
+            lightboxImg.src = imageArray[currentImageIndex].src;
+            lightboxCaption.textContent = imageArray[currentImageIndex].alt;
+        }
+
+        // Close on backdrop click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
         });
     </script>
 </body>
