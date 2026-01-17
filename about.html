@@ -269,6 +269,27 @@
             color: #60a5fa;
         }
 
+        /* Cricket Stats Link */
+        .cricket-stats-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .cricket-stats-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+
         /* Cricket Gallery */
         .cricket-gallery {
             display: grid;
@@ -437,6 +458,97 @@
                 padding: 12px 20px;
             }
         }
+
+        /* Image Lightbox Modal */
+        .image-lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .image-lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 85vh;
+            position: relative;
+            animation: lightboxZoomIn 0.3s ease;
+        }
+
+        @keyframes lightboxZoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(229, 9, 20, 0.3);
+        }
+
+        .lightbox-caption {
+            text-align: center;
+            color: #fff;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 2001;
+        }
+
+        .lightbox-close:hover {
+            color: #E50914;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(229, 9, 20, 0.8);
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: #E50914;
+        }
+
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        /* Make gallery images clickable */
+        .cricket-gallery img {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -566,6 +678,11 @@
                     <span class="passion-tag green">Century Scorer</span>
                     <span class="passion-tag green">Team Leadership</span>
                 </div>
+                <a href="https://www.cricclubs.com/CricketofSanAntonioLeagueCSAL/viewPlayer.do?playerId=5110441&clubId=1007625"
+                   target="_blank"
+                   class="cricket-stats-link">
+                    View My Cricket Stats
+                </a>
                 <div class="cricket-gallery">
                     <img src="assets/cricket/Century_sanantonioleague.jpeg" alt="Century in San Antonio League">
                     <img src="assets/cricket/Cricclubs_163.jpeg" alt="Cricket Stats">
@@ -611,11 +728,70 @@
         Back to Portfolio
     </a>
 
+    <!-- Image Lightbox Modal -->
+    <div class="image-lightbox" id="imageLightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+    </div>
+
     <script>
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Lightbox functionality
+        const galleryImages = document.querySelectorAll('.cricket-gallery img');
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        let currentImageIndex = 0;
+        let imageArray = [];
+
+        // Initialize gallery images
+        galleryImages.forEach((img, index) => {
+            imageArray.push({ src: img.src, alt: img.alt });
+            img.addEventListener('click', () => openLightbox(index));
+        });
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = imageArray[index].src;
+            lightboxCaption.textContent = imageArray[index].alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex >= imageArray.length) currentImageIndex = 0;
+            if (currentImageIndex < 0) currentImageIndex = imageArray.length - 1;
+            lightboxImg.src = imageArray[currentImageIndex].src;
+            lightboxCaption.textContent = imageArray[currentImageIndex].alt;
+        }
+
+        // Close on backdrop click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
         });
     </script>
 </body>
