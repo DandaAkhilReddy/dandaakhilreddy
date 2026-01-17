@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Header Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=E50914&height=200&section=header&text=Danda%20Akhil%20Reddy&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Developer%20|%20Creator%20|%20Innovator&descAlignY=55&descSize=18" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=E50914&height=200&section=header&text=Danda%20Akhil%20Reddy&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Software%20Engineer%20|%20ML%20|%20Quantum%20Enthusiast&descAlignY=55&descSize=18" width="100%"/>
 
 <!-- Typing Animation -->
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=E50914&center=true&vCenter=true&random=false&width=600&lines=Welcome+to+my+Portfolio+%F0%9F%8E%AC;Netflix-Inspired+Design;Built+with+Pure+HTML+%26+CSS;Always+Learning%2C+Always+Building" alt="Typing SVG" /></a>
