@@ -56,17 +56,83 @@
         </div>
     </section>
 
-    <!-- Demo Video -->
-    <section class="project-video-section" style="background: #0a0a0a; padding: 60px 0;">
+    <!-- Repository Structure -->
+    <section class="project-repo-section" style="background: #0a0a0a; padding: 60px 0;">
         <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 30px;">Demo Video</h2>
-            <div style="max-width: 800px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 60px rgba(229, 9, 20, 0.3);">
-                <video controls style="width: 100%; display: block;" poster="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=450&fit=crop">
-                    <source src="https://dms.licdn.com/playlist/vid/v2/D4E05AQHRQXHpCkmISw/mp4-640p-30fp-crf28/B4EZvJNjZLGwBs-/0/1768607338738" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 30px;">Repository Structure</h2>
+            <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <!-- Firmware -->
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 24px; border: 1px solid #333;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #00979D 0%, #007acc 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;">📁</div>
+                        <h3 style="margin: 0; color: #fff; font-size: 1.1rem;">firmware/</h3>
+                    </div>
+                    <p style="color: #aaa; font-size: 0.9rem; margin: 0;">ESP32 embedded C code for WiFi CSI extraction. Flashes directly to your microcontroller.</p>
+                </div>
+                <!-- Src -->
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 24px; border: 1px solid #333;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3776ab 0%, #1d4ed8 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;">📁</div>
+                        <h3 style="margin: 0; color: #fff; font-size: 1.1rem;">src/</h3>
+                    </div>
+                    <p style="color: #aaa; font-size: 0.9rem; margin: 0;">Core Python library modules for signal processing, analysis, and detection algorithms.</p>
+                </div>
+                <!-- Models -->
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 24px; border: 1px solid #333;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;">🧠</div>
+                        <h3 style="margin: 0; color: #fff; font-size: 1.1rem;">models/</h3>
+                    </div>
+                    <p style="color: #aaa; font-size: 0.9rem; margin: 0;">Pre-trained ML models for activity classification. Ready to use out of the box.</p>
+                </div>
+                <!-- Data -->
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 24px; border: 1px solid #333;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;">📊</div>
+                        <h3 style="margin: 0; color: #fff; font-size: 1.1rem;">data/</h3>
+                    </div>
+                    <p style="color: #aaa; font-size: 0.9rem; margin: 0;">Training/testing datasets and CSI samples for model training and validation.</p>
+                </div>
+                <!-- Scripts -->
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 24px; border: 1px solid #333;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;">⚙️</div>
+                        <h3 style="margin: 0; color: #fff; font-size: 1.1rem;">scripts/</h3>
+                    </div>
+                    <p style="color: #aaa; font-size: 0.9rem; margin: 0;">Utility scripts for setup, calibration, and environment configuration.</p>
+                </div>
+                <!-- Assets -->
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 24px; border: 1px solid #333;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;">🎨</div>
+                        <h3 style="margin: 0; color: #fff; font-size: 1.1rem;">assets/</h3>
+                    </div>
+                    <p style="color: #aaa; font-size: 0.9rem; margin: 0;">Project visuals, header images, and documentation graphics.</p>
+                </div>
             </div>
-            <p style="text-align: center; margin-top: 20px; color: #888;">Watch WiFiVision detect human presence in real-time using only WiFi signals</p>
+
+            <!-- Main Files -->
+            <div style="max-width: 900px; margin: 40px auto 0; background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); border-radius: 12px; padding: 24px; border: 1px solid #333;">
+                <h3 style="color: #fff; margin-bottom: 20px; font-size: 1.1rem;">📄 Main Files</h3>
+                <div style="display: grid; gap: 12px;">
+                    <div style="display: flex; align-items: center; gap: 16px; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <code style="color: #e50914; font-weight: 600; min-width: 160px;">simple_detect.py</code>
+                        <span style="color: #888;">CLI-based presence detection - minimal setup</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 16px; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <code style="color: #e50914; font-weight: 600; min-width: 160px;">visual_detect.py</code>
+                        <span style="color: #888;">4-panel GUI dashboard with real-time visualization</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 16px; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <code style="color: #e50914; font-weight: 600; min-width: 160px;">requirements.txt</code>
+                        <span style="color: #888;">Python dependencies (NumPy, Matplotlib, PySerial)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 16px; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <code style="color: #e50914; font-weight: 600; min-width: 160px;">README.md</code>
+                        <span style="color: #888;">Full documentation with setup guides</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
