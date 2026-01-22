@@ -1,0 +1,11 @@
+# Video Placeholder Directory
+
+This directory is for persona-specific homepage videos.
+Upload your videos to Netlify with these names:
+- recruiter.mp4 - Professional/office theme
+- developer.mp4 - Coding/tech theme
+- stalker.mp4 - Data/cyber theme
+- adventurer.mp4 - Travel/space theme
+
+The browse.html will look for these local files first,
+then fall back to external Mixkit URLs if not found.
