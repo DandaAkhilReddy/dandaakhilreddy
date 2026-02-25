@@ -22,6 +22,57 @@
             overflow: hidden;
         }
 
+        /* Click-to-Enter Overlay */
+        .enter-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, #1a0a0a 0%, #000 70%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            cursor: pointer;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .enter-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .enter-overlay .enter-brand {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4.5rem;
+            color: #E50914;
+            letter-spacing: 10px;
+            text-shadow: 0 0 60px rgba(229, 9, 20, 0.4), 0 0 120px rgba(229, 9, 20, 0.2);
+            margin-bottom: 40px;
+            animation: brandPulse 3s ease-in-out infinite;
+        }
+
+        .enter-overlay .enter-prompt {
+            font-size: 1.1rem;
+            color: #808080;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            animation: promptFade 2s ease-in-out infinite;
+        }
+
+        @keyframes brandPulse {
+            0%, 100% { text-shadow: 0 0 60px rgba(229, 9, 20, 0.4), 0 0 120px rgba(229, 9, 20, 0.2); }
+            50% { text-shadow: 0 0 80px rgba(229, 9, 20, 0.6), 0 0 160px rgba(229, 9, 20, 0.3); }
+        }
+
+        @keyframes promptFade {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
         /* Netflix Intro Animation */
         .netflix-intro {
             position: fixed;
@@ -34,6 +85,14 @@
             align-items: center;
             justify-content: center;
             z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .netflix-intro.playing {
+            opacity: 1;
+            visibility: visible;
             animation: fadeOutIntro 0.5s ease 3.5s forwards;
         }
 
@@ -42,8 +101,12 @@
             font-size: 4rem;
             color: #E50914;
             letter-spacing: 8px;
+            opacity: 0;
+            transform: scale(0.5);
+        }
+
+        .netflix-intro.playing .logo-text {
             animation: logoZoom 3s ease forwards;
-            text-shadow: 0 0 40px rgba(229, 9, 20, 0.5);
         }
 
         @keyframes logoZoom {
@@ -57,6 +120,45 @@
             to { opacity: 0; visibility: hidden; pointer-events: none; }
         }
 
+        /* Particle Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            animation: floatUp linear infinite;
+        }
+
+        .particle:nth-child(1) { width: 4px; height: 4px; background: #E50914; left: 10%; animation-duration: 12s; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 3px; height: 3px; background: rgba(255,255,255,0.4); left: 20%; animation-duration: 15s; animation-delay: 2s; }
+        .particle:nth-child(3) { width: 5px; height: 5px; background: rgba(229, 9, 20, 0.6); left: 35%; animation-duration: 10s; animation-delay: 4s; }
+        .particle:nth-child(4) { width: 3px; height: 3px; background: rgba(255,255,255,0.3); left: 50%; animation-duration: 14s; animation-delay: 1s; }
+        .particle:nth-child(5) { width: 4px; height: 4px; background: rgba(229, 9, 20, 0.5); left: 65%; animation-duration: 11s; animation-delay: 3s; }
+        .particle:nth-child(6) { width: 3px; height: 3px; background: rgba(255,255,255,0.35); left: 75%; animation-duration: 13s; animation-delay: 5s; }
+        .particle:nth-child(7) { width: 5px; height: 5px; background: #E50914; left: 85%; animation-duration: 16s; animation-delay: 0.5s; }
+        .particle:nth-child(8) { width: 3px; height: 3px; background: rgba(255,255,255,0.25); left: 45%; animation-duration: 12s; animation-delay: 6s; }
+        .particle:nth-child(9) { width: 4px; height: 4px; background: rgba(229, 9, 20, 0.4); left: 90%; animation-duration: 14s; animation-delay: 2.5s; }
+        .particle:nth-child(10) { width: 3px; height: 3px; background: rgba(255,255,255,0.3); left: 5%; animation-duration: 11s; animation-delay: 7s; }
+        .particle:nth-child(11) { width: 4px; height: 4px; background: rgba(229, 9, 20, 0.3); left: 55%; animation-duration: 13s; animation-delay: 1.5s; }
+        .particle:nth-child(12) { width: 3px; height: 3px; background: rgba(255,255,255,0.2); left: 30%; animation-duration: 15s; animation-delay: 4.5s; }
+
+        @keyframes floatUp {
+            0% { bottom: -10px; opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { bottom: 110%; opacity: 0; }
+        }
+
         /* Profile Selection Page */
         .profile-selection {
             min-height: 100vh;
@@ -66,11 +168,17 @@
             justify-content: center;
             padding: 40px 20px;
             opacity: 0;
-            animation: fadeIn 0.5s ease 3.5s forwards;
+            visibility: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-selection.visible {
+            animation: fadeIn 0.8s ease forwards;
         }
 
         @keyframes fadeIn {
-            to { opacity: 1; }
+            to { opacity: 1; visibility: visible; }
         }
 
         .profile-title {
@@ -150,6 +258,16 @@
             .netflix-intro .logo-text {
                 font-size: 2rem;
             }
+
+            .enter-overlay .enter-brand {
+                font-size: 2.5rem;
+                letter-spacing: 6px;
+            }
+
+            .enter-overlay .enter-prompt {
+                font-size: 0.85rem;
+                letter-spacing: 3px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -168,13 +286,35 @@
     </style>
 </head>
 <body>
+    <!-- Click-to-Enter Overlay -->
+    <div class="enter-overlay" id="enter-overlay">
+        <div class="enter-brand">AKHIL REDDY DANDA</div>
+        <div class="enter-prompt">Click to Enter</div>
+    </div>
+
     <!-- Netflix Intro -->
-    <div class="netflix-intro">
+    <div class="netflix-intro" id="netflix-intro">
         <div class="logo-text">AKHIL REDDY DANDA</div>
     </div>
 
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
     <!-- Profile Selection -->
-    <div class="profile-selection">
+    <div class="profile-selection" id="profile-selection">
         <h1 class="profile-title">Who's Watching?</h1>
         <div class="profiles-container">
             <a href="browse.html?profile=recruiter" class="profile-card">
@@ -213,16 +353,25 @@
     </audio>
 
     <script>
-        // Play Netflix sound on page load
-        window.addEventListener('load', () => {
-            const sound = document.getElementById('netflix-sound');
+        const overlay = document.getElementById('enter-overlay');
+        const intro = document.getElementById('netflix-intro');
+        const profileSelection = document.getElementById('profile-selection');
+        const sound = document.getElementById('netflix-sound');
+
+        overlay.addEventListener('click', () => {
+            // Hide the overlay
+            overlay.classList.add('hidden');
+
+            // Play sound (guaranteed to work — user gesture)
+            sound.play().catch(() => {});
+
+            // Start Netflix intro animation
+            intro.classList.add('playing');
+
+            // After intro finishes (3.5s animation + 0.5s fade), show profiles
             setTimeout(() => {
-                sound.play().catch(() => {
-                    document.addEventListener('click', () => {
-                        sound.play().catch(() => {});
-                    }, { once: true });
-                });
-            }, 500);
+                profileSelection.classList.add('visible');
+            }, 3500);
         });
 
         // Profile click animation
