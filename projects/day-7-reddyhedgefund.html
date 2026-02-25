@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 7: AI Hedge Fund | 18 AI Agents Analyzing Stocks</title>
+    <link rel="stylesheet" href="../netflix-styles.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../browse.html" class="nav-logo">AKHIL DANDA</a>
+            <ul class="nav-menu">
+                <li><a href="../browse.html#home">Home</a></li>
+                <li><a href="../browse.html#experience">Professional</a></li>
+                <li><a href="../browse.html#skills">Skills</a></li>
+                <li><a href="../browse.html#daily-shipping">Projects</a></li>
+                <li><a href="../about.html">About Me</a></li>
+                <li><a href="../browse.html#contact">Hire Me</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="../browse.html#daily-shipping" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Projects
+            </a>
+            <div class="project-hero-content">
+                <div class="project-badge-large">Project 7 - Feb 25, 2026</div>
+                <h1 class="project-title">AI Hedge Fund</h1>
+                <p class="project-tagline">18 Legendary Investor AI Agents Analyzing Stocks with Fundamentals, Technicals, Sentiment & Valuation</p>
+                <p class="project-description">An AI-powered hedge fund simulation where 18 specialized agents — modeled after Warren Buffett, Charlie Munger, Aswath Damodaran, Cathie Wood, Rakesh Jhunjhunwala, and more — collaboratively analyze stocks using fundamental analysis, technical indicators, sentiment scoring, and valuation models. Built with Python and LangGraph for multi-agent orchestration. Educational purposes only.</p>
+                <div class="project-links">
+                    <a href="https://github.com/DandaAkhilReddy/ReddyHedgefund" target="_blank" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="project-tech-section">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #3776ab 0%, #ffd43b 100%);">Py</div>
+                    <span>Python</span>
+                    <p>Core language</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);">LG</div>
+                    <span>LangGraph</span>
+                    <p>Multi-agent orchestration</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #10a37f 0%, #1a7f64 100%);">GPT</div>
+                    <span>OpenAI GPT-4</span>
+                    <p>Agent reasoning</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">FD</div>
+                    <span>Financial Datasets</span>
+                    <p>Market data API</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="project-content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-block">
+                    <h2 class="section-title">The Problem</h2>
+                    <p>Traditional stock analysis has significant limitations:</p>
+                    <ul class="feature-list problem-list">
+                        <li>Manual analysis is slow — hours per stock, per framework</li>
+                        <li>Individual bias dominates decision-making</li>
+                        <li>Hard to apply multiple investing philosophies simultaneously</li>
+                        <li>Fundamentals, technicals, and sentiment analyzed in silos</li>
+                        <li>No systematic way to aggregate diverse expert opinions</li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <h2 class="section-title">The Solution</h2>
+                    <p>AI agents embodying legendary investors, working as a team:</p>
+                    <ul class="feature-list solution-list">
+                        <li>18 specialized agents with distinct investing philosophies</li>
+                        <li>Parallel analysis across fundamentals, technicals, sentiment, valuation</li>
+                        <li>Risk manager aggregates signals and enforces position limits</li>
+                        <li>Portfolio manager generates final buy/sell/hold decisions</li>
+                        <li>LangGraph orchestrates the entire multi-agent workflow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="project-features-section">
+        <div class="container">
+            <h2 class="section-title">Core Capabilities</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Legendary Investors</h3>
+                    <p>12 investor agents modeled after Buffett, Munger, Damodaran, Cathie Wood, Rakesh Jhunjhunwala, Soros, and more — each with a unique investing philosophy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Valuation Models</h3>
+                    <p>DCF analysis, owner earnings, intrinsic value calculations, and multi-framework valuation — applied automatically to every stock analyzed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Sentiment Analysis</h3>
+                    <p>Analyzes market sentiment from news, insider trading patterns, and social signals to gauge market psychology around each stock.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>Technical Analysis</h3>
+                    <p>Moving averages, RSI, MACD, Bollinger Bands, and volume analysis — computed programmatically and interpreted by specialist agents.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Risk Management</h3>
+                    <p>Aggregates all agent signals, enforces position sizing limits, calculates portfolio-level risk metrics, and prevents overconcentration.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8l-4 4-4-4"/><path d="M12 16V8"/></svg>
+                    </div>
+                    <h3>Portfolio Optimization</h3>
+                    <p>Final portfolio manager synthesizes all analysis into actionable trading signals — buy, sell, or hold with conviction scores and position sizes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="project-architecture-section">
+        <div class="container">
+            <h2 class="section-title">Multi-Agent Architecture</h2>
+            <div class="arch-description" style="max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #b3b3b3; margin-bottom: 20px;">
+                    Data flows through a LangGraph-orchestrated pipeline where <strong style="color: #fff;">each agent contributes specialized analysis</strong> before the risk manager and portfolio manager make final decisions.
+                </p>
+                <div class="architecture-diagram">
+                    <div class="arch-flow" style="gap: 16px; flex-wrap: wrap; justify-content: center;">
+                        <div class="arch-box" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); min-width: 160px;">
+                            <span style="font-size: 1rem; font-weight: 600;">Market Data</span>
+                            <span style="font-size: 0.8rem;">Financial Datasets API</span>
+                        </div>
+                        <div class="arch-box" style="background: linear-gradient(135deg, #22c55e 0%, #15803d 100%); min-width: 160px;">
+                            <span style="font-size: 1rem; font-weight: 600;">12 Investor Agents</span>
+                            <span style="font-size: 0.8rem;">Buffett, Munger, etc.</span>
+                        </div>
+                        <div class="arch-box" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); min-width: 160px;">
+                            <span style="font-size: 1rem; font-weight: 600;">4 Analyst Agents</span>
+                            <span style="font-size: 0.8rem;">Fundamentals / Tech / Sentiment / Val</span>
+                        </div>
+                        <div class="arch-box" style="background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%); min-width: 160px;">
+                            <span style="font-size: 1rem; font-weight: 600;">Risk Manager</span>
+                            <span style="font-size: 0.8rem;">Position limits & risk</span>
+                        </div>
+                        <div class="arch-box" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); min-width: 160px;">
+                            <span style="font-size: 1rem; font-weight: 600;">Portfolio Manager</span>
+                            <span style="font-size: 0.8rem;">Trading signals</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent Roster -->
+    <section class="project-features-section" style="background: #0a0a0a;">
+        <div class="container">
+            <h2 class="section-title">The 18 AI Agents</h2>
+            <p style="text-align: center; color: #b3b3b3; margin-bottom: 40px; font-size: 1.05rem;">Each agent embodies a distinct investing philosophy and analytical framework</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; max-width: 1000px; margin: 0 auto;">
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #22c55e;">
+                    <strong style="color: #fff;">Warren Buffett</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Value investing — moats, owner earnings, margin of safety</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #3b82f6;">
+                    <strong style="color: #fff;">Charlie Munger</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Mental models, quality over cheapness, inversion thinking</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #f59e0b;">
+                    <strong style="color: #fff;">Aswath Damodaran</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">DCF valuation, cost of capital, narrative-driven pricing</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #ec4899;">
+                    <strong style="color: #fff;">Cathie Wood</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Disruptive innovation, exponential growth, 5-year horizons</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #ef4444;">
+                    <strong style="color: #fff;">Rakesh Jhunjhunwala</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">India-focused growth, contrarian bets, long-term conviction</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #8b5cf6;">
+                    <strong style="color: #fff;">George Soros</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Reflexivity theory, macro trends, market inefficiencies</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #06b6d4;">
+                    <strong style="color: #fff;">Peter Lynch</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Growth at a reasonable price, invest in what you know</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #14b8a6;">
+                    <strong style="color: #fff;">Benjamin Graham</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Deep value, net-net investing, quantitative screens</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #f97316;">
+                    <strong style="color: #fff;">Phil Fisher</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Scuttlebutt research, quality growth, long holding periods</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #a855f7;">
+                    <strong style="color: #fff;">Stanley Druckenmiller</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Macro momentum, concentrated bets, risk/reward asymmetry</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #eab308;">
+                    <strong style="color: #fff;">Ray Dalio</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">All-weather portfolio, radical transparency, macro cycles</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #10b981;">
+                    <strong style="color: #fff;">Jim Simons</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Quantitative signals, statistical arbitrage, pattern recognition</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #64748b;">
+                    <strong style="color: #fff;">Fundamentals Analyst</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Financial statements, ratios, profitability, growth metrics</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #6366f1;">
+                    <strong style="color: #fff;">Technical Analyst</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Price action, moving averages, RSI, MACD, Bollinger Bands</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #f43f5e;">
+                    <strong style="color: #fff;">Sentiment Analyst</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">News sentiment, insider trading signals, market psychology</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #0ea5e9;">
+                    <strong style="color: #fff;">Valuation Analyst</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">DCF models, comparable analysis, intrinsic value estimation</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #ef4444;">
+                    <strong style="color: #fff;">Risk Manager</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Position sizing, correlation risk, portfolio-level constraints</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; border-left: 3px solid #22c55e;">
+                    <strong style="color: #fff;">Portfolio Manager</strong>
+                    <p style="color: #999; font-size: 0.9rem; margin: 4px 0 0;">Final synthesis — buy/sell/hold signals with conviction scores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Guide -->
+    <section class="project-install-section">
+        <div class="container">
+            <h2 class="section-title">Setup Guide</h2>
+            <div class="install-steps">
+                <div class="install-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Clone the Repository</h3>
+                        <p>Get the source code from GitHub:</p>
+                        <div class="code-block">
+                            <code>git clone https://github.com/DandaAkhilReddy/ReddyHedgefund.git && cd ReddyHedgefund</code>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Set Up Environment</h3>
+                        <p>Install dependencies and configure API keys:</p>
+                        <div class="code-block">
+                            <code>pip install -r requirements.txt && cp .env.example .env</code>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            </button>
+                        </div>
+                        <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-gray);">Add your OPENAI_API_KEY and FINANCIAL_DATASETS_API_KEY to .env</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Run the Hedge Fund</h3>
+                        <p>Launch the multi-agent analysis pipeline:</p>
+                        <div class="code-block">
+                            <code>python src/main.py --ticker AAPL --show-reasoning</code>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="project-cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Explore AI-Powered Investing?</h2>
+                <p>See how 18 legendary investor agents collaborate to analyze stocks. Clone the repo and run your first analysis.</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/DandaAkhilReddy/ReddyHedgefund" target="_blank" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Akhil Reddy Danda. All rights reserved.</p>
+            <p class="footer-note">Project 7 - Shipping LLM Projects Daily</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Copy code function
+        function copyCode(btn) {
+            const codeBlock = btn.parentElement;
+            const code = codeBlock.querySelector('code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
+                setTimeout(() => {
+                    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+                }, 2000);
+            });
+        }
+
+        // Animate on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.feature-card, .install-step, .tech-item, .content-block, .arch-box').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
