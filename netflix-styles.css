@@ -576,6 +576,23 @@ body {
     transform: translateY(-5px);
 }
 
+.experience-card.microsoft {
+    border-left: 4px solid #0078D4;
+}
+
+.experience-card.microsoft .exp-company {
+    color: #0078D4;
+}
+
+.experience-card.microsoft .exp-highlights li::before {
+    background: #0078D4;
+}
+
+.experience-card.microsoft .exp-tech span {
+    background: rgba(0, 120, 212, 0.2);
+    color: #0078D4;
+}
+
 .experience-card.amazon {
     border-left-color: #ff9900;
 }
@@ -1190,6 +1207,67 @@ body {
     .daily-card {
         max-width: 100%;
     }
+}
+
+/* Microsoft Prep Grid */
+.msft-prep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.msft-prep-card {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);
+    border: 1px solid rgba(0, 120, 212, 0.25);
+    border-radius: 12px;
+    padding: 24px;
+    transition: var(--transition);
+}
+
+.msft-prep-card:hover {
+    border-color: #0078D4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 120, 212, 0.15);
+}
+
+.msft-prep-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.msft-prep-tags span {
+    background: rgba(0, 120, 212, 0.15);
+    color: #60a5fa;
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+}
+
+/* Distributed Systems Tag Pills */
+.ds-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+.ds-tag {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e2e8f0;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    border: 1px solid #333;
+    transition: var(--transition);
+}
+
+.ds-tag:hover {
+    border-color: #E50914;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 /* ================================

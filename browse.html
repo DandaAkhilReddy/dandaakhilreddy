@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akhil Reddy Danda | Senior Software Engineer | 4+ Years Experience</title>
+    <title>Akhil Reddy Danda | Software Engineer II @ Microsoft | Distributed Systems</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -42,6 +42,69 @@
         @media (max-width: 600px) {
             .bg-video-container { display: none; }
             .bg-video-overlay { background: #141414; }
+        }
+
+        /* Microsoft experience card */
+        .experience-card.microsoft {
+            border-left: 3px solid #0078D4;
+        }
+        .experience-card.microsoft .exp-company {
+            color: #0078D4;
+        }
+
+        /* Transition Learning grid */
+        .msft-prep-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .msft-prep-card {
+            background: rgba(0, 120, 212, 0.07);
+            border: 1px solid rgba(0, 120, 212, 0.25);
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .msft-prep-card:hover {
+            border-color: rgba(0, 120, 212, 0.6);
+            transform: translateY(-2px);
+        }
+        .msft-prep-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .msft-prep-tags span {
+            background: rgba(0, 120, 212, 0.15);
+            color: #60a5fa;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Distributed Systems tags */
+        .ds-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            justify-content: center;
+        }
+        .ds-tag {
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #a5b4fc;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .ds-tag:hover {
+            background: rgba(99, 102, 241, 0.25);
+            border-color: rgba(99, 102, 241, 0.6);
         }
     </style>
 </head>
@@ -83,12 +146,11 @@
         </div>
         <div class="hero-content">
             <h1 class="hero-title">Akhil Reddy Danda</h1>
-            <p class="hero-subtitle">Senior Software Engineer</p>
+            <p class="hero-subtitle">Software Engineer II @ Microsoft</p>
             <p class="hero-description">
-                Dynamic and results-driven Senior Software Engineer with <strong>4+ years</strong> in full-stack development across high-impact, large-scale applications.
-                I bring expertise in Python, AWS, Machine Learning, GenAI/LLMs, and Cloud Architecture. Previously at <strong>Amazon</strong>, I built computer vision models
-                processing 500K+ daily images and architected microservices handling 100K+ requests/second. Currently at <strong>HHA Medicine</strong>, building
-                RAG systems and GPT-4 powered clinical decision support serving 15+ hospitals.
+                Building globally distributed backend services at <strong>Microsoft</strong> on Azure.
+                Self-taught C#/.NET and distributed systems during my transition. Previously at <strong>Amazon</strong> and <strong>HHA Medicine</strong>.
+                MS Computer Science from <strong>Texas A&M University</strong>.
             </p>
             <div class="hero-buttons">
                 <a href="assets/resume.pdf" target="_blank" class="btn btn-play">
@@ -101,8 +163,10 @@
                 </a>
             </div>
             <div class="hero-tags">
+                <span class="tag">Microsoft</span>
                 <span class="tag">Ex-Amazon</span>
-                <span class="tag">ML/AI Expert</span>
+                <span class="tag">Distributed Systems</span>
+                <span class="tag">Azure</span>
                 <span class="tag">MS CS - Texas A&M</span>
             </div>
         </div>
@@ -479,10 +543,28 @@
         <div class="container">
             <h2 class="row-title">Professional Experience</h2>
             <div class="experience-grid">
+                <div class="experience-card microsoft">
+                    <div class="exp-header">
+                        <div class="exp-company">Microsoft</div>
+                        <div class="exp-date">Apr 2026 - Present</div>
+                    </div>
+                    <h3 class="exp-title">Software Engineer II</h3>
+                    <p class="exp-location">Redmond, WA</p>
+                    <ul class="exp-highlights">
+                        <li>Building <strong>global lookup service</strong> — distributed backend routing on Azure</li>
+                        <li><strong>Azure Front Door / Traffic Manager</strong> for global HTTP routing</li>
+                        <li>C#/.NET microservices with <strong>Cosmos DB</strong> and <strong>Service Bus</strong></li>
+                        <li>Horizontal scaling, automatic failover, <strong>circuit breaker</strong> patterns</li>
+                    </ul>
+                    <div class="exp-tech">
+                        <span>C#</span><span>.NET</span><span>Azure</span><span>Cosmos DB</span><span>Service Bus</span>
+                    </div>
+                </div>
+
                 <div class="experience-card">
                     <div class="exp-header">
                         <div class="exp-company">HHA Medicine</div>
-                        <div class="exp-date">Jan 2023 - Present</div>
+                        <div class="exp-date">Jan 2023 - Mar 2026</div>
                     </div>
                     <h3 class="exp-title">Senior Software Engineer</h3>
                     <p class="exp-location">Corpus Christi, TX</p>
@@ -522,6 +604,48 @@
         </div>
     </section>
 
+    <!-- Transition Learning — Preparing for Microsoft -->
+    <section id="microsoft-prep" class="content-row" style="background: linear-gradient(135deg, #0a0a1a 0%, #0d1b2a 100%);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 class="row-title" style="margin-bottom: 8px;">Transition Learning — Preparing for Microsoft</h2>
+                <p style="color: #0078D4; font-size: 0.95rem; margin: 0;">Self-studied during the transition from HHA Medicine to Microsoft (Jan — Mar 2026)</p>
+            </div>
+            <div class="msft-prep-grid">
+                <div class="msft-prep-card">
+                    <h3 style="color: #0078D4; margin-bottom: 8px; font-size: 1.1rem;">C# / .NET Core</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">Built REST APIs, practiced async/await patterns, dependency injection, and Entity Framework Core.</p>
+                    <div class="msft-prep-tags"><span>C#</span><span>.NET 8</span><span>ASP.NET Core</span><span>EF Core</span></div>
+                </div>
+                <div class="msft-prep-card">
+                    <h3 style="color: #0078D4; margin-bottom: 8px; font-size: 1.1rem;">Distributed Systems</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">Studied CAP theorem, consensus algorithms, distributed transactions, and event-driven architecture.</p>
+                    <div class="msft-prep-tags"><span>CAP Theorem</span><span>Paxos/Raft</span><span>Event Sourcing</span><span>CQRS</span></div>
+                </div>
+                <div class="msft-prep-card">
+                    <h3 style="color: #0078D4; margin-bottom: 8px; font-size: 1.1rem;">Operating Systems</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">Reviewed process scheduling, memory management, virtual memory, file systems, and concurrency primitives.</p>
+                    <div class="msft-prep-tags"><span>Process Scheduling</span><span>Virtual Memory</span><span>Concurrency</span><span>I/O Systems</span></div>
+                </div>
+                <div class="msft-prep-card">
+                    <h3 style="color: #0078D4; margin-bottom: 8px; font-size: 1.1rem;">Azure Architecture</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">Learned Azure Front Door, Traffic Manager, Cosmos DB, Service Bus, and App Service for global-scale deployments.</p>
+                    <div class="msft-prep-tags"><span>Front Door</span><span>Cosmos DB</span><span>Service Bus</span><span>App Service</span></div>
+                </div>
+                <div class="msft-prep-card">
+                    <h3 style="color: #0078D4; margin-bottom: 8px; font-size: 1.1rem;">System Design</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">Practiced designing URL shorteners, chat systems, notification services, and rate limiters at scale.</p>
+                    <div class="msft-prep-tags"><span>Load Balancing</span><span>Sharding</span><span>Caching</span><span>CDN</span></div>
+                </div>
+                <div class="msft-prep-card">
+                    <h3 style="color: #0078D4; margin-bottom: 8px; font-size: 1.1rem;">Databases</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">Deep-dived into indexing strategies, replication, partitioning, and the trade-offs between SQL and NoSQL.</p>
+                    <div class="msft-prep-tags"><span>Indexing</span><span>Replication</span><span>Partitioning</span><span>SQL vs NoSQL</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
         <div class="container">
@@ -532,17 +656,17 @@
 
             <!-- Featured Skills Banner -->
             <div class="featured-skills">
+                <div class="featured-skill highlight">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
+                    <span>C# / .NET</span>
+                </div>
+                <div class="featured-skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                    <span>Azure</span>
+                </div>
                 <div class="featured-skill">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
                     <span>Python</span>
-                </div>
-                <div class="featured-skill">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
-                    <span>AWS</span>
-                </div>
-                <div class="featured-skill highlight">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
-                    <span>TensorFlow</span>
                 </div>
                 <div class="featured-skill">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
@@ -555,14 +679,28 @@
             </div>
 
             <h3 class="row-title section-title-centered">
-                <span class="title-underline">Languages & Backend</span>
+                <span class="title-underline">Languages & Frameworks</span>
             </h3>
             <div class="skills-grid-new">
+                <div class="skill-card-new glow">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="skill-logo">
+                    <div class="skill-info">
+                        <span class="skill-name">C# / .NET</span>
+                        <div class="skill-bar"><div class="skill-progress azure" style="width: 88%"></div></div>
+                    </div>
+                </div>
                 <div class="skill-card-new">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo">
                     <div class="skill-info">
                         <span class="skill-name">Python</span>
                         <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                    </div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="skill-logo">
+                    <div class="skill-info">
+                        <span class="skill-name">TypeScript</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
                     </div>
                 </div>
                 <div class="skill-card-new">
@@ -580,20 +718,6 @@
                     </div>
                 </div>
                 <div class="skill-card-new">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">Node.js</span>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
-                    </div>
-                </div>
-                <div class="skill-card-new">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">SQL/PostgreSQL</span>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
-                    </div>
-                </div>
-                <div class="skill-card-new">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" class="skill-logo">
                     <div class="skill-info">
                         <span class="skill-name">FastAPI</span>
@@ -603,21 +727,41 @@
             </div>
 
             <h3 class="row-title section-title-centered">
+                <span class="title-underline">Distributed Systems & Architecture</span>
+            </h3>
+            <div class="ds-tags-container">
+                <span class="ds-tag">System Design</span>
+                <span class="ds-tag">CAP Theorem</span>
+                <span class="ds-tag">Microservices</span>
+                <span class="ds-tag">Load Balancing</span>
+                <span class="ds-tag">Service Mesh</span>
+                <span class="ds-tag">Event-Driven Architecture</span>
+                <span class="ds-tag">CQRS</span>
+                <span class="ds-tag">Circuit Breaker</span>
+                <span class="ds-tag">Consensus Algorithms</span>
+                <span class="ds-tag">Horizontal Scaling</span>
+                <span class="ds-tag">Sharding</span>
+                <span class="ds-tag">Replication</span>
+                <span class="ds-tag">gRPC</span>
+                <span class="ds-tag">Message Queues</span>
+            </div>
+
+            <h3 class="row-title section-title-centered">
                 <span class="title-underline">Cloud & DevOps</span>
             </h3>
             <div class="skills-grid-new">
-                <div class="skill-card-new">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">AWS</span>
-                        <div class="skill-bar"><div class="skill-progress aws" style="width: 95%"></div></div>
-                    </div>
-                </div>
                 <div class="skill-card-new">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="skill-logo">
                     <div class="skill-info">
                         <span class="skill-name">Azure</span>
                         <div class="skill-bar"><div class="skill-progress azure" style="width: 88%"></div></div>
+                    </div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="skill-logo">
+                    <div class="skill-info">
+                        <span class="skill-name">AWS</span>
+                        <div class="skill-bar"><div class="skill-progress aws" style="width: 95%"></div></div>
                     </div>
                 </div>
                 <div class="skill-card-new">
@@ -1030,7 +1174,7 @@
             <div class="contact-card">
                 <div class="contact-icon">📬</div>
                 <h2>Let's Connect!</h2>
-                <p>I'm open to discussing new opportunities, innovative projects, or potential collaborations.</p>
+                <p>Currently building distributed systems at Microsoft. Open to collaborations, speaking, and interesting side projects.</p>
                 <div class="contact-links">
                     <a href="mailto:akhilreddydanda1@gmail.com" class="contact-link">
                         <span class="link-icon">📧</span>
@@ -1069,8 +1213,8 @@
                 fallbackVideo: 'https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4',
                 image: 'https://i.imgur.com/8PjrG8O.png'
             },
-            stalker: {
-                localVideo: 'assets/videos/stalker.mp4',
+            visitor: {
+                localVideo: 'assets/videos/visitor.mp4',
                 fallbackVideo: 'https://assets.mixkit.co/videos/preview/mixkit-data-processing-cybernetic-technology-code-42756-large.mp4',
                 image: 'https://i.imgur.com/qKG0j4H.png'
             },
