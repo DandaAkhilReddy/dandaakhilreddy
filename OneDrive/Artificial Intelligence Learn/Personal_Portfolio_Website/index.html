@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Reddy Danda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #141414;
+            color: #fff;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Netflix Intro Animation */
+        .netflix-intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeOutIntro 0.5s ease 3.5s forwards;
+        }
+
+        .netflix-intro .logo-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 8rem;
+            color: #E50914;
+            letter-spacing: 8px;
+            animation: logoZoom 3s ease forwards;
+            text-shadow: 0 0 40px rgba(229, 9, 20, 0.5);
+        }
+
+        @keyframes logoZoom {
+            0% { transform: scale(0.5); opacity: 0; }
+            20% { transform: scale(1); opacity: 1; }
+            80% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        @keyframes fadeOutIntro {
+            to { opacity: 0; visibility: hidden; pointer-events: none; }
+        }
+
+        /* Profile Selection Page */
+        .profile-selection {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease 3.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .profile-title {
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 60px;
+            color: #fff;
+        }
+
+        .profiles-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .profile-card {
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .profile-card:hover .profile-avatar {
+            transform: scale(1.1);
+            border-color: #fff;
+        }
+
+        .profile-card:hover .profile-name {
+            color: #fff;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #808080;
+            transition: color 0.3s ease;
+        }
+
+        /* Audio */
+        #netflix-sound {
+            display: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .profile-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .profiles-container {
+                gap: 20px;
+            }
+
+            .profile-avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            .netflix-intro .logo-text {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profiles-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .profile-avatar {
+                width: 120px;
+                height: 120px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Netflix Intro -->
+    <div class="netflix-intro">
+        <div class="logo-text">ARD</div>
+    </div>
+
+    <!-- Profile Selection -->
+    <div class="profile-selection">
+        <h1 class="profile-title">Who's Watching?</h1>
+        <div class="profiles-container">
+            <a href="browse.html?profile=recruiter" class="profile-card">
+                <div class="profile-avatar">
+                    <img src="https://i.imgur.com/YQK3Qby.png" alt="Recruiter" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#00d4ff,#0099cc);display:flex;align-items:center;justify-content:center;font-size:3rem;\'>&#128188;</div>';">
+                </div>
+                <p class="profile-name">Recruiter</p>
+            </a>
+
+            <a href="browse.html?profile=developer" class="profile-card">
+                <div class="profile-avatar">
+                    <img src="https://i.imgur.com/8PjrG8O.png" alt="Developer" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#666,#444);display:flex;align-items:center;justify-content:center;font-size:3rem;\'>&#128187;</div>';">
+                </div>
+                <p class="profile-name">Developer</p>
+            </a>
+
+            <a href="browse.html?profile=visitor" class="profile-card">
+                <div class="profile-avatar">
+                    <img src="https://i.imgur.com/qKG0j4H.png" alt="Visitor" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#ff3333,#cc0000);display:flex;align-items:center;justify-content:center;font-size:3rem;\'>&#128065;</div>';">
+                </div>
+                <p class="profile-name">Visitor</p>
+            </a>
+
+            <a href="browse.html?profile=adventurer" class="profile-card">
+                <div class="profile-avatar">
+                    <img src="https://i.imgur.com/vB5OQKW.png" alt="Adventurer" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#ffaa00,#ff8800);display:flex;align-items:center;justify-content:center;font-size:3rem;\'>&#127757;</div>';">
+                </div>
+                <p class="profile-name">Adventurer</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Netflix Sound -->
+    <audio id="netflix-sound" preload="auto">
+        <source src="assets/netflix-sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Play Netflix sound on page load
+        window.addEventListener('load', () => {
+            const sound = document.getElementById('netflix-sound');
+            setTimeout(() => {
+                sound.play().catch(() => {
+                    document.addEventListener('click', () => {
+                        sound.play().catch(() => {});
+                    }, { once: true });
+                });
+            }, 500);
+        });
+
+        // Profile click animation
+        document.querySelectorAll('.profile-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = card.getAttribute('href');
+                card.querySelector('.profile-avatar').style.transform = 'scale(1.2)';
+                card.querySelector('.profile-avatar').style.borderColor = '#fff';
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
