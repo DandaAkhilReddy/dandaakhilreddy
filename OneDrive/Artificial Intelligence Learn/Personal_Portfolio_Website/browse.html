@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Reddy Danda | Software Engineer II @ Microsoft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="netflix-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-logo">AKHIL REDDY DANDA</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#experience">Professional</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#daily-shipping">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="#contact">Hire Me</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <a href="index.html" class="profile-icon" id="current-profile">
+                <img src="https://i.imgur.com/YQK3Qby.png" alt="Profile" class="nav-profile-img" id="nav-profile-img">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Dynamic Background -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <!-- Recruiter: The Office style / Professional -->
+            <video class="hero-video" id="hero-video-recruiter" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-typing-on-a-laptop-in-an-office-4833-large.mp4" type="video/mp4">
+            </video>
+            <!-- Developer: Coding/Matrix style -->
+            <video class="hero-video hidden" id="hero-video-developer" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4" type="video/mp4">
+            </video>
+            <!-- Visitor: Mystery/Investigation -->
+            <video class="hero-video hidden" id="hero-video-visitor" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-data-processing-cybernetic-technology-code-42756-large.mp4" type="video/mp4">
+            </video>
+            <!-- Adventurer: Travel/Adventure -->
+            <video class="hero-video hidden" id="hero-video-adventurer" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4" type="video/mp4">
+            </video>
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Akhil Reddy Danda</h1>
+            <p class="hero-subtitle">Software Engineer II @ Microsoft</p>
+            <p class="hero-description">
+                Building globally distributed backend services at <strong>Microsoft</strong> on Azure.
+                Self-taught C#/.NET and distributed systems during my transition. Previously at <strong>Amazon</strong> and <strong>HHA Medicine</strong>.
+                MS Computer Science from <strong>Texas A&M University</strong>.
+            </p>
+            <div class="hero-buttons">
+                <a href="assets/resume.pdf" target="_blank" class="btn btn-play">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Resume
+                </a>
+                <a href="https://www.linkedin.com/in/akhil-reddy-danda-1a74b214b/" target="_blank" class="btn btn-info">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+            <div class="hero-tags">
+                <span class="tag">Microsoft</span>
+                <span class="tag">Ex-Amazon</span>
+                <span class="tag">Distributed Systems</span>
+                <span class="tag">Azure</span>
+                <span class="tag">MS CS - Texas A&M</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="content-row" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);">
+        <div class="container">
+            <h2 class="row-title" style="text-align: center; margin-bottom: 40px;">Beyond the Code</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+
+                <!-- Cricket Passion -->
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 16px; padding: 30px; border: 1px solid #333; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -20px; right: -20px; font-size: 80px; opacity: 0.1;">🏏</div>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🏏</div>
+                        <h3 style="color: #fff; margin: 0; font-size: 1.3rem;">Cricket Enthusiast</h3>
+                    </div>
+                    <p style="color: #aaa; line-height: 1.7; margin-bottom: 20px;">Cricket isn't just a sport for me - it's a passion. I play competitively and love the strategic depth of the game. From batting to fielding, every aspect excites me.</p>
+
+                    <!-- Cricket Images Gallery -->
+                    <div id="cricket-gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 15px;">
+                        <img src="assets/cricket/Century_sanantonioleague.jpeg" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px;" alt="Century - San Antonio League">
+                        <img src="assets/cricket/Cricclubs_163.jpeg" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px;" alt="Cricket Stats">
+                    </div>
+                </div>
+
+                <!-- AI/ML Passion -->
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 16px; padding: 30px; border: 1px solid #333; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -20px; right: -20px; font-size: 80px; opacity: 0.1;">🤖</div>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🧠</div>
+                        <h3 style="color: #fff; margin: 0; font-size: 1.3rem;">LLM Builder & Researcher</h3>
+                    </div>
+                    <p style="color: #aaa; line-height: 1.7; margin-bottom: 15px;">I spend my free time building, fine-tuning, and testing Large Language Models. From prompt engineering to RLHF, I love pushing the boundaries of what's possible with AI.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem;">Fine-tuning</span>
+                        <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem;">RAG Systems</span>
+                        <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem;">Prompt Engineering</span>
+                        <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem;">Model Testing</span>
+                    </div>
+                </div>
+
+                <!-- Quantum Computing & Research -->
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 16px; padding: 30px; border: 1px solid #333; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -20px; right: -20px; font-size: 80px; opacity: 0.1;">⚛️</div>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">⚛️</div>
+                        <h3 style="color: #fff; margin: 0; font-size: 1.3rem;">Quantum Computing & Research</h3>
+                    </div>
+                    <p style="color: #aaa; line-height: 1.7; margin-bottom: 15px;">I stay updated on the latest in quantum computing and regularly read research papers on ML/AI advancements. Always learning, always curious about what's next.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem;">Quantum News</span>
+                        <span style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem;">Research Papers</span>
+                        <span style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem;">ArXiv Daily</span>
+                        <span style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem;">Tech Updates</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Top Picks Section -->
+    <section id="projects" class="content-row">
+        <div class="container">
+            <h2 class="row-title">Today's Top Picks for <span id="profile-name">recruiter</span></h2>
+            <div class="netflix-row">
+                <div class="netflix-card" onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=225&fit=crop" alt="Skills">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Skills</span>
+                    </div>
+                </div>
+                <div class="netflix-card" onclick="document.getElementById('experience').scrollIntoView({behavior: 'smooth'})">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=225&fit=crop" alt="Experience">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Experience</span>
+                    </div>
+                </div>
+                <div class="netflix-card" onclick="document.getElementById('certifications').scrollIntoView({behavior: 'smooth'})">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=225&fit=crop" alt="Certifications">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Certifications</span>
+                    </div>
+                </div>
+                <div class="netflix-card" onclick="window.open('https://www.linkedin.com/in/akhil-reddy-danda-1a74b214b/', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=225&fit=crop" alt="Recommendations">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Recommendations</span>
+                    </div>
+                </div>
+                <div class="netflix-card" onclick="window.open('https://github.com/DandaAkhilReddy', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=225&fit=crop" alt="GitHub">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue Watching Section -->
+    <section class="content-row">
+        <div class="container">
+            <h2 class="row-title">Continue Watching for <span class="profile-name-span">recruiter</span></h2>
+            <div class="netflix-row">
+                <div class="netflix-card" onclick="window.location.href='projects/adas-system.html'" style="cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=225&fit=crop" alt="ADAS System">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">ADAS System</span>
+                        <span class="netflix-card-badge">ML Project</span>
+                    </div>
+                    <div class="progress-indicator" style="width: 100%"></div>
+                </div>
+                <div class="netflix-card" onclick="window.location.href='projects/financial-sentiment.html'" style="cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=225&fit=crop" alt="Financial Sentiment">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Financial Sentiment</span>
+                        <span class="netflix-card-badge">NLP</span>
+                    </div>
+                    <div class="progress-indicator" style="width: 100%"></div>
+                </div>
+                <div class="netflix-card" onclick="window.location.href='projects/healthcare-rag.html'" style="cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=225&fit=crop" alt="Healthcare RAG">
+                    <div class="netflix-card-overlay">
+                        <span class="netflix-card-title">Healthcare RAG</span>
+                        <span class="netflix-card-badge">Production</span>
+                    </div>
+                    <div class="progress-indicator" style="width: 80%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2026 Journey Banner -->
+    <section id="journey" class="journey-section">
+        <div class="container">
+            <div class="journey-banner">
+                <div class="journey-icon">🚀</div>
+                <div class="journey-content">
+                    <h2>2026 Project Journey</h2>
+                    <p>Shipping one LLM project every day throughout 2026. Follow my journey!</p>
+                    <div class="journey-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 1.1%;"></div>
+                        </div>
+                        <span class="progress-text">Day 4 of 365</span>
+                    </div>
+                </div>
+                <div class="journey-stats">
+                    <div class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Projects Shipped</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">361</span>
+                        <span class="stat-label">To Go</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Shipping Section -->
+    <section id="daily-shipping" class="content-row daily-shipping-section">
+        <div class="container">
+            <h2 class="row-title">
+                <span class="shipping-icon">📦</span>
+                Shipping Daily
+                <span class="shipping-badge">LLM Projects</span>
+            </h2>
+            <div class="daily-cards-grid">
+                <!-- Project 1 Card - LLM on iOS -->
+                <div class="daily-card" onclick="window.location.href='projects/day-1-llm-ios.html'" style="cursor: pointer;">
+                    <div class="daily-card-image">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop" alt="Deploy LLM on iOS">
+                        <div class="day-badge">Project 1</div>
+                        <div class="card-gradient"></div>
+                    </div>
+                    <div class="daily-card-content">
+                        <h3>Deploy LLM on iOS</h3>
+                        <p class="card-description">Run LLMs locally on iPhone - 87 tokens/sec, completely offline, 100% privacy</p>
+                        <div class="card-stats">
+                            <span class="stat-item"><strong>87</strong> tokens/sec</span>
+                            <span class="stat-item"><strong>12ms</strong> latency</span>
+                            <span class="stat-item"><strong>0</strong> API cost</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/DandaAkhilReddy/DeployLLMonIOS" target="_blank" class="card-link github">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/posts/akhil-reddy-danda-1a74b214b_ai-machinelearning-llm-activity-7415645782185271296-zi7r" target="_blank" class="card-link linkedin">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                Post
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 Card - Claude PeePee -->
+                <div class="daily-card" onclick="window.location.href='projects/day-2-claude-peepee.html'" style="cursor: pointer;">
+                    <div class="daily-card-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop" alt="Claude PeePee">
+                        <div class="day-badge">Project 2</div>
+                        <div class="card-gradient"></div>
+                    </div>
+                    <div class="daily-card-content">
+                        <h3>Claude PeePee</h3>
+                        <p class="card-description">Persistent memory for Claude Code - give Claude a brain that remembers across sessions</p>
+                        <div class="card-stats">
+                            <span class="stat-item"><strong>80-90%</strong> fewer tokens</span>
+                            <span class="stat-item"><strong>SQLite</strong> storage</span>
+                            <span class="stat-item"><strong>MCP</strong> protocol</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/DandaAkhilReddy/claude_peepee" target="_blank" class="card-link github">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/posts/akhil-reddy-danda-1a74b214b_ai-machinelearning-llm-activity-7415987372598771712-DNz4" target="_blank" class="card-link linkedin">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                Post
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 Card - SpeakSkipType -->
+                <div class="daily-card" onclick="window.location.href='projects/day-3-speakskiptype.html'" style="cursor: pointer;">
+                    <div class="daily-card-image">
+                        <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?w=400&h=250&fit=crop" alt="SpeakSkipType">
+                        <div class="day-badge">Project 3</div>
+                        <div class="card-gradient"></div>
+                    </div>
+                    <div class="daily-card-content">
+                        <h3>SpeakSkipType</h3>
+                        <p class="card-description">Speech-to-text at cursor position - dual engine (Vosk + Whisper), 100% offline</p>
+                        <div class="card-stats">
+                            <span class="stat-item"><strong>306+</strong> tests</span>
+                            <span class="stat-item"><strong>Vosk</strong> + Whisper</span>
+                            <span class="stat-item"><strong>100%</strong> offline</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/DandaAkhilReddy/Speakskiptype" target="_blank" class="card-link github">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/posts/akhil-reddy-danda-1a74b214b_ai-machinelearning-llm-activity-7416706596560453633-uk59" target="_blank" class="card-link linkedin">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                Post
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 Card - Audtext -->
+                <div class="daily-card" onclick="window.location.href='projects/day-4-audtext.html'" style="cursor: pointer;">
+                    <div class="daily-card-image">
+                        <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&h=250&fit=crop" alt="Audtext">
+                        <div class="day-badge">Project 4</div>
+                        <div class="card-gradient"></div>
+                    </div>
+                    <div class="daily-card-content">
+                        <h3>Audtext</h3>
+                        <p class="card-description">Local audio transcription with AI summarization - 100% private, zero API costs</p>
+                        <div class="card-stats">
+                            <span class="stat-item"><strong>~10min</strong> for 1hr audio</span>
+                            <span class="stat-item"><strong>Whisper</strong> + Llama</span>
+                            <span class="stat-item"><strong>$0</strong> forever</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/DandaAkhilReddy/Audtext" target="_blank" class="card-link github">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/posts/akhil-reddy-danda-1a74b214b_ai-machinelearning-llm-activity-7417059400307200000-I-eq" target="_blank" class="card-link linkedin">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                Post
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 Card - WiFiVision -->
+                <div class="daily-card featured" onclick="window.location.href='projects/day-minus-5-wifivision.html'" style="cursor: pointer;">
+                    <div class="daily-card-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" alt="WiFiVision">
+                        <div class="day-badge new" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">Project 5</div>
+                        <div class="new-ribbon">NEW</div>
+                        <div class="card-gradient"></div>
+                    </div>
+                    <div class="daily-card-content">
+                        <h3>WiFiVision</h3>
+                        <p class="card-description">Privacy-first presence detection using WiFi signals - no cameras, works in darkness, $10 build</p>
+                        <div class="card-stats">
+                            <span class="stat-item"><strong>~100Hz</strong> sampling</span>
+                            <span class="stat-item"><strong>ESP32</strong> + Python</span>
+                            <span class="stat-item"><strong>$10</strong> total</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/DandaAkhilReddy/wifivision" target="_blank" class="card-link github">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/posts/akhil-reddy-danda-1a74b214b_ai-machinelearning-iot-activity-7418076863878754304-O0od" target="_blank" class="card-link linkedin">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                Post
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="experience" class="content-row dark-section">
+        <div class="container">
+            <h2 class="row-title">Professional Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card microsoft">
+                    <div class="exp-header">
+                        <div class="exp-company">Microsoft</div>
+                        <div class="exp-date">Apr 2026 - Present</div>
+                    </div>
+                    <h3 class="exp-title">Software Engineer II</h3>
+                    <p class="exp-location">Redmond, WA</p>
+                    <ul class="exp-highlights">
+                        <li>Building <strong>global lookup service</strong> — distributed backend routing on Azure</li>
+                        <li><strong>Azure Front Door / Traffic Manager</strong> for global HTTP routing</li>
+                        <li>C#/.NET microservices with <strong>Cosmos DB</strong> and <strong>Service Bus</strong></li>
+                        <li>Horizontal scaling, automatic failover, <strong>circuit breaker</strong> patterns</li>
+                    </ul>
+                    <div class="exp-tech">
+                        <span>C#</span>
+                        <span>.NET</span>
+                        <span>Azure</span>
+                        <span>Cosmos DB</span>
+                        <span>Service Bus</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-company">HHA Medicine</div>
+                        <div class="exp-date">Jan 2023 - Mar 2026</div>
+                    </div>
+                    <h3 class="exp-title">Senior Software Engineer</h3>
+                    <p class="exp-location">Corpus Christi, TX</p>
+                    <ul class="exp-highlights">
+                        <li>Built <strong>RAG systems</strong> with 40% improved relevance</li>
+                        <li>Deployed <strong>GPT-4 clinical support</strong> for 50K+ daily decisions</li>
+                        <li>Processing <strong>100GB+ daily</strong> healthcare data</li>
+                    </ul>
+                    <div class="exp-tech">
+                        <span>Python</span>
+                        <span>Azure ML</span>
+                        <span>LangChain</span>
+                        <span>GPT-4</span>
+                    </div>
+                </div>
+
+                <div class="experience-card amazon">
+                    <div class="exp-header">
+                        <div class="exp-company">Amazon</div>
+                        <div class="exp-date">Feb 2022 - Jan 2023</div>
+                    </div>
+                    <h3 class="exp-title">Software Development Engineer</h3>
+                    <p class="exp-location">Seattle, WA</p>
+                    <ul class="exp-highlights">
+                        <li>Built CNN models processing <strong>500K+ daily images</strong></li>
+                        <li>Architected microservices handling <strong>100K+ req/sec</strong></li>
+                        <li>Reduced latency by <strong>65%</strong> and costs by <strong>25%</strong></li>
+                    </ul>
+                    <div class="exp-tech">
+                        <span>Python</span>
+                        <span>AWS</span>
+                        <span>Kubernetes</span>
+                        <span>TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Microsoft Prep — Transition Learning -->
+    <section id="microsoft-prep" class="content-row" style="background: linear-gradient(135deg, #0a0a1a 0%, #0d1b2a 100%);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 class="row-title" style="margin-bottom: 8px;">Transition Learning — Preparing for Microsoft</h2>
+                <p style="color: #0078D4; font-size: 0.95rem; margin: 0;">Self-studied during the transition from HHA Medicine to Microsoft (Jan — Mar 2026)</p>
+            </div>
+            <div class="msft-prep-grid">
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" style="width: 36px; height: 36px;">
+                    </div>
+                    <h4>C# & .NET Core</h4>
+                    <div class="msft-prep-tags">
+                        <span>Async/Await</span><span>LINQ</span><span>Generics</span><span>OOP</span><span>Design Patterns</span><span>xUnit</span>
+                    </div>
+                </div>
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon" style="font-size: 28px;">🌐</div>
+                    <h4>Distributed Systems</h4>
+                    <div class="msft-prep-tags">
+                        <span>CAP Theorem</span><span>Consistency Models</span><span>Replication</span><span>Sharding</span><span>Load Balancing</span><span>Circuit Breakers</span><span>Microservices</span>
+                    </div>
+                </div>
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon" style="font-size: 28px;">🖥️</div>
+                    <h4>Operating Systems</h4>
+                    <div class="msft-prep-tags">
+                        <span>Process Management</span><span>Memory Management</span><span>Concurrency</span><span>Threading</span><span>Scheduling</span><span>IPC</span>
+                    </div>
+                </div>
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" style="width: 36px; height: 36px;">
+                    </div>
+                    <h4>Azure Architecture</h4>
+                    <div class="msft-prep-tags">
+                        <span>Front Door</span><span>Traffic Manager</span><span>Azure SQL</span><span>Cosmos DB</span><span>Service Bus</span><span>Azure AD</span><span>Key Vault</span><span>ARM/Bicep</span>
+                    </div>
+                </div>
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon" style="font-size: 28px;">🏗️</div>
+                    <h4>System Design</h4>
+                    <div class="msft-prep-tags">
+                        <span>Global Routing</span><span>Horizontal Scaling</span><span>Failover</span><span>Partitioning</span><span>Caching Strategies</span>
+                    </div>
+                </div>
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="DB" style="width: 36px; height: 36px;">
+                    </div>
+                    <h4>Databases</h4>
+                    <div class="msft-prep-tags">
+                        <span>Schema Design</span><span>Indexing</span><span>Query Optimization</span><span>Transactions</span><span>Azure SQL</span><span>Cosmos DB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="skills-header">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">4+ years of hands-on experience across backend, cloud, and AI</p>
+            </div>
+
+            <!-- Featured Skills Banner -->
+            <div class="featured-skills">
+                <div class="featured-skill highlight">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
+                    <span>C# / .NET</span>
+                </div>
+                <div class="featured-skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                    <span>Azure</span>
+                </div>
+                <div class="featured-skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="featured-skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                    <span>Docker</span>
+                </div>
+                <div class="featured-skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                    <span>Kubernetes</span>
+                </div>
+            </div>
+
+            <h3 class="row-title section-title-centered">
+                <span class="title-underline">Languages & Frameworks</span>
+            </h3>
+            <div class="skills-grid-new">
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">C# / .NET</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">Python</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">TypeScript</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">Java</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" alt="Go" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">Go</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">SQL</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">FastAPI</span></div>
+                </div>
+            </div>
+
+            <h3 class="row-title section-title-centered">
+                <span class="title-underline">Distributed Systems & Architecture</span>
+            </h3>
+            <div class="ds-tags-container">
+                <span class="ds-tag">System Design</span>
+                <span class="ds-tag">CAP Theorem</span>
+                <span class="ds-tag">Microservices</span>
+                <span class="ds-tag">Load Balancing</span>
+                <span class="ds-tag">Caching</span>
+                <span class="ds-tag">Replication</span>
+                <span class="ds-tag">Sharding</span>
+                <span class="ds-tag">Circuit Breakers</span>
+                <span class="ds-tag">Event-Driven Architecture</span>
+                <span class="ds-tag">Failover Patterns</span>
+                <span class="ds-tag">Consistency Models</span>
+                <span class="ds-tag">Horizontal Scaling</span>
+            </div>
+
+            <h3 class="row-title section-title-centered">
+                <span class="title-underline">Cloud & Infrastructure</span>
+            </h3>
+            <div class="skills-grid-new">
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">Azure</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">AWS</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">Docker</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">Kubernetes</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">Terraform</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="CI/CD" class="skill-logo invert">
+                    <div class="skill-info"><span class="skill-name">CI/CD</span></div>
+                </div>
+            </div>
+
+            <h3 class="row-title section-title-centered">
+                <span class="title-underline">Machine Learning & AI</span>
+            </h3>
+            <div class="skills-grid-new">
+                <div class="skill-card-new">
+                    <div class="skill-logo gpt-logo">GPT</div>
+                    <div class="skill-info"><span class="skill-name">GPT-4 / LLMs</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <div class="skill-logo langchain-logo">🦜</div>
+                    <div class="skill-info"><span class="skill-name">LangChain</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <div class="skill-logo rag-logo">RAG</div>
+                    <div class="skill-info"><span class="skill-name">RAG Systems</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">TensorFlow</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">PyTorch</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">OpenCV</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="content-row dark-section">
+        <div class="container">
+            <h2 class="row-title">Education</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-content">
+                        <h3>Master's in Computer Science</h3>
+                        <p>Texas A&M University</p>
+                        <span class="edu-date">Dec 2021</span>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-content">
+                        <h3>Bachelor's in Computer Science</h3>
+                        <p>SRM Institute of Technology, India</p>
+                        <span class="edu-date">May 2019</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="content-row" style="background: #0a0a0a;">
+        <div class="container">
+            <h2 class="row-title" style="text-align: center; margin-bottom: 10px;">Certifications</h2>
+            <p style="text-align: center; color: #888; margin-bottom: 40px;">27 Professional Certifications</p>
+
+            <!-- HackerRank -->
+            <div class="cert-category" style="margin-bottom: 40px;">
+                <h3 style="color: #2ec866; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #2ec866; color: #000; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem;">HackerRank</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 16px;">
+                    <a href="https://www.hackerrank.com/certificates/dfddd626152e" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Software Engineer</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Problem Solving, SQL, REST API</p>
+                                <span style="color: #666; font-size: 0.8rem;">January 2026</span>
+                            </div>
+                            <span style="color: #2ec866;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://www.hackerrank.com/certificates/4d8fa6a43927" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">SQL (Advanced)</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Query Optimization, Window Functions, Pivots</p>
+                                <span style="color: #666; font-size: 0.8rem;">January 2026</span>
+                            </div>
+                            <span style="color: #2ec866;">🔗</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Databricks -->
+            <div class="cert-category" style="margin-bottom: 40px;">
+                <h3 style="color: #ff3621; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #ff3621; color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem;">Databricks</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 16px;">
+                    <div class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333;">
+                        <h4 style="color: #fff; margin: 0 0 8px 0;">Advanced Machine Learning Operations</h4>
+                        <p style="color: #888; font-size: 0.85rem; margin: 0;">MLOps, Machine Learning Operations</p>
+                        <span style="color: #666; font-size: 0.8rem;">September 2025</span>
+                    </div>
+                    <a href="https://credentials.databricks.com/4fa02777-1149-49fb-9913-7e33d292a257" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Generative AI Fundamentals</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Generative AI - Academy Accreditation</p>
+                                <span style="color: #666; font-size: 0.8rem;">September 2025</span>
+                            </div>
+                            <span style="color: #ff3621;">🔗</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- DeepLearning.AI -->
+            <div class="cert-category" style="margin-bottom: 40px;">
+                <h3 style="color: #f97316; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem;">DeepLearning.AI</span>
+                    <span style="color: #888; font-size: 0.85rem;">(17 Certifications)</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 16px;">
+                    <a href="https://learn.deeplearning.ai/accomplishments/e05ae354-a97c-4214-a6f7-e0530527a777" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">ACP: Agent Communication Protocol</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">IBM Research's BeeAI - Agents, RAG, LLM Serving</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/60300c9b-9493-4f6d-b9fa-902c55fa7f7f" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Agentic Knowledge Graph Construction</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Neo4j - Knowledge Graphs, Embeddings, RAG</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/1bfe928f-1605-45be-ad5c-2f9dbee8ef47" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Build AI Apps with MCP Server</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Box - Document Processing, Task Automation</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/b57c0ccf-d883-498d-ba39-4e35b7d60150" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Building Agentic RAG with LlamaIndex</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">LlamaIndex - Agents, RAG, Search</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/2560370e-aaef-4641-8ece-640db1bb54ce" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Building Code Agents with smolagents</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Hugging Face - AI Safety, Task Automation</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/760d46cb-c1da-4192-8853-cf6d57b81e63" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Building Live Voice Agents</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Google ADK - Voice Agents</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/96279966-3eaf-4e65-a6f3-51b5f6074d1b" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Building and Evaluating Data Agents</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Snowflake - Data Agents</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/ea7ca8c5-e547-40f8-a538-2752aaa0ea94" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Building with Llama 4</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Meta - MultiModal, NLP, Chatbots</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/021392c6-924f-4fd7-9c37-8ab3aeed9e9c" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #e50914; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Claude Code: Agentic Coding Assistant</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Anthropic - AI Coding, LLMOps, RAG</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/08b69e5d-3661-4265-a075-32eb46af2d56" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Embedding Models: Architecture to Implementation</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Vectara - Embeddings, Vector Databases</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/b4ef95f5-1c34-40f5-88c8-35f148c607c3" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Evaluating AI Agents</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Arize AI - Evaluation, MLOps, LLMOps</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/a09733f0-1e3f-47da-9b0d-04ed90a3b155" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Governing AI Agents</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Databricks - AI Governance</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/db7944a3-48a7-45ea-a865-08eb64a026c3" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Long-Term Agentic Memory with LangGraph</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">LangChain - Agents, RAG, Vector DBs</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/e5ff8868-5cd5-4d2f-8049-c5b06ec9994b" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Multi-vector Image Retrieval</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Qdrant - Image Search, AI Coding</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/a90cc9b7-8f70-4c5d-8a57-f7043b79980f" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #76b900; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">NVIDIA NeMo Agent Toolkit</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">NVIDIA - Reliable Agents</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/95afe3bb-2a69-4104-9d94-875e44d40ace" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Post-training of LLMs</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">UW & NexusFlow - Fine-Tuning, NLP</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                    <a href="https://learn.deeplearning.ai/accomplishments/9479bee1-2fa3-4f44-b9a7-3e9ab08aac23" target="_blank" class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #dc382d; text-decoration: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 8px 0;">Semantic Caching for AI Agents</h4>
+                                <p style="color: #888; font-size: 0.85rem; margin: 0;">Redis - Caching, Agents</p>
+                                <span style="color: #666; font-size: 0.8rem;">December 2025</span>
+                            </div>
+                            <span style="color: #f97316;">🔗</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- IBM -->
+            <div class="cert-category" style="margin-bottom: 40px;">
+                <h3 style="color: #0f62fe; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #0f62fe; color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem;">IBM</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 16px;">
+                    <div class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333;">
+                        <h4 style="color: #fff; margin: 0 0 8px 0;">Robotic Process Automation (RPA)</h4>
+                        <p style="color: #888; font-size: 0.85rem; margin: 0;">RPA, Process Automation</p>
+                        <span style="color: #666; font-size: 0.8rem;">April 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LinkedIn Learning -->
+            <div class="cert-category" style="margin-bottom: 40px;">
+                <h3 style="color: #0a66c2; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #0a66c2; color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem;">LinkedIn Learning</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 16px;">
+                    <div class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333;">
+                        <h4 style="color: #fff; margin: 0 0 8px 0;">Blockchain: Beyond the Basics</h4>
+                        <p style="color: #888; font-size: 0.85rem; margin: 0;">Advanced Blockchain Concepts</p>
+                        <span style="color: #666; font-size: 0.8rem;">March 2022</span>
+                    </div>
+                    <div class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333;">
+                        <h4 style="color: #fff; margin: 0 0 8px 0;">Blockchain Basics</h4>
+                        <p style="color: #888; font-size: 0.85rem; margin: 0;">Blockchain Fundamentals</p>
+                        <span style="color: #666; font-size: 0.8rem;">February 2022</span>
+                    </div>
+                    <div class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333;">
+                        <h4 style="color: #fff; margin: 0 0 8px 0;">Building Ethereum Blockchain App</h4>
+                        <p style="color: #888; font-size: 0.85rem; margin: 0;">Ethereum, Smart Contracts</p>
+                        <span style="color: #666; font-size: 0.8rem;">February 2022</span>
+                    </div>
+                    <div class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333;">
+                        <h4 style="color: #fff; margin: 0 0 8px 0;">Strategic Thinking</h4>
+                        <p style="color: #888; font-size: 0.85rem; margin: 0;">Leadership, Strategy</p>
+                        <span style="color: #666; font-size: 0.8rem;">February 2022</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coursera -->
+            <div class="cert-category" style="margin-bottom: 40px;">
+                <h3 style="color: #0056d2; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #0056d2; color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem;">Coursera</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 16px;">
+                    <div class="cert-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 20px; border: 1px solid #333;">
+                        <h4 style="color: #fff; margin: 0 0 8px 0;">Introduction to HTML and CSS</h4>
+                        <p style="color: #888; font-size: 0.85rem; margin: 0;">HTML, CSS, Web Development</p>
+                        <span style="color: #666; font-size: 0.8rem;">October 2018 • ID: GJ8SBLKHZSLD</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-card">
+                <div class="contact-icon">📬</div>
+                <h2>Let's Connect!</h2>
+                <p>Currently building distributed systems at Microsoft. Open to collaborations, speaking, and interesting side projects.</p>
+                <div class="contact-links">
+                    <a href="mailto:akhilreddydanda1@gmail.com" class="contact-link">
+                        <span class="link-icon">📧</span>
+                        akhilreddydanda1@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/akhil-reddy-danda-1a74b214b/" target="_blank" class="contact-link">
+                        <span class="link-icon">💼</span>
+                        LinkedIn Profile
+                    </a>
+                    <a href="https://github.com/DandaAkhilReddy" target="_blank" class="contact-link">
+                        <span class="link-icon">🐙</span>
+                        GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Akhil Reddy Danda. All rights reserved.</p>
+            <p class="footer-note">🚀 2026 Journey: Building 52 projects in 52 weeks</p>
+        </div>
+    </footer>
+
+    <script>
+        // Profile configuration
+        const profileConfig = {
+            recruiter: {
+                video: 'hero-video-recruiter',
+                image: 'https://i.imgur.com/YQK3Qby.png'
+            },
+            developer: {
+                video: 'hero-video-developer',
+                image: 'https://i.imgur.com/8PjrG8O.png'
+            },
+            visitor: {
+                video: 'hero-video-visitor',
+                image: 'https://i.imgur.com/qKG0j4H.png'
+            },
+            adventurer: {
+                video: 'hero-video-adventurer',
+                image: 'https://i.imgur.com/vB5OQKW.png'
+            }
+        };
+
+        // Get profile from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const profile = urlParams.get('profile') || 'recruiter';
+
+        // Update profile name in titles
+        document.getElementById('profile-name').textContent = profile;
+        document.querySelectorAll('.profile-name-span').forEach(el => el.textContent = profile);
+
+        // Update nav profile image
+        const navImg = document.getElementById('nav-profile-img');
+        if (profileConfig[profile]) {
+            navImg.src = profileConfig[profile].image;
+        }
+
+        // Show correct hero video based on profile
+        document.querySelectorAll('.hero-video').forEach(video => {
+            video.classList.add('hidden');
+            video.pause();
+        });
+        const activeVideo = document.getElementById(profileConfig[profile]?.video || 'hero-video-recruiter');
+        if (activeVideo) {
+            activeVideo.classList.remove('hidden');
+            activeVideo.play();
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
