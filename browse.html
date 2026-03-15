@@ -3,58 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akhil Reddy Danda | Senior Software Engineer | 4+ Years Experience</title>
+    <title>Akhil Reddy Danda | Software Engineer II @ Microsoft</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="netflix-styles.css">
-    <style>
-        /* Full-page background video */
-        .bg-video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            overflow: hidden;
-        }
-        .bg-video-container video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-        }
-        .bg-video-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: rgba(0, 0, 0, 0.85);
-        }
-        @media (max-width: 600px) {
-            .bg-video-container { display: none; }
-            .bg-video-overlay { background: #141414; }
-        }
-    </style>
 </head>
 <body>
-    <!-- Full-Page Background Video -->
-    <div class="bg-video-container">
-        <video id="bg-video" autoplay muted loop playsinline>
-            <source id="bg-video-src-local" src="assets/videos/recruiter.mp4" type="video/mp4">
-            <source id="bg-video-src-fallback" src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-typing-on-a-laptop-in-an-office-4833-large.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="bg-video-overlay"></div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-left">
@@ -76,19 +31,34 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Dynamic Background -->
     <section id="home" class="hero">
         <div class="hero-background">
+            <!-- Recruiter: The Office style / Professional -->
+            <video class="hero-video" id="hero-video-recruiter" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-typing-on-a-laptop-in-an-office-4833-large.mp4" type="video/mp4">
+            </video>
+            <!-- Developer: Coding/Matrix style -->
+            <video class="hero-video hidden" id="hero-video-developer" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4" type="video/mp4">
+            </video>
+            <!-- Visitor: Mystery/Investigation -->
+            <video class="hero-video hidden" id="hero-video-visitor" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-data-processing-cybernetic-technology-code-42756-large.mp4" type="video/mp4">
+            </video>
+            <!-- Adventurer: Travel/Adventure -->
+            <video class="hero-video hidden" id="hero-video-adventurer" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4" type="video/mp4">
+            </video>
             <div class="hero-gradient"></div>
         </div>
         <div class="hero-content">
             <h1 class="hero-title">Akhil Reddy Danda</h1>
-            <p class="hero-subtitle">Senior Software Engineer</p>
+            <p class="hero-subtitle">Software Engineer II @ Microsoft</p>
             <p class="hero-description">
-                Dynamic and results-driven Senior Software Engineer with <strong>4+ years</strong> in full-stack development across high-impact, large-scale applications.
-                I bring expertise in Python, AWS, Machine Learning, GenAI/LLMs, and Cloud Architecture. Previously at <strong>Amazon</strong>, I built computer vision models
-                processing 500K+ daily images and architected microservices handling 100K+ requests/second. Currently at <strong>HHA Medicine</strong>, building
-                RAG systems and GPT-4 powered clinical decision support serving 15+ hospitals.
+                Building globally distributed backend services at <strong>Microsoft</strong> on Azure.
+                Self-taught C#/.NET and distributed systems during my transition. Previously at <strong>Amazon</strong> and <strong>HHA Medicine</strong>.
+                MS Computer Science from <strong>Texas A&M University</strong>.
             </p>
             <div class="hero-buttons">
                 <a href="assets/resume.pdf" target="_blank" class="btn btn-play">
@@ -101,8 +71,10 @@
                 </a>
             </div>
             <div class="hero-tags">
+                <span class="tag">Microsoft</span>
                 <span class="tag">Ex-Amazon</span>
-                <span class="tag">ML/AI Expert</span>
+                <span class="tag">Distributed Systems</span>
+                <span class="tag">Azure</span>
                 <span class="tag">MS CS - Texas A&M</span>
             </div>
         </div>
@@ -234,6 +206,35 @@
                         <span class="netflix-card-badge">Production</span>
                     </div>
                     <div class="progress-indicator" style="width: 80%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2026 Journey Banner -->
+    <section id="journey" class="journey-section">
+        <div class="container">
+            <div class="journey-banner">
+                <div class="journey-icon">🚀</div>
+                <div class="journey-content">
+                    <h2>2026 Project Journey</h2>
+                    <p>Shipping one LLM project every day throughout 2026. Follow my journey!</p>
+                    <div class="journey-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 1.1%;"></div>
+                        </div>
+                        <span class="progress-text">Day 4 of 365</span>
+                    </div>
+                </div>
+                <div class="journey-stats">
+                    <div class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Projects Shipped</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">361</span>
+                        <span class="stat-label">To Go</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -388,88 +389,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 6 Card - Local Browser Control -->
-                <div class="daily-card featured" onclick="window.location.href='projects/day-6-localbrowsercontrol.html'" style="cursor: pointer;">
-                    <div class="daily-card-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Local Browser Control">
-                        <div class="day-badge new" style="background: linear-gradient(135deg, #d4a373 0%, #bc6c25 100%);">Project 6</div>
-                        <div class="new-ribbon">NEW</div>
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="daily-card-content">
-                        <h3>Local Browser Control</h3>
-                        <p class="card-description">AI browser automation using Claude's Computer Use - vision, mouse, keyboard, and self-healing</p>
-                        <div class="card-stats">
-                            <span class="stat-item"><strong>Vision</strong> AI</span>
-                            <span class="stat-item"><strong>Docker</strong> + WSL2</span>
-                            <span class="stat-item"><strong>100%</strong> local</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://github.com/DandaAkhilReddy/localbrowsercontrol" target="_blank" class="card-link github">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                GitHub
-                            </a>
-                            <a href="https://youtu.be/gwFyF23d81M" target="_blank" class="card-link" style="background: rgba(255, 0, 0, 0.2); color: #ff4444;">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-                                Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7 Card - AI Hedge Fund -->
-                <div class="daily-card featured" onclick="window.location.href='projects/day-7-reddyhedgefund.html'" style="cursor: pointer;">
-                    <div class="daily-card-image">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=250&fit=crop" alt="AI Hedge Fund">
-                        <div class="day-badge new" style="background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);">Project 7</div>
-                        <div class="new-ribbon">NEW</div>
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="daily-card-content">
-                        <h3>AI Hedge Fund</h3>
-                        <p class="card-description">AI-powered hedge fund with 18 agents — Buffett, Munger, Damodaran & more analyzing stocks</p>
-                        <div class="card-stats">
-                            <span class="stat-item"><strong>18</strong> Agents</span>
-                            <span class="stat-item"><strong>Python</strong> + LLMs</span>
-                            <span class="stat-item"><strong>Multi-Agent</strong> system</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://github.com/DandaAkhilReddy/ReddyHedgefund" target="_blank" class="card-link github">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 8 Card - Stock Analyzer -->
-                <div class="daily-card featured" onclick="window.location.href='projects/day-8-stock-analyzer.html'" style="cursor: pointer;">
-                    <div class="daily-card-image">
-                        <img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=400&h=250&fit=crop" alt="Stock Analyzer">
-                        <div class="day-badge new" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Project 8</div>
-                        <div class="new-ribbon">NEW</div>
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="daily-card-content">
-                        <h3>Stock Analyzer</h3>
-                        <p class="card-description">AI-powered stock analysis — real-time quotes, candlestick charts, technical indicators & AI investment insights</p>
-                        <div class="card-stats">
-                            <span class="stat-item"><strong>1,571+</strong> tests</span>
-                            <span class="stat-item"><strong>React</strong> + FastAPI</span>
-                            <span class="stat-item"><strong>97%</strong> coverage</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://github.com/DandaAkhilReddy/Stock_analyzer" target="_blank" class="card-link github">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                GitHub
-                            </a>
-                            <a href="https://stocks.dandaakhilreddy.com" target="_blank" class="card-link linkedin" style="background: linear-gradient(135deg, #667eea, #764ba2); color: #fff;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                                Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -479,10 +398,32 @@
         <div class="container">
             <h2 class="row-title">Professional Experience</h2>
             <div class="experience-grid">
+                <div class="experience-card microsoft">
+                    <div class="exp-header">
+                        <div class="exp-company">Microsoft</div>
+                        <div class="exp-date">Apr 2026 - Present</div>
+                    </div>
+                    <h3 class="exp-title">Software Engineer II</h3>
+                    <p class="exp-location">Redmond, WA</p>
+                    <ul class="exp-highlights">
+                        <li>Building <strong>global lookup service</strong> — distributed backend routing on Azure</li>
+                        <li><strong>Azure Front Door / Traffic Manager</strong> for global HTTP routing</li>
+                        <li>C#/.NET microservices with <strong>Cosmos DB</strong> and <strong>Service Bus</strong></li>
+                        <li>Horizontal scaling, automatic failover, <strong>circuit breaker</strong> patterns</li>
+                    </ul>
+                    <div class="exp-tech">
+                        <span>C#</span>
+                        <span>.NET</span>
+                        <span>Azure</span>
+                        <span>Cosmos DB</span>
+                        <span>Service Bus</span>
+                    </div>
+                </div>
+
                 <div class="experience-card">
                     <div class="exp-header">
                         <div class="exp-company">HHA Medicine</div>
-                        <div class="exp-date">Jan 2023 - Present</div>
+                        <div class="exp-date">Jan 2023 - Mar 2026</div>
                     </div>
                     <h3 class="exp-title">Senior Software Engineer</h3>
                     <p class="exp-location">Corpus Christi, TX</p>
@@ -522,27 +463,87 @@
         </div>
     </section>
 
+    <!-- Microsoft Prep — Transition Learning -->
+    <section id="microsoft-prep" class="content-row" style="background: linear-gradient(135deg, #0a0a1a 0%, #0d1b2a 100%);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 class="row-title" style="margin-bottom: 8px;">Transition Learning — Preparing for Microsoft</h2>
+                <p style="color: #0078D4; font-size: 0.95rem; margin: 0;">Self-studied during the transition from HHA Medicine to Microsoft (Jan — Mar 2026)</p>
+            </div>
+            <div class="msft-prep-grid">
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" style="width: 36px; height: 36px;">
+                    </div>
+                    <h4>C# & .NET Core</h4>
+                    <div class="msft-prep-tags">
+                        <span>Async/Await</span><span>LINQ</span><span>Generics</span><span>OOP</span><span>Design Patterns</span><span>xUnit</span>
+                    </div>
+                </div>
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon" style="font-size: 28px;">🌐</div>
+                    <h4>Distributed Systems</h4>
+                    <div class="msft-prep-tags">
+                        <span>CAP Theorem</span><span>Consistency Models</span><span>Replication</span><span>Sharding</span><span>Load Balancing</span><span>Circuit Breakers</span><span>Microservices</span>
+                    </div>
+                </div>
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon" style="font-size: 28px;">🖥️</div>
+                    <h4>Operating Systems</h4>
+                    <div class="msft-prep-tags">
+                        <span>Process Management</span><span>Memory Management</span><span>Concurrency</span><span>Threading</span><span>Scheduling</span><span>IPC</span>
+                    </div>
+                </div>
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" style="width: 36px; height: 36px;">
+                    </div>
+                    <h4>Azure Architecture</h4>
+                    <div class="msft-prep-tags">
+                        <span>Front Door</span><span>Traffic Manager</span><span>Azure SQL</span><span>Cosmos DB</span><span>Service Bus</span><span>Azure AD</span><span>Key Vault</span><span>ARM/Bicep</span>
+                    </div>
+                </div>
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon" style="font-size: 28px;">🏗️</div>
+                    <h4>System Design</h4>
+                    <div class="msft-prep-tags">
+                        <span>Global Routing</span><span>Horizontal Scaling</span><span>Failover</span><span>Partitioning</span><span>Caching Strategies</span>
+                    </div>
+                </div>
+                <div class="msft-prep-card">
+                    <div class="msft-prep-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="DB" style="width: 36px; height: 36px;">
+                    </div>
+                    <h4>Databases</h4>
+                    <div class="msft-prep-tags">
+                        <span>Schema Design</span><span>Indexing</span><span>Query Optimization</span><span>Transactions</span><span>Azure SQL</span><span>Cosmos DB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
         <div class="container">
             <div class="skills-header">
                 <h2 class="section-title">Technical Expertise</h2>
-                <p class="section-subtitle">4+ years of hands-on experience with cutting-edge technologies</p>
+                <p class="section-subtitle">4+ years of hands-on experience across backend, cloud, and AI</p>
             </div>
 
             <!-- Featured Skills Banner -->
             <div class="featured-skills">
+                <div class="featured-skill highlight">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
+                    <span>C# / .NET</span>
+                </div>
+                <div class="featured-skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                    <span>Azure</span>
+                </div>
                 <div class="featured-skill">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
                     <span>Python</span>
-                </div>
-                <div class="featured-skill">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
-                    <span>AWS</span>
-                </div>
-                <div class="featured-skill highlight">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
-                    <span>TensorFlow</span>
                 </div>
                 <div class="featured-skill">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
@@ -555,98 +556,84 @@
             </div>
 
             <h3 class="row-title section-title-centered">
-                <span class="title-underline">Languages & Backend</span>
+                <span class="title-underline">Languages & Frameworks</span>
             </h3>
             <div class="skills-grid-new">
                 <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">C# / .NET</span></div>
+                </div>
+                <div class="skill-card-new">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">Python</span>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
-                    </div>
+                    <div class="skill-info"><span class="skill-name">Python</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">TypeScript</span></div>
                 </div>
                 <div class="skill-card-new">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">Java</span>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
-                    </div>
+                    <div class="skill-info"><span class="skill-name">Java</span></div>
                 </div>
                 <div class="skill-card-new">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" alt="Go" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">Go</span>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
-                    </div>
+                    <div class="skill-info"><span class="skill-name">Go</span></div>
                 </div>
                 <div class="skill-card-new">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">Node.js</span>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
-                    </div>
-                </div>
-                <div class="skill-card-new">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">SQL/PostgreSQL</span>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
-                    </div>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">SQL</span></div>
                 </div>
                 <div class="skill-card-new">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">FastAPI</span>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
-                    </div>
+                    <div class="skill-info"><span class="skill-name">FastAPI</span></div>
                 </div>
             </div>
 
             <h3 class="row-title section-title-centered">
-                <span class="title-underline">Cloud & DevOps</span>
+                <span class="title-underline">Distributed Systems & Architecture</span>
+            </h3>
+            <div class="ds-tags-container">
+                <span class="ds-tag">System Design</span>
+                <span class="ds-tag">CAP Theorem</span>
+                <span class="ds-tag">Microservices</span>
+                <span class="ds-tag">Load Balancing</span>
+                <span class="ds-tag">Caching</span>
+                <span class="ds-tag">Replication</span>
+                <span class="ds-tag">Sharding</span>
+                <span class="ds-tag">Circuit Breakers</span>
+                <span class="ds-tag">Event-Driven Architecture</span>
+                <span class="ds-tag">Failover Patterns</span>
+                <span class="ds-tag">Consistency Models</span>
+                <span class="ds-tag">Horizontal Scaling</span>
+            </div>
+
+            <h3 class="row-title section-title-centered">
+                <span class="title-underline">Cloud & Infrastructure</span>
             </h3>
             <div class="skills-grid-new">
                 <div class="skill-card-new">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">AWS</span>
-                        <div class="skill-bar"><div class="skill-progress aws" style="width: 95%"></div></div>
-                    </div>
-                </div>
-                <div class="skill-card-new">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">Azure</span>
-                        <div class="skill-bar"><div class="skill-progress azure" style="width: 88%"></div></div>
-                    </div>
+                    <div class="skill-info"><span class="skill-name">Azure</span></div>
                 </div>
                 <div class="skill-card-new">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">Kubernetes</span>
-                        <div class="skill-bar"><div class="skill-progress k8s" style="width: 85%"></div></div>
-                    </div>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">AWS</span></div>
                 </div>
                 <div class="skill-card-new">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">Docker</span>
-                        <div class="skill-bar"><div class="skill-progress docker" style="width: 92%"></div></div>
-                    </div>
+                    <div class="skill-info"><span class="skill-name">Docker</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">Kubernetes</span></div>
                 </div>
                 <div class="skill-card-new">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">Terraform</span>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
-                    </div>
+                    <div class="skill-info"><span class="skill-name">Terraform</span></div>
                 </div>
                 <div class="skill-card-new">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" class="skill-logo invert">
-                    <div class="skill-info">
-                        <span class="skill-name">CI/CD</span>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
-                    </div>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="CI/CD" class="skill-logo invert">
+                    <div class="skill-info"><span class="skill-name">CI/CD</span></div>
                 </div>
             </div>
 
@@ -654,47 +641,29 @@
                 <span class="title-underline">Machine Learning & AI</span>
             </h3>
             <div class="skills-grid-new">
-                <div class="skill-card-new glow">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">TensorFlow</span>
-                        <div class="skill-bar"><div class="skill-progress ml" style="width: 90%"></div></div>
-                    </div>
-                </div>
-                <div class="skill-card-new glow">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">PyTorch</span>
-                        <div class="skill-bar"><div class="skill-progress ml" style="width: 88%"></div></div>
-                    </div>
-                </div>
-                <div class="skill-card-new glow">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" class="skill-logo">
-                    <div class="skill-info">
-                        <span class="skill-name">OpenCV</span>
-                        <div class="skill-bar"><div class="skill-progress ml" style="width: 85%"></div></div>
-                    </div>
-                </div>
-                <div class="skill-card-new glow special">
+                <div class="skill-card-new">
                     <div class="skill-logo gpt-logo">GPT</div>
-                    <div class="skill-info">
-                        <span class="skill-name">GPT-4 / LLMs</span>
-                        <div class="skill-bar"><div class="skill-progress ml" style="width: 95%"></div></div>
-                    </div>
+                    <div class="skill-info"><span class="skill-name">GPT-4 / LLMs</span></div>
                 </div>
-                <div class="skill-card-new glow special">
+                <div class="skill-card-new">
                     <div class="skill-logo langchain-logo">🦜</div>
-                    <div class="skill-info">
-                        <span class="skill-name">LangChain</span>
-                        <div class="skill-bar"><div class="skill-progress ml" style="width: 92%"></div></div>
-                    </div>
+                    <div class="skill-info"><span class="skill-name">LangChain</span></div>
                 </div>
-                <div class="skill-card-new glow special">
+                <div class="skill-card-new">
                     <div class="skill-logo rag-logo">RAG</div>
-                    <div class="skill-info">
-                        <span class="skill-name">RAG Systems</span>
-                        <div class="skill-bar"><div class="skill-progress ml" style="width: 94%"></div></div>
-                    </div>
+                    <div class="skill-info"><span class="skill-name">RAG Systems</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">TensorFlow</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">PyTorch</span></div>
+                </div>
+                <div class="skill-card-new">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" class="skill-logo">
+                    <div class="skill-info"><span class="skill-name">OpenCV</span></div>
                 </div>
             </div>
         </div>
@@ -1030,7 +999,7 @@
             <div class="contact-card">
                 <div class="contact-icon">📬</div>
                 <h2>Let's Connect!</h2>
-                <p>I'm open to discussing new opportunities, innovative projects, or potential collaborations.</p>
+                <p>Currently building distributed systems at Microsoft. Open to collaborations, speaking, and interesting side projects.</p>
                 <div class="contact-links">
                     <a href="mailto:akhilreddydanda1@gmail.com" class="contact-link">
                         <span class="link-icon">📧</span>
@@ -1053,6 +1022,7 @@
     <footer class="footer">
         <div class="container">
             <p>© 2026 Akhil Reddy Danda. All rights reserved.</p>
+            <p class="footer-note">🚀 2026 Journey: Building 52 projects in 52 weeks</p>
         </div>
     </footer>
 
@@ -1060,23 +1030,19 @@
         // Profile configuration
         const profileConfig = {
             recruiter: {
-                localVideo: 'assets/videos/recruiter.mp4',
-                fallbackVideo: 'https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-typing-on-a-laptop-in-an-office-4833-large.mp4',
+                video: 'hero-video-recruiter',
                 image: 'https://i.imgur.com/YQK3Qby.png'
             },
             developer: {
-                localVideo: 'assets/videos/developer.mp4',
-                fallbackVideo: 'https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4',
+                video: 'hero-video-developer',
                 image: 'https://i.imgur.com/8PjrG8O.png'
             },
-            stalker: {
-                localVideo: 'assets/videos/stalker.mp4',
-                fallbackVideo: 'https://assets.mixkit.co/videos/preview/mixkit-data-processing-cybernetic-technology-code-42756-large.mp4',
+            visitor: {
+                video: 'hero-video-visitor',
                 image: 'https://i.imgur.com/qKG0j4H.png'
             },
             adventurer: {
-                localVideo: 'assets/videos/adventurer.mp4',
-                fallbackVideo: 'https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4',
+                video: 'hero-video-adventurer',
                 image: 'https://i.imgur.com/vB5OQKW.png'
             }
         };
@@ -1091,17 +1057,20 @@
 
         // Update nav profile image
         const navImg = document.getElementById('nav-profile-img');
-        const config = profileConfig[profile] || profileConfig.recruiter;
-        navImg.src = config.image;
+        if (profileConfig[profile]) {
+            navImg.src = profileConfig[profile].image;
+        }
 
-        // Switch full-page background video based on profile
-        const bgVideo = document.getElementById('bg-video');
-        const srcLocal = document.getElementById('bg-video-src-local');
-        const srcFallback = document.getElementById('bg-video-src-fallback');
-        srcLocal.src = config.localVideo;
-        srcFallback.src = config.fallbackVideo;
-        bgVideo.load();
-        bgVideo.play().catch(() => {});
+        // Show correct hero video based on profile
+        document.querySelectorAll('.hero-video').forEach(video => {
+            video.classList.add('hidden');
+            video.pause();
+        });
+        const activeVideo = document.getElementById(profileConfig[profile]?.video || 'hero-video-recruiter');
+        if (activeVideo) {
+            activeVideo.classList.remove('hidden');
+            activeVideo.play();
+        }
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
