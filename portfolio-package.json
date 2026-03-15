@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-tests",
+  "private": true,
+  "scripts": {
+    "test": "vitest run --config vitest.portfolio.config.ts",
+    "test:watch": "vitest --config vitest.portfolio.config.ts"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.0",
+    "vitest": "^3.0.0"
+  }
+}
