@@ -297,6 +297,14 @@ describe("browse.html — Main Portfolio Page", () => {
       );
       expect(card).toBeTruthy();
     });
+
+    it("has card with onclick containing day-8-stock-analyzer", () => {
+      const cards = [...doc.querySelectorAll(".netflix-card")];
+      const card = cards.find((c) =>
+        c.getAttribute("onclick")?.includes("day-8-stock-analyzer")
+      );
+      expect(card).toBeTruthy();
+    });
   });
 
   // ── Daily Shipping Section ─────────────────────────────────────────────────
