@@ -594,6 +594,147 @@ describe("Bidirectional Navigation", () => {
   });
 });
 
+// ── Profile Query Param ───────────────────────────────────────────────────────
+
+describe("Profile Query Param", () => {
+  it("browse.html script uses URLSearchParams to read the profile param", () => {
+    expect(browseHtml).toContain("URLSearchParams");
+  });
+
+  it("browse.html script falls back to 'recruiter' when no profile param is present", () => {
+    expect(browseHtml).toContain("|| 'recruiter'");
+  });
+
+  it("profileConfig in browse.html contains the 'developer' key", () => {
+    expect(browseHtml).toContain("developer:");
+  });
+
+  it("profileConfig in browse.html contains the 'visitor' key", () => {
+    expect(browseHtml).toContain("visitor:");
+  });
+});
+
+// ── Smooth Scroll Targets ─────────────────────────────────────────────────────
+
+describe("Smooth Scroll Targets", () => {
+  it("section id='home' exists in browse.html", () => {
+    expect(browseDoc.getElementById("home")).not.toBeNull();
+  });
+
+  it("section id='experience' exists in browse.html", () => {
+    expect(browseDoc.getElementById("experience")).not.toBeNull();
+  });
+
+  it("section id='skills' exists in browse.html", () => {
+    expect(browseDoc.getElementById("skills")).not.toBeNull();
+  });
+
+  it("section id='contact' exists in browse.html", () => {
+    expect(browseDoc.getElementById("contact")).not.toBeNull();
+  });
+});
+
+// ── Asset Format ──────────────────────────────────────────────────────────────
+
+describe("Asset Format", () => {
+  it("netflix-sound.mp3 source in index.html has type audio/mpeg", () => {
+    const audioSource = indexDoc.querySelector("source[src*='netflix-sound.mp3']");
+    expect(audioSource).not.toBeNull();
+    expect(audioSource.getAttribute("type")).toBe("audio/mpeg");
+  });
+
+  it("Unsplash image URLs in browse.html use images.unsplash.com domain", () => {
+    const imgs = [...browseDoc.querySelectorAll("img[src*='unsplash.com']")];
+    expect(imgs.length).toBeGreaterThan(0);
+    imgs.forEach((img) => {
+      expect(img.getAttribute("src")).toMatch(/^https:\/\/images\.unsplash\.com\//);
+    });
+  });
+
+  it("Unsplash image URLs in browse.html include crop parameters", () => {
+    const imgs = [...browseDoc.querySelectorAll("img[src*='unsplash.com']")];
+    expect(imgs.length).toBeGreaterThan(0);
+    imgs.forEach((img) => {
+      expect(img.getAttribute("src")).toContain("fit=crop");
+    });
+  });
+
+  it("assets/netflix-sound.mp3 exists on disk", () => {
+    expect(existsSync(resolve(ROOT, "assets/netflix-sound.mp3"))).toBe(true);
+  });
+});
+
+// ── Cross-Page Links ──────────────────────────────────────────────────────────
+
+describe("Cross-Page Links", () => {
+  it("about.html has at least one link back to browse.html", () => {
+    const links = [...aboutDoc.querySelectorAll("a[href]")].filter((a) =>
+      a.getAttribute("href").includes("browse.html")
+    );
+    expect(links.length).toBeGreaterThan(0);
+  });
+
+  it("all project pages back-links resolve to ../browse.html", () => {
+    projectDocs.forEach(({ file, doc }) => {
+      const backLink = doc.querySelector(".back-link[href]");
+      expect(backLink).not.toBeNull();
+      expect(backLink.getAttribute("href")).toContain("../browse.html");
+    });
+  });
+
+  it("nav logo in browse.html points to index.html", () => {
+    const navLogo = browseDoc.querySelector("a.nav-logo");
+    expect(navLogo).not.toBeNull();
+    expect(navLogo.getAttribute("href")).toBe("index.html");
+  });
+
+  it("nav logo in all project pages points to ../browse.html", () => {
+    projectDocs.forEach(({ file, doc }) => {
+      const navLogo = doc.querySelector("a.nav-logo");
+      expect(navLogo).not.toBeNull();
+      expect(navLogo.getAttribute("href")).toBe("../browse.html");
+    });
+  });
+});
+
+// ── Script Consistency ────────────────────────────────────────────────────────
+
+describe("Script Consistency", () => {
+  it("index.html has at least one inline <script> tag", () => {
+    const scripts = [...indexDoc.querySelectorAll("script")].filter(
+      (s) => !s.getAttribute("src")
+    );
+    expect(scripts.length).toBeGreaterThan(0);
+  });
+
+  it("browse.html has at least one inline <script> tag", () => {
+    const scripts = [...browseDoc.querySelectorAll("script")].filter(
+      (s) => !s.getAttribute("src")
+    );
+    expect(scripts.length).toBeGreaterThan(0);
+  });
+
+  it("about.html has at least one inline <script> tag", () => {
+    const scripts = [...aboutDoc.querySelectorAll("script")].filter(
+      (s) => !s.getAttribute("src")
+    );
+    expect(scripts.length).toBeGreaterThan(0);
+  });
+
+  it("all project pages have at least one inline script with IntersectionObserver", () => {
+    projectDocs.forEach(({ file, html }) => {
+      expect(html).toContain("IntersectionObserver");
+    });
+  });
+
+  it("index.html does not reference any external .js files via <script src>", () => {
+    const externalScripts = [...indexDoc.querySelectorAll("script[src]")].filter(
+      (s) => !s.getAttribute("src").startsWith("http")
+    );
+    expect(externalScripts.length).toBe(0);
+  });
+});
+
 // ── No Broken Internal Links ─────────────────────────────────────────────────
 
 describe("No Broken Internal Links", () => {

@@ -505,3 +505,195 @@ describe("CSS State Classes", () => {
     expect(styleContent).toContain(".profile-card:hover .profile-name");
   });
 });
+
+// ── Particle Details ──────────────────────────────────────────────────────────
+
+describe("Particle Details", () => {
+  let doc;
+  let styleContent;
+  beforeEach(() => {
+    doc = createDOM();
+    styleContent = [...doc.querySelectorAll("style")]
+      .map((s) => s.textContent)
+      .join("\n");
+  });
+
+  it(".particles container has position: fixed in CSS", () => {
+    expect(styleContent).toMatch(/\.particles\s*\{[^}]*position:\s*fixed/s);
+  });
+
+  it(".particles container has z-index: 0 in CSS", () => {
+    expect(styleContent).toMatch(/\.particles\s*\{[^}]*z-index:\s*0/s);
+  });
+
+  it(".particle elements have position: absolute in CSS", () => {
+    expect(styleContent).toMatch(/\.particle\s*\{[^}]*position:\s*absolute/s);
+  });
+
+  it(".particle rule includes opacity property", () => {
+    expect(styleContent).toMatch(/\.particle\s*\{[^}]*opacity:/s);
+  });
+
+  it(".particle rule includes animation: floatUp", () => {
+    expect(styleContent).toMatch(/\.particle\s*\{[^}]*animation:\s*floatUp/s);
+  });
+
+  it("particle nth-child rules specify varying sizes (3px and 5px variants exist)", () => {
+    expect(styleContent).toContain("width: 3px");
+    expect(styleContent).toContain("width: 5px");
+  });
+
+  it("particle nth-child rules specify at least 3 different animation-delay values", () => {
+    // Extract delay values from nth-child rules
+    const delayMatches = styleContent.match(/animation-delay:\s*[\d.]+s/g) || [];
+    const uniqueDelays = new Set(delayMatches);
+    expect(uniqueDelays.size).toBeGreaterThanOrEqual(3);
+  });
+
+  it("particle colors include solid #E50914 red", () => {
+    expect(styleContent).toContain("background: #E50914");
+  });
+
+  it("particle colors include rgba white variants", () => {
+    expect(styleContent).toContain("rgba(255,255,255");
+  });
+
+  it("particle colors include rgba red variants", () => {
+    expect(styleContent).toContain("rgba(229, 9, 20");
+  });
+});
+
+// ── Overlay Animation CSS ─────────────────────────────────────────────────────
+
+describe("Overlay Animation CSS", () => {
+  let styleContent;
+  beforeAll(() => {
+    const doc = createDOM();
+    styleContent = [...doc.querySelectorAll("style")]
+      .map((s) => s.textContent)
+      .join("\n");
+  });
+
+  it(".enter-overlay background is a radial-gradient", () => {
+    expect(styleContent).toMatch(/\.enter-overlay\s*\{[^}]*radial-gradient/s);
+  });
+
+  it(".enter-overlay.hidden has pointer-events: none", () => {
+    expect(styleContent).toMatch(/\.enter-overlay\.hidden\s*\{[^}]*pointer-events:\s*none/s);
+  });
+
+  it(".enter-overlay has a transition property", () => {
+    expect(styleContent).toMatch(/\.enter-overlay\s*\{[^}]*transition:/s);
+  });
+
+  it(".enter-overlay has z-index: 2000", () => {
+    expect(styleContent).toMatch(/\.enter-overlay\s*\{[^}]*z-index:\s*2000/s);
+  });
+
+  it(".enter-overlay covers full viewport with width: 100% and height: 100%", () => {
+    expect(styleContent).toMatch(/\.enter-overlay\s*\{[^}]*width:\s*100%/s);
+    expect(styleContent).toMatch(/\.enter-overlay\s*\{[^}]*height:\s*100%/s);
+  });
+
+  it(".enter-overlay has cursor: pointer", () => {
+    expect(styleContent).toMatch(/\.enter-overlay\s*\{[^}]*cursor:\s*pointer/s);
+  });
+});
+
+// ── Netflix Intro CSS Details ─────────────────────────────────────────────────
+
+describe("Netflix Intro CSS Details", () => {
+  let styleContent;
+  beforeAll(() => {
+    const doc = createDOM();
+    styleContent = [...doc.querySelectorAll("style")]
+      .map((s) => s.textContent)
+      .join("\n");
+  });
+
+  it(".netflix-intro.playing .logo-text rule applies logoZoom animation", () => {
+    expect(styleContent).toMatch(/\.netflix-intro\.playing\s+\.logo-text[\s\S]*?logoZoom/);
+  });
+
+  it("style contains logoZoom animation reference in @keyframes", () => {
+    expect(styleContent).toContain("@keyframes logoZoom");
+  });
+
+  it(".netflix-intro starts with opacity: 0 and visibility: hidden", () => {
+    expect(styleContent).toMatch(/\.netflix-intro\s*\{[^}]*opacity:\s*0/s);
+    expect(styleContent).toMatch(/\.netflix-intro\s*\{[^}]*visibility:\s*hidden/s);
+  });
+
+  it(".netflix-intro has z-index: 1000", () => {
+    expect(styleContent).toMatch(/\.netflix-intro\s*\{[^}]*z-index:\s*1000/s);
+  });
+
+  it(".logo-text has color: #E50914", () => {
+    expect(styleContent).toMatch(/\.logo-text[\s\S]*?color:\s*#E50914/);
+  });
+
+  it(".logo-text has font-size: 4rem", () => {
+    expect(styleContent).toMatch(/\.logo-text[\s\S]*?font-size:\s*4rem/);
+  });
+});
+
+// ── Profile Card CSS Details ──────────────────────────────────────────────────
+
+describe("Profile Card CSS Details", () => {
+  let styleContent;
+  beforeAll(() => {
+    const doc = createDOM();
+    styleContent = [...doc.querySelectorAll("style")]
+      .map((s) => s.textContent)
+      .join("\n");
+  });
+
+  it(".profile-avatar has width: 150px and height: 150px", () => {
+    expect(styleContent).toMatch(/\.profile-avatar\s*\{[^}]*width:\s*150px/s);
+    expect(styleContent).toMatch(/\.profile-avatar\s*\{[^}]*height:\s*150px/s);
+  });
+
+  it(".profile-card has text-decoration: none", () => {
+    expect(styleContent).toMatch(/\.profile-card\s*\{[^}]*text-decoration:\s*none/s);
+  });
+
+  it(".profile-card:hover .profile-avatar has transform: scale(1.1)", () => {
+    expect(styleContent).toMatch(/\.profile-card:hover\s+\.profile-avatar[\s\S]*?transform:\s*scale\(1\.1\)/);
+  });
+
+  it(".profiles-container uses display: flex layout", () => {
+    expect(styleContent).toMatch(/\.profiles-container\s*\{[^}]*display:\s*flex/s);
+  });
+});
+
+// ── Script Timing Details ─────────────────────────────────────────────────────
+
+describe("Script Timing Details", () => {
+  let scriptContent;
+  beforeAll(() => {
+    const doc = createDOM();
+    const scripts = [...doc.querySelectorAll("script")];
+    const target = scripts.find((s) =>
+      s.textContent.includes("enter-overlay")
+    );
+    scriptContent = target ? target.textContent : "";
+  });
+
+  it("script contains setTimeout with 300ms delay for card click navigation", () => {
+    expect(scriptContent).toContain("300");
+  });
+
+  it("script uses forEach to iterate over all profile cards", () => {
+    expect(scriptContent).toContain(".forEach");
+  });
+
+  it("script has .catch for sound.play() error handling", () => {
+    expect(scriptContent).toContain(".catch(");
+  });
+
+  it("script runs inline at end of body without DOMContentLoaded wrapper", () => {
+    // Scripts that run inline do not need DOMContentLoaded
+    // Verify the script does NOT wrap in DOMContentLoaded
+    expect(scriptContent).not.toContain("DOMContentLoaded");
+  });
+});

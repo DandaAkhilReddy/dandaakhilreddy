@@ -277,3 +277,183 @@ describe("Animations and Keyframes", () => {
     expect(css).toMatch(/\.day-badge\.new\s*\{[^}]*animation\s*:[^}]*pulse/s);
   });
 });
+
+// ── Missing Selectors ─────────────────────────────────────────────────────────
+
+describe("Missing Selectors", () => {
+  it(".journey-section selector exists", () => {
+    expect(css).toMatch(/\.journey-section\s*\{/);
+  });
+
+  it(".journey-banner selector exists", () => {
+    expect(css).toMatch(/\.journey-banner\s*\{/);
+  });
+
+  it(".journey-progress selector exists", () => {
+    expect(css).toMatch(/\.journey-progress\s*\{/);
+  });
+
+  it(".stat selector exists", () => {
+    expect(css).toMatch(/\.stat\s*\{/);
+  });
+
+  it(".stat-number selector exists", () => {
+    expect(css).toMatch(/\.stat-number\s*\{/);
+  });
+
+  it(".stat-label selector exists", () => {
+    expect(css).toMatch(/\.stat-label\s*\{/);
+  });
+
+  it(".card selector exists", () => {
+    expect(css).toMatch(/\.card\s*\{/);
+  });
+
+  it(".card:hover selector exists", () => {
+    expect(css).toMatch(/\.card:hover\s*\{/);
+  });
+
+  it(".card-image selector exists", () => {
+    expect(css).toMatch(/\.card-image\s*\{/);
+  });
+
+  it(".card-info selector exists", () => {
+    expect(css).toMatch(/\.card-info\s*\{/);
+  });
+
+  it(".netflix-row::-webkit-scrollbar selector exists", () => {
+    expect(css).toMatch(/\.netflix-row::-webkit-scrollbar\s*\{/);
+  });
+
+  it(".progress-indicator selector exists", () => {
+    expect(css).toMatch(/\.progress-indicator\s*\{/);
+  });
+
+  it(".mini-face selector exists", () => {
+    expect(css).toMatch(/\.mini-face\s*\{/);
+  });
+
+  it(".mini-eyes selector exists", () => {
+    expect(css).toMatch(/\.mini-eyes\s*\{/);
+  });
+
+  it(".mini-eye selector exists", () => {
+    expect(css).toMatch(/\.mini-eye\s*\{/);
+  });
+
+  it(".hero-video selector exists", () => {
+    expect(css).toMatch(/\.hero-video\s*\{/);
+  });
+});
+
+// ── Avatar Gradient Variants ──────────────────────────────────────────────────
+
+describe("Avatar Gradient Variants", () => {
+  it(".avatar-recruiter selector exists with a gradient", () => {
+    expect(css).toMatch(/\.avatar-recruiter\s*\{[^}]*linear-gradient/s);
+  });
+
+  it(".avatar-developer selector exists with a gradient", () => {
+    expect(css).toMatch(/\.avatar-developer\s*\{[^}]*linear-gradient/s);
+  });
+
+  it(".avatar-stalker selector exists with a gradient", () => {
+    expect(css).toMatch(/\.avatar-stalker\s*\{[^}]*linear-gradient/s);
+  });
+
+  it(".avatar-adventurer selector exists with a gradient", () => {
+    expect(css).toMatch(/\.avatar-adventurer\s*\{[^}]*linear-gradient/s);
+  });
+});
+
+// ── Mobile Media Query Depth ──────────────────────────────────────────────────
+
+describe("Mobile Media Query Depth", () => {
+  it("600px breakpoint hides .hero-video", () => {
+    const block600 = css.match(/@media\s*\(max-width:\s*600px\)\s*\{([\s\S]*?)(?=@media|\s*$)/);
+    expect(block600).not.toBeNull();
+    expect(block600[1]).toMatch(/\.hero-video\s*\{[^}]*display\s*:\s*none/s);
+  });
+
+  it("600px breakpoint makes .daily-cards-grid single column", () => {
+    const block600 = css.match(/@media\s*\(max-width:\s*600px\)\s*\{([\s\S]*?)(?=@media|\s*$)/);
+    expect(block600).not.toBeNull();
+    expect(block600[1]).toMatch(/\.daily-cards-grid\s*\{[^}]*grid-template-columns\s*:\s*1fr/s);
+  });
+
+  it("900px breakpoint sets .journey-banner flex-direction to column", () => {
+    const block900 = css.match(/@media\s*\(max-width:\s*900px\)\s*\{([\s\S]*?)(?=@media|\s*$)/);
+    expect(block900).not.toBeNull();
+    expect(block900[1]).toMatch(/\.journey-banner\s*\{[^}]*flex-direction\s*:\s*column/s);
+  });
+
+  it("900px breakpoint makes .skills-grid-new single column", () => {
+    const block900 = css.match(/@media\s*\(max-width:\s*900px\)\s*\{([\s\S]*?)(?=@media|\s*$)/);
+    expect(block900).not.toBeNull();
+    expect(block900[1]).toMatch(/\.skills-grid-new\s*\{[^}]*grid-template-columns\s*:\s*1fr/s);
+  });
+
+  it("600px breakpoint reduces .hero-title font-size to 1.6rem", () => {
+    const block600 = css.match(/@media\s*\(max-width:\s*600px\)\s*\{([\s\S]*?)(?=@media|\s*$)/);
+    expect(block600).not.toBeNull();
+    expect(block600[1]).toMatch(/\.hero-title\s*\{[^}]*font-size\s*:\s*1\.6rem/s);
+  });
+
+  it("600px breakpoint collapses .edu-grid to single column", () => {
+    const block600 = css.match(/@media\s*\(max-width:\s*600px\)\s*\{([\s\S]*?)(?=@media|\s*$)/);
+    expect(block600).not.toBeNull();
+    expect(block600[1]).toMatch(/\.edu-grid\s*\{[^}]*grid-template-columns\s*:\s*1fr/s);
+  });
+
+  it("600px breakpoint sets .cert-row to flex-direction: column", () => {
+    const block600 = css.match(/@media\s*\(max-width:\s*600px\)\s*\{([\s\S]*?)(?=@media|\s*$)/);
+    expect(block600).not.toBeNull();
+    expect(block600[1]).toMatch(/\.cert-row\s*\{[^}]*flex-direction\s*:\s*column/s);
+  });
+
+  it("900px breakpoint collapses .experience-grid to single column", () => {
+    const block900 = css.match(/@media\s*\(max-width:\s*900px\)\s*\{([\s\S]*?)(?=@media|\s*$)/);
+    expect(block900).not.toBeNull();
+    expect(block900[1]).toMatch(/\.experience-grid\s*\{[^}]*grid-template-columns\s*:\s*1fr/s);
+  });
+});
+
+// ── Scrollbar Rules ───────────────────────────────────────────────────────────
+
+describe("Scrollbar Rules", () => {
+  it(".netflix-row::-webkit-scrollbar hides the scrollbar", () => {
+    expect(css).toMatch(/\.netflix-row::-webkit-scrollbar\s*\{[^}]*display\s*:\s*none/s);
+  });
+
+  it(".row-content::-webkit-scrollbar selector exists", () => {
+    expect(css).toMatch(/\.row-content::-webkit-scrollbar\s*\{/);
+  });
+
+  it(".row-content::-webkit-scrollbar hides the scrollbar", () => {
+    expect(css).toMatch(/\.row-content::-webkit-scrollbar\s*\{[^}]*display\s*:\s*none/s);
+  });
+
+  it(".netflix-row has scrollbar-width: none (Firefox)", () => {
+    expect(css).toMatch(/\.netflix-row\s*\{[^}]*scrollbar-width\s*:\s*none/s);
+  });
+});
+
+// ── Hover States ──────────────────────────────────────────────────────────────
+
+describe("Hover States", () => {
+  it(".netflix-card:hover applies transform: scale(1.1)", () => {
+    expect(css).toMatch(/\.netflix-card:hover\s*\{[^}]*transform\s*:[^}]*scale\(1\.1\)/s);
+  });
+
+  it(".experience-card:hover lifts element with translateY(-5px)", () => {
+    expect(css).toMatch(/\.experience-card:hover\s*\{[^}]*transform\s*:[^}]*translateY\(-5px\)/s);
+  });
+
+  it(".daily-card:hover lifts element with translateY(-10px)", () => {
+    expect(css).toMatch(/\.daily-card:hover\s*\{[^}]*transform\s*:[^}]*translateY\(-10px\)/s);
+  });
+
+  it(".contact-link:hover changes background color", () => {
+    expect(css).toMatch(/\.contact-link:hover\s*\{[^}]*background\s*:/s);
+  });
+});

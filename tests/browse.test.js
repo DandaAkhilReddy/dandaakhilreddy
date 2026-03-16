@@ -1140,4 +1140,416 @@ describe("browse.html — Main Portfolio Page", () => {
       expect(text).toMatch(/©|copyright|2026/i);
     });
   });
+
+  // ── Missing Section IDs ────────────────────────────────────────────────
+
+  describe("missing section IDs", () => {
+    it("id='home' exists on the hero section", () => {
+      expect(doc.getElementById("home")).not.toBeNull();
+    });
+
+    it("id='about' exists on the about section", () => {
+      expect(doc.getElementById("about")).not.toBeNull();
+    });
+
+    it("id='projects' exists on the quick-nav section", () => {
+      expect(doc.getElementById("projects")).not.toBeNull();
+    });
+
+    it("id='contact' exists on the contact section", () => {
+      expect(doc.getElementById("contact")).not.toBeNull();
+    });
+  });
+
+  // ── Video System Details ───────────────────────────────────────────────
+
+  describe("video system details", () => {
+    it("#bg-video has playsinline attribute", () => {
+      const video = doc.getElementById("bg-video");
+      expect(video).not.toBeNull();
+      expect(video.hasAttribute("playsinline")).toBe(true);
+    });
+
+    it("#bg-video has at least 2 source child elements", () => {
+      const video = doc.getElementById("bg-video");
+      expect(video.querySelectorAll("source").length).toBeGreaterThanOrEqual(2);
+    });
+
+    it("#bg-video-src-local source element exists", () => {
+      expect(doc.getElementById("bg-video-src-local")).not.toBeNull();
+    });
+
+    it("#bg-video-src-fallback source element exists", () => {
+      expect(doc.getElementById("bg-video-src-fallback")).not.toBeNull();
+    });
+
+    it("local source src points to assets/videos/ path", () => {
+      const src = doc.getElementById("bg-video-src-local");
+      expect(src.getAttribute("src")).toContain("assets/videos/");
+    });
+
+    it("fallback source src points to mixkit.co CDN", () => {
+      const src = doc.getElementById("bg-video-src-fallback");
+      expect(src.getAttribute("src")).toContain("mixkit.co");
+    });
+
+    it("both source elements have type='video/mp4'", () => {
+      const sources = doc.getElementById("bg-video").querySelectorAll("source");
+      sources.forEach((s) => {
+        expect(s.getAttribute("type")).toBe("video/mp4");
+      });
+    });
+
+    it(".bg-video-container video has object-fit: cover in inline style block", () => {
+      const styles = [...doc.querySelectorAll("style")]
+        .map((s) => s.textContent)
+        .join("\n");
+      expect(styles).toContain("object-fit: cover");
+    });
+  });
+
+  // ── Quick-Nav Card Onclick ─────────────────────────────────────────────
+
+  describe("quick-nav card onclick behavior", () => {
+    it("at least one .netflix-card onclick contains scrollIntoView", () => {
+      const cards = [...doc.querySelectorAll(".netflix-card")];
+      const match = cards.find((c) =>
+        c.getAttribute("onclick")?.includes("scrollIntoView")
+      );
+      expect(match).toBeTruthy();
+    });
+
+    it("at least one .netflix-card onclick contains window.open", () => {
+      const cards = [...doc.querySelectorAll(".netflix-card")];
+      const match = cards.find((c) =>
+        c.getAttribute("onclick")?.includes("window.open")
+      );
+      expect(match).toBeTruthy();
+    });
+
+    it("all .netflix-card elements with style cursor:pointer have onclick attribute", () => {
+      const cursorCards = doc.querySelectorAll(
+        '.netflix-card[style*="cursor: pointer"]'
+      );
+      expect(cursorCards.length).toBeGreaterThanOrEqual(1);
+      cursorCards.forEach((card) => {
+        expect(card.getAttribute("onclick")).toBeTruthy();
+      });
+    });
+
+    it("scrollIntoView cards use behavior:'smooth'", () => {
+      const cards = [...doc.querySelectorAll(".netflix-card")];
+      const scrollCards = cards.filter((c) =>
+        c.getAttribute("onclick")?.includes("scrollIntoView")
+      );
+      scrollCards.forEach((card) => {
+        expect(card.getAttribute("onclick")).toContain("smooth");
+      });
+    });
+
+    it("window.open cards include '_blank' as second argument", () => {
+      const cards = [...doc.querySelectorAll(".netflix-card")];
+      const openCards = cards.filter((c) =>
+        c.getAttribute("onclick")?.includes("window.open")
+      );
+      openCards.forEach((card) => {
+        expect(card.getAttribute("onclick")).toContain("_blank");
+      });
+    });
+
+    it("total .netflix-card count is at least 9", () => {
+      expect(doc.querySelectorAll(".netflix-card").length).toBeGreaterThanOrEqual(9);
+    });
+  });
+
+  // ── Daily Card Images ──────────────────────────────────────────────────
+
+  describe("daily card images", () => {
+    it("all .daily-card img elements have non-empty alt text", () => {
+      const imgs = doc.querySelectorAll(".daily-card img");
+      expect(imgs.length).toBeGreaterThanOrEqual(8);
+      imgs.forEach((img) => {
+        expect(img.getAttribute("alt")).toBeTruthy();
+        expect(img.getAttribute("alt").trim().length).toBeGreaterThan(0);
+      });
+    });
+
+    it("at least one .daily-card has a .new-ribbon element", () => {
+      const ribbons = doc.querySelectorAll(".daily-card .new-ribbon");
+      expect(ribbons.length).toBeGreaterThanOrEqual(1);
+    });
+
+    it(".daily-card.featured elements exist (at least 1)", () => {
+      expect(doc.querySelectorAll(".daily-card.featured").length).toBeGreaterThanOrEqual(1);
+    });
+
+    it("daily card count is exactly 8", () => {
+      expect(doc.querySelectorAll(".daily-card").length).toBe(8);
+    });
+  });
+
+  // ── Experience Card Internals ──────────────────────────────────────────
+
+  describe("experience card internals", () => {
+    it("Microsoft card has .exp-location with 'Redmond' text", () => {
+      const msCard = doc.querySelector(".experience-card.microsoft");
+      const location = msCard.querySelector(".exp-location");
+      expect(location).not.toBeNull();
+      expect(location.textContent).toContain("Redmond");
+    });
+
+    it("Amazon card has .exp-location with 'Seattle' text", () => {
+      const amazonCard = doc.querySelector(".experience-card.amazon");
+      const location = amazonCard.querySelector(".exp-location");
+      expect(location).not.toBeNull();
+      expect(location.textContent).toContain("Seattle");
+    });
+
+    it("each experience card has .exp-header", () => {
+      const cards = doc.querySelectorAll(".experience-card");
+      cards.forEach((card) => {
+        expect(card.querySelector(".exp-header")).not.toBeNull();
+      });
+    });
+
+    it("each experience card has .exp-tech with span elements", () => {
+      const cards = doc.querySelectorAll(".experience-card");
+      cards.forEach((card) => {
+        const tech = card.querySelector(".exp-tech");
+        expect(tech).not.toBeNull();
+        expect(tech.querySelectorAll("span").length).toBeGreaterThanOrEqual(1);
+      });
+    });
+
+    it("Microsoft card .exp-tech includes C# and .NET", () => {
+      const msCard = doc.querySelector(".experience-card.microsoft");
+      const techText = msCard.querySelector(".exp-tech").textContent;
+      expect(techText).toContain("C#");
+      expect(techText).toContain(".NET");
+    });
+
+    it("Amazon card .exp-tech includes Python", () => {
+      const amazonCard = doc.querySelector(".experience-card.amazon");
+      const techText = amazonCard.querySelector(".exp-tech").textContent;
+      expect(techText).toContain("Python");
+    });
+
+    it("Microsoft card has .exp-company with 'Microsoft' text", () => {
+      const msCard = doc.querySelector(".experience-card.microsoft");
+      const company = msCard.querySelector(".exp-company");
+      expect(company).not.toBeNull();
+      expect(company.textContent.trim()).toBe("Microsoft");
+    });
+
+    it("experience grid has exactly 3 experience cards", () => {
+      expect(doc.querySelectorAll(".experience-card").length).toBe(3);
+    });
+  });
+
+  // ── Skills Section Depth ───────────────────────────────────────────────
+
+  describe("skills section depth", () => {
+    it(".skills-grid-new container exists", () => {
+      expect(doc.querySelector(".skills-grid-new")).not.toBeNull();
+    });
+
+    it(".skill-card-new elements exist (count > 0)", () => {
+      expect(doc.querySelectorAll(".skill-card-new").length).toBeGreaterThan(0);
+    });
+
+    it("skill progress bars have inline width style", () => {
+      const bars = [...doc.querySelectorAll(".skill-progress")];
+      const withWidth = bars.filter((el) =>
+        (el.getAttribute("style") || "").includes("width:")
+      );
+      expect(withWidth.length).toBeGreaterThan(0);
+    });
+
+    it(".featured-skills container exists", () => {
+      expect(doc.querySelector(".featured-skills")).not.toBeNull();
+    });
+
+    it("skill section has 3 .skills-grid-new grids (Languages, Cloud, ML)", () => {
+      expect(doc.querySelectorAll(".skills-grid-new").length).toBe(3);
+    });
+
+    it("total .skill-card-new count is at least 15", () => {
+      expect(doc.querySelectorAll(".skill-card-new").length).toBeGreaterThanOrEqual(15);
+    });
+  });
+
+  // ── Education Depth ────────────────────────────────────────────────────
+
+  describe("education depth", () => {
+    it("education cards have .edu-icon elements", () => {
+      const cards = doc.querySelectorAll(".edu-card");
+      cards.forEach((card) => {
+        expect(card.querySelector(".edu-icon")).not.toBeNull();
+      });
+    });
+
+    it("education cards have .edu-date elements with non-empty text", () => {
+      const cards = doc.querySelectorAll(".edu-card");
+      cards.forEach((card) => {
+        const date = card.querySelector(".edu-date");
+        expect(date).not.toBeNull();
+        expect(date.textContent.trim().length).toBeGreaterThan(0);
+      });
+    });
+
+    it("Texas A&M degree mentions 'Computer Science'", () => {
+      const cards = [...doc.querySelectorAll(".edu-card")];
+      const tamuCard = cards.find((c) =>
+        c.textContent.includes("Texas A")
+      );
+      expect(tamuCard).toBeTruthy();
+      expect(tamuCard.textContent).toContain("Computer Science");
+    });
+
+    it("SRM degree mentions 'Computer Science'", () => {
+      const cards = [...doc.querySelectorAll(".edu-card")];
+      const srmCard = cards.find((c) => c.textContent.includes("SRM"));
+      expect(srmCard).toBeTruthy();
+      expect(srmCard.textContent).toContain("Computer Science");
+    });
+  });
+
+  // ── Contact Section Depth ─────────────────────────────────────────────
+
+  describe("contact section depth", () => {
+    it(".contact-card element exists inside #contact", () => {
+      const contact = doc.getElementById("contact");
+      expect(contact.querySelector(".contact-card")).not.toBeNull();
+    });
+
+    it("contact section has email link with mailto:", () => {
+      const contact = doc.getElementById("contact");
+      const mailto = contact.querySelector('a[href^="mailto:"]');
+      expect(mailto).not.toBeNull();
+    });
+
+    it("contact section has LinkedIn .contact-link", () => {
+      const contact = doc.getElementById("contact");
+      const links = [...contact.querySelectorAll(".contact-link")];
+      const linkedin = links.find((l) =>
+        l.getAttribute("href")?.includes("linkedin.com")
+      );
+      expect(linkedin).toBeTruthy();
+    });
+
+    it("contact section has GitHub .contact-link", () => {
+      const contact = doc.getElementById("contact");
+      const links = [...contact.querySelectorAll(".contact-link")];
+      const github = links.find((l) =>
+        l.getAttribute("href")?.includes("github.com")
+      );
+      expect(github).toBeTruthy();
+    });
+
+    it("contact section contains at least 3 .contact-link elements", () => {
+      const contact = doc.getElementById("contact");
+      expect(contact.querySelectorAll(".contact-link").length).toBeGreaterThanOrEqual(3);
+    });
+
+    it("contact section has a heading containing 'Connect'", () => {
+      const contact = doc.getElementById("contact");
+      const heading = contact.querySelector("h2");
+      expect(heading).not.toBeNull();
+      expect(heading.textContent).toContain("Connect");
+    });
+  });
+
+  // ── Nav Profile Image ──────────────────────────────────────────────────
+
+  describe("nav profile image", () => {
+    it("#nav-profile-img has src attribute pointing to an image URL", () => {
+      const img = doc.getElementById("nav-profile-img");
+      expect(img).not.toBeNull();
+      const src = img.getAttribute("src");
+      expect(src).toBeTruthy();
+      expect(src.length).toBeGreaterThan(0);
+    });
+
+    it("#nav-profile-img has class 'nav-profile-img'", () => {
+      const img = doc.getElementById("nav-profile-img");
+      expect(img.classList.contains("nav-profile-img")).toBe(true);
+    });
+
+    it("#nav-profile-img has alt attribute", () => {
+      const img = doc.getElementById("nav-profile-img");
+      expect(img.hasAttribute("alt")).toBe(true);
+    });
+
+    it("#nav-profile-img is wrapped inside #current-profile anchor", () => {
+      const anchor = doc.getElementById("current-profile");
+      expect(anchor).not.toBeNull();
+      expect(anchor.querySelector("#nav-profile-img")).not.toBeNull();
+    });
+  });
+
+  // ── Certifications Depth ───────────────────────────────────────────────
+
+  describe("certifications depth", () => {
+    it("a.cert-card elements have inline border style", () => {
+      const certLinks = doc.querySelectorAll("a.cert-card");
+      const withBorder = [...certLinks].filter((c) =>
+        (c.getAttribute("style") || "").includes("border:")
+      );
+      expect(withBorder.length).toBeGreaterThanOrEqual(1);
+    });
+
+    it("Claude Code cert has red border (#e50914) and is a.cert-card", () => {
+      const certLinks = doc.querySelectorAll("a.cert-card");
+      const claudeCert = [...certLinks].find((c) =>
+        c.innerHTML.includes("Claude Code")
+      );
+      expect(claudeCert).toBeTruthy();
+      expect(claudeCert.getAttribute("style")).toContain("e50914");
+    });
+
+    it("NVIDIA NeMo cert has green border (#76b900)", () => {
+      const certLinks = doc.querySelectorAll("a.cert-card");
+      const nvidiaCert = [...certLinks].find((c) =>
+        c.innerHTML.includes("NeMo")
+      );
+      expect(nvidiaCert).toBeTruthy();
+      expect(nvidiaCert.getAttribute("style")).toContain("76b900");
+    });
+
+    it("Redis cert has red border (#dc382d)", () => {
+      const certLinks = doc.querySelectorAll("a.cert-card");
+      const redisCert = [...certLinks].find((c) =>
+        c.innerHTML.includes("Redis")
+      );
+      expect(redisCert).toBeTruthy();
+      expect(redisCert.getAttribute("style")).toContain("dc382d");
+    });
+
+    it("certifications section title says '27 Professional Certifications'", () => {
+      const section = doc.getElementById("certifications");
+      expect(section.textContent).toContain("27 Professional Certifications");
+    });
+
+    it("DeepLearning.AI category shows '17 Certifications' label", () => {
+      const section = doc.getElementById("certifications");
+      expect(section.innerHTML).toContain("17 Certifications");
+    });
+
+    it("certifications section contains 'LangChain' text", () => {
+      const section = doc.getElementById("certifications");
+      expect(section.innerHTML).toContain("LangChain");
+    });
+
+    it("certifications section contains 'NVIDIA' text", () => {
+      const section = doc.getElementById("certifications");
+      expect(section.innerHTML).toContain("NVIDIA");
+    });
+
+    it("at least one a.cert-card href contains 'learn.deeplearning.ai'", () => {
+      const deepCerts = doc.querySelectorAll(
+        'a.cert-card[href*="learn.deeplearning.ai"]'
+      );
+      expect(deepCerts.length).toBeGreaterThanOrEqual(1);
+    });
+  });
 });

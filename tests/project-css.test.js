@@ -388,3 +388,73 @@ describe("Layout Properties", () => {
     expect(css).toMatch(/\.tech-grid\s*\{[^}]*gap\s*:\s*24px/s);
   });
 });
+
+// ── Animation Delay Staggering ────────────────────────────────────────────────
+
+describe("Animation Delay Staggering", () => {
+  it(".tech-item:nth-child(1) has a transition-delay", () => {
+    expect(css).toMatch(/\.tech-item:nth-child\(1\)\s*\{[^}]*transition-delay\s*:/s);
+  });
+
+  it(".tech-item:nth-child(2) has a transition-delay", () => {
+    expect(css).toMatch(/\.tech-item:nth-child\(2\)\s*\{[^}]*transition-delay\s*:/s);
+  });
+
+  it(".tech-item:nth-child(3) has a transition-delay", () => {
+    expect(css).toMatch(/\.tech-item:nth-child\(3\)\s*\{[^}]*transition-delay\s*:/s);
+  });
+
+  it(".tech-item:nth-child(4) has a transition-delay", () => {
+    expect(css).toMatch(/\.tech-item:nth-child\(4\)\s*\{[^}]*transition-delay\s*:/s);
+  });
+
+  it(".feature-card:nth-child(1) has a transition-delay", () => {
+    expect(css).toMatch(/\.feature-card:nth-child\(1\)\s*\{[^}]*transition-delay\s*:/s);
+  });
+
+  it(".feature-card:nth-child(3) has a transition-delay", () => {
+    expect(css).toMatch(/\.feature-card:nth-child\(3\)\s*\{[^}]*transition-delay\s*:/s);
+  });
+
+  it(".install-step:nth-child(1) has a transition-delay", () => {
+    expect(css).toMatch(/\.install-step:nth-child\(1\)\s*\{[^}]*transition-delay\s*:/s);
+  });
+
+  it(".install-step:nth-child(2) has a transition-delay", () => {
+    expect(css).toMatch(/\.install-step:nth-child\(2\)\s*\{[^}]*transition-delay\s*:/s);
+  });
+
+  it(".content-block:nth-child(1) has a transition-delay", () => {
+    expect(css).toMatch(/\.content-block:nth-child\(1\)\s*\{[^}]*transition-delay\s*:/s);
+  });
+
+  it(".content-block:nth-child(2) has a transition-delay", () => {
+    expect(css).toMatch(/\.content-block:nth-child\(2\)\s*\{[^}]*transition-delay\s*:/s);
+  });
+});
+
+// ── Back-Link and Install Step Hover ─────────────────────────────────────────
+
+describe("Back-Link and Section Details", () => {
+  it(".back-link:hover selector exists with color change to netflix-red", () => {
+    expect(css).toMatch(/\.back-link:hover\s*\{[^}]*color\s*:\s*var\(--netflix-red\)/s);
+  });
+
+  it(".install-step uses translateX(-20px) as initial transform", () => {
+    expect(css).toMatch(/\.install-step\s*\{[^}]*transform\s*:[^}]*translateX\(-20px\)/s);
+  });
+
+  it(".step-number uses netflix-red background", () => {
+    expect(css).toMatch(/\.step-number\s*\{[^}]*background\s*:\s*var\(--netflix-red\)/s);
+  });
+
+  it(".project-tech-section has padding: 80px 24px", () => {
+    expect(css).toMatch(/\.project-tech-section\s*\{[^}]*padding\s*:\s*80px\s+24px/s);
+  });
+
+  it("768px breakpoint reduces section padding to 60px for project sections", () => {
+    const block768 = css.match(/@media\s*\(max-width:\s*768px\)\s*\{([\s\S]*?)(?=@media|\s*$)/);
+    expect(block768).not.toBeNull();
+    expect(block768[1]).toMatch(/padding\s*:\s*60px/);
+  });
+});

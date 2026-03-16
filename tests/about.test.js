@@ -486,6 +486,355 @@ describe("Script Behavior", () => {
   });
 });
 
+// ── Lightbox Behavior ────────────────────────────────────────────────────────
+
+describe("Lightbox Behavior", () => {
+  let doc;
+  let styles;
+  beforeEach(() => {
+    doc = createDOM();
+    styles = [...doc.querySelectorAll("style")].map((s) => s.textContent).join("\n");
+  });
+
+  it("script contains imageLightbox reference", () => {
+    expect(html).toContain("imageLightbox");
+  });
+
+  it("script contains close button click handler via onclick attribute", () => {
+    const closeBtn = doc.querySelector(".lightbox-close");
+    expect(closeBtn).not.toBeNull();
+    expect(closeBtn.getAttribute("onclick")).toContain("closeLightbox");
+  });
+
+  it("script contains prev button handler via onclick attribute", () => {
+    const prevBtn = doc.querySelector(".lightbox-prev");
+    expect(prevBtn).not.toBeNull();
+    expect(prevBtn.getAttribute("onclick")).toContain("navigateLightbox");
+  });
+
+  it("script contains next button handler via onclick attribute", () => {
+    const nextBtn = doc.querySelector(".lightbox-next");
+    expect(nextBtn).not.toBeNull();
+    expect(nextBtn.getAttribute("onclick")).toContain("navigateLightbox");
+  });
+
+  it("script handles keyboard Escape key", () => {
+    expect(html).toContain("'Escape'");
+  });
+
+  it("script handles ArrowLeft key", () => {
+    expect(html).toContain("'ArrowLeft'");
+  });
+
+  it("script handles ArrowRight key", () => {
+    expect(html).toContain("'ArrowRight'");
+  });
+
+  it("script initializes imageArray as an empty array", () => {
+    expect(html).toContain("let imageArray = []");
+  });
+
+  it("script has currentImageIndex variable", () => {
+    expect(html).toContain("currentImageIndex");
+  });
+
+  it("script has wrap-around logic guarding against out-of-bounds index", () => {
+    expect(html).toContain("imageArray.length");
+    // forward wrap: reset to 0 when index exceeds length
+    expect(html).toContain("currentImageIndex = 0");
+    // backward wrap: reset to last element
+    expect(html).toContain("imageArray.length - 1");
+  });
+
+  it(".image-lightbox has display property in CSS", () => {
+    expect(styles).toMatch(/\.image-lightbox\s*\{[^}]*display:/s);
+  });
+
+  it(".image-lightbox is position: fixed in CSS (covers full viewport)", () => {
+    expect(styles).toMatch(/\.image-lightbox\s*\{[^}]*position:\s*fixed/s);
+  });
+});
+
+// ── Passion Card Internals ────────────────────────────────────────────────────
+
+describe("Passion Card Internals", () => {
+  let doc;
+  beforeEach(() => {
+    doc = createDOM();
+  });
+
+  it("each .passion-card has a .passion-card-header child", () => {
+    const cards = [...doc.querySelectorAll(".passion-card")];
+    expect(cards.length).toBeGreaterThan(0);
+    cards.forEach((card) => {
+      const header = card.querySelector(".passion-card-header");
+      expect(header).not.toBeNull();
+    });
+  });
+
+  it("each .passion-card-header contains a .passion-icon element", () => {
+    const headers = [...doc.querySelectorAll(".passion-card-header")];
+    expect(headers.length).toBeGreaterThan(0);
+    headers.forEach((header) => {
+      const icon = header.querySelector(".passion-icon");
+      expect(icon).not.toBeNull();
+    });
+  });
+
+  it(".passion-tag elements exist across all passion cards", () => {
+    const tags = doc.querySelectorAll(".passion-card .passion-tag");
+    expect(tags.length).toBeGreaterThan(0);
+  });
+
+  it("passion tags include .purple color variant", () => {
+    const purpleTags = doc.querySelectorAll(".passion-tag.purple");
+    expect(purpleTags.length).toBeGreaterThan(0);
+  });
+
+  it("passion tags include .blue color variant", () => {
+    const blueTags = doc.querySelectorAll(".passion-tag.blue");
+    expect(blueTags.length).toBeGreaterThan(0);
+  });
+
+  it("passion tags include .green color variant", () => {
+    const greenTags = doc.querySelectorAll(".passion-tag.green");
+    expect(greenTags.length).toBeGreaterThan(0);
+  });
+
+  it("LLM Fine-tuning card has at least 4 .passion-tag elements", () => {
+    const cards = [...doc.querySelectorAll(".passion-card")];
+    const llmCard = cards.find((c) => /LLM|Fine.?tuning/i.test(c.textContent));
+    expect(llmCard).toBeDefined();
+    const tags = llmCard.querySelectorAll(".passion-tag");
+    expect(tags.length).toBeGreaterThanOrEqual(4);
+  });
+
+  it("LLM card tags include 'Fine-tuning' and 'RAG Systems'", () => {
+    const cards = [...doc.querySelectorAll(".passion-card")];
+    const llmCard = cards.find((c) => /LLM|Fine.?tuning/i.test(c.textContent));
+    expect(llmCard).toBeDefined();
+    const tagText = [...llmCard.querySelectorAll(".passion-tag")]
+      .map((t) => t.textContent.trim());
+    expect(tagText).toContain("Fine-tuning");
+    expect(tagText).toContain("RAG Systems");
+  });
+
+  it("AI Research card tags include 'ArXiv Daily' and 'Research Papers'", () => {
+    const cards = [...doc.querySelectorAll(".passion-card")];
+    const researchCard = cards.find((c) => /AI\/ML Research|ArXiv/i.test(c.textContent));
+    expect(researchCard).toBeDefined();
+    const tagText = [...researchCard.querySelectorAll(".passion-tag")]
+      .map((t) => t.textContent.trim());
+    expect(tagText).toContain("ArXiv Daily");
+    expect(tagText).toContain("Research Papers");
+  });
+
+  it("Cricket card tags include 'San Antonio League' and 'Century Scorer'", () => {
+    const cards = [...doc.querySelectorAll(".passion-card")];
+    const cricketCard = cards.find((c) => /Professional Cricket/i.test(c.textContent));
+    expect(cricketCard).toBeDefined();
+    const tagText = [...cricketCard.querySelectorAll(".passion-tag")]
+      .map((t) => t.textContent.trim());
+    expect(tagText).toContain("San Antonio League");
+    expect(tagText).toContain("Century Scorer");
+  });
+
+  it("each passion card has at least 2 .passion-tag elements", () => {
+    const cards = [...doc.querySelectorAll(".passion-card")];
+    cards.forEach((card) => {
+      const tags = card.querySelectorAll(".passion-tag");
+      expect(tags.length).toBeGreaterThanOrEqual(2);
+    });
+  });
+
+  it("each passion card description paragraph is non-empty", () => {
+    const cards = [...doc.querySelectorAll(".passion-card")];
+    cards.forEach((card) => {
+      const p = card.querySelector("p");
+      expect(p).not.toBeNull();
+      expect(p.textContent.trim().length).toBeGreaterThan(20);
+    });
+  });
+});
+
+// ── Bio Section Depth ─────────────────────────────────────────────────────────
+
+describe("Bio Section Depth", () => {
+  let doc;
+  beforeEach(() => {
+    doc = createDOM();
+  });
+
+  it(".bio-image-container element exists in the DOM", () => {
+    const container = doc.querySelector(".bio-image-container");
+    expect(container).not.toBeNull();
+  });
+
+  it(".bio-profile-image element exists with an img inside", () => {
+    const bioPic = doc.querySelector(".bio-profile-image");
+    expect(bioPic).not.toBeNull();
+    const img = bioPic.querySelector("img");
+    expect(img).not.toBeNull();
+  });
+
+  it(".highlight spans exist within bio text", () => {
+    const highlights = doc.querySelectorAll(".bio-content .highlight");
+    expect(highlights.length).toBeGreaterThan(0);
+  });
+
+  it(".highlight spans have non-empty text content", () => {
+    const highlights = [...doc.querySelectorAll(".bio-content .highlight")];
+    highlights.forEach((span) => {
+      expect(span.textContent.trim().length).toBeGreaterThan(0);
+    });
+  });
+
+  it("bio text contains 'Microsoft' via a strong element", () => {
+    const strongs = [...doc.querySelectorAll(".bio-content strong")];
+    const microsoftStrong = strongs.find((s) => s.textContent.includes("Microsoft"));
+    expect(microsoftStrong).toBeDefined();
+  });
+
+  it("bio text contains 'Amazon' via a strong element", () => {
+    const strongs = [...doc.querySelectorAll(".bio-content strong")];
+    const amazonStrong = strongs.find((s) => s.textContent.includes("Amazon"));
+    expect(amazonStrong).toBeDefined();
+  });
+
+  it("bio text contains 'Texas A&M University' via a strong element", () => {
+    const strongs = [...doc.querySelectorAll(".bio-content strong")];
+    const tamStrong = strongs.find((s) => /Texas A&M/i.test(s.textContent));
+    expect(tamStrong).toBeDefined();
+  });
+
+  it("bio-content has more than one paragraph", () => {
+    const paragraphs = doc.querySelectorAll(".bio-content p");
+    expect(paragraphs.length).toBeGreaterThan(1);
+  });
+
+  it("bio-content has an h2 heading", () => {
+    const h2 = doc.querySelector(".bio-content h2");
+    expect(h2).not.toBeNull();
+    expect(h2.textContent.trim().length).toBeGreaterThan(0);
+  });
+});
+
+// ── About Hero Details ────────────────────────────────────────────────────────
+
+describe("About Hero Details", () => {
+  let doc;
+  let styles;
+  beforeEach(() => {
+    doc = createDOM();
+    styles = [...doc.querySelectorAll("style")].map((s) => s.textContent).join("\n");
+  });
+
+  it("CSS contains radial-gradient on .about-hero::before pseudo-element", () => {
+    expect(styles).toMatch(/\.about-hero::before[\s\S]*?radial-gradient/);
+  });
+
+  it(".hero-profile-image container element exists", () => {
+    const container = doc.querySelector(".hero-profile-image");
+    expect(container).not.toBeNull();
+  });
+
+  it("about hero section contains both h1 and .tagline as direct or nested children", () => {
+    const hero = doc.querySelector(".about-hero");
+    expect(hero).not.toBeNull();
+    expect(hero.querySelector("h1")).not.toBeNull();
+    expect(hero.querySelector(".tagline")).not.toBeNull();
+  });
+
+  it("tagline contains role and technology spans", () => {
+    const taglineSpans = doc.querySelectorAll(".about-hero .tagline span");
+    expect(taglineSpans.length).toBeGreaterThanOrEqual(2);
+    const allText = [...taglineSpans].map((s) => s.textContent).join(" ");
+    expect(allText).toContain("Microsoft");
+  });
+});
+
+// ── Cricket Gallery Details ───────────────────────────────────────────────────
+
+describe("Cricket Gallery Details", () => {
+  let doc;
+  let styles;
+  beforeEach(() => {
+    doc = createDOM();
+    styles = [...doc.querySelectorAll("style")].map((s) => s.textContent).join("\n");
+  });
+
+  it(".cricket-gallery container exists", () => {
+    const gallery = doc.querySelector(".cricket-gallery");
+    expect(gallery).not.toBeNull();
+  });
+
+  it("gallery images have cursor: pointer set in CSS", () => {
+    expect(styles).toMatch(/\.cricket-gallery\s+img[\s\S]*?cursor:\s*pointer/);
+  });
+
+  it("script attaches click listeners to gallery images via forEach and openLightbox", () => {
+    expect(html).toContain("galleryImages.forEach");
+    expect(html).toContain("openLightbox(index)");
+  });
+
+  it("image count in HTML (2) matches imageArray usage in script", () => {
+    const galleryImgs = doc.querySelectorAll(".cricket-gallery img");
+    expect(galleryImgs.length).toBe(2);
+    // script pushes each gallery image into imageArray
+    expect(html).toContain("imageArray.push");
+  });
+});
+
+// ── Connect Section Depth ─────────────────────────────────────────────────────
+
+describe("Connect Section Depth", () => {
+  let doc;
+  let styles;
+  beforeEach(() => {
+    doc = createDOM();
+    styles = [...doc.querySelectorAll("style")].map((s) => s.textContent).join("\n");
+  });
+
+  it("connect section has an h2 heading", () => {
+    const h2 = doc.querySelector(".connect-section h2");
+    expect(h2).not.toBeNull();
+    expect(h2.textContent.trim().length).toBeGreaterThan(0);
+  });
+
+  it("connect section h2 text is \"LET'S CONNECT\"", () => {
+    const h2 = doc.querySelector(".connect-section h2");
+    expect(h2).not.toBeNull();
+    expect(h2.textContent.trim()).toBe("LET'S CONNECT");
+  });
+
+  it("each .social-link contains an SVG icon", () => {
+    const socialLinks = [...doc.querySelectorAll(".social-link")];
+    expect(socialLinks.length).toBeGreaterThan(0);
+    socialLinks.forEach((link) => {
+      const svg = link.querySelector("svg");
+      expect(svg).not.toBeNull();
+    });
+  });
+
+  it("each .social-link has visible text label", () => {
+    const socialLinks = [...doc.querySelectorAll(".social-link")];
+    expect(socialLinks.length).toBeGreaterThan(0);
+    socialLinks.forEach((link) => {
+      // textContent includes the SVG content, so just check it's non-trivially long
+      // strip SVG content approximation — link should contain a word label
+      expect(link.textContent.trim().length).toBeGreaterThan(0);
+    });
+  });
+
+  it(".social-link:hover rule includes transform in CSS", () => {
+    expect(styles).toMatch(/\.social-link:hover\s*\{[^}]*transform:/s);
+  });
+
+  it(".social-link:hover rule includes border-color change in CSS", () => {
+    expect(styles).toMatch(/\.social-link:hover\s*\{[^}]*border-color:/s);
+  });
+});
+
 // ── Accessibility ─────────────────────────────────────────────────────────────
 
 describe("Accessibility", () => {
