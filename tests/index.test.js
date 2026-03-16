@@ -224,6 +224,62 @@ describe("Audio", () => {
   });
 });
 
+// ── Video / Audio Elements ───────────────────────────────────────────────────
+
+describe("Video / Audio Elements", () => {
+  let doc;
+  beforeEach(() => {
+    doc = createDOM();
+  });
+
+  it("page has no <video> element (background video only in browse.html)", () => {
+    const videos = doc.querySelectorAll("video");
+    expect(videos.length).toBe(0);
+  });
+
+  it("audio element has no src attribute on the element itself (uses <source> child)", () => {
+    const audio = doc.getElementById("netflix-sound");
+    expect(audio).not.toBeNull();
+    // src should be absent from the <audio> tag; it lives on the <source> child
+    expect(audio.hasAttribute("src")).toBe(false);
+  });
+
+  it("audio <source> child has type='audio/mpeg'", () => {
+    const source = doc.querySelector("#netflix-sound source");
+    expect(source).not.toBeNull();
+    expect(source.getAttribute("type")).toBe("audio/mpeg");
+  });
+});
+
+// ── Profile Card Link Validation ─────────────────────────────────────────────
+
+describe("Profile Card Link Validation", () => {
+  let doc;
+  beforeEach(() => {
+    doc = createDOM();
+  });
+
+  it("all 4 profile cards have href matching 'browse.html?profile=<name>' pattern", () => {
+    const cards = [...doc.querySelectorAll(".profile-card[href]")];
+    expect(cards.length).toBe(4);
+    cards.forEach((card) => {
+      expect(card.getAttribute("href")).toMatch(
+        /^browse\.html\?profile=(recruiter|developer|visitor|adventurer)$/
+      );
+    });
+  });
+
+  it("profile card hrefs cover all 4 distinct profile names exactly once", () => {
+    const cards = [...doc.querySelectorAll(".profile-card[href]")];
+    const profiles = cards.map((c) =>
+      new URLSearchParams(c.getAttribute("href").split("?")[1]).get("profile")
+    );
+    expect(profiles.sort()).toEqual(
+      ["adventurer", "developer", "recruiter", "visitor"]
+    );
+  });
+});
+
 // ── Script Behavior ─────────────────────────────────────────────────────────
 
 describe("Script Behavior", () => {

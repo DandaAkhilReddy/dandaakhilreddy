@@ -223,6 +223,32 @@ describe("Passions Section", () => {
     expect(galleryImgs.length).toBe(2);
   });
 
+  it("first cricket gallery image src is the San Antonio League photo", () => {
+    const galleryImgs = [...doc.querySelectorAll(".cricket-gallery img")];
+    expect(galleryImgs.length).toBeGreaterThanOrEqual(1);
+    expect(galleryImgs[0].getAttribute("src")).toBe(
+      "assets/cricket/Century_sanantonioleague.jpeg"
+    );
+  });
+
+  it("second cricket gallery image src is the Cricclubs photo", () => {
+    const galleryImgs = [...doc.querySelectorAll(".cricket-gallery img")];
+    expect(galleryImgs.length).toBeGreaterThanOrEqual(2);
+    expect(galleryImgs[1].getAttribute("src")).toBe(
+      "assets/cricket/Cricclubs_163.jpeg"
+    );
+  });
+
+  it("all cricket gallery images have non-empty alt attributes", () => {
+    const galleryImgs = [...doc.querySelectorAll(".cricket-gallery img")];
+    expect(galleryImgs.length).toBeGreaterThan(0);
+    galleryImgs.forEach((img) => {
+      const alt = img.getAttribute("alt");
+      expect(alt).toBeTruthy();
+      expect(alt.trim().length).toBeGreaterThan(0);
+    });
+  });
+
   it("cricket gallery images are inside or alongside clickable containers", () => {
     // The script attaches click listeners; verify via onclick attrs on wrapper
     // or that the gallery images themselves carry cursor styling via the script.
@@ -309,6 +335,18 @@ describe("Connect Section", () => {
     const linkedin = doc.querySelector("a[href*='linkedin.com']");
     expect(linkedin).not.toBeNull();
     expect(linkedin.getAttribute("href")).toMatch(/^https:\/\/www\.linkedin\.com/);
+  });
+
+  it("email link uses mailto: scheme", () => {
+    const mailto = doc.querySelector("a[href^='mailto:']");
+    expect(mailto).not.toBeNull();
+    expect(mailto.getAttribute("href")).toMatch(/^mailto:/);
+  });
+
+  it("GitHub link href contains 'github.com'", () => {
+    const github = doc.querySelector("a[href*='github.com']");
+    expect(github).not.toBeNull();
+    expect(github.getAttribute("href")).toContain("github.com");
   });
 });
 

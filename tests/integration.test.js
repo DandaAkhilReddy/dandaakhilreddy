@@ -488,6 +488,112 @@ describe("Full Navigation Graph", () => {
   });
 });
 
+// ── CSS File Consistency ─────────────────────────────────────────────────────
+
+describe("CSS File Consistency", () => {
+  it("all 11 project pages link ../netflix-styles.css", () => {
+    projectDocs.forEach(({ file, doc }) => {
+      const link = doc.querySelector("link[href='../netflix-styles.css']");
+      expect(link).not.toBeNull();
+    });
+  });
+
+  it("all 11 project pages link project-styles.css", () => {
+    projectDocs.forEach(({ file, doc }) => {
+      const link = doc.querySelector("link[href='project-styles.css']");
+      expect(link).not.toBeNull();
+    });
+  });
+
+  it("projects/project-styles.css file exists on disk", () => {
+    expect(existsSync(resolve(ROOT, "projects/project-styles.css"))).toBe(true);
+  });
+
+  it("netflix-styles.css file exists on disk", () => {
+    expect(existsSync(resolve(ROOT, "netflix-styles.css"))).toBe(true);
+  });
+});
+
+// ── Footer Consistency ────────────────────────────────────────────────────────
+
+describe("Footer Consistency", () => {
+  it("browse.html has a footer element", () => {
+    expect(browseDoc.querySelector("footer")).not.toBeNull();
+  });
+
+  it("about.html has a footer element", () => {
+    expect(aboutDoc.querySelector("footer")).not.toBeNull();
+  });
+
+  it("browse.html footer contains copyright or year text", () => {
+    const footer = browseDoc.querySelector("footer");
+    expect(footer.textContent).toMatch(/©|copyright|2026/i);
+  });
+});
+
+// ── Meta Tag Consistency ──────────────────────────────────────────────────────
+
+describe("Meta Tag Consistency", () => {
+  const mainPages = [
+    { name: "index.html", doc: indexDoc },
+    { name: "browse.html", doc: browseDoc },
+    { name: "about.html", doc: aboutDoc },
+  ];
+
+  it("all 3 main pages have a viewport meta tag with width=device-width", () => {
+    mainPages.forEach(({ name, doc }) => {
+      const viewport = doc.querySelector("meta[name='viewport']");
+      expect(viewport).not.toBeNull();
+      expect(viewport.getAttribute("content")).toContain("width=device-width");
+    });
+  });
+
+  it("all 3 main pages declare charset UTF-8", () => {
+    mainPages.forEach(({ name, doc }) => {
+      const charset = doc.querySelector("meta[charset]");
+      expect(charset).not.toBeNull();
+      expect(charset.getAttribute("charset").toUpperCase()).toBe("UTF-8");
+    });
+  });
+
+  it("all 3 main pages have a non-empty <title>", () => {
+    mainPages.forEach(({ name, doc }) => {
+      expect(doc.title.trim().length).toBeGreaterThan(0);
+    });
+  });
+});
+
+// ── Bidirectional Navigation ──────────────────────────────────────────────────
+
+describe("Bidirectional Navigation", () => {
+  it("all 11 project pages have a back-link href containing ../browse.html", () => {
+    projectDocs.forEach(({ file, doc }) => {
+      const backLink = doc.querySelector(".back-link[href]");
+      expect(backLink).not.toBeNull();
+      expect(backLink.getAttribute("href")).toContain("../browse.html");
+    });
+  });
+
+  it("browse.html onclick attributes reference all 8 daily project pages", () => {
+    dailyProjectFiles.forEach((file) => {
+      expect(browseHtml).toContain(`'${file}'`);
+    });
+  });
+
+  it("browse.html onclick attributes reference all 3 academic project pages", () => {
+    academicProjectFiles.forEach((file) => {
+      expect(browseHtml).toContain(`'${file}'`);
+    });
+  });
+
+  it("all project pages nav logo links back to ../browse.html", () => {
+    projectDocs.forEach(({ file, doc }) => {
+      const navLogo = doc.querySelector("a.nav-logo[href='../browse.html']");
+      expect(navLogo).not.toBeNull();
+    });
+  });
+});
+
 // ── No Broken Internal Links ─────────────────────────────────────────────────
 
 describe("No Broken Internal Links", () => {

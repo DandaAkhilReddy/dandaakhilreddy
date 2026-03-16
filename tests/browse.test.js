@@ -835,6 +835,120 @@ describe("browse.html — Main Portfolio Page", () => {
     });
   });
 
+  // ── Profile Config Depth ──────────────────────────────────────────────────
+
+  describe("profile config depth", () => {
+    let scriptContent;
+
+    beforeEach(() => {
+      const scripts = [...doc.querySelectorAll("script")];
+      const mainScript = scripts.find((s) =>
+        s.textContent.includes("profileConfig")
+      );
+      scriptContent = mainScript?.textContent ?? "";
+    });
+
+    it("recruiter profile has localVideo key pointing to assets/videos/recruiter.mp4", () => {
+      expect(scriptContent).toContain("assets/videos/recruiter.mp4");
+    });
+
+    it("developer profile has localVideo key pointing to assets/videos/developer.mp4", () => {
+      expect(scriptContent).toContain("assets/videos/developer.mp4");
+    });
+
+    it("visitor profile has localVideo key pointing to assets/videos/visitor.mp4", () => {
+      expect(scriptContent).toContain("assets/videos/visitor.mp4");
+    });
+
+    it("adventurer profile has localVideo key pointing to assets/videos/adventurer.mp4", () => {
+      expect(scriptContent).toContain("assets/videos/adventurer.mp4");
+    });
+  });
+
+  // ── Daily Shipping Card Details ────────────────────────────────────────────
+
+  describe("daily shipping card details", () => {
+    it("Project 1 badge text is 'Project 1'", () => {
+      const badges = [...doc.querySelectorAll(".daily-card .day-badge")];
+      const texts = badges.map((b) => b.textContent.trim());
+      expect(texts).toContain("Project 1");
+    });
+
+    it("Project 2 badge text is 'Project 2'", () => {
+      const badges = [...doc.querySelectorAll(".daily-card .day-badge")];
+      const texts = badges.map((b) => b.textContent.trim());
+      expect(texts).toContain("Project 2");
+    });
+
+    it("Project 3 badge text is 'Project 3'", () => {
+      const badges = [...doc.querySelectorAll(".daily-card .day-badge")];
+      const texts = badges.map((b) => b.textContent.trim());
+      expect(texts).toContain("Project 3");
+    });
+
+    it("Project 8 badge text is 'Project 8'", () => {
+      const badges = [...doc.querySelectorAll(".daily-card .day-badge")];
+      const texts = badges.map((b) => b.textContent.trim());
+      expect(texts).toContain("Project 8");
+    });
+
+    it("card with 'Deploy LLM on iOS' title has Project 1 badge", () => {
+      const cards = [...doc.querySelectorAll(".daily-card")];
+      const iosCard = cards.find((c) =>
+        c.querySelector("h3")?.textContent.trim() === "Deploy LLM on iOS"
+      );
+      expect(iosCard).toBeTruthy();
+      const badge = iosCard.querySelector(".day-badge");
+      expect(badge).not.toBeNull();
+      expect(badge.textContent.trim()).toBe("Project 1");
+    });
+
+    it("card with 'Stock Analyzer' title has Project 8 badge", () => {
+      const cards = [...doc.querySelectorAll(".daily-card")];
+      const stockCard = cards.find((c) =>
+        c.querySelector("h3")?.textContent.trim() === "Stock Analyzer"
+      );
+      expect(stockCard).toBeTruthy();
+      const badge = stockCard.querySelector(".day-badge");
+      expect(badge).not.toBeNull();
+      expect(badge.textContent.trim()).toBe("Project 8");
+    });
+
+    it("daily card titles include 'Claude PeePee'", () => {
+      const titles = [...doc.querySelectorAll(".daily-card h3")].map(
+        (h) => h.textContent.trim()
+      );
+      expect(titles).toContain("Claude PeePee");
+    });
+
+    it("daily card titles include 'AI Hedge Fund'", () => {
+      const titles = [...doc.querySelectorAll(".daily-card h3")].map(
+        (h) => h.textContent.trim()
+      );
+      expect(titles).toContain("AI Hedge Fund");
+    });
+  });
+
+  // ── Navigation Anchor Targets ──────────────────────────────────────────────
+
+  describe("navigation anchor targets", () => {
+    it("section with id='skills' exists in the page", () => {
+      expect(doc.getElementById("skills")).not.toBeNull();
+    });
+
+    it("section with id='experience' exists in the page", () => {
+      expect(doc.getElementById("experience")).not.toBeNull();
+    });
+
+    it("section with id='daily-shipping' exists in the page", () => {
+      expect(doc.getElementById("daily-shipping")).not.toBeNull();
+    });
+
+    it("section with id='certifications' exists in the page", () => {
+      expect(doc.getElementById("certifications")).not.toBeNull();
+    });
+  });
+
   // ── Background Video ───────────────────────────────────────────────────────
 
   describe("background video", () => {

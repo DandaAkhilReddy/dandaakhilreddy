@@ -685,3 +685,214 @@ describe.each(ALL_PAGES)("Back-link points to browse.html — %s", (filename) =>
     expect(backLink.getAttribute("href")).toMatch(/browse\.html/);
   });
 });
+
+// ── Per-project unique content ────────────────────────────────────────────────
+// 2 assertions per project: one tech-item span text, one body keyword.
+
+const UNIQUE_CONTENT_CASES = [
+  [
+    "day-1-llm-ios.html",
+    { techItem: "GGUF Format", bodyKeyword: /Qwen3|PocketPal|tokens\/sec/i },
+  ],
+  [
+    "day-2-claude-peepee.html",
+    { techItem: "SQLite + FTS5", bodyKeyword: /MCP|JSON-RPC|context overhead/i },
+  ],
+  [
+    "day-3-speakskiptype.html",
+    { techItem: "Vosk", bodyKeyword: /Whisper|filler word|cursor/i },
+  ],
+  [
+    "day-4-audtext.html",
+    { techItem: "Ollama", bodyKeyword: /Llama 3\.1|transcri|Audtext/i },
+  ],
+  [
+    "day-minus-5-wifivision.html",
+    { techItem: null, bodyKeyword: /CSI|ESP32|Channel State/i },
+  ],
+  [
+    "day-6-localbrowsercontrol.html",
+    { techItem: "Docker Desktop", bodyKeyword: /WSL2|self-healing|Computer Use/i },
+  ],
+  [
+    "day-7-reddyhedgefund.html",
+    { techItem: "LangGraph", bodyKeyword: /Warren Buffett|Cathie Wood|18 .{0,20}agent/i },
+  ],
+  [
+    "day-8-stock-analyzer.html",
+    { techItem: "TradingView Charts", bodyKeyword: /candlestick|Bollinger|Kimi K2\.5/i },
+  ],
+  [
+    "adas-system.html",
+    { techItem: "TensorFlow", bodyKeyword: /500K\+|SageMaker|OpenCV/i },
+  ],
+  [
+    "financial-sentiment.html",
+    { techItem: "Transformers", bodyKeyword: /BERT|earnings call|fine-tun/i },
+  ],
+  [
+    "healthcare-rag.html",
+    { techItem: "LangChain", bodyKeyword: /HIPAA|GPT-4|50K\+/i },
+  ],
+  [
+    "claude-peepee.html",
+    { techItem: "MCP Protocol", bodyKeyword: /80-90%|cross-session|context overhead/i },
+  ],
+];
+
+describe.each(UNIQUE_CONTENT_CASES)(
+  "Unique content — %s",
+  (filename, { techItem, bodyKeyword }) => {
+    let doc;
+    beforeEach(() => { doc = loadDoc(filename); });
+
+    if (techItem !== null) {
+      it(`tech-item span contains "${techItem}"`, () => {
+        const spans = [...doc.querySelectorAll(".tech-item span")];
+        const texts = spans.map((s) => s.textContent.trim());
+        expect(texts.some((t) => t === techItem || t.includes(techItem))).toBe(true);
+      });
+    } else {
+      it("tech section has at least 3 tech-item spans (no specific label)", () => {
+        expect(doc.querySelectorAll(".tech-item span").length).toBeGreaterThanOrEqual(3);
+      });
+    }
+
+    it("body text contains expected unique keyword", () => {
+      expect(doc.body.textContent).toMatch(bodyKeyword);
+    });
+  }
+);
+
+// ── Install and architecture sections ─────────────────────────────────────────
+// All 12 project pages have both sections (verified from source).
+
+describe.each(ALL_PAGES)("Install section — %s", (filename) => {
+  let doc;
+  beforeEach(() => { doc = loadDoc(filename); });
+
+  it("has .project-install-section", () => {
+    expect(doc.querySelector(".project-install-section")).not.toBeNull();
+  });
+
+  it(".project-install-section has at least 1 .install-step", () => {
+    const section = doc.querySelector(".project-install-section");
+    expect(section.querySelectorAll(".install-step").length).toBeGreaterThanOrEqual(1);
+  });
+});
+
+describe.each(ALL_PAGES)("Architecture section — %s", (filename) => {
+  let doc;
+  beforeEach(() => { doc = loadDoc(filename); });
+
+  it("has .project-architecture-section", () => {
+    expect(doc.querySelector(".project-architecture-section")).not.toBeNull();
+  });
+
+  it(".project-architecture-section has a section heading", () => {
+    const section = doc.querySelector(".project-architecture-section");
+    const heading = section.querySelector("h2, h3");
+    expect(heading).not.toBeNull();
+    expect(heading.textContent.trim().length).toBeGreaterThan(0);
+  });
+});
+
+// ── External link validation in .project-links and .cta-buttons ──────────────
+// Every project links to at least one https:// external URL in those areas.
+
+describe.each(ALL_PAGES)("CTA and hero external links — %s", (filename) => {
+  let doc;
+  beforeEach(() => { doc = loadDoc(filename); });
+
+  it(".project-links contains at least one external https:// link", () => {
+    const links = [...doc.querySelectorAll(".project-links a[href]")];
+    const external = links.filter((a) =>
+      a.getAttribute("href").startsWith("https://")
+    );
+    expect(external.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it(".cta-buttons contains at least one anchor element", () => {
+    const ctaButtons = doc.querySelector(".cta-buttons");
+    expect(ctaButtons).not.toBeNull();
+    const anchors = ctaButtons.querySelectorAll("a");
+    expect(anchors.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it("navigational external links in .project-links and .cta-buttons open in new tab (target=_blank)", () => {
+    const allLinks = [
+      ...doc.querySelectorAll(".project-links a[href]"),
+      ...doc.querySelectorAll(".cta-buttons a[href]"),
+    ];
+    // Exclude file-download links (e.g., .zip) — those don't need target=_blank
+    const navExternalLinks = allLinks.filter((a) => {
+      const href = a.getAttribute("href");
+      return href.startsWith("https://") && !href.endsWith(".zip");
+    });
+    navExternalLinks.forEach((a) => {
+      expect(a.getAttribute("target")).toBe("_blank");
+    });
+  });
+});
+
+// ── Image and media elements ──────────────────────────────────────────────────
+
+describe("SVG icons in feature cards — structural check", () => {
+  // Pages where feature-icon uses an inline SVG (not an <img>)
+  const PAGES_WITH_SVG_FEATURE_ICONS = [
+    "day-1-llm-ios.html",
+    "day-2-claude-peepee.html",
+    "day-3-speakskiptype.html",
+    "day-4-audtext.html",
+    "day-7-reddyhedgefund.html",
+    "day-8-stock-analyzer.html",
+    "healthcare-rag.html",
+    "claude-peepee.html",
+  ];
+
+  it.each(PAGES_WITH_SVG_FEATURE_ICONS)(
+    "feature cards contain inline SVG icons — %s",
+    (filename) => {
+      const doc = loadDoc(filename);
+      const featureIcons = doc.querySelectorAll(".feature-icon");
+      const svgCount = [...featureIcons].filter(
+        (icon) => icon.querySelector("svg") !== null
+      ).length;
+      expect(svgCount).toBeGreaterThanOrEqual(1);
+    }
+  );
+});
+
+describe("img elements have alt text — pages with <img> in tech grid", () => {
+  // Only adas-system.html, healthcare-rag.html, and financial-sentiment.html
+  // use <img> tags inside .tech-item for their tech icons.
+  const PAGES_WITH_TECH_IMGS = [
+    "adas-system.html",
+    "healthcare-rag.html",
+    "financial-sentiment.html",
+  ];
+
+  it.each(PAGES_WITH_TECH_IMGS)(
+    "every <img> inside .tech-item has a non-empty alt attribute — %s",
+    (filename) => {
+      const doc = loadDoc(filename);
+      const imgs = doc.querySelectorAll(".tech-item img");
+      expect(imgs.length).toBeGreaterThanOrEqual(1);
+      imgs.forEach((img) => {
+        const alt = img.getAttribute("alt");
+        expect(alt).not.toBeNull();
+        expect(alt.trim().length).toBeGreaterThan(0);
+      });
+    }
+  );
+});
+
+describe("day-minus-5-wifivision.html — no external img elements missing alt", () => {
+  it("the one img tag in wifivision has an alt attribute", () => {
+    const doc = loadDoc("day-minus-5-wifivision.html");
+    const imgs = doc.querySelectorAll("img[alt]");
+    // There is at least zero — if any img exists it must have alt
+    const imgsNoAlt = doc.querySelectorAll("img:not([alt])");
+    expect(imgsNoAlt.length).toBe(0);
+  });
+});
