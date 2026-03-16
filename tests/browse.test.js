@@ -2,7 +2,7 @@
  * Tests for browse.html — Main portfolio page with hero, projects,
  * skills, experience, certifications, and contact sections.
  */
-import { readFileSync, existsSync } from "fs";
+import { readFileSync, existsSync, statSync } from "fs";
 import { resolve } from "path";
 import { JSDOM } from "jsdom";
 
@@ -20,17 +20,17 @@ describe("browse.html — Main Portfolio Page", () => {
     doc = createDOM();
   });
 
-  // ── Navigation ─────────────────────────────────────────────
+  // ── Navigation ─────────────────────────────────────────────────────────────
 
   describe("navigation", () => {
-    it("has nav logo linking to index.html", () => {
+    it("nav logo links to index.html with correct text", () => {
       const logo = doc.querySelector(".nav-logo");
       expect(logo).not.toBeNull();
       expect(logo.getAttribute("href")).toBe("index.html");
-      expect(logo.textContent).toBe("AKHIL REDDY DANDA");
+      expect(logo.textContent.trim()).toBe("AKHIL REDDY DANDA");
     });
 
-    it("has all expected nav links", () => {
+    it("has all 7 expected nav links", () => {
       const expectedHrefs = [
         "#home",
         "#experience",
@@ -40,7 +40,6 @@ describe("browse.html — Main Portfolio Page", () => {
         "about.html",
         "#contact",
       ];
-
       const navLinks = doc.querySelectorAll("nav li a, .nav-links li a");
       const hrefs = [...navLinks].map((a) => a.getAttribute("href"));
       expectedHrefs.forEach((expected) => {
@@ -48,96 +47,84 @@ describe("browse.html — Main Portfolio Page", () => {
       });
     });
 
-    it("has profile icon linking to index.html", () => {
+    it("#current-profile links to index.html", () => {
       const profileIcon = doc.getElementById("current-profile");
       expect(profileIcon).not.toBeNull();
       expect(profileIcon.getAttribute("href")).toBe("index.html");
     });
+
+    it("#nav-profile-img element exists", () => {
+      expect(doc.getElementById("nav-profile-img")).not.toBeNull();
+    });
   });
 
-  // ── Hero Section ───────────────────────────────────────────
+  // ── Hero Section ───────────────────────────────────────────────────────────
 
   describe("hero section", () => {
-    it("has hero buttons container", () => {
+    it(".hero-buttons container exists", () => {
       expect(doc.querySelector(".hero-buttons")).not.toBeNull();
     });
 
     it("resume button has download attribute with correct filename", () => {
-      const resumeBtn = doc.querySelector('a[href="assets/resume.pdf"]');
-      expect(resumeBtn).not.toBeNull();
-      expect(resumeBtn.hasAttribute("download")).toBe(true);
-      expect(resumeBtn.getAttribute("download")).toBe(
-        "Akhil_Reddy_Danda_Resume.pdf"
-      );
-    });
-
-    it("resume button has correct href", () => {
-      const resumeBtn = doc.querySelector('a[href="assets/resume.pdf"]');
-      expect(resumeBtn.getAttribute("href")).toBe("assets/resume.pdf");
+      const btn = doc.querySelector('a[href="assets/resume.pdf"]');
+      expect(btn).not.toBeNull();
+      expect(btn.getAttribute("download")).toBe("Akhil_Reddy_Danda_Resume.pdf");
     });
 
     it('resume button text contains "Resume"', () => {
-      const resumeBtn = doc.querySelector('a[href="assets/resume.pdf"]');
-      expect(resumeBtn.textContent).toContain("Resume");
+      const btn = doc.querySelector('a[href="assets/resume.pdf"]');
+      expect(btn.textContent).toContain("Resume");
     });
 
     it("resume button has btn-play class", () => {
-      const resumeBtn = doc.querySelector('a[href="assets/resume.pdf"]');
-      expect(resumeBtn.classList.contains("btn-play")).toBe(true);
+      const btn = doc.querySelector('a[href="assets/resume.pdf"]');
+      expect(btn.classList.contains("btn-play")).toBe(true);
     });
 
-    it("LinkedIn button links to correct profile", () => {
-      const linkedinBtn = doc.querySelector(
-        '.hero-buttons a[href*="linkedin.com"]'
-      );
-      expect(linkedinBtn).not.toBeNull();
-      expect(linkedinBtn.getAttribute("target")).toBe("_blank");
+    it("LinkedIn button exists inside .hero-buttons with target _blank", () => {
+      const btn = doc.querySelector('.hero-buttons a[href*="linkedin.com"]');
+      expect(btn).not.toBeNull();
+      expect(btn.getAttribute("target")).toBe("_blank");
     });
 
     it("LinkedIn button has btn-info class", () => {
-      const linkedinBtn = doc.querySelector(
-        '.hero-buttons a[href*="linkedin.com"]'
-      );
-      expect(linkedinBtn.classList.contains("btn-info")).toBe(true);
+      const btn = doc.querySelector('.hero-buttons a[href*="linkedin.com"]');
+      expect(btn.classList.contains("btn-info")).toBe(true);
     });
   });
 
-  // ── Resume PDF File ────────────────────────────────────────
+  // ── Resume PDF File ────────────────────────────────────────────────────────
 
   describe("resume file", () => {
-    it("resume PDF exists in assets directory", () => {
+    it("assets/resume.pdf exists on disk", () => {
       const resumePath = resolve(__dirname, "../assets/resume.pdf");
       expect(existsSync(resumePath)).toBe(true);
     });
 
-    it("resume file is a valid PDF", () => {
+    it("resume file starts with valid PDF header (%PDF-)", () => {
       const resumePath = resolve(__dirname, "../assets/resume.pdf");
       const buffer = readFileSync(resumePath);
-      const header = buffer.slice(0, 5).toString("ascii");
-      expect(header).toBe("%PDF-");
+      expect(buffer.slice(0, 5).toString("ascii")).toBe("%PDF-");
     });
 
-    it("resume file is non-trivial size (>10KB)", () => {
+    it("resume file size is greater than 10KB", () => {
       const resumePath = resolve(__dirname, "../assets/resume.pdf");
-      const stats = require("fs").statSync(resumePath);
-      expect(stats.size).toBeGreaterThan(10000);
+      expect(statSync(resumePath).size).toBeGreaterThan(10000);
     });
   });
 
-  // ── Beyond the Code (Passion Cards) ────────────────────────
+  // ── Beyond the Code ────────────────────────────────────────────────────────
 
   describe("beyond the code section", () => {
-    it("has section title", () => {
-      const titles = [...doc.querySelectorAll("h2")];
-      const beyondTitle = titles.find((t) =>
-        t.textContent.includes("Beyond the Code")
-      );
-      expect(beyondTitle).toBeTruthy();
+    it('h2 contains "Beyond the Code"', () => {
+      const h2s = [...doc.querySelectorAll("h2")];
+      const match = h2s.find((el) => el.textContent.includes("Beyond the Code"));
+      expect(match).toBeTruthy();
     });
 
-    it("cards are in correct order: Backend, LLM, Cricket", () => {
+    it("passion cards are in order: Backend, LLM, Cricket", () => {
       const h3s = [...doc.querySelectorAll("h3")];
-      const passionTitles = h3s
+      const titles = h3s
         .map((h) => h.textContent.trim())
         .filter(
           (t) =>
@@ -145,7 +132,7 @@ describe("browse.html — Main Portfolio Page", () => {
             t === "LLM Builder & Researcher" ||
             t === "Cricket Enthusiast"
         );
-      expect(passionTitles).toEqual([
+      expect(titles).toEqual([
         "Backend Engineering & Architecture",
         "LLM Builder & Researcher",
         "Cricket Enthusiast",
@@ -153,29 +140,28 @@ describe("browse.html — Main Portfolio Page", () => {
     });
 
     it("Backend card has correct tags", () => {
-      const allText = doc.body.innerHTML;
-      expect(allText).toContain("Microservices");
-      expect(allText).toContain("API Design");
-      expect(allText).toContain("System Design");
-      expect(allText).toContain("Scalable Architecture");
+      const body = doc.body.innerHTML;
+      expect(body).toContain("Microservices");
+      expect(body).toContain("API Design");
+      expect(body).toContain("System Design");
+      expect(body).toContain("Scalable Architecture");
     });
 
     it("LLM card has correct tags", () => {
-      const allText = doc.body.innerHTML;
-      expect(allText).toContain("Fine-tuning");
-      expect(allText).toContain("RAG Systems");
-      expect(allText).toContain("Prompt Engineering");
-      expect(allText).toContain("Model Testing");
+      const body = doc.body.innerHTML;
+      expect(body).toContain("Fine-tuning");
+      expect(body).toContain("RAG Systems");
+      expect(body).toContain("Prompt Engineering");
+      expect(body).toContain("Model Testing");
     });
 
-    it("Cricket card has image gallery", () => {
+    it("#cricket-gallery has exactly 2 images", () => {
       const gallery = doc.getElementById("cricket-gallery");
       expect(gallery).not.toBeNull();
-      const images = gallery.querySelectorAll("img");
-      expect(images.length).toBe(2);
+      expect(gallery.querySelectorAll("img").length).toBe(2);
     });
 
-    it("Cricket images have alt text", () => {
+    it("cricket images have alt text", () => {
       const gallery = doc.getElementById("cricket-gallery");
       gallery.querySelectorAll("img").forEach((img) => {
         expect(img.getAttribute("alt")).toBeTruthy();
@@ -183,32 +169,31 @@ describe("browse.html — Main Portfolio Page", () => {
     });
   });
 
-  // ── Today's Top Picks (Netflix Cards) ──────────────────────
+  // ── Netflix Quick-Nav Cards ────────────────────────────────────────────────
 
-  describe("top picks section", () => {
-    it("has profile name span for dynamic title", () => {
-      const span = doc.getElementById("profile-name");
-      expect(span).not.toBeNull();
+  describe("netflix quick-nav cards", () => {
+    it("#profile-name span exists", () => {
+      expect(doc.getElementById("profile-name")).not.toBeNull();
     });
 
-    it("has netflix cards for Skills, Experience, Certifications", () => {
-      const cardTitles = [...doc.querySelectorAll(".netflix-card-title")].map(
-        (el) => el.textContent
+    it(".netflix-card-title contains Skills, Experience, Certifications", () => {
+      const titles = [...doc.querySelectorAll(".netflix-card-title")].map(
+        (el) => el.textContent.trim()
       );
-      expect(cardTitles).toContain("Skills");
-      expect(cardTitles).toContain("Experience");
-      expect(cardTitles).toContain("Certifications");
+      expect(titles).toContain("Skills");
+      expect(titles).toContain("Experience");
+      expect(titles).toContain("Certifications");
     });
 
-    it("Skills card has onclick to scroll to #skills", () => {
+    it("Skills card onclick includes getElementById('skills')", () => {
       const cards = [...doc.querySelectorAll(".netflix-card")];
-      const skillsCard = cards.find((c) =>
+      const card = cards.find((c) =>
         c.getAttribute("onclick")?.includes("getElementById('skills')")
       );
-      expect(skillsCard).toBeTruthy();
+      expect(card).toBeTruthy();
     });
 
-    it("Experience card has onclick to scroll to #experience", () => {
+    it("Experience card onclick includes getElementById('experience')", () => {
       const cards = [...doc.querySelectorAll(".netflix-card")];
       const card = cards.find((c) =>
         c.getAttribute("onclick")?.includes("getElementById('experience')")
@@ -216,7 +201,7 @@ describe("browse.html — Main Portfolio Page", () => {
       expect(card).toBeTruthy();
     });
 
-    it("Certifications card has onclick to scroll to #certifications", () => {
+    it("Certifications card onclick includes getElementById('certifications')", () => {
       const cards = [...doc.querySelectorAll(".netflix-card")];
       const card = cards.find((c) =>
         c.getAttribute("onclick")?.includes("getElementById('certifications')")
@@ -224,7 +209,7 @@ describe("browse.html — Main Portfolio Page", () => {
       expect(card).toBeTruthy();
     });
 
-    it("LinkedIn card opens LinkedIn in new tab", () => {
+    it("LinkedIn card onclick includes linkedin.com and _blank", () => {
       const cards = [...doc.querySelectorAll(".netflix-card")];
       const card = cards.find((c) =>
         c.getAttribute("onclick")?.includes("linkedin.com")
@@ -233,7 +218,7 @@ describe("browse.html — Main Portfolio Page", () => {
       expect(card.getAttribute("onclick")).toContain("_blank");
     });
 
-    it("GitHub card opens GitHub in new tab", () => {
+    it("GitHub card onclick includes github.com and _blank", () => {
       const cards = [...doc.querySelectorAll(".netflix-card")];
       const card = cards.find((c) =>
         c.getAttribute("onclick")?.includes("github.com")
@@ -243,51 +228,18 @@ describe("browse.html — Main Portfolio Page", () => {
     });
   });
 
-  // ── Project Cards (Daily Shipping) ─────────────────────────
-
-  describe("project cards", () => {
-    it("has daily shipping section", () => {
-      expect(doc.getElementById("daily-shipping")).not.toBeNull();
-    });
-
-    it("has at least 5 daily cards", () => {
-      const cards = doc.querySelectorAll(".daily-card");
-      expect(cards.length).toBeGreaterThanOrEqual(5);
-    });
-
-    it("each daily card has onclick navigation", () => {
-      doc.querySelectorAll(".daily-card").forEach((card) => {
-        expect(card.getAttribute("onclick")).toBeTruthy();
-      });
-    });
-
-    it("project cards have GitHub links", () => {
-      const githubLinks = doc.querySelectorAll(".card-link.github");
-      expect(githubLinks.length).toBeGreaterThanOrEqual(1);
-      githubLinks.forEach((link) => {
-        expect(link.getAttribute("href")).toContain("github.com");
-        expect(link.getAttribute("target")).toBe("_blank");
-      });
-    });
-
-    it("featured daily cards have the featured class", () => {
-      const featured = doc.querySelectorAll(".daily-card.featured");
-      expect(featured.length).toBeGreaterThanOrEqual(1);
-    });
-  });
-
-  // ── Academic Projects ──────────────────────────────────────
+  // ── Academic Projects ──────────────────────────────────────────────────────
 
   describe("academic projects", () => {
-    it("has ADAS project card", () => {
+    it("has card with onclick containing adas-system", () => {
       const cards = [...doc.querySelectorAll(".netflix-card")];
-      const adasCard = cards.find((c) =>
+      const card = cards.find((c) =>
         c.getAttribute("onclick")?.includes("adas-system")
       );
-      expect(adasCard).toBeTruthy();
+      expect(card).toBeTruthy();
     });
 
-    it("has financial sentiment project card", () => {
+    it("has card with onclick containing financial-sentiment", () => {
       const cards = [...doc.querySelectorAll(".netflix-card")];
       const card = cards.find((c) =>
         c.getAttribute("onclick")?.includes("financial-sentiment")
@@ -295,7 +247,7 @@ describe("browse.html — Main Portfolio Page", () => {
       expect(card).toBeTruthy();
     });
 
-    it("has healthcare RAG project card", () => {
+    it("has card with onclick containing healthcare-rag", () => {
       const cards = [...doc.querySelectorAll(".netflix-card")];
       const card = cards.find((c) =>
         c.getAttribute("onclick")?.includes("healthcare-rag")
@@ -304,76 +256,261 @@ describe("browse.html — Main Portfolio Page", () => {
     });
   });
 
-  // ── Skills Section ─────────────────────────────────────────
+  // ── Daily Shipping Section ─────────────────────────────────────────────────
 
-  describe("skills section", () => {
-    it("has skills section with correct id", () => {
-      expect(doc.getElementById("skills")).not.toBeNull();
+  describe("daily shipping section", () => {
+    it("#daily-shipping section exists", () => {
+      expect(doc.getElementById("daily-shipping")).not.toBeNull();
     });
 
-    it("contains distributed systems tags", () => {
-      const tags = doc.querySelectorAll(".ds-tag");
-      expect(tags.length).toBeGreaterThanOrEqual(1);
+    it("has at least 5 .daily-card elements", () => {
+      expect(doc.querySelectorAll(".daily-card").length).toBeGreaterThanOrEqual(5);
+    });
+
+    it("each daily card has an onclick attribute", () => {
+      doc.querySelectorAll(".daily-card").forEach((card) => {
+        expect(card.getAttribute("onclick")).toBeTruthy();
+      });
+    });
+
+    it(".card-link.github links contain github.com with target _blank", () => {
+      const githubLinks = doc.querySelectorAll(".card-link.github");
+      expect(githubLinks.length).toBeGreaterThanOrEqual(1);
+      githubLinks.forEach((link) => {
+        expect(link.getAttribute("href")).toContain("github.com");
+        expect(link.getAttribute("target")).toBe("_blank");
+      });
+    });
+
+    it("at least one .daily-card.featured exists", () => {
+      expect(doc.querySelectorAll(".daily-card.featured").length).toBeGreaterThanOrEqual(1);
+    });
+
+    it("all 8 daily project pages referenced in onclick attributes", () => {
+      const onclicks = [...doc.querySelectorAll(".daily-card")]
+        .map((c) => c.getAttribute("onclick") || "")
+        .join(" ");
+      expect(onclicks).toContain("day-1-llm-ios");
+      expect(onclicks).toContain("day-2-claude-peepee");
+      expect(onclicks).toContain("day-3-speakskiptype");
+      expect(onclicks).toContain("day-4-audtext");
+      expect(onclicks).toContain("day-minus-5-wifivision");
+      expect(onclicks).toContain("day-6-localbrowsercontrol");
+      expect(onclicks).toContain("day-7-reddyhedgefund");
+      expect(onclicks).toContain("day-8-stock-analyzer");
+    });
+
+    it("LinkedIn post links exist on daily cards", () => {
+      const linkedinLinks = doc.querySelectorAll(
+        'a[href*="linkedin.com/posts"]'
+      );
+      expect(linkedinLinks.length).toBeGreaterThanOrEqual(1);
+    });
+
+    it("YouTube demo link is present", () => {
+      const youtubeLink = doc.querySelector('a[href*="youtu"]');
+      expect(youtubeLink).not.toBeNull();
     });
   });
 
-  // ── Experience Section ─────────────────────────────────────
+  // ── Experience Section ─────────────────────────────────────────────────────
 
   describe("experience section", () => {
-    it("has experience section with correct id", () => {
+    it("#experience section exists", () => {
       expect(doc.getElementById("experience")).not.toBeNull();
     });
 
-    it("has Microsoft experience card", () => {
-      const msCard = doc.querySelector(".experience-card.microsoft");
-      expect(msCard).not.toBeNull();
+    it(".experience-card.microsoft exists", () => {
+      expect(doc.querySelector(".experience-card.microsoft")).not.toBeNull();
+    });
+
+    it("HHA Medicine card exists", () => {
+      const cards = [...doc.querySelectorAll(".experience-card")];
+      const hha = cards.find((c) => c.innerHTML.includes("HHA Medicine"));
+      expect(hha).toBeTruthy();
+    });
+
+    it(".experience-card.amazon exists", () => {
+      expect(doc.querySelector(".experience-card.amazon")).not.toBeNull();
+    });
+
+    it("cards have role text containing SDE or Software", () => {
+      const cards = [...doc.querySelectorAll(".experience-card")];
+      const hasRoleText = cards.some(
+        (c) => c.innerHTML.includes("SDE") || c.innerHTML.includes("Software")
+      );
+      expect(hasRoleText).toBe(true);
+    });
+
+    it("experience cards have tech stack tags", () => {
+      const techTags = doc.querySelectorAll(".exp-tech span");
+      expect(techTags.length).toBeGreaterThanOrEqual(1);
     });
   });
 
-  // ── Certifications Section ─────────────────────────────────
+  // ── Microsoft Prep Section ─────────────────────────────────────────────────
+
+  describe("microsoft prep section", () => {
+    it("#microsoft-prep section exists", () => {
+      expect(doc.getElementById("microsoft-prep")).not.toBeNull();
+    });
+
+    it("has exactly 6 prep topic cards", () => {
+      const section = doc.getElementById("microsoft-prep");
+      expect(section.querySelectorAll(".msft-prep-card").length).toBe(6);
+    });
+
+    it("prep topics include C#, Distributed Systems, Azure, System Design, Databases, Operating Systems", () => {
+      const section = doc.getElementById("microsoft-prep");
+      const body = section.innerHTML;
+      expect(body).toContain("C#");
+      expect(body).toContain("Distributed Systems");
+      expect(body).toContain("Azure");
+      expect(body).toContain("System Design");
+      expect(body).toContain("Databases");
+      expect(body).toContain("Operating Systems");
+    });
+  });
+
+  // ── Skills Section ─────────────────────────────────────────────────────────
+
+  describe("skills section", () => {
+    it("#skills section exists", () => {
+      expect(doc.getElementById("skills")).not.toBeNull();
+    });
+
+    it(".featured-skills banner has at least 5 items", () => {
+      const featuredItems = doc.querySelectorAll(".featured-skill");
+      expect(featuredItems.length).toBeGreaterThanOrEqual(5);
+    });
+
+    it("Languages section has 6 skill items", () => {
+      const section = doc.getElementById("skills");
+      // The skills-grid-new immediately after "Languages & Frameworks" heading
+      const grids = [...section.querySelectorAll(".skills-grid-new")];
+      // First grid is Languages & Frameworks
+      const langGrid = grids[0];
+      expect(langGrid.querySelectorAll(".skill-card-new").length).toBe(6);
+    });
+
+    it(".ds-tag elements count is >= 10", () => {
+      expect(doc.querySelectorAll(".ds-tag").length).toBeGreaterThanOrEqual(10);
+    });
+
+    it("Cloud & DevOps items have azure, aws, k8s, docker progress classes", () => {
+      const progressBars = [...doc.querySelectorAll(".skill-progress")];
+      const classes = progressBars.flatMap((el) => [...el.classList]);
+      expect(classes).toContain("azure");
+      expect(classes).toContain("aws");
+      expect(classes).toContain("k8s");
+      expect(classes).toContain("docker");
+    });
+
+    it("ML & AI skill cards have glow class", () => {
+      const glowCards = doc.querySelectorAll(".skill-card-new.glow");
+      expect(glowCards.length).toBeGreaterThanOrEqual(1);
+    });
+
+    it("skill bars exist with width percentages in inline style", () => {
+      const bars = [...doc.querySelectorAll(".skill-progress")];
+      const hasWidthStyle = bars.some((el) =>
+        (el.getAttribute("style") || "").includes("width:")
+      );
+      expect(hasWidthStyle).toBe(true);
+    });
+
+    it("devicon CDN images are present", () => {
+      const deviconImgs = doc.querySelectorAll('img[src*="devicon"]');
+      expect(deviconImgs.length).toBeGreaterThanOrEqual(1);
+    });
+  });
+
+  // ── Education Section ──────────────────────────────────────────────────────
+
+  describe("education section", () => {
+    it("#education section exists", () => {
+      expect(doc.getElementById("education")).not.toBeNull();
+    });
+
+    it('contains "Texas A&M" and "Dec 2021"', () => {
+      const section = doc.getElementById("education");
+      expect(section.innerHTML).toContain("Texas A&amp;M");
+      expect(section.innerHTML).toContain("Dec 2021");
+    });
+
+    it('contains "SRM Institute" and "May 2019"', () => {
+      const section = doc.getElementById("education");
+      expect(section.innerHTML).toContain("SRM Institute");
+      expect(section.innerHTML).toContain("May 2019");
+    });
+  });
+
+  // ── Certifications Section ─────────────────────────────────────────────────
 
   describe("certifications section", () => {
-    it("has certifications section with correct id", () => {
+    it("#certifications section exists", () => {
       expect(doc.getElementById("certifications")).not.toBeNull();
     });
 
-    it("has at least 5 cert cards", () => {
-      const certLinks = doc.querySelectorAll(".cert-card");
-      expect(certLinks.length).toBeGreaterThanOrEqual(5);
+    it("has at least 25 .cert-card elements", () => {
+      expect(doc.querySelectorAll(".cert-card").length).toBeGreaterThanOrEqual(25);
     });
 
-    it("cert card links open in new tab", () => {
+    it("HackerRank certs: at least 2 a.cert-card with hackerrank.com href", () => {
+      const hrCerts = doc.querySelectorAll('a.cert-card[href*="hackerrank.com"]');
+      expect(hrCerts.length).toBeGreaterThanOrEqual(2);
+    });
+
+    it("Databricks cert content is present in certifications section", () => {
+      const section = doc.getElementById("certifications");
+      expect(section.innerHTML).toContain("Databricks");
+    });
+
+    it("DeepLearning.AI certs: at least 10 a.cert-card with deeplearning.ai href", () => {
+      const dlCerts = doc.querySelectorAll('a.cert-card[href*="deeplearning.ai"]');
+      expect(dlCerts.length).toBeGreaterThanOrEqual(10);
+    });
+
+    it("all a.cert-card elements have target _blank", () => {
       const certLinks = doc.querySelectorAll("a.cert-card");
-      expect(certLinks.length).toBeGreaterThanOrEqual(5);
+      expect(certLinks.length).toBeGreaterThanOrEqual(1);
       certLinks.forEach((link) => {
         expect(link.getAttribute("target")).toBe("_blank");
       });
     });
 
-    it("cert card links have valid external hrefs", () => {
+    it("all a.cert-card hrefs start with https://", () => {
       const certLinks = doc.querySelectorAll("a.cert-card");
       certLinks.forEach((link) => {
-        const href = link.getAttribute("href");
-        expect(href).toBeTruthy();
-        expect(href.startsWith("https://")).toBe(true);
+        expect(link.getAttribute("href")).toMatch(/^https:\/\//);
       });
+    });
+
+    it("Claude Code cert has special border color (#e50914)", () => {
+      const certLinks = doc.querySelectorAll("a.cert-card");
+      const claudeCert = [...certLinks].find((link) =>
+        link.innerHTML.includes("Claude Code")
+      );
+      expect(claudeCert).toBeTruthy();
+      const style = claudeCert.getAttribute("style") || "";
+      expect(style).toContain("e50914");
     });
   });
 
-  // ── Contact Section ────────────────────────────────────────
+  // ── Contact Section ────────────────────────────────────────────────────────
 
   describe("contact section", () => {
-    it("has contact section with correct id", () => {
+    it("#contact section exists", () => {
       expect(doc.getElementById("contact")).not.toBeNull();
     });
 
-    it("has email contact link", () => {
+    it('a[href^="mailto:"] contains "akhilreddydanda"', () => {
       const emailLink = doc.querySelector('a[href^="mailto:"]');
       expect(emailLink).not.toBeNull();
       expect(emailLink.getAttribute("href")).toContain("akhilreddydanda");
     });
 
-    it("has LinkedIn contact link", () => {
+    it(".contact-link with href containing linkedin.com exists", () => {
       const links = [...doc.querySelectorAll(".contact-link")];
       const linkedin = links.find((l) =>
         l.getAttribute("href")?.includes("linkedin.com")
@@ -381,7 +518,7 @@ describe("browse.html — Main Portfolio Page", () => {
       expect(linkedin).toBeTruthy();
     });
 
-    it("has GitHub contact link", () => {
+    it(".contact-link with href containing github.com exists", () => {
       const links = [...doc.querySelectorAll(".contact-link")];
       const github = links.find((l) =>
         l.getAttribute("href")?.includes("github.com")
@@ -390,7 +527,7 @@ describe("browse.html — Main Portfolio Page", () => {
     });
   });
 
-  // ── Profile Config Script ──────────────────────────────────
+  // ── Profile Config Script ──────────────────────────────────────────────────
 
   describe("profile configuration script", () => {
     let scriptContent;
@@ -400,67 +537,78 @@ describe("browse.html — Main Portfolio Page", () => {
       const mainScript = scripts.find((s) =>
         s.textContent.includes("profileConfig")
       );
-      scriptContent = mainScript?.textContent || "";
+      scriptContent = mainScript?.textContent ?? "";
     });
 
-    it("has profileConfig with recruiter profile", () => {
+    it("script contains recruiter: key", () => {
       expect(scriptContent).toContain("recruiter:");
     });
 
-    it("has profileConfig with developer profile", () => {
+    it("script contains developer: key", () => {
       expect(scriptContent).toContain("developer:");
     });
 
-    it("has profileConfig with visitor profile", () => {
+    it("script contains visitor: key", () => {
       expect(scriptContent).toContain("visitor:");
     });
 
-    it("has profileConfig with adventurer profile", () => {
+    it("script contains adventurer: key", () => {
       expect(scriptContent).toContain("adventurer:");
     });
 
-    it("default profile fallback is recruiter", () => {
+    it("script contains default profile fallback || 'recruiter'", () => {
       expect(scriptContent).toContain("|| 'recruiter'");
     });
 
-    it("fallback config uses profileConfig.recruiter", () => {
+    it("script contains profileConfig.recruiter fallback reference", () => {
       expect(scriptContent).toContain("profileConfig.recruiter");
     });
 
-    it("profiles have localVideo paths", () => {
+    it("script contains localVideo: property", () => {
       expect(scriptContent).toContain("localVideo:");
     });
 
-    it("profiles have fallbackVideo URLs", () => {
+    it("script contains fallbackVideo: property", () => {
       expect(scriptContent).toContain("fallbackVideo:");
     });
   });
 
-  // ── Background Video ───────────────────────────────────────
+  // ── Background Video ───────────────────────────────────────────────────────
 
   describe("background video", () => {
-    it("has video container", () => {
+    it(".bg-video-container exists", () => {
       expect(doc.querySelector(".bg-video-container")).not.toBeNull();
     });
 
-    it("has video element inside container", () => {
-      expect(
-        doc.querySelector(".bg-video-container video")
-      ).not.toBeNull();
+    it(".bg-video-container contains a video element", () => {
+      expect(doc.querySelector(".bg-video-container video")).not.toBeNull();
     });
 
-    it("has dark overlay for readability", () => {
+    it(".bg-video-overlay exists", () => {
       expect(doc.querySelector(".bg-video-overlay")).not.toBeNull();
     });
   });
 
-  // ── Smooth Scroll Script ───────────────────────────────────
+  // ── Smooth Scroll ──────────────────────────────────────────────────────────
 
   describe("smooth scroll behavior", () => {
-    it("script registers scroll listener for navbar", () => {
+    it("script contains scrollIntoView for smooth navigation", () => {
       const scripts = [...doc.querySelectorAll("script")];
       const scrollScript = scripts.find((s) =>
         s.textContent.includes("scrollIntoView")
+      );
+      expect(scrollScript).toBeTruthy();
+    });
+  });
+
+  // ── Navbar Scroll Effect ───────────────────────────────────────────────────
+
+  describe("navbar scroll effect", () => {
+    it("script contains scrollY or scroll event listener", () => {
+      const scripts = [...doc.querySelectorAll("script")];
+      const scrollScript = scripts.find(
+        (s) =>
+          s.textContent.includes("scrollY") || s.textContent.includes("scroll")
       );
       expect(scrollScript).toBeTruthy();
     });
