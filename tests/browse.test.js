@@ -92,6 +92,13 @@ describe("browse.html — Main Portfolio Page", () => {
       expect(btn.classList.contains("btn-info")).toBe(true);
     });
 
+    it("Try Stock Analyzer button exists in hero with correct href", () => {
+      const btn = doc.querySelector('.hero-buttons a[href="projects/day-8-stock-analyzer.html"]');
+      expect(btn).not.toBeNull();
+      expect(btn.textContent).toContain("Try Stock Analyzer");
+      expect(btn.classList.contains("btn-play")).toBe(true);
+    });
+
     it(".hero-title text contains 'Akhil Reddy Danda'", () => {
       const title = doc.querySelector(".hero-title");
       expect(title).not.toBeNull();
@@ -304,6 +311,15 @@ describe("browse.html — Main Portfolio Page", () => {
         c.getAttribute("onclick")?.includes("day-8-stock-analyzer")
       );
       expect(card).toBeTruthy();
+    });
+
+    it("Stock Analyzer is the first card in Continue Watching", () => {
+      const rows = [...doc.querySelectorAll(".content-row")];
+      const cwSection = rows.find((r) =>
+        r.querySelector(".row-title")?.textContent.includes("Continue Watching")
+      );
+      const firstCard = cwSection.querySelector(".netflix-card");
+      expect(firstCard.getAttribute("onclick")).toContain("day-8-stock-analyzer");
     });
   });
 
