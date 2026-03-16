@@ -197,80 +197,6 @@ describe("Profile Cards", () => {
   });
 });
 
-// ── Video Backgrounds ───────────────────────────────────────────────────────
-
-describe("Video Backgrounds", () => {
-  let doc;
-  beforeEach(() => {
-    doc = createDOM();
-  });
-
-  it("each .profile-avatar has a video.avatar-bg-video", () => {
-    doc.querySelectorAll(".profile-avatar").forEach((avatar) => {
-      expect(avatar.querySelector("video.avatar-bg-video")).not.toBeNull();
-    });
-  });
-
-  it("every avatar video has autoplay, muted, loop, and playsinline attributes", () => {
-    doc.querySelectorAll(".avatar-bg-video").forEach((video) => {
-      expect(video.hasAttribute("autoplay")).toBe(true);
-      expect(video.hasAttribute("muted")).toBe(true);
-      expect(video.hasAttribute("loop")).toBe(true);
-      expect(video.hasAttribute("playsinline")).toBe(true);
-    });
-  });
-
-  it("every avatar video has a source with type='video/mp4'", () => {
-    doc.querySelectorAll(".avatar-bg-video").forEach((video) => {
-      const source = video.querySelector("source");
-      expect(source).not.toBeNull();
-      expect(source.getAttribute("type")).toBe("video/mp4");
-    });
-  });
-
-  it("each .profile-avatar has a .avatar-overlay element", () => {
-    doc.querySelectorAll(".profile-avatar").forEach((avatar) => {
-      expect(avatar.querySelector(".avatar-overlay")).not.toBeNull();
-    });
-  });
-
-  it("Recruiter video src contains 'wolf-of-wall-street'", () => {
-    const src = doc
-      .querySelectorAll(".avatar-bg-video source")[0]
-      .getAttribute("src");
-    expect(src).toContain("wolf-of-wall-street");
-  });
-
-  it("Developer video src contains 'hackerman'", () => {
-    const src = doc
-      .querySelectorAll(".avatar-bg-video source")[1]
-      .getAttribute("src");
-    expect(src).toContain("hackerman");
-  });
-
-  it("Visitor video src contains 'spongebob'", () => {
-    const src = doc
-      .querySelectorAll(".avatar-bg-video source")[2]
-      .getAttribute("src");
-    expect(src).toContain("spongebob");
-  });
-
-  it("Adventurer video src contains 'giphy.mp4'", () => {
-    const src = doc
-      .querySelectorAll(".avatar-bg-video source")[3]
-      .getAttribute("src");
-    expect(src).toContain("giphy.mp4");
-  });
-
-  it("avatar img is still present above the video", () => {
-    doc.querySelectorAll(".profile-avatar").forEach((avatar) => {
-      const img = avatar.querySelector("img");
-      expect(img).not.toBeNull();
-      expect(img.getAttribute("src")).toBeTruthy();
-    });
-  });
-});
-
 // ── Audio ───────────────────────────────────────────────────────────────────
 
 describe("Audio", () => {
@@ -356,15 +282,6 @@ describe("CSS Rules", () => {
 
   it("includes @media (max-width: 480px) breakpoint", () => {
     expect(styleContent).toContain("max-width: 480px");
-  });
-
-  it("480px breakpoint hides .avatar-bg-video with display: none", () => {
-    // The rule sits inside the 480px media query block.
-    const idx480 = styleContent.indexOf("max-width: 480px");
-    expect(idx480).toBeGreaterThan(-1);
-    const block480 = styleContent.slice(idx480);
-    expect(block480).toContain("avatar-bg-video");
-    expect(block480).toContain("display: none");
   });
 
   it(".profile-avatar has position: relative", () => {

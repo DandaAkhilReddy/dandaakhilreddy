@@ -571,6 +571,22 @@ describe("browse.html — Main Portfolio Page", () => {
     it("script contains fallbackVideo: property", () => {
       expect(scriptContent).toContain("fallbackVideo:");
     });
+
+    it("recruiter fallbackVideo is Wolf of Wall Street", () => {
+      expect(scriptContent).toContain("wolf-of-wall-street.mp4");
+    });
+
+    it("developer fallbackVideo is Hackerman", () => {
+      expect(scriptContent).toContain("hackerman.mp4");
+    });
+
+    it("visitor fallbackVideo is SpongeBob", () => {
+      expect(scriptContent).toContain("spongebob.mp4");
+    });
+
+    it("adventurer fallbackVideo is Indiana Jones (giphy)", () => {
+      expect(scriptContent).toContain("giphy.mp4");
+    });
   });
 
   // ── Background Video ───────────────────────────────────────────────────────
