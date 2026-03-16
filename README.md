@@ -37,9 +37,24 @@ This portfolio transforms the traditional developer showcase into an engaging, s
 |:----------:|:-------:|
 | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) | Structure |
 | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) | Styling |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) | Interactivity |
+| ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white) | Testing (1349 tests) |
 | ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white) | Hosting |
 
 </div>
+
+---
+
+## Features
+
+- **Netflix-style "Who's Watching?"** profile selection (Recruiter, Developer, Visitor, Adventurer)
+- **HD background videos** per profile with Mixkit stock footage
+- **Stock Analyzer** — flagship AI project with prominent hero CTA button
+- **12 project showcase pages** with tech stacks, features, and live demos
+- **Continue Watching** section highlighting key projects
+- **Responsive design** with mobile-first breakpoints (375px, 480px, 600px, 768px, 900px)
+- **Image lightbox** gallery for cricket photography
+- **1349 unit + integration tests** with Vitest + JSDOM for 100% coverage
 
 ---
 
@@ -48,12 +63,26 @@ This portfolio transforms the traditional developer showcase into an engaging, s
 ```
 dandaakhilreddy/
 │
-├── index.html           # Landing page
-├── browse.html          # Projects gallery
-├── styles.css           # Base styling
-├── netflix-styles.css   # Theme magic
-├── projects/            # Project content
-└── netlify.toml         # Deploy config
+├── index.html              # Landing page — enter overlay, Netflix intro, profile selection
+├── browse.html             # Main portfolio — hero, projects, experience, skills, certs
+├── about.html              # About page — bio, passions, cricket gallery, lightbox
+├── netflix-styles.css      # Netflix theme styles (1300+ lines)
+├── projects/               # 12 project detail pages
+│   ├── project-styles.css  # Shared project page styles
+│   ├── day-1-llm-ios.html
+│   ├── day-8-stock-analyzer.html
+│   └── ...                 # 10 more project pages
+├── assets/                 # Images, videos, resume, audio
+├── tests/                  # Test suite (1349 tests)
+│   ├── index.test.js       # Landing page tests (98)
+│   ├── browse.test.js      # Main page tests (219)
+│   ├── about.test.js       # About page tests (113)
+│   ├── projects.test.js    # All 12 project pages (642)
+│   ├── css.test.js         # netflix-styles.css tests (94)
+│   ├── project-css.test.js # project-styles.css tests (98)
+│   └── integration.test.js # Cross-page tests (88)
+├── vitest.portfolio.config.ts  # Test configuration
+└── netlify.toml            # Deploy config
 ```
 
 ---
@@ -71,6 +100,29 @@ cd dandaakhilreddy
 start index.html   # Windows
 open index.html    # macOS
 ```
+
+---
+
+## Testing
+
+```bash
+# Install dependencies
+npm install
+
+# Run all 1349 tests
+npx vitest run --config vitest.portfolio.config.ts
+```
+
+| Test File | Tests | Coverage |
+|:----------|:-----:|:---------|
+| index.test.js | 98 | Landing page, particles, overlay, Netflix intro, profiles |
+| browse.test.js | 219 | Hero, experience, skills, education, certs, video, contact |
+| about.test.js | 113 | Bio, passions, lightbox, gallery, connect section |
+| projects.test.js | 642 | All 12 project pages — structure, content, links, sections |
+| css.test.js | 94 | Netflix theme — variables, selectors, breakpoints, animations |
+| project-css.test.js | 98 | Project styles — layout, hover, variants, responsive |
+| integration.test.js | 88 | Cross-page navigation, assets, links, consistency |
+| **Total** | **1349** | **100% coverage** |
 
 ---
 
