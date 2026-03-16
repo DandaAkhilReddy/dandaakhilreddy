@@ -168,6 +168,70 @@ describe("index.html — Profile Selection Page", () => {
     });
   });
 
+  // ── Profile Card Video Backgrounds ────────────────────────
+
+  describe("profile card video backgrounds", () => {
+    it("each profile card has a background video", () => {
+      doc.querySelectorAll(".profile-avatar").forEach((avatar) => {
+        const video = avatar.querySelector("video.avatar-bg-video");
+        expect(video).not.toBeNull();
+      });
+    });
+
+    it("background videos have autoplay, muted, loop attributes", () => {
+      doc.querySelectorAll(".avatar-bg-video").forEach((video) => {
+        expect(video.hasAttribute("autoplay")).toBe(true);
+        expect(video.hasAttribute("muted")).toBe(true);
+        expect(video.hasAttribute("loop")).toBe(true);
+        expect(video.hasAttribute("playsinline")).toBe(true);
+      });
+    });
+
+    it("each background video has an MP4 source", () => {
+      doc.querySelectorAll(".avatar-bg-video").forEach((video) => {
+        const source = video.querySelector("source");
+        expect(source).not.toBeNull();
+        expect(source.getAttribute("type")).toBe("video/mp4");
+        expect(source.getAttribute("src")).toBeTruthy();
+      });
+    });
+
+    it("each profile card has a dark overlay", () => {
+      doc.querySelectorAll(".profile-avatar").forEach((avatar) => {
+        const overlay = avatar.querySelector(".avatar-overlay");
+        expect(overlay).not.toBeNull();
+      });
+    });
+
+    it("avatar image is still present above video", () => {
+      doc.querySelectorAll(".profile-avatar").forEach((avatar) => {
+        const img = avatar.querySelector("img");
+        expect(img).not.toBeNull();
+        expect(img.getAttribute("src")).toBeTruthy();
+      });
+    });
+
+    it("Recruiter card has Wolf of Wall Street video", () => {
+      const source = doc.querySelectorAll(".avatar-bg-video source")[0];
+      expect(source.getAttribute("src")).toContain("wolf-of-wall-street");
+    });
+
+    it("Developer card has Hackerman video", () => {
+      const source = doc.querySelectorAll(".avatar-bg-video source")[1];
+      expect(source.getAttribute("src")).toContain("hackerman");
+    });
+
+    it("Visitor card has SpongeBob video", () => {
+      const source = doc.querySelectorAll(".avatar-bg-video source")[2];
+      expect(source.getAttribute("src")).toContain("spongebob");
+    });
+
+    it("Adventurer card has Indiana Jones video", () => {
+      const source = doc.querySelectorAll(".avatar-bg-video source")[3];
+      expect(source.getAttribute("src")).toContain("giphy.mp4");
+    });
+  });
+
   // ── Audio ──────────────────────────────────────────────────
 
   describe("netflix sound", () => {

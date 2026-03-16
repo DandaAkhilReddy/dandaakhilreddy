@@ -221,10 +221,37 @@
             position: relative;
         }
 
+        .avatar-bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .avatar-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1;
+            transition: background 0.3s ease;
+        }
+
+        .profile-card:hover .avatar-overlay {
+            background: rgba(0, 0, 0, 0.15);
+        }
+
         .profile-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            position: relative;
+            z-index: 2;
         }
 
         .profile-name {
@@ -282,6 +309,11 @@
                 height: 120px;
                 margin: 0 auto;
             }
+
+            .avatar-bg-video,
+            .avatar-overlay {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -319,6 +351,10 @@
         <div class="profiles-container">
             <a href="browse.html?profile=recruiter" class="profile-card">
                 <div class="profile-avatar">
+                    <video class="avatar-bg-video" autoplay muted loop playsinline>
+                        <source src="https://media.tenor.com/51UMcQI8CdIAAAPo/im-not-fuckin-leavin-wolf-of-wall-street.mp4" type="video/mp4">
+                    </video>
+                    <div class="avatar-overlay"></div>
                     <img src="assets/whos-watching/RECRUITER_iMAGE.png" alt="Recruiter">
                 </div>
                 <p class="profile-name">Recruiter</p>
@@ -326,6 +362,10 @@
 
             <a href="browse.html?profile=developer" class="profile-card">
                 <div class="profile-avatar">
+                    <video class="avatar-bg-video" autoplay muted loop playsinline>
+                        <source src="https://media.tenor.com/TbTe1Nc6j34AAAPo/hacker-hackerman.mp4" type="video/mp4">
+                    </video>
+                    <div class="avatar-overlay"></div>
                     <img src="assets/whos-watching/DEVELOPER_IMGE.png" alt="Developer">
                 </div>
                 <p class="profile-name">Developer</p>
@@ -333,6 +373,10 @@
 
             <a href="browse.html?profile=visitor" class="profile-card">
                 <div class="profile-avatar">
+                    <video class="avatar-bg-video" autoplay muted loop playsinline>
+                        <source src="https://media.tenor.com/bvcRp4dZdnIAAAPo/spongebob-squarepants-spongebob.mp4" type="video/mp4">
+                    </video>
+                    <div class="avatar-overlay"></div>
                     <img src="assets/whos-watching/STALKER_IMAGE.png" alt="Visitor">
                 </div>
                 <p class="profile-name">Visitor</p>
@@ -340,6 +384,10 @@
 
             <a href="browse.html?profile=adventurer" class="profile-card">
                 <div class="profile-avatar">
+                    <video class="avatar-bg-video" autoplay muted loop playsinline>
+                        <source src="https://media4.giphy.com/media/vr88K7kw8w7Q7ueVWG/giphy.mp4" type="video/mp4">
+                    </video>
+                    <div class="avatar-overlay"></div>
                     <img src="assets/whos-watching/ADVENTURER_IMAGE.png" alt="Adventurer">
                 </div>
                 <p class="profile-name">Adventurer</p>
