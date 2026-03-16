@@ -794,20 +794,20 @@ describe("browse.html — Main Portfolio Page", () => {
       expect(scriptContent).toContain("fallbackVideo:");
     });
 
-    it("recruiter fallbackVideo is Wolf of Wall Street", () => {
-      expect(scriptContent).toContain("wolf-of-wall-street.mp4");
+    it("recruiter fallbackVideo is Mixkit businessman", () => {
+      expect(scriptContent).toContain("4832-1080.mp4");
     });
 
-    it("developer fallbackVideo is Hackerman", () => {
-      expect(scriptContent).toContain("hackerman.mp4");
+    it("developer fallbackVideo is Mixkit programmer", () => {
+      expect(scriptContent).toContain("46639-720.mp4");
     });
 
-    it("visitor fallbackVideo is SpongeBob", () => {
-      expect(scriptContent).toContain("spongebob.mp4");
+    it("visitor fallbackVideo is Mixkit city street", () => {
+      expect(scriptContent).toContain("4437-1080.mp4");
     });
 
-    it("adventurer fallbackVideo is Indiana Jones (giphy)", () => {
-      expect(scriptContent).toContain("giphy.mp4");
+    it("adventurer fallbackVideo is Mixkit mountains", () => {
+      expect(scriptContent).toContain("4113-1080.mp4");
     });
   });
 
