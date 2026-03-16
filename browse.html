@@ -1203,17 +1203,22 @@
     <script>
         // Profile configuration
         const profileConfig = {
-            backend: {
-                localVideo: 'assets/videos/developer.mp4',
-                fallbackVideo: 'https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4',
-                image: 'https://i.imgur.com/8PjrG8O.png'
-            },
-            researcher: {
+            recruiter: {
                 localVideo: 'assets/videos/recruiter.mp4',
                 fallbackVideo: 'https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-typing-on-a-laptop-in-an-office-4833-large.mp4',
                 image: 'https://i.imgur.com/YQK3Qby.png'
             },
-            cricket: {
+            developer: {
+                localVideo: 'assets/videos/developer.mp4',
+                fallbackVideo: 'https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4',
+                image: 'https://i.imgur.com/8PjrG8O.png'
+            },
+            visitor: {
+                localVideo: 'assets/videos/visitor.mp4',
+                fallbackVideo: 'https://assets.mixkit.co/videos/preview/mixkit-data-processing-cybernetic-technology-code-42756-large.mp4',
+                image: 'https://i.imgur.com/qKG0j4H.png'
+            },
+            adventurer: {
                 localVideo: 'assets/videos/adventurer.mp4',
                 fallbackVideo: 'https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4',
                 image: 'https://i.imgur.com/vB5OQKW.png'
@@ -1222,7 +1227,7 @@
 
         // Get profile from URL
         const urlParams = new URLSearchParams(window.location.search);
-        const profile = urlParams.get('profile') || 'backend';
+        const profile = urlParams.get('profile') || 'recruiter';
 
         // Update profile name in titles
         document.getElementById('profile-name').textContent = profile;
@@ -1230,7 +1235,7 @@
 
         // Update nav profile image
         const navImg = document.getElementById('nav-profile-img');
-        const config = profileConfig[profile] || profileConfig.backend;
+        const config = profileConfig[profile] || profileConfig.recruiter;
         navImg.src = config.image;
 
         // Switch full-page background video based on profile

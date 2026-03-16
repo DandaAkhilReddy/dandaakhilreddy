@@ -403,40 +403,28 @@ describe("browse.html — Main Portfolio Page", () => {
       scriptContent = mainScript?.textContent || "";
     });
 
-    it("has profileConfig with backend profile", () => {
-      expect(scriptContent).toContain("backend:");
+    it("has profileConfig with recruiter profile", () => {
+      expect(scriptContent).toContain("recruiter:");
     });
 
-    it("has profileConfig with researcher profile", () => {
-      expect(scriptContent).toContain("researcher:");
+    it("has profileConfig with developer profile", () => {
+      expect(scriptContent).toContain("developer:");
     });
 
-    it("has profileConfig with cricket profile", () => {
-      expect(scriptContent).toContain("cricket:");
+    it("has profileConfig with visitor profile", () => {
+      expect(scriptContent).toContain("visitor:");
     });
 
-    it("does NOT contain old recruiter profile", () => {
-      expect(scriptContent).not.toMatch(/\brecruiter\s*:/);
+    it("has profileConfig with adventurer profile", () => {
+      expect(scriptContent).toContain("adventurer:");
     });
 
-    it("does NOT contain old developer profile", () => {
-      expect(scriptContent).not.toMatch(/\bdeveloper\s*:/);
+    it("default profile fallback is recruiter", () => {
+      expect(scriptContent).toContain("|| 'recruiter'");
     });
 
-    it("does NOT contain old visitor profile", () => {
-      expect(scriptContent).not.toMatch(/\bvisitor\s*:/);
-    });
-
-    it("does NOT contain old adventurer profile", () => {
-      expect(scriptContent).not.toMatch(/\badventurer\s*:/);
-    });
-
-    it("default profile fallback is backend", () => {
-      expect(scriptContent).toContain("|| 'backend'");
-    });
-
-    it("fallback config uses profileConfig.backend", () => {
-      expect(scriptContent).toContain("profileConfig.backend");
+    it("fallback config uses profileConfig.recruiter", () => {
+      expect(scriptContent).toContain("profileConfig.recruiter");
     });
 
     it("profiles have localVideo paths", () => {

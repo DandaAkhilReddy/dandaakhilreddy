@@ -106,44 +106,54 @@ describe("index.html — Profile Selection Page", () => {
       expect(title.textContent).toBe("Who's Watching?");
     });
 
-    it("has exactly 3 profile cards", () => {
-      expect(doc.querySelectorAll(".profile-card").length).toBe(3);
+    it("has exactly 4 profile cards", () => {
+      expect(doc.querySelectorAll(".profile-card").length).toBe(4);
     });
 
-    it("profile cards are in correct order: Backend, LLM Researcher, Cricket", () => {
+    it("profile cards are in correct order: Recruiter, Developer, Visitor, Adventurer", () => {
       const names = [...doc.querySelectorAll(".profile-name")].map(
         (el) => el.textContent
       );
-      expect(names).toEqual(["Backend", "LLM Researcher", "Cricket"]);
+      expect(names).toEqual(["Recruiter", "Developer", "Visitor", "Adventurer"]);
     });
 
-    it("Backend card links to browse.html?profile=backend", () => {
+    it("Recruiter card links to browse.html?profile=recruiter", () => {
       const card = doc.querySelectorAll(".profile-card")[0];
-      expect(card.getAttribute("href")).toBe("browse.html?profile=backend");
+      expect(card.getAttribute("href")).toBe("browse.html?profile=recruiter");
     });
 
-    it("LLM Researcher card links to browse.html?profile=researcher", () => {
+    it("Developer card links to browse.html?profile=developer", () => {
       const card = doc.querySelectorAll(".profile-card")[1];
-      expect(card.getAttribute("href")).toBe("browse.html?profile=researcher");
+      expect(card.getAttribute("href")).toBe("browse.html?profile=developer");
     });
 
-    it("Cricket card links to browse.html?profile=cricket", () => {
+    it("Visitor card links to browse.html?profile=visitor", () => {
       const card = doc.querySelectorAll(".profile-card")[2];
-      expect(card.getAttribute("href")).toBe("browse.html?profile=cricket");
+      expect(card.getAttribute("href")).toBe("browse.html?profile=visitor");
     });
 
-    it("Backend card uses Developer avatar image", () => {
+    it("Adventurer card links to browse.html?profile=adventurer", () => {
+      const card = doc.querySelectorAll(".profile-card")[3];
+      expect(card.getAttribute("href")).toBe("browse.html?profile=adventurer");
+    });
+
+    it("Recruiter card uses correct avatar image", () => {
       const img = doc.querySelectorAll(".profile-avatar img")[0];
-      expect(img.getAttribute("src")).toBe("assets/whos-watching/DEVELOPER_IMGE.png");
-    });
-
-    it("LLM Researcher card uses Recruiter avatar image", () => {
-      const img = doc.querySelectorAll(".profile-avatar img")[1];
       expect(img.getAttribute("src")).toBe("assets/whos-watching/RECRUITER_iMAGE.png");
     });
 
-    it("Cricket card uses Adventurer avatar image", () => {
+    it("Developer card uses correct avatar image", () => {
+      const img = doc.querySelectorAll(".profile-avatar img")[1];
+      expect(img.getAttribute("src")).toBe("assets/whos-watching/DEVELOPER_IMGE.png");
+    });
+
+    it("Visitor card uses correct avatar image", () => {
       const img = doc.querySelectorAll(".profile-avatar img")[2];
+      expect(img.getAttribute("src")).toBe("assets/whos-watching/STALKER_IMAGE.png");
+    });
+
+    it("Adventurer card uses correct avatar image", () => {
+      const img = doc.querySelectorAll(".profile-avatar img")[3];
       expect(img.getAttribute("src")).toBe("assets/whos-watching/ADVENTURER_IMAGE.png");
     });
 
