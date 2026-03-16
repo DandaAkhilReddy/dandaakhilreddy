@@ -217,6 +217,11 @@ describe("Audio", () => {
     expect(source.getAttribute("src")).toBe("assets/netflix-sound.mp3");
     expect(source.getAttribute("type")).toBe("audio/mpeg");
   });
+
+  it("audio element has preload='auto' attribute", () => {
+    const audio = doc.getElementById("netflix-sound");
+    expect(audio.getAttribute("preload")).toBe("auto");
+  });
 });
 
 // ── Script Behavior ─────────────────────────────────────────────────────────
@@ -260,6 +265,22 @@ describe("Script Behavior", () => {
   it("navigates via window.location.href = href", () => {
     expect(scriptContent).toContain("window.location.href = href");
   });
+
+  it("setTimeout uses 3500ms delay for profile reveal", () => {
+    expect(scriptContent).toContain("3500");
+  });
+
+  it("calls e.preventDefault() on profile card click", () => {
+    expect(scriptContent).toContain("e.preventDefault()");
+  });
+
+  it("reads card href via card.getAttribute('href')", () => {
+    expect(scriptContent).toContain("card.getAttribute('href')");
+  });
+
+  it("selects all profile cards via document.querySelectorAll('.profile-card')", () => {
+    expect(scriptContent).toContain("document.querySelectorAll('.profile-card')");
+  });
 });
 
 // ── CSS Rules ───────────────────────────────────────────────────────────────
@@ -286,5 +307,145 @@ describe("CSS Rules", () => {
 
   it(".profile-avatar has position: relative", () => {
     expect(styleContent).toMatch(/\.profile-avatar\s*\{[^}]*position:\s*relative/s);
+  });
+
+  it("768px media query contains profile-title font-size override", () => {
+    const block768 = styleContent.match(/@media\s*\(max-width:\s*768px\)[^{]*\{([\s\S]*?)(?=@media|$)/);
+    expect(block768).not.toBeNull();
+    expect(block768[1]).toContain("font-size");
+    expect(block768[1]).toContain("profile-title");
+  });
+
+  it("768px media query contains profile-avatar width and height overrides", () => {
+    const block768 = styleContent.match(/@media\s*\(max-width:\s*768px\)[^{]*\{([\s\S]*?)(?=@media|$)/);
+    expect(block768).not.toBeNull();
+    expect(block768[1]).toContain("profile-avatar");
+    expect(block768[1]).toMatch(/width:\s*100px/);
+    expect(block768[1]).toMatch(/height:\s*100px/);
+  });
+
+  it("768px media query contains logo-text font-size override", () => {
+    const block768 = styleContent.match(/@media\s*\(max-width:\s*768px\)[^{]*\{([\s\S]*?)(?=@media|$)/);
+    expect(block768).not.toBeNull();
+    expect(block768[1]).toContain("logo-text");
+    expect(block768[1]).toContain("font-size");
+  });
+
+  it("768px media query contains enter-brand font-size override", () => {
+    const block768 = styleContent.match(/@media\s*\(max-width:\s*768px\)[^{]*\{([\s\S]*?)(?=@media|$)/);
+    expect(block768).not.toBeNull();
+    expect(block768[1]).toContain("enter-brand");
+    expect(block768[1]).toContain("font-size");
+  });
+
+  it("480px media query contains grid-template-columns", () => {
+    const block480 = styleContent.match(/@media\s*\(max-width:\s*480px\)[^{]*\{([\s\S]*?)(?=@media|$)/);
+    expect(block480).not.toBeNull();
+    expect(block480[1]).toContain("grid-template-columns");
+  });
+});
+
+// ── Accessibility ────────────────────────────────────────────────────────────
+
+describe("Accessibility", () => {
+  let doc;
+  beforeEach(() => {
+    doc = createDOM();
+  });
+
+  it("html element has lang='en'", () => {
+    const htmlEl = doc.documentElement;
+    expect(htmlEl.getAttribute("lang")).toBe("en");
+  });
+
+  it("meta charset='UTF-8' exists", () => {
+    const charset = doc.querySelector("meta[charset]");
+    expect(charset).not.toBeNull();
+    expect(charset.getAttribute("charset").toUpperCase()).toBe("UTF-8");
+  });
+
+  it("all img elements have non-empty alt attributes", () => {
+    const images = [...doc.querySelectorAll("img")];
+    expect(images.length).toBeGreaterThan(0);
+    images.forEach((img) => {
+      const alt = img.getAttribute("alt");
+      expect(alt).not.toBeNull();
+      expect(alt.trim().length).toBeGreaterThan(0);
+    });
+  });
+
+  it("title element is non-empty", () => {
+    expect(doc.title.trim().length).toBeGreaterThan(0);
+  });
+
+  it("page has exactly one h1 element", () => {
+    const h1s = doc.querySelectorAll("h1");
+    expect(h1s.length).toBe(1);
+  });
+});
+
+// ── CSS Animations ───────────────────────────────────────────────────────────
+
+describe("CSS Animations", () => {
+  let styleContent;
+  beforeAll(() => {
+    const doc = createDOM();
+    const styles = [...doc.querySelectorAll("style")];
+    styleContent = styles.map((s) => s.textContent).join("\n");
+  });
+
+  it("style contains @keyframes brandPulse", () => {
+    expect(styleContent).toContain("@keyframes brandPulse");
+  });
+
+  it("style contains @keyframes promptFade", () => {
+    expect(styleContent).toContain("@keyframes promptFade");
+  });
+
+  it("style contains @keyframes logoZoom", () => {
+    expect(styleContent).toContain("@keyframes logoZoom");
+  });
+
+  it("style contains @keyframes fadeOutIntro", () => {
+    expect(styleContent).toContain("@keyframes fadeOutIntro");
+  });
+
+  it("style contains @keyframes floatUp", () => {
+    expect(styleContent).toContain("@keyframes floatUp");
+  });
+
+  it("style contains @keyframes fadeIn", () => {
+    expect(styleContent).toContain("@keyframes fadeIn");
+  });
+
+  it(".enter-overlay.hidden rule has opacity: 0", () => {
+    expect(styleContent).toMatch(/\.enter-overlay\.hidden\s*\{[^}]*opacity:\s*0/s);
+  });
+});
+
+// ── CSS State Classes ─────────────────────────────────────────────────────────
+
+describe("CSS State Classes", () => {
+  let styleContent;
+  beforeAll(() => {
+    const doc = createDOM();
+    const styles = [...doc.querySelectorAll("style")];
+    styleContent = styles.map((s) => s.textContent).join("\n");
+  });
+
+  it(".netflix-intro.playing rule exists in styles", () => {
+    expect(styleContent).toContain(".netflix-intro.playing");
+  });
+
+  it(".profile-selection.visible rule exists in styles", () => {
+    expect(styleContent).toContain(".profile-selection.visible");
+  });
+
+  it(".profile-card:hover .profile-avatar rule exists", () => {
+    expect(styleContent).toContain(".profile-card:hover .profile-avatar");
+  });
+
+  it(".profile-card:hover .profile-name rule exists", () => {
+    expect(styleContent).toContain(".profile-card:hover .profile-name");
   });
 });

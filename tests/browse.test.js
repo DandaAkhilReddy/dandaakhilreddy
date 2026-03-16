@@ -91,6 +91,49 @@ describe("browse.html — Main Portfolio Page", () => {
       const btn = doc.querySelector('.hero-buttons a[href*="linkedin.com"]');
       expect(btn.classList.contains("btn-info")).toBe(true);
     });
+
+    it(".hero-title text contains 'Akhil Reddy Danda'", () => {
+      const title = doc.querySelector(".hero-title");
+      expect(title).not.toBeNull();
+      expect(title.textContent).toContain("Akhil Reddy Danda");
+    });
+
+    it(".hero-subtitle text contains 'SOFTWARE ENGINEER' (case insensitive)", () => {
+      const subtitle = doc.querySelector(".hero-subtitle");
+      expect(subtitle).not.toBeNull();
+      expect(subtitle.textContent.toUpperCase()).toContain("SOFTWARE ENGINEER");
+    });
+
+    it("hero has .hero-tags container with .tag elements", () => {
+      const tagsContainer = doc.querySelector(".hero-tags");
+      expect(tagsContainer).not.toBeNull();
+      const tags = tagsContainer.querySelectorAll(".tag");
+      expect(tags.length).toBeGreaterThanOrEqual(1);
+    });
+
+    it("tag texts include 'Microsoft'", () => {
+      const tags = [...doc.querySelectorAll(".hero-tags .tag")];
+      const texts = tags.map((t) => t.textContent.trim());
+      expect(texts).toContain("Microsoft");
+    });
+
+    it("tag texts include 'Ex-Amazon'", () => {
+      const tags = [...doc.querySelectorAll(".hero-tags .tag")];
+      const texts = tags.map((t) => t.textContent.trim());
+      expect(texts).toContain("Ex-Amazon");
+    });
+
+    it("tag texts include 'Distributed Systems'", () => {
+      const tags = [...doc.querySelectorAll(".hero-tags .tag")];
+      const texts = tags.map((t) => t.textContent.trim());
+      expect(texts).toContain("Distributed Systems");
+    });
+
+    it(".hero-description paragraph exists with non-empty text", () => {
+      const desc = doc.querySelector(".hero-description");
+      expect(desc).not.toBeNull();
+      expect(desc.textContent.trim().length).toBeGreaterThan(0);
+    });
   });
 
   // ── Resume PDF File ────────────────────────────────────────────────────────
@@ -311,6 +354,51 @@ describe("browse.html — Main Portfolio Page", () => {
       const youtubeLink = doc.querySelector('a[href*="youtu"]');
       expect(youtubeLink).not.toBeNull();
     });
+
+    it("all featured cards have .new-ribbon element", () => {
+      const featuredCards = doc.querySelectorAll(".daily-card.featured");
+      expect(featuredCards.length).toBeGreaterThanOrEqual(1);
+      featuredCards.forEach((card) => {
+        expect(card.querySelector(".new-ribbon")).not.toBeNull();
+      });
+    });
+
+    it("each daily card has .daily-card-image with an img element", () => {
+      const cards = doc.querySelectorAll(".daily-card");
+      cards.forEach((card) => {
+        const imgContainer = card.querySelector(".daily-card-image");
+        expect(imgContainer).not.toBeNull();
+        expect(imgContainer.querySelector("img")).not.toBeNull();
+      });
+    });
+
+    it("daily card titles include 'Deploy LLM on iOS'", () => {
+      const titles = [...doc.querySelectorAll(".daily-card h3")].map(
+        (h) => h.textContent.trim()
+      );
+      expect(titles).toContain("Deploy LLM on iOS");
+    });
+
+    it("daily card titles include 'WiFiVision'", () => {
+      const titles = [...doc.querySelectorAll(".daily-card h3")].map(
+        (h) => h.textContent.trim()
+      );
+      expect(titles).toContain("WiFiVision");
+    });
+
+    it("daily card titles include 'Stock Analyzer'", () => {
+      const titles = [...doc.querySelectorAll(".daily-card h3")].map(
+        (h) => h.textContent.trim()
+      );
+      expect(titles).toContain("Stock Analyzer");
+    });
+
+    it(".day-badge elements exist on daily cards", () => {
+      const badges = doc.querySelectorAll(".daily-card .day-badge");
+      expect(badges.length).toBeGreaterThanOrEqual(
+        doc.querySelectorAll(".daily-card").length
+      );
+    });
   });
 
   // ── Experience Section ─────────────────────────────────────────────────────
@@ -346,6 +434,46 @@ describe("browse.html — Main Portfolio Page", () => {
       const techTags = doc.querySelectorAll(".exp-tech span");
       expect(techTags.length).toBeGreaterThanOrEqual(1);
     });
+
+    it("Microsoft card contains 'Software Engineer II' text", () => {
+      const msCard = doc.querySelector(".experience-card.microsoft");
+      expect(msCard.textContent).toContain("Software Engineer II");
+    });
+
+    it("Microsoft card has .exp-date with date range text", () => {
+      const msCard = doc.querySelector(".experience-card.microsoft");
+      const expDate = msCard.querySelector(".exp-date");
+      expect(expDate).not.toBeNull();
+      expect(expDate.textContent.trim().length).toBeGreaterThan(0);
+    });
+
+    it("Amazon card contains 'Software' text", () => {
+      const amazonCard = doc.querySelector(".experience-card.amazon");
+      expect(amazonCard.textContent).toContain("Software");
+    });
+
+    it("each experience card has .exp-highlights list", () => {
+      const cards = doc.querySelectorAll(".experience-card");
+      cards.forEach((card) => {
+        expect(card.querySelector(".exp-highlights")).not.toBeNull();
+      });
+    });
+
+    it("each experience card has .exp-tech with span tags", () => {
+      const cards = doc.querySelectorAll(".experience-card");
+      cards.forEach((card) => {
+        const expTech = card.querySelector(".exp-tech");
+        expect(expTech).not.toBeNull();
+        expect(expTech.querySelectorAll("span").length).toBeGreaterThanOrEqual(1);
+      });
+    });
+
+    it("HHA Medicine card contains location text", () => {
+      const cards = [...doc.querySelectorAll(".experience-card")];
+      const hhaCard = cards.find((c) => c.innerHTML.includes("HHA Medicine"));
+      expect(hhaCard).toBeTruthy();
+      expect(hhaCard.textContent).toMatch(/Corpus Christi|TX|Texas/i);
+    });
   });
 
   // ── Microsoft Prep Section ─────────────────────────────────────────────────
@@ -369,6 +497,26 @@ describe("browse.html — Main Portfolio Page", () => {
       expect(body).toContain("System Design");
       expect(body).toContain("Databases");
       expect(body).toContain("Operating Systems");
+    });
+
+    it("each msft-prep-card has an h3 title", () => {
+      const section = doc.getElementById("microsoft-prep");
+      const cards = section.querySelectorAll(".msft-prep-card");
+      cards.forEach((card) => {
+        const h3 = card.querySelector("h3");
+        expect(h3).not.toBeNull();
+        expect(h3.textContent.trim().length).toBeGreaterThan(0);
+      });
+    });
+
+    it("each msft-prep-card has .msft-prep-tags with spans", () => {
+      const section = doc.getElementById("microsoft-prep");
+      const cards = section.querySelectorAll(".msft-prep-card");
+      cards.forEach((card) => {
+        const tagsEl = card.querySelector(".msft-prep-tags");
+        expect(tagsEl).not.toBeNull();
+        expect(tagsEl.querySelectorAll("span").length).toBeGreaterThanOrEqual(1);
+      });
     });
   });
 
@@ -423,6 +571,34 @@ describe("browse.html — Main Portfolio Page", () => {
       const deviconImgs = doc.querySelectorAll('img[src*="devicon"]');
       expect(deviconImgs.length).toBeGreaterThanOrEqual(1);
     });
+
+    it("has ML skill progress class (.ml)", () => {
+      const mlBars = doc.querySelectorAll(".skill-progress.ml");
+      expect(mlBars.length).toBeGreaterThanOrEqual(1);
+    });
+
+    it("featured-skill items contain text like 'Python' or 'C#'", () => {
+      const items = [...doc.querySelectorAll(".featured-skill span")];
+      const texts = items.map((el) => el.textContent.trim());
+      const hasPythonOrCSharp = texts.some(
+        (t) => t.includes("Python") || t.includes("C#")
+      );
+      expect(hasPythonOrCSharp).toBe(true);
+    });
+
+    it(".skills-grid-new containers exist (multiple grids)", () => {
+      const grids = doc.querySelectorAll(".skills-grid-new");
+      expect(grids.length).toBeGreaterThanOrEqual(2);
+    });
+
+    it("at least 3 skill-card-new elements have progress bars with width style", () => {
+      const cards = [...doc.querySelectorAll(".skill-card-new")];
+      const withWidth = cards.filter((card) => {
+        const bar = card.querySelector(".skill-progress");
+        return bar && (bar.getAttribute("style") || "").includes("width:");
+      });
+      expect(withWidth.length).toBeGreaterThanOrEqual(3);
+    });
   });
 
   // ── Education Section ──────────────────────────────────────────────────────
@@ -442,6 +618,29 @@ describe("browse.html — Main Portfolio Page", () => {
       const section = doc.getElementById("education");
       expect(section.innerHTML).toContain("SRM Institute");
       expect(section.innerHTML).toContain("May 2019");
+    });
+
+    it("education section has .edu-grid with .edu-card elements", () => {
+      const section = doc.getElementById("education");
+      const grid = section.querySelector(".edu-grid");
+      expect(grid).not.toBeNull();
+      expect(grid.querySelectorAll(".edu-card").length).toBeGreaterThanOrEqual(1);
+    });
+
+    it("edu cards contain degree info (Master's or Bachelor's)", () => {
+      const cards = [...doc.querySelectorAll(".edu-card")];
+      const hasDegreInfo = cards.some(
+        (c) =>
+          c.textContent.includes("Master") ||
+          c.textContent.includes("Bachelor") ||
+          c.textContent.includes("MS") ||
+          c.textContent.includes("BTech")
+      );
+      expect(hasDegreInfo).toBe(true);
+    });
+
+    it("at least 2 edu-card elements exist", () => {
+      expect(doc.querySelectorAll(".edu-card").length).toBeGreaterThanOrEqual(2);
     });
   });
 
@@ -494,6 +693,29 @@ describe("browse.html — Main Portfolio Page", () => {
       expect(claudeCert).toBeTruthy();
       const style = claudeCert.getAttribute("style") || "";
       expect(style).toContain("e50914");
+    });
+
+    it("has Databricks a.cert-card links with credentials.databricks.com href", () => {
+      const databricksCerts = doc.querySelectorAll(
+        'a.cert-card[href*="credentials.databricks.com"]'
+      );
+      expect(databricksCerts.length).toBeGreaterThanOrEqual(1);
+    });
+
+    it("has Coursera cert content present in certifications section", () => {
+      const section = doc.getElementById("certifications");
+      expect(section.innerHTML).toContain("Coursera");
+    });
+
+    it("cert cards have visible text content", () => {
+      const certCards = doc.querySelectorAll(".cert-card");
+      certCards.forEach((card) => {
+        expect(card.textContent.trim().length).toBeGreaterThan(0);
+      });
+    });
+
+    it("total cert count is at least 27", () => {
+      expect(doc.querySelectorAll(".cert-card").length).toBeGreaterThanOrEqual(27);
     });
   });
 
@@ -603,6 +825,22 @@ describe("browse.html — Main Portfolio Page", () => {
     it(".bg-video-overlay exists", () => {
       expect(doc.querySelector(".bg-video-overlay")).not.toBeNull();
     });
+
+    it("#bg-video has autoplay attribute", () => {
+      const video = doc.getElementById("bg-video");
+      expect(video).not.toBeNull();
+      expect(video.hasAttribute("autoplay")).toBe(true);
+    });
+
+    it("#bg-video has muted attribute", () => {
+      const video = doc.getElementById("bg-video");
+      expect(video.hasAttribute("muted")).toBe(true);
+    });
+
+    it("#bg-video has loop attribute", () => {
+      const video = doc.getElementById("bg-video");
+      expect(video.hasAttribute("loop")).toBe(true);
+    });
   });
 
   // ── Smooth Scroll ──────────────────────────────────────────────────────────
@@ -627,6 +865,141 @@ describe("browse.html — Main Portfolio Page", () => {
           s.textContent.includes("scrollY") || s.textContent.includes("scroll")
       );
       expect(scrollScript).toBeTruthy();
+    });
+  });
+
+  // ── CSS Inline Styles ──────────────────────────────────────────────────────
+
+  describe("CSS inline styles", () => {
+    let styleContent;
+
+    beforeEach(() => {
+      const styles = [...doc.querySelectorAll("style")];
+      styleContent = styles.map((s) => s.textContent).join("\n");
+    });
+
+    it("inline style contains .bg-video-container with position: fixed", () => {
+      expect(styleContent).toContain(".bg-video-container");
+      expect(styleContent).toContain("position: fixed");
+    });
+
+    it("inline style contains .bg-video-overlay", () => {
+      expect(styleContent).toContain(".bg-video-overlay");
+    });
+
+    it("inline style contains @media for mobile (max-width: 600px) hiding video", () => {
+      expect(styleContent).toContain("max-width: 600px");
+      expect(styleContent).toContain("display: none");
+    });
+
+    it("inline style contains .experience-card.microsoft", () => {
+      expect(styleContent).toContain(".experience-card.microsoft");
+    });
+  });
+
+  // ── Script Behavior Extended ───────────────────────────────────────────────
+
+  describe("script behavior extended", () => {
+    let scriptContent;
+
+    beforeEach(() => {
+      const scripts = [...doc.querySelectorAll("script")];
+      const mainScript = scripts.find((s) =>
+        s.textContent.includes("profileConfig")
+      );
+      scriptContent = mainScript?.textContent ?? "";
+    });
+
+    it("script contains URLSearchParams", () => {
+      expect(scriptContent).toContain("URLSearchParams");
+    });
+
+    it("script contains bgVideo.load()", () => {
+      expect(scriptContent).toContain("bgVideo.load()");
+    });
+
+    it("script contains bgVideo.play()", () => {
+      expect(scriptContent).toContain("bgVideo.play()");
+    });
+
+    it("script contains scrollY", () => {
+      expect(scriptContent).toContain("scrollY");
+    });
+
+    it("script contains classList toggle with 'scrolled'", () => {
+      expect(scriptContent).toContain("scrolled");
+      expect(scriptContent).toMatch(/classList\.(toggle|add)/);
+    });
+
+    it("script contains getElementById('profile-name')", () => {
+      expect(scriptContent).toContain("getElementById('profile-name')");
+    });
+
+    it("script contains textContent assignment", () => {
+      expect(scriptContent).toContain(".textContent =");
+    });
+
+    it("script contains image: property in profileConfig", () => {
+      expect(scriptContent).toContain("image:");
+    });
+  });
+
+  // ── Accessibility ──────────────────────────────────────────────────────────
+
+  describe("accessibility", () => {
+    it("html element has lang='en'", () => {
+      const htmlEl = doc.querySelector("html");
+      expect(htmlEl).not.toBeNull();
+      expect(htmlEl.getAttribute("lang")).toBe("en");
+    });
+
+    it("all img elements have alt attributes", () => {
+      const imgs = doc.querySelectorAll("img");
+      expect(imgs.length).toBeGreaterThanOrEqual(1);
+      imgs.forEach((img) => {
+        expect(img.hasAttribute("alt")).toBe(true);
+      });
+    });
+
+    it("external linkedin links have target='_blank'", () => {
+      const linkedinLinks = doc.querySelectorAll('a[href*="linkedin.com"]');
+      expect(linkedinLinks.length).toBeGreaterThanOrEqual(1);
+      linkedinLinks.forEach((link) => {
+        expect(link.getAttribute("target")).toBe("_blank");
+      });
+    });
+
+    it("external github links have target='_blank'", () => {
+      const githubLinks = doc.querySelectorAll('a[href*="github.com"]');
+      expect(githubLinks.length).toBeGreaterThanOrEqual(1);
+      githubLinks.forEach((link) => {
+        expect(link.getAttribute("target")).toBe("_blank");
+      });
+    });
+
+    it("page has semantic section elements", () => {
+      const sections = doc.querySelectorAll("section");
+      expect(sections.length).toBeGreaterThanOrEqual(3);
+    });
+
+    it("meta charset UTF-8 exists", () => {
+      const metaCharset = doc.querySelector("meta[charset]");
+      expect(metaCharset).not.toBeNull();
+      expect(metaCharset.getAttribute("charset").toUpperCase()).toBe("UTF-8");
+    });
+  });
+
+  // ── Footer ─────────────────────────────────────────────────────────────────
+
+  describe("footer", () => {
+    it("footer element exists", () => {
+      expect(doc.querySelector("footer")).not.toBeNull();
+    });
+
+    it("footer contains copyright or year text", () => {
+      const footer = doc.querySelector("footer");
+      const text = footer.textContent;
+      expect(text).toMatch(/©|copyright|2026/i);
     });
   });
 });

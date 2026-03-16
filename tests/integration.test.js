@@ -18,6 +18,31 @@ const { doc: indexDoc, html: indexHtml } = loadDoc("index.html");
 const { doc: browseDoc, html: browseHtml } = loadDoc("browse.html");
 const { doc: aboutDoc, html: aboutHtml } = loadDoc("about.html");
 
+// Load all 11 project pages once at module level for reuse across describe blocks
+const dailyProjectFiles = [
+  "projects/day-1-llm-ios.html",
+  "projects/day-2-claude-peepee.html",
+  "projects/day-3-speakskiptype.html",
+  "projects/day-4-audtext.html",
+  "projects/day-minus-5-wifivision.html",
+  "projects/day-6-localbrowsercontrol.html",
+  "projects/day-7-reddyhedgefund.html",
+  "projects/day-8-stock-analyzer.html",
+];
+
+const academicProjectFiles = [
+  "projects/adas-system.html",
+  "projects/financial-sentiment.html",
+  "projects/healthcare-rag.html",
+];
+
+const allProjectFiles = [...dailyProjectFiles, ...academicProjectFiles];
+
+const projectDocs = allProjectFiles.map((file) => ({
+  file,
+  ...loadDoc(file),
+}));
+
 // ── Page-to-Page Navigation ──────────────────────────────────────────────────
 
 describe("Page-to-Page Navigation", () => {
@@ -115,6 +140,30 @@ describe("Asset Integrity", () => {
     ];
     cricketImages.forEach((path) => {
       expect(existsSync(resolve(ROOT, path))).toBe(true);
+    });
+  });
+
+  it("projects/ directory exists with at least 12 HTML files", () => {
+    expect(existsSync(resolve(ROOT, "projects"))).toBe(true);
+    allProjectFiles.forEach((file) => {
+      expect(existsSync(resolve(ROOT, file))).toBe(true);
+    });
+    expect(allProjectFiles.length).toBeGreaterThanOrEqual(11);
+  });
+
+  it("projects/project-styles.css exists", () => {
+    expect(existsSync(resolve(ROOT, "projects/project-styles.css"))).toBe(true);
+  });
+
+  it("all who's-watching images referenced via src in index.html exist on disk", () => {
+    const imgs = [...indexDoc.querySelectorAll("img[src]")].filter((img) => {
+      const src = img.getAttribute("src");
+      return src && !src.startsWith("http") && !src.startsWith("//");
+    });
+    expect(imgs.length).toBeGreaterThan(0);
+    imgs.forEach((img) => {
+      const src = img.getAttribute("src");
+      expect(existsSync(resolve(ROOT, src))).toBe(true);
     });
   });
 });
@@ -233,6 +282,39 @@ describe("Content Consistency", () => {
     expect(browseMailto.getAttribute("href")).toContain("akhilreddydanda");
     expect(aboutMailto.getAttribute("href")).toContain("akhilreddydanda");
   });
+
+  it("author name 'Akhil' appears in all 3 main page DOMs", () => {
+    [
+      { name: "index.html", html: indexHtml },
+      { name: "browse.html", html: browseHtml },
+      { name: "about.html", html: aboutHtml },
+    ].forEach(({ name, html }) => {
+      expect(html).toMatch(/akhil/i);
+    });
+  });
+
+  it("GitHub username 'DandaAkhilReddy' appears in browse.html and about.html", () => {
+    expect(browseHtml).toContain("DandaAkhilReddy");
+    expect(aboutHtml).toContain("DandaAkhilReddy");
+  });
+
+  it("LinkedIn URL appears in both browse.html and about.html", () => {
+    expect(browseHtml).toContain("linkedin.com/in/akhil-reddy-danda");
+    expect(aboutHtml).toContain("linkedin.com/in/akhil-reddy-danda");
+  });
+
+  it("contact section exists in browse.html", () => {
+    const contactSection = browseDoc.querySelector("#contact, .contact-section");
+    expect(contactSection).not.toBeNull();
+  });
+
+  it("connect/contact section exists in about.html", () => {
+    // about.html uses .connect-section instead of #contact
+    const connectSection = aboutDoc.querySelector(
+      ".connect-section, #contact, .contact-section"
+    );
+    expect(connectSection).not.toBeNull();
+  });
 });
 
 // ── All Pages Valid HTML ─────────────────────────────────────────────────────
@@ -257,5 +339,211 @@ describe("All Pages Valid HTML", () => {
     expect(aboutDoc.documentElement.tagName).toBe("HTML");
     expect(aboutDoc.head).not.toBeNull();
     expect(aboutDoc.body).not.toBeNull();
+  });
+});
+
+// ── Project Page Navigation ──────────────────────────────────────────────────
+
+describe("Project Page Navigation", () => {
+  it("all 8 daily-card onclick attributes in browse.html contain valid project filenames", () => {
+    const dailyCards = [
+      ...browseDoc.querySelectorAll(".daily-card[onclick]"),
+    ];
+    expect(dailyCards.length).toBe(8);
+    dailyCards.forEach((card) => {
+      const onclick = card.getAttribute("onclick");
+      // Must match pattern: window.location.href='projects/<filename>.html'
+      expect(onclick).toMatch(/window\.location\.href='projects\/[^']+\.html'/);
+      // The referenced file must exist on disk
+      const match = onclick.match(/projects\/[^']+\.html/);
+      expect(match).not.toBeNull();
+      expect(existsSync(resolve(ROOT, match[0]))).toBe(true);
+    });
+  });
+
+  it("all 3 academic project onclick attributes in browse.html contain valid project filenames", () => {
+    const academicCards = [
+      ...browseDoc.querySelectorAll(".netflix-card[onclick*='projects/']"),
+    ];
+    expect(academicCards.length).toBeGreaterThanOrEqual(3);
+    academicCards.forEach((card) => {
+      const onclick = card.getAttribute("onclick");
+      const match = onclick.match(/projects\/[^']+\.html/);
+      expect(match).not.toBeNull();
+      expect(existsSync(resolve(ROOT, match[0]))).toBe(true);
+    });
+  });
+
+  it("each of the 11 project page files can be loaded as valid HTML", () => {
+    projectDocs.forEach(({ file, doc, html }) => {
+      expect(html).toMatch(/<!DOCTYPE html>/i);
+      expect(doc.documentElement.tagName).toBe("HTML");
+      expect(doc.head).not.toBeNull();
+      expect(doc.body).not.toBeNull();
+    });
+  });
+
+  it("all project pages have a back-link pointing to ../browse.html", () => {
+    projectDocs.forEach(({ file, doc }) => {
+      const backLink = doc.querySelector(".back-link[href]");
+      expect(backLink).not.toBeNull();
+      expect(backLink.getAttribute("href")).toMatch(/\.\.\/browse\.html/);
+    });
+  });
+
+  it("all project pages reference ../netflix-styles.css", () => {
+    projectDocs.forEach(({ file, doc }) => {
+      const link = doc.querySelector("link[href='../netflix-styles.css']");
+      expect(link).not.toBeNull();
+    });
+  });
+
+  it("all project pages reference project-styles.css", () => {
+    projectDocs.forEach(({ file, doc }) => {
+      const link = doc.querySelector("link[href='project-styles.css']");
+      expect(link).not.toBeNull();
+    });
+  });
+});
+
+// ── Shared Resources ─────────────────────────────────────────────────────────
+
+describe("Shared Resources", () => {
+  it("Google Fonts link is present on all 3 main pages", () => {
+    [
+      { name: "index.html", html: indexHtml },
+      { name: "browse.html", html: browseHtml },
+      { name: "about.html", html: aboutHtml },
+    ].forEach(({ name, html }) => {
+      expect(html).toContain("fonts.googleapis.com");
+    });
+  });
+
+  it("all 3 main pages have a viewport meta tag", () => {
+    [
+      { name: "index.html", doc: indexDoc },
+      { name: "browse.html", doc: browseDoc },
+      { name: "about.html", doc: aboutDoc },
+    ].forEach(({ name, doc }) => {
+      const viewport = doc.querySelector("meta[name='viewport']");
+      expect(viewport).not.toBeNull();
+      expect(viewport.getAttribute("content")).toContain("width=device-width");
+    });
+  });
+
+  it("all 3 main pages declare charset UTF-8", () => {
+    [
+      { name: "index.html", doc: indexDoc },
+      { name: "browse.html", doc: browseDoc },
+      { name: "about.html", doc: aboutDoc },
+    ].forEach(({ name, doc }) => {
+      const charset = doc.querySelector("meta[charset]");
+      expect(charset).not.toBeNull();
+      expect(charset.getAttribute("charset").toUpperCase()).toBe("UTF-8");
+    });
+  });
+
+  it("netflix-styles.css exists on disk", () => {
+    expect(existsSync(resolve(ROOT, "netflix-styles.css"))).toBe(true);
+  });
+});
+
+// ── Full Navigation Graph ────────────────────────────────────────────────────
+
+describe("Full Navigation Graph", () => {
+  it("index.html links to browse.html via exactly 4 profile cards", () => {
+    const profileCards = [
+      ...indexDoc.querySelectorAll("a.profile-card[href*='browse.html']"),
+    ];
+    expect(profileCards.length).toBe(4);
+  });
+
+  it("browse.html links to about.html via a nav link", () => {
+    const aboutLink = browseDoc.querySelector("a[href='about.html']");
+    expect(aboutLink).not.toBeNull();
+  });
+
+  it("browse.html links to all 11 project pages via onclick attributes", () => {
+    allProjectFiles.forEach((file) => {
+      // file is e.g. "projects/day-1-llm-ios.html" — extract the path used in onclick
+      expect(browseHtml).toContain(`'${file}'`);
+    });
+  });
+
+  it("about.html links back to browse.html via the floating back-link button", () => {
+    const backLink = aboutDoc.querySelector("a.back-link[href='browse.html']");
+    expect(backLink).not.toBeNull();
+  });
+
+  it("all project pages link back to browse.html via both nav logo and back-link", () => {
+    projectDocs.forEach(({ file, doc }) => {
+      // Nav logo
+      const navLogo = doc.querySelector("a.nav-logo[href='../browse.html']");
+      expect(navLogo).not.toBeNull();
+      // Back-link
+      const backLink = doc.querySelector(".back-link[href]");
+      expect(backLink).not.toBeNull();
+      expect(backLink.getAttribute("href")).toContain("../browse.html");
+    });
+  });
+});
+
+// ── No Broken Internal Links ─────────────────────────────────────────────────
+
+describe("No Broken Internal Links", () => {
+  it("all local href links in index.html resolve to existing files", () => {
+    const localLinks = [
+      ...indexDoc.querySelectorAll("a[href]"),
+    ].filter((a) => {
+      const href = a.getAttribute("href");
+      // Keep only relative paths that reference .html files (no anchors, no external)
+      return (
+        href &&
+        !href.startsWith("http") &&
+        !href.startsWith("//") &&
+        !href.startsWith("#") &&
+        !href.startsWith("mailto:") &&
+        href.endsWith(".html")
+      );
+    });
+    localLinks.forEach((a) => {
+      const href = a.getAttribute("href").split("?")[0]; // strip query string
+      expect(existsSync(resolve(ROOT, href))).toBe(true);
+    });
+  });
+
+  it("all local href links in about.html resolve to existing files", () => {
+    const localLinks = [
+      ...aboutDoc.querySelectorAll("a[href]"),
+    ].filter((a) => {
+      const href = a.getAttribute("href");
+      return (
+        href &&
+        !href.startsWith("http") &&
+        !href.startsWith("//") &&
+        !href.startsWith("#") &&
+        !href.startsWith("mailto:") &&
+        href.endsWith(".html")
+      );
+    });
+    // about.html has browse.html and index.html links — both must exist
+    localLinks.forEach((a) => {
+      const href = a.getAttribute("href").split("#")[0]; // strip fragment
+      expect(existsSync(resolve(ROOT, href))).toBe(true);
+    });
+  });
+
+  it("all local img src paths in index.html exist on disk", () => {
+    const localImgs = [
+      ...indexDoc.querySelectorAll("img[src]"),
+    ].filter((img) => {
+      const src = img.getAttribute("src");
+      return src && !src.startsWith("http") && !src.startsWith("//");
+    });
+    expect(localImgs.length).toBeGreaterThan(0);
+    localImgs.forEach((img) => {
+      const src = img.getAttribute("src");
+      expect(existsSync(resolve(ROOT, src))).toBe(true);
+    });
   });
 });

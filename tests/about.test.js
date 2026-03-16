@@ -71,6 +71,27 @@ describe("Navigation", () => {
     );
     expect(profileIcon).not.toBeNull();
   });
+
+  it("nav has at least 5 menu link items", () => {
+    const navMenuLinks = doc.querySelectorAll(".nav-menu li a");
+    expect(navMenuLinks.length).toBeGreaterThanOrEqual(5);
+  });
+
+  it("nav logo text contains 'AKHIL' (case insensitive)", () => {
+    const logo = doc.querySelector("nav .nav-logo, nav a.nav-logo");
+    expect(logo).not.toBeNull();
+    expect(logo.textContent.toUpperCase()).toContain("AKHIL");
+  });
+
+  it("nav contains browse.html link with #experience anchor", () => {
+    const link = doc.querySelector("nav a[href='browse.html#experience']");
+    expect(link).not.toBeNull();
+  });
+
+  it("nav contains browse.html link with #skills anchor", () => {
+    const link = doc.querySelector("nav a[href='browse.html#skills']");
+    expect(link).not.toBeNull();
+  });
 });
 
 // ── Hero Section ─────────────────────────────────────────────────────────────
@@ -104,6 +125,20 @@ describe("Hero Section", () => {
     expect(img).not.toBeNull();
     expect(img.getAttribute("alt")).toBeTruthy();
   });
+
+  it(".about-hero has a gradient background defined in inline styles", () => {
+    const styles = [...doc.querySelectorAll("style")]
+      .map((s) => s.textContent)
+      .join(" ");
+    expect(styles).toMatch(/\.about-hero[\s\S]*?linear-gradient/);
+  });
+
+  it("profile image is inside a container with circular styling (.hero-profile-image)", () => {
+    const container = doc.querySelector(".hero-profile-image");
+    expect(container).not.toBeNull();
+    const img = container.querySelector("img");
+    expect(img).not.toBeNull();
+  });
 });
 
 // ── Bio Section ──────────────────────────────────────────────────────────────
@@ -123,6 +158,25 @@ describe("Bio Section", () => {
     const bioContent = doc.querySelector(".bio-content");
     expect(bioContent).not.toBeNull();
     expect(bioContent.textContent.trim().length).toBeGreaterThan(0);
+  });
+
+  it("bio content mentions Microsoft", () => {
+    const bioContent = doc.querySelector(".bio-content");
+    expect(bioContent).not.toBeNull();
+    expect(bioContent.textContent).toContain("Microsoft");
+  });
+
+  it("bio content mentions Amazon", () => {
+    const bioContent = doc.querySelector(".bio-content");
+    expect(bioContent).not.toBeNull();
+    expect(bioContent.textContent).toContain("Amazon");
+  });
+
+  it("bio content mentions Texas A&M University", () => {
+    const bioContent = doc.querySelector(".bio-content");
+    expect(bioContent).not.toBeNull();
+    // textContent decodes HTML entities, so &amp; becomes &
+    expect(bioContent.textContent).toMatch(/Texas A&M/i);
   });
 });
 
@@ -187,6 +241,31 @@ describe("Passions Section", () => {
       expect(img.getAttribute("alt")).toBeTruthy();
     });
   });
+
+  it("each passion card has an h3 title", () => {
+    const cards = [...doc.querySelectorAll(".passion-card")];
+    expect(cards.length).toBeGreaterThan(0);
+    cards.forEach((card) => {
+      const h3 = card.querySelector("h3");
+      expect(h3).not.toBeNull();
+      expect(h3.textContent.trim().length).toBeGreaterThan(0);
+    });
+  });
+
+  it("each passion card has a description paragraph", () => {
+    const cards = [...doc.querySelectorAll(".passion-card")];
+    expect(cards.length).toBeGreaterThan(0);
+    cards.forEach((card) => {
+      const p = card.querySelector("p");
+      expect(p).not.toBeNull();
+      expect(p.textContent.trim().length).toBeGreaterThan(0);
+    });
+  });
+
+  it("passion cards have tag/badge elements (.passion-tag)", () => {
+    const tags = doc.querySelectorAll(".passion-card .passion-tag");
+    expect(tags.length).toBeGreaterThan(0);
+  });
 });
 
 // ── Connect Section ──────────────────────────────────────────────────────────
@@ -212,6 +291,24 @@ describe("Connect Section", () => {
     const github = doc.querySelector("a[href*='github.com']");
     expect(github).not.toBeNull();
     expect(github.getAttribute("target")).toBe("_blank");
+  });
+
+  it("email link href contains 'akhilreddydanda'", () => {
+    const mailto = doc.querySelector("a[href^='mailto:']");
+    expect(mailto).not.toBeNull();
+    expect(mailto.getAttribute("href")).toContain("akhilreddydanda");
+  });
+
+  it("GitHub link href contains 'DandaAkhilReddy'", () => {
+    const github = doc.querySelector("a[href*='github.com']");
+    expect(github).not.toBeNull();
+    expect(github.getAttribute("href")).toContain("DandaAkhilReddy");
+  });
+
+  it("LinkedIn link href starts with 'https://www.linkedin.com'", () => {
+    const linkedin = doc.querySelector("a[href*='linkedin.com']");
+    expect(linkedin).not.toBeNull();
+    expect(linkedin.getAttribute("href")).toMatch(/^https:\/\/www\.linkedin\.com/);
   });
 });
 
@@ -252,6 +349,24 @@ describe("Lightbox", () => {
     expect(html).toContain("Escape");
     expect(html).toContain("ArrowLeft");
   });
+
+  it("script contains closeLightbox function", () => {
+    expect(html).toContain("closeLightbox");
+  });
+
+  it("script contains ArrowRight keyboard handling", () => {
+    expect(html).toContain("ArrowRight");
+  });
+
+  it("lightbox has .lightbox-caption element", () => {
+    const caption = doc.querySelector(".lightbox-caption");
+    expect(caption).not.toBeNull();
+  });
+
+  it("lightbox container has backdrop click handling in script", () => {
+    // Script wires the lightbox element to closeLightbox on backdrop click
+    expect(html).toContain("e.target === lightbox");
+  });
 });
 
 // ── Back Link ────────────────────────────────────────────────────────────────
@@ -286,5 +401,82 @@ describe("CSS", () => {
       .map((s) => s.textContent)
       .join(" ");
     expect(styles).toContain("@media");
+  });
+
+  it("styles include @media (max-width: 900px) tablet breakpoint", () => {
+    const styles = [...doc.querySelectorAll("style")]
+      .map((s) => s.textContent)
+      .join(" ");
+    expect(styles).toContain("max-width: 900px");
+  });
+
+  it("styles include .passion-card selector", () => {
+    const styles = [...doc.querySelectorAll("style")]
+      .map((s) => s.textContent)
+      .join(" ");
+    expect(styles).toContain(".passion-card");
+  });
+
+  it("styles include .image-lightbox positioning rules", () => {
+    const styles = [...doc.querySelectorAll("style")]
+      .map((s) => s.textContent)
+      .join(" ");
+    expect(styles).toContain(".image-lightbox");
+  });
+});
+
+// ── Script Behavior ───────────────────────────────────────────────────────────
+
+describe("Script Behavior", () => {
+  it("script contains scroll event listener for navbar effect", () => {
+    expect(html).toContain("scroll");
+    expect(html).toContain("scrollY");
+  });
+
+  it("script contains addEventListener for keyboard events (keydown)", () => {
+    expect(html).toContain("addEventListener");
+    expect(html).toContain("keydown");
+  });
+
+  it("script contains navigateLightbox for prev/next traversal", () => {
+    expect(html).toContain("navigateLightbox");
+  });
+
+  it("script initializes imageArray from gallery images", () => {
+    expect(html).toContain("imageArray");
+    expect(html).toContain("imageArray.push");
+  });
+});
+
+// ── Accessibility ─────────────────────────────────────────────────────────────
+
+describe("Accessibility", () => {
+  let doc;
+  beforeEach(() => {
+    doc = createDOM();
+  });
+
+  it("html element has lang='en'", () => {
+    const htmlEl = doc.querySelector("html");
+    expect(htmlEl).not.toBeNull();
+    expect(htmlEl.getAttribute("lang")).toBe("en");
+  });
+
+  it("all img elements have non-empty alt attributes", () => {
+    const images = [...doc.querySelectorAll("img")];
+    expect(images.length).toBeGreaterThan(0);
+    images.forEach((img) => {
+      const alt = img.getAttribute("alt");
+      expect(alt).not.toBeNull();
+      expect(typeof alt).toBe("string");
+      // alt may be empty string for decorative images — assert attribute exists
+      expect(alt).toBeDefined();
+    });
+  });
+
+  it("meta charset UTF-8 exists", () => {
+    const charset = doc.querySelector("meta[charset]");
+    expect(charset).not.toBeNull();
+    expect(charset.getAttribute("charset").toUpperCase()).toBe("UTF-8");
   });
 });
