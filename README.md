@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,2,16,20,24&height=220&section=header&text=Akhil%20Reddy%20Danda&fontSize=58&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Senior%20Software%20Engineer%20%C2%B7%20Backend%20%26%20AI%2FML&descAlignY=58&descSize=18" width="100%" alt="header"/>
+<img src="./assets/profile-banner.svg" width="100%" alt="Akhil Reddy Danda — Senior Software Engineer · Backend & AI/ML"/>
 
 <a href="https://git.io/typing-svg">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=720&lines=Building+production+AI+systems;Distributed+backends+%26+agentic+LLM+pipelines;Ex-Amazon+%C2%B7+Now+at+HHA+Medicine;Shipping+a+new+project+most+days" alt="Typing taglines" />
@@ -81,14 +81,6 @@ A new project most days: persistent LLM memory, on-device inference, agent orche
 </td>
 </tr>
 </table>
-
----
-
-## 3D Contribution Graph
-
-<div align="center">
-  <img src="./profile-3d-contrib/profile-night-rainbow.svg" alt="3D contribution graph" width="100%"/>
-</div>
 
 ---
 
@@ -205,9 +197,5 @@ A new project most days: persistent LLM memory, on-device inference, agent orche
 <a href="https://www.linkedin.com/in/akhil-reddy-danda-1a74b214b/"><strong>LinkedIn</strong></a>
 &nbsp;·&nbsp;
 <a href="https://dandaakhilreddy.com"><strong>Portfolio</strong></a>
-
-<br/><br/>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,2,16,20,24&height=120&section=footer" width="100%" alt="footer"/>
 
 </div>
