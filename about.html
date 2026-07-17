@@ -567,6 +567,7 @@
             </ul>
         </div>
         <div class="nav-right">
+            <div class="hamburger" id="rf-hamburger"><span></span><span></span><span></span></div>
             <a href="browse.html" class="profile-icon">
                 <img src="https://i.imgur.com/YQK3Qby.png" alt="Profile" class="nav-profile-img">
             </a>
@@ -795,6 +796,24 @@
             if (e.key === 'ArrowLeft') navigateLightbox(-1);
             if (e.key === 'ArrowRight') navigateLightbox(1);
         });
+    </script>
+
+    <script>
+      (function () {
+        var hb = document.getElementById("rf-hamburger");
+        var menu = document.querySelector(".nav-menu");
+        if (!hb || !menu) return;
+        hb.addEventListener("click", function () {
+          hb.classList.toggle("active");
+          menu.classList.toggle("active");
+        });
+        menu.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            hb.classList.remove("active");
+            menu.classList.remove("active");
+          });
+        });
+      })();
     </script>
 </body>
 </html>
