@@ -170,6 +170,7 @@ def render() -> None:
             f"<description>{desc}</description></item>")
     rss = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<?xml-stylesheet type="text/xsl" href="feed.xsl"?>\n'
         '<rss version="2.0"><channel>'
         '<title>Reddy Pulse — Akhil Reddy Danda</title>'
         '<link>https://www.dandaakhilreddy.com/blog/index.html</link>'
