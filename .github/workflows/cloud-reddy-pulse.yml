@@ -1,0 +1,44 @@
+name: cloud-reddy-pulse
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+concurrency: content-writer
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PUSH_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Generate content
+        env:
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
+        run: |
+          python blog/cloud_generate.py pulse | tee /tmp/gen.json
+          cd blog && python generate.py
+      - name: Commit and push
+        run: |
+          git config user.name "Akhil Reddy Danda"
+          git config user.email "akhilreddydanda1@gmail.com"
+          git add -A
+          git commit -m "Reddy Pulse (cloud): $(date -u +%Y-%m-%d)" || { echo "nothing new"; exit 0; }
+          git push
+      - name: Deploy to Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: python scripts/deploy_railway.py
+      - name: Email LinkedIn caption
+        env:
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+        run: python blog/notify_linkedin.py pulse

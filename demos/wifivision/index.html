@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WiFiVision Live Demo | Presence Detection from WiFi Signals</title>
+<meta name="description" content="Interactive browser simulation of WiFiVision — detect human presence from WiFi Channel State Information (CSI). Move a person through the room and watch the signal ripple, no camera required." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236d28d9'/%3E%3Cpath d='M50 30a30 30 0 0 1 21 9M50 42a18 18 0 0 1 13 5' stroke='%23c4b5fd' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='62' r='7' fill='%23c4b5fd'/%3E%3C/svg%3E" />
+<style>
+:root{
+  --bg:#0a0a0f; --panel:#12121b; --panel2:#171722; --line:#262636;
+  --txt:#e8e8f0; --mut:#9aa0b4; --accent:#8b5cf6; --accent2:#6d28d9;
+  --green:#34d399; --amber:#fbbf24; --red:#f87171; --cyan:#22d3ee;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:radial-gradient(1200px 600px at 50% -10%,#1a1330 0%,var(--bg) 55%);
+  color:var(--txt); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  line-height:1.5; min-height:100vh; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:26px 18px 70px}
+header{text-align:center;margin-bottom:22px}
+.badge{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:#c4b5fd;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.35);
+  padding:5px 12px;border-radius:999px;font-weight:600}
+h1{font-size:clamp(28px,5vw,44px);margin:14px 0 6px;font-weight:800;letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);max-width:640px;margin:0 auto;font-size:15px}
+.simnote{margin:12px auto 0;max-width:640px;font-size:12.5px;color:var(--mut);
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 13px}
+.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-top:22px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+  border-radius:16px;padding:16px}
+.card h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:0 0 12px;font-weight:600}
+/* room */
+#room{width:100%;aspect-ratio:16/11;border-radius:12px;display:block;background:#0c0c14;cursor:grab;touch-action:none}
+#room:active{cursor:grabbing}
+.roomhint{font-size:12px;color:var(--mut);margin-top:9px;text-align:center}
+/* status */
+.state{display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;border:1px solid var(--line);
+  background:var(--panel2);transition:.25s}
+.dot{width:14px;height:14px;border-radius:50%;flex:none;box-shadow:0 0 0 0 rgba(0,0,0,0);transition:.25s}
+.state .lbl{font-weight:800;font-size:20px;letter-spacing:.01em}
+.state .desc{font-size:12.5px;color:var(--mut)}
+.s-empty{border-color:rgba(52,211,153,.35)}
+.s-empty .dot{background:var(--green);box-shadow:0 0 14px 2px rgba(52,211,153,.6)}
+.s-motion{border-color:rgba(251,191,36,.4)}
+.s-motion .dot{background:var(--amber);box-shadow:0 0 14px 2px rgba(251,191,36,.6)}
+.s-present{border-color:rgba(248,113,113,.4)}
+.s-present .dot{background:var(--red);box-shadow:0 0 14px 2px rgba(248,113,113,.6)}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.metric{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+.metric .k{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.metric .v{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;margin-top:2px}
+.bar{height:7px;border-radius:99px;background:#20202e;overflow:hidden;margin-top:8px}
+.bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--amber),var(--red));transition:width .12s linear}
+/* waveform full width card */
+.wave-card{grid-column:1 / -1}
+#wave{width:100%;height:190px;display:block;border-radius:10px;background:#0b0b13}
+.wlegend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--mut);margin-top:10px}
+.wlegend b{color:var(--txt)}
+.chip{display:inline-flex;align-items:center;gap:6px}
+.chip i{width:10px;height:3px;border-radius:2px;display:inline-block}
+/* scenarios */
+.controls{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;justify-content:center}
+button.sc{background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:10px;
+  padding:10px 15px;font-size:13.5px;font-weight:600;cursor:pointer;transition:.18s;font-family:inherit}
+button.sc:hover{border-color:var(--accent);transform:translateY(-1px)}
+button.sc.primary{background:linear-gradient(90deg,var(--accent2),var(--accent));border-color:transparent}
+.sens{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:14px;font-size:13px;color:var(--mut)}
+.sens input{accent-color:var(--accent)}
+.how{margin-top:26px}
+.how h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.how ol{margin:8px 0 0;padding-left:20px;color:var(--mut);font-size:14px}
+.how ol li{margin:6px 0}
+.how b{color:var(--txt)}
+footer{text-align:center;color:var(--mut);font-size:13px;margin-top:34px}
+footer a{color:var(--accent);text-decoration:none}
+.toplinks{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.toplinks a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;text-decoration:none;
+  color:var(--txt);background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:10px;transition:.18s}
+.toplinks a:hover{border-color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">Project 5 · Interactive Demo</span>
+    <h1>WiFi<span>Vision</span></h1>
+    <p class="sub">Detect a human in a room using nothing but WiFi. Your body scatters radio waves like ripples in water — WiFiVision reads those ripples from Channel State Information (CSI). No camera, works in the dark.</p>
+    <div class="toplinks">
+      <a href="https://github.com/DandaAkhilReddy/wifivision" target="_blank">⌥ Source on GitHub</a>
+      <a href="../projects/day-minus-5-wifivision.html">← Project write-up</a>
+    </div>
+    <div class="simnote">🧪 <b>Browser simulation.</b> This runs a physics-plausible model of CSI subcarrier amplitudes in your browser — no hardware needed. On the real $10 build, an ESP32 streams live CSI at ~100&nbsp;Hz and the same detection logic runs on it.</div>
+  </header>
+
+  <div class="grid">
+    <!-- ROOM -->
+    <div class="card">
+      <h2>The Room · drag the person</h2>
+      <canvas id="room" width="640" height="440"></canvas>
+      <div class="roomhint">Grab the 🧍 dot and move it between the router and the sensor. Signal disruption peaks when a body crosses the direct path.</div>
+    </div>
+
+    <!-- STATUS -->
+    <div class="card">
+      <h2>Detector Output</h2>
+      <div id="state" class="state s-empty">
+        <span class="dot"></span>
+        <div>
+          <div class="lbl" id="stateLbl">ROOM EMPTY</div>
+          <div class="desc" id="stateDesc">Signal is quiet — baseline multipath only.</div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric">
+          <div class="k">CSI Variance</div>
+          <div class="v" id="mVar">0.00</div>
+          <div class="bar"><i id="varBar"></i></div>
+        </div>
+        <div class="metric">
+          <div class="k">Motion Energy</div>
+          <div class="v" id="mMot">0.00</div>
+          <div class="bar"><i id="motBar"></i></div>
+        </div>
+        <div class="metric">
+          <div class="k">Occupancy</div>
+          <div class="v" id="mOcc">0</div>
+        </div>
+        <div class="metric">
+          <div class="k">Breathing</div>
+          <div class="v" id="mBr">—</div>
+        </div>
+      </div>
+      <div class="sens">
+        <label for="sens">Sensitivity</label>
+        <input id="sens" type="range" min="0.4" max="1.8" step="0.05" value="1" />
+        <span id="sensVal">1.0×</span>
+      </div>
+    </div>
+
+    <!-- WAVEFORM -->
+    <div class="card wave-card">
+      <h2>Live CSI Amplitude · 30 subcarriers × time</h2>
+      <canvas id="wave" width="1040" height="190"></canvas>
+      <div class="wlegend">
+        <span class="chip"><i style="background:#3b3b52"></i> Baseline noise floor</span>
+        <span class="chip"><i style="background:#22d3ee"></i> Live CSI stream</span>
+        <span class="chip"><i style="background:#f87171"></i> Detection threshold crossed</span>
+        <span class="chip"><b id="hz">~100 Hz</b> sample rate</span>
+      </div>
+      <div class="controls">
+        <button class="sc primary" data-sc="walk">▶ Person walks through</button>
+        <button class="sc" data-sc="sit">🧘 Sit still (breathing)</button>
+        <button class="sc" data-sc="two">👥 Two people</button>
+        <button class="sc" data-sc="leave">🚪 Leave room</button>
+        <button class="sc" data-sc="reset">↺ Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card how">
+    <h2>How it actually works</h2>
+    <ol>
+      <li><b>WiFi is already everywhere.</b> A router constantly sends packets to a receiver. Each packet reports <b>CSI</b> — how the signal's amplitude and phase changed across ~30 frequency subcarriers on the way over.</li>
+      <li><b>Your body is an obstacle.</b> Muscle and water reflect and absorb 2.4/5&nbsp;GHz radio. Moving through the room reshuffles the multipath, so the CSI amplitudes jump around.</li>
+      <li><b>Variance is the signal.</b> An empty room gives a flat, low-variance CSI stream. A person raises variance; <b>motion</b> spikes it further. Even sitting still, your chest rising and falling shows up as a slow ~0.2–0.3&nbsp;Hz oscillation — that's the breathing readout above.</li>
+      <li><b>Cheap and private.</b> An <b>ESP32</b> ($6) plus a USB power bank streams CSI at ~100&nbsp;Hz; a few lines of Python threshold the variance. No frames are ever captured, so it works in total darkness and can't leak an image.</li>
+    </ol>
+  </div>
+
+  <footer>
+    WiFiVision by <a href="https://dandaakhilreddy.com" target="_blank">Akhil Reddy Danda</a> ·
+    <a href="https://github.com/DandaAkhilReddy/wifivision" target="_blank">GitHub</a> ·
+    Educational simulation — detection logic mirrors the real firmware.
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  // ---------- geometry ----------
+  const room = document.getElementById('room');
+  const rx = room.getContext('2d');
+  const W = room.width, H = room.height;
+  const router = {x: W*0.12, y: H*0.20};   // TX
+  const sensor = {x: W*0.88, y: H*0.80};   // RX (ESP32)
+  // people: array of {x,y, tx,ty, moving, still}
+  let people = [];
+  let occupancyTarget = 0;
+
+  function makePerson(x,y){ return {x,y,tx:x,ty:y,vx:0,vy:0,phase:Math.random()*6.28}; }
+
+  // pointer drag of first person
+  let dragging = null;
+  function toLocal(e){
+    const r = room.getBoundingClientRect();
+    const px = (e.touches?e.touches[0].clientX:e.clientX)-r.left;
+    const py = (e.touches?e.touches[0].clientY:e.clientY)-r.top;
+    return {x:px*(W/r.width), y:py*(H/r.height)};
+  }
+  function nearestPerson(p){
+    let best=null,bd=1e9;
+    for(const q of people){const d=Math.hypot(q.x-p.x,q.y-p.y);if(d<bd){bd=d;best=q;}}
+    return bd<70?best:null;
+  }
+  function down(e){
+    if(people.length===0){people.push(makePerson(W/2,H/2));occupancyTarget=1;}
+    const p=toLocal(e); dragging=nearestPerson(p)||people[0];
+    if(dragging){dragging.userDragging=true;} e.preventDefault();
+  }
+  function move(e){ if(!dragging)return; const p=toLocal(e);
+    dragging.x=Math.max(24,Math.min(W-24,p.x));
+    dragging.y=Math.max(24,Math.min(H-24,p.y));
+    dragging.tx=dragging.x; dragging.ty=dragging.y; e.preventDefault(); }
+  function up(){ if(dragging){dragging.userDragging=false; dragging=null;} }
+  room.addEventListener('mousedown',down); room.addEventListener('mousemove',move);
+  window.addEventListener('mouseup',up);
+  room.addEventListener('touchstart',down,{passive:false});
+  room.addEventListener('touchmove',move,{passive:false});
+  window.addEventListener('touchend',up);
+
+  // ---------- physics-ish CSI model ----------
+  const NSUB = 30;
+  let csi = new Float32Array(NSUB).fill(0);      // current amplitude deviation per subcarrier
+  const baseAmp = new Float32Array(NSUB);
+  for(let i=0;i<NSUB;i++) baseAmp[i]=0.5+0.5*Math.sin(i*0.5);
+  let sens = 1.0;
+
+  // distance from segment (router->sensor) to a point => how much a body blocks the LoS path
+  function pathBlock(p){
+    const ax=router.x,ay=router.y,bx=sensor.x,by=sensor.y;
+    const dx=bx-ax,dy=by-ay, L2=dx*dx+dy*dy;
+    let t=((p.x-ax)*dx+(p.y-ay)*dy)/L2; t=Math.max(0,Math.min(1,t));
+    const cx=ax+t*dx, cy=ay+t*dy;
+    const d=Math.hypot(p.x-cx,p.y-cy);
+    return Math.exp(-(d*d)/(2*60*60)); // gaussian around the line, 0..1
+  }
+
+  // ---------- detection state ----------
+  let variance=0, motion=0, prevCsiMean=0, breathHz=0, breathAcc=[];
+  let state='empty'; // empty | motion | present
+  const stateEl=document.getElementById('state');
+  const stateLbl=document.getElementById('stateLbl');
+  const stateDesc=document.getElementById('stateDesc');
+
+  document.getElementById('sens').addEventListener('input',e=>{
+    sens=parseFloat(e.target.value);
+    document.getElementById('sensVal').textContent=sens.toFixed(1)+'×';
+  });
+
+  // ---------- waveform history ----------
+  const wave=document.getElementById('wave'), wx=wave.getContext('2d');
+  const WW=wave.width, WH=wave.height, HIST=WW;
+  let hist=new Float32Array(HIST), thr=new Uint8Array(HIST), hp=0;
+
+  // ---------- scenarios ----------
+  let scriptQ=null, scriptT=0;
+  function setScenario(name){
+    scriptQ=null;
+    if(name==='reset'){ people=[]; occupancyTarget=0; return; }
+    if(name==='walk'){
+      people=[makePerson(-30,H*0.5)]; occupancyTarget=1;
+      const pth=[[W*0.15,H*0.55],[W*0.5,H*0.5],[W*0.85,H*0.45],[W+40,H*0.5]];
+      scriptQ={person:people[0],pts:pth,i:0,speed:2.2,still:false};
+    }
+    if(name==='sit'){
+      people=[makePerson(W*0.55,H*0.5)]; occupancyTarget=1;
+      people[0].still=true; people[0].tx=W*0.55; people[0].ty=H*0.5;
+    }
+    if(name==='two'){
+      people=[makePerson(W*0.35,H*0.4),makePerson(W*0.7,H*0.65)]; occupancyTarget=2;
+      people[0].still=true; people[1].still=true;
+    }
+    if(name==='leave'){
+      if(people.length===0){people=[makePerson(W*0.5,H*0.5)];}
+      occupancyTarget=0;
+      const p=people[0]; p.still=false;
+      scriptQ={person:p,pts:[[W+40,H*0.5]],i:0,speed:3.0,removeWhenDone:true};
+    }
+  }
+  document.querySelectorAll('button.sc').forEach(b=>{
+    b.addEventListener('click',()=>setScenario(b.dataset.sc));
+  });
+
+  function stepScript(){
+    if(!scriptQ)return;
+    const s=scriptQ, p=s.person;
+    if(s.i>=s.pts.length){ if(s.removeWhenDone){people=people.filter(q=>q!==p);} scriptQ=null; return; }
+    const [gx,gy]=s.pts[s.i];
+    const dx=gx-p.x,dy=gy-p.y,d=Math.hypot(dx,dy);
+    if(d<4){ s.i++; return; }
+    p.x+=dx/d*s.speed; p.y+=dy/d*s.speed;
+    p.tx=p.x; p.ty=p.y;
+  }
+
+  // ---------- main loop ----------
+  let last=performance.now(), frame=0;
+  function loop(now){
+    const dt=Math.min(0.05,(now-last)/1000); last=now; frame++;
+
+    stepScript();
+
+    // update people motion measure
+    let totalBlock=0, totalMove=0, anyStill=false;
+    for(const p of people){
+      // integrate a little inertia when script/drag moving
+      const spd=Math.hypot(p.x-(p._px??p.x),p.y-(p._py??p.y));
+      p._px=p.x; p._py=p.y;
+      p.phase+=dt*( (p.still)? 1.6 : 0.4 ); // breathing faster indicator when still
+      totalMove+=spd;
+      if(p.still) anyStill=true;
+      totalBlock+=pathBlock(p);
+      // proximity to sensor also perturbs
+      const dsen=Math.hypot(p.x-sensor.x,p.y-sensor.y);
+      totalBlock+=0.4*Math.exp(-(dsen*dsen)/(2*90*90));
+    }
+
+    // build CSI: baseline noise + person block + breathing oscillation
+    let sum=0;
+    for(let i=0;i<NSUB;i++){
+      const noise=(Math.random()-0.5)*0.06;
+      let dev=noise;
+      if(people.length){
+        const carrierSensitivity=0.6+0.8*Math.abs(Math.sin(i*0.7+frame*0.02));
+        dev += totalBlock*carrierSensitivity*(0.9)*sens;
+        // breathing: slow oscillation when still & not much motion
+        if(anyStill && totalMove<0.6){
+          const br=0.10*Math.sin(frame*0.11 + i*0.2);
+          dev += br*sens;
+        }
+        // motion jitter
+        dev += totalMove*0.05*(Math.random()-0.5)*sens;
+      }
+      csi[i]=csi[i]*0.6+dev*0.4;
+      sum+=csi[i];
+    }
+    const mean=sum/NSUB;
+    // variance across subcarriers
+    let v=0; for(let i=0;i<NSUB;i++){const d=csi[i]-mean; v+=d*d;} v=Math.sqrt(v/NSUB);
+    variance=variance*0.8+v*0.2;
+    // motion energy = |mean change| + explicit movement
+    const dm=Math.abs(mean-prevCsiMean); prevCsiMean=mean;
+    motion=motion*0.82+(dm*4+totalMove*0.02)*0.18;
+
+    // breathing frequency estimate (very light): track mean zero-crossings
+    breathAcc.push(mean); if(breathAcc.length>120)breathAcc.shift();
+    let zc=0; for(let i=1;i<breathAcc.length;i++){ if((breathAcc[i-1]-mean0(breathAcc))*(breathAcc[i]-mean0(breathAcc))<0)zc++; }
+    breathHz = anyStill && totalMove<0.6 ? (zc/2)/(breathAcc.length/100) : 0;
+
+    // ---------- classify ----------
+    const varTh=0.14, motTh=0.10;
+    let ns='empty';
+    if(variance>varTh*0.75 || people.length){
+      ns = (motion>motTh)? 'motion' : 'present';
+    }
+    if(people.length===0 && variance<=varTh*0.75) ns='empty';
+    if(ns!==state){ state=ns; applyState(); }
+
+    // occupancy display eases toward count
+    document.getElementById('mOcc').textContent = people.length;
+
+    // metrics
+    document.getElementById('mVar').textContent=variance.toFixed(2);
+    document.getElementById('mMot').textContent=motion.toFixed(2);
+    document.getElementById('varBar').style.width=Math.min(100,variance/0.5*100)+'%';
+    document.getElementById('motBar').style.width=Math.min(100,motion/0.5*100)+'%';
+    const brEl=document.getElementById('mBr');
+    if(breathHz>0.05 && breathHz<0.8){ brEl.textContent=(breathHz*60).toFixed(0)+' /min'; }
+    else if(anyStill){ brEl.textContent='…'; } else { brEl.textContent='—'; }
+
+    // history for waveform
+    hist[hp]=variance; thr[hp]=(variance>varTh)?1:0; hp=(hp+1)%HIST;
+
+    drawRoom(totalBlock);
+    drawWave(varTh);
+    requestAnimationFrame(loop);
+  }
+  function mean0(a){let s=0;for(const x of a)s+=x;return s/a.length;}
+
+  function applyState(){
+    stateEl.classList.remove('s-empty','s-motion','s-present');
+    if(state==='empty'){stateEl.classList.add('s-empty');stateLbl.textContent='ROOM EMPTY';
+      stateDesc.textContent='Signal is quiet — baseline multipath only.';}
+    if(state==='present'){stateEl.classList.add('s-present');stateLbl.textContent='PRESENCE DETECTED';
+      stateDesc.textContent='Elevated CSI variance — a body is in the room.';}
+    if(state==='motion'){stateEl.classList.add('s-motion');stateLbl.textContent='MOTION';
+      stateDesc.textContent='Rapid CSI changes — someone is moving.';}
+  }
+
+  // ---------- drawing ----------
+  function node(c,x,y,color,label){
+    rx.save();
+    rx.shadowColor=color; rx.shadowBlur=16; rx.fillStyle=color;
+    rx.beginPath(); rx.arc(x,y,9,0,6.2832); rx.fill();
+    rx.restore();
+    rx.fillStyle='#cdd0df'; rx.font='11px Inter,sans-serif'; rx.textAlign='center';
+    rx.fillText(label,x,y-16);
+  }
+  function drawRoom(block){
+    rx.clearRect(0,0,W,H);
+    // room floor grid
+    rx.fillStyle='#0c0c14'; rx.fillRect(0,0,W,H);
+    rx.strokeStyle='rgba(255,255,255,.04)'; rx.lineWidth=1;
+    for(let gx=0;gx<=W;gx+=40){rx.beginPath();rx.moveTo(gx,0);rx.lineTo(gx,H);rx.stroke();}
+    for(let gy=0;gy<=H;gy+=40){rx.beginPath();rx.moveTo(0,gy);rx.lineTo(W,gy);rx.stroke();}
+    rx.strokeStyle='rgba(139,92,246,.25)'; rx.lineWidth=2; rx.strokeRect(6,6,W-12,H-12);
+
+    // expanding wifi rings from router
+    const t=performance.now()/1000;
+    for(let k=0;k<4;k++){
+      const rr=((t*60+k*45)%180);
+      rx.beginPath(); rx.arc(router.x,router.y,rr,-0.2,1.9);
+      rx.strokeStyle='rgba(34,211,238,'+(0.28*(1-rr/180))+')'; rx.lineWidth=2; rx.stroke();
+    }
+    // line of sight, colored by block
+    const g=rx.createLinearGradient(router.x,router.y,sensor.x,sensor.y);
+    const blk=Math.min(1,block);
+    g.addColorStop(0,'rgba(34,211,238,.55)');
+    g.addColorStop(0.5,'rgba('+(34+220*blk)+','+(211-160*blk)+','+(238-160*blk)+',.7)');
+    g.addColorStop(1,'rgba(139,92,246,.55)');
+    rx.strokeStyle=g; rx.lineWidth=2.5+blk*3;
+    rx.setLineDash([8,6]); rx.lineDashOffset=-(t*40)%14;
+    rx.beginPath(); rx.moveTo(router.x,router.y); rx.lineTo(sensor.x,sensor.y); rx.stroke();
+    rx.setLineDash([]);
+
+    // people
+    for(const p of people){
+      // disturbance halo
+      const b=pathBlock(p);
+      rx.beginPath(); rx.arc(p.x,p.y,20+18*b,0,6.2832);
+      rx.fillStyle='rgba(248,113,113,'+(0.10+0.22*b)+')'; rx.fill();
+      // body
+      rx.beginPath(); rx.arc(p.x,p.y,11,0,6.2832);
+      rx.fillStyle=p.still?'#fbbf24':'#f87171';
+      rx.shadowColor=rx.fillStyle; rx.shadowBlur=14; rx.fill(); rx.shadowBlur=0;
+      rx.fillStyle='#1a1020'; rx.font='13px Inter'; rx.textAlign='center'; rx.textBaseline='middle';
+      rx.fillText('🧍',p.x,p.y+1); rx.textBaseline='alphabetic';
+    }
+    node(rx,router.x,router.y,'#22d3ee','ROUTER · TX');
+    node(rx,sensor.x,sensor.y,'#a78bfa','ESP32 · RX');
+  }
+
+  function drawWave(varTh){
+    wx.clearRect(0,0,WW,WH);
+    wx.fillStyle='#0b0b13'; wx.fillRect(0,0,WW,WH);
+    // threshold line
+    const yTh=WH-(varTh/0.5*WH);
+    wx.strokeStyle='rgba(248,113,113,.5)'; wx.setLineDash([6,5]); wx.lineWidth=1;
+    wx.beginPath(); wx.moveTo(0,yTh); wx.lineTo(WW,yTh); wx.stroke(); wx.setLineDash([]);
+    wx.fillStyle='rgba(248,113,113,.7)'; wx.font='10px Inter'; wx.textAlign='left';
+    wx.fillText('detection threshold',8,yTh-5);
+    // baseline band
+    wx.fillStyle='rgba(59,59,82,.35)'; wx.fillRect(0,WH-24,WW,24);
+    // trace
+    wx.lineWidth=2; wx.beginPath();
+    for(let i=0;i<HIST;i++){
+      const idx=(hp+i)%HIST;
+      const val=hist[idx];
+      const x=i, y=WH-Math.min(WH,val/0.5*WH);
+      if(i===0)wx.moveTo(x,y); else wx.lineTo(x,y);
+    }
+    wx.strokeStyle='#22d3ee'; wx.shadowColor='#22d3ee'; wx.shadowBlur=6; wx.stroke(); wx.shadowBlur=0;
+    // red overlay where threshold crossed
+    wx.lineWidth=2.5; wx.beginPath(); let pen=false;
+    for(let i=0;i<HIST;i++){
+      const idx=(hp+i)%HIST;
+      if(thr[idx]){ const x=i,y=WH-Math.min(WH,hist[idx]/0.5*WH);
+        if(!pen){wx.moveTo(x,y);pen=true;} else wx.lineTo(x,y);
+      } else pen=false;
+    }
+    wx.strokeStyle='#f87171'; wx.stroke();
+  }
+
+  applyState();
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

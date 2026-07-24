@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reddy-Fit Body Scanner | AI Body Composition Tracker</title>
+<meta name="description" content="Log in with your email, look at the camera, get an AI body-fat estimate. One selfie + weight per day — watch your transformation with before/after comparisons." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234f46e5'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='4' y='4' width='92' height='92' rx='24' fill='url(%23g)'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-family='Arial' font-weight='800' font-size='40' fill='white'%3ERF%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="/static/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.5.1675469404/pose.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>💪 Reddy-Fit Body Scanner</h1>
+  <p class="tag">Scan daily · Track weight · Compare your before &amp; after</p>
+  <div id="user-chip" class="hidden">
+    <span id="user-email"></span>
+    <button id="btn-logout" class="mini">Log out</button>
+  </div>
+</header>
+
+<!-- ============ LOGIN ============ -->
+<section class="panel auth-panel" id="login-panel">
+  <h2>Sign in to your scanner</h2>
+  <div id="step-email">
+    <p class="hint-left">Enter your email — we'll send you a 6-digit login code. No password needed.</p>
+    <div class="authrow">
+      <input type="email" id="login-email" placeholder="you@example.com" autocomplete="email" />
+      <button id="btn-send-otp">Send code</button>
+    </div>
+  </div>
+  <div id="step-otp" class="hidden">
+    <p class="hint-left">Enter the 6-digit code sent to <strong id="otp-email-label"></strong></p>
+    <div class="authrow">
+      <input type="text" id="login-otp" inputmode="numeric" maxlength="6" placeholder="123456" />
+      <button id="btn-verify-otp">Verify &amp; enter</button>
+    </div>
+    <p class="hint-left"><a href="#" id="btn-back-email">Use a different email</a></p>
+  </div>
+  <p id="auth-msg" class="hint-left"></p>
+</section>
+
+<main id="app" class="hidden">
+  <!-- ============ SCAN ============ -->
+  <section class="panel" id="scan-panel">
+    <h2>1 · Today's Scan <span id="today-label" class="pill"></span></h2>
+    <div class="tipbox">🎯 <strong>For the most accurate scan:</strong> form-fitting or minimal clothing — sports bra for women, shirtless preferred for men (not mandatory). Stand 6–8 ft back, full torso visible, good lighting.</div>
+    <div id="camera-wrap">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="overlay"></canvas>
+      <div id="camera-msg">Requesting camera…</div>
+      <div id="countdown" class="hidden"></div>
+      <div id="rec-badge" class="hidden">● REC <span id="rec-hint">face the camera</span></div>
+    </div>
+    <div class="controls">
+      <button id="btn-capture" disabled>📸 Instant</button>
+      <button id="btn-timer" disabled>⏱ 10s Timer</button>
+      <button id="btn-video" disabled>🎥 Video Scan</button>
+      <button id="btn-retry" class="secondary hidden">↻ Rescan</button>
+    </div>
+    <p class="hint">One photo <em>or</em> video per day is your data point — saving again replaces today's.
+       Video scan records 10s: face the camera first, then turn around slowly for a front + back scan.</p>
+  </section>
+
+  <!-- ============ NUMBERS ============ -->
+  <section class="panel">
+    <h2>2 · Your Numbers <span class="pill">manual entry welcome</span></h2>
+    <div class="grid">
+      <label>Height (in) <input type="number" id="height" min="48" max="90" step="0.5" placeholder="70" /></label>
+      <label>Weight (lbs) <input type="number" id="weight" min="60" max="500" step="0.1" placeholder="170" /></label>
+      <label>Age <input type="number" id="age" min="13" max="100" placeholder="28" /></label>
+      <label>Sex
+        <select id="sex"><option value="male">Male</option><option value="female">Female</option></select>
+      </label>
+    </div>
+    <label class="noteslabel">Notes (optional) <input type="text" id="notes" placeholder="fasted, post-workout, cheat day…" /></label>
+    <div class="controls">
+      <button id="btn-save-manual" class="secondary">💾 Save weight only (no photo)</button>
+    </div>
+  </section>
+
+  <!-- ============ RESULT ============ -->
+  <section class="panel hidden" id="result-panel">
+    <h2>3 · Result</h2>
+    <div id="result-card">
+      <div id="bf-number">—</div>
+      <div id="bf-category"></div>
+      <div id="bf-detail"></div>
+    </div>
+    <div class="controls"><button id="btn-save">💾 Save Today's Data Point</button></div>
+    <p class="disclaimer">Visual estimate for personal tracking only — not a medical measurement or medical advice.</p>
+  </section>
+
+  <!-- ============ SIX-PACK PLAN ============ -->
+  <section class="panel" id="plan-panel">
+    <h2>🎯 Six-Pack Plan <span class="pill">science, not magic</span></h2>
+    <p class="hint-left">Uses your height, weight, age & sex from above. Pick your lifestyle and daily calorie deficit — get your exact roadmap to visible abs.</p>
+    <div class="grid" style="margin-top:10px">
+      <label>Current body fat %
+        <input type="number" id="plan-bf" min="3" max="60" step="0.1" placeholder="auto from last scan" />
+      </label>
+      <label>Activity level
+        <select id="plan-activity">
+          <option value="1.2">Desk job, little exercise</option>
+          <option value="1.375" selected>Light (1-3 workouts/wk)</option>
+          <option value="1.55">Moderate (3-5 workouts/wk)</option>
+          <option value="1.725">Very active (6-7/wk)</option>
+        </select>
+      </label>
+      <label>Daily deficit (max 1000)
+        <select id="plan-deficit">
+          <option value="500">500 kcal — steady</option>
+          <option value="750" selected>750 kcal — committed</option>
+          <option value="1000">1000 kcal — aggressive</option>
+        </select>
+      </label>
+      <label>Protein target
+        <select id="plan-protein">
+          <option value="1.6">1.6 g/kg — minimum</option>
+          <option value="2.0" selected>2.0 g/kg — optimal</option>
+          <option value="2.2">2.2 g/kg — max retention</option>
+        </select>
+      </label>
+    </div>
+    <div class="controls"><button id="btn-plan">🧮 Calculate My Roadmap</button></div>
+    <div id="plan-result" class="hidden"></div>
+    <p class="disclaimer">Estimates based on Mifflin-St Jeor BMR & the 3,500 kcal/lb rule. Not medical advice — consult a professional before aggressive deficits.</p>
+  </section>
+
+  <!-- ============ PROGRESS ============ -->
+  <section class="panel">
+    <h2>📈 Progress</h2>
+    <canvas id="chart" height="120"></canvas>
+    <div id="entry-count" class="hint"></div>
+  </section>
+
+  <!-- ============ COMPARE ============ -->
+  <section class="panel" id="compare-panel">
+    <h2>🔀 Before / After</h2>
+    <div class="compare-pickers">
+      <label>Before <select id="cmp-before"></select></label>
+      <label>After <select id="cmp-after"></select></label>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card"><img id="cmp-img-before" alt="Before" /><div id="cmp-stats-before"></div></div>
+      <div class="compare-delta" id="cmp-delta"></div>
+      <div class="compare-card"><img id="cmp-img-after" alt="After" /><div id="cmp-stats-after"></div></div>
+    </div>
+  </section>
+
+  <!-- ============ TRANSFORMATION ============ -->
+  <section class="panel" id="reel-panel">
+    <h2>✨ Transformation Reel</h2>
+    <div id="reel-locked">
+      <div class="reel-progress"><div id="reel-bar"></div></div>
+      <p class="hint" id="reel-status">Log your first day to start the 15-day journey.</p>
+    </div>
+    <div id="reel-ready" class="hidden">
+      <p class="hint-left">Your journey is ready to render — an animated Day 1 → today reel with your stats, made to share.</p>
+      <div class="controls">
+        <button id="btn-make-reel">🎬 Generate My Reel</button>
+        <button id="btn-make-card" class="secondary">🖼️ Share Card (PNG)</button>
+      </div>
+      <div id="reel-output" class="hidden">
+        <canvas id="reel-canvas" width="720" height="900" class="hidden"></canvas>
+        <video id="reel-preview" controls playsinline></video>
+        <div class="controls">
+          <a id="reel-download" class="dl-btn" download="reddyfit-transformation.webm">⬇️ Download Reel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HISTORY ============ -->
+  <section class="panel">
+    <h2>🗓️ All Entries</h2>
+    <div id="history-list"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Reddy-Fit by <a href="https://dandaakhilreddy.com" target="_blank">Akhil Reddy Danda</a> ·
+     <a href="https://github.com/DandaAkhilReddy/bodyfatscanner" target="_blank">GitHub</a> ·
+     Pose AI runs in your browser · Your photos are private to your account</p>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
