@@ -39,7 +39,7 @@ POST_TMPL = """<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../blog.css">
+<link rel="stylesheet" href="../blog.css?v=3">
 </head>
 <body>
 <nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
@@ -86,7 +86,7 @@ INDEX_TMPL = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="alternate" type="application/rss+xml" title="Reddy Pulse" href="feed.xml">
-<link rel="stylesheet" href="blog.css">
+<link rel="stylesheet" href="blog.css?v=3">
 </head>
 <body>
 <nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../browse.html">Portfolio</a><a href="../about.html">About</a><a href="feed.xml">RSS</a></nav>
