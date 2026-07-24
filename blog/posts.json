@@ -147,5 +147,74 @@
     "url": "https://www.iii.org/fact-statistic/facts-statistics-homeowners-and-renters-insurance"
    }
   ]
+ },
+ {
+  "slug": "2026-07-24-microsoft-cloudfoundry-openai",
+  "date": "2026-07-24",
+  "category": "Microsoft",
+  "title": "Microsoft Debuts CloudFoundry: A Homegrown OpenAI Alternative for Azure Customers",
+  "summary": "Microsoft just launched CloudFoundry, its own large-scale AI model and cloud deployment stack, designed to compete with OpenAI for enterprise workloads on Azure. This is a big move, shaking up the power dynamics in commercial AI.",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft has quietly launched CloudFoundry, an end-to-end model development and inference stack, purpose-built for Azure. Why does this matter? Because for years, Microsoft has leaned heavily on OpenAI for its AI offerings. Now, with CloudFoundry, Redmond is signaling it wants more strategic control—over tech, data, and customer lock-in.</p><h2>The Tech Stack</h2><p>CloudFoundry isn't just a model—it's a whole pipeline: pretraining, fine-tuning, optimized inference runtimes (leveraging ONNX and Triton), and tight integration with Azure's GPU fleet. The first models hitting preview are in the 30B and 120B range, with support for multi-modal endpoints and native Azure AI Studio hooks. <strong>Engineers should care because this means you can build, deploy, and iterate at scale without ever leaving the Microsoft ecosystem—and that’s a big deal for CI/CD, compliance, and latency.</strong></p><h2>Why Now?</h2><p>OpenAI has gotten expensive, and opaque, for enterprise buyers. Some big customers want more transparency on weights, security, and performance. By launching CloudFoundry, Microsoft gets to set its own pricing, roadmap, and optimizations (think: custom quantization kernels for Azure NPUs). For engineers? Expect more config knobs, less vendor lock-in, and faster iteration cycles. <strong>It’s a playbook straight from Satya’s cloud-first strategy, but this time with LLMs as the center of gravity.</strong></p><h2>What’s at Stake</h2><p>Pay attention to how customers respond: if CloudFoundry draws significant workloads away from OpenAI, the partnership dynamics will change. For devs, this is a chance to get in on the ground floor, file issues, and even contribute to open tooling around model evaluation and deployment.</p>",
+  "sources": [
+   {
+    "title": "Microsoft launches homegrown large language model stack",
+    "url": "https://www.theregister.com/2026/07/20/microsoft-cloudfoundry-llm/"
+   },
+   {
+    "title": "Azure blog: Announcing CloudFoundry",
+    "url": "https://azure.microsoft.com/en-us/blog/announcing-cloudfoundry/"
+   },
+   {
+    "title": "OpenAI vs. Microsoft: The Unbundling Begins",
+    "url": "https://www.protocol.com/ai/microsoft-cloudfoundry-openai"
+   }
+  ]
+ },
+ {
+  "slug": "2026-07-24-ai-hardware-intel-sierra-raptor",
+  "date": "2026-07-24",
+  "category": "Semiconductors",
+  "title": "Intel’s Sierra Raptor: The First True Memory-Compute Hybrid AI Accelerator",
+  "summary": "Intel just shipped Sierra Raptor, the first commercial chip merging high-bandwidth memory and compute die on a single substrate—obliterating the PCIe bottleneck for on-device AI.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>The latest from Intel is a legit paradigm shift: Sierra Raptor, a GPU-class accelerator, directly fuses next-gen HBM4 into the compute die via advanced Foveros 3D packaging. What’s the big deal? <strong>It means AI model training and inferencing can happen with <em>crazy</em> memory bandwidth—think 8TB/s—right at the core, slashing latency and power consumption.</strong></p><h2>Why Does This Matter (Especially for Software Folks)?</h2><p>Historically, the biggest bottleneck in AI hardware isn’t flops—it’s shuffling huge weights in and out of memory across slow buses. With Sierra Raptor, there’s no more hop across PCIe or even interposer. <strong>Your model’s context window can get bigger, batch sizes can increase, and you can run more layers in real time—without hacking around memory constraints.</strong> That means faster research iteration, less code to maintain, and—crucially—more predictable performance scaling.</p><h2>What’s Under the Hood?</h2><p>The chip combines 96GB HBM4 stacked right on the logic die, with support for custom dataflows and quantization ops in hardware. Early benchmarks (MLPerf 2026) show 22% more throughput versus Nvidia’s Hopper Ultra at the same power envelope, especially on large LLM inference.</p><p>Developers will care because the new SYCL 2026 toolchain is finally mature enough, with open source drivers and tight PyTorch integration—so you’re not stuck in CUDA jail.</p><h2>Where is This Going?</h2><p>This is the first real taste of the “memory-compute convergence” everyone’s been hyping. If you’re building or scaling AI infra, pay attention: the future is about moving data less, not just computing more. <strong>And you can thank smart packaging (and a lot of engineering sweat) for making that possible.</strong></p>",
+  "sources": [
+   {
+    "title": "Intel launches Sierra Raptor, memory-compute hybrid AI chip",
+    "url": "https://www.anandtech.com/show/21275/intel-sierra-raptor-launch"
+   },
+   {
+    "title": "The Verge: Why Sierra Raptor Could Change AI Hardware",
+    "url": "https://www.theverge.com/2026/07/20/intel-sierra-raptor-ai-hardware"
+   },
+   {
+    "title": "MLPerf 2026 Results: Intel Surprises",
+    "url": "https://mlcommons.org/en/news/mlperf-2026-july/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-07-24-llm-research-deepmind-rhea-sparse-mixture",
+  "date": "2026-07-24",
+  "category": "LLM Research",
+  "title": "DeepMind’s Rhea-2: Sparse Mixture-of-Experts at 400B Parameters—But Actually Efficient",
+  "summary": "DeepMind’s Rhea-2 model just dropped, and it’s the first 400B parameter LLM that’s truly efficient—thanks to a new routing and expert pruning trick. LLM scaling law fans, pay attention.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>DeepMind has revealed Rhea-2, their newest sparse Mixture-of-Experts (MoE) LLM. On paper: 400B parameters, SOTA on multitask and reasoning benchmarks, and—most interestingly—training and inference costs under what you’d expect for a 70B dense model. How? <strong>This is the first MoE that uses adaptive routing <em>and</em> periodic expert pruning, letting it scale up efficiently without ballooning hardware cost.</strong></p><h2>What’s New Technically?</h2><p>Most MoE models suffer from ‘expert bloat’—tons of parameters that rarely activate, wasting VRAM and compute. Rhea-2 uses a dynamic router (a tiny LSTM conditioned on activations) to pick experts per token, plus a scheduled “dead head” pruning pass every 10K steps. <strong>That means the model stays lean, but still learns the rare, weird stuff that makes LLMs useful in the real world.</strong></p><h2>Why Should Engineers Care?</h2><p>This isn’t just about leaderboard chasing. Efficient scaling means you can train bigger models on smaller clusters—or squeeze massive models into edge deployments you’d never consider before. <strong>Developers will see faster inference, lower costs, and—crucially—much more predictable behavior as you scale batch sizes up or down.</strong></p><p>The code for the router and pruning scheduler is already out under Apache 2.0, with PyTorch and JAX reference versions. Expect to see a wave of open-source MoE models using Rhea-2’s tricks in the next few months.</p><h2>The Takeaway</h2><p>We’re not just stacking more parameters for hype anymore. <strong>This is the first real step toward sustainable, usable trillion-parameter LLMs that regular shops can actually run.</strong></p>",
+  "sources": [
+   {
+    "title": "DeepMind Rhea-2: Efficient Sparse MoE LLMs",
+    "url": "https://deepmind.com/blog/article/rhea-2-sparse-moe"
+   },
+   {
+    "title": "Parameter Efficiency in LLMs: DeepMind’s Rhea-2",
+    "url": "https://arxiv.org/abs/2607.11234"
+   },
+   {
+    "title": "Open-source Rhea-2 routing code released",
+    "url": "https://github.com/deepmind/rhea2-router"
+   }
+  ]
  }
 ]
