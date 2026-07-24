@@ -24,7 +24,7 @@ POST_TMPL = """<!DOCTYPE html>
 <body>
 <nav class="pnav"><a href="../../browse.html">← Portfolio</a><a href="../index.html">Reddy Pulse</a></nav>
 <article>
-  <div class="cat">{category}</div>
+  <div class="cat{danda}">{category}</div>
   <h1>{title}</h1>
   <div class="byline">By Akhil Reddy Danda · {date} · {read_min} min read</div>
   <img class="hero" src="{image}" alt="{title}">
@@ -37,7 +37,7 @@ POST_TMPL = """<!DOCTYPE html>
 CARD_TMPL = """  <a class="bcard" href="posts/{slug}.html">
     <img src="{image}" alt="" loading="lazy">
     <div class="bcard-body">
-      <span class="cat">{category}</span>
+      <span class="cat{danda}">{category}</span>
       <h2>{title}</h2>
       <p>{summary}</p>
       <div class="byline">{date} · {read_min} min read</div>
@@ -76,14 +76,14 @@ def render() -> None:
         words = len(p["body"].split())
         page = POST_TMPL.format(
             title=html.escape(p["title"]), summary=html.escape(p["summary"]),
-            category=html.escape(p["category"]), date=p["date"],
+            category=html.escape(p["category"]), danda=" cat-danda" if "DANDA" in p["category"] else "", date=p["date"],
             read_min=max(2, round(words / 200)), image=p["image"],
             body=p["body"], source_lis=source_lis)
         (ROOT / "posts" / f'{p["slug"]}.html').write_text(page, encoding="utf-8")
     cards = "\n".join(CARD_TMPL.format(
         slug=p["slug"], image=p["image"], category=html.escape(p["category"]),
         title=html.escape(p["title"]), summary=html.escape(p["summary"]),
-        date=p["date"], read_min=max(2, round(len(p["body"].split()) / 200)))
+        danda=" cat-danda" if "DANDA" in p["category"] else "", date=p["date"], read_min=max(2, round(len(p["body"].split()) / 200)))
         for p in posts)
     (ROOT / "index.html").write_text(INDEX_TMPL.format(cards=cards), encoding="utf-8")
     print(f"rendered {len(posts)} posts")

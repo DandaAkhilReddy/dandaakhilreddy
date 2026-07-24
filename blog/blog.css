@@ -28,3 +28,7 @@ article blockquote { border-left: 3px solid var(--red); padding-left: 16px; colo
 footer { text-align: center; color: var(--dim); padding: 26px; font-size: .85rem; border-top: 1px solid var(--border); }
 footer a { color: var(--red); }
 @media (max-width: 600px) { .bhead h1 { font-size: 1.7rem; } article h1 { font-size: 1.5rem; } }
+
+/* Project DANDA */
+.bcard:has(.cat-danda):hover { border-color: #f5c518; }
+.cat-danda, .cat:is([data-danda]) { color: #f5c518 !important; }
