@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selective Activation Sparsity Might Be the Most Important LLM Paper You Haven&#x27;t Read Yet | Reddy Pulse</title>
+<meta name="description" content="Train a model to fire only the parameters a task needs, and it punches three weight classes up on reasoning benchmarks. The economics of both training and on-device AI just moved.">
+<link rel="stylesheet" href="../blog.css">
+</head>
+<body>
+<nav class="pnav"><a href="../../browse.html">← Portfolio</a><a href="../index.html">Reddy Pulse</a></nav>
+<article>
+  <div class="cat">LLM Research</div>
+  <h1>Selective Activation Sparsity Might Be the Most Important LLM Paper You Haven&#x27;t Read Yet</h1>
+  <div class="byline">By Akhil Reddy Danda · 2026-07-17 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&h=600&fit=crop" alt="Selective Activation Sparsity Might Be the Most Important LLM Paper You Haven&#x27;t Read Yet">
+  <p>Every few months a research idea shows up that makes the cost curves bend, and this month's candidate is <strong>selective activation sparsity</strong> — a training method where the model learns to use only the parameters that are actually relevant to the task in front of it.</p><p>The headline result: models trained this way are <strong>performing comparably to models roughly three times their size</strong> on reasoning benchmarks. Read that again with your infrastructure hat on. Same quality, a fraction of the active compute, on both training and inference.</p><h2>Why this one feels different</h2><p>We've had sparsity tricks for years — mixture-of-experts being the famous one, where a router picks between big chunks of the network. Selective activation sparsity pushes the idea finer-grained: instead of routing between experts, the model learns <em>which individual parameters matter per task</em> and lets the rest go quiet. Less scaffolding, more surgical.</p><p>The implication I care about most is <strong>on-device AI</strong>. The gap between 'model that fits on a phone' and 'model that's actually smart' has been the defining constraint of edge AI. If a 7B-class model can reason like a 20B-class one because it activates intelligently, laptops, phones, and even my daily-shipping side projects change their assumptions. (I run LLMs on an iPhone in Project 1 of my portfolio — believe me, every activated parameter counts.)</p><h2>Alongside it</h2><p>Google's inference work this cycle rhymes with the same theme — speculative decoding upgraded with block verification and tree-structured drafting, accepting more tokens per step. Sparsity cuts what you compute; better decoding cuts how often you compute. Efficiency is compounding from both ends.</p><p>The era of 'just make it bigger' isn't over, but the era of 'make it smarter per watt' is clearly the more interesting race right now.</p>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://skycrumbs.com/blog/ai-research-july-2026" target="_blank" rel="noopener">Skycrumbs — AI Research Breakthroughs in July 2026</a></li><li><a href="https://research.google/blog/a-new-era-of-innovation-google-research-at-io-2026/" target="_blank" rel="noopener">Google Research — A New Era of Discovery at I/O 2026</a></li></ul></div>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">More from Reddy Pulse</a></footer>
+</body></html>
