@@ -27,6 +27,20 @@ I treat side projects as production code — type checks, tests, infra, the lot.
 
 ---
 
+## 🚀 Project Index — everything live
+
+| Project | What it is | Live | Code | Tests/CI |
+|---|---|---|---|---|
+| **Portfolio** | Netflix-style portfolio + Reddy Pulse auto-blog + Project DANDA daily venture pipeline | [dandaakhilreddy.com](https://dandaakhilreddy.com) | [repo](https://github.com/DandaAkhilReddy/dandaakhilreddy) | ✅ smoke + watchdog |
+| **Reddy-Fit Body Scanner** | Daily 10s video body scan · pose AI · Coach's Orders · Azure Blob durable storage | [app](https://bodyfatscanner-production.up.railway.app) | [repo](https://github.com/DandaAkhilReddy/bodyfatscanner) | ✅ 58 tests · **100% coverage gate** |
+| **Valdez Magic** | Scan your gym on video → AI detects equipment → full longevity workout program + "Valdez" AI coach | [app](https://valdez-production.up.railway.app) | [repo](https://github.com/DandaAkhilReddy/valdez-magic) | ✅ 46 tests |
+| **ReddyHedge Live** | 5 legendary-investor AI personas debate any ticker → panel verdict (Azure Foundry) | [app](https://reddyhedge-production.up.railway.app) | [repo](https://github.com/DandaAkhilReddy/ReddyHedgefund) | ✅ smoke |
+| **WiFiVision** | Presence detection from WiFi CSI — $10 ESP32 build + interactive browser demo | [demo](https://dandaakhilreddy.com/demos/wifivision/) | [repo](https://github.com/DandaAkhilReddy/wifivision) | — |
+| **Reddy Pulse** | Autonomous daily tech blog (5 posts/day) + LinkedIn caption email — runs on GitHub Actions + Azure Foundry | [blog](https://dandaakhilreddy.com/blog/) | [pipeline](https://github.com/DandaAkhilReddy/dandaakhilreddy/tree/main/blog) | ✅ cloud cron + failover |
+| **Project DANDA** | Daily AI venture blueprint: 1000 news articles → one startup idea + full architecture | [latest](https://dandaakhilreddy.com/blog/) | [pipeline](https://github.com/DandaAkhilReddy/dandaakhilreddy/tree/main/automation) | ✅ cloud cron + failover |
+
+*All apps deployed on Railway (one project, four services) · media & databases durable in Azure Blob (`rudy-valdez` resource group).*
+
 ## What I'm working on
 
 <table>
