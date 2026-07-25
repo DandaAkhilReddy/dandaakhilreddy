@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
-"""Reddy Pulse / Project DANDA cloud watchdog.
+"""Fleet watchdog — runs on GitHub Actions (independent of Railway AND Azure).
 
-Runs on GitHub Actions daily (machine-independent). Checks:
-1. Site uptime — if down, triggers a Railway redeploy from the repo.
-2. Blog freshness — if no post in the last 2 days, emails an alert.
-Always emails on any failure; silent when healthy.
+Architecture it protects:
+  Railway = primary compute + primary storage (always authoritative)
+  Azure   = AI brains + durable mirror only (fail-open: apps never depend on it)
+
+Checks, every run:
+1. All 4 Railway services up (website, reddyfit, valdez, reddyhedge).
+   Down -> auto-restart via Railway API (website: full redeploy from checkout).
+2. Azure degradation (apps report azure_status) -> email heads-up; NO restart
+   needed because the apps keep running on Railway local storage.
+3. Blog freshness (Reddy Pulse pipeline health).
+Emails on any problem; silent when all healthy.
 """
 
 from __future__ import annotations
@@ -14,13 +21,24 @@ import json
 import os
 import smtplib
 import subprocess
-import sys
 import urllib.request
+import sys
 from email.mime.text import MIMEText
 
-SITE = "https://www.dandaakhilreddy.com"
-UA = {"User-Agent": "Mozilla/5.0 (compatible; ReddyPulseWatchdog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; ReddyFleetWatchdog/2.0)"}
+PROJECT = "7832b39f-a42f-4203-b6e9-bd38699670de"
+ENV = "b82a1ec2-33a3-4620-a142-82c9760affa2"
+
+SERVICES = [
+    # name, health URL, railway service id, redeploy mode
+    ("website", "https://www.dandaakhilreddy.com/browse", "e37a4acb-67ad-4a46-b34d-6e85fe1e58b1", "tarball"),
+    ("reddyfit", "https://bodyfatscanner-production.up.railway.app/api/health", "f9c21e6e-4fd5-4366-b3b5-b678e8a98a13", "restart"),
+    ("valdez", "https://valdez-production.up.railway.app/api/health", "d5609171-a7a3-412d-8c27-d1de57c675f5", "restart"),
+    ("reddyhedge", "https://reddyhedge-production.up.railway.app/api/health", "c7a2c2cf-c78c-4222-8791-4622aa812eaf", "restart"),
+]
+
 problems: list[str] = []
+warnings: list[str] = []
 actions: list[str] = []
 
 
@@ -30,56 +48,75 @@ def fetch(url: str, timeout: int = 25) -> tuple[int, bytes]:
         return r.status, r.read()
 
 
-def check_uptime() -> bool:
-    try:
-        status, body = fetch(f"{SITE}/browse")
-        if status == 200 and b"Akhil" in body:
-            return True
-        problems.append(f"Site responded abnormally (status {status}).")
-    except Exception as exc:
-        problems.append(f"Site unreachable: {exc}")
-    return False
+def gql(query: str, variables: dict) -> dict:
+    req = urllib.request.Request(
+        "https://backboard.railway.com/graphql/v2",
+        data=json.dumps({"query": query, "variables": variables}).encode(),
+        headers={"Authorization": f"Bearer {os.environ['RAILWAY_TOKEN']}",
+                 "Content-Type": "application/json", "x-railway-caller": "cli",
+                 "User-Agent": UA["User-Agent"]})
+    return json.loads(urllib.request.urlopen(req, timeout=60).read())
+
+
+def restart_service(name: str, sid: str) -> None:
+    r = gql("mutation($e:String!,$s:String!){ serviceInstanceRedeploy(environmentId:$e, serviceId:$s) }",
+            {"e": ENV, "s": sid})
+    if r.get("data"):
+        actions.append(f"{name}: triggered Railway restart (serviceInstanceRedeploy)")
+    else:
+        raise RuntimeError(str(r.get("errors"))[:200])
+
+
+def redeploy_website() -> None:
+    subprocess.run(["tar", "czf", "/tmp/site.tar.gz", "--exclude=.git", "--exclude=apps", "."], check=True)
+    url = (f"https://backboard.railway.com/project/{PROJECT}/environment/{ENV}/up"
+           f"?serviceId={SERVICES[0][2]}")
+    req = urllib.request.Request(url, data=open("/tmp/site.tar.gz", "rb").read(),
+        headers={"Authorization": f"Bearer {os.environ['RAILWAY_TOKEN']}",
+                 "Content-Type": "application/gzip", "x-railway-caller": "cli",
+                 "User-Agent": UA["User-Agent"]})
+    dep = json.loads(urllib.request.urlopen(req, timeout=180).read())
+    actions.append(f"website: full redeploy {dep.get('deploymentId', '?')}")
+
+
+def check_services() -> None:
+    for name, url, sid, mode in SERVICES:
+        try:
+            status, body = fetch(url)
+            if status != 200:
+                raise RuntimeError(f"status {status}")
+            if url.endswith("/api/health"):
+                h = json.loads(body)
+                if h.get("status") != "ok":
+                    raise RuntimeError(f"health says {h.get('status')}")
+                az = h.get("azure_status", "")
+                if az.startswith("degraded"):
+                    warnings.append(
+                        f"{name}: AZURE DEGRADED ({h.get('azure_last_error')}). "
+                        "App fine — running on Railway local storage. Fix Azure creds when convenient.")
+        except Exception as exc:
+            problems.append(f"{name} DOWN: {exc}")
+            try:
+                redeploy_website() if mode == "tarball" else restart_service(name, sid)
+            except Exception as exc2:
+                problems.append(f"{name}: auto-recovery FAILED: {exc2}")
 
 
 def check_freshness() -> None:
     try:
-        _, raw = fetch(f"{SITE}/blog/posts.json")
-        posts = json.loads(raw)
-        latest = max(p["date"] for p in posts)
-        latest_d = datetime.date.fromisoformat(latest)
-        age = (datetime.date.today() - latest_d).days
+        _, raw = fetch("https://www.dandaakhilreddy.com/blog/posts.json")
+        latest = max(p["date"] for p in json.loads(raw))
+        age = (datetime.date.today() - datetime.date.fromisoformat(latest)).days
         if age > 2:
-            problems.append(
-                f"Blog is stale: newest post is {latest} ({age} days old). "
-                "The local pipeline likely hasn't run — open the Claude app so the "
-                "scheduled tasks can fire, or run them manually.")
+            warnings.append(f"Blog stale: newest post {latest} ({age}d old) — check cloud pipelines.")
     except Exception as exc:
-        problems.append(f"Could not read blog/posts.json from live site: {exc}")
-
-
-def redeploy() -> None:
-    """Redeploy the repo to Railway (site copy in the runner's checkout)."""
-    subprocess.run(
-        ["tar", "czf", "/tmp/site.tar.gz", "--exclude=.git", "--exclude=apps", "."],
-        check=True)
-    url = (f"https://backboard.railway.com/project/{os.environ['RAILWAY_PROJECT_ID']}"
-           f"/environment/{os.environ['RAILWAY_ENV_ID']}/up"
-           f"?serviceId={os.environ['RAILWAY_SERVICE_ID']}")
-    req = urllib.request.Request(
-        url, data=open("/tmp/site.tar.gz", "rb").read(),
-        headers={"Authorization": f"Bearer {os.environ['RAILWAY_TOKEN']}",
-                 "Content-Type": "application/gzip", "x-railway-caller": "cli",
-                 "User-Agent": UA["User-Agent"].replace("compatible; ", "")})
-    with urllib.request.urlopen(req, timeout=180) as r:
-        dep = json.loads(r.read())
-    actions.append(f"Triggered Railway redeploy: {dep.get('deploymentId', '?')}")
+        problems.append(f"Cannot read blog feed: {exc}")
 
 
 def alert(subject: str, lines: list[str]) -> None:
-    body = "\n".join(lines)
-    msg = MIMEText(body)
+    msg = MIMEText("\n".join(lines))
     msg["Subject"] = subject
-    msg["From"] = f"Reddy Pulse Watchdog <{os.environ['SMTP_USER']}>"
+    msg["From"] = f"Reddy Fleet Watchdog <{os.environ['SMTP_USER']}>"
     msg["To"] = os.environ["NOTIFY_EMAIL"]
     with smtplib.SMTP("smtp.gmail.com", 587, timeout=25) as s:
         s.starttls()
@@ -89,21 +126,18 @@ def alert(subject: str, lines: list[str]) -> None:
 
 
 def main() -> int:
-    up = check_uptime()
-    if not up:
-        try:
-            redeploy()
-        except Exception as exc:
-            problems.append(f"Auto-redeploy FAILED: {exc}")
+    check_services()
     check_freshness()
-    if problems:
-        alert("⚠️ Reddy Pulse watchdog: attention needed",
-              ["The cloud watchdog found issues:", ""]
-              + [f"• {p}" for p in problems]
-              + ([""] + [f"✔ {a}" for a in actions] if actions else []))
-        print("problems:", problems)
-        return 0  # alert sent; don't fail the workflow
-    print("all healthy — site up, blog fresh")
+    if problems or warnings:
+        subject = ("🚨 Fleet watchdog: service down" if problems
+                   else "⚠️ Fleet watchdog: heads-up (all services up)")
+        alert(subject,
+              (["DOWN:"] + [f"• {p}" for p in problems] + [""] if problems else [])
+              + (["Warnings:"] + [f"• {w}" for w in warnings] + [""] if warnings else [])
+              + ([f"✔ {a}" for a in actions] if actions else []))
+        print("problems:", problems, "warnings:", warnings)
+        return 0
+    print("fleet healthy — all 4 services up, blog fresh, azure ok")
     return 0
 
 
