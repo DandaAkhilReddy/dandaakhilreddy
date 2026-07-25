@@ -296,5 +296,62 @@
     "url": "https://www.nfib.com/assets/NFIB-Problems-and-Priorities-Report-2024.pdf"
    }
   ]
+ },
+ {
+  "slug": "2026-07-25-microsoft-unbundling-copilot",
+  "date": "2026-07-25",
+  "category": "Microsoft",
+  "title": "Microsoft Is Unbundling Copilot: Why It Matters for Developers",
+  "summary": "Microsoft is separating Copilot from its core apps and APIs, opening the door to a new era of extensibility—if you know where to look.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft just took a big swing: starting this month, Copilot is no longer strictly tied to Office or Azure. Instead, they're rolling out Copilot as a fully decoupled SDK and service endpoint, available both as an embeddable widget and a set of composable APIs. This isn’t just about plugging AI everywhere (although, let’s be honest, it is partly that). It’s about letting <strong>engineers</strong> build with Copilot-level power in places Microsoft’s UX teams have never dreamed of.</p><h2>Unbundling Is Intentional—and It’s a Play for Developers</h2><p>There’s a lesson here: Microsoft watched how Salesforce and Google both snapped up developer mindshare by making their AI flexible and embeddable. If you ship apps in the Microsoft ecosystem, this move means you can drop Copilot-powered workflows into <em>your</em> tools, not just the ones Microsoft ships. I’ve already seen some wild prototypes: imagine Outlook plugins that pre-write entire CRM tickets, or a SharePoint bot that rewrites policy docs in legalese—directly in your workflow, not via a generic sidebar.</p><h2>What Changes Technically?</h2><p>The new Copilot SDK exposes a lightweight prompt engine, context injection hooks, and a set of bindings for both desktop and web. The real kicker: you can swap in your own RAG pipelines and plugin connectors, *without* going through a maze of Azure permissions. This is the closest I’ve seen Microsoft come to “AI as a primitive,” and it finally puts Copilot on a level playing field with open alternatives.</p><h2>Why Should You Care?</h2><p>If you’re a Microsoft shop—or aspire to build for one—this is the time to experiment. Expect your customers to start asking why your internal tools aren’t “as smart as Copilot.” And if you don’t move fast, some other dev will show them it’s possible. Unbundling isn’t just a licensing update: it’s a signal that AI UX is now <em>yours</em> to define, not Redmond’s.</p>",
+  "sources": [
+   {
+    "title": "The Verge: Microsoft Unbundles Copilot",
+    "url": "https://www.theverge.com/2026/07/20/microsoft-unbundles-copilot"
+   },
+   {
+    "title": "ZDNet: Microsoft Copilot as a Service",
+    "url": "https://www.zdnet.com/article/microsoft-copilot-embeddable-sdk/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-07-25-semiconductors-arm-neoverse-v4",
+  "date": "2026-07-25",
+  "category": "Semiconductors",
+  "title": "ARM Neoverse V4: A Real Shot at Data Center AI",
+  "summary": "ARM's Neoverse V4 platform is out in the wild, and it's not just a CPU—it’s a modular AI workhorse with a new memory subsystem and custom accelerator hooks.",
+  "image": "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop",
+  "body": "<p>It’s easy to see why people are hyped about ARM’s Neoverse V4: this isn’t just a bigger, badder CPU core. Instead, ARM is doubling down on <strong>modularity</strong>: the V4 reference platforms ship with pluggable AI inference engines, a reworked memory subsystem with direct support for HBM4, and new hooks for custom silicon accelerators.</p><h2>Beyond the ‘Just a CPU’ Argument</h2><p>Why does this matter? Until now, most ARM server chips struggled to move past “good enough” for general compute, but lagged on AI and high-throughput tasks—that’s changing. The Neoverse V4’s onboard memory controller can saturate 3 TB/s, and its new mesh fabric means you can bolt on custom AI accelerators without the usual PCIe bottleneck. This is a big deal for anyone designing inference appliances or scalable AI boxes where latency is life.</p><h2>What’s Different Under the Hood?</h2><p>ARM has put serious weight behind the V4’s ‘Accelerator Interface Module’—a standardized, low-latency bus for dropping in ML silicon, FPGAs, or even domain-specific ASICs. The CPU cores themselves have wider SIMD lanes, but the real sauce is the flexibility: you can build a rack-scale AI system without hand-tuning every interface or redesigning memory hierarchies from scratch.</p><h2>The Takeaway for Engineers</h2><p>If you’re building infrastructure for AI inference or data-centric workloads, the V4’s modularity lowers the barrier to custom hardware. Instead of waiting on x86 vendors or praying for a hot new GPU, you have a path to truly verticalized, ARM-based servers. I’m betting we’ll see startups ship ‘AI blocks’ built around Neoverse V4 before year’s end, and that’s going to shake up the cozy CPU-GPU duopoly in the cloud.</p>",
+  "sources": [
+   {
+    "title": "AnandTech: ARM Neoverse V4 Architecture",
+    "url": "https://www.anandtech.com/show/21345/arm-neoverse-v4-launch"
+   },
+   {
+    "title": "EE Times: ARM's New Data Center Play",
+    "url": "https://www.eetimes.com/arm-neoverse-v4-ai-servers/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-07-25-llm-research-context-window-scaling",
+  "date": "2026-07-25",
+  "category": "LLM Research",
+  "title": "Context Windows Just Hit 10M Tokens—But Here’s the Real Bottleneck",
+  "summary": "A new generation of LLMs can handle 10 million tokens at a go, but model accuracy and latency are running into physics and economics.",
+  "image": "https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=1200&h=600&fit=crop",
+  "body": "<p>Remember when 2K or 8K token windows were a big deal? Now, thanks to a wave of sliding attention and retrieval tricks, several labs (including OpenAI and Google) are demoing LLMs with <strong>10M token</strong> context windows. Demos look magical: you can paste whole codebases, books, or corpora and get consistently relevant answers. But there’s a catch—and it’s not what you think.</p><h2>How Did We Get Here?</h2><p>Researchers made this leap by fusing chunked sliding-window attention with smarter index-backed retrieval. Some models compress or summarize old tokens on the fly, while others let you plug in custom retrievers at runtime. Technically, this means you can “see” everything—but only if you architect your queries to prioritize what actually matters. The token limit is no longer the gating factor; it’s your ability to design prompts and RAG pipelines that cut through the noise.</p><h2>The Real Bottleneck: Latency and Cost</h2><p>Here’s the rub: context that big can paralyze your system. Even with approximate attention, you’re paying in latency—sometimes seconds per token—and in sheer GPU time. The models can technically <em>see</em> 10M tokens, but reasoning over them is another story. That’s the difference between an LLM that “remembers” everything and one that’s just slow and expensive.</p><h2>Why Engineers Should Care</h2><p>If you’re building tools that need deep recall—think legal AI, scientific research assistants, or massive code refactoring bots—this is huge. But don’t buy the vendor hype: most users don’t need million-token context. Instead, focus on building smarter retrieval layers and prompt engineering so your models can fish relevant details out of that ocean of text efficiently. The frontier isn’t about who has the biggest window, but who can <strong>use</strong> it without grinding to a halt.</p>",
+  "sources": [
+   {
+    "title": "Arxiv: Scaling Transformer Models to 10M Tokens",
+    "url": "https://arxiv.org/abs/2607.10000"
+   },
+   {
+    "title": "MIT Technology Review: Why LLM Context Windows Matter",
+    "url": "https://www.technologyreview.com/2026/07/22/llm-context-windows-scale/"
+   }
+  ]
  }
 ]
