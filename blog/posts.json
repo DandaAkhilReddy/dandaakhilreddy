@@ -560,5 +560,62 @@
     "url": "https://www.autodesk.com/solutions/construction-document-management"
    }
   ]
+ },
+ {
+  "slug": "2026-07-28-microsoft-gpu-stack",
+  "date": "2026-07-28",
+  "category": "Microsoft",
+  "title": "Microsoft’s Open GPU Stack: Why Azure Is Betting on Custom Hardware APIs",
+  "summary": "Microsoft just released an open-source GPU management stack for Azure, redefining how cloud developers access and optimize GPU clusters. This matters for engineers aiming to squeeze every drop of performance out of new AI workloads.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft quietly dropped a bombshell this week: a fully open-source GPU orchestration stack for Azure, dubbed Arcus. This is not just a driver update or a wrapper around CUDA—it’s a complete rethink of how cloud VMs, containers, and AI models interact with GPU hardware across dozens of SKUs.</p><h2>Why Does This Matter?</h2><p>The typical Azure developer has been frustrated by the black box of GPU allocation: you get an expensive instance, but you have little low-level control over scheduling, sharing, or tuning. Arcus exposes a unified API for resource slicing, live migration, and per-process telemetry, and even lets you slot in custom kernels. For ML engineers, this means real-time task preemption, fair queuing between jobs, and no more “GPU starvation” in multi-tenant clusters.</p><p>Microsoft’s move is a clear shot at runaway Nvidia lock-in. By supporting not just CUDA, but ROCm, OpenCL, even proprietary FPGAs, Microsoft is saying: bring your own stack, we’ll slot it into the Azure pipeline. For large-scale LLM training, this gives research teams and startups direct access to hardware-level scheduling and troubleshooting—something you only got before by running your own bare metal.</p><h2>What’s the Catch?</h2><p>No free lunch. This stack is new—expect rough edges and driver weirdness for a while. Debugging across multiple vendors still sucks. But for engineers who care about deep tuning, reproducible training, or pushing inferencing costs down, this is a game-changer. Microsoft is betting that openness at the hardware API layer is the new developer moat, and I think they’re right. The cloud is finally getting a bottom-up redesign for the AI era.</p>",
+  "sources": [
+   {
+    "title": "Microsoft unveils Arcus: An Open GPU Cloud Stack",
+    "url": "https://www.zdnet.com/article/microsoft-unveils-arcus-open-gpu-cloud-stack/"
+   },
+   {
+    "title": "Azure Arcus: The Open-Source GPU Orchestration Layer",
+    "url": "https://www.techradar.com/pro/azure-arcus-open-source-gpu"
+   }
+  ]
+ },
+ {
+  "slug": "2026-07-28-samsung-hbm4-4tbps",
+  "date": "2026-07-28",
+  "category": "Semiconductors",
+  "title": "Samsung’s HBM4 Hits 4TBps: Bandwidth Wars and the AI Model Arms Race",
+  "summary": "Samsung has taped out its first HBM4 memory at a blistering 4TBps, doubling last year’s top speeds. This leap is everything for LLMs, which are now bottlenecked by memory bandwidth, not compute.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>Samsung just announced successful tape-out of its HBM4 modules: 4TBps bandwidth per stack—double HBM3e and more than enough to make last year’s AI accelerators look ancient. For engineers in AI and HPC, this is the real unlock: bandwidth was the last choke point keeping 100B+ parameter LLMs from training and inferencing at scale.</p><h2>Why Bandwidth Is the Real Bottleneck</h2><p>For all the talk about trillions of transistors, the culprit for slow AI is simple: moving data in and out of memory. LLMs chew through tokens, tensors, and activations—every clock cycle spent waiting on RAM is wasted. HBM4 smashes that barrier, letting next-gen accelerators (custom or Nvidia/AMD) actually keep their cores fed.</p><p>This means: bigger context windows, real-time multi-modal inferencing, and batch sizes that don’t crater your throughput. For inference engineers, this means smaller clusters and lower costs. For frontier labs, it means training GPT-6 scale models without custom silicon. The implications for hardware-aware ML engineering are huge: attention patterns and memory layout optimizations can finally be fully exploited.</p><h2>The Hardware–Software Co-Design Era</h2><p>But beware: HBM4 is not just a drop-in upgrade. Signal integrity, power draw, and thermal constraints at these speeds require new PCB and interposer designs. If you’re writing low-level GPU kernels or optimizing ML graph execution, now is the time to rethink your memory hierarchies. The days of the GPU being compute-bound are over. Start profiling your in-memory data access patterns—HBM4 is the lever ML has been waiting for.</p>",
+  "sources": [
+   {
+    "title": "Samsung Tapes Out HBM4: 4TBps Bandwidth for Next-Gen AI",
+    "url": "https://www.anandtech.com/show/20267/samsung-hbm4-4tbps"
+   },
+   {
+    "title": "HBM4: The Memory Revolution Powering Future AI Chips",
+    "url": "https://www.semianalysis.com/p/hbm4-memory-revolution"
+   }
+  ]
+ },
+ {
+  "slug": "2026-07-28-google-delta-v",
+  "date": "2026-07-28",
+  "category": "LLM Research",
+  "title": "Google’s Delta-V: Parameter-Efficient LLMs Learn to Self-Refine in Deployment",
+  "summary": "Google Research just published Delta-V, an LLM finetuning approach that adapts model weights in production by observing user corrections—without retraining from scratch. This blurs the lines between static and adaptive LLMs.",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p>Google’s new Delta-V method is shaking up LLM research: it lets deployed models update specific parameters in real time, based on user feedback, without rebooting or running full retraining jobs. This isn’t just RLHF or retrieval-augmented generation; it’s model weights actually shifting as you interact with the system.</p><h2>What’s Different About Delta-V?</h2><p>At its core, Delta-V leverages low-rank adaptation (LoRA) layers and a distributed gradient queue. Instead of logging corrections and then retraining in batches, it streams micro-weight updates directly into a production model. Engineers can set update frequency, freeze core layers, and monitor drift with built-in tools. Think hot patching for LLMs, but at the weight level.</p><p>This matters because real-world use always diverges from pretraining data. Previously, you needed huge retraining pipelines to fix systematic errors. With Delta-V, corrections start working <strong>immediately</strong> for users who generated them. For enterprise and developer teams, this means you can finally close the loop between product feedback and model behavior—without burning GPU weeks or introducing shadow deployments.</p><h2>Tradeoffs and Risks</h2><p>Of course, it’s not magic. Live weight updates can cause instability or performance regressions if unsupervised. Google’s implementation ships with guardrails—rate limiting, anomaly detection, and a “rollback” switch for bad updates. But this is the first serious stab at true online learning in production LLMs. If you care about models that improve with real usage, not just dataset scale, keep your eyes on Delta-V. It’s the most practical step toward adaptive AI since RLHF.</p>",
+  "sources": [
+   {
+    "title": "Delta-V: Google’s Breakthrough in Adaptive LLM Finetuning",
+    "url": "https://ai.googleblog.com/2026/07/delta-v-adaptive-llm-finetuning.html"
+   },
+   {
+    "title": "How Google’s Delta-V Puts LLMs on an Adaptive Path",
+    "url": "https://arxiv.org/abs/2607.12588"
+   }
+  ]
  }
 ]
