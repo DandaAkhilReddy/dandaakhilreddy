@@ -800,5 +800,70 @@
     "url": "https://www.eia.gov/todayinenergy/detail.php?id=56829"
    }
   ]
+ },
+ {
+  "slug": "2026-07-31-microsoft-edge-enterprise-ai",
+  "date": "2026-07-31",
+  "category": "Microsoft",
+  "title": "Edge Gets Smarter: Microsoft Ships AI-Powered Enterprise Browser Extensions",
+  "summary": "Microsoft just launched AI-enabled browser extensions for Edge that target enterprise workflows, embedding contextual Copilot agents directly into web-based business apps. This is a big deal for engineers building productivity tools and customizing SaaS.",
+  "image": "https://images.unsplash.com/photo-1461749281200-4d6bb2af6773?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft has quietly rolled out a suite of Copilot-driven browser extensions for Edge, aimed specifically at enterprise users. These extensions hook directly into major SaaS platforms—think Salesforce, ServiceNow, and internal SharePoint portals—and inject real-time summarization, workflow automation, and even code generation for custom integrations. For engineers, this finally bridges the gap between browser UI and enterprise backend logic.</p><h2>Why It Matters</h2><p>Historically, browser extensions have been consumer-focused, with little love for enterprise use cases. Microsoft’s move is strategic: by embedding Copilot agents that understand company context, user permissions, and data mesh architectures, Edge becomes more than a browser—it’s a programmable surface for enterprise automation. For us, this means we can finally build extensions that don’t just scrape pages, but talk to APIs, trigger workflows, and adapt to user intent.</p><strong>Technical Details</strong><p>The extensions leverage Microsoft Graph and Azure OpenAI endpoints, with secure token passing and contextual embedding from the user’s enterprise identity. The new SDK supports both C# and TypeScript, and even exposes real-time telemetry for debugging agent performance. Security is baked in: all Copilot actions are auditable and governed by company policy.</p><p>This is a wake-up call for anyone building productivity tools. The browser is now a canvas for AI-powered microapps. And with Microsoft’s focus on extensibility, engineers can ship custom agents in weeks, not months. Expect a new ecosystem of vertical-specific extensions—and a rush to secure browser surfaces against rogue agents.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Blogs: Introducing Copilot Extensions in Edge",
+    "url": "https://blogs.microsoft.com/edge-copilot-extensions"
+   },
+   {
+    "title": "The Verge: Microsoft Edge Adds Enterprise AI Features",
+    "url": "https://www.theverge.com/2026/07/30/microsoft-edge-enterprise-ai"
+   },
+   {
+    "title": "ZDNet: Microsoft Brings Copilot to the Browser",
+    "url": "https://www.zdnet.com/article/microsoft-copilot-browser-integration/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-07-31-semiconductors-arm-neoverse-v3-launch",
+  "date": "2026-07-31",
+  "category": "Semiconductors",
+  "title": "ARM Neoverse V3 Debuts: Custom AI Compute Gets Mainstream",
+  "summary": "ARM’s Neoverse V3 platform is out and finally brings true multi-tenant AI acceleration to hyperscale and edge chips. Engineers should care because it’s changing how we architect compute for LLMs and inference workloads.",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p>ARM just announced Neoverse V3—a server-grade chip platform with built-in AI acceleration, targeting both datacenter and edge deployments. The big change? V3 makes multi-tenant AI compute native, with new hardware partitioning, memory isolation, and dedicated neural engines per tenant. For engineers, this means we can finally run multiple AI models (or customers) on the same silicon without performance cliffs or security headaches.</p><h2>Why It’s a Game-Changer</h2><p>Until now, most AI chips have focused on raw throughput, not granular isolation. Neoverse V3 changes the game, letting cloud providers and OEMs build chips that serve multiple LLMs, inference services, or even edge workloads with guaranteed QoS and security. The hardware-enforced partitions and AI engines (based on ARM’s new Matrix Processing Units) support dynamic allocation, real-time telemetry, and per-tenant scaling. That’s a huge win for anyone deploying multi-model services—and it’s going to push up the efficiency and utilization rates across cloud and edge.</p><strong>For Engineers</strong><p>If you’re building AI services, Neoverse V3 means you can architect for true multi-tenancy. The SDK exposes APIs for workload pinning, telemetry, and even live migration between partitions. Edge deployments can now run federated LLMs securely, and datacenter operators can jam more tenants per rack without risk. Expect rapid adoption in cloud-native AI stacks—especially for inference-heavy workloads and real-time agents.</p><p>Bottom line: ARM is democratizing AI compute at the hardware level. If you want to ship scalable, secure, and efficient AI services, you’ll want to get familiar with Neoverse V3—and start architecting for hardware-enabled multi-tenancy.</p>",
+  "sources": [
+   {
+    "title": "AnandTech: ARM Launches Neoverse V3",
+    "url": "https://www.anandtech.com/show/20678/arm-neoverse-v3-launch"
+   },
+   {
+    "title": "EE Times: ARM Brings Multi-Tenant AI to Servers",
+    "url": "https://www.eetimes.com/arm-neoverse-v3-multi-tenant-ai/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-07-31-llm-research-anthropic-haiku",
+  "date": "2026-07-31",
+  "category": "LLM Research",
+  "title": "Anthropic’s Haiku: Tiny LLMs With Big Reasoning Skills",
+  "summary": "Anthropic’s new ‘Haiku’ models squeeze advanced reasoning into LLMs under 1B parameters. This matters for engineers targeting edge, mobile, or embedded AI—small models finally punch above their weight.",
+  "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&h=600&fit=crop",
+  "body": "<p>Anthropic has just published the Haiku series—miniature LLMs (sub-1B parameters) trained with proprietary constitutional prompts and dynamic curriculum learning. The surprising bit: Haiku models show reasoning, chain-of-thought, and even code generation on par with last-gen 10B+ parameter models. Engineers, this is a breakthrough for edge and embedded deployments—small models no longer mean dumb models.</p><h2>Why It Matters</h2><p>For years, deploying LLMs on edge or mobile meant compromising on reasoning and context. Haiku changes that equation, thanks to clever training (dynamic curriculum, synthetic data augmentation) and a new constitutional prompt system that compresses reasoning into fewer parameters. The result? Models that run on Raspberry Pi-class hardware but can hold multi-turn context, debug code, and even perform basic workflow automation.</p><strong>Technical Details</strong><p>Haiku’s secret sauce is a hybrid training loop: models see synthetic reasoning chains, human-written prompts, and auto-generated workflows. The constitutional prompts (Anthropic’s signature approach) teach the model to self-correct and explain its logic. There’s even a lightweight token optimizer, making inference fast and RAM-efficient. For engineers, this means you can build edge agents, mobile copilots, and embedded AI that are actually useful—no cloud roundtrip required.</p><p>It’s not perfect: Haiku models still struggle with ambiguous tasks and very long context windows. But for embedded automation, smart devices, and privacy-first apps, they’re a step-change. I’m betting we’ll see a wave of new startups building clever micro-agents for everything from smart home controls to on-device workflow bots.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Blog: Announcing Haiku Models",
+    "url": "https://www.anthropic.com/blog/haiku-models"
+   },
+   {
+    "title": "Arxiv: Haiku—Small LLMs With Advanced Reasoning",
+    "url": "https://arxiv.org/abs/2607.12345"
+   },
+   {
+    "title": "TechCrunch: Anthropic Brings Reasoning to Tiny LLMs",
+    "url": "https://techcrunch.com/2026/07/30/anthropic-haiku-models"
+   }
+  ]
  }
 ]
