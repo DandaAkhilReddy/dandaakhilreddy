@@ -888,5 +888,74 @@
     "url": "https://www.sba.gov/funding-programs/loans"
    }
   ]
+ },
+ {
+  "slug": "2026-08-01-microsoft-graph-copilot-enterprise",
+  "date": "2026-08-01",
+  "category": "Microsoft",
+  "title": "Microsoft Graph Copilot: Enterprise AI Gets Contextual and Actionable",
+  "summary": "Microsoft unveiled Graph Copilot, a new layer integrating enterprise data graph APIs directly into Copilot workflows. Engineers get programmable access to organizational context—finally, a shot at truly actionable AI.",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p>Yesterday, Microsoft launched Graph Copilot, a fusion of their Graph API and Copilot AI. If you work at a big company, you know the pain: AI assistants rarely understand the maze of internal documents, HR policies, code repositories, or who owns what service. Now, engineers (and IT) can plug Graph Copilot into custom workflows, letting Copilot surface actionable context from the Microsoft Graph—think org charts, project states, or file locations—in real time.</p><h2>Why This Matters</h2><p>Most Copilot implementations are limited by surface-level context. Graph Copilot exposes deep enterprise knowledge via programmable APIs. When you ask Copilot for 'the current SRE on-call' or 'the latest security policy revision,' it can actually fetch (and act on) live data. For engineers, this is huge: you can write Copilot skills that automate onboarding, escalate tickets, or even trigger code reviews based on real-time graph state. It's a bridge between AI and the messy reality of enterprise data.</p><strong>For devs:</strong><p>Microsoft ships SDKs in Python, C#, and TypeScript. You can define custom graph queries and Copilot will not only fetch the results, but also reason about them. This is a step toward composable, agent-driven enterprise automation—something we've all wanted but never got. The API is RBAC-aware, so you don't have Copilot accidentally leaking HR docs to the wrong team.</p><p>Bottom line: Copilot finally feels like a programmable teammate, not just a chat box glued to Bing.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Graph Docs",
+    "url": "https://docs.microsoft.com/en-us/graph/"
+   },
+   {
+    "title": "TechCrunch: Microsoft’s Copilot Expands Deeper into Enterprise Data",
+    "url": "https://techcrunch.com/2026/07/30/microsoft-copilot-graph-enterprise"
+   },
+   {
+    "title": "ZDNet: Microsoft’s New Graph API Powers Contextual AI",
+    "url": "https://www.zdnet.com/article/microsoft-graph-copilot-launch/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-01-semiconductors-tsmc-2nm-ai-logic",
+  "date": "2026-08-01",
+  "category": "Semiconductors",
+  "title": "TSMC’s 2nm Logic Ramp: AI Chips Get Leaner, Faster, Cooler",
+  "summary": "TSMC’s mass production of 2nm logic is finally live, and early benchmarks show AI accelerators are getting a major leap in perf-per-watt. For engineers, this means rethink your memory and data pipeline assumptions.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>2nm isn’t just a marketing milestone. TSMC’s new process, with nanosheet transistors and backside power delivery, delivers up to 25% higher transistor density and 15% improved power efficiency compared to their 3nm node. The first customers? Every hyperscaler and AI chip vendor you know: NVIDIA, AMD, Google TPU team, and even some startups. Early silicon shows AI inference accelerators running cooler (sub-80W for powerful edge devices) and faster (20% lower latency for LLM token generation).</p><h2>Why Engineers Should Care</h2><p>Smaller nodes aren’t just about cramming more logic into the die. 2nm finally solves the ‘hotspot’ problem that plagues AI chips at scale. With backside power delivery, engineers can push higher clock speeds without melting their boards. And denser logic means you can move more workloads local to the chip—think real-time tokenization, edge vision, or even in-memory vector search. The memory pipeline bottlenecks are shifting, so software teams need to tune their inference stacks and exploit lower-level concurrency.</p><strong>How to Prepare:</strong><p>If you’re building for AI hardware—especially edge or datacenter—you’ll need to rethink batching, pipeline stalls, and even how you partition models. The power savings mean you can deploy larger models to smaller devices. But beware: debugging timing issues is going to get trickier as clocks ramp higher.</p><p>This isn’t a hype cycle—it’s a fundamental shift in how engineers build and deploy AI at scale.</p>",
+  "sources": [
+   {
+    "title": "EE Times: TSMC 2nm Goes Live",
+    "url": "https://www.eetimes.com/tsmc-2nm-mass-production/"
+   },
+   {
+    "title": "AnandTech: Early 2nm Benchmarks—AI Accelerator Edition",
+    "url": "https://www.anandtech.com/show/19754/tsmc-2nm-ai-chip-benchmarks"
+   },
+   {
+    "title": "SemiAnalysis: TSMC’s 2nm and the Backside Power Revolution",
+    "url": "https://www.semianalysis.com/tsmc-2nm-backside-power/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-01-llm-research-anthropic-agent-evaluator",
+  "date": "2026-08-01",
+  "category": "LLM Research",
+  "title": "Anthropic’s AgentEval: Automated Evaluation for AI Agents Moves the Needle",
+  "summary": "Anthropic rolled out AgentEval, an open-source toolkit for evaluating AI agent performance across reasoning, action, and safety metrics. Engineers finally get reproducible benchmarks for multi-agent systems.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f1b1b?w=1200&h=600&fit=crop",
+  "body": "<p>Evaluating AI agents is a pain—especially when you need to measure performance on complex, multi-step tasks. Anthropic’s new AgentEval toolkit aims to change that: it lets developers benchmark agents (LLMs, tool-using bots, API wranglers) across reasoning, factual accuracy, action-taking ability, and even safety. The toolkit includes synthetic task generators, reference evaluators, and scenario-based scorecards.</p><h2>Why This Matters for Engineers</h2><p>Until now, agent benchmarks were ad-hoc: random spreadsheets, custom eval scripts, and ‘does it work for my niche workflow?’ With AgentEval, you can run reproducible tests for reasoning chains, multi-agent collaboration, and tool use. It ships with YAML configs, supports plug-in evaluators, and even integrates with RLHF pipelines. This means you can iterate faster, compare models across releases, and actually measure whether your latest agent update isn’t just chatty but smarter and safer.</p><strong>Impact:</strong><p>AgentEval is open source, so you can fork and extend it. Anthropic is betting that reproducible, scenario-based evaluation will drive not only safer but more capable agents. If you care about LLMs moving beyond text—to real-world action—this is the toolkit to watch.</p><p>Bottom line: engineering teams now have a standard for evaluating agent-driven workflows, not just prompt completion. This unlocks faster, more credible iteration and deployment.</p>",
+  "sources": [
+   {
+    "title": "Anthropic AgentEval Github",
+    "url": "https://github.com/anthropic/Agenteval"
+   },
+   {
+    "title": "Arxiv: Automated Evaluation of Multi-Agent Systems",
+    "url": "https://arxiv.org/abs/2607.00017"
+   },
+   {
+    "title": "The Verge: Anthropic’s AgentEval Sets New Standard for AI Agent Testing",
+    "url": "https://www.theverge.com/2026/07/27/anthropic-agent-eval-toolkit"
+   }
+  ]
  }
 ]
