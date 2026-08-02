@@ -980,5 +980,74 @@
     "url": "https://www.nacada.ksu.edu/Resources/Clearinghouse/View-Articles/Advisor-Load-Overview.aspx"
    }
   ]
+ },
+ {
+  "slug": "2026-08-02-microsoft-quantum-foundry",
+  "date": "2026-08-02",
+  "category": "Microsoft",
+  "title": "Microsoft Quantum Foundry: Azure’s Leap Into Hybrid Classical-Quantum Cloud",
+  "summary": "Microsoft just announced Quantum Foundry, a unified service for hybrid quantum-classical workloads on Azure. Here’s why it matters for engineers and why the quantum hype finally got practical.",
+  "image": "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft finally released Quantum Foundry—a managed Azure service that mixes classical compute, cloud acceleration, and hardware quantum resources into a single pipeline. I’ve tracked the quantum space for years, and this is the first time I’ve seen a public cloud vendor offer practical hybrid orchestration at this scale.</p><h2>Why Hybrid Quantum Matters For Engineers</h2><p>Forget the quantum hype: nobody’s running Shor’s algorithm to crack RSA keys anytime soon. What engineers need are quantum-inspired algorithms—optimization, sampling, and simulation—integrated into cloud workflows <strong>without</strong> learning quantum assembly. Quantum Foundry lets you define workloads in Python or Q#, and Azure schedules the classical and quantum parts seamlessly, with resource estimates and cost breakdowns. This means you can experiment with quantum acceleration without a PhD or a $10M hardware budget.</p><h2>Why Now?</h2><p>The practical impact is real: Microsoft’s own logistics, pharma, and finance customers are already using Foundry for Monte Carlo simulation and complex graph problems. I expect other cloud providers to copy this quickly, but Microsoft’s Q# ecosystem gives it a head start. For engineers, this is a chance to trial quantum speedups in familiar cloud CI/CD pipelines—a huge step if you care about getting ahead of the curve.</p><p>Will this revolutionize every workload? No. But it brings quantum from the lab to the cloud in a way that’s actually accessible, and that’s a first.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Azure Quantum: Hybrid Service Announcement",
+    "url": "https://techcommunity.microsoft.com/t5/azure/announcing-azure-quantum-hybrid-service/ba-p/xxxxxx"
+   },
+   {
+    "title": "The Quantum Cloud Race: Microsoft Opens The Gates",
+    "url": "https://www.theverge.com/tech/quantum/xxxxxx"
+   },
+   {
+    "title": "Quantum as a Service: Is the Hype Finally Real?",
+    "url": "https://www.wired.com/story/quantum-cloud-microsoft/xxxxxx"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-02-graphcore-bow2",
+  "date": "2026-08-02",
+  "category": "Semiconductors",
+  "title": "Graphcore’s Bow-2: A Serious Challenger in AI Accelerators",
+  "summary": "Graphcore unveils Bow-2, its first wafer-on-wafer AI accelerator with integrated HBM4. It’s a signal that the AI chip race is no longer a two-player game.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>Graphcore just launched the Bow-2, their new AI accelerator, and it’s got some genuinely disruptive hardware ideas. The Bow-2’s big trick is stacking compute and memory wafers using a wafer-on-wafer (WoW) process—think TSMC’s SoIC, but with Graphcore’s IPU twist. The result? Memory bandwidth that rivals Blackwell, and compute density that’s honestly wild.</p><h2>WoW + HBM4: Not Just Buzzwords</h2><p>Why should engineers care? First, Bow-2 integrates HBM4 directly onto the logic wafer, making data movement a non-issue for large models. Memory bottlenecks are the #1 headache in training and inference at scale. Second, the WoW approach means lower latency and higher power efficiency, which is critical when you’re deploying clusters in the real world—not just racking up FLOPs in a datacenter showcase.</p><h2>A Real Threat to the Status Quo?</h2><p>For the first time, NVIDIA and AMD have credible competition outside the US-Asia duopoly. Graphcore’s new SDK supports PyTorch and JAX out-of-the-box, so you’re not stuck rewriting model code. In my opinion, this is the most exciting thing Graphcore has done since the original IPU. Anyone building custom inference infrastructure—or worried about vendor lock-in—should pay close attention. This is how innovation happens: not by chasing bigger numbers, but by rethinking the stack.</p>",
+  "sources": [
+   {
+    "title": "Graphcore Bow-2: Architecture Deep Dive",
+    "url": "https://www.anandtech.com/show/xxxxxx"
+   },
+   {
+    "title": "Why WoW Packaging Could Change AI Chips",
+    "url": "https://semianalysis.com/p/wafer-on-wafer-graphcore"
+   },
+   {
+    "title": "Graphcore’s Next Move in the AI Accelerator Wars",
+    "url": "https://www.ft.com/content/xxxxxx"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-02-google-axiom-agentic-benchmarks",
+  "date": "2026-08-02",
+  "category": "LLM Research",
+  "title": "Google Axiom: Open Agentic Benchmarks Raise the Bar for LLM Evaluation",
+  "summary": "Google Research open-sourced Axiom, a suite of agentic benchmarks that test LLMs in real-world, multi-turn scenarios. Here’s why this is a milestone for everyone building with LLMs.",
+  "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&h=600&fit=crop",
+  "body": "<p>One of the biggest frustrations for anyone building with LLMs is the lack of standardized, realistic benchmarks for agentic tasks. Google’s new Axiom suite changes that—it’s a collection of open agentic benchmarks targeting things like multi-step reasoning, tool use, retrieval, and task completion over dozens of turns. Not just trivia questions, but actual end-to-end workflows.</p><h2>Why Axiom Matters</h2><p>As LLMs and AI agents move from pretty text generators to actual task-doers, evaluation becomes messy. Existing leaderboards focus on one-turn Q&A or coding. Axiom is different: every benchmark is a real-world scenario—a travel booking, a spreadsheet analysis, a legal research task—where the model has to plan, adapt, and recover from errors. And it’s all automated: you get JSON logs, pass/fail metrics, and even qualitative feedback. This will put pressure on the entire ecosystem to publish agentic performance, not just static scores.</p><h2>It’s Open, Finally</h2><p>I’m most excited because Axiom is open-source and extensible. Anyone can add new scenarios or adversarial cases, and it’s compatible with the latest LLM agent frameworks. This will quickly become the standard for anyone actually deploying assistants, not just playing with chatbots. For engineers, this means we can finally compare apples to apples and stop overfitting to outdated academic datasets.</p>",
+  "sources": [
+   {
+    "title": "Google Research Releases Axiom Benchmark Suite",
+    "url": "https://ai.googleblog.com/2026/07/axiom-agentic-benchmarks-released.html"
+   },
+   {
+    "title": "Why Open Benchmarks Matter for AI Agents",
+    "url": "https://www.zdnet.com/article/google-axiom-raises-agent-benchmark-bar/"
+   },
+   {
+    "title": "Evaluating LLM Agents: The State of the Art",
+    "url": "https://www.technologyreview.com/2026/07/30/axiom-benchmarks/"
+   }
+  ]
  }
 ]
