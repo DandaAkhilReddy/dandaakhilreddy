@@ -562,11 +562,13 @@
                 <li><a href="browse.html#skills">Skills</a></li>
                 <li><a href="browse.html#daily-shipping">Projects</a></li>
                 <li><a href="browse.html#certifications">Certifications</a></li>
+                <li><a href="https://dandaakhilreddy.com/blog/index.html">Blog</a></li>
                 <li><a href="about.html" class="active">About Me</a></li>
                 <li><a href="browse.html#contact">Hire Me</a></li>
             </ul>
         </div>
         <div class="nav-right">
+            <div class="hamburger" id="rf-hamburger"><span></span><span></span><span></span></div>
             <a href="browse.html" class="profile-icon">
                 <img src="https://i.imgur.com/YQK3Qby.png" alt="Profile" class="nav-profile-img">
             </a>
@@ -596,11 +598,13 @@
             <div class="bio-content">
                 <h2>THE JOURNEY</h2>
                 <p>
-                    I'm a <strong>Software Engineer II at Microsoft</strong> with <span class="highlight">5 years</span> of experience building
-                    distributed backend services and high-impact applications. Previously at <strong>Amazon</strong> and <strong>HHA Medicine</strong>.
-                    With a Master's degree from <strong>Texas A&M University</strong>, I specialize in
-                    <span class="highlight">Distributed Systems</span>, <span class="highlight">C#/.NET</span>, and
-                    <span class="highlight">Cloud Architecture on Azure</span>.
+                    I'm a <strong>Software Engineer II at Microsoft</strong> with <span class="highlight">5 years</span> of experience
+                    architecting and scaling <span class="highlight">distributed systems</span>. Right now I'm building a
+                    <span class="highlight">globally distributed lookup service</span> on Azure — global traffic routing across regions,
+                    horizontal scaling, automatic failover, and circuit-breaker resilience. Previously I scaled high-throughput systems at
+                    <strong>Amazon</strong> (100K+ requests/sec) and <strong>HHA Medicine</strong>. Master's in Computer Science from
+                    <strong>Texas A&M University</strong>, specializing in <span class="highlight">distributed systems</span> and
+                    <span class="highlight">cloud architecture</span>.
                 </p>
                 <p>
                     But engineering isn't my only passion. I'm also a <strong>professional cricket player</strong>,
@@ -795,6 +799,24 @@
             if (e.key === 'ArrowLeft') navigateLightbox(-1);
             if (e.key === 'ArrowRight') navigateLightbox(1);
         });
+    </script>
+
+    <script>
+      (function () {
+        var hb = document.getElementById("rf-hamburger");
+        var menu = document.querySelector(".nav-menu");
+        if (!hb || !menu) return;
+        hb.addEventListener("click", function () {
+          hb.classList.toggle("active");
+          menu.classList.toggle("active");
+        });
+        menu.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            hb.classList.remove("active");
+            menu.classList.remove("active");
+          });
+        });
+      })();
     </script>
 </body>
 </html>
