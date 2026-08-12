@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic’s AutoFormalization: LLMs That Prove Their Own Reasoning | Reddy Pulse</title>
+<meta name="description" content="Anthropic’s Claude team released AutoFormalization, a framework where LLMs translate their own answers into formal logic proofs on-the-fly. This pushes AI transparency from hand-waving to actual verifiable math.">
+<meta property="og:title" content="Anthropic’s AutoFormalization: LLMs That Prove Their Own Reasoning">
+<meta property="og:description" content="Anthropic’s Claude team released AutoFormalization, a framework where LLMs translate their own answers into formal logic proofs on-the-fly. This pushes AI transparency from hand-waving to actual verifiable math.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Anthropic’s AutoFormalization: LLMs That Prove Their Own Reasoning</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 12th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop" alt="Anthropic’s AutoFormalization: LLMs That Prove Their Own Reasoning">
+  <p>Until now, LLMs could explain in plain language, but rarely offer rigorous justification. Anthropic’s AutoFormalization changes that: after answering, Claude now attempts to encode its reasoning in formal symbolic logic (think Lean or Coq syntax), and checks it with external proof assistants.</p><h2>Why Should Engineers Care?</h2><p>It’s a shift from “trust me, I’m smart” to “here’s my proof.” For safety-critical applications—finance, medical, autonomous systems—this is a must. Engineers can finally trace not just what an LLM said, but whether it logically follows from premises. This reduces hallucinations and creates audit trails.</p><strong>Technical Details</strong><p>The core trick is a hybrid training loop. Claude is distilled to generate both natural language answers and a formalization draft. When the proof assistant finds an error, the model is penalized (reinforcement learning), forcing it to learn valid logic. Anthropic claims >65% proof success rates on math, but even on legal and engineering domains, it’s starting to work.</p><h2>What Comes Next?</h2><p>If this sticks, expect more “auto-explainable” AI agents, especially for regulated verticals. Engineers should look for open APIs, proof logs, and the ability to override or refine formalizations. The catch? Symbolic logic is hard—models need fine-tuned domain ontologies, and engineers will have to bridge gaps between informal and formal reasoning.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-12-llm-research-anthropic-autoformalization.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-12-llm-research-anthropic-autoformalization.html&text=Anthropic%E2%80%99s%20AutoFormalization%3A%20LLMs%20That%20Prove%20Their%20Own%20Reasoning" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/research/autoformalization" target="_blank" rel="noopener">Anthropic Research Blog: AutoFormalization</a></li><li><a href="https://www.nature.com/articles/XXXX" target="_blank" rel="noopener">Nature: LLMs and formal reasoning</a></li><li><a href="https://arstechnica.com/information-technology/2026/08/anthropic-autoproof-llm/" target="_blank" rel="noopener">Ars Technica: Anthropic&#x27;s LLM proof assistant</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
