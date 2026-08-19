@@ -2456,5 +2456,62 @@
     "url": "https://www.naspo.org/data"
    }
   ]
+ },
+ {
+  "slug": "2026-08-19-microsoft-foundation-model-api-ga",
+  "date": "2026-08-19",
+  "category": "Microsoft",
+  "title": "Microsoft Rolls Out Unified Foundation Model API: What Actually Changes for Engineers?",
+  "summary": "Microsoft has just taken its foundation model API stack general availability across Azure and GitHub, promising a single interface for GPT-5, Phi-3, vision, and code models. Here’s why this unified API actually matters for day-to-day engineering.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft has quietly dropped a bomb for engineers: the Unified Foundation Model API is now generally available, covering everything from OpenAI's GPT-5 to Microsoft’s own Phi-3, vision models, and code-specific LLMs. You get one endpoint on Azure or GitHub, unified billing, and a schema that doesn’t break every time a new model lands. On paper, sounds like the classic 'one interface to rule them all.' But for engineers, this is not just another wrapper—it's a legit change in how you build and deploy real AI features.</p><h2>Why This Matters</h2><p>First, it nukes the headache of juggling different SDKs, rate limits, and output formats. No more yak-shaving when swapping between text, code, or image models. The API normalizes quirks—prompt structure, streaming, tool-calling—across model families. If you’re building multi-modal copilots or chaining models, this means way less glue code and fewer 'surprise' failures when a model update drops.</p><p>The real kicker is the new <strong>adaptive routing</strong> feature: you can set latency/cost/accuracy tradeoffs, and Microsoft will automatically select the right model for each call. For example, in a chat app, you can route quick replies to Phi-3 Mini, longform generation to GPT-5 Turbo, and image analysis to Florence-2, <em>without changing your code</em>. Think of it as 'quality of service' for AI, finally at the API layer.</p><h2>The Caveat</h2><p>The tradeoff? You’re betting on Microsoft’s orchestration logic. If they botch a routing rule or roll out a buggy model, your app could take the hit. So, I expect most teams will want to keep explicit control (thankfully you still can), but for fast prototyping or internal apps, this is a win.</p><p>Bottom line: this is classic Microsoft's playbook—turn AI infrastructure into boring, reliable plumbing. And for once, boring is exactly what I want as an engineer shipping production code.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Azure OpenAI Service: New Foundation Model API Docs",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/"
+   },
+   {
+    "title": "TechCrunch: Microsoft Unifies Model Access Across Azure and GitHub",
+    "url": "https://techcrunch.com/2026/08/15/microsoft-azure-github-unified-model-api"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-19-tsmc-1-6nm-gamma-process",
+  "date": "2026-08-19",
+  "category": "Semiconductors",
+  "title": "TSMC 1.6nm Gamma Process: The Last Planar Node?",
+  "summary": "TSMC just unveiled their 1.6nm ‘Gamma’ node, possibly the last planar transistor before full-stack vertical nanosheets become standard for AI hardware. Here’s why this process matters, and what it really means for the next wave of AI chips.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>The semiconductor world is obsessed with shrinkage, but today’s TSMC 1.6nm ‘Gamma’ process is more than another decimal drop—it’s a watershed. This could be the final mainstream planar process before vertical transistors take over. For engineers building AI hardware, this means one last playground for wringing out efficiency before leaping into the unknown of 3D-nanosheet designs.</p><h2>Why This Node Matters</h2><p>Gamma isn’t about raw density alone (though it packs in ~350 million transistors/mm²). The big deal is the new <strong>strained-channel engineering</strong>, which lets TSMC squeeze better current flow and reduce leakage at already absurdly tiny geometries. That means less heat, lower switching noise, and—crucially—better performance-per-watt for everything from AI accelerators to edge ML hardware.</p><p>But here’s the kicker: Gamma was co-developed with top AI chip teams (rumor has it NVIDIA and AMD already have tape-outs). The process is tuned for ultra-wide, high-bandwidth SRAM arrays and supports the next generation of HBM integration. If you care about AI inference at scale, this is not just a die shrink—it’s a direct enabler of faster, denser memory right next to your compute blocks.</p><h2>Beyond Gamma: The Vertical Leap</h2><p>Every engineer knows planar scaling is on borrowed time. The roadmap after Gamma? Full-stack vertical nanosheets and buried power rails. Those will mean new design tools, new failure modes, and a fresh round of hardware headaches. So if you want proven reliability for the next 2-3 years, Gamma is probably the last ‘safe’ node before everything changes.</p><p>Engineers: get ready to wring every ounce out of this node, because the design rules you learned over the last decade are about to get thrown out the window.</p>",
+  "sources": [
+   {
+    "title": "TSMC Announces Gamma 1.6nm Node for Advanced AI Hardware",
+    "url": "https://www.anandtech.com/show/19337/tsmc-gamma-16nm-node"
+   },
+   {
+    "title": "EE Times: TSMC 1.6nm Process Unveiled",
+    "url": "https://www.eetimes.com/tsmc-1-6nm-gamma-ushers-in-final-planar-era/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-19-anthropic-haiku-prompting",
+  "date": "2026-08-19",
+  "category": "Anthropic",
+  "title": "Anthropic's Haiku Prompting: Making LLMs Explain Themselves, Line by Line",
+  "summary": "Anthropic has released 'Haiku Prompting,' a new API feature that forces Claude models to generate stepwise, auditable chains of reasoning as they answer. Here’s how this could (finally) make LLM outputs less of a black box.",
+  "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop",
+  "body": "<p>LLMs are notorious for giving you answers with confidence but no receipts. Anthropic’s latest drop—<strong>Haiku Prompting</strong>—tries to change that. The premise? Every answer must be built, visibly, line by line, with each step justified in natural language. It’s like getting to see the model’s mental notebook as it works.</p><h2>What’s New</h2><p>With the Haiku Prompting API, you can force Claude to output a chain-of-thought that is both <em>structured</em> and <em>audit-friendly</em>—think: “Step 1: Parse the question. Step 2: Fetch relevant facts. Step 3: Combine evidence…” The API can even enforce token-level constraints, so devs can guarantee that each step is explicit, not just implied by context.</p><p>Why does this matter? Because as we use LLMs for code reviews, legal work, or critical decisions, “just trust the model” doesn’t fly. Haiku Prompting gives you a log of how each answer was constructed. You can search for where it hallucinated, skipped a key fact, or made a logic leap. For internal tools or regulated industries, this is a lifeline.</p><h2>Downsides and Friction</h2><p>Don’t expect miracles: forcing models to show their work makes them slower and more verbose. There’s a real UX cost. But for safety-critical or high-stakes workflows, the tradeoff is worth it. And it’s the first real answer I’ve seen to the problem of “explainability on demand”—not just post-hoc, but built in from the first token.</p><p>Engineers: if you’re shipping anything where auditing matters, play with Haiku Prompting. It’s not perfect, but it pushes LLMs one step closer to being tools you can trust—not just black-box oracles.</p>",
+  "sources": [
+   {
+    "title": "Anthropic: Haiku Prompting API Launch",
+    "url": "https://www.anthropic.com/news/haiku-prompting"
+   },
+   {
+    "title": "VentureBeat: Anthropic Brings Stepwise Reasoning to Claude",
+    "url": "https://venturebeat.com/ai/anthropic-haiku-prompting-claude-audit/"
+   }
+  ]
  }
 ]
