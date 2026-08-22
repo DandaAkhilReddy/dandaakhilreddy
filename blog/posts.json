@@ -2720,5 +2720,62 @@
     "url": "https://www.gao.gov/products/gao-23-104859"
    }
   ]
+ },
+ {
+  "slug": "2026-08-22-microsoft-fabric-security-graph-api",
+  "date": "2026-08-22",
+  "category": "Microsoft",
+  "title": "Microsoft Fabric’s Security Graph API: Real-Time Threat Intelligence for Every App",
+  "summary": "Microsoft just rolled out Security Graph API for Fabric, opening up real-time threat intelligence to any SaaS or internal tool. Here’s why engineers should pay attention—data pipelines and security postures are about to converge.",
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft’s Fabric platform just got a heavyweight addition: the Security Graph API. This isn’t just Microsoft using its own threat intelligence for its own cloud—it’s Fabric’s data mesh, now exposing real-time global threat data to any connected app. Want to know if a login looks fishy, or if a document is being exfiltrated by a known threat actor, as it happens? Now you can stream this context directly into your app’s event pipeline.</p><p><strong>Why does this matter for engineers?</strong> Security is finally becoming an API-first citizen, not some bolt-on dashboard or background alert. Fabric’s event-driven data model means you can bake threat signals right into your business logic. Think auto-quarantining a compromised user, or real-time anomaly detection for sensitive data access—without having to build or maintain your own threat intelligence lake.</p><h2>From Isolated Silos to Streaming Context</h2><p>The big win here is the <strong>integration pattern</strong>. The API streams threat signals as events—compatible with Fabric’s own event mesh or any system with a webhook endpoint. This opens up not just dashboards, but actual programmable security. Engineers can consume threat events, correlate with business data, and automate responses—all in code, no more swivel-chairing between SIEMs and line-of-business apps.</p><p>I’m betting this will create a new ecosystem of security-driven integrations. Think about workflow engines that only approve wire transfers if threat posture is clean, or productivity tools that auto-restrict document sharing based on live risk scores. Security teams get programmable hooks, and product engineers get to build with threat context as a first-class primitive. This is the direction modern cloud security needs to evolve.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Fabric integrates security data for smarter apps",
+    "url": "https://techcrunch.com/2026/08/21/microsoft-fabric-security-graph-api"
+   },
+   {
+    "title": "Fabric Security Graph documentation",
+    "url": "https://learn.microsoft.com/en-us/fabric/security-graph-api"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-22-semiconductor-amd-epyc-x3d-ai-hbm4",
+  "date": "2026-08-22",
+  "category": "Semiconductors",
+  "title": "AMD’s EPYC X3D AI: HBM4 and 3D V-Cache Go Mainstream for AI Inference",
+  "summary": "AMD just dropped EPYC X3D AI chips with integrated HBM4 and stacked 3D V-Cache—an architecture tipping point that forces every engineer to rethink memory as the bottleneck for AI workloads.",
+  "image": "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop",
+  "body": "<p>AMD has put HBM4 (High Bandwidth Memory gen 4) and 3D V-Cache on their new EPYC X3D AI CPUs—and it’s not just a spec bump. It’s a tectonic shift in how compute and memory interact for AI inference. With up to 2TB/s memory bandwidth <em>on-package</em> and 1.5GB L3 cache per socket, latency for model inference drops off a cliff. AI models that thrashed DRAM before can now live almost entirely in cache or HBM, which means your bottleneck is finally compute, not memory bandwidth.</p><h2>Why Engineers Should Care</h2><p>This isn’t just for academic ML engineers. If you’re building anything from recommendation engines to real-time analytics, memory locality is now the biggest determinant of throughput and cost. The move to HBM4 and massive stacked L3 means you can host larger models per socket, with lower power and fewer nodes—so your infrastructure gets radically simpler.</p><p>Another critical point: <strong>Programmability</strong>. AMD’s ROCm stack and PyTorch integration now expose memory hierarchy as first-class citizens. You can hand-place weights in cache (L3 vs HBM), or even fuse ops that exploit bandwidth locality. That’s a huge deal for fine-tuned deployments.</p><p>Now that HBM4 is on mainstream server CPUs (not just GPUs), classic CPU-based inference is relevant again—especially for low-latency, high-concurrency tasks where GPUs are overkill. I expect to see a whole wave of inference engines, vector DBs, and edge AI appliances built around this memory-centric design. The age of treating memory as a flat space is officially over.</p>",
+  "sources": [
+   {
+    "title": "AMD Unveils EPYC X3D AI Processors with HBM4",
+    "url": "https://www.anandtech.com/show/20622/amd-epyc-x3d-ai-hbm4"
+   },
+   {
+    "title": "HBM4 and AI Workloads: What Changes?",
+    "url": "https://semianalysis.com/hbm4-epyc-x3d-ai"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-22-llm-research-google-gemini-agent-memories",
+  "date": "2026-08-22",
+  "category": "LLM Research",
+  "title": "Google’s Gemini Agent Memories: Finally, Persistent Context in LLM Chains",
+  "summary": "Google Research unveiled ‘Agent Memories’ for Gemini—the first production-scale mechanism for LLMs to recall, update, and reason over persistent episodic memory across tasks. Here’s why this is a leap for agentic automation.",
+  "image": "https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?w=1200&h=600&fit=crop",
+  "body": "<p>Google just released their Agent Memories architecture for Gemini, and it’s a genuine breakthrough in LLM chain design. Until now, stateful agents were mostly a patchwork of vector stores and hacky context windows. With Agent Memories, each Gemini instance gets its own structured episodic memory—think of it as a continuously updated, queryable database of interactions, previous plans, and world state.</p><h2>Why This Matters for Engineers</h2><p>This is not just bigger context windows or smarter summarization. We’re talking about production-ready, persistent memory that agents can read, update, and reason about over hours or even days of operation. Imagine a customer support bot that actually learns from every conversation, remembers previous issues, and adapts its strategies in real-time.</p><p>Agent Memories expose a native API for memory operations—add, retrieve, update, forget—fully integrated into Gemini’s reasoning step. Engineers can define memory schemas (e.g. user preferences, task plans, known entities) and the agent actively curates which facts to retain or drop. It’s a step-change in reliability for multi-step workflows, planning, and autonomous task management.</p><p><strong>Why am I excited?</strong> Persistent memory is the missing link for serious agentic automation. No more context-stuffing or external state hacks; your agents get a real, evolving memory. I expect this to unlock whole new classes of workflows in RPA, ops automation, and even creative tools. Engineers finally get a foundation for LLM agents that can grow, learn, and act over time.</p>",
+  "sources": [
+   {
+    "title": "Google Research: Agent Memories for Gemini",
+    "url": "https://ai.googleblog.com/2026/08/agent-memories-gemini"
+   },
+   {
+    "title": "Persistent Memory in LLM Agents: What’s New?",
+    "url": "https://arxiv.org/abs/2608.12222"
+   }
+  ]
  }
 ]
