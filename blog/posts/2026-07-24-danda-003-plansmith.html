@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #003 — PlanSmith: AI Urban Permit Agents to Slash Small Business Opening Delays | Reddy Pulse</title>
+<meta name="description" content="Local business permitting is a bureaucratic nightmare that delays or kills thousands of small business dreams every month. PlanSmith is an agentic AI platform that automates city permit workflows, guiding entrepreneurs from application to approval in days, not months.">
+<meta property="og:title" content="DANDA #003 — PlanSmith: AI Urban Permit Agents to Slash Small Business Opening Delays">
+<meta property="og:description" content="Local business permitting is a bureaucratic nightmare that delays or kills thousands of small business dreams every month. PlanSmith is an agentic AI platform that automates city permit workflows, guiding entrepreneurs from application to approval in days, not months.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #003 — PlanSmith: AI Urban Permit Agents to Slash Small Business Opening Delays</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 24th July, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #003 — PlanSmith: AI Urban Permit Agents to Slash Small Business Opening Delays">
+  <p>Launching a brick-and-mortar business in the U.S. means navigating a thicket of city and county permits—zoning, signage, fire, health, and more. The process is cryptic, slow, and critically under-digitized. Every week of delay bleeds capital from aspiring owners, and the maze is so daunting that many never even open their doors. It’s time for a digital layer that automates the journey to "permitted and open" for Main Street America.</p>
+
+<h2>The problem</h2>
+<p>There are about 4.7 million new business applications filed annually in the U.S., with roughly 600,000 aiming for physical locations. For these, permitting is a top pain: the average time to secure required permits exceeds 90 days in most cities. In NYC, 48% of small business owners cite permits and inspections as their number one bottleneck, costing new businesses over $10,000 in direct expenses and lost revenue per month of delay. Nationwide, over 30% of retail and hospitality startups report abandoning or deferring locations due to permitting complexity or timelines.</p>
+
+<h2>The idea: PlanSmith</h2>
+<p>PlanSmith is an AI-powered agentic platform that acts as a full-stack permitting copilot. For any city and business type, it automatically determines your required permits, fills out forms with conversational data intake, collates supporting documents, submits to city portals, and chases follow-ups. It manages clarifications, schedules required inspections, and notifies owners of next steps—all with an audit trail. For local governments, it offers an API to receive digital applications and structured data, speeding up reviews. PlanSmith’s wedge: tackle the 5 most common permit flows (food service, retail, fitness, salons, daycare) in the 30 largest U.S. metros, with rapid expansion via city onboarding playbooks.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius:12px' width='100%' height='100%'>
+  <defs>
+    <marker id='arrow' markerWidth='8' markerHeight='8' refX='8' refY='4' orient='auto' markerUnits='strokeWidth'>
+      <path d='M0,0 L8,4 L0,8 Z' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <rect x='40' y='60' width='120' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='100' y='95' text-anchor='middle' fill='#f5c518' font-size='16'>Inputs</text>
+  <text x='100' y='115' text-anchor='middle' fill='#fff' font-size='12'>Business Owner, Docs, Chat</text>
+
+  <rect x='200' y='60' width='130' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='265' y='95' text-anchor='middle' fill='#f5c518' font-size='16'>Ingestion</text>
+  <text x='265' y='115' text-anchor='middle' fill='#fff' font-size='12'>OCR, NLP, Data Intake</text>
+
+  <rect x='370' y='40' width='150' height='100' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='445' y='90' text-anchor='middle' fill='#f5c518' font-size='16'>Permit Graph & Memory</text>
+  <text x='445' y='110' text-anchor='middle' fill='#fff' font-size='12'>Jurisdiction Rules, Case State</text>
+
+  <rect x='560' y='60' width='130' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='625' y='95' text-anchor='middle' fill='#f5c518' font-size='16'>Agent Orchestrator</text>
+  <text x='625' y='115' text-anchor='middle' fill='#fff' font-size='12'>Apply, Track, Clarify</text>
+
+  <rect x='370' y='170' width='150' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='445' y='200' text-anchor='middle' fill='#f5c518' font-size='16'>Human Gate</text>
+  <text x='445' y='220' text-anchor='middle' fill='#fff' font-size='12'>User Review, Confirm</text>
+
+  <rect x='560' y='170' width='130' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='625' y='200' text-anchor='middle' fill='#f5c518' font-size='16'>Action Layer</text>
+  <text x='625' y='220' text-anchor='middle' fill='#fff' font-size='12'>Submit, Schedule, Notify, API</text>
+
+  <line x1='160' y1='90' x2='200' y2='90' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='330' y1='90' x2='370' y2='90' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='520' y1='90' x2='560' y2='90' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='445' y1='140' x2='445' y2='170' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='520' y1='200' x2='560' y2='200' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+
+  <rect x='70' y='350' width='620' height='60' fill='#1a1a1a' stroke='#f5c518' stroke-width='2'/>
+  <text x='380' y='380' text-anchor='middle' fill='#f5c518' font-size='16'>City/Gov Portals, User Dashboards, Email/SMS</text>
+</svg>
+<p>Owners start by answering plain-English questions and uploading any lease, menu, or floorplan. The Ingestion Layer parses, extracts, and normalizes applicant data. The Permit Graph & Memory engine matches business type and location to up-to-date city/county permit requirements and tracks application state. Agent Orchestrator assembles forms, fills, and files them, then tracks city responses, clarification needs, and requests human confirmation at key steps (Human Gate). On approval, the Action Layer submits docs, schedules inspections, and updates both the city and the business via APIs, dashboards, and notifications.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Focus on restaurants/cafes in NYC, LA, and Houston—high volume, well-documented, and pain-prone. <b>Stack:</b> Langchain/semantic memory, city permit schema DB, integrations with city e-permit portals and calendar APIs, OpenAI/Anthropic for LLM, React + Supabase for dashboard, Twilio for notifications. <b>Pricing:</b> $399 per application (success fee) or monthly $99 subscription for multi-location/franchise users. Upsell: "done-for-you" concierge review and city push for $799.</p>
+
+<h2>Why now</h2>
+<p>City governments are under pressure to support economic revitalization, digitize legacy workflows, and streamline small business creation. They want API-friendly applications and lower staff burden. Meanwhile, LLM agents can comprehend complex jurisdictional requirements, generate compliant forms, and manage multi-party communications—something no static online portal can do. Small businesses are desperate for speed and clarity. AI is finally good enough, and the demand is massive and urgent.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-24-danda-003-plansmith.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-24-danda-003-plansmith.html&text=DANDA%20%23003%20%E2%80%94%20PlanSmith%3A%20AI%20Urban%20Permit%20Agents%20to%20Slash%20Small%20Business%20Opening%20Delays" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.census.gov/econ/bfs/" target="_blank" rel="noopener">Business Formation Statistics - U.S. Census Bureau</a></li><li><a href="https://www1.nyc.gov/assets/smallbizfirst/downloads/pdf/SmallBusinessFirstReport.pdf" target="_blank" rel="noopener">NYC Small Business First Report (2023)</a></li><li><a href="https://www.nfib.com/assets/NFIB-Problems-and-Priorities-Report-2024.pdf" target="_blank" rel="noopener">NFIB Small Business Problems and Priorities (2024)</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

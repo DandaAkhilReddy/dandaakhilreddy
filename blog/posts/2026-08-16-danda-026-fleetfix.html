@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #026 — FleetFix: AI Agents to End Vehicle Maintenance Disasters for Small Fleets | Reddy Pulse</title>
+<meta name="description" content="FleetFix uses agentic automation to predict, coordinate, and execute maintenance for commercial vehicle fleets—slashing breakdowns, unplanned downtime, and repair costs for millions of small logistics, delivery, and service businesses.">
+<meta property="og:title" content="DANDA #026 — FleetFix: AI Agents to End Vehicle Maintenance Disasters for Small Fleets">
+<meta property="og:description" content="FleetFix uses agentic automation to predict, coordinate, and execute maintenance for commercial vehicle fleets—slashing breakdowns, unplanned downtime, and repair costs for millions of small logistics, delivery, and service businesses.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1514474959185-146d6b54e7b0?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #026 — FleetFix: AI Agents to End Vehicle Maintenance Disasters for Small Fleets</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 16th August, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1514474959185-146d6b54e7b0?w=1200&h=600&fit=crop" alt="DANDA #026 — FleetFix: AI Agents to End Vehicle Maintenance Disasters for Small Fleets">
+  <p>Every day, millions of small businesses—delivery companies, plumbing outfits, HVAC services, trades, nonprofits—run on fleets of 3 to 100 vehicles. When just one van breaks down, routes miss deadlines, customers are furious, and margins vanish. Yet most small fleets still juggle maintenance with spreadsheets, post-it notes, and a wing and a prayer. AI can close this gap, ending the chaos and cost of preventable vehicle failures.</p>
+
+<h2>The problem</h2>
+<p>The US has 1.2 million commercial fleets, and <strong>over 80% have fewer than 100 vehicles</strong>. Unplanned breakdowns explode costs—<strong>each out-of-service day averages $850–$1,150 in direct and lost revenue</strong>. For small fleets, <strong>60% of maintenance is still reactive</strong>. Fixes come <em>after</em> failures, not before. Predictive maintenance systems exist, but they’re built for giants like FedEx or Amazon with dedicated data teams. Meanwhile, small operators lose an estimated <strong>$23B/year</strong> nationwide to preventable downtime, missed PMs, and scheduling confusion. Most lack digital visibility—<strong>70% of fleets with under 20 vehicles have no telematics or automated system</strong> at all.</p>
+
+<h2>The idea: FleetFix</h2>
+<p>FleetFix is an AI agent platform that slashes fleet downtime for small commercial operators. It auto-ingests vehicle data from telematics/OBD devices, maintenance logs, and schedules; predicts upcoming failures and PMs; and proactively coordinates repair appointments—automatically negotiating with preferred shops, surfacing urgent issues, and keeping every driver, owner, and dispatcher aligned. The agent tracks warranty/recall notices, automates parts ordering, and nudges drivers for quick self-checks—turning random breakdowns into rare, planned pit stops. No data science or fleet IT team needed.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius:16px; width:100%; height:auto; max-width:760px'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='7' markerHeight='7' orient='auto'>
+      <polygon points='0,0 10,5 0,10' fill='#f5c518' />
+    </marker>
+  </defs>
+  <!-- Inputs Layer -->
+  <rect x='30' y='70' width='140' height='80' rx='14' fill='#222'/>
+  <text x='100' y='110' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Inputs</text>
+  <text x='100' y='135' fill='#fff' font-size='13' text-anchor='middle' font-family='sans-serif'>Telematics, Logs, Schedules</text>
+  <!-- Ingestion Layer -->
+  <rect x='200' y='70' width='140' height='80' rx='14' fill='#222'/>
+  <text x='270' y='110' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Ingestion</text>
+  <text x='270' y='135' fill='#fff' font-size='13' text-anchor='middle' font-family='sans-serif'>Device APIs, OCR, Email Sync</text>
+  <!-- Memory/Graph Layer -->
+  <rect x='370' y='70' width='140' height='80' rx='14' fill='#222'/>
+  <text x='440' y='110' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Memory/Graph</text>
+  <text x='440' y='135' fill='#fff' font-size='13' text-anchor='middle' font-family='sans-serif'>Vehicle+Parts Timeline</text>
+  <!-- Agent Orchestrator -->
+  <rect x='540' y='50' width='180' height='120' rx='18' fill='#222'/>
+  <text x='630' y='90' fill='#f5c518' font-size='19' text-anchor='middle' font-family='sans-serif'>Agent Orchestrator</text>
+  <text x='630' y='120' fill='#fff' font-size='13' text-anchor='middle' font-family='sans-serif'>Predict, Plan, Schedule</text>
+  <!-- Human Gate -->
+  <rect x='370' y='200' width='140' height='70' rx='14' fill='#222'/>
+  <text x='440' y='235' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Human Gate</text>
+  <text x='440' y='255' fill='#fff' font-size='13' text-anchor='middle' font-family='sans-serif'>Dashboards, Approvals</text>
+  <!-- Action Layer -->
+  <rect x='540' y='200' width='180' height='70' rx='14' fill='#222'/>
+  <text x='630' y='235' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Action Layer</text>
+  <text x='630' y='255' fill='#fff' font-size='13' text-anchor='middle' font-family='sans-serif'>Bookings, Orders, Alerts</text>
+  <!-- Flows (arrows) -->
+  <line x1='170' y1='110' x2='200' y2='110' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+  <line x1='340' y1='110' x2='370' y2='110' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+  <line x1='510' y1='110' x2='540' y2='110' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+  <line x1='610' y1='170' x2='610' y2='200' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+  <line x1='440' y1='150' x2='440' y2='200' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+  <line x1='510' y1='235' x2='540' y2='235' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+</svg>
+<p>FleetFix ingests real-time data from telematics, past repair logs, and staff-entered schedules. The ingestion layer normalizes everything—whether it's OBD plug data, scanned invoices, or email appointment threads. The system builds a live graph memory for every vehicle: mileage, part history, known issues, and coming deadlines. The agent orchestrator layer predicts failures and maintenance needs, then proactively plans and coordinates. Human dispatchers control approvals via a dashboard—the "Human Gate." The action layer executes: booking appointments, ordering parts, pushing alerts, or nudging drivers, all automatically.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><strong>Wedge:</strong> Start with 10–50 vehicle delivery and light service fleets in metro areas, where every breakdown is a nightmare. Integrate plug-and-play with the top 2 telematics devices (Geotab, Samsara) and use email/OCR for manual logs. <strong>Stack:</strong> Build ingestion pipelines, graph memory, rules + LLM event prediction, then agentic action flows for bookings and alerts. Launch with a web (and SMS) interface for dispatchers. <strong>Pricing:</strong> $15/vehicle/month SaaS, with a 2% transaction fee on parts/repair bookings. Free pilot for first 3 vehicles per org.</p>
+
+<h2>Why now</h2>
+<p>Fleet vehicle downtime is at a record high, driven by labor shortages and parts delays. Telematics hardware is nearly universal and affordable, but most small fleets are still analog in operations. AI agent tech is finally robust enough for true plug-and-play across messy, multi-vendor data. The small fleet sector is massive, underserved, and ready to spend to keep wheels moving—FleetFix can deliver a 10x ROI from day one, unlocking billions in value that’s now lost to preventable chaos.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-16-danda-026-fleetfix.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-16-danda-026-fleetfix.html&text=DANDA%20%23026%20%E2%80%94%20FleetFix%3A%20AI%20Agents%20to%20End%20Vehicle%20Maintenance%20Disasters%20for%20Small%20Fleets" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.truckinginfo.com/10189306/how-small-fleets-are-managing-maintenance-challenges" target="_blank" rel="noopener">How Small Fleets Are Managing Maintenance Challenges</a></li><li><a href="https://www.geotab.com/blog/fleet-downtime-costs/" target="_blank" rel="noopener">The Unseen Costs of Fleet Downtime</a></li><li><a href="https://www.automotive-fleet.com/10187036/u-s-fleet-statistics-industry-overview" target="_blank" rel="noopener">U.S. Fleet Statistics: Industry Overview</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

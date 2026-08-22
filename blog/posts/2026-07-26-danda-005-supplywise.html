@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #005 — SupplyWise: AI Agents to Stop School Supply Shortages Before They Start | Reddy Pulse</title>
+<meta name="description" content="SupplyWise uses agentic automation to predict, track, and resolve K-12 classroom supply shortages in real-time, saving time for teachers and money for districts.">
+<meta property="og:title" content="DANDA #005 — SupplyWise: AI Agents to Stop School Supply Shortages Before They Start">
+<meta property="og:description" content="SupplyWise uses agentic automation to predict, track, and resolve K-12 classroom supply shortages in real-time, saving time for teachers and money for districts.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1503676382389-2d6b2a5b9b47?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #005 — SupplyWise: AI Agents to Stop School Supply Shortages Before They Start</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 26th July, 2026 · 3 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1503676382389-2d6b2a5b9b47?w=1200&h=600&fit=crop" alt="DANDA #005 — SupplyWise: AI Agents to Stop School Supply Shortages Before They Start">
+  <p>Every August, millions of teachers and administrators scramble to ensure classrooms are stocked with everything from pencils and paper to science equipment. Yet, year after year, critical supplies run out or go missing, disrupting learning and putting strain on already-overworked staff.</p>
+
+<h2>The problem</h2>
+<p>There are 130,930 public K-12 schools in the US serving over 49.8 million students in 2025. On average, teachers spend $650 of their own money annually on supplies because districts miss procurement targets or real classroom needs aren’t surfaced. 94% of teachers report having to buy essential supplies out of pocket. Administrators juggle outdated inventory systems, manual spreadsheets, and last-minute requests, leading to 20-30% supply waste and routine shortages, especially in low-income districts. The disconnect between supply procurement and actual classroom demand costs US schools an estimated $2.8 billion each year.</p>
+
+<h2>The idea: SupplyWise</h2>
+<p>SupplyWise is an AI-powered agentic automation platform that acts as a real-time supply orchestrator for schools. It connects teachers, administrators, and suppliers through smart agents that predict classroom needs, automate replenishment, flag shortages before they impact learning, and optimize procurement to reduce waste. Teachers simply snap photos or use voice input; SupplyWise agents ingest data, triangulate signals (curriculum, enrollment, usage, seasonality), and resolve supply gaps autonomously or escalate to human gatekeepers when needed.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style="background:#111;width:100%;height:auto">
+    <defs>
+      <marker id='arrow' markerWidth='10' markerHeight='10' refX='6' refY='3' orient='auto' markerUnits='strokeWidth'>
+        <polygon points='0 0, 6 3, 0 6' fill='#f5c518'/>
+      </marker>
+    </defs>
+    <!-- Inputs -->
+    <rect x='30' y='50' width='110' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+    <text x='85' y='90' fill='#f5c518' font-size='16' font-family='sans-serif' text-anchor='middle'>Inputs</text>
+    <text x='85' y='110' fill='#fff' font-size='12' font-family='sans-serif' text-anchor='middle'>Photos, Voice, Inventory CSV</text>
+    <!-- Ingestion -->
+    <rect x='170' y='50' width='130' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+    <text x='235' y='90' fill='#f5c518' font-size='16' font-family='sans-serif' text-anchor='middle'>Ingestion Layer</text>
+    <text x='235' y='110' fill='#fff' font-size='12' font-family='sans-serif' text-anchor='middle'>OCR, ASR, Parse</text>
+    <!-- Memory/Graph -->
+    <rect x='330' y='50' width='130' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+    <text x='395' y='90' fill='#f5c518' font-size='16' font-family='sans-serif' text-anchor='middle'>Memory & Graph</text>
+    <text x='395' y='110' fill='#fff' font-size='12' font-family='sans-serif' text-anchor='middle'>Supply DB, Demand Graph</text>
+    <!-- Agent Orchestrator -->
+    <rect x='490' y='50' width='130' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+    <text x='555' y='90' fill='#f5c518' font-size='16' font-family='sans-serif' text-anchor='middle'>Agent Orchestrator</text>
+    <text x='555' y='110' fill='#fff' font-size='12' font-family='sans-serif' text-anchor='middle'>Forecast, Automate</text>
+    <!-- Human Gate -->
+    <rect x='650' y='50' width='80' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+    <text x='690' y='90' fill='#f5c518' font-size='16' font-family='sans-serif' text-anchor='middle'>Human Gate</text>
+    <text x='690' y='110' fill='#fff' font-size='12' font-family='sans-serif' text-anchor='middle'>Approval, Review</text>
+    <!-- Action Layer -->
+    <rect x='330' y='180' width='180' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+    <text x='420' y='220' fill='#f5c518' font-size='16' font-family='sans-serif' text-anchor='middle'>Action Layer</text>
+    <text x='420' y='240' fill='#fff' font-size='12' font-family='sans-serif' text-anchor='middle'>Order, Notify, Escalate</text>
+    <!-- Arrows -->
+    <line x1='140' y1='80' x2='170' y2='80' stroke='#f5c518' stroke-width='2' marker-end='url(#arrow)'/>
+    <line x1='300' y1='80' x2='330' y2='80' stroke='#f5c518' stroke-width='2' marker-end='url(#arrow)'/>
+    <line x1='460' y1='80' x2='490' y2='80' stroke='#f5c518' stroke-width='2' marker-end='url(#arrow)'/>
+    <line x1='620' y1='80' x2='650' y2='80' stroke='#f5c518' stroke-width='2' marker-end='url(#arrow)'/>
+    <line x1='555' y1='110' x2='420' y2='180' stroke='#f5c518' stroke-width='2' marker-end='url(#arrow)'/>
+    <line x1='690' y1='110' x2='420' y2='180' stroke='#f5c518' stroke-width='2' marker-end='url(#arrow)'/>
+</svg>
+<p>The flow: Teachers and admins input supply usage via photos, voice, and inventory files. Ingestion layer converts these to structured signals. Memory & Graph layer tracks historical supply, maps demand trends, and links classrooms. Agent Orchestrator predicts shortages, automates orders, or flags anomalies. Orders are routed through a Human Gate for approval and then executed in the Action Layer—placing orders, notifying staff, or escalating issues. All steps are logged for transparency.</p>
+
+<h2>Build plan (90 days)</h2>
+<p>Wedge: Focus on Title I schools in urban districts (highest shortage pain, fastest adoption). Stack: Mobile app for teachers, web dashboard for admins, AI agents for supply prediction, integrations with procurement APIs (Staples, Amazon for Education). Pricing: Free trial for 3 months, then $3 per student/year for district-wide rollout. Optional supplier partnerships for rebates.</p>
+
+<h2>Why now</h2>
+<p>AI-powered agentic automation is finally cost-effective enough to handle granular, real-world logistics at school scale. Post-pandemic budgets are tight, and teacher burnout is record-high—districts urgently want tools that save admin time and money. SupplyWise directly plugs into the classroom feedback loop, making invisible waste and shortages finally actionable.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-26-danda-005-supplywise.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-26-danda-005-supplywise.html&text=DANDA%20%23005%20%E2%80%94%20SupplyWise%3A%20AI%20Agents%20to%20Stop%20School%20Supply%20Shortages%20Before%20They%20Start" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://nces.ed.gov/fastfacts/display.asp?id=84" target="_blank" rel="noopener">Number of public schools &amp; students in the US</a></li><li><a href="https://www.edweek.org/teaching-learning/nearly-all-teachers-buy-their-own-classroom-supplies-survey-finds/2022/04" target="_blank" rel="noopener">94% of US teachers spend their own money on supplies</a></li><li><a href="https://www.usatoday.com/story/news/education/2023/08/16/teachers-spend-on-classroom-supplies/70548938007/" target="_blank" rel="noopener">School supply waste and procurement inefficiency costs</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
