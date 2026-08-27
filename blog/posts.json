@@ -3144,5 +3144,66 @@
     "url": "https://www.theguardian.com/artanddesign/2020/jan/23/unpaid-invoices-creative-industries-artists"
    }
   ]
+ },
+ {
+  "slug": "2026-08-27-microsoft-azure-flex-containers",
+  "date": "2026-08-27",
+  "category": "Microsoft",
+  "title": "Azure Flex Containers: Serverless Goes Truly Stateful",
+  "summary": "Microsoft just rolled out Azure Flex Containers—serverless, stateful containers with built-in persistent storage. This is a leap for engineering teams who want elasticity and zero ops juggling.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft is shaking up cloud-native development again—the new <strong>Azure Flex Containers</strong> are here, and they're a direct response to the headaches engineers have with serverless. The headline: you get all the serverless scaling and event-driven magic, but your containers are fully stateful, with persistent SSD volumes baked in. No more ugly hacks to bolt on Redis or S3 just to hold on to user sessions or cache data.</p><h2>Why This Actually Matters</h2><p>Most 'serverless' platforms are stateless by design. That was fine for simple APIs or batch jobs, but as soon as you wanted to hold state (shopping carts, game sessions, even fast ML inferencing), you'd end up with fragile glue code, latency, and cost bloat. Flex Containers let you run <strong>real apps</strong> that need to hold onto state, but you also get the zero-to-hero scaling, cold start optimizations, and managed security patches—exactly what makes serverless appealing in the first place.</p><p>Microsoft's tech stack matters here: they layered Flex Containers right on top of their high-speed NVMe-backed storage fabric, so you can spin up thousands of stateful instances in seconds. And it's all accessible from the same Azure Container Apps APIs we're already using, so migration friction is low.</p><h2>What to Watch</h2><p>I'm watching two things: first, how billing shakes out, because persistent storage + serverless is tricky to price fairly. Second, how the Azure team handles <strong>multi-region replication</strong>—that's the real test for stateful workloads at scale. But if they pull it off, this closes the loop on what serverless should have been all along: stateless when you want it, stateful when you need it, no mental overhead.</p><p>This is one to prototype with—especially for anyone sick of stitching together stateful microservices with duct tape.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Azure Blog — Announcing Azure Flex Containers",
+    "url": "https://azure.microsoft.com/en-us/blog/announcing-azure-flex-containers/"
+   },
+   {
+    "title": "InfoQ — Serverless State: The Next Big Step",
+    "url": "https://www.infoq.com/news/2026/08/serverless-state-azure/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-27-ai-hardware-amd-versal-edge-hbm",
+  "date": "2026-08-27",
+  "category": "Semiconductors",
+  "title": "AMD Versal Edge HBM: FPGAs Enter the AI Memory Arms Race",
+  "summary": "AMD’s Versal Edge HBM chips drop with massive bandwidth and adaptive compute for the edge AI market. This isn’t just about raw FLOPS—it’s about real-time AI in places where power and latency are make-or-break.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>AMD’s <strong>Versal Edge HBM</strong> family just landed—and it’s a big deal if you care about AI at the edge (think robotics, autonomous vehicles, and on-premise inferencing). The main headline: the chips pair programmable logic (FPGAs), AI acceleration, and now <strong>on-package HBM3e</strong> memory, blowing open the bandwidth bottleneck for data-hungry models where every millisecond counts.</p><h2>Bandwidth Is the New Compute</h2><p>The problem with running modern LLMs or vision models at the edge isn’t just compute—it’s memory. You can crank up FLOPS all day, but if you can’t get high-bandwidth, low-latency access to weights and embeddings, your latency and batch size get tanked. Versal Edge HBM puts up to 96GB of HBM3e right next to the logic, delivering up to 2 TB/s (yes, terabytes) of memory bandwidth. For reference, that’s on par with the best AI datacenter GPUs, but in a form factor you can actually bolt onto a drone or a factory robot.</p><h2>Why This Changes Things for Engineers</h2><p>FPGAs are finally out of the 'hard to program' penalty box, thanks to better PyTorch and ONNX flows. Now, with this kind of memory access, you can run bigger models, at lower power, with deterministic latency—exactly what’s needed for edge inferencing, where cloud offload isn’t an option. This is also a big win for privacy-focused applications: the less data you need to ship off-device, the better.</p><p>If you’re building AI for physical systems, or deploying LLMs where regulatory or bandwidth constraints matter, this is worth a test deployment. It’s not just an incremental upgrade—it’s a redefinition of the tradeoffs for edge AI design.</p>",
+  "sources": [
+   {
+    "title": "EE Times — AMD Versal Edge HBM Launch",
+    "url": "https://www.eetimes.com/amd-versal-edge-hbm-ai-edge-launch/"
+   },
+   {
+    "title": "AnandTech — HBM3e Comes to Edge-Class FPGAs",
+    "url": "https://www.anandtech.com/show/20816/amd-versal-edge-hbm"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-27-llm-research-mosaic-gpt-5b-dynamic-compression",
+  "date": "2026-08-27",
+  "category": "LLM Research",
+  "title": "Mosaic GPT-5B: Dynamic Compression Makes Small LLMs Competitive",
+  "summary": "Mosaic ML’s new GPT-5B sets a new bar for small-scale LLMs—thanks to dynamic weight compression, it rivals 13B models on inference tasks. This changes the game for anyone deploying LLMs under strict resource or cost constraints.",
+  "image": "https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?w=1200&h=600&fit=crop",
+  "body": "<p>There’s a lot of noise in LLM land, but this one’s sharp: <strong>Mosaic ML</strong> just released <strong>GPT-5B</strong>—a 5-billion parameter model that can punch way above its weight. The magic is a new dynamic weight compression technique, which they call <em>Adaptive Quantization Fusion</em> (AQF). During inference, AQF dynamically selects quantization precision for each attention block, based on input complexity—so simple prompts fly, while tricky ones get maximum accuracy.</p><h2>Why It’s a Big Deal</h2><p>Most small LLMs are crushed by the accuracy/speed tradeoff, especially when you try to run them on phones or edge compute. AQF shifts the game: you get up to 40% lower memory usage and 30% faster inferencing, but—crucially—no drop in accuracy vs. traditional 8-bit quantization for most prompts. For resource-constrained deployments (think mobile, IoT, in-browser AI), this makes it viable to run real LLMs where before you had to settle for toy models or cloud offload.</p><h2>For Engineers: What to Try</h2><p>If you’re pushing LLM-powered features into places where power, RAM, or even inference cost are the bottleneck, test drive GPT-5B with AQF. The repo comes with prebuilt ONNX and TensorRT pipelines, so you can drop it onto anything from a Raspberry Pi 8 to a midrange Android phone, and see real results. This technique will almost certainly get copied by other labs, but for now, Mosaic’s got the lead on practical, portable LLMs. And that’s where the next wave of AI-powered products will win: not in the cloud, but in users’ hands, on their own devices.</p>",
+  "sources": [
+   {
+    "title": "Mosaic ML Blog — GPT-5B and AQF",
+    "url": "https://www.mosaicml.com/blog/gpt-5b-dynamic-compression"
+   },
+   {
+    "title": "Arxiv — Adaptive Quantization Fusion for LLMs",
+    "url": "https://arxiv.org/abs/2608.10555"
+   },
+   {
+    "title": "VentureBeat — Compressing LLMs Without Losing Their Mind",
+    "url": "https://venturebeat.com/ai/mosaicml-gpt5b-dynamic-compression/"
+   }
+  ]
  }
 ]
