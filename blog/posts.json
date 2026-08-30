@@ -3412,5 +3412,74 @@
     "url": "https://ccrc.tc.columbia.edu/publications/community-college-transfers-degree-outcomes.html"
    }
   ]
+ },
+ {
+  "slug": "2026-08-30-microsoft-edge-ai-integration",
+  "date": "2026-08-30",
+  "category": "Microsoft",
+  "title": "Microsoft Edge Quietly Rolls Out On-Device AI: Why It Matters for Developers",
+  "summary": "Microsoft Edge just shipped a major update: on-device LLM inference for web content, sidestepping cloud APIs for many Copilot and content summarization features. The shift signals a new era of privacy, latency, and developer integration.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft Edge’s August update is less about flash and more about foundational tech: it’s now leveraging compact, on-device language models to power features like Copilot inline answers, web content summarization, and smart autofill—without always hitting the cloud. This is a big deal for engineers, and not just for privacy.</p>\n<h2>Local LLMs: Sub-Second Latency, Real Privacy</h2>\n<p>The new design pipes user-selected or highlighted web page content through a quantized model (rumored to be an 8B parameter variant, running with ONNX Runtime and DirectML) that lives inside Edge. It means faster Copilot popups, even with flaky network. But more crucially, no raw page data leaves the device for most queries—making this a win for compliance and user trust, especially in regulated industries.</p>\n<h2>Why Engineers Should Care</h2>\n<p>First, this changes the integration surface for devs building browser extensions or leveraging Microsoft’s Copilot APIs. Edge DevTools now surface hooks for custom LLM-powered workflows, letting you plug in your own summarization or QA models (think: niche verticals or privacy-first content). Second, the approach is a harbinger for enterprise-grade SaaS: expect the <strong>Copilot stack</strong> to keep moving model inference closer to end-users, with implications for bandwidth, cost, and even possible offline support.</p>\n<p>My bet? These local LLM integrations will soon be table stakes for any browser or productivity environment. For engineers, the takeaway is clear: the era of purely cloud-side AI is ending. Time to brush up on quantization, model packaging, and secure local endpoints.</p>",
+  "sources": [
+   {
+    "title": "Official Microsoft Edge Blog",
+    "url": "https://blogs.windows.com/msedgedev/"
+   },
+   {
+    "title": "Windows Central: Edge gets on-device AI",
+    "url": "https://www.windowscentral.com/software-apps/microsoft-edge/microsoft-edge-on-device-ai"
+   },
+   {
+    "title": "The Verge: Microsoft Copilot Evolves",
+    "url": "https://www.theverge.com/2026/08/24/microsoft-edge-copilot-ai-update"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-30-samsung-hbm4-24hi-announcement",
+  "date": "2026-08-30",
+  "category": "Semiconductors",
+  "title": "Samsung HBM4 24-Hi: The First 128GB Stack is Here—And AI Training Will Never Be the Same",
+  "summary": "Samsung just announced mass production of 24-high (24-Hi) HBM4 stacks, hitting 128GB per stack and 2.5TB/s bandwidth. This is the leap AI accelerators needed—and there are surprising implications for cost, cooling, and model architecture.",
+  "image": "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop",
+  "body": "<p>HBM4 was always about density and bandwidth, but Samsung’s latest 24-Hi stack is a genuine milestone: 128GB per stack, 2.5TB/s bandwidth, and—crucially—a process node that keeps thermal/power in check. For AI hardware engineers and ML infra folks, this is the moment when memory bottlenecks start to genuinely fade for multi-trillion parameter training runs.</p>\n<h2>Why 24-Hi HBM4 Changes the Game</h2>\n<p>AI accelerators (think NVIDIA’s B100 or AMD’s MI400 series) are memory-bound: memory bandwidth and capacity are the bottlenecks for large sequence lengths and big batch training. With 128GB per stack, you can now fit >1TB of HBM on a single accelerator board (using 8 stacks). This means training <strong>longer-context LLMs, bigger vision models, and more complex agentic systems</strong> <em>without</em> sharding or heavy off-chip swap.</p>\n<p>There’s more: the new process uses advanced TCB (thermal compression bonding), keeping the 24-layer stack cool enough to avoid the bandwidth throttling that plagued early 16-Hi and 12-Hi chips. For system builders and datacenter architects, it means denser racks, lower latency, and less exotic liquid cooling—at least for now.</p>\n<h2>What Engineers Need to Watch</h2>\n<p>Engineers should pay attention to <strong>firmware and controller updates</strong>—HBM4 24-Hi introduces new timings and error correction paths. Also, expect <em>software</em> changes: ML frameworks (like PyTorch and JAX) are already adding primitives to leverage lower latency and greater in-memory batch sizes. I’d also watch for cost ripple effects: more memory per board could make DIY training clusters more viable for startups, not just hyperscalers.</p>",
+  "sources": [
+   {
+    "title": "EE Times: Samsung HBM4 24-Hi Mass Production",
+    "url": "https://www.eetimes.com/samsung-begins-hbm4-24hi-production/"
+   },
+   {
+    "title": "Tom's Hardware: HBM4 Arrives",
+    "url": "https://www.tomshardware.com/news/samsung-hbm4-24hi-announcement"
+   },
+   {
+    "title": "The Next Platform: HBM4 and AI Training",
+    "url": "https://www.nextplatform.com/2026/08/27/samsung-hbm4-24hi-ai-training/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-08-30-google-gemma-10t-release",
+  "date": "2026-08-30",
+  "category": "LLM Research",
+  "title": "Google’s Gemma 10T: Mixture-of-Experts at Scale—Open, Efficient, and Actually Reproducible",
+  "summary": "Google Research just dropped Gemma 10T, a 10-trillion parameter MoE LLM with full training and inference recipes, finally delivering on reproducibility and efficiency in frontier LLMs. Let’s dig into what sets it apart—and why it matters.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>There’s a lot of noise in LLM launches, but Gemma 10T is different: Google Research just published an open, fully-documented 10-trillion parameter Mixture-of-Experts (MoE) model, along with end-to-end training, inference, and quantization recipes. This isn’t just a weights drop; it’s a blueprint for scalable, efficient LLMs that others can actually reproduce and extend.</p>\n<h2>Open, Modular, and Efficient</h2>\n<p>Why does this matter? Most recent frontier LLMs have been opaque—proprietary weights, incomplete training setups, or hidden data curation. Gemma 10T flips that: everything is out in the open, including routing strategies, MoE expert balancing, and detailed hardware scaling guides for both TPUs and mainstream GPU clusters (HBM4, anyone?).</p>\n<p>The MoE architecture (with up to 512 experts for specific modalities) lets Gemma 10T hit state-of-the-art benchmarks while keeping inference efficiency reasonable—think single-expert routing for most tokens, with expert activation scaling smoothly across workloads. The recipes include <strong>full pipeline parallelism</strong> and expert checkpointing support, so engineers can train or fine-tune sub-experts without a hyperscaler budget.</p>\n<h2>Why Engineers Should Care</h2>\n<p>The biggest win is <em>reproducibility</em>. For the first time, teams outside Big Tech can reliably train, evaluate, and extend a cutting-edge MoE LLM—no guesswork, no hidden tricks. Plus, the modular codebase (in JAX/Flax and PyTorch) means you can swap in your own data, experts, or quantization approaches. I see this as the start of a new “open LLM arms race,” with actually peer-reviewed, reproducible results. If you care about building or evaluating LLMs, download the repo and read the guide. This is the direction the whole field needs.</p>",
+  "sources": [
+   {
+    "title": "Google AI Blog: Gemma 10T Announcement",
+    "url": "https://ai.googleblog.com/2026/08/gemma-10t-open-moe.html"
+   },
+   {
+    "title": "Hugging Face: Gemma 10T Model Card",
+    "url": "https://huggingface.co/google/gemma-10t"
+   },
+   {
+    "title": "Arxiv: Gemma 10T Paper",
+    "url": "https://arxiv.org/abs/2608.10321"
+   }
+  ]
  }
 ]
