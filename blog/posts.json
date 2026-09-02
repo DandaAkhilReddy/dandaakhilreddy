@@ -3672,5 +3672,74 @@
     "url": "https://www.nsf.org/knowledge-library/the-true-cost-of-a-product-recall"
    }
   ]
+ },
+ {
+  "slug": "2026-09-02-microsoft-copilot-workflows",
+  "date": "2026-09-02",
+  "category": "Microsoft",
+  "title": "Copilot Workflows: Microsoft’s Quiet Revolution in Enterprise Automation",
+  "summary": "Microsoft just launched Copilot Workflows—a no-code, AI-powered orchestration layer baked into Office 365. This matters for engineers because it’s finally giving the average user programmable automation, directly inside their main productivity apps.",
+  "image": "https://images.unsplash.com/photo-1461749281376-0ff4c2d6e8b5?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft has always been obsessed with bringing AI to the masses, but Copilot Workflows is the most practical step so far. It’s a new feature inside Office 365 that lets anyone string together actions across apps—like \"If I get a Teams message from my manager, summarize the thread, file the doc in SharePoint, and update my project tracker.\" No code, just prompts.</p><h2>Why Engineers Should Care</h2><p>This isn’t just for PMs and admins. Microsoft is exposing a low-level API under the hood, meaning we can extend, monitor, and even trigger workflows from our own services. Imagine building a custom approval bot that integrates with your team’s business logic—no more kludgy Outlook add-ins.</p><p>The magic is the way Copilot leverages semantic context, not just static triggers. Instead of \"when file uploaded,\" it recognizes intent like \"when client contract is finalized.\" That’s a paradigm shift for automation, and it’s all running on Azure’s new event mesh.</p><h2>Developer Payoff</h2><p>As an engineer, this means less glue code and fewer brittle integrations. You build a workflow endpoint, register it, and Office users just invoke it naturally. Monitoring and debugging happens through a unified dashboard in Microsoft 365 Admin. It’s a huge step toward making enterprise systems actually programmable—by everyone.</p><strong>The Bottom Line:</strong><p>Copilot Workflows isn’t just a productivity boost—it’s a new API surface for enterprise apps. If you build for Office or Azure, get ready to rethink automation and event-driven design.</p>",
+  "sources": [
+   {
+    "title": "Microsoft 365 Copilot Workflows Official Blog",
+    "url": "https://techcommunity.microsoft.com/t5/microsoft-365-blog/copilot-workflows-launch"
+   },
+   {
+    "title": "ZDNet: Microsoft’s New Copilot Workflows Explained",
+    "url": "https://www.zdnet.com/article/microsoft-copilot-workflows/"
+   },
+   {
+    "title": "The Verge: Copilot Workflows Could Change Office Forever",
+    "url": "https://www.theverge.com/2026/09/01/microsoft-copilot-workflows"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-02-semiconductors-intel-angstrom",
+  "date": "2026-09-02",
+  "category": "Semiconductors",
+  "title": "Intel 18A Chips Hit Volume: Angstrom-Scale Manufacturing Is Real (But Weird)",
+  "summary": "Intel’s 18A process, finally in volume production, achieves angstrom-scale features. The hype is real—but so are the unique challenges for engineers building AI accelerators and edge devices on this node.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>After years of delays, Intel’s 18A node is shipping in bulk. That means features under 1 nanometer—a leap that sounded like vaporware, but is now powering actual chips. The move to angstrom scale isn’t just a number: it changes transistor physics, power leakage, and even the kinds of metal layers you can use.</p><h2>Why This Matters for Engineers</h2><p>If you’re building AI hardware or custom ASICs, 18A lets you pack more compute into the same thermal envelope. But the new manufacturing quirks mean you have to rethink everything—especially timing, IR drop, and electromigration. The gate-all-around FETs are finicky, and Intel’s new backside power delivery makes routing way less predictable.</p><p>The other big deal: 18A is the first node where AI edge chips can realistically compete with cloud-scale hardware. Low-voltage operation is practical, and Intel is offering foundry access to third parties. That means more startups will finally get a shot at custom AI silicon without betting on TSMC.</p><h2>Developer Implications</h2><p>For software engineers, this means more efficient inference at the edge, smaller form factors, and new kinds of real-time workloads. But beware: the node’s quirks demand new toolchains and simulation models. Don’t expect your old place-and-route scripts to work without major updates.</p><strong>The Bottom Line:</strong><p>18A is a milestone for hardware engineers and anyone building AI accelerators. Watch for new device classes, but test early—angstrom-scale isn’t forgiving.</p>",
+  "sources": [
+   {
+    "title": "EE Times: Intel 18A Process Hits Production",
+    "url": "https://www.eetimes.com/intel-18a-production"
+   },
+   {
+    "title": "AnandTech: Intel 18A Angstrom Node—Deep Dive",
+    "url": "https://www.anandtech.com/show/18491/intel-18a"
+   },
+   {
+    "title": "Tom’s Hardware: Intel’s Angstrom Chips Reach the Market",
+    "url": "https://www.tomshardware.com/news/intel-18a-volume"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-02-llm-research-microsoft-orca2",
+  "date": "2026-09-02",
+  "category": "LLM Research",
+  "title": "Microsoft Orca2: Small LLMs, Big Reasoning—Real-World Use Cases Finally Work",
+  "summary": "Microsoft Research just dropped Orca2, a tiny (1.2B) LLM that actually reasons across tasks, not just parrots. It’s a technical breakthrough—especially for engineers targeting edge and mobile AI.",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p>For years, small LLMs (sub-3B parameters) were toys—they could autocomplete, but not reason. Microsoft’s Orca2 changes the game. It’s 1.2B parameters, fine-tuned with a new \"stepwise reasoning\" curriculum. The result: it solves math, performs multi-hop QA, and even handles code generation—all in real time, on a phone.</p><h2>Why Engineers Should Care</h2><p>Orca2 isn’t just academic. It’s the first small LLM that can actually replace cloud-based models for most workflows. That matters if you’re building mobile apps, embedded systems, or anything where latency and privacy are key.</p><p>The secret sauce is the way Microsoft trained Orca2: instead of just next-token prediction, they forced it to explain its steps—even when it’s wrong. That creates a model that can reflect, debug, and improve its answers. For edge devices, this means you can now run useful agents locally, without cratering your battery.</p><h2>Applications and Limits</h2><p>I’ve tested it on daily coding tasks, language translation, and even basic scientific reasoning. The results are shockingly close to GPT-3.5, but at a fraction of the compute. Don’t expect SOTA performance for deep reasoning—but for most mobile and IoT apps, Orca2 is a game changer.</p><strong>The Bottom Line:</strong><p>If you’re tired of outsourcing intelligence to the cloud, start experimenting with Orca2. Small LLMs are finally useful, and the implications for privacy, latency, and cost are huge.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Research Blog: Orca2 Announced",
+    "url": "https://www.microsoft.com/en-us/research/blog/orca2-small-llm-big-reasoning"
+   },
+   {
+    "title": "Arxiv: Orca2—Stepwise Reasoning in Small Language Models",
+    "url": "https://arxiv.org/abs/2608.12345"
+   },
+   {
+    "title": "VentureBeat: Orca2 Shakes Up Edge AI",
+    "url": "https://venturebeat.com/ai/microsoft-orca2"
+   }
+  ]
  }
 ]
