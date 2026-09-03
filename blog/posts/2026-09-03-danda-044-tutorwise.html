@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #044 — TutorWise: AI Agents to End K-12 Tutoring Access Inequality | Reddy Pulse</title>
+<meta name="description" content="America spends $47B a year on K-12 tutoring, but millions of low-income families are cut out due to cost and logistics. TutorWise is an AI agentic platform that delivers personalized after-school tutoring, on demand, in any subject, with human checkpoints and real-world feedback loops.">
+<meta property="og:title" content="DANDA #044 — TutorWise: AI Agents to End K-12 Tutoring Access Inequality">
+<meta property="og:description" content="America spends $47B a year on K-12 tutoring, but millions of low-income families are cut out due to cost and logistics. TutorWise is an AI agentic platform that delivers personalized after-school tutoring, on demand, in any subject, with human checkpoints and real-world feedback loops.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1513258496099-48168024aec0?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #044 — TutorWise: AI Agents to End K-12 Tutoring Access Inequality</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 3rd September, 2026 · 3 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1513258496099-48168024aec0?w=1200&h=600&fit=crop" alt="DANDA #044 — TutorWise: AI Agents to End K-12 Tutoring Access Inequality">
+  <p>Every year, families in the U.S. shell out billions for K-12 tutoring. Yet for all that spend, after-school learning is deeply unequal: students from low-income backgrounds get squeezed out of the tutoring market, thanks to high costs, limited local supply, and logistical headaches. That impacts grades, graduation rates, and lifelong earnings — and the current model simply can't scale to meet demand.</p>
+
+<h2>The problem</h2>
+<ul>
+<li><strong>$47 billion:</strong> That's what U.S. families spend yearly on private K-12 tutoring.</li>
+<li><strong>12 million</strong> K-12 students live in poverty — most can't afford quality tutoring.</li>
+<li>Even after COVID relief, only <strong>15%</strong> of high-need students accessed high-impact tutoring in the 2023-2024 school year.</li>
+<li>Access isn't just about cost: after-school logistics, language barriers, and supply shortages leave entire communities underserved.</li>
+<li>Students who get high-impact tutoring are <strong>2x more likely</strong> to meet grade-level proficiency in math and reading.</li>
+</ul>
+
+<h2>The idea: TutorWise</h2>
+<p>TutorWise is an AI agentic automation platform that delivers adaptive, curriculum-aligned, after-school tutoring for K-12 students. The agent acts as a personal “Tutor Companion” — available on demand, in any subject, and in any language. The platform features:
+<ul>
+<li><strong>Autonomous Lesson Planning:</strong> AI crafts personalized tutorials, practice sets, and enrichment activities, adapting in real time to student progress.</li>
+<li><strong>Human-in-the-loop Validation:</strong> All explanations and assignments are checked by certified educators, especially for complex or high-stakes topics.</li>
+<li><strong>Parent & Teacher Feedback Loop:</strong> Integrated channels for caregivers and teachers to guide agent focus and flag issues.</li>
+<li><strong>Equity-first Access:</strong> Free for Title I schools and subsidized for low-income families.</li>
+<li><strong>Multimodal Support:</strong> Text, voice, and even visual (handwriting/diagram) queries with AI-powered understanding and response.</li>
+</ul>
+</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' fill='none' xmlns='http://www.w3.org/2000/svg' style='background:#111; border-radius:8px;'>
+  <defs>
+    <marker id='arrow' markerWidth='7' markerHeight='7' refX='7' refY='3.5' orient='auto' markerUnits='strokeWidth'>
+      <polygon points='0 0, 7 3.5, 0 7' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <rect x='30' y='60' width='120' height='50' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='90' y='90' text-anchor='middle' fill='#fff' font-size='16'>Inputs</text>
+  <text x='90' y='108' text-anchor='middle' fill='#aaa' font-size='12'>Student, Parent, Teacher</text>
+
+  <rect x='200' y='60' width='140' height='50' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='270' y='90' text-anchor='middle' fill='#fff' font-size='16'>Ingestion</text>
+  <text x='270' y='108' text-anchor='middle' fill='#aaa' font-size='12'>Multimodal Parsing</text>
+
+  <rect x='395' y='40' width='120' height='50' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='455' y='70' text-anchor='middle' fill='#fff' font-size='16'>Memory/Graph</text>
+  <text x='455' y='88' text-anchor='middle' fill='#aaa' font-size='12'>Progress, Profiles</text>
+
+  <rect x='395' y='120' width='120' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='455' y='150' text-anchor='middle' fill='#fff' font-size='16'>Agent Orchestrator</text>
+  <text x='455' y='168' text-anchor='middle' fill='#aaa' font-size='12'>Planning, Adaptation</text>
+
+  <rect x='570' y='60' width='140' height='50' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='640' y='90' text-anchor='middle' fill='#fff' font-size='16'>Human Gate</text>
+  <text x='640' y='108' text-anchor='middle' fill='#aaa' font-size='12'>Educator Review</text>
+
+  <rect x='570' y='170' width='140' height='80' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='640' y='200' text-anchor='middle' fill='#fff' font-size='16'>Action Layer</text>
+  <text x='640' y='218' text-anchor='middle' fill='#aaa' font-size='12'>Tutoring, Feedback, Reports</text>
+
+  <!-- Arrows -->
+  <line x1='150' y1='85' x2='200' y2='85' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='340' y1='85' x2='395' y2='65' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='455' y1='90' x2='455' y2='120' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='515' y1='150' x2='570' y2='85' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='515' y1='180' x2='570' y2='210' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='710' y1='205' x2='730' y2='205' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+</svg>
+
+<p style='color:#ddd;'>Input comes from students, parents, and teachers via text, voice, or images. The ingestion layer parses all modalities, structuring requests and learning signals. Data flows to the memory/graph layer, which builds and updates personalized learning profiles. The agent orchestrator designs adaptive lessons, queries the memory/graph for context, and works with the human gate (credentialed educator review) for high-stakes or novel content. Finally, the action layer delivers tutoring sessions, collects real-world feedback, and pushes reports to stakeholders, closing the loop for continuous improvement.</p>
+
+<h2>Build plan (90 days)</h2>
+<ul>
+<li><strong>Wedge:</strong> Title I elementary schools in urban districts — launch as a plug-and-play after-school web portal integrated with school rosters.</li>
+<li><strong>Stack:</strong> Add multimodal input, real-time parent feedback, bilingual support, and teacher-facing dashboards. Expand subject coverage and adaptation for learning differences (e.g., dyslexia mode).</li>
+<li><strong>Pricing:</strong> Free for Title I partners; $15/month per family for independent use; school district SaaS at $6/student/year with volume discounts.</li>
+</ul>
+
+<h2>Why now</h2>
+<p>Three things converge: (1) GenAI is finally robust enough for nuanced, high-stakes learning with human checkpoints; (2) post-pandemic learning loss is an emergency — districts need scalable interventions yesterday; (3) schools are desperate for cost-effective solutions under intense budget pressure. The moment for equity-first, agentic tutoring is now.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-03-danda-044-tutorwise.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-03-danda-044-tutorwise.html&text=DANDA%20%23044%20%E2%80%94%20TutorWise%3A%20AI%20Agents%20to%20End%20K-12%20Tutoring%20Access%20Inequality" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.grandviewresearch.com/industry-analysis/north-america-private-tutoring-market-report" target="_blank" rel="noopener">North America Private Tutoring Market Size, Share &amp; Trends Analysis</a></li><li><a href="https://nces.ed.gov/programs/coe/indicator/cpb" target="_blank" rel="noopener">National Center for Education Statistics: Students Living in Poverty</a></li><li><a href="https://www.studentsupportaccelerator.org/what-we-do/research" target="_blank" rel="noopener">National Student Support Accelerator: Access to High-Impact Tutoring</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
