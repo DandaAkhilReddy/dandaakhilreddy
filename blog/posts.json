@@ -3856,5 +3856,74 @@
     "url": "https://www.studentsupportaccelerator.org/what-we-do/research"
    }
   ]
+ },
+ {
+  "slug": "2026-09-04-microsoft-copilot-os-internals",
+  "date": "2026-09-04",
+  "category": "Microsoft",
+  "title": "CopilotOS Internals: Microsoft’s Push to Make Windows Truly AI-Native",
+  "summary": "Microsoft quietly flipped the switch on CopilotOS internals, making Windows 12 the first mainstream OS with AI-native kernel scheduling and user-mode LLM primitives. This matters for every engineer who builds desktop or edge apps.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>For years, Microsoft has teased the integration of deep AI into Windows. With last week's public documentation drop on CopilotOS internals, it's real: Windows 12 now sports AI-native kernel scheduling and user-mode primitives for LLM orchestration. Why care? Because the operating system itself finally understands AI workloads as first-class citizens—not just processes hogging compute or RAM, but as tasks with unique latency, memory, and privacy profiles.</p><h2>What’s Under the Hood?</h2><p>CopilotOS exposes a new <strong>AIWorkloadScheduler</strong> API, letting devs declare compute windows, memory hints, and backgrounding strategies for LLMs and diffusers. The OS kernel can now prefetch model weights, prioritize inference tasks over less latency-sensitive work, and even sandbox AI processes with minimal friction. If you’re building desktop apps with AI, this means fewer hacks, way more predictability, and—crucially—lower energy usage on laptops.</p><h2>Why This Is a Big Deal</h2><p>Engineers who remember the bad old days of shoehorning GPU tasks via DirectML or wrestling with random process freezes: this is the moment we stop duct-taping our LLMs into userland. AI becomes as native as networking or graphics. You can opt into edge model serving without worrying about OS-level deadlocks or unpredictable resource contention. This opens up a ton of new design space—think offline copilots, local model finetuning, or real-time inference right on the device. It’s the OS-level reset we’ve needed for years.</p><h2>The Next Step: Standardization</h2><p>Windows is making these primitives public, but it’s not clear if Linux or Apple will follow suit soon. I expect open-source equivalents to appear, but as of today, if you want to ship robust, battery-friendly AI apps at the edge, Windows 12 is the only mainstream OS offering truly deep AI support below the app layer.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Unveils CopilotOS Internals for Developers",
+    "url": "https://www.thurrott.com/windows/302451/copilotos-internals"
+   },
+   {
+    "title": "Windows 12 and the Future of AI-Native Operating Systems",
+    "url": "https://www.zdnet.com/article/windows-12-sets-ai-standard/"
+   },
+   {
+    "title": "How AI-Native Kernels Will Change Desktop Computing",
+    "url": "https://www.infoworld.com/article/3718123/ai-native-os-kernels.html"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-04-ai-hardware-tsmc-hbm4-stacked-sram",
+  "date": "2026-09-04",
+  "category": "Semiconductors",
+  "title": "TSMC Ships HBM4 with Stacked SRAM: What It Means for LLM Memory Walls",
+  "summary": "TSMC’s new HBM4 memory with integrated stacked SRAM has started shipping, promising to crush the LLM context bottleneck. Here’s what hardware engineers need to know.",
+  "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop",
+  "body": "<p>HBM4 just got real, and TSMC’s twist—integrating stacked SRAM on the same package—might be the most important hardware shift for LLMs since the first tensor core. If you’ve built (or debugged) large model inference, you know the real pain isn’t just compute: it’s shuttling gigabytes of context data to and from DRAM. HBM3’s bandwidth helped, but even 8 TB/s couldn’t keep up with LLMs and 128K+ context windows.</p><h2>SRAM in the Memory Stack: Not Just Faster, Smarter</h2><p>By interleaving SRAM layers directly atop HBM4 dies, TSMC lets accelerator designers cache attention keys, logits, and routing data closer to the compute fabric. This isn’t just a modest speedup. Early benchmarks leak up to a 3x reduction in context swap time, and up to 40% lower energy per token generated. For engineers pushing hardware to the limits, it means you can safely upsize per-user context or run more models in parallel without saturating your board’s thermal and power limits.</p><h2>What’s the Catch?</h2><p>SRAM is way pricier per bit than DRAM, so these new stacks will be at a premium for a while. But for inference providers, latency and energy are the real bottlenecks. The tooling ecosystem is already catching up: both CUDA and ROCm are adding primitives for explicit SRAM cache hints and eviction policies.</p><h2>Why Engineers Should Care</h2><p>This is a signal for every AI hardware architect: hierarchical memory is no longer a niche trick. If you want to build for the future—think 1M context windows or always-on streaming LLMs—you need to embrace multi-level, programmable memory. TSMC is betting big on SRAM/DRAM co-packaging; if your designs still assume commodity DRAM, time to rethink your stack.</p>",
+  "sources": [
+   {
+    "title": "TSMC Ships HBM4 Memory with Stacked SRAM",
+    "url": "https://www.anandtech.com/show/20021/tsmc-hbm4-sram"
+   },
+   {
+    "title": "Inside TSMC’s Next-Gen AI Memory",
+    "url": "https://www.semianalysis.com/p/tsmc-hbm4-stacked-sram"
+   },
+   {
+    "title": "HBM4 and the Future of LLM Hardware",
+    "url": "https://www.tomshardware.com/news/hbm4-future-ai-memory"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-04-llm-research-google-prompt-mutation",
+  "date": "2026-09-04",
+  "category": "LLM Research",
+  "title": "Google’s Prompt Mutation: Dynamic LLM Prompts That Learn and Evolve",
+  "summary": "Google AI’s new Prompt Mutation framework lets LLM prompts adapt in real time to user feedback and task drift. This could finally close the gap between static prompt engineering and true adaptive agents.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>Prompt engineering is the new compiler optimization. But as anyone building LLM apps knows, hardcoding prompts is brittle—one change in task or user context, and your completions go off the rails. Google AI’s recent <strong>Prompt Mutation</strong> paper proposes something radical: prompts that mutate, self-correct, and specialize in the wild, using feedback signals and a meta-optimization loop.</p><h2>How It Works</h2><p>The framework maintains a pool of prompt variants for each task. As user feedback comes in (explicit ratings, implicit signals, downstream errors), the system mutates prompt templates—replacing instructions, tweaking examples, swapping out stylistic tokens—and runs short evaluation rounds with the LLM. The highest-performing prompts survive, and the process continues. It’s basic evolutionary search, but with the twist that the search space is <em>prompt text</em>, not model weights or hyperparameters.</p><h2>Why This Matters</h2><p>This is the missing piece for production LLMs. Instead of freezing your best prompt from QA and praying it generalizes, you can ship a prompt pool that evolves as users interact. For engineers: you get robustness against distribution drift, a way to automate boring prompt A/B testing, and a path to LLM apps that actually <strong>learn</strong> after deployment, not just during training.</p><h2>What’s Next?</h2><p>The biggest challenge is monitoring for prompt collapse or weird prompt injection attacks as prompts mutate in the open. Google open-sourced their eval harness, but the real-world safety debate is just beginning. Still, if your LLM stack is churning with edge cases, Prompt Mutation is a tool you’ll want to play with—because static prompt engineering is officially obsolete.</p>",
+  "sources": [
+   {
+    "title": "Adaptive Prompt Mutation for LLMs",
+    "url": "https://ai.googleblog.com/2026/09/prompt-mutation.html"
+   },
+   {
+    "title": "Making Prompts Evolve: Google’s Dynamic LLM Tuning",
+    "url": "https://www.technologyreview.com/2026/09/03/prompt-mutation-llm/"
+   },
+   {
+    "title": "Prompt Mutation: The New Frontier in LLM Research",
+    "url": "https://www.semanticscholar.org/paper/google-prompt-mutation"
+   }
+  ]
  }
 ]
