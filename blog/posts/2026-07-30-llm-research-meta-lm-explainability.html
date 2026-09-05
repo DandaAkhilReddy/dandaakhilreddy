@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta’s LM-Explain: Real-Time Interpretability for LLMs, No More Black Box | Reddy Pulse</title>
+<meta name="description" content="Meta launched LM-Explain, an open-source module that hooks into any LLM and provides step-by-step reasoning traces, neuron activations, and token influence maps, making debugging and trust actually possible.">
+<meta property="og:title" content="Meta’s LM-Explain: Real-Time Interpretability for LLMs, No More Black Box">
+<meta property="og:description" content="Meta launched LM-Explain, an open-source module that hooks into any LLM and provides step-by-step reasoning traces, neuron activations, and token influence maps, making debugging and trust actually possible.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Meta’s LM-Explain: Real-Time Interpretability for LLMs, No More Black Box</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 30th July, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&h=600&fit=crop" alt="Meta’s LM-Explain: Real-Time Interpretability for LLMs, No More Black Box">
+  <p>Let’s be real: LLMs are still mostly black boxes. You prompt, you pray. Meta just released LM-Explain, a module that sits on top of any transformer and spits out real-time reasoning traces—showing not just token outputs but why, neuron by neuron, each decision was made.</p><h2>Why Engineers Should Care</h2><p>If you’ve ever debugged an LLM hallucination or tried to explain model behavior to a legal team, you know the pain. LM-Explain is a full-stack interpretability engine: it logs token influence (which prompt or context tokens drove a response), maps neuron activations to semantic features, and even visualizes layer-wise logic. Finally, you don’t just get ‘the answer’—you get the receipts.</p><strong>This is huge for debugging and compliance.</strong><p>For prompt engineers and app devs, tracing why a model chose a particular answer lets you optimize prompts and flag bad behavior. If you’re subject to regulatory audits—or just want to build user trust—these traces can be exported for external review. It’s not perfect (some activations are still opaque), but it’s miles ahead of the usual ‘shrug and hope’ approach.</p><h2>How It Works</h2><p>LM-Explain hooks into the forward pass of any transformer-based LLM. It collects token gradients, tracks attention flows, and overlays neuron activations with semantic labels (e.g. ‘math reasoning’, ‘sentiment’, etc.). Outputs can be streamed as JSON, visualized in-browser, or piped into custom dashboards.</p><p>Bottom line: this makes LLMs less magical and more engineerable. If you care about reliability or explainability, you need to play with it. It’s open-source, so expect fast community improvements.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-30-llm-research-meta-lm-explainability.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-30-llm-research-meta-lm-explainability.html&text=Meta%E2%80%99s%20LM-Explain%3A%20Real-Time%20Interpretability%20for%20LLMs%2C%20No%20More%20Black%20Box" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://ai.facebook.com/blog/lm-explain-open-source-interpretability/" target="_blank" rel="noopener">Meta AI Blog: LM-Explain Module Release</a></li><li><a href="https://thegradient.pub/meta-lm-explain-explainability-toolkit/" target="_blank" rel="noopener">The Gradient: Meta’s New Explainability Toolkit</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

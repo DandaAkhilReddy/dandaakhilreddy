@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft VASA: Universal Vector Store Arrives for the Multimodal AI Era | Reddy Pulse</title>
+<meta name="description" content="Microsoft just rolled out VASA, a massive distributed vector database natively integrated into Azure. It promises to unify vector search for images, text, and any multimodal embedding—all at cloud scale.">
+<meta property="og:title" content="Microsoft VASA: Universal Vector Store Arrives for the Multimodal AI Era">
+<meta property="og:description" content="Microsoft just rolled out VASA, a massive distributed vector database natively integrated into Azure. It promises to unify vector search for images, text, and any multimodal embedding—all at cloud scale.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Microsoft VASA: Universal Vector Store Arrives for the Multimodal AI Era</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 13th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop" alt="Microsoft VASA: Universal Vector Store Arrives for the Multimodal AI Era">
+  <p>Microsoft’s VASA announcement is the biggest infrastructure move since Azure OpenAI Service—period. Suddenly, anyone building LLM or RAG (retrieval-augmented generation) apps on Azure can query hundreds of billions of vectors, across text, image, video, or even audio embeddings, in a single API call.</p><h2>Why This Matters</h2><p>If you’re building AI search (think: internal knowledge tools, search assistants, codebase navigators), you know the pain: stitch together Pinecone for text, Qdrant for images, maybe Weaviate for something else. Latency suffers, data silos grow, and multimodal fusion is <em>hard</em>. With VASA, you get a first-party, horizontally scalable vector store, with atomic upserts and blazing low-latency queries, and it’s plugged right into Azure’s identity and governance stack. You can even run cross-modal joins by default.</p><h2>The Tech</h2><p>What’s under the hood? VASA is built on a custom version of Microsoft’s FAISS fork, but with cloud-native sharding and an adaptive quantization scheme (think: PQ on steroids). It handles billions of vectors per partition, and exposes a simple REST/GraphQL API. The killer: it supports any embedding model—bring your own OpenAI, Llama, CLIP, or homegrown flavor. And, it’s deeply integrated with Azure AI Studio. That means you can fine-tune a model and instantly deploy the vector index for RAG or search. No more glue code.</p><h2>Why Engineers Should Care</h2><p>Most engineers underestimate the challenge of scaling search across both modalities and tenants. VASA wipes that pain away. This is a foundational piece for every generative AI app—whether it’s legal discovery, medical records, or a support copilot. The future isn’t just about bigger models; it’s about smarter, context-rich retrieval. VASA is Microsoft’s play to own that layer, and if you’re on Azure, you just got a huge leg up.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-13-microsoft-vasa.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-13-microsoft-vasa.html&text=Microsoft%20VASA%3A%20Universal%20Vector%20Store%20Arrives%20for%20the%20Multimodal%20AI%20Era" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://techcommunity.microsoft.com/t5/azure-ai-blog/introducing-vasa-universal-vector-search/ba-p/4820912" target="_blank" rel="noopener">Microsoft Azure Blog: Introducing Azure VASA</a></li><li><a href="https://thenewstack.io/vector-database-battle-microsoft-vasa/" target="_blank" rel="noopener">The New Stack: Vector Database Wars Heat Up</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
