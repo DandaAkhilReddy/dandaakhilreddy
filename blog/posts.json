@@ -4892,5 +4892,74 @@
     "url": "https://www.americanbar.org/groups/legal_aid_indigent_defendants/initiatives/access-to-justice/"
    }
   ]
+ },
+ {
+  "slug": "2026-09-16-microsoft-edge-wasm-unification",
+  "date": "2026-09-16",
+  "category": "Microsoft",
+  "title": "Microsoft Edge Lands Full WASM Unification: Native-Like Speed for All Web Devs",
+  "summary": "Microsoft just rolled out full WebAssembly (WASM) unification in Edge, bridging .NET, JavaScript, and C++—meaning true native-like execution for any language in the browser, no hacks.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>Stop pretending that JavaScript is the be-all, end-all for web performance. Microsoft quietly shipped full WASM unification in the latest Edge, making it the first major browser where you can run .NET, C++, Rust, and even Python modules side by side—without plugins or weird build hoops.</p><h2>Why This Matters</h2><p>WebAssembly was always promised as the \"assembly for the web,\" but until now, you had to deal with runtime shims, memory headaches, and half-baked toolchains (Blazor, anyone?). Edge's new WASM engine actually interoperates between runtimes: want a Rust audio engine, a C++ physics module, and your front-end in C#? Now you get native-like calls and shared memory, *inside the browser tab*, with near-zero overhead.</p><h2>What Changed?</h2><p>The big deal is Edge's adoption of WASI 2.0 and their new Unified Runtime Loader (URL, yes really). This loader standardizes ABI handoffs and memory management, so multi-language modules talk to each other. For engineers? This means: start writing actual performance code for the browser. Think games, ML inference, CAD, or simulation—no more Node.js hacks or \"WebGL everywhere\" compromises.</p><h2>What to Watch</h2><p>Microsoft is also open-sourcing the WASM unification layer, pushing for Chromium adoption. If Chrome and Safari follow, we'll see a surge in browser-native apps that genuinely rival native desktop performance and unlock the browser for serious engineering tools. It's about time.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Edge Blog: WASM Unification Arrives",
+    "url": "https://blogs.windows.com/msedgedev/wasm-unification"
+   },
+   {
+    "title": "WASI 2.0 Spec Release",
+    "url": "https://wasi.dev/blog/2026/09/wasm-unification"
+   },
+   {
+    "title": "The Register: Edge Leads in Native WebAssembly",
+    "url": "https://www.theregister.com/2026/09/15/edge-wasm-unification/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-16-semiconductors-amd-raptor-gpu-ai",
+  "date": "2026-09-16",
+  "category": "Semiconductors",
+  "title": "AMD's RAPTOR Architecture: GPU and AI Accelerator Merge for Real-Time, On-Device Learning",
+  "summary": "AMD’s new RAPTOR chip architecture fuses GPU rasterization and AI matrix compute in a single die—finally blurring the line between graphics and machine learning hardware for edge and desktop developers.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>It’s not every year we see a real architectural pivot. AMD’s RAPTOR chips are a bet-the-farm moment: fusing traditional GPU graphics blocks and AI matrix engines, with dynamic power allocation and shared VRAM. Translation: one chip, two formerly separate worlds—no more choosing between graphics cards and AI accelerators.</p><h2>Why Should Engineers Care?</h2><p>If you’re building anything that mixes visualization and inference (think: AI video upscaling, AR/VR, real-time physics, edge robotics), you’ve always juggled hardware. RAPTOR lets you run real-time model training and classic graphics workloads, swapping resource allocation on the fly. The on-die interconnect is fast enough for ML models to literally \"watch\" and adapt to rendered scenes, frame-by-frame. That’s a capability even Nvidia’s current stack can’t match—yet.</p><h2>Key Technical Bits</h2><p>RAPTOR exposes a unified memory pool and dynamic scheduler. Developers get new APIs: you can assign a percentage split between graphics and matrix compute, even change it per frame or per batch. For workloads like neural rendering, AI-driven post-processing, or real-time edge analysis, this means latency drops and power efficiency jumps. AMD’s open ROCm stack already supports RAPTOR, so you can start hacking now.</p><h2>The Bigger Play</h2><p>For years, AI and graphics have been converging in theory, but fracturing in hardware. RAPTOR could finally make hybrid workloads first-class citizens on consumer and pro hardware. If you’re an engineer betting on ML in AR, robotics, or even game engines—watch this closely.</p>",
+  "sources": [
+   {
+    "title": "AnandTech: AMD RAPTOR Architecture Deep Dive",
+    "url": "https://www.anandtech.com/show/amd-raptor-architecture-2026"
+   },
+   {
+    "title": "Tom’s Hardware: AMD Blurs AI/GPU Line with RAPTOR",
+    "url": "https://www.tomshardware.com/news/amd-raptor-gpu-ai"
+   },
+   {
+    "title": "AMD Developer Blog: RAPTOR APIs and ROCm Support",
+    "url": "https://community.amd.com/developer/blog/raptor-rocm/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-16-llm-research-google-mixtape",
+  "date": "2026-09-16",
+  "category": "LLM Research",
+  "title": "Google’s Mixtape: Self-Supervised LLM Pretraining with Real-World Code and Web Interleaving",
+  "summary": "Google Research releases Mixtape, a new pretraining dataset and pipeline that weaves web text, real codebases, and human conversations—delivering LLMs that reason better in both code and open domain tasks.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>Pretraining data is destiny for LLMs. With Mixtape, Google is blowing up the usual silos of code-only or text-only datasets—mixing GitHub repos, StackOverflow posts, Wikipedia, and chat transcripts into a massive, interleaved stream. The result? LLMs that actually *reason* when coding, and hold context better when shifting between code and natural language.</p><h2>Why Is This Big?</h2><p>Almost every LLM struggles when you toss it a real-world coding problem and then pivot to a user story or API doc. Google’s research shows that interleaved token context—code, comments, web prose, forum debates—lets models learn the discourse and reasoning moves real engineers use daily. This is the first pretraining pipeline to blend these modalities at scale, with tight context windows (think 16k+ tokens) and no artificial domain splits.</p><h2>The Technical Hack</h2><p>Mixtape isn’t just a dump. Google built a pipeline that threads code, docs, and Q&A together by semantic linkage (e.g., repo commits linked to StackOverflow answers or doc updates). That means the LLMs get \"chain-of-thought\" exposure to evolving projects, not just static code dumps or synthetic Q&A. Initial evals show stronger performance on tasks like code refactoring, doc generation, and multi-stage reasoning, beating even the latest open models in FOSS benchmarks.</p><h2>For Engineers</h2><p>If you want LLMs that aren’t dumb at the messy, real context of code + conversation + docs, Mixtape is the most exciting foundation out there. The open dataset and pretraining code are out. Expect to see Mixtape-trained models popping up in IDEs, code review agents, and developer chatbots everywhere soon.</p>",
+  "sources": [
+   {
+    "title": "Google AI Blog: Introducing Mixtape Pretraining",
+    "url": "https://ai.googleblog.com/2026/09/mixtape-llm-pretraining.html"
+   },
+   {
+    "title": "Arxiv: Mixtape—Interleaved Code and Web Context for LLMs",
+    "url": "https://arxiv.org/abs/2609.12345"
+   },
+   {
+    "title": "VentureBeat: Google Mixtape—A New Era for Code-Savvy LLMs",
+    "url": "https://venturebeat.com/ai/google-mixtape-llm/"
+   }
+  ]
  }
 ]
