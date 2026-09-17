@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google’s ScanMix VLM: Multimodal LLMs Finally Crack Real-World Document Reasoning | Reddy Pulse</title>
+<meta name="description" content="Google Research has open-sourced ScanMix, a vision-language model trained on billions of scanned business docs and contracts. It raises the bar for LLMs handling PDFs, tables, and messy scans.">
+<meta property="og:title" content="Google’s ScanMix VLM: Multimodal LLMs Finally Crack Real-World Document Reasoning">
+<meta property="og:description" content="Google Research has open-sourced ScanMix, a vision-language model trained on billions of scanned business docs and contracts. It raises the bar for LLMs handling PDFs, tables, and messy scans.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Google’s ScanMix VLM: Multimodal LLMs Finally Crack Real-World Document Reasoning</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 17th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop" alt="Google’s ScanMix VLM: Multimodal LLMs Finally Crack Real-World Document Reasoning">
+  <p>If you’ve ever tried to run an LLM on a real-world scanned contract or a messy PDF, you know the pain. Standard LLMs hallucinate or miss info when layout, tables, stamps, or handwritten notes get involved. Google’s ScanMix VLM (Vision-Language Model) is a major leap: it’s trained on billions of scanned pages, real-life docs, and noisy business forms—not sanitized web data.</p><h2>What’s New Here?</h2><p>ScanMix doesn’t just OCR the image and feed the text into a language model. It fuses visual tokens (layout, handwriting, stamps) with text tokens at every layer. This means it can actually reason about things like table structure, signature placement, or whether a stamp is official. The model architecture is a hybrid transformer: vision backbone (like ViT) + text encoder, with attention layers that cross-talk at every stage.</p><h2>Why Engineers Should Care</h2><p>This unlocks use cases that were stuck for years: legal doc review, invoice extraction, healthcare forms, even government paperwork digitization. Instead of brittle pipelines with OCR, heuristics, and regex nightmares, you get end-to-end models that “see” the whole doc.</p><p>I predict SaaS devs will scramble to integrate ScanMix, especially for compliance-heavy sectors. The open-source weights mean you can fine-tune on your own data without shipping sensitive docs to a third party. Plus, the pretraining scale matters: these models “know” the quirks of scanned docs across dozens of languages and formats.</p><h2>Bottom Line</h2><p>ScanMix is a peek at where LLMs are headed: real-world data, grounded reasoning, and less pipeline glue. If you’re automating workflows around paperwork, you can’t afford to ignore this.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-17-google-scanmix-vlm.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-17-google-scanmix-vlm.html&text=Google%E2%80%99s%20ScanMix%20VLM%3A%20Multimodal%20LLMs%20Finally%20Crack%20Real-World%20Document%20Reasoning" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://ai.googleblog.com/2026/09/scanmix-vlm.html" target="_blank" rel="noopener">Google open-sources ScanMix VLM for scanned document understanding</a></li><li><a href="https://arxiv.org/abs/2609.11557" target="_blank" rel="noopener">ScanMix: Multimodal AI for Real-World Documents</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
