@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #023 — GrantGenius: AI Agents to Unlock Billions in Untapped Nonprofit Funding | Reddy Pulse</title>
+<meta name="description" content="Nonprofits in the US leave over $20 billion in grant money unclaimed each year due to confusing, fragmented, and slow application processes. GrantGenius is an AI-powered agent that automates matching, drafting, and submitting grant applications—turning bureaucracy into cash flow for mission-driven orgs.">
+<meta property="og:title" content="DANDA #023 — GrantGenius: AI Agents to Unlock Billions in Untapped Nonprofit Funding">
+<meta property="og:description" content="Nonprofits in the US leave over $20 billion in grant money unclaimed each year due to confusing, fragmented, and slow application processes. GrantGenius is an AI-powered agent that automates matching, drafting, and submitting grant applications—turning bureaucracy into cash flow for mission-driven orgs.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #023 — GrantGenius: AI Agents to Unlock Billions in Untapped Nonprofit Funding</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 13th August, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop" alt="DANDA #023 — GrantGenius: AI Agents to Unlock Billions in Untapped Nonprofit Funding">
+  <p>Every nonprofit leader knows that grant funding is a lifeline—and a labyrinth. Most small and midsized nonprofits lack a dedicated grant writer and waste weeks hunting for opportunities, parsing requirements, and wrangling paperwork. The result: billions in impact dollars sitting in foundations and agencies, unclaimed, while crucial projects stall or die on the vine. I’m done watching good missions struggle because they can’t navigate the grant maze. Here’s what I’ll build to fix it.</p>
+
+<h2>The problem</h2>
+<p>America’s 1.5 million nonprofits rely on grants for survival, yet they’re leaving over <strong>$20 billion</strong> on the table every year—funds that go unclaimed or unawarded, simply because organizations can’t keep up with the deluge of opportunities and complex, ever-changing requirements. The grant application process is a nightmare: a single federal or major foundation grant can demand 20+ hours of administrative prep, and that’s before any custom essays or compliance docs. Over <strong>60% of nonprofits</strong> have no full-time grant writer, and organizations spend an average of <strong>$2,500-$5,000</strong> per successful application—if they even manage to finish it. Meanwhile, <strong>30% of applications</strong> are never submitted due to confusion or burnout. Bureaucracy isn’t just a nuisance—it’s siphoning life from the very organizations working hardest to help others.</p>
+
+<h2>The idea: GrantGenius</h2>
+<p>GrantGenius is an AI-powered agentic platform that automates the entire nonprofit grant lifecycle: from parsing mission statements and financials, to daily-matching orgs with relevant open grants, auto-drafting tailored applications, requesting human review via a secure workflow, and submitting completed packages before deadlines—no matter the funder’s quirks. The system learns from past submissions and feedback, continually refining both matching and writing to maximize win rates. For small teams, GrantGenius is a force multiplier; for large networks, it’s a grant ops revolution in a box.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' xmlns='http://www.w3.org/2000/svg' style='background:#111;border-radius:16px'>
+  <defs>
+    <marker id='arrow' markerWidth='8' markerHeight='8' refX='8' refY='4' orient='auto' markerUnits='strokeWidth'>
+      <polygon points='0,0 8,4 0,8' fill='#f5c518'/>
+    </marker>
+    <style>.label{fill:#fff;font-size:18px;font-family:sans-serif}</style>
+  </defs>
+  <!-- Inputs -->
+  <rect x='40' y='75' width='120' height='80' rx='16' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text class='label' x='100' y='120' text-anchor='middle'>Inputs</text>
+  <text class='label' x='100' y='140' text-anchor='middle' font-size='13'>• Org Profile<br/>• Past Grants<br/>• Financials<br/>• Grant Feeds</text>
+  <!-- Ingestion -->
+  <rect x='200' y='95' width='130' height='60' rx='16' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text class='label' x='265' y='130' text-anchor='middle'>Ingestion</text>
+  <text class='label' x='265' y='148' text-anchor='middle' font-size='13'>NLP Parsing & Mapping</text>
+  <!-- Memory/Graph -->
+  <rect x='370' y='40' width='140' height='110' rx='16' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text class='label' x='440' y='80' text-anchor='middle'>Memory & Graph DB</text>
+  <text class='label' x='440' y='108' text-anchor='middle' font-size='13'>Org-Grant Fit<br/>Past Submissions<br/>Feedback Loops</text>
+  <!-- Agent Orchestrator -->
+  <rect x='370' y='190' width='140' height='70' rx='16' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text class='label' x='440' y='230' text-anchor='middle'>Agent Orchestrator</text>
+  <text class='label' x='440' y='250' text-anchor='middle' font-size='13'>Matching, Writing, Optimization</text>
+  <!-- Human Gate -->
+  <rect x='560' y='190' width='110' height='70' rx='16' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text class='label' x='615' y='220' text-anchor='middle'>Human Gate</text>
+  <text class='label' x='615' y='238' text-anchor='middle' font-size='13'>Review & Approve</text>
+  <!-- Action Layer -->
+  <rect x='560' y='330' width='110' height='70' rx='16' fill='#f5c518' stroke='#fff' stroke-width='2'/>
+  <text class='label' x='615' y='370' text-anchor='middle' fill='#111'>Action Layer</text>
+  <text class='label' x='615' y='388' text-anchor='middle' font-size='13' fill='#111'>Submit & Track</text>
+  <!-- Arrows -->
+  <line x1='160' y1='115' x2='200' y2='125' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='330' y1='125' x2='370' y2='95' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='440' y1='150' x2='440' y2='190' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='510' y1='225' x2='560' y2='225' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='615' y1='260' x2='615' y2='330' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+</svg>
+<p>The flow is simple: nonprofits upload their org details, financials, and past grants, while GrantGenius ingests live feeds from major funders. NLP-based ingestion parses requirements and organizational fit, storing everything in a graph memory. The orchestrator agent matches open grants, drafts applications tailored to funder language and requirements, and hands off to a Human Gate for final review. Once approved, the Action Layer auto-submits and tracks status, closing the loop with feedback for continuous improvement.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><strong>Wedge:</strong> Focus on small nonprofits ($500K-$5M budget) applying to regional and national foundation grants (e.g., Ford, Gates, MacArthur). <strong>Stack:</strong> Phase 1: Data ingestion from 10 top US grant databases and org onboarding; Phase 2: LLM-powered matching and first-draft generation (RAG + fine-tuned prompt library); Phase 3: Human-in-the-loop workflows and auto-submission via funder portals. <strong>Pricing:</strong> SaaS: $299/mo/org for up to 10 applications, plus 1% of grant wins as upside. Expansion: platform partnerships with fiscal sponsors and state associations.</p>
+
+<h2>Why now</h2>
+<p>The nonprofit sector’s digital transformation is finally here—organizations are desperate to cut admin costs, funders are demanding better reporting, and the LLM revolution makes tailored, compliant writing at scale finally possible. The race for impact dollars has never been tighter, but bureaucracy should not be the bottleneck. GrantGenius plugs the money leaks and puts time back in the hands of those who need it most.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-13-danda-023-grantgenius.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-13-danda-023-grantgenius.html&text=DANDA%20%23023%20%E2%80%94%20GrantGenius%3A%20AI%20Agents%20to%20Unlock%20Billions%20in%20Untapped%20Nonprofit%20Funding" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.insidephilanthropy.com/home/2023/5/18/billions-in-grant-money-go-unclaimed-every-year-heres-why" target="_blank" rel="noopener">Billions in Grant Funding Go Unclaimed Each Year</a></li><li><a href="https://www.grantstation.com/sites/default/files/resource-files/true-cost-grant-writing.pdf" target="_blank" rel="noopener">The Real Cost of Grant Writing for Nonprofits</a></li><li><a href="https://www.candid.org/blog/post/why-nonprofits-miss-grant-opportunities/" target="_blank" rel="noopener">Why Nonprofits Miss Out on Grant Opportunities</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
