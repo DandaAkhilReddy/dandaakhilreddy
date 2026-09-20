@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edge’s WASM Renaissance: WebAssembly Apps Go Native on Windows | Reddy Pulse</title>
+<meta name="description" content="Microsoft Edge now lets WASM-powered web apps run with near-native performance—outside the browser. Here’s why this changes the game for Windows developers.">
+<meta property="og:title" content="Edge’s WASM Renaissance: WebAssembly Apps Go Native on Windows">
+<meta property="og:description" content="Microsoft Edge now lets WASM-powered web apps run with near-native performance—outside the browser. Here’s why this changes the game for Windows developers.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Edge’s WASM Renaissance: WebAssembly Apps Go Native on Windows</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 20th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="Edge’s WASM Renaissance: WebAssembly Apps Go Native on Windows">
+  <p>I’ve always believed the browser is the new OS, but Microsoft’s latest Edge update pushes that even further. The September 2026 release enables WebAssembly (WASM) apps to run not just inside the browser, but as standalone, installable applications—leveraging system APIs and hardware acceleration, with a security sandbox that’s tighter than classic Win32. This isn’t just a technicality; it’s a philosophical shift.</p><p><strong>Why it matters:</strong> For engineers, this means you can write cross-platform, high-perf apps in Rust, C, or Zig, compile to WASM, and let users install on Windows without worrying about legacy DLL hell or UWP oddities. Packaging is as simple as zipping some WASM and a manifest. Edge and Windows jointly handle permissions, autoupdates, and native notifications. No more tradeoff between web reach and performance.</p><h2>Under the Hood</h2><p>Microsoft is using a beefed-up WASI (WebAssembly System Interface) with Windows-specific extensions—think easy file access, GPU compute, and even some ML acceleration via DirectML bindings. Unlike Electron, there’s no Chromium bloat: the runtime is a thin, shared system component, not a bundled browser. Startup is instant, and memory overhead is negligible compared to traditional desktop wrappers.</p><h2>The Catch</h2><p>Right now, WASM apps can’t access every native OS feature (no raw Win32 API, obviously), but the team is moving fast. There’s a new VS Code extension with debugging and packaging support. Microsoft’s own Office Lite is dogfooding the model: same codebase, web or native install, everywhere.</p><p>For devs burned by past Microsoft platform pivots, this one feels sticky. The incentives align: less bloat, more reach, and no more API rug-pulls.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-20-microsoft-edge-wasm-renaissance.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-20-microsoft-edge-wasm-renaissance.html&text=Edge%E2%80%99s%20WASM%20Renaissance%3A%20WebAssembly%20Apps%20Go%20Native%20on%20Windows" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://blogs.windows.com/msedgedev/september-2026-release" target="_blank" rel="noopener">Microsoft Edge Dev Blog: September 2026 Release Notes</a></li><li><a href="https://webassemblyweekly.com/issues/2026-09-17" target="_blank" rel="noopener">WebAssembly Weekly: WASM Apps Beyond the Browser</a></li><li><a href="https://www.theregister.com/2026/09/18/microsoft_edge_wasm_apps/" target="_blank" rel="noopener">The Register: Edge’s WASM Expansion Is Microsoft’s Real UWP Successor</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
