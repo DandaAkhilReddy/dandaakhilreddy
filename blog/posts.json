@@ -5680,5 +5680,66 @@
     "url": "https://www.irs.gov/publications/p969"
    }
   ]
+ },
+ {
+  "slug": "2026-09-25-microsoft-orbitgraph-launch",
+  "date": "2026-09-25",
+  "category": "Microsoft",
+  "title": "Microsoft OrbitGraph: Native Graph Compute in Azure Data Lake",
+  "summary": "Microsoft just announced OrbitGraph, a graph-native compute engine for Azure Data Lake, making connected data analysis a first-class citizen across the cloud. This is a big deal for anyone building systems that rely on relationships, not just rows.",
+  "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop",
+  "body": "<p>Graph is the language of connections—think social networks, supply chains, or fraud detection. Until now, if you wanted to crunch large graphs in Azure, you were stuck kludging together Spark GraphFrames or running Neo4j as a managed service. The new <strong>OrbitGraph</strong> engine is different: it's a graph-native backend, built directly into Azure Data Lake's storage and compute pipeline.</p><h2>Why native graph compute matters</h2><p>Here's the kicker: OrbitGraph isn't just a faster engine for traversals (though it's reportedly 5x faster than the previous best-in-class cloud solutions). It's about <strong>removing impedance mismatch</strong>—no more ETL pipelines from tabular to graph back and forth. You can store massive graphs as native types, query with Gremlin or Cypher, and get parallel scaling as a first-class citizen. This is especially important for real-time recommendation engines, access/entitlement checks, and anything that needs to walk relationships at scale.</p><h2>What changes for engineers?</h2><p>If you're shipping data-heavy apps, this unlocks a whole new design space. Instead of precomputing relationships or denormalizing everything, you can model natural graphs and let OrbitGraph crunch traversals in place. That means less code, simpler data pipelines, and—critically—decreased operational complexity. The integration with Azure ML is interesting too: graph analytics as input features for LLMs or anomaly detection is now a 2-3 line change, not a separate workflow.</p><p>For the first time, graph isn't an afterthought in the Microsoft cloud stack—it's a core primitive. If you're building anything with complex relationships, watch this space.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Blog: Introducing OrbitGraph",
+    "url": "https://techcommunity.microsoft.com/t5/azure-data-lake/introducing-orbitgraph-native-graph-in-azure/ba-p/4653921"
+   },
+   {
+    "title": "ZDNet: Microsoft bets on graph analytics at scale",
+    "url": "https://www.zdnet.com/article/microsoft-azure-goes-graph/"
+   },
+   {
+    "title": "InfoQ: OrbitGraph Launch Review",
+    "url": "https://www.infoq.com/news/2026/09/orbitgraph-azure/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-25-nvidia-blackwell-hbm4-breakthrough",
+  "date": "2026-09-25",
+  "category": "Semiconductors",
+  "title": "NVIDIA Blackwell Refresh: HBM4 Memory Breaks the 4TB/s Barrier",
+  "summary": "NVIDIA's Blackwell Refresh GPUs with HBM4 are the first accelerators to smash through 4TB/s memory bandwidth, redefining what engineers can do with AI and simulation workloads. The hardware bar for 'memory-bound' just got obliterated.",
+  "image": "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop",
+  "body": "<p>Engineers love talking about FLOPs, but in real-world AI and simulation workloads, <strong>memory bandwidth</strong> is the real bottleneck. NVIDIA's latest Blackwell Refresh (B200X) finally delivers HBM4 with a staggering 4.2TB/s of bandwidth per GPU, up from the previous 1.8TB/s with HBM3e. That's not a marginal step—it's a fundamental leap.</p><h2>Why does this matter?</h2><p>With LLMs, physics, and genomics, the biggest models are always memory-bound (especially for inferencing and training with giant sequence windows or sparse access). More bandwidth means bigger batch sizes, faster attention layers, and less memory shuffling. Suddenly, context windows aren't as constrained by memory paging, and multi-modal models can process in near real-time.</p><h2>Under the hood</h2><p>The new HBM4 stacks use a 12-layer packaging approach and a denser interposer, which took TSMC and NVIDIA years to co-design. The result is not just more bandwidth, but also much lower energy per bit—crucial for data center scaling and cost. For engineers, that means you can finally profile your code and see the FLOPs mattering more than memory for once (at least on the right workloads).</p><p>If you build AI infrastructure or optimize for memory-bound scenarios, this is your green light to refactor and think bigger. Expect every AI hardware vendor to scramble to catch up.</p>",
+  "sources": [
+   {
+    "title": "AnandTech: NVIDIA Blackwell Refresh Debuts HBM4",
+    "url": "https://www.anandtech.com/show/20711/nvidia-blackwell-hbm4"
+   },
+   {
+    "title": "The Next Platform: HBM4 and the Race for Bandwidth",
+    "url": "https://www.nextplatform.com/2026/09/24/nvidia-hbm4-blackwell/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-25-google-sparrow-2-contextual-planning",
+  "date": "2026-09-25",
+  "category": "LLM Research",
+  "title": "Google Sparrow-2: On-the-Fly Contextual Planning in Large Language Models",
+  "summary": "The new Google Sparrow-2 LLM can generate, chain, and revise multi-step plans inside a single context window, making it a leap forward for agents and real-world workflow automation. This is the closest thing yet to a generalist 'reasoning engine.'",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>LLMs have always been great at completion, but mediocre at <strong>planning</strong>—lining up actions, revising steps, and iterating based on feedback. With <strong>Sparrow-2</strong>, Google is closing that gap: the model can now construct multi-step plans, evaluate their feasibility, and self-correct within a single conversation context. It's a big deal for engineers building agents that need more than just 'do what I say.'</p><h2>How does it work?</h2><p>Sparrow-2 uses a new recurrent attention mechanism that lets the model 'slot in' plans, subgoals, and results as named objects in its working memory—think of it like an internal scratchpad that persists throughout a session. The key innovation is that the model can <strong>dynamically revise</strong> those plans based on user feedback or new data, without losing context or starting over. This feels much closer to how humans actually reason—draft, revise, adapt.</p><h2>Why it matters for engineers</h2><p>If you're building multi-agent workflows, scriptable LLM APIs, or anything that requires agentic reasoning, this is a game-changer. No more hacks with toolformer plugins or out-of-context chains. You can now ask, \"Plan steps to automate this workflow, handle exceptions, and retry if needed\"—and Sparrow-2 can keep it all in context, updating as things change. It means less glue code, more robust automation, and, honestly, more trust in your LLMs.</p><p>I expect this to show up soon in Google Cloud's Duet AI and Workspace automation hooks. If your app lives or dies by agent reliability, start poking at this API now.</p>",
+  "sources": [
+   {
+    "title": "Google DeepMind: Sparrow-2 Technical Paper",
+    "url": "https://deepmind.google/discover/blog/sparrow-2-planning/"
+   },
+   {
+    "title": "MIT Technology Review: Google LLMs get better at planning",
+    "url": "https://www.technologyreview.com/2026/09/23/google-sparrow-2-llm-planning/"
+   }
+  ]
  }
 ]
