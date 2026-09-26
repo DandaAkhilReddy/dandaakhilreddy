@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Context Windows Just Hit 10M Tokens—But Here’s the Real Bottleneck | Reddy Pulse</title>
+<meta name="description" content="A new generation of LLMs can handle 10 million tokens at a go, but model accuracy and latency are running into physics and economics.">
+<meta property="og:title" content="Context Windows Just Hit 10M Tokens—But Here’s the Real Bottleneck">
+<meta property="og:description" content="A new generation of LLMs can handle 10 million tokens at a go, but model accuracy and latency are running into physics and economics.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Context Windows Just Hit 10M Tokens—But Here’s the Real Bottleneck</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 25th July, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=1200&h=600&fit=crop" alt="Context Windows Just Hit 10M Tokens—But Here’s the Real Bottleneck">
+  <p>Remember when 2K or 8K token windows were a big deal? Now, thanks to a wave of sliding attention and retrieval tricks, several labs (including OpenAI and Google) are demoing LLMs with <strong>10M token</strong> context windows. Demos look magical: you can paste whole codebases, books, or corpora and get consistently relevant answers. But there’s a catch—and it’s not what you think.</p><h2>How Did We Get Here?</h2><p>Researchers made this leap by fusing chunked sliding-window attention with smarter index-backed retrieval. Some models compress or summarize old tokens on the fly, while others let you plug in custom retrievers at runtime. Technically, this means you can “see” everything—but only if you architect your queries to prioritize what actually matters. The token limit is no longer the gating factor; it’s your ability to design prompts and RAG pipelines that cut through the noise.</p><h2>The Real Bottleneck: Latency and Cost</h2><p>Here’s the rub: context that big can paralyze your system. Even with approximate attention, you’re paying in latency—sometimes seconds per token—and in sheer GPU time. The models can technically <em>see</em> 10M tokens, but reasoning over them is another story. That’s the difference between an LLM that “remembers” everything and one that’s just slow and expensive.</p><h2>Why Engineers Should Care</h2><p>If you’re building tools that need deep recall—think legal AI, scientific research assistants, or massive code refactoring bots—this is huge. But don’t buy the vendor hype: most users don’t need million-token context. Instead, focus on building smarter retrieval layers and prompt engineering so your models can fish relevant details out of that ocean of text efficiently. The frontier isn’t about who has the biggest window, but who can <strong>use</strong> it without grinding to a halt.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-25-llm-research-context-window-scaling.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-25-llm-research-context-window-scaling.html&text=Context%20Windows%20Just%20Hit%2010M%20Tokens%E2%80%94But%20Here%E2%80%99s%20the%20Real%20Bottleneck" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://arxiv.org/abs/2607.10000" target="_blank" rel="noopener">Arxiv: Scaling Transformer Models to 10M Tokens</a></li><li><a href="https://www.technologyreview.com/2026/07/22/llm-context-windows-scale/" target="_blank" rel="noopener">MIT Technology Review: Why LLM Context Windows Matter</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

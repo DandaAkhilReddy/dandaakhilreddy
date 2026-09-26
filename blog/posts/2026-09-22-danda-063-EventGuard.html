@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #063 — EventGuard: AI Agents to End Event Vendor No-Shows and Last-Minute Chaos | Reddy Pulse</title>
+<meta name="description" content="An AI agent platform that proactively manages, verifies, and automates coordination between event organizers and vendors, eliminating costly last-minute vendor cancellations, miscommunications, and service gaps for weddings, conferences, and other large events.">
+<meta property="og:title" content="DANDA #063 — EventGuard: AI Agents to End Event Vendor No-Shows and Last-Minute Chaos">
+<meta property="og:description" content="An AI agent platform that proactively manages, verifies, and automates coordination between event organizers and vendors, eliminating costly last-minute vendor cancellations, miscommunications, and service gaps for weddings, conferences, and other large events.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #063 — EventGuard: AI Agents to End Event Vendor No-Shows and Last-Minute Chaos</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 22nd September, 2026 · 5 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop" alt="DANDA #063 — EventGuard: AI Agents to End Event Vendor No-Shows and Last-Minute Chaos">
+  <p>The event industry—think weddings, conferences, community festivals—runs on tight schedules. Yet, every organizer knows the anxiety before any big day: Will the caterer show up? Did the AV team get the right address? What if the florist breaks down en route? Last-minute vendor chaos happens far too often, causing heartbreak, financial loss, and a tidal wave of negative reviews. No wonder event insurance claims for vendor failures keep rising, and forums are loaded with horror stories. It's a gaping operational wound, ignored by generic CRMs and calendar tools.</p>
+
+<h2>The problem</h2>
+<p>Vendor no-shows, late arrivals, and miscommunications plague the $1.2 trillion global events industry. In the U.S. alone, over 2.6 million weddings and 1.9 million corporate events happen annually. <b>One in four events faces at least one critical vendor issue</b>—from missed deliveries to technical teams getting lost or double-booked. These mishaps cost organizers and clients an estimated $9.4 billion yearly in refunds, make-goods, and lost business. Most small vendors (DJ, catering, AV) lack automation, rely on spreadsheets and texts, and are overwhelmed by gig juggling. On the organizer side, confirmation calls and manual checklists offer little real-time insight or backup options. The market is desperate for agentic automation that eliminates these black holes—before the big day.</p>
+
+<h2>The idea: EventGuard</h2>
+<p><b>EventGuard</b> is an AI agent platform that sits between event organizers and every vendor or service provider. It ingests contracts, comms, itineraries, and real-time location data, and then proactively verifies, confirms, and coordinates vendor actions—across email, SMS, WhatsApp, and vendor portals. EventGuard agents automatically chase confirmations, verify readiness, monitor potential delays (traffic, weather, conflicting gigs), and escalate backup plans if risk is detected. For organizers, it’s a dashboard with real-time confidence scores, alerts, and auto-generated contingency options. For vendors, it's an AI assistant that syncs logistics, pings for check-ins, and prevents mistakes. On event day, EventGuard is the invisible digital wrangler, ensuring everyone shows up, preps correctly, and delivers. The result: events that run on time—and reputations that last.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;border-radius:16px' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='10' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'>
+      <path d='M 0 0 L 10 5 L 0 10 z' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <!-- Inputs -->
+  <rect x='30' y='120' width='120' height='70' rx='18' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='90' y='155' fill='#f5c518' font-size='18' font-family='sans-serif' text-anchor='middle'>Inputs</text>
+  <text x='90' y='175' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Contracts,</text>
+  <text x='90' y='190' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Comms, Location</text>
+  <!-- Ingestion -->
+  <rect x='180' y='120' width='130' height='70' rx='18' fill='#1a1a1a' stroke='#f5c518' stroke-width='2'/>
+  <text x='245' y='155' fill='#f5c518' font-size='18' font-family='sans-serif' text-anchor='middle'>Ingestion</text>
+  <text x='245' y='175' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Parser, Normalizer,</text>
+  <text x='245' y='190' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Comms Integration</text>
+  <!-- Memory/Graph -->
+  <rect x='340' y='100' width='155' height='110' rx='18' fill='#24221b' stroke='#f5c518' stroke-width='2'/>
+  <text x='417' y='140' fill='#f5c518' font-size='18' font-family='sans-serif' text-anchor='middle'>Memory / Graph</text>
+  <text x='417' y='160' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Vendor States,</text>
+  <text x='417' y='175' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Event Timeline,</text>
+  <text x='417' y='190' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Location Streams</text>
+  <!-- Agent Orchestrator -->
+  <rect x='520' y='100' width='150' height='110' rx='18' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='595' y='135' fill='#f5c518' font-size='18' font-family='sans-serif' text-anchor='middle'>Agent</text>
+  <text x='595' y='155' fill='#f5c518' font-size='18' font-family='sans-serif' text-anchor='middle'>Orchestrator</text>
+  <text x='595' y='175' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Risk Detection,</text>
+  <text x='595' y='190' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Chase Flows,</text>
+  <text x='595' y='205' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Backup Auto-Trigger</text>
+  <!-- Human Gate -->
+  <rect x='170' y='260' width='180' height='60' rx='16' fill='#191919' stroke='#f5c518' stroke-width='2'/>
+  <text x='260' y='292' fill='#f5c518' font-size='18' font-family='sans-serif' text-anchor='middle'>Human Gate</text>
+  <text x='260' y='312' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Organizer Review & Approve</text>
+  <!-- Action Layer -->
+  <rect x='400' y='260' width='270' height='60' rx='16' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='535' y='292' fill='#f5c518' font-size='18' font-family='sans-serif' text-anchor='middle'>Action Layer</text>
+  <text x='535' y='312' fill='#fff' font-size='13' font-family='sans-serif' text-anchor='middle'>Notify, Escalate, Reschedule, Book Backup</text>
+  <!-- Arrows -->
+  <line x1='150' y1='155' x2='180' y2='155' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+  <line x1='310' y1='155' x2='340' y2='155' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+  <line x1='495' y1='155' x2='520' y2='155' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+  <line x1='595' y1='210' x2='535' y2='260' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+  <line x1='260' y1='210' x2='260' y2='260' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+  <line x1='350' y1='290' x2='400' y2='290' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)' />
+  <line x1='180' y1='190' x2='170' y2='260' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)' />
+</svg>
+<p>The architecture begins with Inputs—contracts, communications, and live location streams from vendors and organizers. The Ingestion layer parses, normalizes, and integrates all comms into a consistent event model. The Memory/Graph layer tracks vendor states, event timelines, and real-time signals (e.g., GPS, confirmations, ETA predictions). The Agent Orchestrator uses this live context to detect risks, chase confirmations, and auto-trigger contingency flows. Critical actions pass through the Human Gate—organizers get to review, approve, or override decisions. The Action Layer then executes: notifying, escalating to alternates, or even auto-booking backups if a vendor is late or unresponsive. All flows are logged for audit and peace of mind.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Launch for wedding planners and event coordinators as a SaaS platform with integrations for email, SMS, and Google Calendar. The MVP focuses on contract ingestion, automated confirmation chasing, and real-time vendor status dashboards.</p>
+<p><b>Stack:</b> Expand to include location tracking, WhatsApp/Slack/portal integrations, backup vendor auto-dispatch, and multi-event management for venues and agencies. Build a vendor-facing mobile assistant for one-tap confirmations and schedule sync.</p>
+<p><b>Pricing:</b> Organizer-facing SaaS: $79/event (up to 10 vendors), $299/month for unlimited events (agencies/venues). Vendors: free basic assistant, $15/month for pro features (calendar sync, auto-routing, real-time risk alerts).</p>
+
+<h2>Why now</h2>
+<p>Vendor reliability has become the number one pain point for event organizers in the post-pandemic era, as labor shortages, supply chain hiccups, and gig-economy unpredictability compound. The rise of digital contracts, location-aware smartphones, and LLM-powered agentic automation makes it possible to finally close the gap between intention and flawless execution. The industry is desperate for trust, automation, and insurance against chaos. EventGuard is the agent that makes your big day boringly predictable—guaranteed.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-22-danda-063-EventGuard.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-22-danda-063-EventGuard.html&text=DANDA%20%23063%20%E2%80%94%20EventGuard%3A%20AI%20Agents%20to%20End%20Event%20Vendor%20No-Shows%20and%20Last-Minute%20Chaos" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.theweddingreport.com/statistics" target="_blank" rel="noopener">U.S. Wedding Statistics &amp; Market Size 2023</a></li><li><a href="https://www.statista.com/topics/3817/event-industry-in-the-us/" target="_blank" rel="noopener">Global Events Industry Valued at $1,135 Billion</a></li><li><a href="https://www.eventmanagerblog.com/event-failure-causes/" target="_blank" rel="noopener">Top Reasons for Event Failure: Vendor No-Shows &amp; Delays</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

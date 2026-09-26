@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #062 — HospiFix: AI Agents to End Hospital Equipment Downtime and Scheduling Chaos | Reddy Pulse</title>
+<meta name="description" content="HospiFix uses autonomous AI agents to track, schedule, and optimize medical equipment use and maintenance in hospitals, slashing downtime, boosting ROI, and letting doctors focus on care.">
+<meta property="og:title" content="DANDA #062 — HospiFix: AI Agents to End Hospital Equipment Downtime and Scheduling Chaos">
+<meta property="og:description" content="HospiFix uses autonomous AI agents to track, schedule, and optimize medical equipment use and maintenance in hospitals, slashing downtime, boosting ROI, and letting doctors focus on care.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #062 — HospiFix: AI Agents to End Hospital Equipment Downtime and Scheduling Chaos</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 21st September, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop" alt="DANDA #062 — HospiFix: AI Agents to End Hospital Equipment Downtime and Scheduling Chaos">
+  <p>Walk into any major hospital and you'll see a parade of high-value machines—MRI scanners, ventilators, infusion pumps—often idle, unavailable, or stuck in limbo waiting for service or transfer. Nurses hunt for working devices, patients are rescheduled, and millions in equipment sits underused or breaks down from mismanagement. While hospitals pour over $200 billion a year into medical devices, up to 40% of their mobile assets are lost, misplaced, or unused at any given time—translating to wasted capital and delays in care that cost lives.</p>
+
+<h2>The problem</h2>
+<p>Hospitals are drowning in equipment chaos. The U.S. alone has over 6,000 hospitals and $200B worth of clinical equipment. Yet, 15–20% of all medical devices are lost or stolen annually, and 30–40% of mobile assets sit idle or can't be found when needed. Downtime is severe: nearly 40% of devices experience unplanned outages due to missed maintenance, costing the average hospital over $4 million per year in delays, rental fees, or overtime. For patients, every hour lost waiting on equipment can delay diagnostics, treatment, and recovery. Even large systems with digital inventory struggle—manual scheduling, fragmented maintenance, and zero coordination between departments creates silos of waste and risk.</p>
+
+<h2>The idea: HospiFix</h2>
+<p>HospiFix is an agentic automation layer for hospital equipment orchestration. It connects to hospital inventory, scheduling, and device management systems, then deploys AI agents that track every asset's location, status, and use in real time. The agents optimize equipment scheduling for patients and clinicians, auto-schedule preventive maintenance, and flag underutilized or misplaced assets. Need an infusion pump for a patient in ICU? The agent finds, books, and routes it. MRI down for service? The agent re-routes patients and updates everyone instantly. Maintenance due? The agent schedules and coordinates, ensuring zero unplanned downtime. It’s like an autonomous air traffic controller—for every device in the hospital.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;border-radius:8px'><defs><marker id='arrow' markerWidth='10' markerHeight='7' refX='10' refY='3.5' orient='auto' markerUnits='strokeWidth'><polygon points='0 0, 10 3.5, 0 7' fill='#f5c518'/></marker></defs>
+<rect x='40' y='40' width='120' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/><text x='100' y='75' fill='#fff' font-size='16' font-family='sans-serif' text-anchor='middle'>Inputs</text>
+<rect x='200' y='40' width='140' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/><text x='270' y='75' fill='#fff' font-size='16' font-family='sans-serif' text-anchor='middle'>Ingestion Layer</text>
+<rect x='380' y='40' width='130' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/><text x='445' y='75' fill='#fff' font-size='16' font-family='sans-serif' text-anchor='middle'>Memory & Graph</text>
+<rect x='540' y='40' width='170' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/><text x='625' y='75' fill='#fff' font-size='16' font-family='sans-serif' text-anchor='middle'>Agent Orchestrator</text>
+<rect x='260' y='150' width='110' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/><text x='315' y='185' fill='#fff' font-size='16' font-family='sans-serif' text-anchor='middle'>Human Gate</text>
+<rect x='430' y='320' width='160' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/><text x='510' y='355' fill='#fff' font-size='16' font-family='sans-serif' text-anchor='middle'>Action Layer</text>
+<text x='140' y='120' fill='#f5c518' font-size='13' font-family='sans-serif' text-anchor='middle'>EHR, RTLS, Scheduling, Maintenance DBs</text>
+<text x='350' y='320' fill='#f5c518' font-size='13' font-family='sans-serif' text-anchor='end'>Notifications, Orders, Device Updates</text>
+<text x='585' y='120' fill='#f5c518' font-size='13' font-family='sans-serif' text-anchor='middle'>AI Agents (Equipment, Scheduling, Maintenance)</text>
+<g stroke='#888' stroke-width='3' marker-end='url(#arrow)'>
+  <line x1='160' y1='70' x2='200' y2='70'/>
+  <line x1='340' y1='70' x2='380' y2='70'/>
+  <line x1='510' y1='70' x2='540' y2='70'/>
+  <line x1='545' y1='100' x2='315' y2='150'/>
+  <line x1='370' y1='210' x2='510' y2='320'/>
+  <line x1='625' y1='100' x2='510' y2='320'/>
+</g></svg>
+<p>The flow: Inputs from EHR, real-time location systems (RTLS), scheduling, and maintenance databases feed the Ingestion Layer, which normalizes and updates data. Memory & Graph builds a real-time knowledge graph of all assets, locations, and states. The Agent Orchestrator layer runs specialized agents for asset tracking, scheduling, and maintenance optimization. When actions impact clinical workflow (like moving or reserving equipment), a Human Gate lets staff approve, override, or delegate. The Action Layer pushes updates, notifications, and orders to staff and devices, and even triggers work orders or transfers autonomously.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Start with mid-sized hospitals (200–500 beds) struggling with IV pump and portable imaging chaos—lowest-hanging ROI. Deploy as a cloud SaaS plus on-prem connector, integrating with Cerner/Epic, RTLS (like CenTrak), and maintenance ticketing. <b>Stack:</b> Core: real-time ingestion and asset knowledge graph, agentic scheduler/optimizer, staff notification dashboard, API to hospital systems. Roadmap: expand to cover all major asset classes, predictive maintenance, and cross-hospital fleet sharing. <b>Pricing:</b> SaaS per-bed tiered pricing plus optional % savings share; land at $3–10 per bed/month, with pilot discounts for reference sites.</p>
+
+<h2>Why now</h2>
+<p>Hospitals are finally digitized, with mature EHRs, RTLS, and maintenance data—yet equipment chaos persists. Post-pandemic, every bed and device counts, and budgets are tight. AI agents can finally orchestrate real-time, cross-system actions at scale. Early movers can save millions, improve patient flow, and free clinicians from logistics hell. HospiFix puts every device to work—when patients need it most.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-21-danda-062-hospifix.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-21-danda-062-hospifix.html&text=DANDA%20%23062%20%E2%80%94%20HospiFix%3A%20AI%20Agents%20to%20End%20Hospital%20Equipment%20Downtime%20and%20Scheduling%20Chaos" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.mckinsey.com/industries/healthcare/our-insights/medical-equipment-management-the-next-frontier" target="_blank" rel="noopener">Medical Equipment Management: The $200B Asset Tracking Challenge</a></li><li><a href="https://www.beckershospitalreview.com/supply-chain/why-hospitals-lose-track-of-mobile-assets.html" target="_blank" rel="noopener">Hospitals Lose Track of 40% of Mobile Assets</a></li><li><a href="https://www.gehealthcare.com/article/the-cost-of-unplanned-downtime-in-healthcare" target="_blank" rel="noopener">The Cost of Unplanned Downtime in Healthcare</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

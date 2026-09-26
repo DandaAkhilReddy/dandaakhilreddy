@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google OpenFlame: Mixture-of-Experts LLMs Reach Real-Time At Scale | Reddy Pulse</title>
+<meta name="description" content="Google’s OpenFlame LLM is the first public Mixture-of-Experts (MoE) model to deliver real-time responses at billion-user scale. The key is aggressive expert routing and smart caching.">
+<meta property="og:title" content="Google OpenFlame: Mixture-of-Experts LLMs Reach Real-Time At Scale">
+<meta property="og:description" content="Google’s OpenFlame LLM is the first public Mixture-of-Experts (MoE) model to deliver real-time responses at billion-user scale. The key is aggressive expert routing and smart caching.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Google OpenFlame: Mixture-of-Experts LLMs Reach Real-Time At Scale</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 9th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop" alt="Google OpenFlame: Mixture-of-Experts LLMs Reach Real-Time At Scale">
+  <h2>OpenFlame: MoE Gets Practical</h2><p>Mixture-of-Experts models have always promised efficiency, but Google’s OpenFlame is the first serious contender. It’s a 96B parameter model, but at any one time, only 8B are active. Smart routing and caching algorithms mean latency is under 20ms—even with heavy queries.</p><p>Why should engineers care? MoE isn’t just about faster inference. It’s about cost and flexibility: OpenFlame lets you tailor expert modules to domain-specific tasks, and hot-swap them without retraining the whole model. Google’s open-source implementation includes dynamic expert management APIs—think plug-and-play LLMs.</p><h2>Technical Innovations</h2><p>The routing mechanism is a learned neural router, not a static gate. That means the system adapts in real time to usage patterns—high-traffic experts get more capacity, cold paths get pushed to disk. Caching is smart, with token-level deduplication and prefetching based on query shape.</p><strong>For engineers:</strong> If you’re building LLM-powered applications, MoE is no longer just a research curiosity. With OpenFlame, you can ship models that scale, adapt, and save money—while keeping latency low.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-09-llm-research-google-openflame-mixture-of-experts.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-09-llm-research-google-openflame-mixture-of-experts.html&text=Google%20OpenFlame%3A%20Mixture-of-Experts%20LLMs%20Reach%20Real-Time%20At%20Scale" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://ai.googleblog.com/" target="_blank" rel="noopener">Google AI Blog: OpenFlame MoE Model</a></li><li><a href="https://arxiv.org/" target="_blank" rel="noopener">Arxiv: OpenFlame Paper</a></li><li><a href="https://news.ycombinator.com/" target="_blank" rel="noopener">Hacker News: MoE Real-World Deployments</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

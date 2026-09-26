@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NVIDIA Blackwell-B2: The New Inference King (and Its Real Bottleneck) | Reddy Pulse</title>
+<meta name="description" content="NVIDIA’s Blackwell-B2 chips are breaking records in LLM inference, but engineers are discovering that memory—not flops—is today’s true AI bottleneck.">
+<meta property="og:title" content="NVIDIA Blackwell-B2: The New Inference King (and Its Real Bottleneck)">
+<meta property="og:description" content="NVIDIA’s Blackwell-B2 chips are breaking records in LLM inference, but engineers are discovering that memory—not flops—is today’s true AI bottleneck.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Semiconductors</span>
+  <h1>NVIDIA Blackwell-B2: The New Inference King (and Its Real Bottleneck)</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 24th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop" alt="NVIDIA Blackwell-B2: The New Inference King (and Its Real Bottleneck)">
+  <p>The AI hardware arms race hasn’t slowed, and NVIDIA’s Blackwell-B2 is now the uncontested inference king. With 240B+ parameter LLMs now running in <strong>real-time</strong> on a single B2 node, it’s tempting to focus on the raw FLOPS. But take a closer look, and you’ll see a shift: the <strong>bottleneck</strong> is memory bandwidth and capacity, not core compute.</p><h2>What makes Blackwell-B2 different?</h2><p>Three things: (1) HBM4 stacks at 2.4 TB/s per GPU, (2) unified memory access across 8-GPU nodes, and (3) new on-die interconnects that push sub-1ms latency for distributed attention. Engineers shipping LLM inference at scale can finally fit gigantic context windows and massive weights <em>on-device</em>—not just rely on aggressive quantization or awkward sharding tricks.</p><p>But here’s the trap: LLMs with 256k+ tokens and complex routing still hit bandwidth walls. Even with Blackwell-B2’s exotic memory, saturating the interconnect with attention patterns (like long-context chat or streaming code generation) means you can’t just scale flops and expect linear gains. <strong>Smart engineers are optimizing their kernels for data movement, not just compute.</strong></p><p>Bottom line: Blackwell-B2 is a beast, but if your pipeline is memory-bound, you’ll be leaving performance on the table. Watch for a new wave of AI engineering: memory-efficient attention kernels, smarter batching, and better compression—not just ever-bigger GPUs. Hardware is only half the story; the software stack has to catch up.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-24-ai-hardware-nvidia-blackwell-inference.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-24-ai-hardware-nvidia-blackwell-inference.html&text=NVIDIA%20Blackwell-B2%3A%20The%20New%20Inference%20King%20%28and%20Its%20Real%20Bottleneck%29" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.nvidia.com/en-us/data-center/blackwell-architecture/" target="_blank" rel="noopener">NVIDIA Blackwell Architecture Whitepaper</a></li><li><a href="https://www.anandtech.com/show/21202/nvidia-blackwell-b2-architecture" target="_blank" rel="noopener">AnandTech: NVIDIA Blackwell-B2 Deep Dive</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
