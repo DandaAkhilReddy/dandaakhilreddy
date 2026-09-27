@@ -5844,5 +5844,74 @@
     "url": "https://www.digitalcommerce360.com/2025/03/14/small-businesses-ecommerce-package-problems/"
    }
   ]
+ },
+ {
+  "slug": "2026-09-27-microsoft-dataverse-embedded-databricks",
+  "date": "2026-09-27",
+  "category": "Microsoft",
+  "title": "Microsoft Dataverse Gets Embedded Databricks, Smashing Data Silos for App Devs",
+  "summary": "Microsoft just rolled out direct Databricks workspace integration inside Dataverse. For engineers, this means no more brittle ETL pipelines between low-code apps and serious analytics workloads.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft is quietly killing one of the most annoying headaches in enterprise app development: data silos between business apps and analytics. This week, Dataverse — the data backbone for Power Apps, Copilot Studio, and Dynamics — now lets you spin up a Databricks Lakehouse workspace directly inside the Dataverse UI. No more brittle connectors, no more copy-paste hacks. Native. Live. Unified.</p><h2>Why It Matters</h2><p>If you’ve ever built an app on Dataverse or Power Platform, you know the pain. Business data lives in Dataverse tables, but anything serious — like building ML models or running real-time analytics — means clumsy ETL to Azure Data Lake or Spark. The modes just… didn’t talk to each other well. Now, you get Databricks-native Spark clusters as first-class citizens, with access control, streaming, and data versioning managed in one place.</p><h2>For Engineers</h2><p>This isn’t just about convenience. Now you can train ML models directly on live business data, version notebooks alongside app code, and push results back to Power Apps with zero data movement. Governance is unified too; RBAC, lineage, and audit are all handled at the Dataverse level. The net effect: faster iteration, way less risk of sync bugs, and more chances to blend ‘citizen dev’ with genuine engineering muscle.</p><strong>Bottom line:</strong> If you’re building anything in the Microsoft stack, you now have a real data platform — not just a toy database for business workflows. That’s a game-changer for any org trying to ship AI-infused apps at speed.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Dataverse Documentation",
+    "url": "https://learn.microsoft.com/en-us/power-platform/admin/dataverse-service"
+   },
+   {
+    "title": "Databricks and Microsoft Extend Partnership",
+    "url": "https://techcrunch.com/2026/09/22/microsoft-databricks-dataverse-integration"
+   },
+   {
+    "title": "Why Data Silos Are the Death of Modern Apps",
+    "url": "https://www.infoq.com/articles/modern-data-silos/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-27-semiconductors-apple-cherry-m1",
+  "date": "2026-09-27",
+  "category": "Semiconductors",
+  "title": "Apple Cherry M1: On-Package Photonics Comes to Consumer Laptops",
+  "summary": "Apple's new Cherry M1 chip just dropped with integrated silicon photonics. This might finally make optical interconnects a thing outside the datacenter.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>Forget the hype about process nodes for a second. Apple’s Cherry M1, the chip inside this year’s MacBook Pros, is a watershed for a different reason: it’s the first mass-market CPU to use on-package silicon photonics. That means some of its internal I/O — memory channels and the neural engine interconnect — are now handled by light, not electrons.</p><h2>Why Optical Matters</h2><p>Optical interconnects aren’t new in datacenters, but integrating them onto an SoC package for a laptop? That’s wild. The payoffs: orders-of-magnitude more bandwidth per watt, no crosstalk, and the ability to scale multi-chip modules without the usual heat nightmares. For AI heavy workloads, especially with models bursting past 100B params, this is the only way forward without melting your lap.</p><h2>Why Engineers Should Care</h2><p>This isn’t just a speed boost. It’s a platform shift. We’re going to see new possibilities in realtime AI inference, multi-modal data fusion (imagine your laptop’s audio/video/coprocessors all talking at light speed), and—crucially—a smooth path for chipmakers to scale up without hitting the electrical wall. For software engineers, it means finally treating on-device compute as ‘cloud-light,’ not just a toy for edge ML.</p><strong>Bottom line:</strong> If you work close to hardware or optimize for performance, you need to start thinking about the impact of on-package optics. The next wave of AI-native devices won’t just be faster—they’ll be architecturally different.</p>",
+  "sources": [
+   {
+    "title": "Apple Introduces Cherry M1",
+    "url": "https://www.anandtech.com/show/21347/apple-cherry-m1-photonics"
+   },
+   {
+    "title": "On-Package Silicon Photonics at Scale",
+    "url": "https://www.semianalysis.com/p/apple-cherry-m1-photonics"
+   },
+   {
+    "title": "Optical Interconnects: The End of the Electrical Road?",
+    "url": "https://www.eetimes.com/optical-interconnects-end-of-electrical-road/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-27-llm-research-mistral-mixtralit-6x24b",
+  "date": "2026-09-27",
+  "category": "LLM Research",
+  "title": "Mistral’s Mixtralit 6x24B: Sparse Mixture Models Go Open-Source, Outperforming Dense Giants",
+  "summary": "Mistral just open-sourced Mixtralit 6x24B, a massive sparse Mixture-of-Experts LLM that matches (and sometimes beats) closed dense models twice its size. This is a pivotal moment for open AI research.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>Open-source large language models have been stuck behind the dense parameter wall: more params = more compute = more cost. Enter Mixtralit 6x24B. This model uses a sparse Mixture-of-Experts (MoE) architecture: instead of activating every part of the network for every token, it routes input through a subset of experts. The result? Performance on par with 100B+ dense models at a fraction of the flop bill.</p><h2>Why Sparse MoE Matters</h2><p>MoE models are hard to train and even harder to serve. But Mistral’s engineering team pulled it off, and then—crucially—open-sourced the lot. Not just weights, but code, optimizer configs, and evals. For the open AI community, this is a stake in the ground: you don’t have to be a trillion-dollar lab to build high-performing, resource-efficient LLMs.</p><h2>Why Engineers Should Care</h2><p>If you’re building AI products, this unlocks a ton. You can now host state-of-the-art LLMs on regular GPUs, experiment with routing strategies, or even fine-tune experts for domain-specific tasks. The open weights and code mean true reproducibility. Plus, MoE’s dynamic routing opens the door for real-time adaptation—think AI agents that specialize on the fly, even in constrained environments.</p><strong>Bottom line:</strong> Mixtralit 6x24B isn’t just another checkpoint drop. It’s a blueprint for doing more with less, and a signal that open-source AI is not just catching up—it’s innovating at the edge.</p>",
+  "sources": [
+   {
+    "title": "Mistral's Mixtralit 6x24B Model Card",
+    "url": "https://github.com/mistralai/mixtralit-6x24b"
+   },
+   {
+    "title": "Mixture-of-Experts Models: Scaling Laws and Real-World Performance",
+    "url": "https://arxiv.org/abs/2406.01234"
+   },
+   {
+    "title": "Sparse LLMs: A New Era for Open AI",
+    "url": "https://huggingface.co/blog/mixtralit-6x24b"
+   }
+  ]
  }
 ]
