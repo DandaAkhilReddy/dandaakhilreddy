@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMD CDNA4 Ships: 8nm AI GPUs Built for Multi-LLM Orchestration | Reddy Pulse</title>
+<meta name="description" content="AMD just launched the first CDNA4 GPUs on their new 8nm process with specialized tensor clusters for orchestrating multiple LLM inference jobs. This release finally gives hyperscalers a real alternative to NVIDIA for large-scale AI serving.">
+<meta property="og:title" content="AMD CDNA4 Ships: 8nm AI GPUs Built for Multi-LLM Orchestration">
+<meta property="og:description" content="AMD just launched the first CDNA4 GPUs on their new 8nm process with specialized tensor clusters for orchestrating multiple LLM inference jobs. This release finally gives hyperscalers a real alternative to NVIDIA for large-scale AI serving.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Semiconductors</span>
+  <h1>AMD CDNA4 Ships: 8nm AI GPUs Built for Multi-LLM Orchestration</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 29th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop" alt="AMD CDNA4 Ships: 8nm AI GPUs Built for Multi-LLM Orchestration">
+  <p>For years, NVIDIA dominated datacenter AI hardware with CUDA and specialized software like TensorRT. AMD’s MI300 series started to nip at their heels, but orchestration—serving many LLMs simultaneously at low latency—remained a pain point. Enter CDNA4.</p><h2>CDNA4’s Secret Sauce</h2><p>The big story is hardware-level multi-tenant support. CDNA4’s new tensor cluster design lets you dedicate slices of the GPU (down to cache and memory bandwidth!) to specific models or tenants—think of it as GPU-level “namespaces” for LLM serving. This means you can run multiple distinct LLMs (or tenants) on the same GPU, each with guaranteed latency and bandwidth, slashing wasted capacity.</p><p>Why does this matter for engineers? Because it destroys one of the worst bottlenecks in AI infra: the tradeoff between throughput and noisy-neighbor problems. Hyperscalers running a zoo of 7B, 13B, and even 70B+ parameter models can now pack them tighter, without unpredictable performance spikes or resource starvation.</p><h2>Real-World Impact</h2><p>CDNA4 also ships with native ROCm 7 support, and—finally—has caught up to NVIDIA for dynamic sparsity and mixed-precision inference. For those of us building AI infra, this is the first time we can credibly architect for “GPU fungibility”—choosing AMD or NVIDIA for multi-model serving, not just raw training throughput.</p><strong>One caveat:</strong> Software still lags—ROCm’s ecosystem isn’t as deep as CUDA’s, but the pace is picking up. If you’re tired of vendor lock-in (and budget bloat), this launch is worth piloting.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-29-amd-cdna4-ai-gpu.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-29-amd-cdna4-ai-gpu.html&text=AMD%20CDNA4%20Ships%3A%208nm%20AI%20GPUs%20Built%20for%20Multi-LLM%20Orchestration" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anandtech.com/tag/cdna4" target="_blank" rel="noopener">AnandTech — AMD CDNA4 Launch Analysis</a></li><li><a href="https://www.servethehome.com/amd-mi400-multi-tenant-ai-gpus/" target="_blank" rel="noopener">ServeTheHome — AMD MI400 Series: Multi-Tenant AI GPUs</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
