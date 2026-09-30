@@ -6100,5 +6100,70 @@
     "url": "https://www.nrf.com/research/retail-labor-shortages-and-scheduling-challenges"
    }
   ]
+ },
+ {
+  "slug": "2026-09-30-agentic-coding-claude-eval-driven-workflows",
+  "date": "2026-09-30",
+  "category": "AI & Developers",
+  "title": "Agentic Coding with Claude: How Eval-Driven Loops are Reshaping Developer Work",
+  "summary": "AI agents are no longer just copilots—they’re hands-on coders. The rise of Claude Code, MCP tool servers, and eval-driven loops is changing how we ship software, not someday, but right now.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>Here’s the shift: developers aren’t just pasting prompts into chatbots anymore. The most effective teams I see are moving to <strong>agentic coding</strong>, where LLMs like Claude Code actually plan, generate, and verify code changes in autonomous loops. This isn’t fluffy productivity theater—it’s about measurable output and code quality.</p><h2>Loop engineering is the new CI/CD</h2><p>It starts with <strong>loop engineering</strong>: plan → act → verify → fix. You give Claude a spec, it writes a plan, generates code, runs tests (or even creates new ones), and repairs bugs, iterating until all checks pass. These aren’t demos; I’ve seen startups use eval-driven agents to ship whole microservices overnight. The key is keeping the spec sharp and using <strong>MCP tool servers</strong>—controlled sandboxes where agents can run shells, access codebases, and invoke APIs without risking prod.</p><p><strong>Spec-driven prompting</strong> is essential. The less ambiguity in the spec—the more you treat it like a tight contract—the less the agent hallucinates. Engineers are building libraries of prompt templates, almost like reusable API schemas but for AI instructions.</p><h2>Why this matters for us</h2><p>If you’re not eval-driven yet, you’re behind. Eval-driven development flips the cycle: agents don’t just generate code, they are <em>measured</em> by passing tests and meeting metrics. It’s changing review workflows too—AI submits PRs, writes its own rationale, and devs focus on reviewing diffs, not authoring boilerplate. Pair programming with a true agent speeds up shipping and actually raises the bar for correctness (since agents are relentless about rerunning tests).</p><p>There’s a ton to learn here. Even if you’re not running autonomous agents yet, start with eval-driven practices: use LLMs to not only suggest code, but to verify and fix it in the loop. Your future teammates might be agents—and the best engineers will be the ones who know how to manage them.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code Launches Agentic Workflows",
+    "url": "https://www.anthropic.com/news/claude-code"
+   },
+   {
+    "title": "Evals and Loops: The New Shape of Coding",
+    "url": "https://www.ben-evans.com/benedictevans/2026/09/20/eval-loops"
+   },
+   {
+    "title": "How Developers Use AI Agents Today",
+    "url": "https://www.stackoverflow.com/blog/2026/09/agentic-coding-survey"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-30-inference-costs-gpu-supply-energy-datacenter",
+  "date": "2026-09-30",
+  "category": "Compute",
+  "title": "GPUs, Inference Costs, and Why Energy is the Next Bottleneck for AI Engineers",
+  "summary": "AI’s appetite for compute keeps growing, but we’re hitting hard limits on GPU supply, energy, and datacenter expansion. What do these constraints mean for devs shipping real AI apps?",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>Everyone’s talking about model size and clever architectures. But on the ground, the biggest headaches for engineers shipping AI are <strong>inference costs</strong> and <strong>compute bottlenecks</strong>. Nvidia H200s and AMD CDNA4s are selling out before they hit racks. Cloud GPU prices are up 30% YOY. Even startups with VC war chests are queuing for capacity. And it’s not just chips—<strong>energy</strong> is the new hard limit. Power and cooling at hyperscale datacenters (even the big three) can’t keep up with demand from LLMs and agentic workloads.</p><h2>What’s changing for engineers?</h2><p>First, <strong>model optimization</strong> isn’t optional. If you’re not quantizing, pruning, or batching smartly, your inference bill will eat your margin. I’ve seen teams cut costs 5x by moving from FP16 to 4-bit quantization. Second, <strong>custom silicon</strong> is leaking into the mainstream—Google’s TPU v6, Meta’s MTIA, and a half-dozen LLM ASIC startups are racing to offer inference at a tenth the cost of general GPUs.</p><p>Third, the <strong>chip supply chain</strong> is still fragile. TSMC’s new Arizona fabs won’t ease things until late 2027. If you’re building on a cloud provider, <em>multi-cloud redundancy</em> is insurance, not luxury. I’ve watched teams pivot regions on a dime because a datacenter maxed out its power envelope.</p><h2>Why you should care</h2><p>This isn’t just an ops or finance problem. It’s a product issue. Your users will notice when inference latency spikes or features are “temporarily unavailable.” Every engineer touching AI needs to understand cost, resource allocation, and <strong>energy-aware design</strong>. The teams that optimize for compute <em>and</em> power are the ones who’ll survive the next squeeze. It’s time to get real about sustainable AI—because the world just can’t keep scaling carbon and capex at the pace LLMs want to consume them.</p>",
+  "sources": [
+   {
+    "title": "Why AI Data Centers Are Running Out of Power",
+    "url": "https://www.theregister.com/2026/09/24/ai-datacenter-power/"
+   },
+   {
+    "title": "GPU Supply Crunch Hits AI Startups",
+    "url": "https://www.semianalysis.com/p/gpu-supply-chain-2026"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-30-microsoft-should-steal-from-frontier-labs",
+  "date": "2026-09-30",
+  "category": "Microsoft",
+  "title": "What Microsoft Should Steal Next From the Frontier Labs (And Why We Need It)",
+  "summary": "OpenAI, Anthropic, and Google are moving fast on model control, evals, and agentic architectures. Here’s what Microsoft (and Azure) should copy or adapt—now.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>I work at Microsoft, and here’s the honest take: OpenAI, Anthropic, and Google have shipped three things in the past quarter that we should absolutely copy (or, let’s say, take inspiration from):</p><h2>1. <strong>Eval-First Development (Anthropic, OpenAI):</strong></h2><p>OpenAI and Anthropic both now treat evals as first-class citizens—not just benchmarks, but <em>inputs</em> to the dev process. Every model change runs through a battery of real-world and adversarial evals, with failures automatically looping feedback into the pipeline. We need this across Azure AI and Copilot. Right now, too much is still manual. Make eval-driven gating the standard for all API and product releases—it’ll catch regressions before users do.</p><h2>2. <strong>Agent-Oriented APIs (Anthropic, Google):</strong></h2><p>Claude Code and Google’s Gemini API let you hand off not just prompts, but <em>tasks</em>—the API manages planning, tool-use, even long context. We need to expand Azure AI’s orchestration primitives: let devs define goals, constraints, and safe toolsets, not just prompt strings. This would massively reduce glue code in Copilot extensions and Foundry apps.</p><h2>3. <strong>Open Weights with Verifiable Lineage (Meta, Mistral):</strong></h2><p>Meta and Mistral are giving devs transparent open-weights models with clear data provenance. Microsoft should push for open, auditable models—especially in industries like health and finance, where black box AI just isn’t acceptable. We have the cloud trust stack; let’s extend it to models so users know exactly what they’re running.</p><p>In short: put evals, agentic APIs, and model transparency at the core of our stack. If we do, the next generation of Copilot and Azure AI will be something I’ll be damn proud to ship as an engineer.</p>",
+  "sources": [
+   {
+    "title": "Anthropic’s Evals as First-Class Citizens",
+    "url": "https://www.anthropic.com/blog/eval-driven-development"
+   },
+   {
+    "title": "OpenAI Launches Full-Stack AI Agents",
+    "url": "https://openai.com/blog/agents-api"
+   },
+   {
+    "title": "Meta’s Open-Weight AI Models Gain Traction",
+    "url": "https://arstechnica.com/information-technology/2026/09/meta-open-weights"
+   }
+  ]
  }
 ]
