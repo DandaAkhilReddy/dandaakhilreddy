@@ -2,7 +2,7 @@
 """Cloud content generator — runs on GitHub Actions using Azure Foundry.
 
 Modes:
-  pulse  -> 1 daily tech-news blog post (Microsoft-first)
+  pulse  -> 3 daily posts: AI & Developers · Compute · Microsoft
   danda  -> 1 daily startup blueprint with an SVG architecture diagram
 
 Machine-independent: no laptop required. Appends to blog/posts.json,
@@ -71,21 +71,28 @@ def run_pulse() -> list[dict]:
     posts = load_posts()
     recent = [p["title"] for p in posts[-15:]]
     prompt = (
-        f"Today is {TODAY}. Write exactly 1 short blog post (400-500 words) on the single most "
-        "important recent development in tech — prefer Microsoft when there is real news, otherwise "
-        "semiconductors/AI hardware or LLM research. Be specific and technical. Do NOT repeat these "
-        f"recent titles: {recent}. Return a JSON array with exactly one item having: slug "
-        f"(\"{TODAY}-topic-words\", lowercase words and hyphens ONLY), date "
-        f"(\"{TODAY}\"), category (Microsoft|Semiconductors|LLM Research|Anthropic|Markets), title, "
-        "summary (1-2 sentences), image (a topical Unsplash URL like "
-        "https://images.unsplash.com/photo-<id>?w=1200&h=600&fit=crop), body (HTML with <p>, <h2>, "
-        "<strong>), sources (2-3 {title,url} of reputable outlets). Vary the Unsplash photo ids."
+        f"Today is {TODAY}. Write 3 short blog posts (350-450 words each), one per lane, in this order:\n"
+        "(1) category \"AI & Developers\" — the most important AI news of the moment PLUS how developers "
+        "are actually using AI day to day: agentic coding with Claude / Claude Code, loop engineering "
+        "(plan→act→verify→fix loops), spec-driven prompting, MCP tool servers, eval-driven development, "
+        "AI pair-programming workflows. Concrete, from a practitioner's seat.\n"
+        "(2) category \"Compute\" — compute news: GPUs/TPUs/custom silicon, datacenter build-outs, "
+        "inference costs, energy, chips supply chain, what it means for engineers shipping AI.\n"
+        "(3) category \"Microsoft\" — Microsoft updates, framed as: what Microsoft (Azure, Copilot, "
+        "Foundry, GitHub, Windows) should learn or adopt from the latest OpenAI, Anthropic, Google or "
+        "other frontier-lab releases — specific, constructive, engineer-to-engineer, no fanboying.\n"
+        "Base them on your knowledge of the current tech landscape; be specific and technical. "
+        f"Do NOT repeat these recent titles: {recent}. Return a JSON array of exactly 3 items; each has: "
+        f"slug (\"{TODAY}-topic-words\", lowercase words and hyphens ONLY), date (\"{TODAY}\"), "
+        "category (exactly one of: AI & Developers | Compute | Microsoft), title, summary (1-2 sentences), "
+        "image (a topical Unsplash URL like https://images.unsplash.com/photo-<id>?w=1200&h=600&fit=crop; "
+        "vary the photo ids), body (HTML with <p>, <h2>, <strong>), sources (2-3 {title,url} of reputable outlets)."
     )
     items = extract_json(chat(PULSE_SYS, prompt))
     for it in items:
         it["slug"] = clean_slug(it.get("slug", ""))
     existing = {p["slug"] for p in posts}
-    added = [it for it in items if it.get("slug") and it["slug"] not in existing][:1]
+    added = [it for it in items if it.get("slug") and it["slug"] not in existing][:3]
     save(posts + added)
     return added
 
