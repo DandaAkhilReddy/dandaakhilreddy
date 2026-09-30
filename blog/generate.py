@@ -12,6 +12,12 @@ import json
 import pathlib
 
 
+def clean_slug(slug):
+    import re as _r
+    s = _r.sub(r"[^a-zA-Z0-9-]+", "-", slug or "").strip("-")
+    return _r.sub(r"-{2,}", "-", s)
+
+
 def fancy_date(iso: str) -> str:
     """2026-07-23 -> '23rd July, 2026'."""
     import datetime

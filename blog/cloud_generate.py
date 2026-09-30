@@ -2,7 +2,7 @@
 """Cloud content generator — runs on GitHub Actions using Azure Foundry.
 
 Modes:
-  pulse  -> 3 daily tech-news blog posts (Microsoft-first)
+  pulse  -> 1 daily tech-news blog post (Microsoft-first)
   danda  -> 1 daily startup blueprint with an SVG architecture diagram
 
 Machine-independent: no laptop required. Appends to blog/posts.json,
@@ -36,6 +36,12 @@ def chat(system: str, user: str, max_tokens: int = 2600) -> str:
     return out["choices"][0]["message"]["content"]
 
 
+def clean_slug(slug: str) -> str:
+    """Filesystem/URL-safe slugs — letters, digits, hyphens only."""
+    s = re.sub(r"[^a-zA-Z0-9-]+", "-", slug or "").strip("-")
+    return re.sub(r"-{2,}", "-", s)
+
+
 def extract_json(txt: str):
     m = re.search(r"\[.*\]|\{.*\}", txt, re.S)
     if not m:
@@ -65,19 +71,21 @@ def run_pulse() -> list[dict]:
     posts = load_posts()
     recent = [p["title"] for p in posts[-15:]]
     prompt = (
-        f"Today is {TODAY}. Write 3 short blog posts (350-450 words each) on the most important "
-        "recent developments in: (1) Microsoft — ALWAYS include one Microsoft post; (2) semiconductors "
-        "or AI hardware; (3) LLM research or a frontier AI lab. Base them on your knowledge of the "
-        "current tech landscape; be specific and technical. Do NOT repeat these recent titles: "
-        f"{recent}. Return a JSON array; each item has: slug (\"{TODAY}-topic-words\"), date "
+        f"Today is {TODAY}. Write exactly 1 short blog post (400-500 words) on the single most "
+        "important recent development in tech — prefer Microsoft when there is real news, otherwise "
+        "semiconductors/AI hardware or LLM research. Be specific and technical. Do NOT repeat these "
+        f"recent titles: {recent}. Return a JSON array with exactly one item having: slug "
+        f"(\"{TODAY}-topic-words\", lowercase words and hyphens ONLY), date "
         f"(\"{TODAY}\"), category (Microsoft|Semiconductors|LLM Research|Anthropic|Markets), title, "
         "summary (1-2 sentences), image (a topical Unsplash URL like "
         "https://images.unsplash.com/photo-<id>?w=1200&h=600&fit=crop), body (HTML with <p>, <h2>, "
         "<strong>), sources (2-3 {title,url} of reputable outlets). Vary the Unsplash photo ids."
     )
     items = extract_json(chat(PULSE_SYS, prompt))
+    for it in items:
+        it["slug"] = clean_slug(it.get("slug", ""))
     existing = {p["slug"] for p in posts}
-    added = [it for it in items if it.get("slug") and it["slug"] not in existing]
+    added = [it for it in items if it.get("slug") and it["slug"] not in existing][:1]
     save(posts + added)
     return added
 
@@ -108,6 +116,7 @@ def run_danda() -> list[dict]:
         "<h2>Build plan (90 days)</h2> wedge+stack+pricing; <h2>Why now</h2>. 600-850 words plus the SVG."
     )
     obj = extract_json(chat(DANDA_SYS, prompt, max_tokens=3200))
+    obj["slug"] = clean_slug(obj.get("slug", ""))
     if obj.get("slug") and obj["slug"] not in {p["slug"] for p in posts}:
         save(posts + [obj])
         return [obj]
