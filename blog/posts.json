@@ -6188,5 +6188,74 @@
     "url": "https://www.tefaf.com/art-market-report"
    }
   ]
+ },
+ {
+  "slug": "2026-10-01-ai-agentic-coding-loops-eval-driven",
+  "date": "2026-10-01",
+  "category": "AI & Developers",
+  "title": "Agentic Coding in 2026: Loops, Specs, and the Real Workflows Shaping AI Dev",
+  "summary": "Agentic coding isn't hype—it's everyday practice now. Developers drive AI with tightly-looped evaluation, live MCP tool servers, and spec-driven prompts, using Claude and open alternatives for real code shipping.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p><strong>Agentic coding</strong> is no longer a demo—they're the daily grind. Most devs I talk to are running their code through tight eval loops (plan → act → verify → fix), often orchestrated by Claude Code or open variants like LlamaCode. Why? Because it delivers. We're not just getting code completions; we're getting full problem-solving agents that test, debug, and refactor their own output. It's eval-driven development, and it matters: it scales our output without scaling our team.</p>\n\n<p><strong>Spec-driven prompting</strong> hit its stride, too. Instead of hand-holding the model through every API call, we hand it a detailed requirements spec—sometimes in YAML, sometimes in Markdown tables—then let the agent handle the generation and self-evaluation. With Claude's long context and chain-of-verification routines, I'm seeing teams whip up microservices in a morning, with the AI catching more edge cases than most juniors would. Why should you care? Because this isn't just 'AI as copilot'—it's 'AI as engineering apprentice', running the loop until the tests pass.</p>\n\n<p><strong>MCP tool servers</strong> (Model Control Protocol, not the old Minecraft thing) are quietly everywhere. These let us plug arbitrary APIs, CLI tools, and internal endpoints into our agent's action space. Suddenly, my AI can write code, run code, call Slack APIs, or hit my in-house ticketing system—all in the same loop. The agents are not just coding; they're shipping. The upshot: engineers spend more energy on the hard logic, less on the glue and grind.</p>\n\n<p>One last practice: <strong>eval-driven development</strong>. Instead of manually checking AI output, we automate the evaluation step with tailored test harnesses (pytest suites, Postman scripts, even custom LLM-based test agents). This closes the loop—fast. You get actionable feedback, the agent learns (or you update the test spec), and iteration time drops hard. The workflow: prompt, self-eval, fix, repeat. This isn't theory—it's deployment reality for anyone shipping with AI today.</p>\n\n<p>All this means: if you're still only using AI for autocomplete, you're missing the party. The future is loops, specs, and evals—hands on, eyes open, agents at your side.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code Release",
+    "url": "https://www.anthropic.com/index/claude-code"
+   },
+   {
+    "title": "Emergent Agent Loops: How LLMs Automate Coding",
+    "url": "https://www.assemblyai.com/blog/agent-loops-in-llm-coding/"
+   },
+   {
+    "title": "OpenAI GPT-5 Dev Blog",
+    "url": "https://openai.com/research/gpt-5"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-01-gpu-supply-inference-costs-datacenter-energy",
+  "date": "2026-10-01",
+  "category": "Compute",
+  "title": "Datacenter Crunch: GPUs, Supply, and the Energy Wall Facing AI",
+  "summary": "GPU supply is tight, inference costs are rising, and the energy ceiling is real. Why compute constraints are now shaping not just deployment but fundamental AI product design.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p><strong>The GPU supply crunch isn’t news—but it’s biting harder than ever post-2026 Q3.</strong> NVIDIA’s Blackwell and AMD’s MI400 series are sold out quarters in advance, with hyperscalers hoarding every wafer. Even Google and Meta are rationing cluster time for internal teams. The cause: explosive demand for multi-agent systems, code generation, and enterprise LLMs with 256K+ context windows. If you’re an engineer shipping AI, this is your new bottleneck.</p>\n\n<p>Inference costs are no longer an afterthought. With Blackwell H200s going for $25K+ and power-hungry clusters chewing through megawatts, <strong>OPEX is now product strategy</strong>. SaaS founders I know are reworking business models around efficient quantization (4-bit is standard, 2-bit is hot), aggressive model distillation, and smart batching. Not because it’s fun, but because it’s existential—if you blow your compute budget scaling a new feature, your margins vanish.</p>\n\n<p>Custom silicon is the new hotness, but with a catch. Every major player has in-house inference chips (Amazon with Inferentia-3, Google with TPU v7, Microsoft’s Maia), but <strong>integration friction is real</strong>. Porting models between stacks is non-trivial, and the best-optimized kernels are still vendor-locked. For engineers, this means your edge is not just the model, but your ability to wrangle CUDA/ROCm and custom ops for the hardware actually available.</p>\n\n<p>And energy? We hit a wall. Datacenters in the US, Europe, and parts of Asia are running up against local grid limits. New builds are slowed by permitting and grid interconnect. This trickles down: if you’re not energy-aware (dynamic batch sizes, async scheduling, cold-start mitigation), your code won’t scale in prod—period. Building for efficient inference isn’t just a cost thing; it’s a deployment thing.</p>\n\n<p>Bottom line: if you’re an AI engineer, compute is not just a resource—it’s your main constraint. Know your silicon, know your energy costs, and design like every FLOP matters. Because now, it does.</p>",
+  "sources": [
+   {
+    "title": "GPU Shortage Hits AI Startups",
+    "url": "https://www.reuters.com/technology/gpu-shortage-2026/"
+   },
+   {
+    "title": "Datacenter Power Limits: The New AI Bottleneck",
+    "url": "https://www.datacenterdynamics.com/en/analysis/datacenter-energy-limits-ai/"
+   },
+   {
+    "title": "NVIDIA Blackwell Overview",
+    "url": "https://www.nvidia.com/en-us/data-center/blackwell/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-01-microsoft-should-adopt-openai-multi-agent-evalstack",
+  "date": "2026-10-01",
+  "category": "Microsoft",
+  "title": "Microsoft Needs OpenAI’s Multi-Agent EvalStack: Here’s Why",
+  "summary": "OpenAI's EvalStack and orchestrated multi-agent workflows are outperforming single Copilot flows. Microsoft must embrace this shift for Azure and GitHub to compete in real-world enterprise AI.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p><strong>OpenAI just raised the bar, again, with their EvalStack and orchestrated multi-agent pipelines.</strong> In practice, this means AI systems aren’t just one Copilot or one Claude anymore—it’s a team of specialist agents (e.g., planner, coder, tester, deployer) passing tasks in a verifiable loop, with evals at every handoff. The impact? Fewer hallucinations, more robust outputs, and—crucially—real auditability. I’ve watched teams move from Copilot’s single-shot flows to OpenAI’s agent stack and the productivity delta is night and day.</p>\n\n<p>Microsoft needs to steal this, fast. <strong>Azure AI, GitHub Copilot, and even Foundry</strong> are still too monolithic, treating the AI as a single endpoint. Real-world devs want orchestrated agents where every step is spec-checked and result-logged—especially in compliance-heavy industries. EvalStack’s modularity means you can swap in a better code agent or a stricter tester on the fly, and the whole pipeline documents itself for governance. That’s what modern enterprises actually care about.</p>\n\n<p>It’s not just about orchestration; it’s about <strong>open interfaces and evals baked in</strong>. Microsoft should prioritize: (1) a native multi-agent orchestration layer for Copilot and Azure AI, (2) first-class eval reporting for every agent, and (3) easy hooks for custom tool servers (like the MCP protocol Anthropic ships). This would let us, as engineers, build agent chains tailored to our stack, not just what Copilot or Foundry thinks is best.</p>\n\n<p>And for GitHub? Multi-agent PR reviews should be default by now. Imagine an AI code reviewer, a security agent, and a dependency bot arguing over your PR—then surfacing only the actionable feedback. That’s not science fiction; that’s today’s OpenAI workflows. Microsoft can get there, but only if they treat orchestration and evals as first-class primitives, not just bolt-ons.</p>\n\n<p>So: less Copilot as a chatbot, more as a platform for agent teams. EvalStack should be the next native Azure and GitHub feature—because the competition isn’t waiting.</p>",
+  "sources": [
+   {
+    "title": "OpenAI Multi-Agent EvalStack Release",
+    "url": "https://openai.com/blog/evalstack"
+   },
+   {
+    "title": "Agent Orchestration for LLMs",
+    "url": "https://www.semianalysis.com/p/agent-orchestration-eval"
+   },
+   {
+    "title": "Microsoft Copilot Platform Docs",
+    "url": "https://learn.microsoft.com/en-us/copilot/"
+   }
+  ]
  }
 ]
