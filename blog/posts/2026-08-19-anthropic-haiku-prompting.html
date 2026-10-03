@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic&#x27;s Haiku Prompting: Making LLMs Explain Themselves, Line by Line | Reddy Pulse</title>
+<meta name="description" content="Anthropic has released &#x27;Haiku Prompting,&#x27; a new API feature that forces Claude models to generate stepwise, auditable chains of reasoning as they answer. Here’s how this could (finally) make LLM outputs less of a black box.">
+<meta property="og:title" content="Anthropic&#x27;s Haiku Prompting: Making LLMs Explain Themselves, Line by Line">
+<meta property="og:description" content="Anthropic has released &#x27;Haiku Prompting,&#x27; a new API feature that forces Claude models to generate stepwise, auditable chains of reasoning as they answer. Here’s how this could (finally) make LLM outputs less of a black box.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Anthropic</span>
+  <h1>Anthropic&#x27;s Haiku Prompting: Making LLMs Explain Themselves, Line by Line</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 19th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop" alt="Anthropic&#x27;s Haiku Prompting: Making LLMs Explain Themselves, Line by Line">
+  <p>LLMs are notorious for giving you answers with confidence but no receipts. Anthropic’s latest drop—<strong>Haiku Prompting</strong>—tries to change that. The premise? Every answer must be built, visibly, line by line, with each step justified in natural language. It’s like getting to see the model’s mental notebook as it works.</p><h2>What’s New</h2><p>With the Haiku Prompting API, you can force Claude to output a chain-of-thought that is both <em>structured</em> and <em>audit-friendly</em>—think: “Step 1: Parse the question. Step 2: Fetch relevant facts. Step 3: Combine evidence…” The API can even enforce token-level constraints, so devs can guarantee that each step is explicit, not just implied by context.</p><p>Why does this matter? Because as we use LLMs for code reviews, legal work, or critical decisions, “just trust the model” doesn’t fly. Haiku Prompting gives you a log of how each answer was constructed. You can search for where it hallucinated, skipped a key fact, or made a logic leap. For internal tools or regulated industries, this is a lifeline.</p><h2>Downsides and Friction</h2><p>Don’t expect miracles: forcing models to show their work makes them slower and more verbose. There’s a real UX cost. But for safety-critical or high-stakes workflows, the tradeoff is worth it. And it’s the first real answer I’ve seen to the problem of “explainability on demand”—not just post-hoc, but built in from the first token.</p><p>Engineers: if you’re shipping anything where auditing matters, play with Haiku Prompting. It’s not perfect, but it pushes LLMs one step closer to being tools you can trust—not just black-box oracles.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-19-anthropic-haiku-prompting.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-19-anthropic-haiku-prompting.html&text=Anthropic%27s%20Haiku%20Prompting%3A%20Making%20LLMs%20Explain%20Themselves%2C%20Line%20by%20Line" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/news/haiku-prompting" target="_blank" rel="noopener">Anthropic: Haiku Prompting API Launch</a></li><li><a href="https://venturebeat.com/ai/anthropic-haiku-prompting-claude-audit/" target="_blank" rel="noopener">VentureBeat: Anthropic Brings Stepwise Reasoning to Claude</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

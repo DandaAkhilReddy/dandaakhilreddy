@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #051 — ShelfGuard: AI Agents to End Out-of-Stock Nightmares in Pharmacies | Reddy Pulse</title>
+<meta name="description" content="I’m building autonomous AI agents that predict, prioritize, and coordinate reordering of life-critical medications in independent pharmacies—stopping stockouts before they cost lives or customers.">
+<meta property="og:title" content="DANDA #051 — ShelfGuard: AI Agents to End Out-of-Stock Nightmares in Pharmacies">
+<meta property="og:description" content="I’m building autonomous AI agents that predict, prioritize, and coordinate reordering of life-critical medications in independent pharmacies—stopping stockouts before they cost lives or customers.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #051 — ShelfGuard: AI Agents to End Out-of-Stock Nightmares in Pharmacies</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 10th September, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=1200&h=600&fit=crop" alt="DANDA #051 — ShelfGuard: AI Agents to End Out-of-Stock Nightmares in Pharmacies">
+  <p>Independent pharmacies are the backbone of community healthcare for over 100 million Americans, but every week, these pharmacies are plagued by out-of-stock medications. This isn’t just an inconvenience: it delays life-saving treatments, erodes trust, and drives patients to big chains. I’m attacking this silent crisis with an AI agent that guarantees the right meds are always on the shelf—before it’s too late.</p>
+
+<h2>The problem</h2>
+<p>Pharmacy stockouts are rampant and costly. Over <b>32% of independent pharmacies</b> report at least one essential medication out of stock each day. That’s not just a headache—it means diabetics go without insulin, heart patients miss critical doses, and chronic pain sufferers are left stranded. The average pharmacy loses <b>$68,000 per year</b> in sales due to stockouts, and <b>43% of patients</b> will switch to a chain or mail order after a single failed pickup. With <b>over 19,400 independent pharmacies</b> in the US filling 1.5 billion prescriptions annually, every hour a med is out of stock can mean lost revenue and poorer health outcomes. The root causes: fragmented suppliers, unpredictable demand spikes (think COVID antivirals or ADHD meds), manual ordering, and zero predictive intelligence. It’s chaos—and it’s costing the industry billions while endangering patient lives.</p>
+
+<h2>The idea: ShelfGuard</h2>
+<p><b>ShelfGuard</b> is an agentic automation platform for independent and small-chain pharmacies. It connects to point-of-sale, pharmacy management, and supplier systems, then orchestrates ‘inventory guardian’ agents that:</p>
+<ul>
+<li>Predict high-risk stockouts using real-time sales, seasonal patterns, and external signals (local outbreaks, recalls, supply alerts).</li>
+<li>Automate reorders, triaging by clinical criticality and contract pricing.</li>
+<li>Negotiate with multiple suppliers and wholesalers (via API, fax, or even web portals) to secure the fastest refill.</li>
+<li>Alert staff only when human intervention is needed (budget, substitution, or regulatory flags).</li>
+</ul>
+<p>The core: always-on, pharmacy-tuned AI agents that manage 80% of inventory chores—so pharmacists can focus on care, not crisis firefighting.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius: 12px; font-family: sans-serif;'>
+  <defs>
+    <marker id='arrow' markerWidth='10' markerHeight='7' refX='10' refY='3.5' orient='auto'>
+      <polygon points='0 0, 10 3.5, 0 7' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <!-- Inputs -->
+  <rect x='30' y='180' width='110' height='80' rx='18' fill='#222'/>
+  <text x='85' y='200' fill='#f5c518' font-size='18' text-anchor='middle'>Inputs</text>
+  <text x='85' y='230' fill='#fff' font-size='14' text-anchor='middle'>POS, Rx System,</text>
+  <text x='85' y='250' fill='#fff' font-size='14' text-anchor='middle'>Supplier APIs</text>
+
+  <!-- Ingestion -->
+  <rect x='170' y='180' width='110' height='80' rx='18' fill='#222'/>
+  <text x='225' y='200' fill='#f5c518' font-size='18' text-anchor='middle'>Ingestion</text>
+  <text x='225' y='230' fill='#fff' font-size='14' text-anchor='middle'>Parsing, ETL,</text>
+  <text x='225' y='250' fill='#fff' font-size='14' text-anchor='middle'>Anonymization</text>
+
+  <!-- Memory/Graph -->
+  <rect x='310' y='130' width='130' height='90' rx='18' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='375' y='150' fill='#f5c518' font-size='17' text-anchor='middle'>Memory/Graph</text>
+  <text x='375' y='170' fill='#fff' font-size='14' text-anchor='middle'>Inventory, Demand,</text>
+  <text x='375' y='190' fill='#fff' font-size='14' text-anchor='middle'>Supplier State</text>
+
+  <!-- Agent Orchestrator -->
+  <rect x='310' y='250' width='130' height='90' rx='18' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='375' y='270' fill='#f5c518' font-size='17' text-anchor='middle'>Agent</text>
+  <text x='375' y='295' fill='#f5c518' font-size='17' text-anchor='middle'>Orchestrator</text>
+  <text x='375' y='320' fill='#fff' font-size='14' text-anchor='middle'>Prediction, Ordering,</text>
+  <text x='375' y='340' fill='#fff' font-size='14' text-anchor='middle'>Supplier Actions</text>
+
+  <!-- Human Gate -->
+  <rect x='470' y='180' width='110' height='80' rx='18' fill='#222'/>
+  <text x='525' y='200' fill='#f5c518' font-size='18' text-anchor='middle'>Human Gate</text>
+  <text x='525' y='230' fill='#fff' font-size='14' text-anchor='middle'>Exceptions,</text>
+  <text x='525' y='250' fill='#fff' font-size='14' text-anchor='middle'>Alerts, Edits</text>
+
+  <!-- Action Layer -->
+  <rect x='610' y='180' width='110' height='80' rx='18' fill='#222'/>
+  <text x='665' y='200' fill='#f5c518' font-size='18' text-anchor='middle'>Action Layer</text>
+  <text x='665' y='230' fill='#fff' font-size='14' text-anchor='middle'>Supplier Orders,</text>
+  <text x='665' y='250' fill='#fff' font-size='14' text-anchor='middle'>Comms, Reporting</text>
+
+  <!-- Flows -->
+  <line x1='140' y1='220' x2='170' y2='220' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='280' y1='220' x2='310' y2='175' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='280' y1='240' x2='310' y2='295' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='440' y1='175' x2='470' y2='220' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='440' y1='295' x2='470' y2='220' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='580' y1='220' x2='610' y2='220' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+</svg>
+<p>Here’s how ShelfGuard works: Inputs stream in from pharmacy POS, prescription, and supplier systems. The ingestion layer normalizes, parses, and anonymizes this data. Memory/Graph models current inventory, local demand, and supplier status. The Agent Orchestrator runs specialized agents to forecast stockouts, decide on reorders, and triage emergencies. Human Gate only pings staff when exceptions arise (budget, substitutions, compliance). The Action Layer executes orders, supplier comms, and reporting—closing the loop in real time.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> I’ll start by targeting 50-200 location pharmacy groups with high inventory complexity. The MVP integrates with top pharmacy management software (like PioneerRx), supplier APIs, and basic fax automation for laggard wholesalers. <b>Stack:</b> Core: AI-powered inventory prediction (PyTorch+Tabular models), agentic process layer (Langchain or open source), supplier and POS connectors, human-in-the-loop dashboard. <b>Pricing:</b> SaaS, $800/mo/location, <i>plus</i> a success fee for reduction in shortages (2% of recovered revenue), targeting $2.5k MRR/pharmacy.</p>
+
+<h2>Why now</h2>
+<p>Regulation, cost pressure, and volatile supply chains have hammered independent pharmacies since 2020. Chains have teams dedicated to inventory, but small players are drowning. LLM-powered agentic automation can finally outperform humans at predicting and negotiating supply—at a price point that scales. Pharmacies are desperate to stem customer loss; suppliers want predictable demand. The timing is perfect: APIs are opening, and pharmacy owners are ready for autonomy. ShelfGuard will keep community care alive—one stocked shelf at a time.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-10-danda-051-shelfguard.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-10-danda-051-shelfguard.html&text=DANDA%20%23051%20%E2%80%94%20ShelfGuard%3A%20AI%20Agents%20to%20End%20Out-of-Stock%20Nightmares%20in%20Pharmacies" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://ncpa.org/sites/default/files/2024-03/NCPA-Digest-2024.pdf" target="_blank" rel="noopener">2024 NCPA Digest: Data on Independent Pharmacy</a></li><li><a href="https://www.drugtopics.com/view/independent-pharmacies-losing-customers-due-to-drug-shortages" target="_blank" rel="noopener">Community Pharmacies Face Drug Shortages and Stockout Losses</a></li><li><a href="https://www.pharmacist.com/publications/pharmacy-today/article/independent-pharmacies-grapple-with-stockouts" target="_blank" rel="noopener">Independent Pharmacies and Medication Supply Challenges</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

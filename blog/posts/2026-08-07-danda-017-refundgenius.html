@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #017 — RefundGenius: AI Agents to Unlock Billions in Unclaimed Consumer Refunds | Reddy Pulse</title>
+<meta name="description" content="Most Americans are owed money from overcharges, recalls, and class actions—but 70% of refunds are never claimed. RefundGenius is an AI agent that hunts down and automates recovery of every eligible dollar for households and small businesses.">
+<meta property="og:title" content="DANDA #017 — RefundGenius: AI Agents to Unlock Billions in Unclaimed Consumer Refunds">
+<meta property="og:description" content="Most Americans are owed money from overcharges, recalls, and class actions—but 70% of refunds are never claimed. RefundGenius is an AI agent that hunts down and automates recovery of every eligible dollar for households and small businesses.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1515169273892-07f9c6f2df94?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #017 — RefundGenius: AI Agents to Unlock Billions in Unclaimed Consumer Refunds</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 7th August, 2026 · 3 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1515169273892-07f9c6f2df94?w=1200&h=600&fit=crop" alt="DANDA #017 — RefundGenius: AI Agents to Unlock Billions in Unclaimed Consumer Refunds">
+  <p>Americans are leaving staggering amounts of money on the table—overcharges, product recalls, class action settlements, utility rebates, and more. The process to actually claim these refunds is so fragmented and opaque that most people never bother. What if every household had an AI agent that could relentlessly hunt down and recover every dollar they’re owed, automatically?</p>
+
+<h2>The problem</h2>
+<ul>
+  <li>The U.S. Federal Trade Commission returns billions to consumers each year, yet more than <strong>70% of eligible refunds go unclaimed</strong>.</li>
+  <li>Over <strong>$58 billion</strong> in unclaimed property and refunds sit idle in state treasuries and corporate coffers.</li>
+  <li>Class action settlements, product recalls, and overcharges often require tedious paperwork, tracking eligibility, and responding to mailed notices—processes few have time for.</li>
+  <li>Small businesses miss out on utility rebates and service credits worth an average of <strong>$5,000 per year</strong>.</li>
+</ul>
+<p>Every consumer and small business is owed money and lacks the time or clarity to claim it. The status quo is a patchwork of portals, PDFs, and deadlines designed for friction—not access.</p>
+
+<h2>The idea: RefundGenius</h2>
+<p>RefundGenius is a consumer-facing AI agent that links to your inbox, purchases, and utility accounts, continuously scans for eligible refunds, settlements, and rebates, and handles every step of the claim process—no forms, no missed deadlines, no lost money. Think "your refund-hunting, deal-savvy accountant"—but fully automated and always on.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;border-radius:16px' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='6' markerHeight='6' orient='auto' markerUnits='strokeWidth'>
+      <path d='M0,0 L10,5 L0,10 Z' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <!-- Inputs -->
+  <rect x='30' y='60' width='120' height='60' rx='14' fill='#222'/>
+  <text x='90' y='88' text-anchor='middle' fill='#f5c518' font-size='16' font-weight='bold'>Inputs</text>
+  <text x='90' y='110' text-anchor='middle' fill='#fff' font-size='13'>Email, Receipts, Utility,</text>
+  <text x='90' y='126' text-anchor='middle' fill='#fff' font-size='13'>Bank Feeds, Docs</text>
+  
+  <!-- Ingestion -->
+  <rect x='190' y='70' width='130' height='60' rx='14' fill='#222'/>
+  <text x='255' y='98' text-anchor='middle' fill='#f5c518' font-size='16' font-weight='bold'>Ingestion</text>
+  <text x='255' y='120' text-anchor='middle' fill='#fff' font-size='13'>Secure Parsers, OCR</text>
+
+  <!-- Memory/Graph -->
+  <rect x='350' y='50' width='140' height='100' rx='16' fill='#242424'/>
+  <text x='420' y='85' text-anchor='middle' fill='#f5c518' font-size='16' font-weight='bold'>Memory / Graph</text>
+  <text x='420' y='108' text-anchor='middle' fill='#fff' font-size='13'>Refund Rules,</text>
+  <text x='420' y='126' text-anchor='middle' fill='#fff' font-size='13'>User Profile, Timeline</text>
+
+  <!-- Agent Orchestrator -->
+  <rect x='520' y='80' width='170' height='80' rx='20' fill='#222'/>
+  <text x='605' y='110' text-anchor='middle' fill='#f5c518' font-size='16' font-weight='bold'>Agent Orchestrator</text>
+  <text x='605' y='132' text-anchor='middle' fill='#fff' font-size='13'>Match, Validate, Trigger Claims</text>
+
+  <!-- Human Gate -->
+  <rect x='250' y='210' width='140' height='60' rx='14' fill='#222'/>
+  <text x='320' y='238' text-anchor='middle' fill='#f5c518' font-size='16' font-weight='bold'>Human Gate</text>
+  <text x='320' y='260' text-anchor='middle' fill='#fff' font-size='13'>Approve, Add Docs</text>
+
+  <!-- Action Layer -->
+  <rect x='490' y='220' width='190' height='60' rx='14' fill='#222'/>
+  <text x='585' y='248' text-anchor='middle' fill='#f5c518' font-size='16' font-weight='bold'>Action Layer</text>
+  <text x='585' y='270' text-anchor='middle' fill='#fff' font-size='13'>File, Track, Notify</text>
+
+  <!-- Arrows -->
+  <line x1='150' y1='90' x2='190' y2='100' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <line x1='320' y1='100' x2='350' y2='100' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <line x1='490' y1='110' x2='520' y2='120' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <line x1='490' y1='120' x2='320' y2='210' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='390' y1='270' x2='490' y2='250' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <line x1='690' y1='120' x2='690' y2='250' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+</svg>
+
+<p>The flow: RefundGenius securely ingests user emails, receipts, utility statements, and bank feeds. It parses and normalizes this data, then maps it against a dynamic eligibility graph of refunds, recalls, and rebates. The agent orchestrator flags matches, collects necessary details, and pushes to a "Human Gate" for simple approvals or doc uploads. Once cleared, it files claims, tracks progress, and notifies the user of status and successful recoveries—no friction, no missed money.</p>
+
+<h2>Build plan (90 days)</h2>
+<ul>
+  <li><b>Wedge:</b> Start with e-commerce and major retailer refunds (Amazon/Walmart/Target), and class action settlements for top 100 brands.</li>
+  <li><b>Stack:</b> Expand to include product recalls (NHTSA, CPSC), utility rebates, and state unclaimed property pipelines. Build integrations for GMail/Outlook, Plaid, and major utility portals.</li>
+  <li><b>Pricing:</b> 10% success fee on recovered amounts, $2/mo for premium tracking and auto-filing. Free tier for first $50 recovered.</li>
+</ul>
+
+<h2>Why now</h2>
+<p>Claiming refunds should be as easy as finding a discount, but fragmented rules, paperwork, and digital silos mean most of us never recover what we’re owed. With LLMs' ability to parse unstructured data, classify eligibility, and auto-complete bureaucratic forms, the friction is now software—solvable at scale. Economic pressure has made "found money" more urgent than ever for households and businesses. Suddenly, recovering your hidden refunds can be done by an agent working for you 24/7, not buried in paperwork forever.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-07-danda-017-refundgenius.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-07-danda-017-refundgenius.html&text=DANDA%20%23017%20%E2%80%94%20RefundGenius%3A%20AI%20Agents%20to%20Unlock%20Billions%20in%20Unclaimed%20Consumer%20Refunds" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.ftc.gov/news-events/news/press-releases/2022/09/ftc-returns-more-392-million-consumers-2022" target="_blank" rel="noopener">FTC Returns More Than $392 Million to Consumers in 2022</a></li><li><a href="https://www.nbcnews.com/business/consumer/states-hold-58-billion-unclaimed-property-n1224216" target="_blank" rel="noopener">States Hold $58 Billion in Unclaimed Property</a></li><li><a href="https://www.marketwatch.com/story/americans-are-leaving-billions-in-unclaimed-money-on-the-table-11670969593" target="_blank" rel="noopener">Billions in Refunds Go Unclaimed Annually</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

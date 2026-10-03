@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 10: LinkedIn Jobs Autopilot | Daily Microsoft Jobs Automation</title>
+    <link rel="stylesheet" href="../netflix-styles.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../browse.html" class="nav-logo">AKHIL DANDA</a>
+            <ul class="nav-menu">
+                <li><a href="../browse.html#home">Home</a></li>
+                <li><a href="../browse.html#experience">Professional</a></li>
+                <li><a href="../browse.html#skills">Skills</a></li>
+                <li><a href="../browse.html#daily-shipping">Projects</a></li>
+                <li><a href="../about.html">About Me</a></li>
+                <li><a href="../browse.html#contact">Hire Me</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="../browse.html#daily-shipping" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Projects
+            </a>
+            <div class="project-hero-content">
+                <div class="project-badge-large" style="background: linear-gradient(135deg, #0a66c2, #004182);">Project 10 - Jul 16, 2026</div>
+                <h1 class="project-title">LinkedIn Jobs Autopilot</h1>
+                <p class="project-tagline">Fresh Microsoft job postings land in my inbox every morning as ready-to-paste LinkedIn posts — salary, level, and link included</p>
+                <p class="project-description">A fully serverless pipeline that reverse-engineers Microsoft Careers' new Eightfold API (the old GCS API died when Microsoft migrated), pulls every US job posted in the last 24 hours, enriches each with pay range, seniority level, and a description snippet from the detail endpoint, and formats each job as a complete LinkedIn post with emojis and hashtags. Two Azure Function timers deliver via Gmail SMTP: <strong>7 AM ET</strong> sends the first 50 (software engineer roles sorted first), and <strong>10 AM PT</strong> sends the overflow batch when more than 50 dropped. Every post is archived to Blob Storage. Runs on the consumption plan free grant — effectively $0/month.</p>
+                <div class="project-links">
+                    <a href="https://github.com/DandaAkhilReddy/Linkedln" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #0a66c2, #004182);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View on GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/posts/akhil-reddy-danda-1a74b214b_microsoftcareers-hiring-techjobs-share-7483426938624167936--L10/" target="_blank" class="btn btn-outline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        See a Real Post Live
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="project-tech-section">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #0078d4 0%, #004578 100%);">AZ</div>
+                    <span>Azure Functions</span>
+                    <p>Two timer triggers, consumption plan</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #306998 0%, #FFD43B 100%);">PY</div>
+                    <span>Python 3.11</span>
+                    <p>Scraper + post generator</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);">EF</div>
+                    <span>Eightfold API</span>
+                    <p>Reverse-engineered from JS bundle</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #ea4335 0%, #b31412 100%);">GM</div>
+                    <span>Gmail SMTP + Blob</span>
+                    <p>Inbox delivery + daily archive</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="project-content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-block">
+                    <h2 class="section-title">The Problem</h2>
+                    <p>Sharing daily job leads on LinkedIn is valuable but brutally manual:</p>
+                    <ul class="feature-list problem-list">
+                        <li>Checking careers pages daily and copying details takes 30+ minutes</li>
+                        <li>Salary is buried deep inside each job description</li>
+                        <li>Formatting a clean post per job doesn't scale past a handful</li>
+                        <li>Microsoft killed its old careers API mid-project — the site moved to Eightfold</li>
+                        <li>Auto-posting bots violate LinkedIn ToS and risk the account</li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <h2 class="section-title">The Solution</h2>
+                    <p>Automate everything except the final human click:</p>
+                    <ul class="feature-list solution-list">
+                        <li>Found the new <strong>/api/pcsx/search</strong> endpoint by reading the site's webpack bundle</li>
+                        <li>Regex-extracts <strong>USD pay ranges</strong> from job descriptions (US disclosure law)</li>
+                        <li>One job = one complete post: title, location, level, salary, snippet, link, hashtags</li>
+                        <li>Software engineer roles sorted first; 50 per batch, overflow at 10 AM PT</li>
+                        <li>Human stays in the loop — copy, add image, post. ToS-safe by design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pipeline -->
+    <section class="project-architecture-section">
+        <div class="container">
+            <h2 class="section-title">Daily Pipeline</h2>
+            <div class="content-block" style="max-width: 900px; margin: 0 auto;">
+                <ul class="feature-list solution-list">
+                    <li><strong>7:00 AM ET</strong> — timer fires: paginate Eightfold search API, keep jobs posted in last 24h</li>
+                    <li><strong>Sort</strong> — software engineer titles first, then other engineering, then everything else</li>
+                    <li><strong>Enrich</strong> — hit the detail endpoint per job: pay range regex, level, snippet (rate-limited, 429-aware)</li>
+                    <li><strong>Render</strong> — each job becomes a standalone LinkedIn post with ✂️ dividers between posts</li>
+                    <li><strong>Deliver</strong> — email batch 1 (50 jobs) via Gmail SMTP + archive to Blob Storage</li>
+                    <li><strong>10:00 AM PT</strong> — second timer sends the parked overflow batch if more than 50 jobs dropped</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- By the Numbers -->
+    <section class="project-features-section" style="background: #0a0a0a;">
+        <div class="container">
+            <h2 class="section-title">By the Numbers</h2>
+            <div class="content-grid">
+                <div class="content-block">
+                    <ul class="feature-list solution-list">
+                        <li><strong>50-100</strong> ready-to-paste posts delivered daily</li>
+                        <li><strong>~2 min</strong> pipeline runtime per batch</li>
+                        <li><strong>$0/month</strong> — consumption plan free grant covers it</li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <ul class="feature-list solution-list">
+                        <li><strong>100%</strong> of US postings include salary range</li>
+                        <li><strong>2</strong> delivery channels: Gmail inbox + Blob archive</li>
+                        <li><strong>0</strong> LinkedIn ToS violations — human posts manually</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="project-cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>See It in Action</h2>
+                <p>This is not a demo — the posts generated by this pipeline are live on my LinkedIn right now. Check a real one below, or grab the code and point it at any Eightfold-powered careers site.</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/DandaAkhilReddy/Linkedln" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #0a66c2, #004182);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View on GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/posts/akhil-reddy-danda-1a74b214b_microsoftcareers-hiring-techjobs-share-7483426938624167936--L10/" target="_blank" class="btn btn-outline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        See a Real Post on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Akhil Reddy Danda. All rights reserved.</p>
+            <p class="footer-note">Project 10 - Shipping LLM Projects Daily</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.feature-card, .install-step, .tech-item, .content-block, .arch-box').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

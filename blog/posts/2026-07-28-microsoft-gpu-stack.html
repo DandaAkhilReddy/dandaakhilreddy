@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft’s Open GPU Stack: Why Azure Is Betting on Custom Hardware APIs | Reddy Pulse</title>
+<meta name="description" content="Microsoft just released an open-source GPU management stack for Azure, redefining how cloud developers access and optimize GPU clusters. This matters for engineers aiming to squeeze every drop of performance out of new AI workloads.">
+<meta property="og:title" content="Microsoft’s Open GPU Stack: Why Azure Is Betting on Custom Hardware APIs">
+<meta property="og:description" content="Microsoft just released an open-source GPU management stack for Azure, redefining how cloud developers access and optimize GPU clusters. This matters for engineers aiming to squeeze every drop of performance out of new AI workloads.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Microsoft’s Open GPU Stack: Why Azure Is Betting on Custom Hardware APIs</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 28th July, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop" alt="Microsoft’s Open GPU Stack: Why Azure Is Betting on Custom Hardware APIs">
+  <p>Microsoft quietly dropped a bombshell this week: a fully open-source GPU orchestration stack for Azure, dubbed Arcus. This is not just a driver update or a wrapper around CUDA—it’s a complete rethink of how cloud VMs, containers, and AI models interact with GPU hardware across dozens of SKUs.</p><h2>Why Does This Matter?</h2><p>The typical Azure developer has been frustrated by the black box of GPU allocation: you get an expensive instance, but you have little low-level control over scheduling, sharing, or tuning. Arcus exposes a unified API for resource slicing, live migration, and per-process telemetry, and even lets you slot in custom kernels. For ML engineers, this means real-time task preemption, fair queuing between jobs, and no more “GPU starvation” in multi-tenant clusters.</p><p>Microsoft’s move is a clear shot at runaway Nvidia lock-in. By supporting not just CUDA, but ROCm, OpenCL, even proprietary FPGAs, Microsoft is saying: bring your own stack, we’ll slot it into the Azure pipeline. For large-scale LLM training, this gives research teams and startups direct access to hardware-level scheduling and troubleshooting—something you only got before by running your own bare metal.</p><h2>What’s the Catch?</h2><p>No free lunch. This stack is new—expect rough edges and driver weirdness for a while. Debugging across multiple vendors still sucks. But for engineers who care about deep tuning, reproducible training, or pushing inferencing costs down, this is a game-changer. Microsoft is betting that openness at the hardware API layer is the new developer moat, and I think they’re right. The cloud is finally getting a bottom-up redesign for the AI era.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-28-microsoft-gpu-stack.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-28-microsoft-gpu-stack.html&text=Microsoft%E2%80%99s%20Open%20GPU%20Stack%3A%20Why%20Azure%20Is%20Betting%20on%20Custom%20Hardware%20APIs" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.zdnet.com/article/microsoft-unveils-arcus-open-gpu-cloud-stack/" target="_blank" rel="noopener">Microsoft unveils Arcus: An Open GPU Cloud Stack</a></li><li><a href="https://www.techradar.com/pro/azure-arcus-open-source-gpu" target="_blank" rel="noopener">Azure Arcus: The Open-Source GPU Orchestration Layer</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

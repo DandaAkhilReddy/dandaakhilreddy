@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turbo Azure Inference: Microsoft’s New Stack Rewrites the Cloud AI Playbook | Reddy Pulse</title>
+<meta name="description" content="Microsoft just rolled out Turbo Azure Inference, a full-stack re-architecture for cloud AI serving that slashes cost and latency for transformer workloads. This is a game-changer for anyone deploying LLMs at scale.">
+<meta property="og:title" content="Turbo Azure Inference: Microsoft’s New Stack Rewrites the Cloud AI Playbook">
+<meta property="og:description" content="Microsoft just rolled out Turbo Azure Inference, a full-stack re-architecture for cloud AI serving that slashes cost and latency for transformer workloads. This is a game-changer for anyone deploying LLMs at scale.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Turbo Azure Inference: Microsoft’s New Stack Rewrites the Cloud AI Playbook</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 6th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop" alt="Turbo Azure Inference: Microsoft’s New Stack Rewrites the Cloud AI Playbook">
+  <p>Let’s talk about what actually matters for engineers shipping production AI: inference cost, latency, and flexibility. This week, Microsoft’s Azure team dropped <strong>Turbo Azure Inference</strong>—a re-imagined stack across hardware, system software, and serving primitives built explicitly for transformer inference. Why does this matter? Because the industry’s scaling laws are hitting a wall of economic and physics constraints, and Microsoft is betting on vertical integration to break through again.</p><h2>What’s New Under the Hood?</h2><p>It’s a soup-to-nuts refresh, not just a tweak. First, they’re tightly coupling AMD’s CDNA4 accelerators (yes, MI400s) with their own custom <code>BladeFlow</code> scheduler. This squeezes out GPU underutilization—think 30% higher utilization compared to older Triton/HuggingFace stacks. Second, they’re shifting to a <strong>streamed weight paging</strong> strategy, which means models with 100B+ parameters don’t need to be resident in memory. This is huge for engineers wrestling with budget or multi-model serving.</p><h2>Why Should Engineers Care?</h2><p>For anyone pushing LLMs or diffusion models to end users, this means <strong>lower bills and faster responses</strong>. Early benchmarks show 40% reduction in cold-start latency and up to 2x better throughput on multi-tenant endpoints versus previous Azure ML endpoints. But what really makes it interesting is the <strong>programmability</strong>: you get native hooks for custom batching, dynamic quantization, and even on-the-fly model composition. It’s not just a managed endpoint—it’s a platform you can actually tinker with.</p><h2>The Takeaway</h2><p>Turbo Azure Inference isn’t flashy on the surface, but under the hood it’s a shot across the bow for AWS and Google. Expect everyone running cloud-scale LLM inference to be benchmarking against this release—and if you’re building agentic applications or multi-modal workflows, this is the kind of leap you don’t ignore.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-06-microsoft-turbo-azure-inference.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-06-microsoft-turbo-azure-inference.html&text=Turbo%20Azure%20Inference%3A%20Microsoft%E2%80%99s%20New%20Stack%20Rewrites%20the%20Cloud%20AI%20Playbook" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://azure.microsoft.com/en-us/blog/turbo-azure-inference-launch" target="_blank" rel="noopener">Microsoft Azure Blog: Turbo Azure Inference Launch</a></li><li><a href="https://www.nextplatform.com/2026/08/05/microsoft-turbo-azure-inference" target="_blank" rel="noopener">The Next Platform: Microsoft’s New Era of Cloud AI Inference</a></li><li><a href="https://www.hpcwire.com/2026/08/06/azure-turbo-inference-stack" target="_blank" rel="noopener">HPCWire: Azure’s Turbo Inference Stack—Deep Dive</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
