@@ -6464,5 +6464,74 @@
     "url": "https://artists.spotify.com/blog/streaming-numbers-explained"
    }
   ]
+ },
+ {
+  "slug": "2026-10-04-agentic-coding-evals-loops",
+  "date": "2026-10-04",
+  "category": "AI & Developers",
+  "title": "Agentic Coding, Evals, and Spec Loops: How We Actually Build With AI in October 2026",
+  "summary": "Agentic coding isn't hype: devs now lean on Claude Code for plan-act-verify-fix loops, eval suites, and spec-driven prompting. Here’s how these workflows look in real teams shipping real software.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>Everywhere I look, engineers are finally treating AI as both teammate and tool—especially with the recent Claude Code drop. But the core workflow isn’t just jamming in prompts or asking for code. It’s structured loops: <strong>plan → act → verify → fix</strong>. This isn’t theorizing; it’s the daily cycle in most LLM-first teams I know.</p><p>Take agentic coding. We’re not talking about mystical AGI agents. Instead, Claude is planning with a spec (driven by tight prompt scaffolding), generating code, running evals (unit, integration, synthetic user tasks), and then iterating based on failures. It’s basically test-driven development, but the AI is in the loop on every step, not just writing code but debugging, refactoring, and (sometimes) writing its own evals.</p><p>The devs shipping fastest are the ones who build <strong>MCP (Model Control Plane) tool servers</strong>—these are like plugin hubs, exposing internal tools and endpoints to the agent. Instead of glue code everywhere, you get a clean separation: agents call tool APIs, log telemetry, check in with human oversight via code reviews, and even run <strong>eval-driven dev</strong> suites on every merge request.</p><p>If you’re not already using <strong>spec-driven prompting</strong>—where you paste (or generate) a detailed functional spec, and all code requests are tied to that spec—you’re probably stuck in prompt spaghetti hell. The winners in agentic workflows: clarity, test coverage, and rapid iteration. Yes, you’ll need to write better specs, but the net output is far higher. </p><p>Bottom line: the best AI-first engineers today aren’t just prompting; they’re building structured, eval-backed loops with agents that know how to plan, act, and verify. If you’re still using LLMs like a fancy Stack Overflow, you’re losing ground—fast.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Launches Claude Code",
+    "url": "https://www.anthropic.com/news/claude-code"
+   },
+   {
+    "title": "Agentic Workflows in Practice: A Deep Dive",
+    "url": "https://www.latent.space/p/agentic-workflows"
+   },
+   {
+    "title": "Eval-driven Development for AI Apps",
+    "url": "https://www.aisnakeoil.com/p/evals-ai"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-04-h100n-launch-inference-energy-supply",
+  "date": "2026-10-04",
+  "category": "Compute",
+  "title": "H100N, Inferencing, and the Energy Plate: Why Compute Still Dictates AI’s Limits",
+  "summary": "NVIDIA's H100N launch, new custom ASICs, and Europe’s datacenter buildouts are shaking up the compute map—yet inference costs and grid energy are the hard walls. What does this mean for anyone shipping real AI?",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>If you’re shipping AI apps this quarter, you’ve probably lost sleep over GPUs and energy bills. NVIDIA’s H100N is an absolute monster for inference, but it’s not magic—cloud costs remain brutal, and custom silicon from Google and startups like Groq are finally making the hyperscalers nervous. The real bottleneck? <strong>Not just chips, but power and cooling</strong>.</p><p>Europe is doubling down on datacenter construction, but energy grid constraints are the real drama—especially as inference gets deployed everywhere (not just during model training, but at edge and in every SaaS flow). Even with the H100N’s better perf-per-watt, a lot of teams are learning the hard way: your AI’s marginal cost isn’t just GPU time; it’s all the watts and airflow needed to keep your infra alive.</p><p>Meanwhile, the custom-silicon wars are heating up: Google’s latest TPUv6 is targeting both training and inference, with specialized support for large agentic loops and massive context windows. That means engineers must get smart about <strong>model quantization, distillation, and edge offloading</strong>, because budgets (and planet) can’t handle brute-force LLM everywhere. </p><p>For practitioners, here’s the bottom line: <strong>model architecture, infra tuning, and smart caching now matter as much as prompt engineering</strong>. If you can’t measure and optimize every watt and inference, you’re betting your roadmap on a supply chain and a power grid you don’t control. The teams that win are the ones who treat compute as product architecture—not a cloud bill afterthought.</p>",
+  "sources": [
+   {
+    "title": "NVIDIA H100N Unveiled",
+    "url": "https://www.servethehome.com/nvidia-h100n-announced/"
+   },
+   {
+    "title": "Europe’s Datacenter Energy Crunch",
+    "url": "https://www.ft.com/content/datacenter-energy-europe"
+   },
+   {
+    "title": "Google Launches Next-Gen TPUs",
+    "url": "https://cloud.google.com/blog/products/ai-machine-learning/introducing-tpu-v6"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-04-microsoft-copilot-agent-infra-lessons",
+  "date": "2026-10-04",
+  "category": "Microsoft",
+  "title": "If I Ran Copilot: Lessons from Anthropic’s Agent Infra, OpenAI’s Eval Chaining",
+  "summary": "Microsoft’s Copilot and Foundry stack are thriving, but could learn a ton from Anthropic’s tool API discipline and OpenAI’s live eval chaining. Here’s how MSFT should evolve, engineer-to-engineer.",
+  "image": "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&h=600&fit=crop",
+  "body": "<p>I use Copilot and other Microsoft AI stuff every day, but if I were running the show, I’d steal a few key ideas from the frontier labs. <strong>First: Anthropic’s agent infrastructure, built around explicit tool APIs and telemetry, is just cleaner than anything in Copilot today.</strong> Instead of hidden plugin layers and vague logging, Claude agents get crystal-clear tool boundaries, controllable permissions, and full audit trails. <strong>MSFT should double down on open, auditable, composable tool APIs—especially for Copilot and Foundry.</strong></p><p>Second, OpenAI’s live <strong>eval chaining</strong> is a game-changer for iterative agent work. Instead of tacked-on tests, every step and every action is evaluated, and failures cascade into repair routines or human review. This makes autonomous agent deployments less risky and far easier to debug. Copilot (especially in enterprise) needs this—imagine PRs that can show not just the generated code, but a full eval trace with repair attempts, context, and agent decision logs. That’s how you build trust in agentic automation.</p><p>This isn’t a dunk on Microsoft’s AI stack—it’s solid, and the deep Azure integration is unmatched. But if we want Copilot and Agents to be robust, transparent, and safe at scale, <strong>we need more frontier-lab rigor: explicit tool server APIs, real-time eval chaining, and agent workflows that humans can reason about</strong>. That’s what will separate reliable engineering tools from black-box magic tricks that break in prod.</p>",
+  "sources": [
+   {
+    "title": "Anthropic’s Claude Agents: A Technical Dive",
+    "url": "https://www.anthropic.com/news/claude-agents"
+   },
+   {
+    "title": "OpenAI’s Eval Chaining for Autonomous Agents",
+    "url": "https://platform.openai.com/docs/evals"
+   },
+   {
+    "title": "Microsoft Copilot Roadmap Update",
+    "url": "https://techcommunity.microsoft.com/t5/microsoft-copilot-blog/"
+   }
+  ]
  }
 ]
