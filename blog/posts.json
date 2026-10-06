@@ -6648,5 +6648,74 @@
     "url": "https://www.rvda.org/News/IndustryData"
    }
   ]
+ },
+ {
+  "slug": "2026-10-06-agentic-coding-ai-loops-real-use",
+  "date": "2026-10-06",
+  "category": "AI & Developers",
+  "title": "Agentic Coding: Jumping Beyond Prompts—How Engineers Actually Work with AI in October 2026",
+  "summary": "Agentic coding has moved from hype to daily grind. Here’s how devs are using Claude Code, loop engineering, evals, and spec-driven prompting—no theory, just practice.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>For the past year, 'agentic coding' has stopped being a conference buzzword and started shaping how we actually build software. The big news: Anthropic’s Claude Code is now not just an API, but a <strong>real pair programmer</strong> — shipping plan-act-verify-fix loops, tool server integration, and (finally) eval-driven development you can run locally.</p><h2>Why It Matters</h2><p>Engineers are using Claude (and similar) for more than code suggestions. Now it’s <strong>spec-driven prompting</strong>: you feed in a requirements doc, and the agent generates and <em>tests</em> code against it. The loop isn’t 'chat → code → hope'—it’s 'plan → act → verify → fix', automated and controlled. That means fewer hallucinations, more self-regulated outputs.</p><p>What makes this click? <strong>Loop engineering</strong>: setting up persistent MCP (Multi-Tool Command Protocol) servers, wiring up your own tools for the agent, then chaining evals. Concrete example: yesterday, I had Claude Code running a Node server, generating route handlers, then verifying with Jest, then re-prompting on failing tests. Zero manual intervention for five passes. The evals aren’t just QA—they’re the new unit tests for agentic workflows.</p><h2>Real World Adoption</h2><p>The actual daily grind: devs are using agentic workflows to automate bug fixing, refactoring, and even infra-as-code tasks. On the frontend, it’s less about one-shot code and more about <strong>continuous tool use</strong>—agents calling linters, test runners, security scanners. When the tool server is wired right, the agent learns what fixes work. Spec-driven prompting lets you control the attack surface: no more 'please write code for X', but 'here’s the spec, here’s the tools, now loop until it passes.'</p><h2>Why You Should Care</h2><p>For engineers, agentic coding isn’t about the AI doing everything. It’s about <strong>deterministic, looped workflows</strong>—more reliable, less brittle, and much closer to the way humans actually debug. The eval-driven approach means you can ship faster, test more, and trust the bot to handle iterative work. Still plenty of rough edges, but this is the direction to watch.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code Launch",
+    "url": "https://www.anthropic.com/news/claude-code"
+   },
+   {
+    "title": "AI Agents: Plan, Act, Verify Loops",
+    "url": "https://www.benkuhn.net/loops/"
+   },
+   {
+    "title": "Spec-Driven Prompts for LLMs",
+    "url": "https://www.latent.space/p/llm-specs"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-06-gpu-supply-chain-energy-prices",
+  "date": "2026-10-06",
+  "category": "Compute",
+  "title": "GPU Crunch: Datacenter Build-outs, Silicon Scarcity, and What It Means for Inference",
+  "summary": "GPU shortages have hit a new peak as hyperscalers scramble to build out AI datacenters. Engineers need to know where the bottlenecks are and how it impacts real-world AI shipping.",
+  "image": "https://images.unsplash.com/photo-1475666675596-cca2035b3c49?w=1200&h=600&fit=crop",
+  "body": "<p>There’s a new wave of panic—NVIDIA’s H100X and MI400 supply chains are stretched thin, while Google and Microsoft are in a datacenter build-out arms race. The big news: AI inference costs are climbing, not falling, and custom silicon is still not closing the gap fast enough. Power and cooling are the new bottlenecks as hyperscalers chase every available megawatt.</p><h2>Why It Matters</h2><p>For engineers shipping AI, compute isn’t just a background cost anymore. It’s a daily limiter on what models you can run, how fast, and even whether you can deploy to prod. I’ve seen teams forced to downgrade models because GPU allocation got slashed mid-deploy. And the cost per token is up—especially for fine-tuned or agentic workloads, which are more compute-hungry.</p><p>The silicon news is blunt: custom chips (TPUs, AWS Trainium, Graphcore) are <strong>not</strong> as widely available as the marketing suggests. Most real-world inference is still running on NVIDIA, and their lead in supply chain logistics is widening, not shrinking. That means if you’re building anything AI, you need to plan for <strong>compute scarcity</strong>—and optimize for energy costs and batch sizes.</p><h2>Energy Plate Reality</h2><p>Power consumption is through the roof. The 'energy plate' (how much juice you can actually get per rack) is now a major factor in whether your AI app goes live. Datacenter operators are rethinking cooling and energy sourcing, and in some cases, prioritizing which models get to run based on energy budgets. For engineers: this means you need to profile not just inference time, but actual watt-hours per run.</p><h2>Takeaway for Engineers</h2><p>If you’re shipping AI: profile your models early, test on real hardware, and <strong>plan for fallback</strong> when silicon runs out. Smart teams are using evals to measure not just accuracy, but compute footprint and cost—every token counts. Compute is shaping what’s possible, not just what’s ideal.</p>",
+  "sources": [
+   {
+    "title": "NVIDIA GPU Supply Chain 2026",
+    "url": "https://www.tomshardware.com/news/nvidia-gpu-shortage"
+   },
+   {
+    "title": "Datacenter Build-Outs: Power and Cooling",
+    "url": "https://www.datacenterdynamics.com/en/news/ai-datacenter-energy-crunch/"
+   },
+   {
+    "title": "AI Inference Costs on Silicon",
+    "url": "https://www.semidata.com/articles/inference-costs-2026"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-06-microsoft-copilot-agentic-workflows",
+  "date": "2026-10-06",
+  "category": "Microsoft",
+  "title": "Copilot Needs Spec-Driven Loops and Agent Infra — Lessons Microsoft Should Steal from Anthropic and OpenAI",
+  "summary": "Microsoft’s Copilot stack is powerful, but still lags behind frontier labs on agentic tool use, eval chaining, and real-time control. Here’s what engineers at Redmond should borrow next.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7e7cda?w=1200&h=600&fit=crop",
+  "body": "<p>Let’s be blunt: Copilot is great for autocomplete and code suggestions, but it’s still not running <strong>agentic workflows</strong> like Claude Code or OpenAI’s eval-chained builders. The killer missing feature? <strong>Spec-driven prompting and loop-based tool use</strong> — where the AI can operate in a closed loop, not just spit out code then disappear.</p><h2>What Microsoft Should Learn</h2><p>Anthropic’s agent infra (especially MCP tool servers and eval-driven loops) lets developers wire up their own tools, have the agent <strong>invoke</strong>, test, and re-fix code, all within a safe sandbox. OpenAI’s eval chaining means you can run multiple passes—each step is checked, corrected, and documented. Why does this matter? Because actual engineering work is <strong>iterative</strong>, not one-shot. The AI needs to be part of the feedback loop.</p><p>Copilot’s current workflow is still 'prompt → code → hope', with little verification. As an engineer, I need my agent to call test runners, linters, security tools, and <strong>verify</strong> before telling me it’s done. That’s what Anthropic and OpenAI are shipping in practice—and Microsoft needs to catch up.</p><h2>Concrete Steps</h2><p>What could Microsoft do next? <strong>Expose sandboxed tool server interfaces</strong> in Copilot, let devs plug in their own test/eval stacks, and support persistent agent loops. GitHub Copilot and Azure Foundry should adopt <em>eval-driven development</em> as a first-class workflow. This isn’t fanboying—it's speaking as someone who ships with all three stacks. If Redmond wants Copilot to be more than autocomplete, agentic loops are the next step.</p><h2>Why It Matters</h2><p>Engineers want <strong>reliable, iterative AI</strong> that stays in the loop until tests pass. Frontier labs are proving this works. Microsoft can borrow the best, add enterprise polish, and finally close the gap. Make agentic coding the default, not the add-on.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Agent Tooling",
+    "url": "https://www.anthropic.com/blog/agent-tooling"
+   },
+   {
+    "title": "OpenAI Eval Chains",
+    "url": "https://openai.com/research/eval-chaining"
+   },
+   {
+    "title": "Microsoft Copilot Release Notes",
+    "url": "https://learn.microsoft.com/en-us/copilot/release-notes"
+   }
+  ]
  }
 ]

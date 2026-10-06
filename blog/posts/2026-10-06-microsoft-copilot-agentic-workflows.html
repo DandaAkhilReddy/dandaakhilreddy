@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copilot Needs Spec-Driven Loops and Agent Infra — Lessons Microsoft Should Steal from Anthropic and OpenAI | Reddy Pulse</title>
+<meta name="description" content="Microsoft’s Copilot stack is powerful, but still lags behind frontier labs on agentic tool use, eval chaining, and real-time control. Here’s what engineers at Redmond should borrow next.">
+<meta property="og:title" content="Copilot Needs Spec-Driven Loops and Agent Infra — Lessons Microsoft Should Steal from Anthropic and OpenAI">
+<meta property="og:description" content="Microsoft’s Copilot stack is powerful, but still lags behind frontier labs on agentic tool use, eval chaining, and real-time control. Here’s what engineers at Redmond should borrow next.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7e7cda?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Copilot Needs Spec-Driven Loops and Agent Infra — Lessons Microsoft Should Steal from Anthropic and OpenAI</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 6th October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7e7cda?w=1200&h=600&fit=crop" alt="Copilot Needs Spec-Driven Loops and Agent Infra — Lessons Microsoft Should Steal from Anthropic and OpenAI">
+  <p>Let’s be blunt: Copilot is great for autocomplete and code suggestions, but it’s still not running <strong>agentic workflows</strong> like Claude Code or OpenAI’s eval-chained builders. The killer missing feature? <strong>Spec-driven prompting and loop-based tool use</strong> — where the AI can operate in a closed loop, not just spit out code then disappear.</p><h2>What Microsoft Should Learn</h2><p>Anthropic’s agent infra (especially MCP tool servers and eval-driven loops) lets developers wire up their own tools, have the agent <strong>invoke</strong>, test, and re-fix code, all within a safe sandbox. OpenAI’s eval chaining means you can run multiple passes—each step is checked, corrected, and documented. Why does this matter? Because actual engineering work is <strong>iterative</strong>, not one-shot. The AI needs to be part of the feedback loop.</p><p>Copilot’s current workflow is still 'prompt → code → hope', with little verification. As an engineer, I need my agent to call test runners, linters, security tools, and <strong>verify</strong> before telling me it’s done. That’s what Anthropic and OpenAI are shipping in practice—and Microsoft needs to catch up.</p><h2>Concrete Steps</h2><p>What could Microsoft do next? <strong>Expose sandboxed tool server interfaces</strong> in Copilot, let devs plug in their own test/eval stacks, and support persistent agent loops. GitHub Copilot and Azure Foundry should adopt <em>eval-driven development</em> as a first-class workflow. This isn’t fanboying—it's speaking as someone who ships with all three stacks. If Redmond wants Copilot to be more than autocomplete, agentic loops are the next step.</p><h2>Why It Matters</h2><p>Engineers want <strong>reliable, iterative AI</strong> that stays in the loop until tests pass. Frontier labs are proving this works. Microsoft can borrow the best, add enterprise polish, and finally close the gap. Make agentic coding the default, not the add-on.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-06-microsoft-copilot-agentic-workflows.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-06-microsoft-copilot-agentic-workflows.html&text=Copilot%20Needs%20Spec-Driven%20Loops%20and%20Agent%20Infra%20%E2%80%94%20Lessons%20Microsoft%20Should%20Steal%20from%20Anthropic%20and%20OpenAI" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/blog/agent-tooling" target="_blank" rel="noopener">Anthropic Agent Tooling</a></li><li><a href="https://openai.com/research/eval-chaining" target="_blank" rel="noopener">OpenAI Eval Chains</a></li><li><a href="https://learn.microsoft.com/en-us/copilot/release-notes" target="_blank" rel="noopener">Microsoft Copilot Release Notes</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
