@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundry, Fabs, and the New AI Silicon Wars: What Chip Chaos Means for Engineers | Reddy Pulse</title>
+<meta name="description" content="Datacenter silicon supply is once again the bottleneck in AI—yes, even post-H100. Foundry partnerships, sovereign fabs, and the rise of custom inference chips are changing how (and where) engineers deploy AI. Here’s why it matters, and what you need to do differently if you ship with LLMs.">
+<meta property="og:title" content="Foundry, Fabs, and the New AI Silicon Wars: What Chip Chaos Means for Engineers">
+<meta property="og:description" content="Datacenter silicon supply is once again the bottleneck in AI—yes, even post-H100. Foundry partnerships, sovereign fabs, and the rise of custom inference chips are changing how (and where) engineers deploy AI. Here’s why it matters, and what you need to do differently if you ship with LLMs.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>Foundry, Fabs, and the New AI Silicon Wars: What Chip Chaos Means for Engineers</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 7th October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop" alt="Foundry, Fabs, and the New AI Silicon Wars: What Chip Chaos Means for Engineers">
+  <p><strong>Forget the marketing: the big story in compute right now is the crunch in custom silicon supply, especially for inference workloads. Nvidia’s H100N may be everywhere in the headlines, but actual access to GPU cycles is tighter than ever—and that forces engineers to rethink how we build and deploy AI.</strong></p> <h2>Foundry and Fabs: The Bottleneck Moves Upstream</h2> <p>The real bottleneck isn’t just GPU design but manufacturing. TSMC, Samsung, and a handful of sovereign fabs are massively oversubscribed, leading to months-long delays. Microsoft, Google, and Amazon are all doubling down on foundry partnerships, but the net effect is the same: compute quotas matter more than fancy model weights. As a dev, you have to design for resource uncertainty—autoscaling isn’t just about cost, it’s about chip allocations and burst limits.</p> <h2>Custom Inference Chips: Winning on Power and Latency</h2> <p>While Nvidia headlines dominate, the real action is in custom silicon for inference—think Google’s Axion, AWS Inferentia3, and a wave of smaller players. These chips are optimized for energy, not just raw FLOPS. If you’re deploying AI at any real scale, you need to benchmark your models on these new chips, because a 2x cost reduction can make the difference between “we ship” and “we sunset the feature.”</p> <h2>What This Means for Engineers</h2> <p>If you’re running eval-driven loops or agentic infra, you can’t assume infinite compute. Rate limits, energy budgets, and silicon availability now define architecture as much as language choice or API surface. Engineers who architect for resource uncertainty—caching, batch inference, speculative execution—are the ones who will keep shipping as the supply crunch bites even harder.</p> <p><strong>Why does this matter?</strong> Because the days of “just spin up more GPUs” are over. If you’re not thinking about silicon constraints in your AI stack, you’re already behind.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-07-foundry-chips-supply-wars.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-07-foundry-chips-supply-wars.html&text=Foundry%2C%20Fabs%2C%20and%20the%20New%20AI%20Silicon%20Wars%3A%20What%20Chip%20Chaos%20Means%20for%20Engineers" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.ft.com/content/ai-chip-supply-crunch" target="_blank" rel="noopener">AI chip supply crunch worsens as TSMC faces demand surge</a></li><li><a href="https://www.datacenterdynamics.com/en/analysis/cloud-custom-ai-chips/" target="_blank" rel="noopener">Custom AI chips are remaking cloud inference economics</a></li><li><a href="https://www.reuters.com/technology/microsoft-ai-foundry-investments" target="_blank" rel="noopener">Microsoft deepens foundry partnerships to secure AI silicon</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

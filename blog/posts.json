@@ -6740,5 +6740,74 @@
     "url": "https://www.grandviewresearch.com/industry-analysis/veterinary-practice-management-software-market"
    }
   ]
+ },
+ {
+  "slug": "2026-10-07-agentic-coding-day-to-day",
+  "date": "2026-10-07",
+  "category": "AI & Developers",
+  "title": "Agentic Coding in the Trenches: How Developers Are Actually Shipping with AI in October 2026",
+  "summary": "Agentic coding has moved from hype to habit: Claude Code, loop engineering, and eval-driven dev are now part of daily workflows for engineers building serious software. Here’s what these methods actually look like from a practitioner’s seat—and why they matter.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p><strong>Agentic coding isn’t just a buzzword anymore—it’s the default way many engineers (myself included) are getting things shipped in 2026. The big news this week: Anthropic rolled out Claude Code 2.5, and it’s not just about bigger context; it’s about making agent loops reliable at scale. But what does that mean for those of us on the ground, merging pull requests and fixing production bugs?</strong></p> <h2>Loop Engineering: It’s Not Optional Now</h2> <p>Engineers are running tight <strong>plan→act→verify→fix</strong> loops, often with Claude Code or GPT-4o as a core agent. The trick is chaining these loops, not just prompting once. For example, we spec a new API, have Claude Code generate an implementation plan, write code, run tests, review errors, and iterate—without ever leaving the agent’s “flow.” It’s faster than code generation alone and far less error-prone, because the agent is actively trying to close gaps, not just spit out blobs of code.</p> <h2>Spec-Driven Prompting: Goodbye Vague Intents</h2> <p>We’ve learned the hard way: agents only work well with precise specs. Spec-driven prompting—writing structured, machine- and human-readable requirements—lets the agent reason about edge cases, generate tighter code, and even self-evaluate. I see more teams using simple YAML or Markdown specs piped directly into prompt templates, then reusing those specs to drive evals. It’s about reducing ambiguity; otherwise, the agent just hallucinates.</p> <h2>MCP Tool Servers and Eval-Driven Dev</h2> <p>The “MCP” (Multi-Context Process) tool server is the new backend workhorse—basically, a thin API layer that lets agentic code invoke internal linters, CI/CD, or even production rollouts. It’s eval-driven development at its core: you run your agent, it triggers real evals (unit and integration tests), and uses results to loop until it passes. This changes the way we think about TDD; the agent owns the red-green-refactor flow, not just the dev.</p> <p><strong>Why does this matter?</strong> It’s not about replacing engineers—it’s about amplifying productivity and reliability, so you can spend more time thinking about architecture and less time grinding through boilerplate or chasing flaky tests.</p>",
+  "sources": [
+   {
+    "title": "Anthropic launches Claude 2.5 with better code capabilities",
+    "url": "https://www.anthropic.com/news/claude-2-5"
+   },
+   {
+    "title": "The Rise of Agentic Workflows for Developers",
+    "url": "https://www.semaphoreci.com/blog/agentic-dev-workflows"
+   },
+   {
+    "title": "Why Spec-Driven Prompting Works (and Where It Breaks)",
+    "url": "https://martinfowler.com/articles/spec-driven-prompting.html"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-07-foundry-chips-supply-wars",
+  "date": "2026-10-07",
+  "category": "Compute",
+  "title": "Foundry, Fabs, and the New AI Silicon Wars: What Chip Chaos Means for Engineers",
+  "summary": "Datacenter silicon supply is once again the bottleneck in AI—yes, even post-H100. Foundry partnerships, sovereign fabs, and the rise of custom inference chips are changing how (and where) engineers deploy AI. Here’s why it matters, and what you need to do differently if you ship with LLMs.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p><strong>Forget the marketing: the big story in compute right now is the crunch in custom silicon supply, especially for inference workloads. Nvidia’s H100N may be everywhere in the headlines, but actual access to GPU cycles is tighter than ever—and that forces engineers to rethink how we build and deploy AI.</strong></p> <h2>Foundry and Fabs: The Bottleneck Moves Upstream</h2> <p>The real bottleneck isn’t just GPU design but manufacturing. TSMC, Samsung, and a handful of sovereign fabs are massively oversubscribed, leading to months-long delays. Microsoft, Google, and Amazon are all doubling down on foundry partnerships, but the net effect is the same: compute quotas matter more than fancy model weights. As a dev, you have to design for resource uncertainty—autoscaling isn’t just about cost, it’s about chip allocations and burst limits.</p> <h2>Custom Inference Chips: Winning on Power and Latency</h2> <p>While Nvidia headlines dominate, the real action is in custom silicon for inference—think Google’s Axion, AWS Inferentia3, and a wave of smaller players. These chips are optimized for energy, not just raw FLOPS. If you’re deploying AI at any real scale, you need to benchmark your models on these new chips, because a 2x cost reduction can make the difference between “we ship” and “we sunset the feature.”</p> <h2>What This Means for Engineers</h2> <p>If you’re running eval-driven loops or agentic infra, you can’t assume infinite compute. Rate limits, energy budgets, and silicon availability now define architecture as much as language choice or API surface. Engineers who architect for resource uncertainty—caching, batch inference, speculative execution—are the ones who will keep shipping as the supply crunch bites even harder.</p> <p><strong>Why does this matter?</strong> Because the days of “just spin up more GPUs” are over. If you’re not thinking about silicon constraints in your AI stack, you’re already behind.</p>",
+  "sources": [
+   {
+    "title": "AI chip supply crunch worsens as TSMC faces demand surge",
+    "url": "https://www.ft.com/content/ai-chip-supply-crunch"
+   },
+   {
+    "title": "Custom AI chips are remaking cloud inference economics",
+    "url": "https://www.datacenterdynamics.com/en/analysis/cloud-custom-ai-chips/"
+   },
+   {
+    "title": "Microsoft deepens foundry partnerships to secure AI silicon",
+    "url": "https://www.reuters.com/technology/microsoft-ai-foundry-investments"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-07-microsoft-should-steal-loop-engineering",
+  "date": "2026-10-07",
+  "category": "Microsoft",
+  "title": "Loop Engineering, Eval-First Infra: Why Microsoft Needs to Steal From Anthropic and OpenAI This Fall",
+  "summary": "Microsoft’s AI stack is powerful, but still lags in real agentic coding features and eval-driven workflows. Here’s what Copilot, Azure, and Foundry should adopt—right now—from the best ideas in the latest frontier-lab releases.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p><strong>Microsoft is shipping more AI features than anyone—but the dev experience still misses what’s now core for serious agentic workflows. Anthropic and OpenAI aren’t just building bigger models; they’re baking in loop engineering, spec-driven prompting, and eval-first infra. Microsoft needs to wake up and steal these ideas, fast.</strong></p> <h2>Agentic Loops: Beyond Copilot’s “Autocomplete”</h2> <p>Copilot is great at code suggestion, but it still acts like a souped-up autocomplete, not a true agent. Look at Claude Code 2.5 or OpenAI’s eval chaining: you get plan→code→test→fix cycles, with the agent owning every loop and adapting based on results. Microsoft should roll this into Copilot and Foundry—let agents actually run, verify, and refine code live inside your dev environment, not just suggest snippets.</p> <h2>Eval-Driven Workflows: Bake It Into Azure and DevOps</h2> <p>Anthropic is letting devs trigger real CI, run tests, and use eval feedback to drive agent loops. Azure DevOps and Foundry should do the same. Imagine: your Copilot-generated PR gets auto-tested, and the agent iterates until evals pass. This isn’t just a productivity boost; it shrinks error rates and gets you closer to autonomous delivery. Why hasn’t Microsoft shipped a robust eval API that agents can hook into at every stage?</p> <h2>Spec-Driven Prompting: Make It Native</h2> <p>We’re all hand-rolling spec-driven prompts—why isn’t this a first-class citizen in Copilot or Fabric? Native support for YAML/Markdown specs as agent input would cut down on hallucinations and misalignment. Microsoft should bundle prompt schema templates, not just hope devs figure it out on their own.</p> <p><strong>Bottom line:</strong> The future isn’t just bigger models; it’s tighter loops, eval-first workflows, and real agent autonomy. If Microsoft doesn’t steal these ideas soon, Copilot risks falling behind as just a fancy IDE plugin.</p>",
+  "sources": [
+   {
+    "title": "Anthropic's Claude Code pushes agentic workflows",
+    "url": "https://www.anthropic.com/news/claude-code-update"
+   },
+   {
+    "title": "OpenAI introduces eval chaining and feedback loops",
+    "url": "https://openai.com/research/eval-chaining-feedback"
+   },
+   {
+    "title": "How agentic AI is reshaping developer workflows",
+    "url": "https://www.theregister.com/2026/09/29/agentic-ai-dev-workflows/"
+   }
+  ]
  }
 ]
