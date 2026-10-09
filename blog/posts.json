@@ -6920,5 +6920,70 @@
     "url": "https://www.ibisworld.com/industry-statistics/market-size/art-dealers-united-states/"
    }
   ]
+ },
+ {
+  "slug": "2026-10-09-agentic-coding-mcp-eval-spec-loops",
+  "date": "2026-10-09",
+  "category": "AI & Developers",
+  "title": "Pragmatic Agentic Coding: Claude Code, MCP Servers, and the New Loops of 2026",
+  "summary": "Agentic coding using Claude Code and eval-driven development is changing daily workflows for engineers. Here’s how loop engineering and MCP tool servers are actually used, and why spec-driven prompting is finally practical.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>AI news right now is all about Claude Code going deep into agentic territory. But for engineers at the coalface, “agentic” isn’t about cute demos—it’s about getting work done faster, and finally closing the spec-to-shipping loop.</p><h2>Loop Engineering: Plan → Act → Verify → Fix</h2><p>The biggest shift: engineers aren’t just writing prompts. We’re building real plan-act-verify-fix loops. Claude Code runs a plan, executes code snippets, reads tool output, then self-corrects. You don’t just prompt and hope. You run, check, and iterate—over and over—until the thing works. This loop is the new repl, and it matters because it pushes AI from generator to reliable teammate.</p><h2>MCP Tool Servers: Reliable Toolchains</h2><p>Most teams I know now run a local MCP (Multi-Context Provider) tool server. It’s the best way for an AI agent to call linters, formatters, code search, and test runners in a sandbox. This is critical: it gets you repeatable, secure tooling, which you can invoke from an agent context—no more ‘hope it runs somewhere in CI’.</p><h2>Spec-Driven Prompting</h2><p>Spec-driven prompting is finally not a meme. Instead of vague “build X” prompts, we write explicit yaml or markdown specs, feed that to the agent, and let it plan actions. It’s more work upfront but means fewer surprises later, especially for teams shipping regulated code.</p><h2>Eval-Driven Development</h2><p>And evals are now the backbone—each PR triggers eval suites on the AI’s work, so you catch regressions before humans see them. Eval-driven loops are the only way to trust autonomous AI in production. This isn’t science fiction—it’s daily shipping.</p><p>AI pair programming looks less like autocompletes and more like “describe the spec, run the loop, inspect the plan, and let the agent self-correct until the evals pass.” The speed boost is real, but the reliability is the kicker.</p>",
+  "sources": [
+   {
+    "title": "Anthropic launches Claude Code, AI coding agent",
+    "url": "https://www.anthropic.com/news/claude-code-launch"
+   },
+   {
+    "title": "Spec-driven development: Why it matters for AI agents",
+    "url": "https://martinfowler.com/articles/spec-driven-ai.html"
+   },
+   {
+    "title": "Evaluations for AI systems: How and why",
+    "url": "https://www.oreilly.com/radar/evaluating-ai-systems/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-09-silicon-supply-energy-inference-2026",
+  "date": "2026-10-09",
+  "category": "Compute",
+  "title": "The Compute Plate in 2026: Silicon Surges, Energy Spikes, and What Matters for Shipping AI",
+  "summary": "New GPU and custom silicon launches mean nothing if you can't afford inference or power your stack. Here’s what recent datacenter buildouts and silicon supply mean for engineers aiming to actually deploy AI workloads.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>The GPU news cycle in 2026 is bonkers: Nvidia’s Blackwell 2s are shipping, Google just dropped its 7th-gen TPUs, and every hyperscaler is hyping custom silicon. But if you’re building and shipping AI, what really matters is the messy stuff: can you get silicon, can you afford inference, and can you keep the lights on?</p><h2>GPUs Are Plentiful, but Not Cheap</h2><p>Yes, the worst of the 2023–25 crunch is over. But Blackwell 2s and custom ASICs are mostly reserved for hyperscalers or well-funded startups. Most devs still run on older H100s or cloud TPUs, and spot prices are still volatile. That means you have to design for portability: make your model run anywhere, because your target hardware will change under you.</p><h2>Datacenter Buildouts = More (Expensive) Capacity</h2><p>Hyperscalers are finally catching up with demand, but energy costs are ballooning—especially in Europe and parts of the US. AI inference is a power hog, and cloud providers are passing those costs down. For engineers, this means optimizing for inference efficiency is not just nice, it’s survival: smaller models, quantization, and hardware-aware scheduling are daily bread now.</p><h2>Supply Chain: Watch the Boring Details</h2><p>Chip supply is still a risk. Earthquakes in Taiwan, trade wars, and rare earth hiccups mean every company I know is multi-sourcing and stockpiling. You can’t just assume you’ll have uninterrupted access—so build for fallbacks and hybrid cloud/on-prem stacks.</p><p>The bottom line: hardware is less of a bottleneck than last year, but inference costs and energy bills are the real constraints. Engineers need to care, because if your AI isn’t cheap and reliable to deploy, it won’t make it past the CFO. Design accordingly.</p>",
+  "sources": [
+   {
+    "title": "Nvidia launches Blackwell 2 for datacenter AI workloads",
+    "url": "https://www.theregister.com/2026/09/15/nvidia-blackwell-2-launch/"
+   },
+   {
+    "title": "Why AI's energy bill keeps rising",
+    "url": "https://www.ft.com/content/ai-energy-datacenters"
+   },
+   {
+    "title": "The new chip supply chain playbook",
+    "url": "https://www.semianalysis.com/p/ai-chip-supply-chain-2026"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-09-microsoft-copilot-agentic-eval",
+  "date": "2026-10-09",
+  "category": "Microsoft",
+  "title": "Copilot’s Next Leap: Agentic Loops, Eval Suites, and Real Tool Servers",
+  "summary": "Microsoft can’t just add bigger models to Copilot, GitHub, or Azure—frontier labs are showing that agentic workflows, eval-driven development, and robust tool server integration are the next table stakes.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>Every engineer using Copilot, Copilot Workspace, or Azure’s Foundry stack can feel the gap: OpenAI and Anthropic have gone agentic, but Microsoft’s stack is still stuck in autocomplete and prompt mode. Here’s what Microsoft needs to learn, yesterday, from the latest frontier labs.</p><h2>Agentic Loops — Not Just Autocomplete</h2><p>Claude Code and Gemini Codey now run full plan-act-verify-fix loops, not just suggest code. Copilot still can’t reliably execute multi-step plans or call tools in a structured way. If Microsoft wants to stay relevant to serious devs, it needs to bake in agentic loop primitives—let agents run, check, and fix code, not just suggest it.</p><h2>Eval-Driven Workflows: Trust, Not Hype</h2><p>OpenAI has integrated eval suites that automatically test what their agents produce, catching regressions before human review. Microsoft needs this—desperately. Without eval-driven development, Copilot risks pushing junk code, and teams can’t trust it in regulated or mission-critical stacks.</p><h2>Tool Server Integration: Real Multi-Modal Actions</h2><p>Anthropic’s MCP server approach lets agents call linters, code search, and test runners as RPCs. Copilot’s tool calls are still too limited and lack orchestration. Microsoft should ship a first-class tool server and open APIs, so teams can extend, audit, and secure their agent’s actions.</p><p>Bottom line: More tokens and bigger models aren’t enough. Copilot, GitHub, and Azure need agentic loops, eval wiring, and robust tool orchestration to compete in 2027. Otherwise, devs will keep switching to stacks that actually get the job done.</p>",
+  "sources": [
+   {
+    "title": "Anthropic's Claude Code sets new bar for agentic coding",
+    "url": "https://www.axios.com/anthropic-claude-code-2026"
+   },
+   {
+    "title": "OpenAI’s evals for GPT agents: A new QA paradigm?",
+    "url": "https://www.bloomberg.com/tech/openai-eval-suites"
+   }
+  ]
  }
 ]
