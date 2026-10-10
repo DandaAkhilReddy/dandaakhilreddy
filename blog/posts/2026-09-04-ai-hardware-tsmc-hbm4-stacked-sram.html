@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TSMC Ships HBM4 with Stacked SRAM: What It Means for LLM Memory Walls | Reddy Pulse</title>
+<meta name="description" content="TSMC’s new HBM4 memory with integrated stacked SRAM has started shipping, promising to crush the LLM context bottleneck. Here’s what hardware engineers need to know.">
+<meta property="og:title" content="TSMC Ships HBM4 with Stacked SRAM: What It Means for LLM Memory Walls">
+<meta property="og:description" content="TSMC’s new HBM4 memory with integrated stacked SRAM has started shipping, promising to crush the LLM context bottleneck. Here’s what hardware engineers need to know.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Semiconductors</span>
+  <h1>TSMC Ships HBM4 with Stacked SRAM: What It Means for LLM Memory Walls</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 4th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop" alt="TSMC Ships HBM4 with Stacked SRAM: What It Means for LLM Memory Walls">
+  <p>HBM4 just got real, and TSMC’s twist—integrating stacked SRAM on the same package—might be the most important hardware shift for LLMs since the first tensor core. If you’ve built (or debugged) large model inference, you know the real pain isn’t just compute: it’s shuttling gigabytes of context data to and from DRAM. HBM3’s bandwidth helped, but even 8 TB/s couldn’t keep up with LLMs and 128K+ context windows.</p><h2>SRAM in the Memory Stack: Not Just Faster, Smarter</h2><p>By interleaving SRAM layers directly atop HBM4 dies, TSMC lets accelerator designers cache attention keys, logits, and routing data closer to the compute fabric. This isn’t just a modest speedup. Early benchmarks leak up to a 3x reduction in context swap time, and up to 40% lower energy per token generated. For engineers pushing hardware to the limits, it means you can safely upsize per-user context or run more models in parallel without saturating your board’s thermal and power limits.</p><h2>What’s the Catch?</h2><p>SRAM is way pricier per bit than DRAM, so these new stacks will be at a premium for a while. But for inference providers, latency and energy are the real bottlenecks. The tooling ecosystem is already catching up: both CUDA and ROCm are adding primitives for explicit SRAM cache hints and eviction policies.</p><h2>Why Engineers Should Care</h2><p>This is a signal for every AI hardware architect: hierarchical memory is no longer a niche trick. If you want to build for the future—think 1M context windows or always-on streaming LLMs—you need to embrace multi-level, programmable memory. TSMC is betting big on SRAM/DRAM co-packaging; if your designs still assume commodity DRAM, time to rethink your stack.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-04-ai-hardware-tsmc-hbm4-stacked-sram.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-04-ai-hardware-tsmc-hbm4-stacked-sram.html&text=TSMC%20Ships%20HBM4%20with%20Stacked%20SRAM%3A%20What%20It%20Means%20for%20LLM%20Memory%20Walls" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anandtech.com/show/20021/tsmc-hbm4-sram" target="_blank" rel="noopener">TSMC Ships HBM4 Memory with Stacked SRAM</a></li><li><a href="https://www.semianalysis.com/p/tsmc-hbm4-stacked-sram" target="_blank" rel="noopener">Inside TSMC’s Next-Gen AI Memory</a></li><li><a href="https://www.tomshardware.com/news/hbm4-future-ai-memory" target="_blank" rel="noopener">HBM4 and the Future of LLM Hardware</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

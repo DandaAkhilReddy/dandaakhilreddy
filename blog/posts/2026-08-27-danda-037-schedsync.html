@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #037 — SchedSync: AI Agents to Eliminate Chaos in Outpatient Physical Therapy Scheduling | Reddy Pulse</title>
+<meta name="description" content="American outpatient physical therapy clinics hemorrhage $3 billion annually from missed appointments, phone tag, and calendar chaos—patients lose recovery time, therapists lose income, and clinics lose their soul. SchedSync is the AI agent that automates and optimizes patient-therapist scheduling in real time, ending confusion and revenue loss.">
+<meta property="og:title" content="DANDA #037 — SchedSync: AI Agents to Eliminate Chaos in Outpatient Physical Therapy Scheduling">
+<meta property="og:description" content="American outpatient physical therapy clinics hemorrhage $3 billion annually from missed appointments, phone tag, and calendar chaos—patients lose recovery time, therapists lose income, and clinics lose their soul. SchedSync is the AI agent that automates and optimizes patient-therapist scheduling in real time, ending confusion and revenue loss.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #037 — SchedSync: AI Agents to Eliminate Chaos in Outpatient Physical Therapy Scheduling</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 27th August, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #037 — SchedSync: AI Agents to Eliminate Chaos in Outpatient Physical Therapy Scheduling">
+  <p>Outpatient physical therapy is a lifeline for people recovering from injury, surgery, or chronic pain. But the system is grinding to a halt: missed appointments, endless phone calls, double-booking errors, and last-minute cancellations cost clinics billions and rob patients of critical care. The problem is fixable—with intelligent, persistent AI agents handling the scheduling chaos.</p>
+
+<h2>The problem</h2>
+<ul>
+  <li>There are over 38,000 outpatient physical therapy clinics in the US. They schedule more than 328 million visits per year.</li>
+  <li>Missed appointments ("no-shows") and late cancellations run as high as 15-20%, costing clinics over $3 billion in lost revenue annually.</li>
+  <li>Clinic front desks spend up to 60% of their time on repetitive scheduling calls, reminders, and reschedules, leading to burnout and turnover.</li>
+  <li>Patients lose weeks of recovery when delays and rescheduling push back their progress—especially working adults and elderly patients relying on caregivers.</li>
+  <li>The vicious cycle: therapists' schedules are underutilized, clinics can't hire more staff, and patients get frustrated and drop out entirely.</li>
+</ul>
+
+<h2>The idea: SchedSync</h2>
+<p>SchedSync is an intelligent agentic automation platform that takes over end-to-end scheduling for outpatient physical therapy clinics. It syncs across EHRs, therapist calendars, patient availability, and insurance constraints. It proactively reschedules appointments, fills last-minute cancellations, confirms visits, and delivers reminders via the patient's preferred channel (text, email, phone, WhatsApp). SchedSync learns patient patterns and therapist preferences to optimize the entire clinic schedule, reducing no-shows, maximizing fill rates, and freeing staff from endless phone tag.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius:18px'>
+  <defs>
+    <marker id='arrow' markerWidth='10' markerHeight='7' refX='10' refY='3.5' orient='auto' markerUnits='strokeWidth'>
+      <polygon points='0 0,10 3.5,0 7' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <!-- Inputs -->
+  <rect x='40' y='60' width='110' height='60' rx='14' fill='none' stroke='#f5c518' stroke-width='3'/>
+  <text x='95' y='90' text-anchor='middle' fill='white' font-size='16'>Inputs</text>
+  <text x='95' y='110' text-anchor='middle' fill='#f5c518' font-size='12'>EHR / Calendars / Patient Data</text>
+  <!-- Ingestion Layer -->
+  <rect x='180' y='60' width='130' height='60' rx='14' fill='none' stroke='#f5c518' stroke-width='3'/>
+  <text x='245' y='90' text-anchor='middle' fill='white' font-size='16'>Ingestion</text>
+  <text x='245' y='110' text-anchor='middle' fill='#f5c518' font-size='12'>Integrators & Normalizers</text>
+  <!-- Memory/Graph Layer -->
+  <rect x='340' y='60' width='150' height='60' rx='14' fill='none' stroke='#f5c518' stroke-width='3'/>
+  <text x='415' y='90' text-anchor='middle' fill='white' font-size='16'>Memory & Graph</text>
+  <text x='415' y='110' text-anchor='middle' fill='#f5c518' font-size='12'>Patient-Therapist-State</text>
+  <!-- Agent Orchestrator -->
+  <rect x='520' y='40' width='170' height='90' rx='16' fill='none' stroke='#f5c518' stroke-width='3'/>
+  <text x='605' y='75' text-anchor='middle' fill='white' font-size='16'>Agent Orchestrator</text>
+  <text x='605' y='95' text-anchor='middle' fill='#f5c518' font-size='12'>AI Policy, Scheduling Agents</text>
+  <!-- Human Gate -->
+  <rect x='340' y='180' width='120' height='60' rx='14' fill='none' stroke='#f5c518' stroke-width='3'/>
+  <text x='400' y='210' text-anchor='middle' fill='white' font-size='16'>Human Gate</text>
+  <text x='400' y='228' text-anchor='middle' fill='#f5c518' font-size='12'>Patient Approval / Escalation</text>
+  <!-- Action Layer -->
+  <rect x='520' y='180' width='170' height='60' rx='14' fill='none' stroke='#f5c518' stroke-width='3'/>
+  <text x='605' y='210' text-anchor='middle' fill='white' font-size='16'>Action Layer</text>
+  <text x='605' y='230' text-anchor='middle' fill='#f5c518' font-size='12'>Reminders, Scheduling, Chat</text>
+  <!-- Arrows -->
+  <line x1='150' y1='90' x2='180' y2='90' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='310' y1='90' x2='340' y2='90' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='490' y1='90' x2='520' y2='85' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='415' y1='120' x2='400' y2='180' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='605' y1='130' x2='605' y2='180' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='460' y1='210' x2='520' y2='210' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+</svg>
+<p>Here's how SchedSync works: Clinic EHRs, therapist calendars, and patient data flow into the ingestion layer. The system normalizes formats and builds a real-time graph of patient availability, therapist schedules, insurance rules, and history. The Agent Orchestrator manages persistent AI agents for each patient and therapist, continuously optimizing the schedule and resolving conflicts. For any edge cases or required approvals, the Human Gate requests input from patients or staff. Once actions are cleared, the Action Layer executes automated reminders, rescheduling, and secure multi-channel messaging—eliminating no-shows and filling cancellations instantly.</p>
+
+<h2>Build plan (90 days)</h2>
+<ul>
+  <li><b>Wedge:</b> Launch with independent PT clinics using Athenahealth or SimplePractice EHRs. Small, high-impact wedge with dire need for automation.</li>
+  <li><b>Stack:</b> Integrators for EHR calendar, phone/SMS/email APIs, and insurance eligibility data. Deploy LLM-powered scheduling agents. HIPAA-compliant eventing and audit trail out of the gate.</li>
+  <li><b>Pricing:</b> Per-provider seat ($149/mo) + $0.50 per automated action. ROI guarantee: cut no-shows by 40% in 60 days or money back.</li>
+</ul>
+
+<h2>Why now</h2>
+<p>Outpatient PT demand is surging as Americans age, but clinics can’t hire staff fast enough—front desk turnover is up 40%. AI scheduling agents are finally robust, multi-modal, and can integrate with EHRs in real time. Clinics are desperate for automation to keep doors open and serve more patients: SchedSync is the right wedge, at the right time, with a clear, measurable ROI. The real lever isn’t just saving time—it’s ensuring millions more appointments translate into real recovery and revenue, not chronic pain and lost productivity.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-27-danda-037-schedsync.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-27-danda-037-schedsync.html&text=DANDA%20%23037%20%E2%80%94%20SchedSync%3A%20AI%20Agents%20to%20Eliminate%20Chaos%20in%20Outpatient%20Physical%20Therapy%20Scheduling" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.ibisworld.com/united-states/market-research-reports/physical-therapy-clinics-industry/" target="_blank" rel="noopener">Physical Therapy Clinics in the US - Industry Report</a></li><li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6966392/" target="_blank" rel="noopener">No-shows in outpatient physical therapy: Prevalence and cost</a></li><li><a href="https://revcycleintelligence.com/news/appointment-cancellations-cost-us-healthcare-billions" target="_blank" rel="noopener">Appointment Cancellations Cost US Healthcare Billions</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

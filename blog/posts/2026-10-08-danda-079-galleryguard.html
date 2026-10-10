@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #079 — GalleryGuard: AI Agents to End Art Gallery Exhibition Scheduling Chaos and Last-Minute Cancellations | Reddy Pulse</title>
+<meta name="description" content="GalleryGuard deploys autonomous AI agents to orchestrate seamless exhibition scheduling, reduce cancellations, and unlock lost revenue for art galleries drowning in coordination chaos.">
+<meta property="og:title" content="DANDA #079 — GalleryGuard: AI Agents to End Art Gallery Exhibition Scheduling Chaos and Last-Minute Cancellations">
+<meta property="og:description" content="GalleryGuard deploys autonomous AI agents to orchestrate seamless exhibition scheduling, reduce cancellations, and unlock lost revenue for art galleries drowning in coordination chaos.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #079 — GalleryGuard: AI Agents to End Art Gallery Exhibition Scheduling Chaos and Last-Minute Cancellations</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 8th October, 2026 · 3 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #079 — GalleryGuard: AI Agents to End Art Gallery Exhibition Scheduling Chaos and Last-Minute Cancellations">
+  <p>Every art gallery director knows the pain: exhibition schedules in constant flux, artist commitments lost in email threads, last-minute cancellations, and a calendar that never quite matches reality. Small and mid-sized galleries lose tens of thousands in annual revenue from scheduling chaos, while patrons miss out on exciting shows due to poor coordination. The art world’s logistics are decades behind, and the cost is real.</p>
+
+<h2>The problem</h2>
+<p>Globally, over 25,000 art galleries manage more than 500,000 exhibitions per year. Yet, nearly 18% of scheduled exhibitions are delayed, rescheduled, or cancelled outright, costing US galleries alone upwards of $800M per year in lost ticket sales, missed sales, and wasted preparation costs. In a typical mid-sized gallery, directors spend 10-15 hours per week wrangling calendars, confirming artist logistics, and chasing down contracts. Missed communication leads to 23% of cancellations happening less than 30 days before the opening, leaving no chance to fill the slot or recover costs. With 71% of U.S. galleries having fewer than 5 staff, the admin burden directly impacts creative programming and profitability.</p>
+
+<h2>The idea: GalleryGuard</h2>
+<p>GalleryGuard is an AI agent platform that acts as a digital exhibition scheduler and liaison — ingesting artist commitments, gallery calendars, contracts, and logistics threads across email, SMS, and management software. It proactively identifies scheduling gaps, flags risk factors (like missing contracts or shipping delays), and autonomously reaches out to artists, shippers, and staff to confirm or rebook slots. If a cancellation happens, GalleryGuard launches recovery workflows: suggesting backup artists, automating outreach, and updating ticketing portals. The system ensures every exhibition slot is maximized, minimizes cancellations, and turns chaos into orchestration.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111'><defs><marker id='arrow' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='6' markerHeight='6' orient='auto'><path d='M0,0 L10,5 L0,10 Z' fill='#f5c518'/></marker></defs>
+  <rect x='30' y='40' width='170' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='115' y='75' font-size='18' fill='#f5c518' text-anchor='middle'>Inputs</text>
+  <text x='115' y='60' font-size='14' fill='#fff' text-anchor='middle'>Artist Schedules<br/>Contracts<br/>Gallery Calendars<br/>Emails/SMS</text>
+
+  <rect x='230' y='40' width='170' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='315' y='75' font-size='18' fill='#f5c518' text-anchor='middle'>Ingestion</text>
+  <text x='315' y='60' font-size='14' fill='#fff' text-anchor='middle'>Parsing & Sync</text>
+
+  <rect x='430' y='40' width='140' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='500' y='75' font-size='18' fill='#f5c518' text-anchor='middle'>Memory/Graph</text>
+  <text x='500' y='60' font-size='14' fill='#fff' text-anchor='middle'>Schedule Graph<br/>Commitments</text>
+
+  <rect x='610' y='40' width='110' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='665' y='75' font-size='18' fill='#f5c518' text-anchor='middle'>Agent Orchestrator</text>
+  <text x='665' y='60' font-size='14' fill='#fff' text-anchor='middle'>Risk Detection<br/>Recovery Workflows</text>
+
+  <rect x='30' y='140' width='170' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='115' y='175' font-size='18' fill='#f5c518' text-anchor='middle'>Human Gate</text>
+  <text x='115' y='160' font-size='14' fill='#fff' text-anchor='middle'>Director Approval</text>
+
+  <rect x='230' y='140' width='490' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='475' y='175' font-size='18' fill='#f5c518' text-anchor='middle'>Action Layer</text>
+  <text x='475' y='160' font-size='14' fill='#fff' text-anchor='middle'>Autonomous Outreach<br/>Calendar Updates<br/>Ticketing/Website Sync</text>
+
+  <line x1='200' y1='70' x2='230' y2='70' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='400' y1='70' x2='430' y2='70' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='570' y1='70' x2='610' y2='70' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='115' y1='100' x2='115' y2='140' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='200' y1='170' x2='230' y2='170' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+</svg>
+<p>The system starts by ingesting all relevant inputs: artist schedules, gallery contracts, calendars, and communication threads. The ingestion layer parses and synchronizes this data while the Memory/Graph builds a live map of commitments and slots. The Agent Orchestrator continuously scans for risks (like missing contracts, delivery delays, or conflicting bookings), launching proactive workflows and backup slot suggestions. When a risk is flagged, the Human Gate lets gallery directors review and approve interventions. The Action Layer handles all outreach (emails, SMS, artist reminders), calendar updates, and ticketing sync — autonomously ensuring exhibitions happen on schedule.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Launch with 10 pilot galleries in NYC and LA, focusing solely on exhibition scheduling and cancellation recovery. <b>Stack:</b> Expand to integrate with major gallery management platforms (ArtBinder, GalleryManager), add artist logistics and contract parsing, then enable full ticketing sync. <b>Pricing:</b> SaaS, $250/mo per gallery (<5 staff), tiered up to $1,000/mo for larger galleries. Extra: 2% commission for successful last-minute exhibition rebooking.</p>
+
+<h2>Why now</h2>
+<p>Art galleries are under pressure: staffing shortages, rising costs, and more complex exhibition logistics. With AI-powered workflow automation finally reliable enough to handle nuanced scheduling and outreach, GalleryGuard can unlock lost revenue and reduce burnout. The art world has never had a purpose-built orchestration agent — the time to modernize is now, before small galleries vanish from the map.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-08-danda-079-galleryguard.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-08-danda-079-galleryguard.html&text=DANDA%20%23079%20%E2%80%94%20GalleryGuard%3A%20AI%20Agents%20to%20End%20Art%20Gallery%20Exhibition%20Scheduling%20Chaos%20and%20Last-Minute%20Cancellations" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.artfacts.net/global-galleries" target="_blank" rel="noopener">How Many Art Galleries are There in the World?</a></li><li><a href="https://www.artbasel.com/about/market-reports/the-art-market-2023" target="_blank" rel="noopener">The State of the Art Market 2023</a></li><li><a href="https://www.ibisworld.com/industry-statistics/market-size/art-dealers-united-states/" target="_blank" rel="noopener">U.S. Art Galleries: Industry Statistics</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

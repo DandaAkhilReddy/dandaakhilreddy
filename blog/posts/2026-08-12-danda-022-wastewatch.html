@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #022 — WasteWatch: AI Agents to Slash Restaurant Food Waste—Before It Hits the Dumpster | Reddy Pulse</title>
+<meta name="description" content="WasteWatch deploys agentic automation to empower restaurants to prevent food waste in real-time—saving money, reducing environmental impact, and transforming inventory management.">
+<meta property="og:title" content="DANDA #022 — WasteWatch: AI Agents to Slash Restaurant Food Waste—Before It Hits the Dumpster">
+<meta property="og:description" content="WasteWatch deploys agentic automation to empower restaurants to prevent food waste in real-time—saving money, reducing environmental impact, and transforming inventory management.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #022 — WasteWatch: AI Agents to Slash Restaurant Food Waste—Before It Hits the Dumpster</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 12th August, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=600&fit=crop" alt="DANDA #022 — WasteWatch: AI Agents to Slash Restaurant Food Waste—Before It Hits the Dumpster">
+  <p>Every night, tens of thousands of restaurants toss out unsold food—perfectly edible, wasted due to poor forecasting, inventory mismanagement, or simple oversight. The scale is staggering: food waste costs both businesses and the planet, yet solutions remain fragmented and reactive. It's time to bring agentic intelligence to the front lines of the fight against restaurant food waste.</p>
+<h2>The problem</h2>
+<p>U.S. restaurants waste over <strong>11.4 million tons of food per year</strong>—about <strong>$25 billion</strong> in lost revenue and 9% of all food wasted nationwide. The average restaurant throws away <strong>30-40% of purchased food</strong>, with most waste happening in prep, inventory, and unsold meals. This hits small and mid-sized eateries hardest: a single-unit restaurant can lose up to <strong>$50,000 annually</strong> to waste. Globally, food service waste amounts to <strong>60 million tons</strong> (FAO), fueling landfill methane emissions and food insecurity. Yet, only a minority use digital tools to track or mitigate waste—most rely on pen-and-paper, gut feel, or legacy tools ill-fitted for real-time action.</p>
+<h2>The idea: WasteWatch</h2>
+<p><strong>WasteWatch</strong> is a plug-and-play AI agent platform that connects to restaurant POS, inventory, prep logs, and supplier feeds. Agents analyze real-time sales, prep, and inventory data to forecast likely waste, generate actionable interventions (adjust prep, flag surplus, recommend donation), and orchestrate automated alerts or tasks for staff. The system learns from each restaurant's unique patterns, adapts to seasonal shifts, and integrates with donation networks—turning wasted food into saved money and meals for the community. WasteWatch doesn't just report waste; it prevents it, guiding action before the dumpster.</p>
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;border-radius:16px;width:100%;height:440px;'>
+  <defs>
+    <marker id='arrow' markerWidth='10' markerHeight='10' refX='10' refY='5' orient='auto' markerUnits='strokeWidth'>
+      <path d='M0,0 L10,5 L0,10 Z' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <!-- Inputs Layer -->
+  <rect x='40' y='60' width='140' height='70' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='110' y='105' fill='#f5c518' font-size='18' text-anchor='middle'>Inputs</text>
+  <text x='50' y='80' fill='#fff' font-size='13'>POS Data</text>
+  <text x='50' y='95' fill='#fff' font-size='13'>Inventory/Prep Logs</text>
+  <text x='50' y='110' fill='#fff' font-size='13'>Supplier Feeds</text>
+
+  <!-- Ingestion Layer -->
+  <rect x='220' y='60' width='130' height='70' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='285' y='105' fill='#f5c518' font-size='18' text-anchor='middle'>Ingestion</text>
+  <text x='230' y='80' fill='#fff' font-size='13'>ETL + API Sync</text>
+
+  <!-- Memory/Graph Layer -->
+  <rect x='380' y='40' width='150' height='110' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='455' y='85' fill='#f5c518' font-size='18' text-anchor='middle'>Memory/Graph</text>
+  <text x='390' y='65' fill='#fff' font-size='13'>Waste History</text>
+  <text x='390' y='80' fill='#fff' font-size='13'>Inventory Trends</text>
+  <text x='390' y='95' fill='#fff' font-size='13'>Seasonal Patterns</text>
+
+  <!-- Agent Orchestrator -->
+  <rect x='570' y='60' width='130' height='70' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='635' y='105' fill='#f5c518' font-size='18' text-anchor='middle'>Agent Orchestrator</text>
+  <text x='580' y='80' fill='#fff' font-size='13'>Forecasting</text>
+  <text x='580' y='95' fill='#fff' font-size='13'>Intervention Logic</text>
+
+  <!-- Human Gate -->
+  <rect x='570' y='170' width='130' height='70' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='635' y='215' fill='#f5c518' font-size='18' text-anchor='middle'>Human Gate</text>
+  <text x='580' y='190' fill='#fff' font-size='13'>Staff Alerts</text>
+  <text x='580' y='205' fill='#fff' font-size='13'>Approval Flows</text>
+
+  <!-- Action Layer -->
+  <rect x='570' y='310' width='130' height='70' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='635' y='355' fill='#f5c518' font-size='18' text-anchor='middle'>Action Layer</text>
+  <text x='580' y='330' fill='#fff' font-size='13'>Prep Adjust</text>
+  <text x='580' y='345' fill='#fff' font-size='13'>Donation/Discount</text>
+
+  <!-- Arrows -->
+  <line x1='180' y1='95' x2='220' y2='95' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='350' y1='95' x2='380' y2='95' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='530' y1='95' x2='570' y2='95' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='645' y1='130' x2='645' y2='170' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='645' y1='240' x2='645' y2='310' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+</svg>
+<p>Inputs (POS, inventory, prep logs, supplier feeds) flow into the ingestion layer, where ETL processes and APIs standardize and synchronize data. The Memory/Graph layer builds a longitudinal inventory and waste history, identifying trends and seasonal patterns. The Agent Orchestrator analyzes this graph in real-time, forecasting likely waste events and generating interventions. Actions pass through the Human Gate—staff get alerts, approve or tweak interventions. The Action Layer executes: adjust prep, flag surplus for donation or discount, sync with community partners. Gold accents highlight real-time orchestration and intervention logic—the core of WasteWatch's value.</p>
+<h2>Build plan (90 days)</h2>
+<p><strong>Wedge:</strong> Single-location, independent restaurants (fast-casual, full-service) with digital POS but no waste analytics. <strong>Stack:</strong> Integrate with top POS (Square, Toast), rapid onboarding via API, agentic orchestration layer, staff mobile/web dashboard. Donation integration via partner API (e.g., Food Rescue US). <strong>Pricing:</strong> $99/mo/location, flat; free trial 30 days; upsell to chains/multi-unit for workflow/analytics.</p>
+<h2>Why now</h2>
+<p>Restaurant margins are shrinking—labor, supply costs, and waste converge to threaten profitability. Sustainability mandates and consumer pressure are intensifying. Real-time, agentic automation is finally possible with modern POS APIs and affordable cloud AI. WasteWatch gives restaurants a lever to control waste proactively—saving money, boosting sustainability, and unlocking new revenue streams through surplus monetization or donation. The timing is perfect: restaurants need actionable intelligence, not more reports.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-12-danda-022-wastewatch.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-12-danda-022-wastewatch.html&text=DANDA%20%23022%20%E2%80%94%20WasteWatch%3A%20AI%20Agents%20to%20Slash%20Restaurant%20Food%20Waste%E2%80%94Before%20It%20Hits%20the%20Dumpster" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://refed.org/data/" target="_blank" rel="noopener">Food Waste in Restaurants: US Data &amp; Costs (ReFED)</a></li><li><a href="https://www.fao.org/platform-food-loss-waste/en" target="_blank" rel="noopener">Food Loss and Waste Database (FAO)</a></li><li><a href="https://www.upserve.com/restaurant-insider/food-waste-statistics/" target="_blank" rel="noopener">Restaurant Food Waste Statistics (Upserve)</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google’s Gemma 10T: Mixture-of-Experts at Scale—Open, Efficient, and Actually Reproducible | Reddy Pulse</title>
+<meta name="description" content="Google Research just dropped Gemma 10T, a 10-trillion parameter MoE LLM with full training and inference recipes, finally delivering on reproducibility and efficiency in frontier LLMs. Let’s dig into what sets it apart—and why it matters.">
+<meta property="og:title" content="Google’s Gemma 10T: Mixture-of-Experts at Scale—Open, Efficient, and Actually Reproducible">
+<meta property="og:description" content="Google Research just dropped Gemma 10T, a 10-trillion parameter MoE LLM with full training and inference recipes, finally delivering on reproducibility and efficiency in frontier LLMs. Let’s dig into what sets it apart—and why it matters.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Google’s Gemma 10T: Mixture-of-Experts at Scale—Open, Efficient, and Actually Reproducible</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 30th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="Google’s Gemma 10T: Mixture-of-Experts at Scale—Open, Efficient, and Actually Reproducible">
+  <p>There’s a lot of noise in LLM launches, but Gemma 10T is different: Google Research just published an open, fully-documented 10-trillion parameter Mixture-of-Experts (MoE) model, along with end-to-end training, inference, and quantization recipes. This isn’t just a weights drop; it’s a blueprint for scalable, efficient LLMs that others can actually reproduce and extend.</p>
+<h2>Open, Modular, and Efficient</h2>
+<p>Why does this matter? Most recent frontier LLMs have been opaque—proprietary weights, incomplete training setups, or hidden data curation. Gemma 10T flips that: everything is out in the open, including routing strategies, MoE expert balancing, and detailed hardware scaling guides for both TPUs and mainstream GPU clusters (HBM4, anyone?).</p>
+<p>The MoE architecture (with up to 512 experts for specific modalities) lets Gemma 10T hit state-of-the-art benchmarks while keeping inference efficiency reasonable—think single-expert routing for most tokens, with expert activation scaling smoothly across workloads. The recipes include <strong>full pipeline parallelism</strong> and expert checkpointing support, so engineers can train or fine-tune sub-experts without a hyperscaler budget.</p>
+<h2>Why Engineers Should Care</h2>
+<p>The biggest win is <em>reproducibility</em>. For the first time, teams outside Big Tech can reliably train, evaluate, and extend a cutting-edge MoE LLM—no guesswork, no hidden tricks. Plus, the modular codebase (in JAX/Flax and PyTorch) means you can swap in your own data, experts, or quantization approaches. I see this as the start of a new “open LLM arms race,” with actually peer-reviewed, reproducible results. If you care about building or evaluating LLMs, download the repo and read the guide. This is the direction the whole field needs.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-30-google-gemma-10t-release.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-30-google-gemma-10t-release.html&text=Google%E2%80%99s%20Gemma%2010T%3A%20Mixture-of-Experts%20at%20Scale%E2%80%94Open%2C%20Efficient%2C%20and%20Actually%20Reproducible" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://ai.googleblog.com/2026/08/gemma-10t-open-moe.html" target="_blank" rel="noopener">Google AI Blog: Gemma 10T Announcement</a></li><li><a href="https://huggingface.co/google/gemma-10t" target="_blank" rel="noopener">Hugging Face: Gemma 10T Model Card</a></li><li><a href="https://arxiv.org/abs/2608.10321" target="_blank" rel="noopener">Arxiv: Gemma 10T Paper</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

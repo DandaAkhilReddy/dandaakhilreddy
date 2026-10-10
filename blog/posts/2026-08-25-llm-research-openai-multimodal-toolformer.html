@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenAI’s Multimodal Toolformer: LLMs Now Call and Compose with APIs Across Images, Video, and More | Reddy Pulse</title>
+<meta name="description" content="OpenAI’s new Multimodal Toolformer blurs the line between language models and agents, letting LLMs compose API calls—across vision, audio, and web tools—on the fly.">
+<meta property="og:title" content="OpenAI’s Multimodal Toolformer: LLMs Now Call and Compose with APIs Across Images, Video, and More">
+<meta property="og:description" content="OpenAI’s new Multimodal Toolformer blurs the line between language models and agents, letting LLMs compose API calls—across vision, audio, and web tools—on the fly.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>OpenAI’s Multimodal Toolformer: LLMs Now Call and Compose with APIs Across Images, Video, and More</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 25th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop" alt="OpenAI’s Multimodal Toolformer: LLMs Now Call and Compose with APIs Across Images, Video, and More">
+  <p>OpenAI just published a preprint about Multimodal Toolformer, and it’s a big deal: core GPT models can now orchestrate API calls to external tools not just with text, but across images, video, and even audio pipelines. If you care about LLMs as software infrastructure, this is the next frontier.</p>
+
+<h2>Why does this matter for engineers?</h2>
+<p>Toolformer was already cool for letting LLMs ‘invoke’ APIs as part of a chain-of-thought. But the new twist is: models can now decide, mid-generation, “I need to call an OCR API on this image, then summarize the result, then call a video transcription API, then format output as JSON.” And it all happens in a single context window—no brittle controller code, no manual function routing.</p>
+
+<p>This dramatically lowers the floor for building agentic LLMs that actually <strong>do</strong> real work, instead of just chatting. You can wire up vision APIs, database lookups, code execution engines, and let the model orchestrate complex tasks—like extracting key data from a scanned invoice and updating a spreadsheet, with full multimodal IO.</p>
+
+<p>The catch: debugging tool-chaining at this level is nontrivial. There’s a lot of clever prompt engineering, careful model fine-tuning to avoid runaway API calls, and new risks around hallucinated tool usage. But if you want LLMs to move beyond toy demos and become the backbone of real agent systems, this is a giant step. Expect open-source variants to follow fast.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-25-llm-research-openai-multimodal-toolformer.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-25-llm-research-openai-multimodal-toolformer.html&text=OpenAI%E2%80%99s%20Multimodal%20Toolformer%3A%20LLMs%20Now%20Call%20and%20Compose%20with%20APIs%20Across%20Images%2C%20Video%2C%20and%20More" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://arxiv.org/abs/2608.11011" target="_blank" rel="noopener">Multimodal Toolformer: OpenAI’s new agentic LLM framework</a></li><li><a href="https://www.technologyreview.com/2026/08/23/openai-multimodal-toolformer" target="_blank" rel="noopener">OpenAI’s LLMs learn to orchestrate across tools and modalities</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

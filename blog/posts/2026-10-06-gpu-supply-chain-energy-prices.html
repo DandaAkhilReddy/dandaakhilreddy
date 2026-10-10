@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPU Crunch: Datacenter Build-outs, Silicon Scarcity, and What It Means for Inference | Reddy Pulse</title>
+<meta name="description" content="GPU shortages have hit a new peak as hyperscalers scramble to build out AI datacenters. Engineers need to know where the bottlenecks are and how it impacts real-world AI shipping.">
+<meta property="og:title" content="GPU Crunch: Datacenter Build-outs, Silicon Scarcity, and What It Means for Inference">
+<meta property="og:description" content="GPU shortages have hit a new peak as hyperscalers scramble to build out AI datacenters. Engineers need to know where the bottlenecks are and how it impacts real-world AI shipping.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1475666675596-cca2035b3c49?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>GPU Crunch: Datacenter Build-outs, Silicon Scarcity, and What It Means for Inference</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 6th October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1475666675596-cca2035b3c49?w=1200&h=600&fit=crop" alt="GPU Crunch: Datacenter Build-outs, Silicon Scarcity, and What It Means for Inference">
+  <p>There’s a new wave of panic—NVIDIA’s H100X and MI400 supply chains are stretched thin, while Google and Microsoft are in a datacenter build-out arms race. The big news: AI inference costs are climbing, not falling, and custom silicon is still not closing the gap fast enough. Power and cooling are the new bottlenecks as hyperscalers chase every available megawatt.</p><h2>Why It Matters</h2><p>For engineers shipping AI, compute isn’t just a background cost anymore. It’s a daily limiter on what models you can run, how fast, and even whether you can deploy to prod. I’ve seen teams forced to downgrade models because GPU allocation got slashed mid-deploy. And the cost per token is up—especially for fine-tuned or agentic workloads, which are more compute-hungry.</p><p>The silicon news is blunt: custom chips (TPUs, AWS Trainium, Graphcore) are <strong>not</strong> as widely available as the marketing suggests. Most real-world inference is still running on NVIDIA, and their lead in supply chain logistics is widening, not shrinking. That means if you’re building anything AI, you need to plan for <strong>compute scarcity</strong>—and optimize for energy costs and batch sizes.</p><h2>Energy Plate Reality</h2><p>Power consumption is through the roof. The 'energy plate' (how much juice you can actually get per rack) is now a major factor in whether your AI app goes live. Datacenter operators are rethinking cooling and energy sourcing, and in some cases, prioritizing which models get to run based on energy budgets. For engineers: this means you need to profile not just inference time, but actual watt-hours per run.</p><h2>Takeaway for Engineers</h2><p>If you’re shipping AI: profile your models early, test on real hardware, and <strong>plan for fallback</strong> when silicon runs out. Smart teams are using evals to measure not just accuracy, but compute footprint and cost—every token counts. Compute is shaping what’s possible, not just what’s ideal.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-06-gpu-supply-chain-energy-prices.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-06-gpu-supply-chain-energy-prices.html&text=GPU%20Crunch%3A%20Datacenter%20Build-outs%2C%20Silicon%20Scarcity%2C%20and%20What%20It%20Means%20for%20Inference" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.tomshardware.com/news/nvidia-gpu-shortage" target="_blank" rel="noopener">NVIDIA GPU Supply Chain 2026</a></li><li><a href="https://www.datacenterdynamics.com/en/news/ai-datacenter-energy-crunch/" target="_blank" rel="noopener">Datacenter Build-Outs: Power and Cooling</a></li><li><a href="https://www.semidata.com/articles/inference-costs-2026" target="_blank" rel="noopener">AI Inference Costs on Silicon</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

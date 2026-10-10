@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Needs Agent Sandboxing and Real-Time Infra Controls—Now | Reddy Pulse</title>
+<meta name="description" content="OpenAI and Anthropic are setting the bar with deep agent sandboxing and live tool control. If Microsoft wants Copilot and Foundry to scale safely, it needs to steal these patterns—fast.">
+<meta property="og:title" content="Microsoft Needs Agent Sandboxing and Real-Time Infra Controls—Now">
+<meta property="og:description" content="OpenAI and Anthropic are setting the bar with deep agent sandboxing and live tool control. If Microsoft wants Copilot and Foundry to scale safely, it needs to steal these patterns—fast.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Microsoft Needs Agent Sandboxing and Real-Time Infra Controls—Now</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 3rd October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop" alt="Microsoft Needs Agent Sandboxing and Real-Time Infra Controls—Now">
+  <p>Let’s talk about what Microsoft still doesn’t have: robust <strong>agent sandboxing</strong> and live infrastructure controls at the Copilot and Foundry layer. OpenAI’s new evalstack and Anthropic’s Claude MCP tool servers aren’t just bells and whistles—they’re the backbone of safe, scalable agentic workflows. Why? Because as soon as you turn AI loose on real code, infra, or enterprise data, you’re one prompt away from disaster.</p><p>Right now, Copilot’s agent integrations are too coarse. There’s no fine-grained runtime sandboxing (think: <strong>per-agent, per-task network and filesystem policy</strong>), and management of tool access still lacks real-time visibility. OpenAI’s evalstack lets you run and monitor agents against production-like sandboxes, with dynamic escape detection and auto-rollback—exactly the kind of guardrails engineers need. Anthropic’s MCP tool servers go further: they provide <strong>live, per-agent permissioning</strong> and audit trails, plus the ability to plug in custom verifiers on the fly.</p><p><strong>Microsoft needs to steal this, fast.</strong> Roll it into Azure AI, Copilot, and Foundry. Make agent runtime isolation the default. Give engineers a dashboard that shows which agent touched what resource, when, and why. Let us wire up custom evals and blocklists in real time. If Satya’s team wants enterprise AI to scale, this isn’t nice-to-have, it’s survival. </p><p>Engineers shouldn’t have to choose between velocity and safety. The frontier labs are proving that you can—if you build the right infra. Microsoft has the platform, but not yet the patterns. Time to close the gap before the next agentic meltdown makes headlines.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-03-microsoft-should-steal-agent-sandboxing-and-infra-controls.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-03-microsoft-should-steal-agent-sandboxing-and-infra-controls.html&text=Microsoft%20Needs%20Agent%20Sandboxing%20and%20Real-Time%20Infra%20Controls%E2%80%94Now" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://openai.com/blog/evalstack" target="_blank" rel="noopener">OpenAI DevDay: EvalStack and Agent Safety Patterns</a></li><li><a href="https://www.anthropic.com/index/mcp-tool-servers" target="_blank" rel="noopener">Anthropic: MCP Tool Servers for AI Agents</a></li><li><a href="https://www.microsoft.com/en-us/research/project/copilot-workflows/" target="_blank" rel="noopener">Microsoft Research: Copilot Platform and Agentic Workflows</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
