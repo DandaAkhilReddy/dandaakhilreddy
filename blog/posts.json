@@ -7364,5 +7364,74 @@
     "url": "https://www.ama-assn.org/practice-management/economics/ama-physician-practice-benchmark-surveys"
    }
   ]
+ },
+ {
+  "slug": "2026-10-14-agentic-coding-day-to-day-workflows",
+  "date": "2026-10-14",
+  "category": "AI & Developers",
+  "title": "Agentic Coding Isn’t Magic — It’s Daily Practice (Claude Code, Loop Engineering, Spec Prompts)",
+  "summary": "Agentic coding and loop-driven workflows are how real developers ship AI in late 2026. Here’s what’s working — and why — from a hands-on engineer’s POV.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>When people say “agentic coding” is the future, I have to laugh: it’s already the present for anyone actually building AI apps. Forget the hype—here’s what I see and use every day.</p><h2>Claude Code: Not Just Chat — a Pair Coder That Plans</h2><p>Claude (especially Code and Opus) is the default for agentic workflows now. The “magic” isn’t in spitting out code, but in driving plan→act→verify→fix loops with tight feedback. I’ll hand it a spec (often 10–20 lines of bullet points), and Claude will break down the task, ask clarifying questions, and self-improve over multiple cycles. This is <strong>loop engineering</strong>: no single-shot code dumps, but iterative, context-aware progress. If you’re not building with this, you’re already behind.</p><h2>Spec-Driven Prompting & MCP Tool Servers</h2><p>Specs are the new prompts. A well-structured spec (markdown, structured JSON, or even Figma screenshots) lets the model know what “done” means. I’m watching more teams shift from ad hoc requests to rich, formalized specs—partly because it makes eval-driven development tractable. Tying this loop to an <strong>MCP (Model Control Plane) tool server</strong> means agents can call actual build/test/deploy tools, not just hallucinate bash scripts. The result? Tests pass, code merges, and engineers spend less time babysitting LLMs.</p><h2>Why It Matters</h2><p>These aren’t novelty tricks. Without loop-driven agentic workflows, you can’t reliably ship non-trivial AI features: too many edge cases, too much drift. The devs who are thriving are the ones who treat their LLMs like junior engineers you teach to check their own work—specs, tools, tests, and all. If you’re still using chatbots as fancy autocomplete, you’re missing the real leap forward.</p>",
+  "sources": [
+   {
+    "title": "Claude 3.5 Release Notes",
+    "url": "https://www.anthropic.com/news/claude-3-5-release"
+   },
+   {
+    "title": "The Rise of Agentic Workflows in LLM Development",
+    "url": "https://www.semianalysis.com/p/agentic-ai-workflows"
+   },
+   {
+    "title": "OpenAI’s GPT-4o: What’s New for Devs",
+    "url": "https://www.theverge.com/2026/05/13/openai-gpt-4o-announcement"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-14-inference-costs-chip-squeeze-impact",
+  "date": "2026-10-14",
+  "category": "Compute",
+  "title": "Inference Costs, Chip Squeeze, and What Compute Realities Mean for Shipping AI",
+  "summary": "GPU supply is weird, inference bills are wild, and custom silicon is everywhere. Here’s how the compute landscape is (still) the bottleneck—engineer’s edition.",
+  "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=600&fit=crop",
+  "body": "<p>I keep running into devs who think the chip crisis is \"mostly solved\" now that Nvidia, AMD, and Google all ship custom silicon by the boatload. News flash: inference <strong>costs</strong> and <strong>availability</strong> are still the #1 reason shipped AI features get delayed or re-architected.</p><h2>Datacenter Build-Outs—But Not For You</h2><p>Big cloud vendors (Azure, Google Cloud, AWS) have expanded their data centers, but so has demand: from AI agents in the enterprise to consumer chatbots, everyone wants low-latency, high-throughput inference. Burst capacity exists, but most dev teams I know still hit waitlists or get shuffled to less-performant “spot” silicon (especially during US/EU day hours). For most, the “bring your own custom chip” era is only real if you’re unicorn-scale.</p><h2>The Real Math: $/Inference and Energy</h2><p>This year, $/inference is almost as important as accuracy. If your SaaS feature costs 100x more to run with Llama-3-400B than with a quantized 7B model, guess which one ships? The energy bill matters, too—especially as energy costs jump in the big US and EU data center regions. Engineers are now tasked with model selection, quantization, and clever caching as first-class infra problems, not just “let the cloud figure it out.”</p><h2>Why It Matters</h2><p>If you design for models that are <strong>too big</strong> or ignore the compute bottleneck, you’ll burn months and dollars. The engineers shipping the most AI features in 2026 are the ones who treat compute like a hard product constraint—testing on realistic budgets, using model shims, and having fallback paths when GPU allocation dries up. The hard truth: a clever agentic workflow isn’t worth much if you can’t afford to run it at scale.</p>",
+  "sources": [
+   {
+    "title": "The AI GPU Crunch Persists",
+    "url": "https://www.reuters.com/technology/ai-chip-shortage-2026"
+   },
+   {
+    "title": "Data Center Energy Costs Soar Amid AI Boom",
+    "url": "https://www.ft.com/content/ai-datacenter-energy"
+   },
+   {
+    "title": "Google’s Custom TPUs: Inside the 2026 Hardware Refresh",
+    "url": "https://www.datacenterdynamics.com/en/news/google-tpu-2026-refresh/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-14-microsoft-next-steps-agentic-eval",
+  "date": "2026-10-14",
+  "category": "Microsoft",
+  "title": "Microsoft’s Next Moves: Steal Agentic Loops and Eval-First Dev from the Frontlines",
+  "summary": "Big Copilot and Azure updates are good, but Microsoft still lags on agentic iteration and eval-driven workflows. Here’s what I’d ship next if I ran engineering.",
+  "image": "https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=1200&h=600&fit=crop",
+  "body": "<p>Every time Microsoft drops a Copilot or Azure update, I see the same gap: killer UI, solid model plumbing, but not enough for <strong>real agentic iteration</strong> or eval-driven coding. If I could ship three things tomorrow? Here’s my list, engineer-to-engineer.</p><h2>1. Native Eval-Driven Dev Loops in Copilot & GitHub</h2><p>The best LLM workflows now are eval-first: change the spec, run the eval suite, let the agent self-correct. Copilot tools (and GitHub Actions) still expect humans in the loop for every refactor. Microsoft should wire up true eval-driven agentic loops—where a Copilot agent can read a spec, run an eval, and <strong>auto-fix</strong> code against real tests before opening a PR. Anthropic and OpenAI have this internally already.</p><h2>2. Real Tool Servers, Not Just Plugin APIs</h2><p>Tool use in Copilot is mostly “call a single plugin.” But the best agents—MCP-style—chain together build tools, test runners, even deployment shims, all with permissioning and audit logs. Microsoft should expose a proper <strong>tool server protocol</strong> in Azure and GitHub, so agents can orchestrate full workflows, not just execute shell snippets. This is how you get trustworthy, self-correcting AI in the enterprise.</p><h2>3. Agentic Debugging in VS Code & Windows</h2><p>Why can’t I highlight a function and ask Copilot+ “find where this breaks across all recent commits, then fix and propose a patch”? The agentic workflow should live in the IDE, not just the web. Windows and VS Code need this natively—not via third-party extensions or scripts.</p><h2>Why It Matters</h2><p>If Microsoft wants to lead, it needs to build <strong>agentic, eval-driven loops</strong> into every layer, not just sprinkle LLMs on top. The devs who win in 2026 are the ones who ship faster, safer, and with less human babysitting—and right now, that’s not out-of-the-box for most Microsoft stacks.</p>",
+  "sources": [
+   {
+    "title": "GitHub Copilot Workspace: What’s New",
+    "url": "https://github.blog/2026-09-30-copilot-workspace-updates/"
+   },
+   {
+    "title": "Anthropic’s Tool Use and Agentic Loops",
+    "url": "https://www.anthropic.com/index/agentic-tool-use"
+   },
+   {
+    "title": "OpenAI DevDay: Autonomous Agent Workflows",
+    "url": "https://openai.com/blog/devday-2026-recap"
+   }
+  ]
  }
 ]
