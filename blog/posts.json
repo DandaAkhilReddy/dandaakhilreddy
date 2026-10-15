@@ -7456,5 +7456,74 @@
     "url": "https://www.disabilitysecrets.com/resources/how-many-disability-claims-are-denied"
    }
   ]
+ },
+ {
+  "slug": "2026-10-15-agentic-loops-spec-prompts-field-notes",
+  "date": "2026-10-15",
+  "category": "AI & Developers",
+  "title": "Agentic Loops and Spec-Driven Prompts: Field Notes from Daily AI Coding",
+  "summary": "AI is writing more code than ever, but it’s the human-in-the-loop workflows and spec-first prompting that are actually moving the productivity needle. Here’s how devs are wrangling Claude Code, agentic loops, and tool servers in the real world.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>We’re past the hype: most engineers I know are using Claude Code or GPT-4o, but not as magical code machines. The real win is in agentic workflows—where an AI agent plans, writes, tests, and rewrites code in tight loops, with humans mostly steering and reviewing. The old days of copy-paste codegen are gone. Now it’s all about loop engineering: <strong>plan → act → verify → fix</strong>, and the best devs treat these loops as first-class citizens.</p><p>Here’s how it plays out. You give Claude Code a spec, not just a prompt—think a tight README or API contract. The AI plans its steps, writes code, runs tests (using cloud sandboxes or MCP tool servers for real execution), spots failures, and proposes fixes. You guide, rerun, clarify, or escalate. The AI’s output is better when your spec is concrete and when you let it ‘see’ feedback in the loop. Some teams are even developing <strong>eval-driven development</strong>: write minimal tests or evals first, then let the AI iterate until it passes everything. It’s fast, it’s weirdly fun, and it’s the only way large code changes (hello, migrations!) get shipped at scale.</p><p>Why does this matter? Because it’s not about ‘prompt engineering’ as a parlor trick. It’s about systematizing how you and the AI collaborate—and how to build enough trust in the output to ship it. Every engineer should internalize the agentic loop, get great at writing specs the AI can reason over, and be comfortable treating the AI as a pair who can run, fail, and try again—without ego.</p><p>I’m convinced: if you’re not building your daily workflow around these loops and spec-driven prompting, you’re leaving velocity on the table. The future isn’t hand-coding every function, nor is it one-shot magic. It’s the loop, the spec, and relentless iteration.</p>",
+  "sources": [
+   {
+    "title": "Anthropic launches Claude Code",
+    "url": "https://www.anthropic.com/news/claude-code-introduction"
+   },
+   {
+    "title": "Agentic AI: A New Programming Paradigm",
+    "url": "https://www.semaphoreci.com/blog/agentic-ai-programming"
+   },
+   {
+    "title": "The Rise of AI Pair Programming",
+    "url": "https://www.oreilly.com/radar/ai-pair-programming-in-practice/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-15-custom-ai-silicon-energy-choke-points",
+  "date": "2026-10-15",
+  "category": "Compute",
+  "title": "Custom AI Silicon and Energy Choke Points: What Devs Need to Watch",
+  "summary": "The latest silicon launches are all about specialized AI workloads, but the real bottleneck is shifting from chips to power and supply chain. Developers shipping AI have to care about more than FLOPS now.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>This month, both NVIDIA and Google dropped new custom silicon SKUs—H200 for dense transformer inference, Google’s Axion for edge AI, and a bevy of China-designed accelerators ramping up to plug supply gaps. But here’s the hard truth: even as raw compute climbs, <strong>datacenter power budgets</strong> are the new constraint. The biggest cloud operators are talking about megawatt-hours, not just petaflops.</p><p>For engineers, this means you can’t treat inference cost as just ‘H100 vs. whatever’s next.’ Your app’s TCO is now a function of silicon availability, energy prices, and, critically, <strong>where you run</strong>. Some regions are throttling new datacenter builds due to grid stress; others are pushing for high-density, low-energy accelerators even if that means less model flexibility.</p><p>How does this affect day-to-day work? For one, expect <strong>model quantization</strong> and distillation requirements to get stricter—if you can’t ship something that fits on non-premium silicon, you’ll hit scale walls fast. Secondly, deployment orchestration is getting trickier: engineers are being asked to plan for multi-silicon, multi-region fallbacks. Your infra scripts need to answer: ‘Where can I get power, chips, and lowest latency <em>today</em>?’</p><p>And don’t sleep on the supply chain: lead times for top-end accelerators are still measured in quarters, and some startups are rolling custom ASICs just to control their own fate. AI engineers have to care about silicon roadmaps and energy scenarios now—not just model weights and endpoints. If you’re not tracking power, supply, and silicon at a feature-planning level, you’re courting outages and cost overruns. This is the new reality for anyone shipping production AI at scale.</p>",
+  "sources": [
+   {
+    "title": "NVIDIA Unveils H200 Tensor Core GPU",
+    "url": "https://www.nvidia.com/en-us/data-center/h200/"
+   },
+   {
+    "title": "Google’s Custom AI Chips Power Its Next-Gen Cloud",
+    "url": "https://www.datacenterdynamics.com/en/news/google-unveils-next-ai-chips-2026/"
+   },
+   {
+    "title": "AI Datacenter Power Constraints Intensify",
+    "url": "https://www.reuters.com/technology/ai-data-center-energy-demand-2026/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-15-microsoft-open-agentic-interfaces-lesson",
+  "date": "2026-10-15",
+  "category": "Microsoft",
+  "title": "Microsoft’s Next Lesson: Real Open Agentic Interfaces or Bust",
+  "summary": "With OpenAI and Anthropic doubling down on open tool APIs and composable agentic devtools, Microsoft needs to rethink Copilot and Azure’s closed-off interfaces. Here’s what should change—practically, now.",
+  "image": "https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=1200&h=600&fit=crop",
+  "body": "<p>I love what Microsoft has done with Copilot and the Azure AI Stack—but if we’re being honest, the walled gardens are holding devs back. Meanwhile, OpenAI and Anthropic are racing ahead with open agentic tool APIs, flexible sandboxing, and <strong>composable, scriptable agent workflows</strong>. You can wire Claude Code or GPT-4o into your own tool servers, define custom evals, and hack together bespoke loops. That’s the difference between an AI assistant and a true AI co-creator.</p><p>Here’s what Microsoft should steal, stat: <strong>first, expose genuine agentic interfaces in Copilot</strong>. I want to wire my own tools (or those my team already uses) into Copilot’s action loop—not just pick from a static menu. Let us define workflows as code, not as blobs in a config GUI. Second, take Windows’ AI APIs further: add support for 3rd-party agent runners and compositional toolchains. The days of monolithic, closed ‘skills’ or actions are over. Devs want to mix, match, and <em>own</em> their agentic logic.</p><p>Azure is in a unique spot: the infra muscle is there, but the developer-facing APIs are still too abstracted and proprietary. Look at what OpenAI’s new Action API or Anthropic’s Tool Server SDK enable: real plug-and-play, testable, and inspectable agent workflows. Microsoft should match this openness, or risk Copilot becoming a smart but inflexible sidecar.</p><p>The bottom line: engineers need agentic systems they can shape, debug, and extend—not just consume. Microsoft’s next leap isn’t more features, it’s more <strong>control and composability</strong>. Let’s learn from the open agentic movement, before devs move on without us.</p>",
+  "sources": [
+   {
+    "title": "OpenAI launches Action API",
+    "url": "https://www.openai.com/blog/openai-action-api-release"
+   },
+   {
+    "title": "Anthropic’s Tool Server SDK unlocks agentic dev",
+    "url": "https://www.anthropic.com/news/tool-server-sdk"
+   },
+   {
+    "title": "Microsoft Copilot: Where It Excels and Falls Short",
+    "url": "https://www.theregister.com/2026/09/27/microsoft-copilot-analysis/"
+   }
+  ]
  }
 ]
