@@ -7548,5 +7548,74 @@
     "url": "https://www.nolo.com/legal-encyclopedia/using-a-public-insurance-adjuster-29713.html"
    }
   ]
+ },
+ {
+  "slug": "2026-10-16-agentic-coding-eval-driven-developer-workflows",
+  "date": "2026-10-16",
+  "category": "AI & Developers",
+  "title": "Agentic Coding 2.0: Eval-Driven Loops and the New Daily Grind",
+  "summary": "AI devs have moved past prompt-juggling; now it's all about agentic coding, eval-driven feedback loops, and wrangling tool servers like MCP. Here’s what’s actually working, and why it matters.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>Agentic coding finally feels less like a buzzword and more like the daily bread for anyone building with Claude, GPT-5, or the new Gemini variants. The old dance—write prompt, hope for gold, pray it doesn't hallucinate—has been replaced by what I call the eval-driven loop: plan, act, verify, fix, repeat. It's noisy, sometimes brittle, but the productivity boost is real.</p><h2>Spec-Driven Prompts: No More Guesswork</h2><p>The game changer? Spec-driven prompting. Instead of handwavy instructions, you feed the model a bulletproof spec—types, edge cases, expected behaviors. It’s contract programming for LLMs. With Claude Code and similar tools, I routinely hand the model a problem, a test suite, and a type signature, then let it iterate (via loop engineering) until the test harness goes green. This isn’t magic—it's engineering: codifying what \"done\" means, and letting the machine grind until it gets there.</p><h2>MCP Tool Servers & Real-World Glue</h2><p>Most devs I know have MCP-style tool servers glued into their stack. These act as a bridge between LLM reasoning and \"real\" APIs, letting agentic workflows fetch docs, call DBs, or spin up ephemeral cloud instances. The setup isn’t trivial, but once the loop is tight, you get agents that can reason, act, and self-correct in production—no more toy demos.</p><h2>Why This Matters</h2><p>As eval-driven workflows get tighter, devs are spending less time on prompt engineering and more on orchestrating robust loops and monitoring real-world outcomes. AI pair-programming isn’t just chat; it’s a continuous harness, where the model proposes, you review, and tests arbitrate. It’s humbling, but it’s the only way to scale trust and velocity.</p>",
+  "sources": [
+   {
+    "title": "Anthropic launches Claude Code with eval-first agentic programming",
+    "url": "https://www.anthropic.com/blog/claude-code-launch"
+   },
+   {
+    "title": "The Rise of Eval-Driven Development in AI Workflows",
+    "url": "https://www.thoughtworks.com/insights/blog/eval-driven-ai-dev"
+   },
+   {
+    "title": "How AI Agents Are Changing Software Engineering",
+    "url": "https://www.infoq.com/articles/ai-agents-software-engineering/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-16-ai-inference-costs-gpu-supply-energy-update",
+  "date": "2026-10-16",
+  "category": "Compute",
+  "title": "AI Inference: The Cost, the Chips, and Why Energy Is Every Engineer’s Problem Now",
+  "summary": "GPUs are still gold, custom silicon is everywhere, and inference costs are biting every AI deploy. What every engineer should know about today’s compute crunch.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>Every engineer shipping AI needs to obsess about compute realities—because the era of infinite cycles is officially over. Nvidia’s new B200s are scarce (again), AMD’s MI400s are finally stable in datacenters, and everyone from Google to Alibaba is pushing custom inference silicon. Problem is, demand just keeps outpacing supply.</p><h2>Datacenter Squeeze & Inference Price Hikes</h2><p>The 2026 story: inference costs are up 35% YoY for large models. Datacenter buildouts are hitting real energy bottlenecks, especially in the US and EU. Most of the new capacity is in hyperscalers’ private clouds, so rents are sky-high. If your AI isn’t designed for efficient inference—quantization, pruning, distillation, and smart batching—you’re burning budget for no gain.</p><h2>Engineers Need to Know the Hardware (and the Power Bill)</h2><p>It’s not just about picking a model—it’s about knowing what silicon it runs on, what optimizations the runtime supports, and how those impact latency, cost, and carbon. This isn’t infrastructure’s job anymore. If you’re deploying LLMs, you’re negotiating not just FLOPS but joules and dollars. The best teams I see are deeply involved in hardware selection and energy modeling, because that’s how you keep both costs and ethics in check.</p><h2>Custom Silicon: Disrupting the Stack</h2><p>Custom AI chips (Google Axion, Meta’s Artemis, Amazon’s Trainium2) are less about performance bragging and more about controlling inference economics. Open-source runtimes are starting to catch up, but with vendor lock-in still rampant, engineers need to architect for flexibility—abstracting hardware and benchmarking across clouds, not just within them.</p><p>Bottom line: If you’re not tracking the cost per 1M tokens to serve your model—and thinking about the power draw—you’re shipping blind.</p>",
+  "sources": [
+   {
+    "title": "Nvidia’s GPU Shortages: The Energy Constraint No One Can Ignore",
+    "url": "https://www.semianalysis.com/p/nvidia-gpu-energy-constraint"
+   },
+   {
+    "title": "The Real Cost of AI: Inference Pricing and Power",
+    "url": "https://www.datacenterdynamics.com/en/analysis/ai-inference-costs-2026/"
+   },
+   {
+    "title": "Custom Silicon and the Battle for AI Compute",
+    "url": "https://www.nextplatform.com/2026/10/10/custom-silicon-ai-compute/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-16-microsoft-should-steal-openai-anthropic-eval-first-workflows",
+  "date": "2026-10-16",
+  "category": "Microsoft",
+  "title": "Microsoft’s Next Leap: Eval-First AI Developer Tools or Bust",
+  "summary": "Frontier labs are shipping eval-first and agentic devtools—Microsoft’s stack needs to catch up by making these workflows accessible across Azure, Copilot, and GitHub. Here’s how, from the ground floor.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>If you’ve played with OpenAI’s eval-driven workflows or Anthropic’s agentic loops, you know how far the tools have come. Meanwhile, on Microsoft’s side, Copilot is a productivity monster—but the devtools for agentic, loop-based development lag behind. Here’s what needs to change and why engineers should care.</p><h2>Eval-First Everything: Make It Core, Not Add-On</h2><p>Eval-driven dev isn’t just a playground for AI researchers—it’s how serious teams ship reliable code with LLMs. Anthropic’s Claude Code and OpenAI’s eval harnesses let you define specs, run tight red-green loops, and get actionable feedback in minutes. Microsoft needs to bake this into Azure AI Studio and GitHub Copilot—not as sidecar plugins, but first-class citizens. Imagine Copilot that writes, tests, and refines code in the loop, using your own test harness and eval metrics, not just static completion.</p><h2>Agentic Workflows for the Masses</h2><p>Most devs want agents that can reason, act, verify, and fix autonomously—using real tool APIs, not just code generation. Microsoft should open up agentic interfaces in Copilot, Foundry, and Azure, so developers can wire up custom tool servers (like Anthropic’s MCP) and orchestrate multi-step plans. The open-source community is moving faster here; Microsoft should leverage and support those standards, not wall them off.</p><h2>Why This Matters</h2><p>If Microsoft wants to stay relevant for AI engineers, it needs to give us the same (or better) eval-first, agentic workflows we’re getting from the frontier labs—and they need to be opinionated, composable, and open. Otherwise, the best engineers will keep building around, not on, the Microsoft stack.</p>",
+  "sources": [
+   {
+    "title": "Anthropic’s Agentic AI Tools Set a New Developer Standard",
+    "url": "https://www.axios.com/2026/10/anthropic-agentic-ai-devtools"
+   },
+   {
+    "title": "OpenAI’s Eval-First Paradigm Is Eating AI Development",
+    "url": "https://a16z.com/2026/10/10/openai-eval-first-ai-tools/"
+   },
+   {
+    "title": "Microsoft’s Copilot: Strengths and Blind Spots for Modern AI Devs",
+    "url": "https://arstechnica.com/gadgets/2026/09/microsoft-copilot-ai-devtools-review/"
+   }
+  ]
  }
 ]
