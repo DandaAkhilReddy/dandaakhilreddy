@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datacenter Crunch: GPUs, Supply, and the Energy Wall Facing AI | Reddy Pulse</title>
+<meta name="description" content="GPU supply is tight, inference costs are rising, and the energy ceiling is real. Why compute constraints are now shaping not just deployment but fundamental AI product design.">
+<meta property="og:title" content="Datacenter Crunch: GPUs, Supply, and the Energy Wall Facing AI">
+<meta property="og:description" content="GPU supply is tight, inference costs are rising, and the energy ceiling is real. Why compute constraints are now shaping not just deployment but fundamental AI product design.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>Datacenter Crunch: GPUs, Supply, and the Energy Wall Facing AI</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 1st October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="Datacenter Crunch: GPUs, Supply, and the Energy Wall Facing AI">
+  <p><strong>The GPU supply crunch isn’t news—but it’s biting harder than ever post-2026 Q3.</strong> NVIDIA’s Blackwell and AMD’s MI400 series are sold out quarters in advance, with hyperscalers hoarding every wafer. Even Google and Meta are rationing cluster time for internal teams. The cause: explosive demand for multi-agent systems, code generation, and enterprise LLMs with 256K+ context windows. If you’re an engineer shipping AI, this is your new bottleneck.</p>
+
+<p>Inference costs are no longer an afterthought. With Blackwell H200s going for $25K+ and power-hungry clusters chewing through megawatts, <strong>OPEX is now product strategy</strong>. SaaS founders I know are reworking business models around efficient quantization (4-bit is standard, 2-bit is hot), aggressive model distillation, and smart batching. Not because it’s fun, but because it’s existential—if you blow your compute budget scaling a new feature, your margins vanish.</p>
+
+<p>Custom silicon is the new hotness, but with a catch. Every major player has in-house inference chips (Amazon with Inferentia-3, Google with TPU v7, Microsoft’s Maia), but <strong>integration friction is real</strong>. Porting models between stacks is non-trivial, and the best-optimized kernels are still vendor-locked. For engineers, this means your edge is not just the model, but your ability to wrangle CUDA/ROCm and custom ops for the hardware actually available.</p>
+
+<p>And energy? We hit a wall. Datacenters in the US, Europe, and parts of Asia are running up against local grid limits. New builds are slowed by permitting and grid interconnect. This trickles down: if you’re not energy-aware (dynamic batch sizes, async scheduling, cold-start mitigation), your code won’t scale in prod—period. Building for efficient inference isn’t just a cost thing; it’s a deployment thing.</p>
+
+<p>Bottom line: if you’re an AI engineer, compute is not just a resource—it’s your main constraint. Know your silicon, know your energy costs, and design like every FLOP matters. Because now, it does.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-01-gpu-supply-inference-costs-datacenter-energy.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-01-gpu-supply-inference-costs-datacenter-energy.html&text=Datacenter%20Crunch%3A%20GPUs%2C%20Supply%2C%20and%20the%20Energy%20Wall%20Facing%20AI" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.reuters.com/technology/gpu-shortage-2026/" target="_blank" rel="noopener">GPU Shortage Hits AI Startups</a></li><li><a href="https://www.datacenterdynamics.com/en/analysis/datacenter-energy-limits-ai/" target="_blank" rel="noopener">Datacenter Power Limits: The New AI Bottleneck</a></li><li><a href="https://www.nvidia.com/en-us/data-center/blackwell/" target="_blank" rel="noopener">NVIDIA Blackwell Overview</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

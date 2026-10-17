@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft CrossCloud Adapters: Azure’s Bold Bet on True Multi-Cloud Interop | Reddy Pulse</title>
+<meta name="description" content="Microsoft just launched CrossCloud Adapters for Azure, enabling native deployment and management of workloads across AWS, GCP, and even Oracle Cloud—no glue-code. The implications for engineering teams running hybrid stacks are huge.">
+<meta property="og:title" content="Microsoft CrossCloud Adapters: Azure’s Bold Bet on True Multi-Cloud Interop">
+<meta property="og:description" content="Microsoft just launched CrossCloud Adapters for Azure, enabling native deployment and management of workloads across AWS, GCP, and even Oracle Cloud—no glue-code. The implications for engineering teams running hybrid stacks are huge.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Microsoft CrossCloud Adapters: Azure’s Bold Bet on True Multi-Cloud Interop</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 27th July, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop" alt="Microsoft CrossCloud Adapters: Azure’s Bold Bet on True Multi-Cloud Interop">
+  <p>Microsoft has quietly shipped what I consider the most developer-centric cloud feature of 2026: CrossCloud Adapters. The pitch is audacious—write a deployment manifest for Azure, and let Azure Resource Manager (ARM) provision and orchestrate equivalent resources on AWS, Google Cloud, or Oracle Cloud. No translation scripts, no Terraform glue, no brittle wrappers.</p><h2>Why Multi-Cloud Is Still a Mess</h2><p>For years, "multi-cloud" meant either lowest-common-denominator toolchains (re: Kubernetes YAML hell) or expensive abstraction platforms that never quite matched the actual cloud providers' features. Microsoft is now betting that seamless resource mapping—think Azure's <strong>crosscloud:aws:s3</strong> resources, with ARM natively provisioning the corresponding S3 bucket—can kill that pain.</p><h2>How It Works</h2><p>The big technical shift is Microsoft's open-sourcing of their resource mapping schemas, plus a new runtime called the Adapter Engine that handles API shims and state reconciliation in real time. The Adapter Engine now supports the most widely used primitives: storage, compute, queueing, secrets, and serverless functions. Networking and IAM integration is still "in preview" (i.e., rough edges).</p><h2>Why This Matters for Engineers</h2><p>This is a game-changer for anyone supporting SaaS workloads that need geographic or compliance-based cloud bursting. Instead of battling separate IaC systems, you can ship one manifest and let the Adapter Engine handle drift, credentials, and even cost reporting. I expect this to reset expectations—cloud provider lock-in won’t just be a business concern, but an engineering solvable problem.</p><h2>What’s Next?</h2><p>Right now, this doesn’t cover every edge case (e.g., custom hardware, exotic storage classes), but Microsoft’s track record with Visual Studio Code and TypeScript shows they can nurture an ecosystem. If you’re wrangling multi-cloud, start proofing your deployment specs now.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-27-microsoft-crosscloud-adapters.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-27-microsoft-crosscloud-adapters.html&text=Microsoft%20CrossCloud%20Adapters%3A%20Azure%E2%80%99s%20Bold%20Bet%20on%20True%20Multi-Cloud%20Interop" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://azure.microsoft.com/en-us/updates/crosscloud-adapters/" target="_blank" rel="noopener">Microsoft Azure Updates: CrossCloud Adapters Overview</a></li><li><a href="https://techcrunch.com/2026/07/25/microsoft-crosscloud-adapters/" target="_blank" rel="noopener">TechCrunch: Microsoft’s CrossCloud Play—An End to Lock-In?</a></li><li><a href="https://infoq.com/news/2026/07/azure-crosscloud-adapter-engine/" target="_blank" rel="noopener">InfoQ: Multi-Cloud Deployment Gets Real with Azure Adapter Engine</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

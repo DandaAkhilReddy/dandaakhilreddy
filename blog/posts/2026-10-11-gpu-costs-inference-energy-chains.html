@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPUs, Custom Silicon, and Inference Cost in 2026: What Developers Need to Know | Reddy Pulse</title>
+<meta name="description" content="GPU supply is loosening, but energy and inference costs are tightening the screws. Here’s the compute landscape—for engineers shipping AI, not just watching the headlines.">
+<meta property="og:title" content="GPUs, Custom Silicon, and Inference Cost in 2026: What Developers Need to Know">
+<meta property="og:description" content="GPU supply is loosening, but energy and inference costs are tightening the screws. Here’s the compute landscape—for engineers shipping AI, not just watching the headlines.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>GPUs, Custom Silicon, and Inference Cost in 2026: What Developers Need to Know</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 11th October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop" alt="GPUs, Custom Silicon, and Inference Cost in 2026: What Developers Need to Know">
+  <p>Here’s the uncomfortable reality for AI devs: while Nvidia’s Hopper+ and Google’s Axion have pumped more FLOPs into datacenters, the cost per inference isn’t dropping like it used to. Why? Energy price spikes and grid constraints are now the bottleneck. Even in the Bay, big cloud bills are less about GPU leasing and more about power guarantees and carbon offsets. If you’re launching an AI product in Q4 2026, you have to model <strong>energy cost per user</strong>—not just how many A100s you can grab.</p>
+
+<h2>Custom Silicon and Supply Chain Shifts</h2>
+<p>TPUs and custom chips from cloud providers are now standard for production inference, but the supply chain is still fragile. TSMC’s latest fabs are live, but 5nm and below wafers stay booked out by the hyperscalers. For us in the trenches, that means higher minimum commitments and more incentive to optimize models early. Quantization isn’t optional; it’s table stakes.</p>
+
+<h2>Bare-Metal vs. Cloud: What’s Actually Cheaper?</h2>
+<p>Some engineers are finally switching back to bare-metal colos for stable GPU/TPU access and predictable pricing. But beware: unless you have real in-house ops, the cost of downtime and patching eats your savings. The smarter teams are using inference-optimized endpoints (think AWS Inferentia2, Azure Maia, Google Axion), then layering aggressive batching and dynamic scaling. Every token you save drops straight to your bottom line.</p>
+
+<p>Bottom line: Silicon’s not the constraint, energy is. If you can ship with a smaller model, you win. If you can’t, you’ll pay—both in cloud bills and in go-to-market delays.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-11-gpu-costs-inference-energy-chains.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-11-gpu-costs-inference-energy-chains.html&text=GPUs%2C%20Custom%20Silicon%2C%20and%20Inference%20Cost%20in%202026%3A%20What%20Developers%20Need%20to%20Know" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.nvidia.com/en-us/data-center/news/" target="_blank" rel="noopener">Nvidia’s Data Center Roadmap</a></li><li><a href="https://www.semianalysis.com/p/tsmc-ai-fab-capacity" target="_blank" rel="noopener">TSMC, AI Chips, and Supply Chain Realities</a></li><li><a href="https://www.ft.com/content/ai-energy-costs" target="_blank" rel="noopener">AI’s Energy Appetite Is the New Bottleneck</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
