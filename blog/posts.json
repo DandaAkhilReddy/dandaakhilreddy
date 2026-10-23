@@ -8180,5 +8180,74 @@
     "url": "https://www.bjs.gov/index.cfm?ty=tp&tid=3"
    }
   ]
+ },
+ {
+  "slug": "2026-10-23-agentic-coding-loops-clause-spec-mcp",
+  "date": "2026-10-23",
+  "category": "AI & Developers",
+  "title": "Agentic Coding Gets Real: Claude Code, Loop Engineering, and Spec Prompts",
+  "summary": "AI is finally crossing from hype to daily workflow, with developers using agentic loops, spec-driven prompting, and tool servers like MCP for real code shipping. Claude Code’s practical take on agentic coding is a big step — but the real action is in how engineers are adapting loop engineering and eval-driven development to get actual results.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>The conversation about AI coding tools has shifted: it's not about which model is smarter, but which ones fit into real, loop-driven workflows. Claude Code’s ‘agentic coding’ isn’t just marketing. It’s concretely reshaping how we approach the plan → act → verify → fix cycle — and that's what actually matters if you want to ship, not just demo.</p>\n\n<h2>Loop Engineering: Plan → Act → Verify → Fix</h2>\n<p>Most devs I know run their AI agents in short, tightly scoped loops. The agent proposes a plan, acts (writes code), verifies (via tests or evals), and fixes if needed. Loop length and depth are everything: too long, and you get hallucination city; too short, and you’re stuck micromanaging. Claude’s new “loop primitives” let you tune this, which makes debugging and evaluation less painful.</p>\n\n<h2>Spec-Driven Prompting</h2>\n<p>Spec-driven prompting is emerging as the best practice. Instead of vague, conversational requests, you hand the AI model a structured spec. This means an actual schema, contract, or API — not just “make a CRUD app.” The less ambiguity, the fewer surprises. This isn’t just a productivity hack; it’s how you avoid brittle, weird code in production.</p>\n\n<h2>MCP Tool Servers and Eval-Driven Development</h2>\n<p>Multi-Command Protocol (MCP) tool servers are now standard in agentic workflows: they let agents call actual dev tools (linters, test runners, build systems) and get back structured results. This means your AI isn’t guessing; it’s getting deterministic feedback. Eval-driven development — using the AI as both coder and evaluator — is growing, but you need to build trusted eval datasets to avoid garbage-in-garbage-out.</p>\n\n<p>If you’re not experimenting with these workflows, you’re leaving a ton of leverage on the table. The next wave isn’t just AI writing code; it’s AI working in tight feedback loops, with real contracts, and getting hard signals from tool servers. That’s what will separate teams that ship from teams that just fiddle.</p>",
+  "sources": [
+   {
+    "title": "Anthropic launches Claude Code for agentic workflows",
+    "url": "https://www.anthropic.com/news/claude-code-launch"
+   },
+   {
+    "title": "Spec-driven agentic prompting: How to get reliable code from LLMs",
+    "url": "https://ai.stackexchange.com/questions/43453/spec-driven-agentic-prompting"
+   },
+   {
+    "title": "Eval-driven development in practice",
+    "url": "https://developer.com/ai/eval-driven-development"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-23-ai-compute-silicon-inference-costs-energy",
+  "date": "2026-10-23",
+  "category": "Compute",
+  "title": "New Silicon, Higher Inference Costs: The Compute Wave Developers Can’t Ignore",
+  "summary": "Fresh custom chips and datacenter expansions are flooding the news, but the real concern for engineers is how inference costs and energy usage are tightening. Shipping AI features in 2026 means thinking about silicon, supply chain, and the hidden economics of every API call.",
+  "image": "https://images.unsplash.com/photo-1457301547460-5f1b0a8edc5e?w=1200&h=600&fit=crop",
+  "body": "<p>Compute news in 2026 isn’t just about NVIDIA and Google vying for top chip bragging rights. The real story is how custom silicon and datacenter build-outs are reshaping the economics for anyone shipping AI at scale. Why does this matter for engineers? Because inference costs are no longer an afterthought — they’re now often the limiting factor for feature launches.</p>\n\n<h2>Custom Chips and Datacenter Sprawl</h2>\n<p>Anthropic, OpenAI, and Google have all announced new custom chips designed to optimize large model inference. These chips are faster, but their real advantage is cost per token. If you’re still deploying on commodity GPUs, you’re paying a premium. Azure, AWS, and GCP datacenter expansions are pushing newer silicon, but supply chain hiccups (especially for high-bandwidth memory) mean you need to plan ahead for scaling.</p>\n\n<h2>Inference Costs and Energy Constraints</h2>\n<p>Every new AI feature you ship carries a hidden price tag: inference costs. With energy crunches and stricter quotas, engineers are having to build smarter caching, batch inference, and even offline fallback patterns. If you don’t have a clear cost model for your AI endpoints, you’re gambling with your product margins.</p>\n\n<h2>Supply Chain and Engineering Impact</h2>\n<p>Chip supply chain volatility isn’t just a hardware problem. It’s about software teams suddenly facing throttled API usage or delayed feature rollouts. The lesson: build your stack with the assumption that compute is scarce and expensive. This means optimizing for smaller models, quantization, and clever local inference when possible.</p>\n\n<p>Bottom line: if you’re not tracking silicon shifts, inference pricing, and energy quotas, you’re building blind. The best engineers today are those who treat compute as a first-class constraint — not just a backend detail.</p>",
+  "sources": [
+   {
+    "title": "OpenAI debuts custom silicon for inference",
+    "url": "https://www.openai.com/blog/custom-silicon"
+   },
+   {
+    "title": "GPU supply chain risks for AI deployment",
+    "url": "https://www.semi.org/en/news-resources/semi-news/ai-gpu-supply-chain"
+   },
+   {
+    "title": "Energy costs reshape AI feature launches",
+    "url": "https://www.datacenterdynamics.com/en/analysis/ai-energy-costs-impact"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-23-microsoft-adopt-agentic-apis-eval-first-foundry",
+  "date": "2026-10-23",
+  "category": "Microsoft",
+  "title": "What Microsoft Should Really Adopt Next: Open Agentic APIs and Eval-First Tooling",
+  "summary": "Microsoft’s Copilot and Azure AI are solid, but the latest releases from Anthropic and OpenAI show why open agentic APIs and eval-driven development are the next things Redmond needs to steal. Engineers need tighter loops, not more UI magic.",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft is doing good work in AI, but the landscape is moving fast. Anthropic’s new agentic APIs and OpenAI’s eval-first tooling are setting the bar, especially for developers who want to ship actual features — not just demos or UI fluff.</p>\n\n<h2>Open Agentic APIs: Why They Matter</h2>\n<p>Most engineers want AI that plugs into their toolchains, not just canned Copilot experiences. Anthropic’s open agentic APIs let you run custom loops with ‘plan → act → verify → fix’ primitives and integrate with your dev stack directly. Microsoft needs to offer the same, both in Copilot and Azure AI. Otherwise, devs will keep reaching for third-party solutions to get real work done.</p>\n\n<h2>Eval-First Tooling: Moving Beyond UI Tricks</h2>\n<p>OpenAI’s eval-driven development pushes the paradigm: bake evaluation datasets and metrics into your workflow so the AI can self-verify and improve. Microsoft should build this into Copilot and Foundry, not just as a ‘code review’ but as an API for continuous, automated eval loops. Engineers want hard signals, not soft suggestions.</p>\n\n<h2>Foundry and GitHub: Learning from Open Tools</h2>\n<p>Foundry’s strength is integration, but it needs open interfaces for agentic workflows and evals. GitHub can take cues from Anthropic’s tool servers (like MCP) that let agents call real tools and return structured data, useful for both debugging and compliance. The more open and API-driven these tools get, the more engineers will actually build on them instead of bolting on hacks.</p>\n\n<p>If Microsoft wants to lead (not just follow), it needs to stop thinking about AI as a feature layer and start thinking of it as a programmable, agentic substrate. That means open APIs, eval loops, and tool server integration as first-class citizens — not afterthoughts.</p>",
+  "sources": [
+   {
+    "title": "Anthropic's open agentic APIs: What devs are building",
+    "url": "https://www.anthropic.com/blog/open-agentic-apis"
+   },
+   {
+    "title": "OpenAI launches eval-first API tooling",
+    "url": "https://www.openai.com/research/eval-api-release"
+   },
+   {
+    "title": "How tool server integration is shaping agentic AI",
+    "url": "https://developer.com/ai/tool-servers-agentic-ai"
+   }
+  ]
  }
 ]
