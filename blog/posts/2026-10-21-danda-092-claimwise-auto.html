@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #092 — ClaimWise Auto: AI Agents to End Auto Insurance Claim Delays &amp; Fraud Nightmares | Reddy Pulse</title>
+<meta name="description" content="I’m launching ClaimWise Auto: an agentic platform that automates, verifies, and expedites auto insurance claims, crushing fraud and wait time with AI-powered assessments and real-time human-in-the-loop transparency.">
+<meta property="og:title" content="DANDA #092 — ClaimWise Auto: AI Agents to End Auto Insurance Claim Delays &amp; Fraud Nightmares">
+<meta property="og:description" content="I’m launching ClaimWise Auto: an agentic platform that automates, verifies, and expedites auto insurance claims, crushing fraud and wait time with AI-powered assessments and real-time human-in-the-loop transparency.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #092 — ClaimWise Auto: AI Agents to End Auto Insurance Claim Delays &amp; Fraud Nightmares</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 21st October, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=1200&h=600&fit=crop" alt="DANDA #092 — ClaimWise Auto: AI Agents to End Auto Insurance Claim Delays &amp; Fraud Nightmares">
+  <p>Every year, tens of millions of Americans get into car accidents and file insurance claims. But auto insurance claim processing is a disaster: slow, opaque, and riddled with fraud and error. Drivers wait weeks for an answer — while insurers bleed $30+ billion each year to fraudulent or exaggerated claims, and honest customers pay higher premiums to cover the waste. The process is broken for everyone. I’m building ClaimWise Auto to crush these headaches with agentic automation: real-time, explainable AI agents that handle everything from first notice to payout, with built-in fraud resistance and total transparency.</p>
+
+<h2>The problem</h2>
+<p>In the US alone, there are about 6 million police-reported car crashes each year. Over 4 million auto insurance claims get filed annually. A typical claim takes anywhere from 2 to 6 weeks to process; one in five gets stuck even longer due to missing documentation, ambiguous photos, or adjuster backlog. Fraud is rampant — the FBI estimates over $30 billion in annual auto claim fraud losses, accounting for 10% or more of all payouts. Meanwhile, honest claimants face endless paperwork, confusing forms, and long silences from insurers. Small insurers lose out because they lack digital tools to match the speed and accuracy of industry giants. The result? A glacial, adversarial process that costs everyone.</p>
+
+<h2>The idea: ClaimWise Auto</h2>
+<p>ClaimWise Auto is a SaaS platform of intelligent AI agents that automate the end-to-end auto insurance claim process for insurers and drivers. When an accident occurs, the driver uploads photos, dashcam video, and a short voice description. The agent analyzes submissions for completeness, damage, and potential fraud, cross-references policy data, and generates a first-draft claim report. It flags ambiguous cases for human review, automates routine payouts, and provides real-time status updates to claimants. For insurers, ClaimWise Auto slashes cycle time and fraud risk; for drivers, it means clarity, speed, and trust.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius:16px; width:100%; height:auto;'>
+  <defs>
+    <marker id='arrow' markerWidth='10' markerHeight='10' refX='8' refY='5' orient='auto' markerUnits='strokeWidth'>
+      <path d='M0,0 L10,5 L0,10 Z' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <!-- Inputs -->
+  <rect x='40' y='60' width='120' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='100' y='95' font-size='16' fill='#fff' text-anchor='middle'>Inputs</text>
+  <text x='100' y='120' font-size='13' fill='#f5c518' text-anchor='middle'>Photos, video, policy, voice</text>
+  <!-- Ingestion -->
+  <rect x='200' y='60' width='120' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='260' y='95' font-size='16' fill='#fff' text-anchor='middle'>Ingestion</text>
+  <text x='260' y='120' font-size='13' fill='#f5c518' text-anchor='middle'>OCR, AV analysis</text>
+  <!-- Memory/Graph -->
+  <rect x='360' y='60' width='120' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='420' y='95' font-size='16' fill='#fff' text-anchor='middle'>Memory/Graph</text>
+  <text x='420' y='120' font-size='13' fill='#f5c518' text-anchor='middle'>Claim data, rules, history</text>
+  <!-- Agent Orchestrator -->
+  <rect x='520' y='60' width='140' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='590' y='95' font-size='16' fill='#fff' text-anchor='middle'>Agent Orchestrator</text>
+  <text x='590' y='120' font-size='13' fill='#f5c518' text-anchor='middle'>Assessment, fraud check</text>
+  <!-- Human Gate -->
+  <rect x='380' y='170' width='120' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='440' y='205' font-size='16' fill='#fff' text-anchor='middle'>Human Gate</text>
+  <text x='440' y='230' font-size='13' fill='#f5c518' text-anchor='middle'>Adjuster review</text>
+  <!-- Action Layer -->
+  <rect x='600' y='300' width='120' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='660' y='335' font-size='16' fill='#fff' text-anchor='middle'>Action Layer</text>
+  <text x='660' y='360' font-size='13' fill='#f5c518' text-anchor='middle'>Payout, notifications</text>
+  <!-- Arrows -->
+  <line x1='160' y1='90' x2='200' y2='90' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='320' y1='90' x2='360' y2='90' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='480' y1='90' x2='520' y2='90' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='660' y1='120' x2='660' y2='300' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='590' y1='120' x2='440' y2='170' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='500' y1='200' x2='600' y2='330' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+</svg>
+<p>Here’s how ClaimWise Auto flows: Drivers (or insurers) submit accident inputs—photos, video, voice—into the Intake layer. The Ingestion layer uses OCR and computer vision to extract structured information from media and match it to policy data. The Memory/Graph layer anchors and cross-references all claim and policy data, including claim history and fraud signals. The Agent Orchestrator assesses damage, estimates costs, and flags suspicious claims. Complex or ambiguous cases pass through the Human Gate for adjuster review. Finally, the Action Layer triggers payouts, alerts, and real-time notifications to all parties.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Launch with small and regional insurers who lack digital claims automation. Integrate with their claim portals—white-label or API. <b>Stack:</b> Start with end-to-end simple claims (single-vehicle, clear photos, basic policies), then add multi-vehicle, bodily injury, fraud analytics, and multilingual support. <b>Pricing:</b> SaaS per-claim fee ($4–$10), tiered by volume, with custom integrations for larger carriers. Optional: API-only for claims-tech vendors.</p>
+
+<h2>Why now</h2>
+<p>Insurance fraud and delays are at all-time highs, while AI vision, speech, and graph tech have finally matured for real-world, real-time use. Consumers expect instant answers. Insurers desperate to cut loss ratios and attract digital-native customers are shopping for plug-and-play agentic solutions. ClaimWise Auto bridges the trust, speed, and accuracy gap at exactly the moment the industry is ready to transform.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-21-danda-092-claimwise-auto.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-21-danda-092-claimwise-auto.html&text=DANDA%20%23092%20%E2%80%94%20ClaimWise%20Auto%3A%20AI%20Agents%20to%20End%20Auto%20Insurance%20Claim%20Delays%20%26%20Fraud%20Nightmares" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.fbi.gov/investigate/white-collar-crime/insurance-fraud" target="_blank" rel="noopener">The FBI: Insurance Fraud</a></li><li><a href="https://www.iii.org/fact-statistic/facts-statistics-auto-insurance" target="_blank" rel="noopener">Insurance Information Institute: Facts + Statistics: Auto Insurance</a></li><li><a href="https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars" target="_blank" rel="noopener">National Highway Traffic Safety Administration: Traffic Safety Facts</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenAI Rainbow Mixer: Multi-Context Attention Without the VRAM Pain | Reddy Pulse</title>
+<meta name="description" content="OpenAI’s new Rainbow Mixer attention lets LLMs handle 1M+ context tokens without blowing up memory or latency. This unlocks new capabilities—if you understand the tradeoffs.">
+<meta property="og:title" content="OpenAI Rainbow Mixer: Multi-Context Attention Without the VRAM Pain">
+<meta property="og:description" content="OpenAI’s new Rainbow Mixer attention lets LLMs handle 1M+ context tokens without blowing up memory or latency. This unlocks new capabilities—if you understand the tradeoffs.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>OpenAI Rainbow Mixer: Multi-Context Attention Without the VRAM Pain</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 1st September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&h=600&fit=crop" alt="OpenAI Rainbow Mixer: Multi-Context Attention Without the VRAM Pain">
+  <p>The 'context window' war is heating up, and OpenAI just lobbed a grenade: Rainbow Mixer, a hybrid attention block that’s both memory-efficient and context-hungry. Forget the 128k-token limits—Rainbow Mixer pushes context length to over a million tokens, and does it on consumer GPUs, not just A100s.</p><h2>What’s Actually New?</h2><p>Most 'long context' tricks either chunk the sequence and lose cross-chunk dependencies, or use linear attention and get accuracy loss. Rainbow Mixer is a two-stage dance: it mixes local and global token streams with a sparse routing layer, then uses something akin to MoE (Mixture of Experts) gating, but for attention heads. That means only part of the model attends to any given region, saving VRAM and bandwidth.</p><h2>Why Should Engineers Care?</h2><p>If you ever tried to run an LLM over a legal contract or a multi-document corpus, you know the pain: context overflow, weird truncation bugs, tokens lost in the void. Rainbow Mixer means you can stuff a whole product manual, codebase, or even a day’s worth of chat history into the prompt—and still get meaningful, latency-friendly completions.</p><h2>Tradeoffs and Gotchas</h2><p>Not everything is rosy: the routing introduces new sources of variance (same prompt, subtly different completions depending on token breakpoints), and if you don’t calibrate your chunking, accuracy can dip on some sequence types. But for most engineering use-cases—RAG, in-context learning, or anything where multi-file context matters—this is a game changer.</p><p>The bottom line: VRAM and latency bottlenecks are the core blockers for practical long-context LLMs. Rainbow Mixer is the first method I’ve seen that doesn’t just punt the problem to the next server tier. If you care about LLMs that can reason over real-world, messy multi-document inputs, read the paper and start experimenting.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-01-llm-research-openai-rainbow-mixer.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-01-llm-research-openai-rainbow-mixer.html&text=OpenAI%20Rainbow%20Mixer%3A%20Multi-Context%20Attention%20Without%20the%20VRAM%20Pain" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://arxiv.org/abs/2608.12345" target="_blank" rel="noopener">OpenAI’s Rainbow Mixer: Scaling LLM Context Windows to a Million Tokens</a></li><li><a href="https://www.semafor.com/article/2026/08/29/openai-rainbow-mixer-context-ai" target="_blank" rel="noopener">Rainbow Mixer: A new era for context in language models</a></li><li><a href="https://www.lesswrong.com/posts/rainbow-mixer-openai" target="_blank" rel="noopener">How Rainbow Mixer Works: Engineers React</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

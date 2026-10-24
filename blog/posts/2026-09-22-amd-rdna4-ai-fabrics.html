@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMD’s RDNA4 AI Fabrics: Mesh Networking for GPU Clusters Arrives | Reddy Pulse</title>
+<meta name="description" content="AMD’s RDNA4 launch delivers a game-changing mesh networking fabric for AI accelerators, slashing interconnect bottlenecks and letting clusters scale more efficiently. This is a real technical leap for distributed model training.">
+<meta property="og:title" content="AMD’s RDNA4 AI Fabrics: Mesh Networking for GPU Clusters Arrives">
+<meta property="og:description" content="AMD’s RDNA4 launch delivers a game-changing mesh networking fabric for AI accelerators, slashing interconnect bottlenecks and letting clusters scale more efficiently. This is a real technical leap for distributed model training.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Semiconductors</span>
+  <h1>AMD’s RDNA4 AI Fabrics: Mesh Networking for GPU Clusters Arrives</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 22nd September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop" alt="AMD’s RDNA4 AI Fabrics: Mesh Networking for GPU Clusters Arrives">
+  <p>Cluster scale for AI isn’t just about raw FLOPS—it’s about how fast your GPUs can talk to each other. With its new <strong>RDNA4 architecture</strong>, AMD just introduced a low-latency mesh networking fabric baked directly into its accelerators. This enables <em>peer-to-peer</em> communication between up to 4096 GPUs, with link speeds rivaling NVIDIA’s NVLink 6, but using open protocols and commodity switches.</p><h2>Why This Matters for Engineers</h2><p>If you’ve ever tried training a huge model across dozens (or more) nodes, you know: communication is the real bottleneck. Synchronized gradient updates, sharded parameter servers, or multi-agent RL all hit scaling walls. RDNA4’s fabric promises <strong>single-digit microsecond hops</strong> between any two GPUs—no more starving on PCIe or slow RoCE. For distributed PyTorch or JAX, that’s a direct productivity unlock: more parallelism, faster convergence, less time spent debugging communication timeouts.</p><p>What’s more, AMD’s stack is aggressively open. Their ROCm libraries have matured, and the new fabric interface is exposed for custom kernels. That means you can tune collective ops, run low-level bandwidth tests, or even write custom communication patterns for exotic LLM training. It’s not just for big clouds—smaller shops can build their own mesh clusters without proprietary hardware lock-in.</p><h2>What’s Under the Hood?</h2><p>RDNA4’s fabric links use a combination of PCIe 6.0 and a new AMD Coherent Mesh Bus (CMB), which stitches GPU memory into a shared pool. The scheduler is hardware-accelerated, so packet routing and congestion control happen in microseconds, not milliseconds. Early benchmarks show all-reduce operations that finish <em>50% faster</em> than last-gen clusters, with linear scaling out to thousands of nodes. If you care about AI infra, this is the most interesting silicon announcement this quarter.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-22-amd-rdna4-ai-fabrics.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-22-amd-rdna4-ai-fabrics.html&text=AMD%E2%80%99s%20RDNA4%20AI%20Fabrics%3A%20Mesh%20Networking%20for%20GPU%20Clusters%20Arrives" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anandtech.com/show/amd-rdna4-ai-fabric-launch" target="_blank" rel="noopener">AMD Debuts RDNA4 for AI: Mesh Networking at Scale</a></li><li><a href="https://www.tomshardware.com/news/amd-rdna4-mesh-network" target="_blank" rel="noopener">RDNA4: AMD’s Answer to NVIDIA’s NVLink?</a></li><li><a href="https://www.nextplatform.com/2026/09/21/amd-rocm-open-networking" target="_blank" rel="noopener">AMD ROCm and Open GPU Networking</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

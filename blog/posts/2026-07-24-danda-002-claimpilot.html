@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #002 — ClaimPilot: Instant AI Agents for Disaster Insurance Claims | Reddy Pulse</title>
+<meta name="description" content="Automate, accelerate, and humanize the insurance claim journey for Americans facing home disasters—with AI agents bridging policy, documentation, adjusters, and real payouts.">
+<meta property="og:title" content="DANDA #002 — ClaimPilot: Instant AI Agents for Disaster Insurance Claims">
+<meta property="og:description" content="Automate, accelerate, and humanize the insurance claim journey for Americans facing home disasters—with AI agents bridging policy, documentation, adjusters, and real payouts.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #002 — ClaimPilot: Instant AI Agents for Disaster Insurance Claims</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 24th July, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #002 — ClaimPilot: Instant AI Agents for Disaster Insurance Claims">
+  <p>Every year, millions of Americans are hit by home disasters—storms, fires, floods, and more. Filing property insurance claims is a stressful, paperwork-laden process where people need help most and get it least. I know the dread of wrangling with confusing policies, endless forms, and slow, opaque communication with insurers. This is not a paperwork problem—it's a broken emergency response system.</p>
+
+<h2>The problem</h2>
+<p>
+Natural disasters are on the rise. In 2023 alone, the U.S. faced 28 separate billion-dollar weather and climate disasters. Over 4.4 million property insurance claims are filed each year due to weather events, but 65% of homeowners report negative experiences citing communication gaps, confusing policies, and payout delays. Claims take an average of 30 days to close, with 1 in 5 dragging past 90 days—while families are displaced or without vital repairs. At any time, $100 billion+ in property claims are sitting unresolved. The process is fragmented: policyholders must collect evidence, fill forms, chase adjusters, and plead for status updates across phone, apps, and email.
+</p>
+
+<h2>The idea: ClaimPilot</h2>
+<p>
+ClaimPilot is an AI-powered agentic automation platform for insurance claims. After disaster strikes, the homeowner gets a virtual "claims agent"—a 24/7 digital teammate. ClaimPilot ingests the user's policy, damage evidence (photos, videos), and communication history, then orchestrates the entire claim lifecycle: pre-filling forms, explaining policies in plain language, scheduling adjusters, and proactively negotiating with human reps. It updates the user at every step with real-time progress, expected timelines, and actionables. For the insurer, ClaimPilot reduces customer service load and accelerates triage by providing structured evidence and recommended actions. Human approval gates are built in for high-value decisions or nuanced cases.
+</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;border-radius:10px;width:100%;height:auto;'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='6' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'>
+      <polygon points='0,0 10,5 0,10' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <!-- Boxes -->
+  <rect x='40' y='70' width='140' height='60' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='110' y='100' text-anchor='middle' fill='#fff' font-size='18'>Inputs</text>
+  <text x='110' y='122' text-anchor='middle' fill='#aaa' font-size='13'>User docs, photos, policy, comms</text>
+  <rect x='220' y='70' width='140' height='60' rx='14' fill='#222' stroke='#222' stroke-width='2'/>
+  <text x='290' y='100' text-anchor='middle' fill='#fff' font-size='18'>Ingestion</text>
+  <text x='290' y='122' text-anchor='middle' fill='#aaa' font-size='13'>OCR, parsing, entity match</text>
+  <rect x='400' y='50' width='140' height='60' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='470' y='80' text-anchor='middle' fill='#fff' font-size='18'>Memory/Graph</text>
+  <text x='470' y='102' text-anchor='middle' fill='#aaa' font-size='13'>Case state, policy graph</text>
+  <rect x='400' y='150' width='140' height='60' rx='14' fill='#222' stroke='#222' stroke-width='2'/>
+  <text x='470' y='180' text-anchor='middle' fill='#fff' font-size='18'>Agent Orchestrator</text>
+  <text x='470' y='202' text-anchor='middle' fill='#aaa' font-size='13'>LLM, RAG, workflows</text>
+  <rect x='580' y='70' width='140' height='60' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='650' y='100' text-anchor='middle' fill='#fff' font-size='18'>Human Gate</text>
+  <text x='650' y='122' text-anchor='middle' fill='#aaa' font-size='13'>User & adjuster approval</text>
+  <rect x='580' y='170' width='140' height='60' rx='14' fill='#222' stroke='#222' stroke-width='2'/>
+  <text x='650' y='200' text-anchor='middle' fill='#fff' font-size='18'>Action Layer</text>
+  <text x='650' y='222' text-anchor='middle' fill='#aaa' font-size='13'>Forms, reports, comms</text>
+  <!-- Arrows -->
+  <line x1='180' y1='100' x2='220' y2='100' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='360' y1='100' x2='400' y2='80' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='360' y1='100' x2='400' y2='180' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='540' y1='80' x2='580' y2='100' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='540' y1='180' x2='580' y2='200' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+</svg>
+<p>The flow starts with user inputs: damage photos, documents, policy PDFs, and past communication. Ingestion parses all inputs—OCR for images, entity extraction for policy details, and timeline assembly from emails/SMS. All data is mapped to a persistent case memory/graph (policy coverage, deadlines, evidence links). The Agent Orchestrator, powered by LLMs and task workflows, plans next steps—preparing forms, drafting emails, suggesting evidence—to minimize delays. Human gates ensure users and adjusters approve important actions. Finally, the Action Layer files claims, sends status updates, and triggers payouts or repair scheduling, closing the loop with insurers and contractors.</p>
+
+<h2>Build plan (90 days)</h2>
+<p>
+<strong>Wedge:</strong> Target homeowners impacted by hurricanes in Florida and Texas—regions with high claims, pressure on insurers, and tech adoption. Launch as a Chrome/Edge extension and web portal for immediate post-disaster use. <br><br>
+<strong>Stack:</strong> Azure OpenAI for LLMs (contract/communication understanding), custom OCR for document/photo ingestion, Neo4j or similar graph DB for policy/case state, secure APIs for insurer and adjuster integrations, SMS/email relay. HIPAA-grade privacy. <br><br>
+<strong>Pricing:</strong> Free tier for self-service claim tracking; $69/case for full agent automation (insurer reimbursement, or direct). Enterprise/SaaS for insurers to embed ClaimPilot in white-label portals.
+</p>
+
+<h2>Why now</h2>
+<p>
+Disasters are intensifying, and insurance is at a breaking point. Carriers are retreating from high-risk states, and customers demand transparency, speed, and empathy. LLMs now parse dense policy language, and advanced agentic automation can coordinate real-world tasks—compressing 90 days of claim friction into hours. With AI, we can offer resilience and dignity to families when they need it most.
+</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-24-danda-002-claimpilot.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-24-danda-002-claimpilot.html&text=DANDA%20%23002%20%E2%80%94%20ClaimPilot%3A%20Instant%20AI%20Agents%20for%20Disaster%20Insurance%20Claims" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.ncei.noaa.gov/access/billions/" target="_blank" rel="noopener">NOAA: Billion-Dollar Weather and Climate Disasters</a></li><li><a href="https://www.jdpower.com/business/press-releases/2023-us-property-claims-satisfaction-study" target="_blank" rel="noopener">J.D. Power 2023 U.S. Property Claims Satisfaction Study</a></li><li><a href="https://www.iii.org/fact-statistic/facts-statistics-homeowners-and-renters-insurance" target="_blank" rel="noopener">Insurance Information Institute: Facts + Statistics: Homeowners and Renters Insurance</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

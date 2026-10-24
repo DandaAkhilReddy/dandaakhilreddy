@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pyright in WebAssembly: Type-Checking Python Code Directly in the Browser | Reddy Pulse</title>
+<meta name="description" content="Microsoft just dropped a WebAssembly port of Pyright, bringing static Python type-checking natively to browsers and cloud notebooks. If you’re a Python engineer, this is a tectonic shift for code quality and education tools.">
+<meta property="og:title" content="Pyright in WebAssembly: Type-Checking Python Code Directly in the Browser">
+<meta property="og:description" content="Microsoft just dropped a WebAssembly port of Pyright, bringing static Python type-checking natively to browsers and cloud notebooks. If you’re a Python engineer, this is a tectonic shift for code quality and education tools.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Pyright in WebAssembly: Type-Checking Python Code Directly in the Browser</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 6th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop" alt="Pyright in WebAssembly: Type-Checking Python Code Directly in the Browser">
+  <p>It’s here: Pyright, Microsoft’s beloved fast Python type-checker, now runs directly in-browser via WebAssembly. No more server round-trips for linting—your IDE, Jupyter notebook, or code playground can instantly analyze Python code, locally, in real time. Why does this matter? Because Python is the default language for data science, AI, and education, and type safety is key for scaling those projects. By removing server dependencies, devs get instant feedback, and cloud resources are freed up for actual compute tasks.</p>
+
+<h2>What’s Under the Hood?</h2>
+<p>The Pyright core is now compiled to WASM using Emscripten, leveraging the new JS-WASM interop available in modern browsers. Performance is surprisingly close to native desktop runs. Microsoft contributed patches to the TypeScript-based codebase to smooth over file system access and threading on the web. The upshot: you can drag-and-drop a Python repo into a browser, and Pyright will churn through thousands of files, flagging type errors, unused imports, and even code smells—all before a single line runs in production.</p>
+
+<h2>Why Engineers Should Care</h2>
+<p>For engineers, this isn’t just ‘Python in the browser’, but a new baseline for realtime code feedback. Think: live notebooks that catch type errors as you code, student platforms that teach typing discipline from day one, or AI agents that fix bugs before you hit ‘run’. This also chips away at the ‘Python is slow and loose’ stereotype, making strong typing accessible across platforms. Pyright WASM means your environment is as robust as your discipline, whether you’re on a Chromebook, iPad, or cloud IDE.</p>
+
+<p><strong>Bottom line:</strong> This kind of tooling, running client-side, will quietly but fundamentally change how Python is taught, written, and maintained—especially as more AI agents generate code at scale.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-06-microsoft-pyright-wasm.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-06-microsoft-pyright-wasm.html&text=Pyright%20in%20WebAssembly%3A%20Type-Checking%20Python%20Code%20Directly%20in%20the%20Browser" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://github.com/microsoft/pyright" target="_blank" rel="noopener">Microsoft’s Pyright Documentation</a></li><li><a href="https://web.dev/webassembly/" target="_blank" rel="noopener">WebAssembly in the Browser: State of 2026</a></li><li><a href="https://realpython.com/python-type-checking/" target="_blank" rel="noopener">Why Static Typing Is Coming for Python</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

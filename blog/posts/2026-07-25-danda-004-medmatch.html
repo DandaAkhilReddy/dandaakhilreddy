@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #004 — MedMatch: AI Agents to End Physician Credentialing Hell | Reddy Pulse</title>
+<meta name="description" content="MedMatch deploys agentic automation to slash the months-long physician credentialing backlog—getting doctors working faster and hospitals saving millions.">
+<meta property="og:title" content="DANDA #004 — MedMatch: AI Agents to End Physician Credentialing Hell">
+<meta property="og:description" content="MedMatch deploys agentic automation to slash the months-long physician credentialing backlog—getting doctors working faster and hospitals saving millions.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519494080410-f9aaae60bc9a?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #004 — MedMatch: AI Agents to End Physician Credentialing Hell</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 25th July, 2026 · 3 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519494080410-f9aaae60bc9a?w=1200&h=600&fit=crop" alt="DANDA #004 — MedMatch: AI Agents to End Physician Credentialing Hell">
+  <p>Every hospital administrator knows the agony of physician onboarding. Credentialing—the background checks, license verifications, malpractice screenings, and endless form-filling—routinely delays doctors from seeing patients for 60–180 days. It’s a $2.7 billion annual drag on US healthcare, hits rural hospitals worst, and leaves patients waiting.</p>
+<h2>The problem</h2>
+<p>In the US, there are over 1 million active physicians, and every time one changes jobs, moonlights, or picks up extra shifts, they must complete a new credentialing cycle. It takes on average 90–120 days (MGMA), costing hospitals $7,500–$9,000 in lost revenue per provider per month. Multiply that by just 100,000 transitions a year: that’s nearly a billion dollars lost to red tape. Credentialing backlogs mean hospitals scramble for coverage, patients get turned away, and rural/underserved clinics suffer shortages. Meanwhile, staff spend thousands of hours chasing documents across state boards, medical schools, DEA databases, malpractice insurers, and legacy fax systems.</p>
+<h2>The idea: MedMatch</h2>
+<p>MedMatch is a vertical AI platform that automates physician credentialing with agentic workflows. It acts as a credentialing agent: ingesting documents, auto-verifying licenses, cross-checking malpractice history, filling out forms, and orchestrating communication between hospitals, boards, and insurers. MedMatch’s memory layer builds a persistent, updatable graph of provider credentials—so every subsequent onboarding is near-instant. Hospitals plug in and get credentialed doctors ready to work in days, not months.</p>
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;width:100%;height:auto;'>
+  <defs>
+    <marker id='arrow' markerWidth='8' markerHeight='8' refX='6' refY='4' orient='auto' markerUnits='strokeWidth'>
+      <path d='M0,0 L8,4 L0,8' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <rect x='30' y='30' width='140' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='100' y='75' fill='#fff' font-size='19' text-anchor='middle'>Inputs</text>
+  <text x='100' y='100' fill='#f5c518' font-size='14' text-anchor='middle'>Docs, Licenses, Forms</text>
+
+  <rect x='200' y='30' width='140' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='270' y='75' fill='#fff' font-size='19' text-anchor='middle'>Ingestion</text>
+  <text x='270' y='100' fill='#f5c518' font-size='14' text-anchor='middle'>OCR, API Fetch, Normalize</text>
+
+  <rect x='370' y='30' width='140' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='440' y='75' fill='#fff' font-size='19' text-anchor='middle'>Memory/Graph</text>
+  <text x='440' y='100' fill='#f5c518' font-size='14' text-anchor='middle'>Provider Credential Store</text>
+
+  <rect x='540' y='30' width='140' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='610' y='75' fill='#fff' font-size='19' text-anchor='middle'>Agent Orchestrator</text>
+  <text x='610' y='100' fill='#f5c518' font-size='14' text-anchor='middle'>Multi-Agent Workflow</text>
+
+  <rect x='370' y='160' width='140' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='440' y='205' fill='#fff' font-size='19' text-anchor='middle'>Human Gate</text>
+  <text x='440' y='230' fill='#f5c518' font-size='14' text-anchor='middle'>Review, Approval, Audit</text>
+
+  <rect x='540' y='160' width='140' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='610' y='205' fill='#fff' font-size='19' text-anchor='middle'>Action Layer</text>
+  <text x='610' y='230' fill='#f5c518' font-size='14' text-anchor='middle'>Board Submit, Notify, Update</text>
+
+  <line x1='170' y1='70' x2='200' y2='70' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='340' y1='70' x2='370' y2='70' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='510' y1='70' x2='540' y2='70' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='440' y1='110' x2='440' y2='160' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='510' y1='200' x2='540' y2='200' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+</svg>
+<p>The flow starts with hospital or provider submitting credentials, licenses, and forms. Ingestion layer pulls in docs via OCR and APIs, normalizes data. Memory/Graph builds persistent credential profiles, enables re-use. The Agent Orchestrator drives multi-agent flows: auto-verifies licenses, checks malpractice, fills forms, and requests missing info. Human Gate is where admins review flagged items, audit AI suggestions, approve. Action Layer submits to medical boards, notifies departments, and updates provider status—all tracked and logged for compliance.</p>
+<h2>Build plan (90 days)</h2>
+<p>Wedge: Target small/medium hospitals with 100–500 provider transitions/year, integrating with their HR and credentialing teams. Stack: Start with document ingestion (OCR/API), license verification, and form auto-fill agents. Next, build credential graph, add malpractice/sanctions checks, automate board submissions. Pricing: SaaS, $299/month for up to 25 providers, $2,999/month for 300+, pay-per-transition for large systems. ROI is measurable—hospitals save weeks per onboarding, recoup $10k+ per provider per year.</p>
+<h2>Why now</h2>
+<p>Healthcare staffing shortages are at historic highs, and hospitals cannot afford months-long onboarding delays. Federal push for interoperability is opening APIs for credential data. AI agentic automation finally makes end-to-end credentialing feasible—slashing friction for both providers and hospitals, improving patient access, and saving the industry billions.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-25-danda-004-medmatch.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-25-danda-004-medmatch.html&text=DANDA%20%23004%20%E2%80%94%20MedMatch%3A%20AI%20Agents%20to%20End%20Physician%20Credentialing%20Hell" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.mgma.com/resources/human-resources/how-much-does-provider-credentialing-cost-your-practice" target="_blank" rel="noopener">MGMA: Credentialing delays cost hospitals $7,500–$9,000 per provider per month</a></li><li><a href="https://www.aamc.org/data-reports/workforce-report/interactive-data/active-physicians" target="_blank" rel="noopener">AAMC: 1,073,029 active US physicians in 2023</a></li><li><a href="https://www.fiercehealthcare.com/practices/physician-credentialing-headache-costs-hospitals-billions" target="_blank" rel="noopener">Fierce Healthcare: Physician credentialing backlog is a $2.7B problem</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inference Costs and the Silicon Wars: Why Every Engineer Should Care | Reddy Pulse</title>
+<meta name="description" content="AI inference costs are now as important as model size, and the silicon arms race is shifting how we think about deployment. If you ship AI, these realities should shape every design decision.">
+<meta property="og:title" content="Inference Costs and the Silicon Wars: Why Every Engineer Should Care">
+<meta property="og:description" content="AI inference costs are now as important as model size, and the silicon arms race is shifting how we think about deployment. If you ship AI, these realities should shape every design decision.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>Inference Costs and the Silicon Wars: Why Every Engineer Should Care</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 2nd October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop" alt="Inference Costs and the Silicon Wars: Why Every Engineer Should Care">
+  <p>The GPU/TPU wars are old news; 2026 is the year <strong>custom silicon</strong> finally dominates AI inference at scale. Nvidia, AMD, Google and new players like Tenstorrent are in a race to optimize for <strong>ops per joule</strong>, not just raw throughput. What’s the big deal? For engineers, every watt saved is another batch of user queries you can serve before blowing your cloud budget.</p><h2>Datacenter Build-Outs and the Energy Wall</h2><p>Datacenters are still popping up, but the limiting factor isn’t just chips—it’s power and cooling. Microsoft and Google are already tweaking scheduling policies to prioritize low-energy inference jobs. <strong>Energy-aware model routing</strong> is table stakes now. If you’re not measuring cost-per-inference in real workloads, you’re flying blind.</p><h2>Supply Chain: Not Just a 2020s Problem</h2><p>Don’t sleep on the supply chain either. TSMC’s 2nm capacity is oversubscribed, and lead times for bleeding-edge accelerators are stretching again. The best engineers I know are hedging with <strong>model quantization, MoE (mixture-of-experts) routing, and flex-deployment stacks</strong> that can run on whatever silicon is available—sometimes even on old GPUs in a pinch.</p><h2>Why This Matters for Engineers</h2><p>If you design for just one inference target, you’re setting yourself up for cost and reliability pain. Use frameworks that auto-benchmark across available hardware. Keep your models trim, and always have a fallback path for lower-precision or smaller models. In the end, <strong>shipping AI is as much a compute problem as a modeling one</strong>. Don’t let your product get priced out by energy or stuck in a queue waiting for a GPU allocation.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-02-inference-costs-silicon-wars.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-02-inference-costs-silicon-wars.html&text=Inference%20Costs%20and%20the%20Silicon%20Wars%3A%20Why%20Every%20Engineer%20Should%20Care" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.semiwiki.com/ai-hardware/" target="_blank" rel="noopener">The Custom Silicon Arms Race in AI</a></li><li><a href="https://www.tomshardware.com/news/tsmc-2nm-update" target="_blank" rel="noopener">TSMC’s Next Big Challenge: Power and Capacity</a></li><li><a href="https://www.nextplatform.com/2026/09/10/inference-costs-analysis" target="_blank" rel="noopener">Why AI Inference Costs Will Define Product Design</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
