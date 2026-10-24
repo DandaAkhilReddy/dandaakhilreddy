@@ -8272,5 +8272,70 @@
     "url": "https://www.forbes.com/advisor/homeowners-insurance/claims-statistics/"
    }
   ]
+ },
+ {
+  "slug": "2026-10-24-agentic-loops-in-practice",
+  "date": "2026-10-24",
+  "category": "AI & Developers",
+  "title": "Agentic Loops in Practice: How Devs Are Actually Shipping With Claude Code",
+  "summary": "Agentic coding is finally moving from hype to habit. Here’s how real engineers are using Claude Code, eval-driven loops, and spec-driven prompts to build, not just demo.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>Let’s talk about how agentic coding is actually landing in the trenches. The noise online is all about “AI agents that build code!” but the reality is much messier—and way more interesting for actual engineers. Tools like Claude Code are finally set up for <strong>loop engineering</strong>: you define a plan, let the agent act, verify results, then fix and iterate, all inside a constrained sandbox. It’s not magic. It’s just a new kind of automation loop, and if you’re not already designing for it, you’re leaving velocity (and reliability) on the table.</p><h2>Spec-Driven Prompting: Not Optional Anymore</h2><p>Most of us have learned that “just prompt the AI and hope” is dead. The best teams are getting specific: they write executable specs, feed those directly into the system, and then treat the LLM as a <em>spec interpreter</em>. This isn’t just about reducing hallucinations—it’s about repeatability. If your prompt can’t be tested or re-run, you’re not engineering, you’re experimenting.</p><h2>MCP Tool Servers: The Quiet Revolution</h2><p>Everyone’s raving about OpenAI’s Code Interpreter, but the real unlock is the rise of <strong>MCP (multi-capability platform)</strong> tool servers. These let you wire up custom, stateless tools—unit testers, linters, even local dev servers—that the agent can call in its loop. Suddenly, AI pair-programming means running full workflows: plan, code, test, fix, all in one conversational flow, mostly offline.</p><h2>Eval-Driven Development: The Real Shift</h2><p>Here’s the big pattern: eval-driven development. The best agentic workflows start with evaluators—tiny scripts or APIs that check if the AI’s output matches the spec. This is what makes the loop close. It’s also how you stop the “runaway agent” problem: every loop is gated by a reliable eval, not a human click.</p><h2>Takeaway for Engineers</h2><p>We’re seeing a quiet but profound shift: agentic coding is turning AI from a toy into a tool. The next phase isn’t about bigger models; it’s about better feedback loops, tighter specs, and eval-first engineering. That’s where the leverage (and the bugs) are. Ignore it and get left behind.</p>",
+  "sources": [
+   {
+    "title": "Anthropic’s Claude 3.5 Release Notes",
+    "url": "https://www.anthropic.com/news/claude-3-5-release"
+   },
+   {
+    "title": "AI Agents in Production: Lessons Learned",
+    "url": "https://www.oreilly.com/radar/ai-agents-in-production/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-24-chips-power-costs-ai",
+  "date": "2026-10-24",
+  "category": "Compute",
+  "title": "Chips, Power, and Costs: The Unspoken Barriers to Real-World AI",
+  "summary": "The race for smarter AI is really a race for better, cheaper inference. Here’s how the latest GPUs, energy costs, and chip supply are shaping what engineers can (and can’t) actually build.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>The AI news cycle obsesses over model size and benchmarks, but the real constraint for engineers is: <strong>Can I afford to run this thing at scale?</strong> Compute is the choke point, and the game has shifted—again—this month.</p><h2>GPU/TPU Updates: More Power, Higher Stakes</h2><p>NVIDIA finally started shipping the next-gen Blackwell GPUs in serious volumes, but unless you’re sitting on a cloud provider’s preferred customer list, you’re going to feel the pinch. Meanwhile, Google’s custom TPUs (v6) are making inference costs more palatable for large-scale workloads—if you’re willing to rewrite for their stack. Every major AI chip startup is pitching specialty silicon, but the ecosystem is fragmented. The bottom line: if your infra isn’t flexible, you lose agility and money.</p><h2>Datacenters & Energy: The Hidden Costs</h2><p>Datacenter buildouts are going nuclear—literally—with hyperscalers quietly locking in multi-decade power contracts. For us, it means costs are only going up unless you optimize hard for efficiency. Most teams still over-provision (or under-monitor) their AI workloads, and that’s burning both dollars and carbon. <strong>Inference optimization</strong> (quantization, pruning, and model distillation) isn’t just academic; it’s how you keep your project alive past month six.</p><h2>Supply Chain: Still Not Fixed</h2><p>Lead times for the latest AI chips are still measured in quarters, not weeks. If you’re planning to deploy at scale, you need to think about hardware constraints at design time—not after you build. Cloud abstraction helps, but only if your workloads are portable. Proprietary lock-in is riskier than ever.</p><h2>Why This Matters for Engineers</h2><p>The future of AI isn’t just about smarter models. It’s about practical shipping. If you’re not thinking about inference cost, supply chain risk, and energy efficiency, you’re not engineering—you’re gambling. Let the VC-subsidized demos burn cash. The rest of us need to ship sustainably.</p>",
+  "sources": [
+   {
+    "title": "NVIDIA Launches Blackwell GPUs for AI",
+    "url": "https://www.theregister.com/2026/10/10/nvidia-blackwell-launch/"
+   },
+   {
+    "title": "Google Unveils TPU v6: What It Means",
+    "url": "https://www.datacenterdynamics.com/en/news/google-tpu-v6-launch/"
+   },
+   {
+    "title": "Inside the AI Chip Supply Crunch",
+    "url": "https://www.semianalysis.com/p/ai-chip-supply-crunch"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-24-microsoft-ai-eval-fwd",
+  "date": "2026-10-24",
+  "category": "Microsoft",
+  "title": "If Microsoft Wants To Lead in AI, It Needs Eval-First Workflows and Open Agentic APIs",
+  "summary": "Copilot is everywhere, but the next step is clear: Microsoft should double down on eval-driven loops and give devs real agentic APIs—like Anthropic and OpenAI just did. Here’s how (and why) it matters.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft is in the pole position when it comes to AI for developers: Copilot in every IDE, Azure AI endpoints, even GitHub Next tooling. But here’s the uncomfortable truth: <strong>they’re falling behind on agentic workflows</strong>. The labs (OpenAI, Anthropic) are shipping open APIs for tool access, eval hooks, and agentic loop control. Copilot? Still a black box.</p><h2>Eval-First, Not Magic Black Box</h2><p>If you want engineers to trust AI, you need to give them control over evaluation. Anthropic, OpenAI, and even Google’s new models are exposing eval-APIs that let devs inject their own checks, tests, and loop controls directly into the inference flow. Microsoft needs to build this into Copilot and Azure—<strong>let users wire up custom evaluators, not just hit “accept” on autocomplete</strong>.</p><h2>Open Agentic APIs: Let Devs Build, Don’t Just Demo</h2><p>The future isn’t “prompt and pray.” It’s agents that plan, act, verify, and fix—in tight, testable cycles. Microsoft has the infra and the user base, but it needs to open up agentic APIs (the way Anthropic’s Claude and OpenAI’s Assistants API just did). Let devs connect trusted tools, run code in sandboxes, and monitor/interrupt the agent’s plan. This isn’t just for power users; it’s how you move from toy to tool, from demo to dev workflow.</p><h2>GitHub, Foundry, and the Opportunity</h2><p>Foundry and GitHub Next could be the frontlines for this shift—if they start exposing the right hooks. Imagine Copilot that can run your custom tests, refactor against your eval scripts, and even call your own sandbox tools, all in one loop. <strong>That’s the bar</strong> now. The competition is moving fast.</p><h2>Bottom Line</h2><p>Engineers don’t want magic—they want control, transparency, and testability. If Microsoft wants to stay ahead, it needs to build eval-first, agentic APIs into everything Copilot touches. Otherwise, someone else will.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Launches Claude Tool Use API",
+    "url": "https://www.anthropic.com/news/claude-3-5-api"
+   },
+   {
+    "title": "OpenAI Assistants API: What’s New",
+    "url": "https://openai.com/blog/assistants-api"
+   },
+   {
+    "title": "Microsoft GitHub Copilot: Limitations and Roadmap",
+    "url": "https://www.theregister.com/2026/08/29/github-copilot-roadmap/"
+   }
+  ]
  }
 ]
