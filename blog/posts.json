@@ -8360,5 +8360,74 @@
     "url": "https://www.edweek.org/leadership/teachers-spend-hours-on-special-education-paperwork-heres-what-the-data-say/2022/08"
    }
   ]
+ },
+ {
+  "slug": "2026-10-25-agentic-loops-real-dev-use",
+  "date": "2026-10-25",
+  "category": "AI & Developers",
+  "title": "Agentic Loops, Claude Code, and the Real Day-to-Day for Developers in 2026",
+  "summary": "Agentic workflows are finally not just hype—Claude Code and spec-driven prompting are changing how engineers actually write and ship code. Here's what matters, and what workflows actually look like in practice.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>The noise around \"AI coding agents\" isn't fading—it's intensifying. But the most important change is that engineers are starting to develop real muscle memory for agentic coding. <strong>Claude Code</strong>, for example, is not just a code-generation tool. It's a persistent agent that reasons, plans, runs code, debugs, and iterates in a loop.</p><h2>How Developers Are Actually Using These Tools</h2><p>The big shift is <strong>loop engineering</strong>: plan, act, verify, fix. You don't just prompt for a function or a snippet. You hand it a spec, watch Claude plan the job, code, run tests, find bugs, and retry—autonomously. This is not just faster, it's fundamentally different: the agent is a teammate, not a typewriter. The <strong>spec-driven prompting</strong> approach works because it encodes the \"what\" and lets the agent own the \"how\"—which means more code is <em>right the first time</em> and less time is spent arguing with a dumb assistant.</p><p>The bleeding edge is using <strong>MCP tool servers</strong> (\"multi-capability process\"—think local toolchains connected to LLM agents) and <strong>eval-driven development</strong>, where you pair program with the agent, hand it test harnesses, and let it iterate until tests pass. It's closer to a CI/CD loop than the old prompt-and-pray model. Teams I know are using this daily—<em>not</em> for toy problems, but for real business logic, ETL pipelines, and even cloud infra code.</p><h2>Why This Matters</h2><p>If you ship software, the way you write, test, and ship code just changed—permanently. The cost curve drops, but the real win is in <strong>automation of the dull, error-prone stuff</strong>. Agents can grind through test coverage, spec compliance, and regression checks that humans hate. The skill shift is now about loop design and spec clarity, not just code golf. If you're not trying these workflows, you're falling behind. You need to know how to spec, evaluate, and <em>trust</em> agentic code, not just prompt for a for-loop.</p>",
+  "sources": [
+   {
+    "title": "Anthropic launches Claude Code: AI agents for developers",
+    "url": "https://www.anthropic.com/news/claude-code-launch"
+   },
+   {
+    "title": "AI pair programming is changing how coders work",
+    "url": "https://www.theregister.com/2026/09/30/ai_pair_programming_industry_trends/"
+   },
+   {
+    "title": "Agentic AI is Here. Now What?",
+    "url": "https://www.oreilly.com/radar/agentic-ai-is-here-now-what/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-25-inference-costs-silicon-shift",
+  "date": "2026-10-25",
+  "category": "Compute",
+  "title": "Inference Costs, Silicon Shakeups, and What Engineers Need To Rethink Now",
+  "summary": "The AI chip arms race is forcing everyone to rethink inference costs, hardware choices, and deployment strategies. Custom silicon isn't just for the hyperscalers anymore—and it changes how we build and run models.",
+  "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop",
+  "body": "<p>GPU shortages used to be a headline; now it's just background noise. What's hotter: <strong>custom AI silicon</strong> rolling out from NVIDIA, Google, and a dozen startups—plus the rise of <em>open foundry</em> efforts to sidestep supply bottlenecks. Meanwhile, inference costs for state-of-the-art models are still stubbornly high, even as power usage becomes a boardroom issue.</p><h2>The Real Impact: More Choice (and Fragmentation)</h2><p>Engineers deploying real-world AI now have to pick between: (1) standard NVIDIA/AMD GPUs, (2) Google TPUs, (3) AWS Trainium/Inferentia, (4) specialized edge chips, or (5) custom accelerators from new kids like Tenstorrent and Cerebras. Each choice means wrestling with different toolchains, deployment quirks, and sometimes <strong>rewriting operator kernels</strong> to fit the hardware. This isn't a future problem—if you're building AI products, you're making these decisions <em>now</em>.</p><p><strong>Why does inference still cost so much?</strong> It's not just chip pricing. It's datacenter power, cooling, yield, and every hop in the supply chain. With the AI model-of-the-month club, even slightly better inference efficiency (in watts or ms) translates to millions saved—or lost—per year. We're already seeing startups go under because their models cost too much to run at scale, even with clever quantization and distillation.</p><h2>Why This Matters for Engineers</h2><p>If you want your AI to actually <em>ship</em>—not just demo—become obsessed with hardware-aware engineering. Can you squeeze your model for the silicon you can actually get? Can you trade tiny drops in accuracy for huge drops in cost? Are you ready to replatform if a supply chain hiccup hits China or Taiwan? Every engineer needs to track hardware trends, not just model architectures. <strong>The winners will be the teams that unify model, code, and hardware in their workflow.</strong></p>",
+  "sources": [
+   {
+    "title": "AI chip startup Tenstorrent ships new inference hardware",
+    "url": "https://www.semianalysis.com/p/tenstorrent-2026-hardware-release"
+   },
+   {
+    "title": "The true cost of AI inference at scale",
+    "url": "https://www.datacenterdynamics.com/en/analysis/the-true-cost-of-ai-inference-at-scale/"
+   },
+   {
+    "title": "Open Foundry and the future of AI chips",
+    "url": "https://www.eetimes.com/open-foundry-and-the-future-of-ai-chips/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-25-microsoft-should-adopt-open-agentic-evals",
+  "date": "2026-10-25",
+  "category": "Microsoft",
+  "title": "If Microsoft Wants Serious AI Devs, It Needs Open Agentic APIs and Eval-Driven Workflows",
+  "summary": "Microsoft ships a lot of closed magic, but the new breed of AI developers want tool APIs, agentic loops, and eval pipelines they can actually trust and extend. Here’s what MS needs to steal (and fast).",
+  "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=600&fit=crop",
+  "body": "<p>I’m seeing a clear gap: OpenAI, Anthropic, and Google all just rolled out <strong>open agentic APIs</strong>—you can plug in your own tools, create agentic workflows, and even swap out eval suites. Meanwhile, Microsoft’s Copilot stack? It’s still a black box. Sure, it’s useful, but it’s not programmable in the way real engineers want.</p><h2>What Microsoft Needs to Learn (Right Now)</h2><p>First, open up <strong>agentic APIs</strong> across Copilot, GitHub, and Azure AI. Let engineers define toolchains—maybe even run their own MCP servers—and wire up custom loops. Anthropic’s Claude Code shows this is not just possible, but necessary: teams want to tune, test, and trust what their agents are doing, and that requires deep hooks, not just surface-level prompts.</p><p>Second, Microsoft needs to <strong>adopt eval-driven workflows</strong> as a first-class citizen. This means: APIs for plugging in eval suites, surfacing every pass/fail, and making agent behaviors legible—not just \"here’s your code, hope it works.\" OpenAI’s eval APIs and Anthropic’s eval/verify loops are setting the bar. Microsoft has the infra and scale, but is behind on developer trust and extensibility.</p><h2>Why This Actually Matters</h2><p>Real AI engineers want to <em>own their workflow</em>. They want to know why the agent chose what it did, inject custom tools, and run battle-hardened evals. If Microsoft wants to avoid losing the next generation of devs (especially those burned by Copilot’s \"magical\" misses), it needs to get out of the closed magic box and into the open agentic ecosystem. Ship the APIs, open the evals, and let engineers build <strong>with</strong> Copilot, not just <em>using</em> it.</p>",
+  "sources": [
+   {
+    "title": "OpenAI's eval APIs: the next frontier for model trust",
+    "url": "https://www.axios.com/2026/10/12/openai-eval-api-release"
+   },
+   {
+    "title": "Inside Claude Code’s agentic tool APIs",
+    "url": "https://venturebeat.com/ai/anthropic-claude-code-agentic-apis/"
+   },
+   {
+    "title": "Why developers demand programmable AI agents",
+    "url": "https://www.zdnet.com/article/why-developers-demand-programmable-ai-agents/"
+   }
+  ]
  }
 ]
