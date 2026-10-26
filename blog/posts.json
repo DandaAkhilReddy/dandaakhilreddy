@@ -8452,5 +8452,74 @@
     "url": "https://www.americanbar.org/groups/judicial/publications/judges_journal/2019/spring/improving-jury-management/"
    }
   ]
+ },
+ {
+  "slug": "2026-10-26-agentic-loops-eval-driven-ai-workflows",
+  "date": "2026-10-26",
+  "category": "AI & Developers",
+  "title": "Agentic Loops and Eval-Driven Workflows: Why AI Coding Is Now Spec-First",
+  "summary": "Claude Code and eval-driven dev have flipped the daily workflow for engineers. Agentic loops are practical, real, and they force us to rethink how specs, prompts, and verification fit together.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>Three years ago, 'AI agentic coding' sounded like vaporware. Today, thanks to tools like Claude Code (Anthropic), it's the backbone of shipping projects fast. Here's the reality: engineers are running plan→act→verify→fix loops, not just prompting and hoping for magic.</p><h2>Loop Engineering Is Real</h2><p>Claude Code, GitHub Copilot, and new MCP tool servers are powering tightly instrumented loops. You start with a spec prompt ('Here's what the function MUST do'), let the agent propose a plan, act, and then run evals—actual test cases, not just fuzzy LLM judgement. If the output fails, the loop triggers a fix routine. This isn't hypothetical. It's how engineers are debugging, writing tests, and iterating at speed.</p><h2>Spec-Driven Prompting</h2><p>Instead of vague, chatty prompts, we're writing <strong>spec-first prompts</strong>—think 'write a parser for this input format, MUST pass these tests.' Why? Because AI agents need concrete constraints to avoid hallucination. The MCP tool servers coordinate tool calls, file edits, test runs, and validation, letting the agent operate across a workspace, not just inside a chat box.</p><h2>Eval-Driven Development</h2><p>The biggest shift: eval-driven development. Devs are defining evaluation metrics and test suites upfront, then letting AI run loops until all tests pass. It's a full-on regression harness, not just LLM suggestions. This means faster iteration, clearer accountability, and less time lost to ambiguous code.</p><p>For engineers, this matters because agentic loops and eval-first workflows kill the old 'prompt and pray' anti-pattern. We get reproducible, testable outcomes. AI isn't replacing us—it forces us to write better specs, clearer tests, and treat prompts as real engineering artifacts.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code: How It Works",
+    "url": "https://www.anthropic.com/product/claude-code"
+   },
+   {
+    "title": "GitHub Copilot Workspace: New Agentic APIs",
+    "url": "https://github.blog/2026-09-17-copilot-workspace-agentic-apis/"
+   },
+   {
+    "title": "Eval-Driven Development: Why It Matters",
+    "url": "https://www.latent.space/p/eval-driven-ai"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-26-gpu-supply-inference-energy-costs",
+  "date": "2026-10-26",
+  "category": "Compute",
+  "title": "GPU Supply Crunch and Inference Costs: Why Compute Is Now Your Bottleneck",
+  "summary": "NVIDIA's H200 shortages, new custom TPUs, and datacenter build-outs are colliding with runaway inference costs. Engineers have to rethink how they're deploying, optimizing, and monitoring AI workloads.",
+  "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=600&fit=crop",
+  "body": "<p>The news everyone is talking about: NVIDIA H200 chips are sold out until Q2 2027, and Google just announced ultra-efficient TPUs aimed at inference. Datacenter operators are scrambling to build out capacity, but energy prices and supply chain snarls mean slower rollouts and higher costs.</p><h2>Why GPUs Are Still King (and a Pain)</h2><p>For AI engineers, this matters because GPUs are still the backbone of model deployment and inference. When you can't get H200s, you're stuck either scaling horizontally (more, older GPUs) or optimizing your models for custom silicon—like Google's new TPUs or AWS's Inferentia. This often means rewriting parts of your pipeline, re-optimizing code, and dealing with vendor lock-in.</p><h2>Energy and Inference Costs</h2><p>Here's the kicker: inference costs are <strong>not</strong> dropping. In fact, with energy prices up and chip shortages, we're seeing per-inference pricing rise. Engineers can't ignore this. If you're serving millions of requests, even small efficiency gains (quantization, pruning, caching) matter. Shipping AI is as much about tuning compute as model quality.</p><h2>Datacenter Build-Outs and Supply Chain</h2><p>Microsoft, Google, AWS, everyone is racing to expand datacenters. But silicon shortages (substrates, packaging) and grid constraints mean timelines slip. For devs, this means you need to plan for <strong>hardware diversity</strong>—optimizing for whatever chips are available, not just hoping NVIDIA comes through.</p><p>Bottom line: compute is your bottleneck. Engineers have to watch inference costs, energy use, and chip supply as closely as they watch their code. If you're not, you're risking outages, blown budgets, and slower ships.</p>",
+  "sources": [
+   {
+    "title": "NVIDIA H200 GPU Supply Update",
+    "url": "https://www.semianalysis.com/nvidia-h200-supply-chain-analysis"
+   },
+   {
+    "title": "Google Custom TPUs: Energy Efficient Inference",
+    "url": "https://cloud.google.com/blog/products/ai-machine-learning/new-google-tpu-inference"
+   },
+   {
+    "title": "Datacenter Buildout and Energy Constraints",
+    "url": "https://www.datacenterdynamics.com/en/news/datacenter-energy-grid-supply-2026/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-26-microsoft-must-embrace-open-spec-prompting",
+  "date": "2026-10-26",
+  "category": "Microsoft",
+  "title": "Why Microsoft Needs Open Spec-Prompting and Loop APIs — Lessons From Anthropic and Google",
+  "summary": "Microsoft's Copilot and Azure AI stack are still too closed for spec-driven prompting and agentic loops. Anthropic and Google are showing what open APIs, eval harnesses, and cross-tool orchestration make possible.",
+  "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop",
+  "body": "<p>If you're building with Microsoft Copilot or Azure's AI tools, you've probably hit the wall: there's no open API for spec-driven prompting, agentic loop orchestration, or integrating eval harnesses. Anthropic (Claude Code) and Google (Vertex AI tool orchestration) are racing ahead with open, programmable interfaces that let engineers build their own loops and workflows.</p><h2>Why Closed APIs Slow Us Down</h2><p>Right now, Copilot is still a black box. You can't easily plug in custom evaluation metrics, tool APIs, or orchestrate complex loops across files, tests, and workspace tools. For engineers, this means we're stuck with rigid workflows and can't automate the kinds of agentic loops that are proven to speed up development.</p><h2>What Microsoft Should Learn</h2><p>Anthropic's Claude Code lets you define specs, expose workspace APIs, and run eval-driven loops—so you can instrument your own coding flows. Google Vertex runs tool servers that you can attach to agents, enabling evals and fixes as part of the workflow. This isn't just 'nice to have'. It's foundational for serious devs.</p><h2>Concrete Steps</h2><p>Microsoft needs to open up Copilot and Azure AI APIs for spec-driven prompting, expose loop orchestration endpoints, and let us plug in custom eval harnesses. It means more developer control, better debugging, and faster iteration. If Microsoft doesn't, engineers will keep jumping ship to more open platforms.</p><p>For engineers, this matters because open APIs let us shape our tools around our workflows—not the other way around. It's time for Microsoft to get serious about agentic coding, not just chat-centric AI.</p>",
+  "sources": [
+   {
+    "title": "Claude Code API: Open Agentic Workflows",
+    "url": "https://www.anthropic.com/product/claude-code"
+   },
+   {
+    "title": "Google Vertex AI Tool Servers",
+    "url": "https://cloud.google.com/vertex-ai/docs/agents/tool-servers"
+   },
+   {
+    "title": "Copilot Workspace: Limitations and Roadmap",
+    "url": "https://github.blog/2026-09-17-copilot-workspace-agentic-apis/"
+   }
+  ]
  }
 ]
