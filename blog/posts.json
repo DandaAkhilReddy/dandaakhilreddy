@@ -8636,5 +8636,74 @@
     "url": "https://www.nigp.org/resource/whitepapers/ap-processing-stats"
    }
   ]
+ },
+ {
+  "slug": "2026-10-28-agentic-coding-eval-loops",
+  "date": "2026-10-28",
+  "category": "AI & Developers",
+  "title": "Concrete AI Coding: Claude Code, Loop Engineering, and Why Eval-Driven Matters",
+  "summary": "Agentic coding isn't hype anymore—it's how developers actually build. Claude Code, spec-driven prompts, and eval-driven loops are shaping daily workflows. Here's what matters in practice.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47c6b8ab7d91?w=1200&h=600&fit=crop",
+  "body": "<p>The biggest shift this month? Anthropic's Claude Code has made agentic coding more concrete for actual devs. It's no longer \"AI will write your app\"—it's how you plan, act, verify, and fix in a tight loop. The best teams I know are running daily with loop engineering: setting up <strong>plan→act→verify→fix</strong> pipelines, then plugging in evals that catch failures fast.</p><h2>Why Spec-Driven Prompting Is the Core</h2><p>Instead of \"prompt hacking,\" we're seeing <strong>spec-driven prompting</strong>—devs write a clear spec (think: mini-API contract), have Claude Code generate, then run evals against the spec instead of the output itself. This actually scales for teams: you can audit, you can version, and you catch edge cases before they hit prod.</p><h2>MCP Servers & AI Pair Workflows</h2><p>Multi-Chain Prompt (MCP) tool servers are the backbone now. They route prompt chains, manage tool calls, and do cross-agent error catching—so you don't have to babysit the AI. Eval-driven development means you code alongside the AI: set up evals, get feedback on what broke, fix the spec, try again. This is pair-programming for the AI era, but it only works if you're <strong>explicit about your contracts</strong> and your evals are tight.</p><p>Why does this matter for engineers? Because it's the only way to ship reliable AI products without endless manual QA or \"prompt roulette\". The loop is the product.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code Launch",
+    "url": "https://www.anthropic.com/news/claude-code"
+   },
+   {
+    "title": "AI Loop Engineering: How Eval-Driven Development Works",
+    "url": "https://www.stackoverflow.com/articles/agentic-loops-eval-driven-dev"
+   },
+   {
+    "title": "Spec-Driven Prompting Guide",
+    "url": "https://www.latent.space/prompt-specs"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-28-custom-silicon-inference-costs",
+  "date": "2026-10-28",
+  "category": "Compute",
+  "title": "Custom Chips and Datacenter Realities: Why Compute Is Still Your Limiting Factor",
+  "summary": "Custom silicon is finally hitting scale, but inference costs are still climbing. What does it mean for engineers shipping AI? It's time to rethink deployment and cost models.",
+  "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop",
+  "body": "<p>GPU news this month is all about custom silicon. Nvidia's latest H100 successors, Google's TPUv6, and new Anthropic-optimized chips have hit datacenters—but <strong>supply chain crunch</strong> and rising inference costs are still throttling launches.</p><h2>Datacenter Build-Outs: Not Fast Enough</h2><p>Everyone's scaling, but the reality is datacenter energy constraints and chip bottlenecks mean you can't just \"add more GPUs\". Deploying even mid-sized models in production is expensive, and inference pricing is <strong>climbing, not dropping</strong>. For engineers, this means every architectural decision—quantization, batching, tool-server sharding—matters more than ever.</p><h2>What Custom Silicon Means for Developers</h2><p>Anthropic and OpenAI are now designing chips around their inference loads, not just training. This matters because it <strong>enables agentic workflows</strong> but also means you need to audit your model's energy use and memory footprint. The best teams are simulating deployment costs <strong>before writing real code</strong>; eval-driven dev isn't just about quality, it's about hardware fit. Don't assume you can scale in prod—test on real inference hardware.</p><p>Why care? Because if you don't profile your AI for real-world silicon, you're going to get crushed by costs or latency. The chip and datacenter news isn't just \"big tech chest-pounding\"—it's what determines whether your AI will actually ship.</p>",
+  "sources": [
+   {
+    "title": "Nvidia H100 Successor Release",
+    "url": "https://www.tomshardware.com/news/nvidia-h100-successor"
+   },
+   {
+    "title": "TPUv6 and Anthropic Custom Chips",
+    "url": "https://www.datacenterdynamics.com/en/news/google-tpuv6-anthropic-silicon-analysis/"
+   },
+   {
+    "title": "Inference Cost Analysis 2026",
+    "url": "https://www.sequoiacap.com/ai-inference-costs-2026"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-28-microsoft-agentic-apis-eval-workflows",
+  "date": "2026-10-28",
+  "category": "Microsoft",
+  "title": "Microsoft’s Next Moves: Agentic APIs, Eval Workflows, and What Azure Should Learn",
+  "summary": "If Microsoft wants to win serious AI devs, it needs agentic APIs, eval-first workflows, and open spec-prompting. What Azure, Copilot, and Foundry can steal from Anthropic and OpenAI right now.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>The pressure is on Microsoft—especially Azure and Copilot—to catch up to the agentic coding wave. Anthropic and OpenAI have shown that <strong>open agentic APIs</strong> and eval-driven workflows are what developers actually need. Microsoft’s tool stacks are still too closed and too focused on \"magic autocomplete\"—not the <strong>explicit, loop-driven engineering</strong> that lets real teams ship AI reliably.</p><h2>Open Spec-Prompting and Eval-Driven Dev</h2><p>Azure should be exposing loop APIs—plan, act, verify, fix—alongside native eval support. GitHub Copilot needs to support spec-driven prompting, not just \"guess the user intent\". This lets devs build workflows that are auditable, versionable, and scalable. Foundry should offer <strong>tool-server orchestration</strong> for agent chains, with hooks for evals and contracts. If Microsoft gets this right, they can actually be the backbone for AI engineering—not just AI demos.</p><h2>Concrete Steps Microsoft Should Take</h2><p>1. <strong>Open loop APIs</strong> for Azure AI and Copilot.<br>2. <strong>Spec-driven prompt contracts</strong> as first-class objects in GitHub.<br>3. <strong>Eval hooks</strong> in Foundry and Copilot, tied to deployment cost simulation.<br>4. <strong>Tool-server orchestration</strong> and open agent routing. These aren't \"nice to have\"—they're what the best teams are using daily.</p><p>Why does this matter for engineers? Because if Microsoft delivers real agentic, eval-first APIs, it will let us build robust, reliable AI products at scale—without fighting the platform. Don’t let the frontier labs run away with the tooling advantage.</p>",
+  "sources": [
+   {
+    "title": "OpenAI API Advances",
+    "url": "https://openai.com/blog/agentic-api-release"
+   },
+   {
+    "title": "Anthropic Claude Code Dev Overview",
+    "url": "https://www.anthropic.com/news/claude-code"
+   },
+   {
+    "title": "Azure AI Platform Analysis",
+    "url": "https://www.techcrunch.com/azure-ai-loop-workflows"
+   }
+  ]
  }
 ]
