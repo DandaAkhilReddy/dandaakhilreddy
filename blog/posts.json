@@ -8812,5 +8812,74 @@
     "url": "https://ncpa.org/newsroom"
    }
   ]
+ },
+ {
+  "slug": "2026-10-30-agentic-workflows-claude-code-mcp-eval",
+  "date": "2026-10-30",
+  "category": "AI & Developers",
+  "title": "Agentic Workflows Are Here: Claude Code, MCP Tool Servers, and Eval-Driven Development",
+  "summary": "Developers are finally getting practical agentic coding workflows, led by Claude Code and new MCP tool servers. Loop engineering and eval-driven development are reshaping how we build and ship AI tools—here’s how it actually looks in practice.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>If you’re building with AI in late 2026, you’ve probably felt the shift: we’re finally moving past chatbots and into real, agentic coding flows. The big news is Claude Code—Anthropic’s new agentic IDE—which lets you spec a task, run loop-engineered plans, and verify/fix in tight cycles. You can drop a spec into Claude, and it orchestrates plan→act→verify→fix loops, not just code completion.</p><h2>Why MCP Tool Servers Matter</h2><p>MCP (Multi-Command Process) tool servers are a game-changer. Instead of hard-coding tool APIs or relying on brittle plug-ins, you spin up an MCP server, register tools (filesystem, API client, eval engine), and let the agent plan and chain actions. The agent isn’t just guessing; it’s checking specs and running evals against real output. This means fewer ‘hallucinated’ results and more grounded workflows.</p><h2>Spec-Driven Prompting Isn’t Optional</h2><p>Spec-driven prompting is now standard. You write a functional spec, feed it to the agent, and get a plan that’s shaped by your constraints—not the vague intent of a chat. Engineers are using eval-driven development: you define evals (unit tests, property checks), and the agent iterates until it passes. This is how you ship AI that actually works.</p><strong>AI Pair-Programming Is Real</strong><p>AI pair-programming is finally moving past autocomplete. You spec, the agent plans, acts, runs evals, and gives you diffs. The loop is tighter, and the feedback is less wishy-washy. The upshot? Engineers can ship complex workflows faster, debug with agentic loops, and trust output more.</p><p>Why does this matter? Because the bar for AI code is going up. If you aren’t looping, evaluating, and spec-prompting, you’re shipping brittle junk. The new workflows are concrete, repeatable, and—crucially—less prone to failure.</p>",
+  "sources": [
+   {
+    "title": "Anthropic announces Claude Code",
+    "url": "https://www.anthropic.com/news/claude-code"
+   },
+   {
+    "title": "Agentic AI: Loop Engineering in Practice",
+    "url": "https://www.latent.space/p/agentic-ai-loops"
+   },
+   {
+    "title": "Eval-Driven Development with AI Agents",
+    "url": "https://www.hillelwayne.com/post/eval-driven-ai/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-30-inference-costs-silicon-energy-supply-chain",
+  "date": "2026-10-30",
+  "category": "Compute",
+  "title": "AI Compute in 2026: Inference Costs, Custom Silicon, and the Real Energy Problem",
+  "summary": "GPUs and TPUs are evolving, but the real story is how costly inference has become—especially with custom silicon and datacenter build-outs. The energy and supply chain realities are shaping every engineer’s choices.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f0d53?w=1200&h=600&fit=crop",
+  "body": "<p>Anyone shipping AI today knows it’s not just about how fast your model runs—it’s about whether you can afford to run it at all. NVIDIA’s new Blackwell chips are powerful but scarce; Google’s TPUv6 is optimized for inference, and custom silicon from startups (think Groq, Tenstorrent) is driving down latency for certain workloads. But the real bottleneck is cost.</p><h2>Inference Isn’t Cheap—And It’s Getting Pricier</h2><p>The average inference cost for large models has <strong>gone up</strong> thanks to datacenter power limits and supply chain snags. You can’t just throw GPUs at the problem, because everyone is fighting for slots. Engineers are optimizing models like it’s 2017 again: quantization, distillation, and clever routing are back in vogue.</p><h2>Energy and Datacenter Build-Outs</h2><p>Microsoft, Google, and AWS are all pouring billions into new datacenters, but the build-out pace is slower than demand. Energy is the limiting factor—more than hardware. If your AI tool runs at scale, you <strong>must</strong> profile power draw, batch inference, and offload to custom chips where possible.</p><h2>Why Supply Chain Matters</h2><p>Chip supply disruptions mean you can’t always rely on ‘just-in-time’ scaling. Engineers need to think about fallback model sizes, multi-cloud failover, and hybrid serving. If your AI system depends on a specific chip, you’re risking downtime—or astronomical costs—when the next shortage hits.</p><p>Bottom line: compute isn’t abstract. It’s the concrete bottleneck for anyone shipping AI. If you aren’t tracking inference cost, energy, and supply chain risk, you’re building on sand.</p>",
+  "sources": [
+   {
+    "title": "NVIDIA Blackwell and the AI Chip Supply Crunch",
+    "url": "https://www.semianalysis.com/p/nvidia-blackwell"
+   },
+   {
+    "title": "Datacenter Build-Outs Struggle With Energy Demand",
+    "url": "https://www.ft.com/content/0e4d1e11-7b1c-4c27-bf65-8f0e2c4f6c60"
+   },
+   {
+    "title": "Custom AI Silicon: Groq, Tenstorrent, and the Future",
+    "url": "https://www.nextplatform.com/2026/09/14/custom-ai-silicon"
+   }
+  ]
+ },
+ {
+  "slug": "2026-10-30-microsoft-open-eval-loops-spec-prompts",
+  "date": "2026-10-30",
+  "category": "Microsoft",
+  "title": "What Microsoft Needs Next: Open Eval Loops and Spec-Driven Prompt APIs",
+  "summary": "Microsoft’s AI stack is strong, but it’s missing eval-first workflows and open agentic APIs. Here’s what Azure, Copilot, and GitHub should learn from Anthropic and Google—concrete changes that would move the needle for engineers.",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p>As someone who ships on Azure and uses Copilot daily, I see what’s missing: Microsoft’s AI tools aren’t open enough. Anthropic’s Claude Code exposes agentic loop APIs, Google’s Vertex AI lets you spec and eval in the loop, but Microsoft still hides prompt logic behind opaque Copilot endpoints. This is holding engineers back.</p><h2>Open Eval Loops: Why They Matter</h2><p>If you want reliable AI code, you need eval-driven loops. Right now, Copilot and Azure ML don’t let you <strong>define evals</strong> or run agentic loops via API. That means you’re forced to trust whatever the service spits out, instead of integrating tests and property checks. Microsoft should open API access for eval cycles, so engineers can bake reliability in from the start.</p><h2>Spec-Driven Prompting: Beyond Autocomplete</h2><p>Spec-driven prompting isn’t just a trend—it’s the best way to get actionable code. Anthropic and Google expose APIs that take structured specs and return plans, diffs, and checkpoints. Azure and GitHub should do the same: let us pass specs, constraints, and evals, and get back not just code, but a plan and verification loop.</p><strong>Tool Servers and Ecosystem Openness</strong><p>Microsoft’s ecosystem is strong, but it’s too closed: Copilot plug-ins, Azure ML tool integrations, and GitHub Actions are still limited by proprietary formats. Anthropic’s MCP server model lets anyone register tools—filesystem, API clients, eval engines—and shape agentic workflows. Microsoft should steal this idea, opening up tool registration and orchestration for real dev flexibility.</p><p>The why: Engineers want reproducible, reliable AI flows. If Microsoft doesn’t expose agentic, eval-first APIs, we’ll keep jumping to Anthropic or Google. The gap is technical, not just marketing. Microsoft can—and should—fix it.</p>",
+  "sources": [
+   {
+    "title": "Claude Code: Open Agentic APIs",
+    "url": "https://www.anthropic.com/news/claude-code"
+   },
+   {
+    "title": "Google Vertex AI: Spec-Driven Prompting",
+    "url": "https://cloud.google.com/blog/products/ai-machine-learning/spec-driven-prompting"
+   },
+   {
+    "title": "Microsoft Copilot: Current API Limitations",
+    "url": "https://github.com/microsoft/copilot"
+   }
+  ]
  }
 ]
