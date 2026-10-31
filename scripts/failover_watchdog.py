@@ -11,7 +11,8 @@ Checks, every run:
 2. Azure degradation (apps report azure_status) -> email heads-up; NO restart
    needed because the apps keep running on Railway local storage.
 3. Blog freshness (Reddy Pulse pipeline health).
-Emails on any problem; silent when all healthy.
+Emails ONLY when a service is down. Warnings (blog stale, Azure degraded)
+are written to the Actions log, never emailed. Silent when all healthy.
 """
 
 from __future__ import annotations
@@ -128,16 +129,17 @@ def alert(subject: str, lines: list[str]) -> None:
 def main() -> int:
     check_services()
     check_freshness()
-    if problems or warnings:
-        subject = ("🚨 Fleet watchdog: service down" if problems
-                   else "⚠️ Fleet watchdog: heads-up (all services up)")
-        alert(subject,
-              (["DOWN:"] + [f"• {p}" for p in problems] + [""] if problems else [])
+    if warnings:
+        # Log only — warnings never trigger an email.
+        print("warnings (log only):", warnings)
+    if problems:
+        alert("🚨 Fleet watchdog: service down",
+              ["DOWN:"] + [f"• {p}" for p in problems] + [""]
               + (["Warnings:"] + [f"• {w}" for w in warnings] + [""] if warnings else [])
               + ([f"✔ {a}" for a in actions] if actions else []))
-        print("problems:", problems, "warnings:", warnings)
+        print("problems:", problems)
         return 0
-    print("fleet healthy — all 4 services up, blog fresh, azure ok")
+    print("fleet healthy — all 4 services up" + ("" if warnings else ", blog fresh, azure ok"))
     return 0
 
 
