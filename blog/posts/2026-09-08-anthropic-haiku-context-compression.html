@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic’s Haiku: New Context Compression Makes 2M Token Windows Practical | Reddy Pulse</title>
+<meta name="description" content="Anthropic just released Haiku, a context compression module that slashes memory and compute costs for 2-million-token LLM windows by 10x—making ultra-long context finally usable outside research.">
+<meta property="og:title" content="Anthropic’s Haiku: New Context Compression Makes 2M Token Windows Practical">
+<meta property="og:description" content="Anthropic just released Haiku, a context compression module that slashes memory and compute costs for 2-million-token LLM windows by 10x—making ultra-long context finally usable outside research.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Anthropic</span>
+  <h1>Anthropic’s Haiku: New Context Compression Makes 2M Token Windows Practical</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 8th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="Anthropic’s Haiku: New Context Compression Makes 2M Token Windows Practical">
+  <p>Giant context windows are all the rage, but running a 2-million-token model has always been a hardware nightmare. Anthropic’s new Haiku module uses multi-stage context compression (think: learned token folding plus attention distillation) to let big LLMs “see” huge documents without blowing up your GPU bill.</p><h2>What is context compression?</h2><p>Haiku sits before the main transformer blocks. It looks at incoming sequences and learns which tokens are truly essential for downstream tasks—summarizing, question answering, or code reasoning. It then folds redundant info (like repeated boilerplate or code comments) and only passes on what matters. The magic is, this isn’t a dumb lossy compression; it’s learned by the model itself, end-to-end, so accuracy doesn’t tank.</p><p>Results? Anthropic claims a 10x drop in memory and FLOP usage for 2M-token windows versus vanilla transformers. In practice, that means you can now run ultra-long context jobs on a single beefy GPU, rather than a cluster. For real-world engineers, this is the difference between “toy demo” and “production search on millions of legal docs” or “code analysis across entire repos.”</p><h2>Why this matters</h2><p>The fundamental bottleneck for LLMs has shifted from compute to context length. Anyone building tools for legal, medical, or enterprise search knows the pain of slicing documents into bite-sized chunks and losing meaning. Haiku’s context compression means you can keep the whole story in view, at practical costs, and with less complicated retrieval pipelines.</p><p>The frontier LLM game is no longer just about raw scale—it’s about context, and Anthropic just moved the goalposts for everyone.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-08-anthropic-haiku-context-compression.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-08-anthropic-haiku-context-compression.html&text=Anthropic%E2%80%99s%20Haiku%3A%20New%20Context%20Compression%20Makes%202M%20Token%20Windows%20Practical" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.semianalysis.com/p/anthropic-haiku-context-compression" target="_blank" rel="noopener">Anthropic reveals context compression breakthrough</a></li><li><a href="https://arxiv.org/abs/2609.00812" target="_blank" rel="noopener">The new LLM context length arms race</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

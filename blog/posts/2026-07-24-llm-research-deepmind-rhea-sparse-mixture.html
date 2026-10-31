@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeepMind’s Rhea-2: Sparse Mixture-of-Experts at 400B Parameters—But Actually Efficient | Reddy Pulse</title>
+<meta name="description" content="DeepMind’s Rhea-2 model just dropped, and it’s the first 400B parameter LLM that’s truly efficient—thanks to a new routing and expert pruning trick. LLM scaling law fans, pay attention.">
+<meta property="og:title" content="DeepMind’s Rhea-2: Sparse Mixture-of-Experts at 400B Parameters—But Actually Efficient">
+<meta property="og:description" content="DeepMind’s Rhea-2 model just dropped, and it’s the first 400B parameter LLM that’s truly efficient—thanks to a new routing and expert pruning trick. LLM scaling law fans, pay attention.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>DeepMind’s Rhea-2: Sparse Mixture-of-Experts at 400B Parameters—But Actually Efficient</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 24th July, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop" alt="DeepMind’s Rhea-2: Sparse Mixture-of-Experts at 400B Parameters—But Actually Efficient">
+  <p>DeepMind has revealed Rhea-2, their newest sparse Mixture-of-Experts (MoE) LLM. On paper: 400B parameters, SOTA on multitask and reasoning benchmarks, and—most interestingly—training and inference costs under what you’d expect for a 70B dense model. How? <strong>This is the first MoE that uses adaptive routing <em>and</em> periodic expert pruning, letting it scale up efficiently without ballooning hardware cost.</strong></p><h2>What’s New Technically?</h2><p>Most MoE models suffer from ‘expert bloat’—tons of parameters that rarely activate, wasting VRAM and compute. Rhea-2 uses a dynamic router (a tiny LSTM conditioned on activations) to pick experts per token, plus a scheduled “dead head” pruning pass every 10K steps. <strong>That means the model stays lean, but still learns the rare, weird stuff that makes LLMs useful in the real world.</strong></p><h2>Why Should Engineers Care?</h2><p>This isn’t just about leaderboard chasing. Efficient scaling means you can train bigger models on smaller clusters—or squeeze massive models into edge deployments you’d never consider before. <strong>Developers will see faster inference, lower costs, and—crucially—much more predictable behavior as you scale batch sizes up or down.</strong></p><p>The code for the router and pruning scheduler is already out under Apache 2.0, with PyTorch and JAX reference versions. Expect to see a wave of open-source MoE models using Rhea-2’s tricks in the next few months.</p><h2>The Takeaway</h2><p>We’re not just stacking more parameters for hype anymore. <strong>This is the first real step toward sustainable, usable trillion-parameter LLMs that regular shops can actually run.</strong></p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-24-llm-research-deepmind-rhea-sparse-mixture.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-24-llm-research-deepmind-rhea-sparse-mixture.html&text=DeepMind%E2%80%99s%20Rhea-2%3A%20Sparse%20Mixture-of-Experts%20at%20400B%20Parameters%E2%80%94But%20Actually%20Efficient" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://deepmind.com/blog/article/rhea-2-sparse-moe" target="_blank" rel="noopener">DeepMind Rhea-2: Efficient Sparse MoE LLMs</a></li><li><a href="https://arxiv.org/abs/2607.11234" target="_blank" rel="noopener">Parameter Efficiency in LLMs: DeepMind’s Rhea-2</a></li><li><a href="https://github.com/deepmind/rhea2-router" target="_blank" rel="noopener">Open-source Rhea-2 routing code released</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

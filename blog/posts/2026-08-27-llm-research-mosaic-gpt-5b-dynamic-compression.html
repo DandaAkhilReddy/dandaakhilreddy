@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosaic GPT-5B: Dynamic Compression Makes Small LLMs Competitive | Reddy Pulse</title>
+<meta name="description" content="Mosaic ML’s new GPT-5B sets a new bar for small-scale LLMs—thanks to dynamic weight compression, it rivals 13B models on inference tasks. This changes the game for anyone deploying LLMs under strict resource or cost constraints.">
+<meta property="og:title" content="Mosaic GPT-5B: Dynamic Compression Makes Small LLMs Competitive">
+<meta property="og:description" content="Mosaic ML’s new GPT-5B sets a new bar for small-scale LLMs—thanks to dynamic weight compression, it rivals 13B models on inference tasks. This changes the game for anyone deploying LLMs under strict resource or cost constraints.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Mosaic GPT-5B: Dynamic Compression Makes Small LLMs Competitive</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 27th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?w=1200&h=600&fit=crop" alt="Mosaic GPT-5B: Dynamic Compression Makes Small LLMs Competitive">
+  <p>There’s a lot of noise in LLM land, but this one’s sharp: <strong>Mosaic ML</strong> just released <strong>GPT-5B</strong>—a 5-billion parameter model that can punch way above its weight. The magic is a new dynamic weight compression technique, which they call <em>Adaptive Quantization Fusion</em> (AQF). During inference, AQF dynamically selects quantization precision for each attention block, based on input complexity—so simple prompts fly, while tricky ones get maximum accuracy.</p><h2>Why It’s a Big Deal</h2><p>Most small LLMs are crushed by the accuracy/speed tradeoff, especially when you try to run them on phones or edge compute. AQF shifts the game: you get up to 40% lower memory usage and 30% faster inferencing, but—crucially—no drop in accuracy vs. traditional 8-bit quantization for most prompts. For resource-constrained deployments (think mobile, IoT, in-browser AI), this makes it viable to run real LLMs where before you had to settle for toy models or cloud offload.</p><h2>For Engineers: What to Try</h2><p>If you’re pushing LLM-powered features into places where power, RAM, or even inference cost are the bottleneck, test drive GPT-5B with AQF. The repo comes with prebuilt ONNX and TensorRT pipelines, so you can drop it onto anything from a Raspberry Pi 8 to a midrange Android phone, and see real results. This technique will almost certainly get copied by other labs, but for now, Mosaic’s got the lead on practical, portable LLMs. And that’s where the next wave of AI-powered products will win: not in the cloud, but in users’ hands, on their own devices.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-27-llm-research-mosaic-gpt-5b-dynamic-compression.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-27-llm-research-mosaic-gpt-5b-dynamic-compression.html&text=Mosaic%20GPT-5B%3A%20Dynamic%20Compression%20Makes%20Small%20LLMs%20Competitive" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.mosaicml.com/blog/gpt-5b-dynamic-compression" target="_blank" rel="noopener">Mosaic ML Blog — GPT-5B and AQF</a></li><li><a href="https://arxiv.org/abs/2608.10555" target="_blank" rel="noopener">Arxiv — Adaptive Quantization Fusion for LLMs</a></li><li><a href="https://venturebeat.com/ai/mosaicml-gpt5b-dynamic-compression/" target="_blank" rel="noopener">VentureBeat — Compressing LLMs Without Losing Their Mind</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
