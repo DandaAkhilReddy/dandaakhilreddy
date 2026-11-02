@@ -9088,5 +9088,74 @@
     "url": "https://www.chainstoreage.com/retailers-need-automate-warranty-claims"
    }
   ]
+ },
+ {
+  "slug": "2026-11-02-agentic-coding-eval-spec",
+  "date": "2026-11-02",
+  "category": "AI & Developers",
+  "title": "Agentic Coding Is Real: Spec-Driven Loops, Eval Workflows, and Claude Code in the Trenches",
+  "summary": "Developers are finally going beyond prompt-chaining: agentic coding, spec-driven prompting, and eval-driven loops are the new normal. Here’s a boots-on-the-ground look at what’s actually working.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p><strong>Agentic loops are no longer just hype</strong>—they’re turning into the backbone of how teams build, debug, and ship with AI. The biggest news this month: Anthropic’s Claude Code now fully supports multi-step agentic chains with their open MCP (Modular Command Protocol) tool servers. What does this mean for engineers? Instead of hacking together fragile prompts, you’re defining explicit <em>specifications</em> that the AI follows, operating in plan→act→verify→fix loops.</p><p>Let’s get concrete. You write a spec: <em>“Refactor this legacy API for idempotency and add input validation.”</em> Claude Code parses, plans, submits tool calls (e.g., running test suites, querying code search). It <strong>evaluates its own output</strong> against the spec, and—here’s the kicker—<em>self-fixes</em> until all checks pass. This is eval-driven development, and it means you spend less time on brittle prompt fiddling and more time on real review and higher-level logic.</p><h2>Why This Matters for Engineers</h2><p>Spec-driven prompting finally brings testability and predictability to AI codegen. Instead of output roulette (“Will this prompt break today?”), you get verifiable outputs. MCP tool servers let you securely expose internal APIs and CI tools—now the AI is part of your workflow, not just a chat box. I’m seeing teams pair-programming with Claude Code: the AI acts, verifies against tests, then hands off for human review. The mental shift? You’re not just talking to a model—you’re orchestrating an agentic coder that <em>actually runs code and iterates</em>.</p><p>Engineers should care because this is how you scale: safer, repeatable, spec-checked codegen in every PR. The next step? Bring your own custom evals and toolchains. If you’re still just using “prompt + LLM = code,” you’re behind. The future is eval-driven, loop-engineered, and spec-first.</p>",
+  "sources": [
+   {
+    "title": "Anthropic launches Claude Code with agentic capabilities",
+    "url": "https://www.anthropic.com/blog/claude-code-release"
+   },
+   {
+    "title": "Eval-driven development: A new paradigm for AI workflows",
+    "url": "https://www.latent.space/p/eval-driven-development"
+   },
+   {
+    "title": "Spec-first prompting is eating brittle prompt engineering",
+    "url": "https://martinfowler.com/articles/spec-prompting.html"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-02-gpu-inference-energy-bottlenecks",
+  "date": "2026-11-02",
+  "category": "Compute",
+  "title": "Hidden Bottlenecks: GPU Scarcity, Inference Costs, and the Power Wall in 2026",
+  "summary": "Custom silicon and datacenter buildouts aren’t enough: energy, supply chain, and inference economics are the real bottlenecks for AI teams. Here’s what engineers need to watch.",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p><strong>The GPU arms race isn’t over</strong>—it’s morphing. NVIDIA’s Blackwell chips are everywhere, but lead times are still months. Google’s Trillium TPUs, Amazon’s Trainium2, and a wave of open RISC-V custom silicon are crowding the field. But here’s what matters: <em>compute supply is no longer the only constraint</em>. The new bottleneck is power, cooling, and (yes) the total cost of inference.</p><p>Datacenters are hitting the physical “power wall.” Projects get delayed not for lack of silicon, but because cities can’t deliver megawatts fast enough. This means your AI deployment might be compute-rich in theory but energy-starved in practice. For engineers, it’s forcing hard choices: do you ship with smaller, cheaper models, or wait for the next datacenter ramp?</p><h2>Inference Costs and Supply Chains</h2><p>Don’t be fooled by the “AI is getting cheaper” story. Model sizes balloon, inference costs climb, and every watt counts. Even hyperscalers are rate-limiting API calls and prioritizing their own workloads. If you’re shipping AI at scale, track not just cloud GPU pricing but also latency, throughput, and the energy footprint of each model run. Supply chain hiccups—from substrate shortages to cooling system delays—hit rollout schedules as much as chip launches.</p><p><strong>Why it matters:</strong> Engineering decisions now hinge on economics, not just benchmarks. If you build for a Blackwell but deploy on last-gen silicon because of power limits, you need robust model distillation, quantization, and fallback strategies. Shipping AI means thinking end-to-end, from chip choice to datacenter power draw to the API bill at 10k QPS. Ignore this at your (and your users’) peril.</p>",
+  "sources": [
+   {
+    "title": "NVIDIA Blackwell supply chain challenges persist",
+    "url": "https://www.semianalysis.com/p/nvidia-blackwell-supply-chain"
+   },
+   {
+    "title": "Datacenters hit the power wall",
+    "url": "https://www.ft.com/content/6d8b7d98-b0e7-4b8f-b7b5-7f7e2b19e3c2"
+   },
+   {
+    "title": "Why AI inference costs won't drop anytime soon",
+    "url": "https://www.cnbc.com/2026/10/20/ai-inference-costs-analysis.html"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-02-microsoft-needs-open-tool-agent-apis",
+  "date": "2026-11-02",
+  "category": "Microsoft",
+  "title": "What Microsoft Must Learn: Open Agent APIs and Eval-First Workflows, Not More Closed Copilots",
+  "summary": "Microsoft is winning enterprise adoption, but needs to catch up on open tool agent APIs, eval-driven dev UX, and spec-first prompting—before Claude Code and Gemini Pro eat the Copilot moat.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p><strong>Time to get real:</strong> Microsoft Copilot and Azure ML are dominating the enterprise, but they’re missing what’s making Anthropic’s Claude Code and Google’s Gemini Pro actually sticky for developers: <em>open, programmable agent APIs and eval-first workflows</em>. The closed Copilot UX is great for end-users, but engineers want to wire up their own tools, bring their own evals, and specify system behavior directly (not just hope Copilot gets it right).</p><h2>Open Tool APIs: The Next Competitive Frontier</h2><p>Anthropic’s MCP tool servers let you plug in your own code search, CI, or internal APIs—<strong>no waiting for a new Copilot plugin</strong>. Google’s Gemini Pro exposes open function-calling with clear eval hooks. Microsoft needs to open up its agent stack: make Copilot, Foundry, and Azure AI not just “configurable,” but <em>composable</em>. If engineers can’t wire in custom toolchains, they’ll defect to open alternatives—especially as agentic coding becomes the norm.</p><p><strong>Eval Loops and Spec-Driven Prompting</strong><br>Eval-driven development isn’t just “nice to have”—it’s how teams are shipping reliable AI workflows. Give us eval-first APIs, spec-driven prompt templates, and real test harnesses for Copilot and Azure AI. Move beyond “prompt playgrounds” and into CI/CD for LLMs. Otherwise, the moat gets breached—not by better models, but by better developer platforms.</p><p>Microsoft should be leading here. Open the APIs, embrace eval-first workflows, and treat spec-driven prompting as a first-class citizen. If Azure wants to stay sticky, it can’t just ship more closed copilots—it needs to build the agentic, open, eval-driven developer stack engineers are already demanding.</p>",
+  "sources": [
+   {
+    "title": "Anthropic’s MCP tool servers—an open approach to agentic AI",
+    "url": "https://www.anthropic.com/blog/mcp-tool-servers"
+   },
+   {
+    "title": "Google Gemini Pro’s function-calling and eval APIs",
+    "url": "https://ai.googleblog.com/2026/09/gemini-function-calling-eval.html"
+   },
+   {
+    "title": "Why eval-first platforms are winning AI developer mindshare",
+    "url": "https://www.latent.space/p/eval-first-ai-platforms"
+   }
+  ]
  }
 ]
