@@ -9180,5 +9180,74 @@
     "url": "https://www.iqvia.com/insights/the-iqvia-institute/reports/us-use-of-medicines-2024"
    }
   ]
+ },
+ {
+  "slug": "2026-11-03-agentic-workflows-eval-mcp",
+  "date": "2026-11-03",
+  "category": "AI & Developers",
+  "title": "Agentic Workflows Are Mainstream: Claude Code, MCP, and Eval Loops in Real Life",
+  "summary": "Developers are moving beyond prompt playgrounds, using agentic coding, spec-driven prompting, and eval-driven loops to build production AI. Here’s how these workflows are actually changing day-to-day engineering.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>If you’re an engineer building with AI in 2026, you know the playground days are over. The big news this week: Anthropic rolled out Claude Code with deep agentic coding patterns, and developers aren’t just playing—they’re shipping production loops with it.</p><h2>Why Agentic Coding Matters</h2><p>Agentic coding means letting AI handle full plan→act→verify→fix cycles. Claude Code lets you spec an outcome, and it auto-iterates, proposing fixes when tests fail. This isn’t GPT answering questions—it’s continuous eval-driven development. I’ve seen teams use this for test generation, refactoring, and even entire microservice bootstrapping. The key: AI doesn’t just suggest code, it owns the feedback loop.</p><h2>MCP Tool Servers</h2><p>Developers now wire up 'MCP tool servers'—basically a toolbox of APIs and plugins the agent can call. It’s not just codegen; it’s orchestrating databases, filesystems, and cloud deploys. Engineers are designing specs as prompts: \"Build a REST API for X; use Y stack; pass these tests.\" The AI parses, plans, builds artifacts, and keeps looping until evals pass.</p><h2>Eval-Driven Workflows</h2><p>Eval-driven development is the real unlock. Instead of static code review, teams set up automated evals—unit tests, integration checks, code linting—and the AI learns from every failure. Pair programming now means human + AI set the spec and evals, then let the agentic loop run, reviewing diffs when loops stall.</p><strong>Why It Matters</strong><p>This shift changes how we work: engineers focus on spec, intent, and evals, not line-by-line code. It’s faster, more iterative, and lets us scale up to bigger problems. The challenge? You have to define real evals and keep your tool server tight—otherwise your agent loops get lost.</p>",
+  "sources": [
+   {
+    "title": "Anthropic launches Claude Code",
+    "url": "https://www.anthropic.com/news/claude-code-launch"
+   },
+   {
+    "title": "Agentic AI and eval-driven development",
+    "url": "https://www.thoughtworks.com/insights/blog/agentic-ai-loops"
+   },
+   {
+    "title": "Spec-driven prompting: practical guide",
+    "url": "https://www.promptingguide.ai/spec-prompting"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-03-datacenter-inference-costs-silicon",
+  "date": "2026-11-03",
+  "category": "Compute",
+  "title": "Datacenter Shakeup: Custom Silicon, Inference Costs, and the New Energy Reality",
+  "summary": "GPUs and TPUs aren’t enough—custom silicon and datacenter buildouts are now the heart of AI deployment. Here’s what engineers need to know about chips, supply, and total cost in the era of massive inference.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>AI training always hogged headlines, but this week’s biggest compute shift is about <strong>inference at scale</strong>. Nvidia’s new Blackwell GPU clusters are already back-ordered, and Google’s TPUv7 chips are rolling out in new datacenter pods. But custom silicon—think OpenAI’s rumored inference ASICs and Amazon’s Trainium—are finally hitting production, and that changes the game for engineers.</p><h2>Silicon Supply: Still Scarce</h2><p>GPU supply is still the bottleneck, thanks to the relentless demand for LLM and vision models. Engineers are fighting for capacity—even hyperscalers are rationing compute. If you’re shipping AI, you need to target cheaper, faster, and more sustainable inference paths, or risk ballooning costs and latency.</p><h2>Datacenter Buildouts</h2><p>Major cloud providers are racing to build new datacenter pods optimized for custom silicon. These aren’t just bigger—they’re more power-efficient and designed for high-throughput inferencing. But energy costs are spiking: datacenters are competing for grid capacity, and governments are pushing for green energy quotas. For engineers, this means designing models and workloads that fit real-world power and silicon constraints.</p><h2>Inference Cost Engineering</h2><p>You can’t just deploy a massive model and ignore the bill. Engineers are now using cost evals and silicon-aware prompts—optimizing token sizes, quantizations, and batch flows to fit the chips they actually get. If you’re not tracking per-inference cost and latency, you’re flying blind.</p><strong>Why It Matters</strong><p>If you want to ship reliable, affordable AI, you must engineer for silicon scarcity and energy realities. The winners will be the teams who treat compute like a first-class design constraint—tracking chip specs, power budgets, and inference costs down to the microsecond.</p>",
+  "sources": [
+   {
+    "title": "Nvidia Blackwell GPU cluster launch",
+    "url": "https://www.tomshardware.com/news/nvidia-blackwell-gpu-cluster"
+   },
+   {
+    "title": "Google TPUv7: what’s new",
+    "url": "https://cloud.google.com/blog/products/compute/tpuv7-announcement"
+   },
+   {
+    "title": "Custom silicon and inference economics",
+    "url": "https://www.semiengineering.com/custom-ai-silicon-inference-costs"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-03-microsoft-frontier-labs-adoption",
+  "date": "2026-11-03",
+  "category": "Microsoft",
+  "title": "Microsoft’s Next Moves: Open Agent APIs and Spec-Eval Workflows",
+  "summary": "Azure, Copilot, and GitHub need to embrace open agent APIs and eval-first workflows, following lessons from Anthropic, Google, and OpenAI. Engineers need more than closed prompt boxes—we need programmable, testable agents.",
+  "image": "https://images.unsplash.com/photo-1503676382389-7143e4ae2cfc?w=1200&h=600&fit=crop",
+  "body": "<p>I ship with Microsoft tech daily—and here’s what needs changing. The big lesson from Anthropic’s Claude Code, Google’s agentic APIs, and OpenAI’s eval-driven tools? <strong>Programmable, spec-driven, and testable agent APIs.</strong> Right now, Copilot and Azure’s AI offerings are still stuck in prompt box mode. You ask, it answers. But engineers want workflows: plan→act→verify→fix, tied to real evals and specs.</p><h2>Open Agent APIs Are Essential</h2><p>Microsoft should open up agent APIs—let us wire up tool servers, workflows, and eval loops. Azure should let you register custom tools and evals, not just pick from a dropdown. GitHub Copilot needs a mode where you feed it specs and unit tests, and it drives the coding loop, instead of just suggesting lines.</p><h2>Spec-Eval Workflows: Beyond Suggestions</h2><p>The future is not \"here’s some code\"—it’s \"here’s a spec, here’s evals, let the agent build and verify.\" Anthropic’s agentic loop and Google’s workflow APIs are showing how real engineering happens. Microsoft should build APIs and IDE integrations where agents are first-class participants, not invisible autocomplete ghosts.</p><h2>Constructive Adoption</h2><p>If Microsoft wants to lead, it needs to stop hiding agentic loops behind closed Copilots. Open eval APIs, let devs define specs and toolboxes, and make agents programmable. That’s how you get engineers off the playground and into production. It’s not about chasing Anthropic or OpenAI—it’s about making AI an actual engineering partner.</p><strong>Why It Matters</strong><p>Closed prompt boxes limit what engineers can build. Open agent APIs and eval-driven workflows unlock real productivity, reliability, and scale. Microsoft needs to make the leap—otherwise devs will keep bolting on third-party agentic tools.</p>",
+  "sources": [
+   {
+    "title": "Claude Code agentic development",
+    "url": "https://www.anthropic.com/news/claude-code-launch"
+   },
+   {
+    "title": "Google's agentic workflow APIs",
+    "url": "https://developers.google.com/ai/agent-api"
+   },
+   {
+    "title": "OpenAI eval-driven workflows",
+    "url": "https://openai.com/research/eval-driven-development"
+   }
+  ]
  }
 ]
