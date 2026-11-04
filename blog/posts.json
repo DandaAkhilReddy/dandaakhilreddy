@@ -9272,5 +9272,74 @@
     "url": "https://www.hrdive.com/news/workplace-harassment-costs-billions-annually/567438/"
    }
   ]
+ },
+ {
+  "slug": "2026-11-04-agentic-coding-spec-driven-pair-programming",
+  "date": "2026-11-04",
+  "category": "AI & Developers",
+  "title": "Agentic Coding Goes Mainstream: Spec-Driven Loops, Claude Code, and AI Pairing in Real Projects",
+  "summary": "Developers are finally seeing agentic coding workflows with Claude Code and MCP tool servers become daily practice, driven by eval loops and spec-first prompting. This changes how engineers write, verify, and ship code.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47c0f1a2f98e?w=1200&h=600&fit=crop",
+  "body": "<p>For years, agentic coding was a promising demo. Today, it’s real. Developers are using <strong>Claude Code</strong> as a persistent code-writing agent, orchestrating plan→act→verify→fix loops via custom MCP tool servers. This isn’t just autocomplete—it’s a spec-driven workflow, where you feed a project spec, get a proposed plan, and let the agent generate, run, and test code, iteratively improving until it matches the spec. The magic is in the eval loop: your eval scripts (unit tests, integration checks) drive the agent’s correction cycle, making it much harder to ship broken code.</p><h2>Why This Matters</h2><p>Most engineers spend more time debugging and verifying than writing new code. Agentic workflows with eval-first loops flip the script: you focus on expressing intent (the spec, the eval criteria), and the agent handles the messy write→verify→fix grind. Claude and MCP setups are especially good at reasoning about multi-step changes—refactoring, cross-file updates, even toolchain upgrades. Spec-driven prompting clarifies requirements upfront, so you get less hallucination and more usable output.</p><p>Pair-programming with AI isn’t just a chat sidebar now. Teams run eval-driven sessions where the AI reviews changes, proposes fixes, and even prototypes new features across stacks. The key: you treat the agent as a peer that understands your project’s goals and tools, not a generic code generator. The result? Faster iteration, fewer regressions, and much less manual triage.</p><h2>What to Watch Next</h2><p>Agentic coding is shifting from IDE plugins to cloud-hosted tool servers, so expect more real-time integration with CI/CD, version control, and test infra. As eval-driven development matures, engineers will spend more time designing testable specs and less time micromanaging code. This is a fundamental change—your job moves from code janitor to system architect.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Introduces Claude Code: AI Agents for Developer Workflows",
+    "url": "https://www.anthropic.com/news/claude-code-launch"
+   },
+   {
+    "title": "Agentic Programming Patterns: Plan, Act, Verify, Fix",
+    "url": "https://www.lesswrong.com/posts/some-agentic-programming-patterns"
+   },
+   {
+    "title": "Eval-Driven Development: A New Paradigm for AI Coding",
+    "url": "https://www.alexirpan.com/2025/12/17/eval-driven.html"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-04-gpu-supply-inference-costs-energy",
+  "date": "2026-11-04",
+  "category": "Compute",
+  "title": "GPUs, TPUs, and Custom Silicon: The Compute Crunch Is Real for AI Engineers",
+  "summary": "Datacenter GPU shortages, rising inference costs, and energy limitations are forcing engineers to rethink how—and where—they deploy AI models. Custom silicon is promising but still hard to access.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7c7f6e?w=1200&h=600&fit=crop",
+  "body": "<p>If you’re deploying AI models in production, chances are you’re feeling the squeeze: datacenter GPU/TPU availability is patchy, inference costs are spiking, and energy budgets are now a hard constraint. The big news is that hyperscalers are accelerating custom silicon rollouts—Google’s TPU v6, NVIDIA’s Blackwell chips, and new ASICs from startups like Tenstorrent. But unless you’re a Fortune 500, you probably can’t get bulk access. Engineers need practical strategies.</p><h2>Why This Matters</h2><p>Shipping AI means dealing with unpredictable compute: models are getting bigger (think 200B+ parameters), but hardware supply isn’t keeping up. Inference costs are now a line-item on every project’s P&L. Engineers must optimize model size, quantize aggressively, and use batch inference to hit latency/price targets. But here’s the catch—energy use is the silent bottleneck. Datacenters are bumping against local power limits, and governments are capping new builds. This means <strong>deployments are increasingly location-dependent</strong>: the same model might be cheap in Iowa but unaffordable in London.</p><h2>What Engineers Should Do</h2><p>Plan for compute scarcity: profile your workloads, test on multiple hardware types, and expect your favorite GPU SKU to go out of stock. Use open hardware abstraction layers (like ROCm, Triton) so you can switch backends fast. Track inference costs <em>per test</em>—not just per batch—because spikes often come from edge-case queries. Finally, keep an eye on emerging custom silicon: if your use-case fits (like transformer inference or search reranking), early pilots can deliver massive energy savings.</p>",
+  "sources": [
+   {
+    "title": "The Global GPU Shortage: Why AI Companies Are Scrambling",
+    "url": "https://www.wired.com/story/gpu-shortage-2026/"
+   },
+   {
+    "title": "TPU v6 and Custom Silicon: Google’s Datacenter Playbook",
+    "url": "https://cloud.google.com/blog/products/compute/the-tpu-v6-story"
+   },
+   {
+    "title": "Datacenter Energy Crunch: The New AI Bottleneck",
+    "url": "https://www.semianalysis.com/p/datacenter-energy-bottleneck-2026"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-04-microsoft-agentic-spec-eval-workflows",
+  "date": "2026-11-04",
+  "category": "Microsoft",
+  "title": "Microsoft Needs Eval-First, Spec-Driven Agentic Workflows: What Copilot Should Learn from Claude and Gemini",
+  "summary": "Agentic coding isn’t just a UI upgrade—it’s a workflow change. Microsoft should adopt open agent APIs, spec-driven prompting, and eval-first loops like Anthropic’s Claude and Google’s Gemini for its developer tools.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>Copilot and Azure AI are great at autocomplete and Q&A, but they’re falling behind on agentic workflows. The real shift is happening with Claude Code (Anthropic) and Gemini Code (Google): open agent APIs, spec-driven prompting, and eval-first loops. Microsoft’s developer ecosystem (Azure, GitHub, Foundry, Windows) needs to adopt these patterns, not just add more chat UIs.</p><h2>Why This Matters</h2><p>Engineers want tools that reason about specs, not just code fragments. Spec-driven prompting clarifies intent, so agents can plan, act, verify, and fix—autonomously. Eval-first loops (where tests and eval criteria drive agent correction) deliver higher quality code and fewer regressions. Open APIs mean you can orchestrate multiple agents, tools, and test infra, customizing for your workflow. Microsoft’s closed Copilot APIs limit this flexibility, forcing engineers into narrow use-cases.</p><h2>Concrete Steps Microsoft Should Take</h2><p>Open agent APIs—let engineers run persistent, multi-step agents on GitHub/Foundry, not just chat bots. Make spec-driven prompting a first-class feature (integrate with PR templates, Azure DevOps specs). Build eval-first loops into Copilot: let agents run and verify code against custom eval scripts, not just static linters. And finally, support tool server orchestration: allow agents to invoke CLI tools, CI systems, and third-party APIs directly.</p><p>If Microsoft doesn’t move, engineers will bolt on Claude/Gemini agents anyway. The new workflow is open, eval-driven, and spec-first. That’s where real productivity gains are.</p>",
+  "sources": [
+   {
+    "title": "Claude Code: Open Agent APIs for Developer Workflows",
+    "url": "https://www.anthropic.com/news/claude-code-launch"
+   },
+   {
+    "title": "Gemini Code: Spec-Driven Prompting and Eval Loops",
+    "url": "https://blog.google/technology/ai/gemini-code-launch/"
+   },
+   {
+    "title": "Microsoft Copilot: Strengths and Limitations for Developers",
+    "url": "https://www.techradar.com/news/microsoft-copilot-review"
+   }
+  ]
  }
 ]
