@@ -9364,5 +9364,74 @@
     "url": "https://www.ncra.org/about-us/industry-facts"
    }
   ]
+ },
+ {
+  "slug": "2026-11-05-agentic-coding-claude-code-mcp-eval-loops",
+  "date": "2026-11-05",
+  "category": "AI & Developers",
+  "title": "Agentic Coding: Claude Code, MCP Servers, and Eval Loops—How Real Developers Work With AI in 2026",
+  "summary": "Agentic coding isn’t hype—it’s how engineers are actually shipping software today. Spec-driven prompting, MCP tool servers, and eval-driven loops transform how devs use Claude Code and Gemini Agents.",
+  "image": "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop",
+  "body": "<p>Agentic coding has moved from academic papers to real-world developer workflows. The Claude Code release last month made this mainstream: now, devs don’t just prompt for snippets—they run iterative <strong>plan→act→verify→fix</strong> loops, spec-driven prompts, and eval-first cycles for actual project builds.</p><h2>Spec-Driven Prompting Is the New Unit Test</h2><p>Instead of asking AI \"write a function,\" I start with an explicit spec: \"Write a parser for XYZ, verified against these acceptance tests.\" Why? It gives AI enough context for reasoning, and lets me catch hallucinations before they hit prod. Claude Code shines here; its multi-turn focus means you can push it through multi-layered requirements with much less drift.</p><h2>MCP Tool Servers: AI’s Swiss Army Knife</h2><p>Developers now set up <strong>MCP tool servers</strong> (Multi-Command Protocol) where Claude, Gemini, or GPT can orchestrate shell, code, git, and even browser tasks. This isn’t just cool—it’s how you scale agentic coding across teams. The AI can loop through \"plan\", \"act\" (run code, update git branch), \"verify\" (run evals), and \"fix\" (patch bugs) with MCP as the backbone.</p><h2>Eval-Driven Development</h2><p>Eval-driven loops are replacing smoke tests. Every AI code output is checked against a battery of evals—real, automated acceptance tests. This is how you catch subtle bugs and bypass the \"AI makes stuff up\" risk. In my workflow, I pipe Claude outputs directly into eval pipelines, and only merge code that passes.</p><h2>AI Pair Programming Is Real</h2><p>Pair-programming with AI isn’t just autocomplete. With agentic tools, my AI partner can propose refactors, run tests, and even track TODOs. The loop engineering (plan→act→verify→fix) means the AI doesn’t just throw code over the wall—it actively collaborates, fixes, and learns with me.</p><p>All these techniques matter because they make AI coding <strong>robust</strong> and <strong>production-grade</strong>. If you’re still prompting for snippets, you’re missing the future.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Blog — Claude Code Launch",
+    "url": "https://www.anthropic.com/blog/claude-code"
+   },
+   {
+    "title": "GitHub Copilot Labs — Agentic Coding",
+    "url": "https://github.blog/copilot-labs-agentic-workflows/"
+   },
+   {
+    "title": "Ars Technica — AI Coding Tools in Real Teams",
+    "url": "https://arstechnica.com/information-technology/2026/10/ai-coding-tools-mainstream/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-05-custom-silicon-inference-energy-supply-chain",
+  "date": "2026-11-05",
+  "category": "Compute",
+  "title": "Custom Silicon and Inference Energy: Datacenter Moves that Matter for AI Engineers",
+  "summary": "Nvidia’s Falcon GPU, Google’s Gemini TPU, and the new RISC-V edge chips—datacenter builds are shifting fast. Energy, supply chain, and inference costs are reshaping how engineers ship AI models.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>The compute landscape isn’t about \"more GPUs\" anymore. Recent datacenter build-outs are pivoting on custom silicon: Nvidia’s Falcon, Google’s Gemini TPU, and a new surge in RISC-V edge chips. Why does this matter? Because as engineers, our model shipping workflows now depend on <strong>hardware-level bottlenecks and energy realities</strong>.</p><h2>Custom Silicon: Falcon, Gemini, and the RISC-V Wave</h2><p>Nvidia’s Falcon GPU is optimized for low-latency inference, not just training. Gemini TPUs from Google are tuned for mixture-of-experts and agentic models (think Claude, Gemini, GPT-5). RISC-V chips are enabling edge inference at scale, especially for privacy-centric workloads. If you ship AI, you need to benchmark your models for these architectures, not just CUDA.</p><h2>Energy and Inference Costs</h2><p>Datacenter energy is now the <strong>top cost line</strong> for AI inference. Falcon and Gemini chips promise better ops-per-watt, but the reality is: as model sizes balloon (Claude 3.5, Gemini Ultra), only models with efficient quantization and streaming can survive. Engineers need to design for <strong>low-power inference</strong>, or your product won’t scale. Energy-aware evaluation is as important as accuracy tests.</p><h2>Supply Chain: The Real Blocker</h2><p>Chip supply is still tight. Datacenters are hoarding Falcon GPUs and Gemini TPUs, and RISC-V chip fabs are at capacity. If you want to scale your AI, you need to plan for <strong>deploy delays</strong> and porting code across architectures. Build with abstraction layers (think ONNX, TensorRT), or you’ll get stuck when supply shifts.</p><p>Bottom line: for engineers, custom silicon choices and energy accounting are now as important as model architecture. If you’re not benchmarking for Falcon/Gemini/RISC-V, you’re leaving performance (and dollars) on the table.</p>",
+  "sources": [
+   {
+    "title": "Semianalysis — Nvidia Falcon GPU Deep Dive",
+    "url": "https://www.semianalysis.com/p/nvidia-falcon-gpu-analysis"
+   },
+   {
+    "title": "Google Cloud Blog — Gemini TPU Datacenter Update",
+    "url": "https://cloud.google.com/blog/topics/innovation/gemini-tpu-datacenters"
+   },
+   {
+    "title": "EE Times — RISC-V Chips in AI Edge",
+    "url": "https://www.eetimes.com/risc-v-ai-edge-2026/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-05-azure-copilot-eval-spec-agentic-openai-anthropic",
+  "date": "2026-11-05",
+  "category": "Microsoft",
+  "title": "Azure and Copilot: What Microsoft Should Steal From OpenAI and Anthropic in 2026",
+  "summary": "OpenAI and Anthropic are betting big on open agent APIs, eval-driven development, and spec-first workflows. Microsoft must adopt these—Copilot and Azure need to go beyond autocomplete to real agentic loops.",
+  "image": "https://images.unsplash.com/photo-1549921296-3a6b41a4a7c8?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft’s Copilot and Azure AI stack are powerful, but the frontier labs—OpenAI, Anthropic, Google—are running laps by <strong>open agent APIs, eval-driven workflows, and spec-first prompting</strong>. If Microsoft wants to compete, it needs to learn and <strong>adopt, not chase</strong>.</p><h2>Open Agent APIs: The Real Unlock</h2><p>Both OpenAI and Anthropic now expose agent APIs that let devs orchestrate multi-step workflows, external tools, and run plan-act-verify loops. Azure and Copilot are still mostly closed, with limited extension points. Engineers need agent APIs to build robust, flexible workflows—Microsoft should push for <strong>open, composable agent interfaces</strong> in Copilot and Azure AI.</p><h2>Eval-Driven Development: Trust Through Testing</h2><p>Eval-driven loops (where the AI’s output is checked against real acceptance tests and evals) are now standard in Anthropic’s Claude Code and Google’s Gemini. Copilot still relies too much on autocomplete and static suggestions. Microsoft should build <strong>eval-first pipelines</strong> into Copilot and Azure DevOps—let devs define evals that the AI must pass before code merges.</p><h2>Spec-First Prompting Beats \"Smart\" Suggestions</h2><p>Spec-driven prompting is how Claude and Gemini avoid the \"hallucination\" risk. Copilot’s context window is big, but doesn’t enforce spec rigor. Microsoft needs to let engineers provide explicit specs and acceptance tests up front—this will make Copilot useful for <strong>production code</strong> instead of just prototyping.</p><p>I’m saying this as a real user: Copilot is great, but to match the frontier, Microsoft must <strong>embrace openness, evals, and spec-first engineering</strong>. The future isn’t static autocomplete; it’s agentic, eval-driven, and open.</p>",
+  "sources": [
+   {
+    "title": "OpenAI Dev Day — Agent API Announcements",
+    "url": "https://openai.com/events/devday-2026"
+   },
+   {
+    "title": "Anthropic Claude Code — Eval Loops",
+    "url": "https://www.anthropic.com/blog/eval-loops-claude-code"
+   },
+   {
+    "title": "TechCrunch — Microsoft Copilot Update",
+    "url": "https://techcrunch.com/2026/11/01/microsoft-copilot-updates/"
+   }
+  ]
  }
 ]
