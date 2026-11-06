@@ -9456,5 +9456,70 @@
     "url": "https://www.ibisworld.com/united-states/market-research-reports/debt-collection-agencies-industry/"
    }
   ]
+ },
+ {
+  "slug": "2026-11-06-agentic-coding-loops-real-workflows",
+  "date": "2026-11-06",
+  "category": "AI & Developers",
+  "title": "Beyond Prompts: How Agentic Coding Loops Are Changing Real Developer Workflows",
+  "summary": "Agentic coding tools like Claude Code and MCP servers are fundamentally shifting how we build, test, and ship software. Let’s break down the real, practical workflows that engineers are adopting—and why it matters for anyone writing code in 2026.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>If you haven’t run a full plan→act→verify→fix loop with Claude Code or an MCP tool server this week, you’re already behind the curve. The biggest AI news isn’t just model releases; it's the way agentic coding has turned from buzz to backbone for real dev teams. We’re talking about day-to-day workflows that look less like prompt engineering and more like orchestrating a team of junior engineers—except the juniors are LLM agents that never sleep and (mostly) don’t need lunch breaks.</p>\n\n<h2>Spec-Driven, Eval-First: New Norms</h2>\n<p>The old \"write a prompt, get code, hope it works\" playbook is dead. Now it’s: define a spec, generate a plan, spin up agents (Claude, Gemini, etc.), and run them through eval-driven loops. Need a custom endpoint? The agent whips up code, runs local tests, hits the MCP tool server for sandboxed integration, and auto-verifies outputs. Found a bug? The agent patches it and rolls through your eval suite again—no human in the loop unless the agent is truly stumped.</p>\n\n<h2>Pair Programming Rebooted</h2>\n<p>Instead of classic pair-programming, most devs I know are now <strong>loop engineering</strong>: you control the spec and evals, the agent handles the rest. It’s not hands-off (yet), but it’s hands-different. I’ve seen productivity double, especially for glue code, test scaffolding, and migration scripts. The real win? You get <strong>repeatable, spec-aligned outputs</strong>—way less drift from what you actually need.</p>\n\n<p>Why does this matter? Because it’s changed what it means to be a software engineer. Less grunt work, more focus on architecture, and a new imperative: mastering eval and spec design. If you’re not thinking in loops and agent orchestration, you’re shipping slower and buggier by default.</p>\n",
+  "sources": [
+   {
+    "title": "The Rise of Agentic Coding",
+    "url": "https://www.semafor.com/article/2026/10/29/the-rise-of-agentic-coding"
+   },
+   {
+    "title": "AI Agents Reshape Developer Workflows",
+    "url": "https://www.theregister.com/2026/11/01/ai_agents_developer_workflows/"
+   },
+   {
+    "title": "Anthropic's Claude Code: Real-World Use Cases",
+    "url": "https://www.infoq.com/news/2026/10/claude-code-use-cases/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-06-silicon-shortages-energy-math-ai-shipping",
+  "date": "2026-11-06",
+  "category": "Compute",
+  "title": "Silicon Squeeze, Energy Walls, and the Hard Math of Shipping AI in 2026",
+  "summary": "GPU/TPU bottlenecks, surging inference costs, and datacenter energy limits are forcing tough choices for AI builders. Here’s what the latest supply chain and silicon news actually means for engineers trying to deploy real products.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>In 2026, the AI gold rush is running headlong into a silicon crisis. Nvidia’s Blackwell launches are still backordered, TSMC’s advanced nodes are nearly sold out through 2027, and even Google’s custom TPUs have waitlists. Meanwhile, datacenter energy caps are hitting hard: major U.S. metros are pausing new builds, and European zones are rationing capacity week by week.</p>\n\n<h2>Inference Costs Keep Climbing</h2>\n<p>The practical upshot: inference costs are up 30–50% YoY—sometimes more for bleeding-edge models. If your product burns too much GPU at inference, you’re either hiking prices or eating losses. And it’s not just about money: energy restrictions mean you might not be able to deploy at all in your preferred region, so you’ll ship with extra latency or face rerouted traffic during peak hours.</p>\n\n<h2>Custom Silicon: A Double-Edged Sword</h2>\n<p>Everyone wants to design a custom AI chip, but only hyperscalers with $100M+ to spare can play. That means startups and most enterprises must optimize for what’s actually available (A100s, old TPUs, last-gen AMDs) or get creative with distributed inference and model quantization. If you’re not already squeezing every FLOP and joule, your project is at risk.</p>\n\n<p>Why does this matter? Because the compute bottleneck isn’t abstract anymore. Model size and accuracy are now tradeoffs with energy budgets, not just cloud bills. As engineers, we have to architect with <strong>hardware limits</strong> front and center: plan for model distillation, latency-aware routing, and fallback plans for supply chain shocks. The days of \"just scale more\" are over.</p>\n",
+  "sources": [
+   {
+    "title": "AI Chip Shortages: The New Normal",
+    "url": "https://www.ft.com/content/ai-chip-shortages-2026"
+   },
+   {
+    "title": "Datacenter Energy Crunch Threatens AI Growth",
+    "url": "https://www.datacenterdynamics.com/en/news/datacenter-energy-crunch-2026/"
+   },
+   {
+    "title": "Nvidia Blackwell Faces Major Backlogs",
+    "url": "https://www.tomshardware.com/news/nvidia-blackwell-backlog-2026"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-06-microsoft-open-agents-spec-eval-gap",
+  "date": "2026-11-06",
+  "category": "Microsoft",
+  "title": "Microsoft’s Copilot Gap: Why Open Agent APIs and Spec-Eval Loops Can’t Wait",
+  "summary": "With Anthropic and Google launching open agent APIs and deep spec-eval tooling, Microsoft needs to rethink Copilot and Azure workflows. Here’s what we should build—right now—if we want to stay relevant for working engineers.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>I keep seeing the same feedback: Copilot is powerful, but it’s still a black box. Meanwhile, Anthropic and Google are shipping open agent APIs, spec-driven workflows, and first-class eval tooling. Their agents integrate anywhere, run plan-act-verify loops, and accept external tool calls. Why aren’t we doing the same?</p>\n\n<h2>Open Agents, Not Walled Copilots</h2>\n<p>If Microsoft wants Copilot and Azure AI to matter to engineers in 2026, we need an <strong>open agent API</strong>—not just chats and inline code. Give me composable agents that I can orchestrate, audit, and connect to my own toolchains. Hard requirements: external memory, tool/plugin support, and full API access to the plan, act, and eval steps—not just \"suggest code\".</p>\n\n<h2>Spec-Eval Loops as First-Class Citizens</h2>\n<p>The next-gen dev workflow is spec-driven and eval-first. Copilot should own the entire plan→act→verify→fix loop, letting devs inject custom evals, see agent reasoning, and roll back or patch autonomously. The current \"take or leave\" suggestions miss the bigger picture: engineers want <strong>repeatable, testable, spec-aligned automation</strong>, not just faster typing.</p>\n\n<p>We’re at risk of falling behind if we don’t act. Let’s open up Copilot and Azure agents, make agentic workflows programmable, and double down on transparent, auditable eval loops. That’s what developers—and the future of software—demand.</p>\n",
+  "sources": [
+   {
+    "title": "Anthropic's Open Agent APIs Challenge the Status Quo",
+    "url": "https://www.protocol.com/anthropic-open-agent-apis"
+   },
+   {
+    "title": "Why Eval-First Workflows Matter for LLMs",
+    "url": "https://arxiv.org/abs/2609.04123"
+   }
+  ]
  }
 ]
