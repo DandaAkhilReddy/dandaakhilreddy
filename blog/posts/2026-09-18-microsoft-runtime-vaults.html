@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Runtime Vaults: Secure, Modular Sandboxing Hits Production | Reddy Pulse</title>
+<meta name="description" content="Microsoft just rolled out Runtime Vaults, a containerized sandbox system for all first-party cloud services. It’s a major shift for engineers who care about runtime security, zero-day isolation, and faster debugging cycles.">
+<meta property="og:title" content="Microsoft Runtime Vaults: Secure, Modular Sandboxing Hits Production">
+<meta property="og:description" content="Microsoft just rolled out Runtime Vaults, a containerized sandbox system for all first-party cloud services. It’s a major shift for engineers who care about runtime security, zero-day isolation, and faster debugging cycles.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Microsoft Runtime Vaults: Secure, Modular Sandboxing Hits Production</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 18th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="Microsoft Runtime Vaults: Secure, Modular Sandboxing Hits Production">
+  <p>Microsoft’s cloud security roadmap has finally landed a big one: Runtime Vaults are now in production across Azure and select Microsoft 365 services. For engineers, this isn’t just security theater — it’s a real, modular, hardware-assisted sandbox that isolates every major runtime (think .NET, Node.js, Python, Java) at the process and memory level.</p><h2>What is a Runtime Vault?</h2><p>Imagine every app instance (or even function call, in the case of Azure Functions) running inside a hardware-enforced, single-purpose enclave. No more shared OS-level resources, no more "oops, my neighbor leaked a pointer." Vaults handle secrets, ephemeral file systems, and network tokens strictly per runtime instance. Any attempt to cross boundaries is blocked at the hardware/OS interface, not just in user space.</p><h2>Why This Matters for Engineers</h2><p>This isn’t just security for the sake of compliance. Vaults mean zero-day exploits are automatically contained, lateral movement is basically impossible, and debugging is suddenly more deterministic because every Vault is its own world. No more spooky intermittent bugs caused by resource contention; no more waking up to a shared-memory CVE. For SREs, Vaults let you kill-and-restart workloads blazingly fast, restoring from a stateless snapshot in milliseconds. And because vaults use hardware-backed attestation, it’s trivial to prove trustworthiness to auditors—something that used to be a massive pain.</p><p>The upshot: If you ship cloud code or microservices, your threat model just got a lot tighter, and your on-call pager just got a little less scary.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-18-microsoft-runtime-vaults.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-18-microsoft-runtime-vaults.html&text=Microsoft%20Runtime%20Vaults%3A%20Secure%2C%20Modular%20Sandboxing%20Hits%20Production" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://techcommunity.microsoft.com/t5/azure/security" target="_blank" rel="noopener">Microsoft Tech Community — Runtime Vaults Announcement</a></li><li><a href="https://www.theregister.com/2026/09/15/microsoft_runtime_vaults/" target="_blank" rel="noopener">The Register — Microsoft Vaults Containers Explained</a></li><li><a href="https://azure.microsoft.com/en-us/blog/secure-runtime-vaults/" target="_blank" rel="noopener">Azure Blog — Secure Sandboxing at Scale</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

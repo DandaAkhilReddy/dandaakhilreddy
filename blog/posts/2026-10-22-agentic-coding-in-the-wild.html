@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Coding in the Wild: How Modern Devs Actually Use AI (and What Still Sucks) | Reddy Pulse</title>
+<meta name="description" content="From Claude Code&#x27;s agentic loops to spec-driven prompts and MCP tool servers, engineers are turning AI into real productivity. Let&#x27;s break down how the best teams are using AI today—and where we&#x27;re still hitting walls.">
+<meta property="og:title" content="Agentic Coding in the Wild: How Modern Devs Actually Use AI (and What Still Sucks)">
+<meta property="og:description" content="From Claude Code&#x27;s agentic loops to spec-driven prompts and MCP tool servers, engineers are turning AI into real productivity. Let&#x27;s break down how the best teams are using AI today—and where we&#x27;re still hitting walls.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">AI &amp; Developers</span>
+  <h1>Agentic Coding in the Wild: How Modern Devs Actually Use AI (and What Still Sucks)</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 22nd October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=1200&h=600&fit=crop" alt="Agentic Coding in the Wild: How Modern Devs Actually Use AI (and What Still Sucks)">
+  <p>Let’s ignore the hype and look at how developers are <strong>actually</strong> using AI this month. The big story? <strong>Agentic coding</strong> is now standard—not science fiction. Teams are running Claude or Claude Code (Anthropic’s new agentic workspace) as a background process, no longer just “prompting” a chatbot. You write a spec, the agent plans a change, executes an action (code, test, refactor), verifies with CI or custom evals, and loops again. This plan→act→verify→fix loop matters because it matches how we <em>really</em> work: code rarely ships in one shot, and AI finally gets that.</p><h2>Loop Engineering: The Real Workflow</h2><p>Building robust evals (see <a href="https://arxiv.org/abs/2401.03213">eval-driven dev</a>) is now part of our job. You ship an eval, wire it to your agent, and let the loop run until it passes or hits a real blocker. <strong>MCP tool servers</strong> are also picking up steam—think: your own local tool API that the agent can call (codegen, SQL, curl) without leaking secrets or hitting latency walls. It’s like giving your AI pair-programmer a proper dev environment.</p><h2>Spec-Driven Prompts: No More Vague Intents</h2><p>Prompting has matured, too. Instead of “Build me a login page,” you treat the prompt like a contract: inputs, outputs, edge cases, sometimes even test coverage. The AI respects those specs, and you avoid the endless “try again” cycles.</p><h2>What Still Sucks</h2><p>Debugging agentic loops is still rough. When you’re three tools deep and the agent’s logic diverges, you need better observability (logs, traces, replay). We’re starting to steal ideas from distributed tracing to debug these workflows.</p><p><strong>Why it matters:</strong> The gap between "AI as assistant" and "AI as co-dev" is closing. But only if we give it the scaffolding: evals, tool servers, spec-first prompts, and real feedback loops. The future isn’t prompt engineering—it’s <strong>loop engineering</strong>.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-22-agentic-coding-in-the-wild.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-22-agentic-coding-in-the-wild.html&text=Agentic%20Coding%20in%20the%20Wild%3A%20How%20Modern%20Devs%20Actually%20Use%20AI%20%28and%20What%20Still%20Sucks%29" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/news/claude-code-launch" target="_blank" rel="noopener">Anthropic launches Claude Code: agentic workspace for developers</a></li><li><a href="https://arxiv.org/abs/2401.03213" target="_blank" rel="noopener">Eval-driven Development for LLM-powered Tools</a></li><li><a href="https://a16z.com/agentic-ai-developer-tools/" target="_blank" rel="noopener">The Rise of Agentic AI Workflows</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

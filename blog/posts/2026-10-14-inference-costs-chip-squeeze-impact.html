@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inference Costs, Chip Squeeze, and What Compute Realities Mean for Shipping AI | Reddy Pulse</title>
+<meta name="description" content="GPU supply is weird, inference bills are wild, and custom silicon is everywhere. Here’s how the compute landscape is (still) the bottleneck—engineer’s edition.">
+<meta property="og:title" content="Inference Costs, Chip Squeeze, and What Compute Realities Mean for Shipping AI">
+<meta property="og:description" content="GPU supply is weird, inference bills are wild, and custom silicon is everywhere. Here’s how the compute landscape is (still) the bottleneck—engineer’s edition.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>Inference Costs, Chip Squeeze, and What Compute Realities Mean for Shipping AI</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 14th October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=600&fit=crop" alt="Inference Costs, Chip Squeeze, and What Compute Realities Mean for Shipping AI">
+  <p>I keep running into devs who think the chip crisis is "mostly solved" now that Nvidia, AMD, and Google all ship custom silicon by the boatload. News flash: inference <strong>costs</strong> and <strong>availability</strong> are still the #1 reason shipped AI features get delayed or re-architected.</p><h2>Datacenter Build-Outs—But Not For You</h2><p>Big cloud vendors (Azure, Google Cloud, AWS) have expanded their data centers, but so has demand: from AI agents in the enterprise to consumer chatbots, everyone wants low-latency, high-throughput inference. Burst capacity exists, but most dev teams I know still hit waitlists or get shuffled to less-performant “spot” silicon (especially during US/EU day hours). For most, the “bring your own custom chip” era is only real if you’re unicorn-scale.</p><h2>The Real Math: $/Inference and Energy</h2><p>This year, $/inference is almost as important as accuracy. If your SaaS feature costs 100x more to run with Llama-3-400B than with a quantized 7B model, guess which one ships? The energy bill matters, too—especially as energy costs jump in the big US and EU data center regions. Engineers are now tasked with model selection, quantization, and clever caching as first-class infra problems, not just “let the cloud figure it out.”</p><h2>Why It Matters</h2><p>If you design for models that are <strong>too big</strong> or ignore the compute bottleneck, you’ll burn months and dollars. The engineers shipping the most AI features in 2026 are the ones who treat compute like a hard product constraint—testing on realistic budgets, using model shims, and having fallback paths when GPU allocation dries up. The hard truth: a clever agentic workflow isn’t worth much if you can’t afford to run it at scale.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-14-inference-costs-chip-squeeze-impact.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-14-inference-costs-chip-squeeze-impact.html&text=Inference%20Costs%2C%20Chip%20Squeeze%2C%20and%20What%20Compute%20Realities%20Mean%20for%20Shipping%20AI" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.reuters.com/technology/ai-chip-shortage-2026" target="_blank" rel="noopener">The AI GPU Crunch Persists</a></li><li><a href="https://www.ft.com/content/ai-datacenter-energy" target="_blank" rel="noopener">Data Center Energy Costs Soar Amid AI Boom</a></li><li><a href="https://www.datacenterdynamics.com/en/news/google-tpu-2026-refresh/" target="_blank" rel="noopener">Google’s Custom TPUs: Inside the 2026 Hardware Refresh</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

@@ -562,11 +562,13 @@
                 <li><a href="browse.html#skills">Skills</a></li>
                 <li><a href="browse.html#daily-shipping">Projects</a></li>
                 <li><a href="browse.html#certifications">Certifications</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li><a href="about.html" class="active">About Me</a></li>
                 <li><a href="browse.html#contact">Hire Me</a></li>
             </ul>
         </div>
         <div class="nav-right">
+            <div class="hamburger" id="rf-hamburger"><span></span><span></span><span></span></div>
             <a href="browse.html" class="profile-icon">
                 <img src="https://i.imgur.com/YQK3Qby.png" alt="Profile" class="nav-profile-img">
             </a>
@@ -596,11 +598,15 @@
             <div class="bio-content">
                 <h2>THE JOURNEY</h2>
                 <p>
-                    I'm a <strong>Software Engineer II at Microsoft</strong> with <span class="highlight">5 years</span> of experience building
-                    distributed backend services and high-impact applications. Previously at <strong>Amazon</strong> and <strong>HHA Medicine</strong>.
-                    With a Master's degree from <strong>Texas A&M University</strong>, I specialize in
-                    <span class="highlight">Distributed Systems</span>, <span class="highlight">C#/.NET</span>, and
-                    <span class="highlight">Cloud Architecture on Azure</span>.
+                    I'm a <strong>Software Engineer II at Microsoft</strong> with <span class="highlight">5 years</span> of experience
+                    architecting and scaling <span class="highlight">distributed systems</span>. Right now I build
+                    <span class="highlight">distributed storage infrastructure</span> on Azure that supports global service routing and
+                    database topology — DNS-driven topology discovery with caching and failover, cross-region Azure SQL migrations with
+                    production safeguards, and automated validation, rollback and deployment workflows. Previously I scaled high-throughput
+                    systems at <strong>Amazon</strong> (100K+ requests/sec) and <strong>HHA Medicine</strong>. Master's in Computer Science from
+                    <strong>Texas A&M University</strong>, plus a Professional Certificate in <span class="highlight">Natural Language Processing
+                    with Deep Learning</span> from <strong>Stanford Continuing Studies</strong>, and a <span class="highlight">Google Summer of Code 2026</span>
+                    contributor to InVesalius, an open-source 3D medical imaging platform.
                 </p>
                 <p>
                     But engineering isn't my only passion. I'm also a <strong>professional cricket player</strong>,
@@ -620,24 +626,26 @@
     <section class="passions-section">
         <h2>WHAT DRIVES ME</h2>
         <div class="passions-grid">
-            <!-- LLM Fine-tuning Card -->
+            <!-- World Models & Laya Card -->
             <div class="passion-card">
                 <span class="card-bg-icon">&#129504;</span>
                 <div class="passion-card-header">
                     <div class="passion-icon llm">&#129504;</div>
-                    <h3>LLM Fine-tuning</h3>
+                    <h3>JEPA, World Models &amp; Laya</h3>
                 </div>
                 <p>
-                    I spend my evenings pushing the boundaries of Large Language Models. From
-                    fine-tuning models for specific domains to building RAG systems that actually work,
-                    I'm obsessed with making AI more useful and accessible. My daily shipping challenge
-                    keeps me constantly experimenting.
+                    My research obsession is <strong>world models</strong> — Yann LeCun's JEPA idea that intelligence comes
+                    from predicting representations, not pixels. I train and fine-tune models on
+                    <a href="https://huggingface.co/akhilreddydanda" target="_blank" style="color:#e50914;">Hugging Face</a>,
+                    mostly on healthcare data gathered from the open web, and I'm building <strong>Laya</strong>, my own
+                    healthcare model. Day to day that means vLLM for serving, vision-language models, and a lot of evals.
                 </p>
                 <div class="passion-tags">
+                    <span class="passion-tag purple">JEPA / World Models</span>
+                    <span class="passion-tag purple">Hugging Face</span>
                     <span class="passion-tag purple">Fine-tuning</span>
-                    <span class="passion-tag purple">RAG Systems</span>
-                    <span class="passion-tag purple">Prompt Engineering</span>
-                    <span class="passion-tag purple">Model Optimization</span>
+                    <span class="passion-tag purple">vLLM</span>
+                    <span class="passion-tag purple">Vision Models</span>
                 </div>
             </div>
 
@@ -660,6 +668,28 @@
                     <span class="passion-tag blue">Distributed Systems</span>
                     <span class="passion-tag blue">ML Advancements</span>
                 </div>
+            </div>
+
+            <!-- Reachy Mini & Brook Card -->
+            <div class="passion-card">
+                <span class="card-bg-icon">&#129302;</span>
+                <div class="passion-card-header">
+                    <div class="passion-icon research">&#129302;</div>
+                    <h3>Reachy Mini &amp; Brook 🐕</h3>
+                </div>
+                <p>
+                    My main hobby: a <strong>Reachy Mini</strong> robot that I'm teaching to see and hear. I train its
+                    vision and audio models myself on videos of my dog <strong>Brook</strong> — so Reachy can detect her,
+                    predict her next move, and read her reactions to new rooms and new food. Robotics, computer vision,
+                    and pure fun in one desk-sized package.
+                </p>
+                <div class="passion-tags">
+                    <span class="passion-tag blue">Reachy Mini</span>
+                    <span class="passion-tag blue">Vision Training</span>
+                    <span class="passion-tag blue">Audio</span>
+                    <span class="passion-tag blue">Video Detection</span>
+                </div>
+                <a href="projects/day-16-brook-reachy.html" class="cricket-stats-link">Read about the Brook project</a>
             </div>
 
             <!-- Cricket Card -->
@@ -795,6 +825,24 @@
             if (e.key === 'ArrowLeft') navigateLightbox(-1);
             if (e.key === 'ArrowRight') navigateLightbox(1);
         });
+    </script>
+
+    <script>
+      (function () {
+        var hb = document.getElementById("rf-hamburger");
+        var menu = document.querySelector(".nav-menu");
+        if (!hb || !menu) return;
+        hb.addEventListener("click", function () {
+          hb.classList.toggle("active");
+          menu.classList.toggle("active");
+        });
+        menu.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            hb.classList.remove("active");
+            menu.classList.remove("active");
+          });
+        });
+      })();
     </script>
 </body>
 </html>

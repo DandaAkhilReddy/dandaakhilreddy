@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Coding Is Real: Spec-Driven Loops, Eval Workflows, and Claude Code in the Trenches | Reddy Pulse</title>
+<meta name="description" content="Developers are finally going beyond prompt-chaining: agentic coding, spec-driven prompting, and eval-driven loops are the new normal. Here’s a boots-on-the-ground look at what’s actually working.">
+<meta property="og:title" content="Agentic Coding Is Real: Spec-Driven Loops, Eval Workflows, and Claude Code in the Trenches">
+<meta property="og:description" content="Developers are finally going beyond prompt-chaining: agentic coding, spec-driven prompting, and eval-driven loops are the new normal. Here’s a boots-on-the-ground look at what’s actually working.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">AI &amp; Developers</span>
+  <h1>Agentic Coding Is Real: Spec-Driven Loops, Eval Workflows, and Claude Code in the Trenches</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 2nd November, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="Agentic Coding Is Real: Spec-Driven Loops, Eval Workflows, and Claude Code in the Trenches">
+  <p><strong>Agentic loops are no longer just hype</strong>—they’re turning into the backbone of how teams build, debug, and ship with AI. The biggest news this month: Anthropic’s Claude Code now fully supports multi-step agentic chains with their open MCP (Modular Command Protocol) tool servers. What does this mean for engineers? Instead of hacking together fragile prompts, you’re defining explicit <em>specifications</em> that the AI follows, operating in plan→act→verify→fix loops.</p><p>Let’s get concrete. You write a spec: <em>“Refactor this legacy API for idempotency and add input validation.”</em> Claude Code parses, plans, submits tool calls (e.g., running test suites, querying code search). It <strong>evaluates its own output</strong> against the spec, and—here’s the kicker—<em>self-fixes</em> until all checks pass. This is eval-driven development, and it means you spend less time on brittle prompt fiddling and more time on real review and higher-level logic.</p><h2>Why This Matters for Engineers</h2><p>Spec-driven prompting finally brings testability and predictability to AI codegen. Instead of output roulette (“Will this prompt break today?”), you get verifiable outputs. MCP tool servers let you securely expose internal APIs and CI tools—now the AI is part of your workflow, not just a chat box. I’m seeing teams pair-programming with Claude Code: the AI acts, verifies against tests, then hands off for human review. The mental shift? You’re not just talking to a model—you’re orchestrating an agentic coder that <em>actually runs code and iterates</em>.</p><p>Engineers should care because this is how you scale: safer, repeatable, spec-checked codegen in every PR. The next step? Bring your own custom evals and toolchains. If you’re still just using “prompt + LLM = code,” you’re behind. The future is eval-driven, loop-engineered, and spec-first.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-02-agentic-coding-eval-spec.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-02-agentic-coding-eval-spec.html&text=Agentic%20Coding%20Is%20Real%3A%20Spec-Driven%20Loops%2C%20Eval%20Workflows%2C%20and%20Claude%20Code%20in%20the%20Trenches" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/blog/claude-code-release" target="_blank" rel="noopener">Anthropic launches Claude Code with agentic capabilities</a></li><li><a href="https://www.latent.space/p/eval-driven-development" target="_blank" rel="noopener">Eval-driven development: A new paradigm for AI workflows</a></li><li><a href="https://martinfowler.com/articles/spec-prompting.html" target="_blank" rel="noopener">Spec-first prompting is eating brittle prompt engineering</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

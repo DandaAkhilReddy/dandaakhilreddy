@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #033 — ClaimCheck: AI Agents to End Airport Lost Luggage Hell | Reddy Pulse</title>
+<meta name="description" content="Air travel lost luggage mayhem costs travelers and airlines billions and wrecks trust. ClaimCheck is an AI luggage agent that reunites travelers with missing bags in hours, not weeks, automating claims, tracking, and resolution.">
+<meta property="og:title" content="DANDA #033 — ClaimCheck: AI Agents to End Airport Lost Luggage Hell">
+<meta property="og:description" content="Air travel lost luggage mayhem costs travelers and airlines billions and wrecks trust. ClaimCheck is an AI luggage agent that reunites travelers with missing bags in hours, not weeks, automating claims, tracking, and resolution.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #033 — ClaimCheck: AI Agents to End Airport Lost Luggage Hell</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 23rd August, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop" alt="DANDA #033 — ClaimCheck: AI Agents to End Airport Lost Luggage Hell">
+  <p>Anyone who’s flown recently knows the dread: you reach baggage claim, but your suitcase never arrives. That pit-in-your-stomach feeling is now a global epidemic. Lost, delayed, and mishandled luggage cost travelers and airlines time, money, and trust—yet the experience remains stuck in the last century. Tracking down a lost bag is a Kafkaesque dance of forms, call center waits, and crossed fingers, while precious items circle the globe unclaimed. Enough is enough.</p>
+
+<h2>The problem</h2>
+<p>In 2023, nearly 27 million pieces of baggage were mishandled globally—about 7.6 bags per 1000 passengers. For U.S. carriers alone, more than 2 million bags were mishandled, and the true costs extend far beyond the lost items: airlines paid out over $1.2 billion in claims and compensation. For travelers, the average wait to resolve a lost luggage case stretches from 3 days to over 2 weeks. For business travelers, families, and tourists, the disruption is immense: missed meetings, ruined weddings, lost medications. Despite new tracking tags, the process is still fragmented—airlines, airports, and ground handlers rarely share data seamlessly. Most travelers must fill out clunky online forms, call support, and hope for the best. About 6% of lost bags are never recovered, and nearly 75% of passengers rate airline lost luggage service as 'poor' or 'very poor'.</p>
+
+<h2>The idea: ClaimCheck</h2>
+<p>ClaimCheck is the first AI agent built specifically to end lost luggage chaos for travelers and airlines. Instead of manual forms and endless 1-800 calls, ClaimCheck acts as a personal baggage detective: the traveler snaps a photo of their claim tag and bag, answers a few quick questions by chat, and the AI instantly pulls data from airline APIs, airport baggage systems, and ground handlers. It builds a live knowledge graph of the bag’s journey, automatically files and updates claims, messages relevant handlers, and proactively pushes status updates to the traveler. If resolution is delayed, ClaimCheck escalates, negotiates compensation, and arranges delivery—without the traveler lifting a finger. For airlines, it means lower costs, higher NPS, and fewer repeat calls. For passengers? Peace of mind, restored.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius:18px;'>
+  <defs>
+    <marker id='arrow' markerWidth='10' markerHeight='10' refX='9' refY='5' orient='auto' markerUnits='strokeWidth'>
+      <path d='M0,0 L10,5 L0,10 Z' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <!-- Inputs -->
+  <rect x='40' y='95' width='120' height='90' rx='15' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='100' y='120' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Inputs</text>
+  <text x='100' y='145' fill='#fff' font-size='14' text-anchor='middle' font-family='sans-serif'>Photo Tag, Bag Pic, Chat, API</text>
+
+  <!-- Ingestion Layer -->
+  <rect x='200' y='80' width='140' height='120' rx='15' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='270' y='110' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Ingestion</text>
+  <text x='270' y='135' fill='#fff' font-size='14' text-anchor='middle' font-family='sans-serif'>OCR, NLP, Data Sync</text>
+
+  <!-- Memory/Graph -->
+  <rect x='380' y='60' width='150' height='160' rx='16' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='455' y='100' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Memory /</text>
+  <text x='455' y='125' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Live Bag Graph</text>
+  <text x='455' y='150' fill='#fff' font-size='14' text-anchor='middle' font-family='sans-serif'>Bag Route, Claims, API Sync</text>
+
+  <!-- Agent Orchestrator -->
+  <rect x='570' y='80' width='140' height='120' rx='15' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='640' y='110' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Agent</text>
+  <text x='640' y='135' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Orchestrator</text>
+  <text x='640' y='160' fill='#fff' font-size='14' text-anchor='middle' font-family='sans-serif'>Task Routing, Escalation</text>
+
+  <!-- Human Gate -->
+  <rect x='380' y='280' width='130' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='445' y='305' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Human Gate</text>
+  <text x='445' y='330' fill='#fff' font-size='14' text-anchor='middle' font-family='sans-serif'>Airline Staff, Traveler</text>
+
+  <!-- Action Layer -->
+  <rect x='570' y='270' width='140' height='100' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='640' y='300' fill='#f5c518' font-size='18' text-anchor='middle' font-family='sans-serif'>Action Layer</text>
+  <text x='640' y='330' fill='#fff' font-size='14' text-anchor='middle' font-family='sans-serif'>Push Updates, Claims, Delivery API</text>
+
+  <!-- Arrows -->
+  <line x1='160' y1='140' x2='200' y2='140' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <line x1='340' y1='140' x2='380' y2='140' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <line x1='530' y1='140' x2='570' y2='140' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <line x1='455' y1='220' x2='445' y2='280' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <line x1='640' y1='200' x2='640' y2='270' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <line x1='510' y1='320' x2='570' y2='320' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+</svg>
+<p>Travelers submit their lost bag data via photo, chat, or API. The ingestion layer parses tags (with OCR), matches bag descriptions, and syncs with airline/airport APIs. The live graph tracks the bag’s journey, status, and all related claims. The Agent Orchestrator assigns tasks—tracking, pushing updates, escalating to human staff when blocked. The Human Gate allows airline reps and travelers to verify or intervene. Finally, the Action Layer triggers status updates, compensation, and delivery requests, closing the loop—all in hours, not weeks.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><strong>Wedge:</strong> Start with U.S. domestic airline mishandled baggage claims—integrating with 2-3 major carriers’ APIs for instant claim status and messaging. <strong>Stack:</strong> Expand to international airports, integrate with ground handlers, add multi-lingual support and digital delivery coordination. <strong>Pricing:</strong> Free for travelers (upsell premium white-glove recovery/$25 per incident), SaaS for airlines/airports ($1.50 per resolved case, plus white-labeled agent integration).</p>
+
+<h2>Why now</h2>
+<p>Passenger numbers are at record highs, and airlines are under pressure to improve baggage handling and customer satisfaction. With new airline and airport APIs, advances in AI orchestration, and real-time data sharing, there’s finally an opportunity to automate and humanize luggage recovery. ClaimCheck’s agentic automation will end lost luggage hell—restoring trust, saving money, and letting travelers get on with their lives.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-23-danda-033-ClaimCheck-ai-baggage-agent.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-23-danda-033-ClaimCheck-ai-baggage-agent.html&text=DANDA%20%23033%20%E2%80%94%20ClaimCheck%3A%20AI%20Agents%20to%20End%20Airport%20Lost%20Luggage%20Hell" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.sita.aero/resources/type/surveys-reports/baggage-it-insights-2023/" target="_blank" rel="noopener">2023 SITA Baggage IT Insights Report</a></li><li><a href="https://www.transportation.gov/individuals/aviation-consumer-protection/air-travel-consumer-reports" target="_blank" rel="noopener">U.S. Department of Transportation: Air Travel Consumer Report (Baggage Complaints &amp; Mishandled Bags)</a></li><li><a href="https://www.statista.com/statistics/702270/united-states-mishandled-baggage-rate/" target="_blank" rel="noopener">Statista: Baggage Mishandling Rate of U.S. Airlines</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

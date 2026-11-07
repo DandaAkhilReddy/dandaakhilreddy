@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #097 — PlanPay: AI Agents to End Family Funeral Payment Chaos | Reddy Pulse</title>
+<meta name="description" content="PlanPay is an AI agent platform that eliminates the paralyzing delays, paperwork headaches, and hidden cost traps that families face paying for funerals—unlocking faster access to burial funds, automated benefit discovery, and stress-free payment orchestration.">
+<meta property="og:title" content="DANDA #097 — PlanPay: AI Agents to End Family Funeral Payment Chaos">
+<meta property="og:description" content="PlanPay is an AI agent platform that eliminates the paralyzing delays, paperwork headaches, and hidden cost traps that families face paying for funerals—unlocking faster access to burial funds, automated benefit discovery, and stress-free payment orchestration.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #097 — PlanPay: AI Agents to End Family Funeral Payment Chaos</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 26th October, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #097 — PlanPay: AI Agents to End Family Funeral Payment Chaos">
+  <p>Saying goodbye shouldn’t mean financial chaos. Yet for millions of families, the moment of grief is made worse by a maze of paperwork, delayed insurance payouts, and hidden funeral costs—leaving loved ones scrambling for funds, risking debt, and sometimes delaying burials for weeks. I’m Akhil Reddy Danda, and today’s Project DANDA is PlanPay: the world’s first AI automation layer to make funeral payment and benefit access as seamless as it should be.</p>
+
+<h2>The problem</h2>
+<p>Every year in the US, about 2.8 million people die. Families spend over $20 billion on funerals annually, with the median cost now $8,300. Shockingly, nearly 40% of Americans can’t cover a $400 emergency, so the sudden $7-10k funeral bill triggers a scramble: insurance claims, public benefit forms, bank paperwork, and vendor negotiations. Life insurance payments often take weeks (median payout: 30 days, but many wait 60+), while Social Security and veteran’s death benefits involve confusing forms and complex eligibility checks. Meanwhile, funeral homes require upfront deposits or payment, forcing families into high-interest loans or GoFundMe campaigns—over 125,000 funeral-related fundraisers appear annually. The result: delayed burials, emotional trauma, and billions in interest and missed benefits.</p>
+
+<h2>The idea: PlanPay</h2>
+<p>PlanPay is an AI-powered agentic automation platform that instantly orchestrates funeral payments and benefit access for families. The idea: with a single upload (death certificate, basic identity docs), PlanPay’s agent acts as a digital caseworker—auto-filing life insurance claims, unlocking government benefits, negotiating with funeral homes, and orchestrating payments from all available sources to providers, so families never touch a form or wait in the dark. The agent proactively flags missing documents, tracks claim statuses, discovers overlooked benefits (veteran, union, state), and ensures payments go out in time for burial—no more delays, rejections, or predatory loans.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;max-width:100%;border-radius:16px'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='5' markerHeight='5' orient='auto-start-reverse'>
+      <path d='M 0 0 L 10 5 L 0 10 z' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <!-- Input Layer -->
+  <rect x='30' y='60' width='130' height='70' rx='16' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='95' y='100' font-size='18' fill='#fff' text-anchor='middle'>Inputs</text>
+  <text x='95' y='122' font-size='13' fill='#f5c518' text-anchor='middle'>Death Cert, ID, Policy Docs</text>
+  <!-- Ingestion Layer -->
+  <rect x='180' y='60' width='140' height='70' rx='16' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='250' y='100' font-size='18' fill='#fff' text-anchor='middle'>Ingestion</text>
+  <text x='250' y='122' font-size='13' fill='#f5c518' text-anchor='middle'>OCR, Parsing, Validation</text>
+  <!-- Memory/Graph Layer -->
+  <rect x='340' y='50' width='180' height='90' rx='16' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='430' y='90' font-size='18' fill='#fff' text-anchor='middle'>Memory / Graph</text>
+  <text x='430' y='112' font-size='13' fill='#f5c518' text-anchor='middle'>Family Tree, Policies/Benefits, Vendor Graph</text>
+  <!-- Agent Orchestrator -->
+  <rect x='540' y='60' width='160' height='70' rx='16' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='620' y='100' font-size='18' fill='#fff' text-anchor='middle'>Agent Orchestrator</text>
+  <text x='620' y='122' font-size='13' fill='#f5c518' text-anchor='middle'>Claim Filing, Benefit Search, Status Sync</text>
+  <!-- Human Gate -->
+  <rect x='340' y='170' width='180' height='70' rx='16' fill='#333' stroke='#f5c518' stroke-width='2'/>
+  <text x='430' y='210' font-size='18' fill='#fff' text-anchor='middle'>Human Gate</text>
+  <text x='430' y='232' font-size='13' fill='#f5c518' text-anchor='middle'>Confirm/Override, Uploads, Chat</text>
+  <!-- Action Layer -->
+  <rect x='340' y='310' width='180' height='70' rx='16' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='430' y='350' font-size='18' fill='#fff' text-anchor='middle'>Action Layer</text>
+  <text x='430' y='372' font-size='13' fill='#f5c518' text-anchor='middle'>E-Filing, Payment Release, Vendor Notify</text>
+  <!-- Arrows -->
+  <line x1='160' y1='95' x2='180' y2='95' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='320' y1='95' x2='340' y2='95' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='520' y1='95' x2='540' y2='95' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='430' y1='140' x2='430' y2='170' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='430' y1='240' x2='430' y2='310' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <!-- Feedback arrows -->
+  <line x1='520' y1='130' x2='430' y2='205' stroke='#f5c518' stroke-width='2' marker-end='url(#arrow)' opacity='0.5'/>
+  <line x1='430' y1='380' x2='250' y2='130' stroke='#f5c518' stroke-width='2' marker-end='url(#arrow)' opacity='0.3'/>
+</svg>
+<p>Here’s how it flows: Families submit core documents (death certificate, ID, insurance, and sometimes a funeral bill) via a secure app. The Ingestion Layer performs OCR, validates, and parses all fields. The Memory/Graph layer builds a real-time map of policies, potential benefits, and service vendors. The Agent Orchestrator fires—auto-filing life insurance claims, cross-checking government death benefit databases, and negotiating with funeral homes for fair, direct payments. The Human Gate lets users confirm details, upload missing docs, or chat with the AI. All actions (claim submissions, payment releases, vendor notifications) are handled by the Action Layer, ensuring no manual paperwork or missed deadlines. Feedback flows keep users updated and let the agent adjust as claims progress.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><strong>Wedge:</strong> Launch with life insurance claim automation for families using leading insurers, integrating e-filing and basic benefit eligibility checks. <strong>Stack:</strong> Add Social Security, VA, union, and state benefits, negotiation with funeral homes (direct payment APIs), and a vendor discovery tool. <strong>Pricing:</strong> 3% of recovered funds (no-win, no-pay), or $149 flat per case for direct payment orchestration. Funeral home SaaS tier ($250/month) for integrated payments and reduced admin. <strong>Day 1 integrations:</strong> Top 10 US insurers, Social Security e-services, and Plaid for bank payouts.</p>
+
+<h2>Why now</h2>
+<p>The funeral crisis is getting worse: costs hit records, insurance/federal payouts lag, and public awareness is surging (GoFundMe’s funeral category has doubled in 5 years). API access for insurers and payments is finally mainstream, and AI document automation can now decode even complex government forms. Families deserve dignity—PlanPay delivers it, slashing both emotional and financial pain in life’s hardest moment.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-26-danda-097-PlanPay.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-26-danda-097-PlanPay.html&text=DANDA%20%23097%20%E2%80%94%20PlanPay%3A%20AI%20Agents%20to%20End%20Family%20Funeral%20Payment%20Chaos" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.nfda.org/news/statistics" target="_blank" rel="noopener">National Funeral Directors Association: 2023 General Price List Study</a></li><li><a href="https://www.federalreserve.gov/publications/2023-economic-well-being-of-us-households.htm" target="_blank" rel="noopener">Federal Reserve: Economic Well-Being of U.S. Households</a></li><li><a href="https://www.gofundme.com/c/industry-insights/annual-giving-report" target="_blank" rel="noopener">GoFundMe Annual Giving Report</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
