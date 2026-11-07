@@ -9544,5 +9544,74 @@
     "url": "https://www.edweek.org/leadership/the-student-absenteeism-crisis-deepens/2024/01"
    }
   ]
+ },
+ {
+  "slug": "2026-11-07-agentic-coding-loops-mcp-eval",
+  "date": "2026-11-07",
+  "category": "AI & Developers",
+  "title": "Real-World Agentic Coding: Spec Loops, MCP Tooling, and Eval-First Engineering",
+  "summary": "AI isn’t just generating code—it’s running multi-step development loops, verifying specs, and orchestrating tool servers. Here’s how developers are putting the latest agentic workflows into practice.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>Spec-driven agentic coding isn’t a demo anymore—it's how productive dev shops work with models like Claude Code and Gemini Ultra in 2026. The big shift: getting AI to not just output code, but to reason iteratively, acting as both architect and test engineer in a tight feedback loop.</p>\n\n<h2>Loop Engineering: From Plan to Fix</h2>\n<p>Day-to-day, engineers are handing AI agents a spec, then letting them work through a plan→act→verify→fix loop. What matters: the AI doesn’t just spit out code, it runs tests, debugs, and iterates until acceptance tests pass. I’m seeing teams rig up multi-agent control planes that orchestrate multiple Claude Code workers—one agent writes, another reviews, a third runs evals, all coordinating via a local MCP (Multi-Component Protocol) tool server. This is far beyond vanilla pair-programming bots; it’s more like a mini autonomous software factory.</p>\n\n<h2>MCP Tool Servers and Eval-Driven Dev</h2>\n<p>With the ecosystem of open-source MCP servers, agents can spin up headless dev environments, hit APIs, and orchestrate Docker containers or cloud test runners. This matters because it turns prompting into real hands-on engineering—you’re not just writing a request, you’re building a workflow that eats specs and spits out deployable code. Eval-driven loops (using automated acceptance criteria, not just LLM self-ratings) are now the backbone of quality assurance for AI-generated features. That’s the difference between hobby hacks and shipping-grade results.</p>\n\n<h2>Why It Matters</h2>\n<p>Developers who treat AI as an autonomous engineer—rather than a code autocomplete—are seeing 5–10x throughput on well-scoped backend and integration tasks. The catch? You need airtight specs and robust eval suites. But if you invest in those, your coding bottleneck shifts from writing code to writing (and evolving) specs and eval logic. If you’re still using AI as a fancy Clippy, you’re missing the real productivity unlock.</p>",
+  "sources": [
+   {
+    "title": "Anthropic: Claude Code Beta Launch",
+    "url": "https://www.anthropic.com/news/claude-code-beta"
+   },
+   {
+    "title": "AI Engineer Weekly: Agent Loops and Dev Workflows",
+    "url": "https://ai-engineer.com/newsletter/agentic-loops"
+   },
+   {
+    "title": "GitHub Next: AI Evals in Production",
+    "url": "https://githubnext.com/projects/ai-evals/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-07-inference-costs-custom-silicon-supply-chain",
+  "date": "2026-11-07",
+  "category": "Compute",
+  "title": "Inference Costs, Custom Silicon, and the Compute Supply Chain Crunch",
+  "summary": "GPU shelves are empty, inference prices are swinging, and custom silicon is both a blessing and a curse. If you’re shipping AI in 2026, here’s what the real compute story means for you.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>We’re in a weird phase of the AI compute arms race. Demand for LLM inference is utterly relentless—yet, actual access to top-end GPUs (like NVIDIA H200s or AMD’s Instinct MI400 series) is spotty unless you’re a hyperscaler or deep-pocketed unicorn. Everyone else? You’re bidding against hedge funds and ad giants for time slices.</p>\n\n<h2>Custom Silicon: Not a Silver Bullet</h2>\n<p>Yes, Google and Microsoft are pushing custom chips (like Axion and Azure Maia) into their clouds, promising lower energy and better cost-per-token. But for most engineers, those are black boxes with opaque pricing. Worse: if your workloads aren’t tuned to their quirks, you might see worse price/perf than last-gen A100s. Chip supply is still chained up by foundry capacity and geopolitics—so don’t expect the silicon squeeze to end soon.</p>\n\n<h2>Inference Cost Volatility</h2>\n<p>With spot market pricing and energy surcharges now standard in major clouds, inference cost is no longer predictable. You have to architect for burstiness—think autoscaling across heterogeneous hardware, AI model quantization, and caching partial outputs. I know teams who split traffic by model size and use evals to route commodity queries to smaller, cheaper LLMs, saving the big silicon for only mission-critical paths. It’s ugly, but it works.</p>\n\n<h2>What Engineers Need to Do</h2>\n<p>If you’re building AI products, the new baseline is: design for hardware volatility, expect cost spikes, and build a real-time feedback loop on your infra spend. The devs who thrive are treating compute like a precious, dynamic resource—instrumenting everything, optimizing inference graphs, and treating every extra millisecond as a moral tax. The days of cloud GPU abundance are gone. Get used to it—or get left behind.</p>",
+  "sources": [
+   {
+    "title": "The Information: GPU Shortages Are Back",
+    "url": "https://www.theinformation.com/articles/gpu-shortages-2026"
+   },
+   {
+    "title": "SemiAnalysis: Custom Silicon in Major Clouds",
+    "url": "https://www.semianalysis.com/p/custom-ai-chips-cloud"
+   },
+   {
+    "title": "Data Center Frontier: Inference Cost Swings",
+    "url": "https://datacenterfrontier.com/inference-cost-2026/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-07-microsoft-copilot-open-agents-spec-eval",
+  "date": "2026-11-07",
+  "category": "Microsoft",
+  "title": "What Microsoft Should Learn: Open Agent APIs, Spec-Eval Loops, and Developer Trust",
+  "summary": "Microsoft is pouring billions into Copilot, Foundry, and Azure AI. But to stay ahead, it needs to copy the best of Anthropic and OpenAI: open agent APIs, spec-eval driven workflows, and real developer control.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>Let’s cut through the PR: Microsoft’s Copilot and Azure AI are powerful but still frustratingly walled-off compared to what Anthropic and OpenAI are shipping. If Satya wants to keep devs on their side, Microsoft needs to build in the open—especially around agentic workflows and spec-driven loops.</p>\n\n<h2>Open Agent APIs—Not Just Plugins</h2>\n<p>Developers want to orchestrate agents over their own codebases, infra, and toolchains—not just use Copilot as a smarter autocomplete. OpenAI and Anthropic are giving devs real agent APIs, letting them wire up tools, custom evals, and even their own model orchestration layers. Microsoft should build an open, documented Copilot Agent API (not a black-box plugin model) so teams can create bespoke AI workflows. Give us root, not just SaaS.</p>\n\n<h2>Spec-Driven, Eval-First Workflows</h2>\n<p>Claude Code and Gemini Ultra are already running plan-act-verify loops guided by acceptance specs and automated evals. Copilot, in contrast, still relies too much on prompt magic and after-the-fact code review. Microsoft should steal eval-first pipelines: let devs supply not just prompts, but formal specs and eval scripts, and have Copilot orchestrate coding, testing, and fixing until acceptance passes. This closes the trust gap—because we see exactly how the AI is reasoning and shipping code.</p>\n\n<h2>Trust and Transparency for Engineers</h2>\n<p>Engineers trust systems they can inspect, tweak, and extend. Right now, Copilot’s inner workings are too hidden, and its extensibility story is thin. Microsoft must open up: expose full logs, make eval hooks first-class, and let devs build their own agent clusters that run inside their perimeter. If Redmond can match the openness and rigor of Anthropic and OpenAI, they’ll win the hearts—<em>and</em> codebases—of the next 10 million developers.</p>",
+  "sources": [
+   {
+    "title": "Anthropic: Claude Code Beta Technical Docs",
+    "url": "https://docs.anthropic.com/claude/docs/code-beta"
+   },
+   {
+    "title": "OpenAI Platform: Custom Agents Overview",
+    "url": "https://platform.openai.com/agents"
+   },
+   {
+    "title": "Microsoft DevBlogs: Copilot Roadmap",
+    "url": "https://devblogs.microsoft.com/copilot/roadmap-2026"
+   }
+  ]
  }
 ]
