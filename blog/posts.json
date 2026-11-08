@@ -9636,5 +9636,74 @@
     "url": "https://uptimeinstitute.com/uptime-resources/research-reports"
    }
   ]
+ },
+ {
+  "slug": "2026-11-08-agentic-loops-claude-code-spec-eval",
+  "date": "2026-11-08",
+  "category": "AI & Developers",
+  "title": "Agentic Loops, Claude Code, and Eval-First: How AI Is Actually Changing Developer Workflows",
+  "summary": "Agentic coding with Claude Code, spec-driven prompting, and eval-driven loops aren’t just buzzwords—they’re rapidly reshaping how engineers deliver software, right now.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>The past month has seen a surge in real-world adoption of agentic coding patterns, especially with the release of Claude Code 2.5 and its open eval APIs. Forget the abstract hype: developers are now actually running plan→act→verify→fix loops using AI—sometimes chaining dozens of micro-iterations before code ever hits a main branch.</p><h2>Why Agentic Loops Matter</h2><p>Here’s why this shift matters. Instead of prompt-and-pray, you define the spec (in YAML, Markdown, or even as unit tests). Your agent (Claude, Gemini, GPT-5) plans work, executes code, verifies outputs with inline evals (like pytest for LLMs), and self-corrects. Tool servers like MCP (Modular Command Palette) let agents call your real build, test, and lint tools—so the AI isn’t hallucinating bash commands, it’s driving your actual infrastructure.</p><h2>Spec-Driven Prompting and Eval-First Dev</h2><p>Spec-driven prompting forces clarity: you describe what you want, not how to do it. Eval-driven development means every output is checked (by test or contract) before merging. This isn’t just about ‘faster coding’—it’s about finally closing the intent gap that’s haunted auto-codegen since Copilot launched.</p><p>In practice, I see teams using Claude Code for everything from refactors to greenfield microservices. The AI writes scaffolding, runs the evals, even patches its own regressions. Engineers act as editors and architects, reviewing diffs and guiding high-level design, letting the agent do the grind work. This is the first time AI codegen feels robust enough for production use at scale.</p><h2>Day-to-Day Impact</h2><p>If you’re not experimenting with spec-eval loops, you’re behind. The devs shipping the fastest today are those treating LLMs like tireless junior engineers—directing with specs, catching failures with evals, and letting the loops run until green. And the best news: most of this is open, standards-based, and one YAML file away from your stack. The AI isn’t just in your IDE—now it’s part of your CI/CD pipeline.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code Release Notes",
+    "url": "https://docs.anthropic.com/claude/release-notes"
+   },
+   {
+    "title": "Ben Kuhn - Eval-Driven Development with LLMs",
+    "url": "https://www.benkuhn.net/eval/"
+   },
+   {
+    "title": "GitHub Next: AI-Powered Code Review",
+    "url": "https://githubnext.com/projects/copilot-workflows/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-08-silicon-supplychain-inference-burden",
+  "date": "2026-11-08",
+  "category": "Compute",
+  "title": "Silicon Standoffs and Inference Burdens: Compute News That Matters for AI Engineers",
+  "summary": "GPUs and custom silicon are in unpredictable supply, energy costs are rising, and inference pricing is volatile—realities every AI engineer needs to factor in before shipping anything at scale.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>This week’s compute news is a wake-up call: Nvidia’s H200 supply in North America is already booked through Q2 2027, and Google’s latest TPUv7s are reserved for Alphabet’s internal priority workloads. Meanwhile, multiple datacenter outages on Azure and AWS last week were traced to power draw spikes—yep, inference and fine-tuning are both hitting the energy wall.</p><h2>Why Engineers Should Care</h2><p>If you’re building or deploying AI, your hardware isn’t just ‘someone else’s problem’ anymore. The hardware supply chain is now the bottleneck for most modern AI projects, and inference costs are anything but stable. When silicon is scarce, preemption and job queuing hit production latency hard. Worse, some regions are seeing 2-3x compute price increases overnight, especially for burst workloads.</p><h2>Custom Silicon and Risk Management</h2><p>Some teams are pivoting to custom silicon (like Tesla’s Dojo or startups using RISC-V ASICs), but for most of us, pragmatic mitigation means smarter batching, model quantization, and ruthless parameter pruning. The days of slinging 70B-parameter models into production without a compute budget are over. Engineers who master GPU allocation, optimize inference graphs, and track region-level supply will ship more reliably—and cheaply.</p><h2>Energy, Carbon, and the New Baseline</h2><p>Energy is now a first-class production metric. Datacenter contracts are starting to include watt-hour ceilings, and carbon tracking is a procurement requirement in the EU and most US states. If your team isn’t modeling watt-hours per inference and actively managing latency/SLA tradeoffs, you’re exposed. Ignore the hardware news at your peril—compute is the new gravity for AI engineers.</p>",
+  "sources": [
+   {
+    "title": "The Information: GPU Supply Crunch Deepens",
+    "url": "https://www.theinformation.com/articles/nvidias-gpu-shortage-to-continue-into-2027"
+   },
+   {
+    "title": "SemiAnalysis: TPUv7 and Custom AI Silicon",
+    "url": "https://www.semianalysis.com/p/inside-google-tpu-v7-and-the-new-ai"
+   },
+   {
+    "title": "Datacenter Dynamics: Energy Limits and Outages",
+    "url": "https://www.datacenterdynamics.com/en/news/datacenter-energy-walls-ai-inference/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-08-microsoft-needs-agent-standardization",
+  "date": "2026-11-08",
+  "category": "Microsoft",
+  "title": "Microsoft Must Prioritize Agent Standardization and Open Spec-Eval APIs",
+  "summary": "To keep Copilot and Azure competitive, Microsoft should adopt open agent APIs, support spec-eval loops natively, and double down on transparent, portable workflows like Claude and Gemini.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>With OpenAI’s agent API now setting the de facto standard for managed autonomous workflows, and Anthropic’s Claude Code pushing spec-eval integration, Microsoft needs to rethink its developer-facing AI offerings—fast. Engineers are tired of closed Copilot plugins and proprietary orchestration. Open, composable agents are table stakes in 2026.</p><h2>Why Open Agent APIs Matter</h2><p>Developers want to mix and match their tools: using best-in-class eval runners, local tool servers (MCPs), and orchestrating agentic workflows that plug into whatever CI/CD they use—not just Azure DevOps. Claude and Gemini lead here because their APIs are transparent, portable, and extensible. If Microsoft keeps Copilot and Azure AI locked down, they’ll bleed developer trust and ecosystem power.</p><h2>Spec-Eval Loops as First-Class Citizens</h2><p>Spec-eval loops should be native—not just a VS Code extension or a GitHub Actions hack. Microsoft should offer YAML-based spec runners, unit test–aware LLM endpoints, and APIs that let agents reason over project structure, not just plain text prompts. OpenAI and Anthropic get that real-world codegen needs iterative, verifiable loops. Azure’s current offerings are too opaque and too brittle for production agentic use.</p><h2>Action Items: Engineer to Engineer</h2><p>Microsoft: ship an open agent API, standardize on tool server protocols, and bake spec-eval workflows into Copilot and Azure AI as first-class primitives. Learn from Claude’s eval APIs and Gemini’s open agent orchestration. Engineers will flock to platforms that feel like real tools, not black boxes. Ship it, don’t just talk about it.</p>",
+  "sources": [
+   {
+    "title": "OpenAI Agents API Documentation",
+    "url": "https://platform.openai.com/docs/agents"
+   },
+   {
+    "title": "Anthropic Claude Code Spec-Eval Docs",
+    "url": "https://docs.anthropic.com/claude/spec-eval"
+   },
+   {
+    "title": "Google Gemini Agent API Overview",
+    "url": "https://ai.google.dev/gemini/agent"
+   }
+  ]
  }
 ]
