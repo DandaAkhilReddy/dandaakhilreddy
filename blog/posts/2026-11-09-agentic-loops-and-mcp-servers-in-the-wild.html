@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Loops and MCP Servers in the Wild: How Developers Actually Use AI Now | Reddy Pulse</title>
+<meta name="description" content="AI dev workflows look nothing like prompt engineering circa 2024. Today it’s agentic loops, Claude Code, MCP tool servers, and heavy spec-driven dev. Here’s how real engineers are wrangling modern AI.">
+<meta property="og:title" content="Agentic Loops and MCP Servers in the Wild: How Developers Actually Use AI Now">
+<meta property="og:description" content="AI dev workflows look nothing like prompt engineering circa 2024. Today it’s agentic loops, Claude Code, MCP tool servers, and heavy spec-driven dev. Here’s how real engineers are wrangling modern AI.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">AI &amp; Developers</span>
+  <h1>Agentic Loops and MCP Servers in the Wild: How Developers Actually Use AI Now</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 9th November, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop" alt="Agentic Loops and MCP Servers in the Wild: How Developers Actually Use AI Now">
+  <p>We’re way past the era where prompt engineering meant fiddling with a template and hoping for deterministic results. The most interesting news this week is Anthropic’s Claude Code getting open agent orchestration built in—yes, plan–act–verify–fix loops <em>out of the box</em>. That’s not academic; it’s what every serious AI engineer is using right now to ship real products.</p><h2>Agentic Loops: The New Baseline</h2><p>Modern AI dev is agentic: you get a spec, you pass it to an agent, and you don’t trust the result until there’s an eval loop. This is “spec-driven prompting” for real: agents read your spec, plan work, call tools via MCP servers, and keep looping through verification until something actually passes tests. That’s why engineers love Claude Code—it comes with loop primitives, not just a chat box. It’s how you avoid LLMs “hallucinating” their way past requirements.</p><h2>MCP Tool Servers: The Secret Sauce</h2><p>MCP (multi-capability process) servers are how you wrangle tool access for agent loops. Think of them as API routers for your local tools, cloud APIs, and homegrown scripts, all authenticated and sandboxed. Engineers are using Claude or GPT agents to call these MCP endpoints for everything: code gen, migrations, CI/CD, even local Docker control. Yes, it’s hacky. But it’s the glue holding AI workflows together in production, especially when you want reproducibility and audit trails.</p><h2>Eval-Driven Everything</h2><p>The eval loop mindset is spreading. Teams are writing <em>eval scripts first</em>—then letting agents iterate toward green checks. This is a leap from “prompt, pray, and ship” to “spec, eval, agent loop, commit.” It’s slower per iteration, but the reliability gain is massive. If you’re building with AI, you’re an eval engineer now, whether you like it or not.</p><p><strong>Bottom line:</strong> If you’re not running agentic loops with spec-driven prompts, MCP servers, and eval-first dev, you’re not doing AI engineering—you’re just demoing.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-09-agentic-loops-and-mcp-servers-in-the-wild.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-09-agentic-loops-and-mcp-servers-in-the-wild.html&text=Agentic%20Loops%20and%20MCP%20Servers%20in%20the%20Wild%3A%20How%20Developers%20Actually%20Use%20AI%20Now" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/news/claude-code-launch" target="_blank" rel="noopener">Anthropic launches Claude Code with agentic workflows</a></li><li><a href="https://www.latent.space/p/eval-driven-development" target="_blank" rel="noopener">The rise of eval-driven development</a></li><li><a href="https://www.stackoverflow.blog/2026/10/21/mcp-tool-servers-agentic-ai" target="_blank" rel="noopener">MCP tool servers: how real teams ship agentic AI</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

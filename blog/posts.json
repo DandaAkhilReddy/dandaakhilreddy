@@ -9728,5 +9728,74 @@
     "url": "https://www.nbcnews.com/politics/2020-election/georgia-finds-2-600-uncounted-ballots-during-recount-n1248051"
    }
   ]
+ },
+ {
+  "slug": "2026-11-09-agentic-loops-and-mcp-servers-in-the-wild",
+  "date": "2026-11-09",
+  "category": "AI & Developers",
+  "title": "Agentic Loops and MCP Servers in the Wild: How Developers Actually Use AI Now",
+  "summary": "AI dev workflows look nothing like prompt engineering circa 2024. Today it’s agentic loops, Claude Code, MCP tool servers, and heavy spec-driven dev. Here’s how real engineers are wrangling modern AI.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>We’re way past the era where prompt engineering meant fiddling with a template and hoping for deterministic results. The most interesting news this week is Anthropic’s Claude Code getting open agent orchestration built in—yes, plan–act–verify–fix loops <em>out of the box</em>. That’s not academic; it’s what every serious AI engineer is using right now to ship real products.</p><h2>Agentic Loops: The New Baseline</h2><p>Modern AI dev is agentic: you get a spec, you pass it to an agent, and you don’t trust the result until there’s an eval loop. This is “spec-driven prompting” for real: agents read your spec, plan work, call tools via MCP servers, and keep looping through verification until something actually passes tests. That’s why engineers love Claude Code—it comes with loop primitives, not just a chat box. It’s how you avoid LLMs “hallucinating” their way past requirements.</p><h2>MCP Tool Servers: The Secret Sauce</h2><p>MCP (multi-capability process) servers are how you wrangle tool access for agent loops. Think of them as API routers for your local tools, cloud APIs, and homegrown scripts, all authenticated and sandboxed. Engineers are using Claude or GPT agents to call these MCP endpoints for everything: code gen, migrations, CI/CD, even local Docker control. Yes, it’s hacky. But it’s the glue holding AI workflows together in production, especially when you want reproducibility and audit trails.</p><h2>Eval-Driven Everything</h2><p>The eval loop mindset is spreading. Teams are writing <em>eval scripts first</em>—then letting agents iterate toward green checks. This is a leap from “prompt, pray, and ship” to “spec, eval, agent loop, commit.” It’s slower per iteration, but the reliability gain is massive. If you’re building with AI, you’re an eval engineer now, whether you like it or not.</p><p><strong>Bottom line:</strong> If you’re not running agentic loops with spec-driven prompts, MCP servers, and eval-first dev, you’re not doing AI engineering—you’re just demoing.</p>",
+  "sources": [
+   {
+    "title": "Anthropic launches Claude Code with agentic workflows",
+    "url": "https://www.anthropic.com/news/claude-code-launch"
+   },
+   {
+    "title": "The rise of eval-driven development",
+    "url": "https://www.latent.space/p/eval-driven-development"
+   },
+   {
+    "title": "MCP tool servers: how real teams ship agentic AI",
+    "url": "https://www.stackoverflow.blog/2026/10/21/mcp-tool-servers-agentic-ai"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-09-gpu-costs-and-custom-accelerators-latest",
+  "date": "2026-11-09",
+  "category": "Compute",
+  "title": "GPU Costs, Custom Accelerators, and the Compute Squeeze: What Matters Now",
+  "summary": "Nvidia’s H200 pricing just spiked (again), and Google’s new TPUv6 is live in limited regions. But the real shift is custom silicon and AI inference costs pushing engineers to rethink every deployment decision.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>The headline: GPU supply is tight, and pricing is wild. Nvidia H200s are pushing $40,000 per card in some datacenter contracts—<strong>if</strong> you can even get allocation. Meanwhile, Google’s TPUv6 is officially rolling out, but only to select GCP customers. If you’re an engineer shipping AI, this matters more than ever: the cost and shape of compute will dictate your product’s capabilities and business model.</p><h2>Why GPUs Still Rule (But for How Long?)</h2><p>Yes, Nvidia still dominates. But hyperscalers are pouring billions into custom silicon—Amazon Trainium/Inferentia, Microsoft Maia, and Google’s TPUs. The reason is obvious: inference costs are now rivaling training costs for high-usage apps. If you run a production LLM, inference is where your margin disappears. Engineers are starting to count FLOPs per user, not just per model.</p><h2>Inference Cost: The Uncomfortable Truth</h2><p>Here’s what most headlines miss: every new model release gets <em>cheaper</em> to train per parameter, but inference costs are up. Why? Models are bigger, context windows are wider, and user demand for “agentic” (multi-step, tool-using) behavior means more compute-hungry loops. Multi-modal? Even worse. Shipping AI means designing for cost constraints <em>first</em>, and that means using right-sized models, quantization, and offloading to cheaper silicon whenever possible.</p><h2>What Engineers Should Do Now</h2><p>Don’t trust your cloud bill to stay static. Build with model modularity: swap in smaller, cheaper models for routine tasks; use agents to offload to local or edge compute; design eval loops to catch quality issues before you burn expensive inference cycles. And start tracking which silicon your workloads land on—Azure, AWS, and GCP are all quietly shifting jobs to their silicon, and that can break toolchains if you aren’t careful.</p><p><strong>Compute isn’t just a deployment detail; it’s a core engineering constraint. Ignore it at your peril.</strong></p>",
+  "sources": [
+   {
+    "title": "Nvidia H200 pricing and supply update",
+    "url": "https://www.tomshardware.com/news/nvidia-h200-gpu-supply"
+   },
+   {
+    "title": "Google launches TPUv6 to select customers",
+    "url": "https://cloud.google.com/blog/products/ai-machine-learning/introducing-tpu-v6"
+   },
+   {
+    "title": "The high cost of AI inference",
+    "url": "https://www.semafor.com/article/2026/10/18/the-true-cost-of-running-ai"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-09-microsoft-must-prioritize-open-agent-apis",
+  "date": "2026-11-09",
+  "category": "Microsoft",
+  "title": "Open Agent APIs and Spec-Eval Loops: The Blueprint Microsoft Needs Now",
+  "summary": "OpenAI’s Agent API and Anthropic’s open orchestration in Claude Code show what developer-first AI should look like. Microsoft’s stack (Azure, Copilot, GitHub) needs to follow, but with real spec-driven eval integration.",
+  "image": "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?w=1200&h=600&fit=crop",
+  "body": "<p>If you’re building on Microsoft’s AI stack—Azure AI Studio, Copilot, or GitHub—you’re likely frustrated by one thing: closed agent APIs and weak eval integration. Meanwhile, OpenAI’s Agent API lets you orchestrate complex, tool-using agents, and Anthropic’s Claude Code bakes in open orchestration primitives. These aren’t just nice-to-have features—they’re the new table stakes for developer productivity and trust.</p><h2>Why Open Agent APIs Matter</h2><p>Developers shouldn’t be locked into proprietary orchestration or forced to reverse-engineer Copilot’s behavior. Open agent APIs mean you can build, debug, and swap agents at will, wire up custom tools via MCP endpoints, and integrate with your own eval infrastructure. OpenAI and Anthropic get this. Microsoft <em>must</em> move faster to give engineers the same freedom—or risk losing the dev mindshare edge it’s fought so hard to win.</p><h2>Spec-Eval Loops: Not Optional Anymore</h2><p>Modern AI workflows are spec- and eval-driven. You give an agent a task spec, you run an eval script, and the agent loops until all tests are green. Microsoft’s current AI stack is still prompt-and-pray. There’s no built-in way to declare specs, attach evals, and have Copilot or GitHub agents loop to completion. The result? Lower trust, more manual patching, less reliable automation. Microsoft must prioritize native spec-eval loop APIs—<strong>not</strong> as an add-on, but as a core developer feature.</p><h2>Constructive Path Forward</h2><p>No fanboying here: I want Microsoft to win this, but only if it puts open, spec-first, eval-integrated loops at the center of Copilot and GitHub. Steal OpenAI’s Agent API and Anthropic’s orchestration primitives, but do it <em>better</em>: add deep Azure tool integration, enterprise auditability, and real workflow transparency. That’s what engineers want, and what the next generation of AI workflows demands.</p>",
+  "sources": [
+   {
+    "title": "OpenAI launches Agent API for developers",
+    "url": "https://platform.openai.com/docs/agents"
+   },
+   {
+    "title": "Understanding Anthropic Claude Code’s orchestration features",
+    "url": "https://www.anthropic.com/news/claude-code-agent-orchestration"
+   },
+   {
+    "title": "Spec-driven AI development: Why eval-first matters",
+    "url": "https://www.latent.space/p/spec-driven-ai-evals"
+   }
+  ]
  }
 ]
