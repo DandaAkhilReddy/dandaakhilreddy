@@ -9912,5 +9912,74 @@
     "url": "https://nlihc.org/issues/disaster"
    }
   ]
+ },
+ {
+  "slug": "2026-11-11-agentic-coding-with-claude-mcp-and-eval-loops",
+  "date": "2026-11-11",
+  "category": "AI & Developers",
+  "title": "Agentic Coding Workflows: Claude, MCP Servers, and the Rise of Eval Loops",
+  "summary": "The biggest shift in practical AI coding right now? Developer-driven agentic loops, spec-driven prompting, and eval-first workflows—powered by tools like Claude Code and MCP servers actually deployed in the wild.",
+  "image": "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop",
+  "body": "<p>Every engineer I know who ships code fast is embracing some flavor of agentic coding. This isn’t hype—it's concrete: you wire up Claude Code or GPT-4o as a code agent, wrap it in looped orchestration (plan → act → verify → fix), and let the agent grind through tickets or refactors. We’ve moved past simple chat-based assistance. Today, the best devs run dedicated MCP (Multi-Component Process) servers—the agent orchestrates spec gathering, code changes, and evals, all piped through robust tool APIs. Why? Because the traditional prompt-then-edit workflow is just too brittle for production engineering.</p><h2>Spec-Driven Prompting: Less Guesswork, More Guarantees</h2><p>Spec-driven prompting is the antidote to prompt roulette. You feed the agent a formal spec—sometimes extracted from your codebase or via structured docs—so the model's output is actually grounded in intent, not vibes. I’m seeing this with Claude’s new code mode: it takes API contracts, generates full modules, and runs them against test harnesses, looping until the evals pass. If you’re not doing this, you’re leaving velocity on the table.</p><h2>Loop Engineering and Eval-First</h2><p>Eval-driven loops are about trust, not just output. Build a tight loop: agent proposes, code runs, results assessed automatically, and the agent self-corrects. The best setups even expose the evals to the agent so it 'learns' failure cases. This isn’t theory—teams are slashing manual review overhead by 50%+ on routine changes. Yes, you need robust test coverage and fail-safes, but the payoff is real.</p><p>If you’re not integrating agentic coding, spec prompts, or eval loops into your dev flow, you’re falling behind. This is where engineering efficiency is compounding right now.</p>",
+  "sources": [
+   {
+    "title": "OpenAI launches GPT-4o: a faster, more multimodal flagship model",
+    "url": "https://www.theverge.com/2026/5/13/gpt-4o-openai-launch"
+   },
+   {
+    "title": "AI agents: How developers are using them to write and review code",
+    "url": "https://www.zdnet.com/article/ai-agents-developers-coding/"
+   },
+   {
+    "title": "Anthropic releases Claude Code: an agentic toolkit for devs",
+    "url": "https://www.axios.com/2026/09/claude-code-anthropic"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-11-gpu-market-evolution-inference-costs-and-engineer-tradeoffs",
+  "date": "2026-11-11",
+  "category": "Compute",
+  "title": "GPU Market Evolution, Inference Costs, and the Hard Tradeoffs Facing Engineers",
+  "summary": "A new wave of custom accelerators and datacenter expansion is colliding with runaway inference bills and supply chain headaches. The real impact for engineers? Smarter deployment, cost scrutiny, and hardware awareness are now core skills.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>If you ship AI, you can’t ignore the compute squeeze. Nvidia’s Blackwell GPUs are finally hitting cloud shelves, but good luck landing priority access unless you’re a hyperscaler or a Fortune 100. Startups and indie teams are getting inventive: open-source models are being distilled for Llama 4–class performance on older A100s, and custom silicon like Groq and Tenstorrent is coming online for inference-dense workloads. Why does this matter? Because what you deploy—and what it costs—defines your product velocity and margin.</p><h2>Datacenter Buildouts: Energy and Availability</h2><p>Microsoft and Google both announced major US and EU datacenter expansions this quarter, but the real tension is power. Cities like Phoenix and Frankfurt are capping new buildouts because grid capacity is tapped. If you’re engineering AI products, you need to budget for unpredictable slot availability, especially for training runs. Smart teams are architecting their stacks to burst across regions and even fallback to on-prem for critical jobs.</p><h2>Inference Cost Is Everyone’s Problem</h2><p>Inference costs are doubling every six months for high-traffic products. The rise of quantized models, token-efficient prompting, and minimal context windows aren’t nice-to-haves—they’re required to ship profitably. Engineers who know how to profile, prune, and route traffic to the right accelerator will outpace those who treat serving as an afterthought.</p><p>Bottom line: Compute is the new constraint. If you don't shape your architecture with hardware and energy in mind, you’ll get outcompeted by someone who does.</p>",
+  "sources": [
+   {
+    "title": "Nvidia Blackwell GPUs hit the cloud: Why it matters and who gets access",
+    "url": "https://www.tomshardware.com/news/nvidia-blackwell-cloud"
+   },
+   {
+    "title": "Data centers feel the strain of AI boom",
+    "url": "https://www.wsj.com/tech/ai-data-centers-power"
+   },
+   {
+    "title": "How AI inference costs are reshaping product strategy",
+    "url": "https://www.protocol.com/enterprise/ai-inference-costs"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-11-microsoft-ai-should-steal-from-frontier-labs",
+  "date": "2026-11-11",
+  "category": "Microsoft",
+  "title": "What Microsoft Should Steal Next: Open Agent Protocols, Memory APIs, and Frontier Lab Playbooks",
+  "summary": "Microsoft’s AI stack is powerful, but it still lags behind on open agent protocols, unified memory APIs, and nimble spec-eval tooling pioneered by OpenAI, Anthropic, and Google. If they want to keep devs loyal, here’s what they should ship—yesterday.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>Let’s be real: Microsoft Copilot, Azure AI Studio, and GitHub Next are great, but the real action lately is with the frontier labs. OpenAI’s plugin and agent API (now open-sourced—finally) lets devs wire up domain tools, plan-act loops, and persistent memory in a single flow. Anthropic’s memory API and eval harness are actually usable by real engineers, not just ML-researchers. Even Google’s open orchestration for Gemini is more transparent than anything in the Azure stack.</p><h2>Open Agent Protocols and Tool APIs</h2><p>This is non-negotiable: Microsoft needs a real, documented, and open agent protocol for Copilot and Azure AI. Devs want to wire up their own tools—debuggers, CI hooks, custom data sources—without reverse engineering undocumented endpoints or whispering prompts. If OpenAI and Anthropic can publish stable APIs and agent node specs, Microsoft should too.</p><h2>Unified Memory and Spec-Eval Tools</h2><p>The Copilot labs memory features are nice, but not composable. Compare that to Anthropic’s session memory and OpenAI’s context store—both let you plug in long-term context and structured memory per-user or per-task. No more prompt hacks. Also: where’s the first-class spec-eval loop? GitHub Copilot evals are opaque and locked down. Ship a real API for spec-driven prompting and eval reporting so teams can build their own automated QA, not just trust the system blindly.</p><p>If Microsoft wants to keep devs loyal over the long haul, the playbook is obvious: copy what’s working from the labs, open up agent protocols, and give us real eval/memory APIs. Otherwise, the next generation of dev tooling will happen somewhere else.</p>",
+  "sources": [
+   {
+    "title": "OpenAI launches open plugin platform for agents",
+    "url": "https://techcrunch.com/2026/10/openai-open-plugin-platform"
+   },
+   {
+    "title": "Anthropic introduces session memory and eval tooling for Claude",
+    "url": "https://venturebeat.com/ai/anthropic-memory-api-claude"
+   },
+   {
+    "title": "Google opens up Gemini agent orchestration APIs",
+    "url": "https://www.theinformation.com/articles/google-gemini-open-apis"
+   }
+  ]
  }
 ]
