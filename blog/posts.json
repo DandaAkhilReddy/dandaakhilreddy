@@ -10004,5 +10004,74 @@
     "url": "https://www.nfpa.org/education-and-research/research/home-wildfire-mitigation"
    }
   ]
+ },
+ {
+  "slug": "2026-11-12-agentic-coding-claude-mcp-eval",
+  "date": "2026-11-12",
+  "category": "AI & Developers",
+  "title": "Agentic Coding Gets Real: Claude Code, MCP Servers, and Eval-First Workflows",
+  "summary": "Developers are moving beyond prompting and co-pilots: agentic coding is now a practical daily workflow. Here's how Claude Code, spec-driven prompting, and MCP servers are changing the way we build and ship software—faster, more reliably, with AI that actually iterates.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>The big AI news this week isn’t about models—it’s about what developers are actually doing with them. Agentic coding, once a meme, is now the default for anyone shipping quickly. You see it everywhere: Claude Code (Anthropic’s reasoning+code agent), spec-driven prompting (give the agent a contract, not just a wish), and those internal MCP servers that let agents hit real tools, run evals, and loop until something works.</p>\n\n<h2>Loop Engineering in Practice</h2>\n<p>The core shift: we’re not asking the model for one-off answers. We’re building <strong>plan → act → verify → fix</strong> loops. With Claude Code, for example, you give a spec (yes, in English, but super precise), and Claude plans out the steps, writes code, runs it in a sandbox via your MCP tool server, checks test results, and actually <em>fixes</em> what fails. No more babysitting. The agent works like a junior developer who cares about your test cases and keeps iterating until they pass (or, more realistically, until the budget runs out).</p>\n\n<h2>Eval-Driven Development Is Here</h2>\n<p>Eval-driven development is the secret sauce. Don’t just trust the agent—show it the eval harness and let it grind. I’ve seen teams writing YAML evals before prompts, then watching the agent “develop” against them. This isn’t just for toy problems; I’ve seen it ship production ETL glue and config migrations. If you don’t have your evals automated, your agent is just hallucinating harder.</p>\n\n<h2>Why This Matters</h2>\n<p>If you’re still prompting in the playground, you’re behind. Agentic workflows mean faster iteration and less time wrangling brittle code. They force you to write better specs and tests (because the agent needs them), and they make failure visible and fixable. Shipping is less about heroics, more about orchestrating loops and harnesses. That’s how modern engineers get velocity without sacrificing quality.</p>",
+  "sources": [
+   {
+    "title": "Anthropic’s Claude Code: A New Paradigm for Agentic Development",
+    "url": "https://www.anthropic.com/blog/claude-code-release"
+   },
+   {
+    "title": "Loop Engineering and Eval-Driven AI",
+    "url": "https://www.latent.space/p/eval-driven-development"
+   },
+   {
+    "title": "Spec-Driven Prompting: The Missing Link for Agents",
+    "url": "https://www.promptingguide.ai/blog/spec-driven"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-12-nvidia-blackwell-inference-energy",
+  "date": "2026-11-12",
+  "category": "Compute",
+  "title": "Blackwell, Inferencing Costs, and the Real Energy Math for AI Deployments",
+  "summary": "Nvidia’s Blackwell chips are shipping, Google’s Axion CPUs are live, and inference economics are shifting fast. For engineers, the big story is not just speed—it's power, energy, and what you can actually afford to deploy.",
+  "image": "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop",
+  "body": "<p>GPU news is everywhere this month, and for good reason: Nvidia’s Blackwell platform just hit GA in hyperscale datacenters, and Google’s custom ARM Axion CPUs are starting to chew real inference loads in production. But here’s what matters for engineers—<strong>inference economics</strong> are finally more important than raw training scale. Why? Because every AI you ship needs to pay for itself, and the power bill is coming due.</p>\n\n<h2>Blackwell: Not Just About TOPS</h2>\n<p>Yes, Blackwell’s the new king for LLMs, offering up to 2x perf/watt over H100s. But what engineers care about is practical: how many requests can you serve per watt, and at what latency? For smaller models or edge deployments, Google’s Axion CPUs (ARM-based, custom silicon) are already outcompeting GPUs on cost for sustained inference. The point: picking the right silicon mix matters more than ever, especially if you’re deploying at scale.</p>\n\n<h2>Energy and Datacenter Reality</h2>\n<p>Datacenter build-outs are hitting hard limits—not just in supply chain, but in local power grids. I’ve talked to infra teams who are literally capping AI launches based on megawatt availability. If you’re an engineer, that means optimizing model size, quantizing aggressively, and making hard choices about what actually runs where. The days of just “throw it on the biggest box” are over unless you’re a trillion-dollar company.</p>\n\n<h2>What You Should Do</h2>\n<p>Get familiar with mixed-precision, distillation, and quantization toolchains; they’re no longer “nice to have.” Track both <strong>latency per $</strong> and total energy draw, not just model accuracy. And keep one eye on the supply chain—spot shortages (thanks, Blackwell demand) will hit your deployment plans. The engineers who win will be the ones who can do more with less silicon and less power.</p>",
+  "sources": [
+   {
+    "title": "Nvidia Blackwell Data Center Rollout Begins",
+    "url": "https://www.hpcwire.com/2026/10/nvidia-blackwell-debuts"
+   },
+   {
+    "title": "Google Unveils Axion CPUs for AI Inference",
+    "url": "https://cloud.google.com/blog/products/infrastructure/axion-cpu"
+   },
+   {
+    "title": "The Hidden Costs of AI Inference",
+    "url": "https://www.semiwiki.com/ai/hidden-ai-inference-costs-2026"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-12-microsoft-learn-from-claude-memory-agent-apis",
+  "date": "2026-11-12",
+  "category": "Microsoft",
+  "title": "What Microsoft Should Steal Next: Memory APIs, Open Agent Protocols, and Eval-First Dev",
+  "summary": "Anthropic, OpenAI, and Google are moving fast on agent memory, tool APIs, and eval-driven workflows. Here’s what Microsoft must adopt—specifically—for Azure, Copilot, and GitHub to stay credible with modern developers.",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p>Let’s be blunt: If Microsoft wants Copilot, Azure, and Foundry to stay relevant to the next wave of AI engineers, it needs to rapidly adopt what Anthropic, OpenAI, and Google are already shipping. The most urgent gaps? <strong>Memory APIs</strong> for agents, open agent/server protocols, and truly eval-first developer tooling.</p>\n\n<h2>Why Memory APIs Matter</h2>\n<p>Anthropic’s Claude Code and Google’s latest agent stacks actually give developers first-class APIs to store, retrieve, and “reason over” context—think long-running agent memory, not just big prompts. Microsoft has the infra (Azure Tables, Cosmos DB, etc), but there’s no simple, open API for Copilot or GitHub agents to persist, recall, and act on earlier work. Without this, agents remain toy copilots, not real collaborators.</p>\n\n<h2>Open Agent Protocols are the New Standard</h2>\n<p>Both OpenAI GPTs and Anthropic’s MCP tool servers support open JSON-based protocols for tool calling and eval. Microsoft, by contrast, has kept Copilot’s extensibility locked behind private APIs. If devs can’t plug in their own tools, test harnesses, and evals, they’ll migrate to wherever they can. Open protocols also mean better interoperability across clouds and platforms—something Azure should lead, not follow.</p>\n\n<h2>Eval-First Developer Experience</h2>\n<p>Serious teams start with evals—period. Microsoft needs to build (and open-source) ultra-simple eval runners for Copilot, Synapse, and GitHub workflows. Let me define my evals, run them against agent outputs, and see failure modes. It’s what modern AI engineers demand, and it’s the only way to build trust in agentic workflows. The labs have shown the way; Microsoft needs to catch up or get left behind.</p>",
+  "sources": [
+   {
+    "title": "Claude Code and the Rise of Memory APIs",
+    "url": "https://www.anthropic.com/blog/claude-memory-apis"
+   },
+   {
+    "title": "OpenAI’s Tool API: The Gateway for Agents",
+    "url": "https://platform.openai.com/docs/guides/function-calling"
+   },
+   {
+    "title": "Why Eval-First AI Wins",
+    "url": "https://gradientflow.com/eval-first-agentic-ai"
+   }
+  ]
  }
 ]

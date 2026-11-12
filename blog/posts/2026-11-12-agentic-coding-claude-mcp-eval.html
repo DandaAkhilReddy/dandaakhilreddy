@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Coding Gets Real: Claude Code, MCP Servers, and Eval-First Workflows | Reddy Pulse</title>
+<meta name="description" content="Developers are moving beyond prompting and co-pilots: agentic coding is now a practical daily workflow. Here&#x27;s how Claude Code, spec-driven prompting, and MCP servers are changing the way we build and ship software—faster, more reliably, with AI that actually iterates.">
+<meta property="og:title" content="Agentic Coding Gets Real: Claude Code, MCP Servers, and Eval-First Workflows">
+<meta property="og:description" content="Developers are moving beyond prompting and co-pilots: agentic coding is now a practical daily workflow. Here&#x27;s how Claude Code, spec-driven prompting, and MCP servers are changing the way we build and ship software—faster, more reliably, with AI that actually iterates.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">AI &amp; Developers</span>
+  <h1>Agentic Coding Gets Real: Claude Code, MCP Servers, and Eval-First Workflows</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 12th November, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop" alt="Agentic Coding Gets Real: Claude Code, MCP Servers, and Eval-First Workflows">
+  <p>The big AI news this week isn’t about models—it’s about what developers are actually doing with them. Agentic coding, once a meme, is now the default for anyone shipping quickly. You see it everywhere: Claude Code (Anthropic’s reasoning+code agent), spec-driven prompting (give the agent a contract, not just a wish), and those internal MCP servers that let agents hit real tools, run evals, and loop until something works.</p>
+
+<h2>Loop Engineering in Practice</h2>
+<p>The core shift: we’re not asking the model for one-off answers. We’re building <strong>plan → act → verify → fix</strong> loops. With Claude Code, for example, you give a spec (yes, in English, but super precise), and Claude plans out the steps, writes code, runs it in a sandbox via your MCP tool server, checks test results, and actually <em>fixes</em> what fails. No more babysitting. The agent works like a junior developer who cares about your test cases and keeps iterating until they pass (or, more realistically, until the budget runs out).</p>
+
+<h2>Eval-Driven Development Is Here</h2>
+<p>Eval-driven development is the secret sauce. Don’t just trust the agent—show it the eval harness and let it grind. I’ve seen teams writing YAML evals before prompts, then watching the agent “develop” against them. This isn’t just for toy problems; I’ve seen it ship production ETL glue and config migrations. If you don’t have your evals automated, your agent is just hallucinating harder.</p>
+
+<h2>Why This Matters</h2>
+<p>If you’re still prompting in the playground, you’re behind. Agentic workflows mean faster iteration and less time wrangling brittle code. They force you to write better specs and tests (because the agent needs them), and they make failure visible and fixable. Shipping is less about heroics, more about orchestrating loops and harnesses. That’s how modern engineers get velocity without sacrificing quality.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-12-agentic-coding-claude-mcp-eval.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-12-agentic-coding-claude-mcp-eval.html&text=Agentic%20Coding%20Gets%20Real%3A%20Claude%20Code%2C%20MCP%20Servers%2C%20and%20Eval-First%20Workflows" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/blog/claude-code-release" target="_blank" rel="noopener">Anthropic’s Claude Code: A New Paradigm for Agentic Development</a></li><li><a href="https://www.latent.space/p/eval-driven-development" target="_blank" rel="noopener">Loop Engineering and Eval-Driven AI</a></li><li><a href="https://www.promptingguide.ai/blog/spec-driven" target="_blank" rel="noopener">Spec-Driven Prompting: The Missing Link for Agents</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
