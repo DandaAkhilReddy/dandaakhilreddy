@@ -10096,5 +10096,74 @@
     "url": "https://www.governing.com/now/why-local-land-use-approval-is-slowing-housing-development"
    }
   ]
+ },
+ {
+  "slug": "2026-11-13-agentic-ai-workflows-in-practice",
+  "date": "2026-11-13",
+  "category": "AI & Developers",
+  "title": "Agentic Coding Loops: From Spec to Eval in Real Projects",
+  "summary": "Agentic coding with Claude Code is no longer a curiosity—it's quietly reshaping how developers build, debug, and ship software fast. Here's how engineers are making the most of spec-driven prompting, loop engineering, and eval-based development in their daily toolkits.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>The pace of change with agentic AI tooling for developers is wild right now. If you're not embedding LLMs into your workflows, especially Claude Code or GPT-4o, you're behind—full stop. The difference isn't about AI autocompleting a line. It's whole new developer ergonomics: write a spec, loop through plan→act→verify→fix cycles, and let the agent grind through code, tests, and even refactors autonomously.</p>\n\n<h2>Spec-Driven Prompts and Loop Engineering</h2>\n<p>What matters is the structure. Engineers leading the pack aren't just sending chat prompts but feeding in detailed specs and harnessing agentic loops: the AI interprets, acts, checks, and iterates. That loop—plan, act, verify, fix—is gold. Claude Code can now run these in tight cycles, catching edge cases and logic bugs that slip by humans or vanilla Copilot. Some teams even wire up MCP (Multi-Component Protocol) tool servers to let the agent call actual build scripts, test runners, or even cloud APIs as it iterates, all under guardrails.</p>\n\n<h2>Eval-First: How Devs Are Shipping</h2>\n<p>It's eval-driven development in the wild. The agent proposes a function, you hit \"run evals,\" and it self-corrects until the test set is green. Manual review shifts to code review of diffs and high-level design, not syntax. This isn't about magic AI—it's about using AI for the grind: boilerplate, glue code, migration, and even docstring generation. The result? Faster time-to-PR, less context-switching, and fewer bugs escaping CI. Spec-driven prompting is now the meta; if you're not feeding the agent a clear contract and eval harness, you're not getting its full power.</p>\n\n<h2>AI Pair Programming Workflows</h2>\n<p>The best teams treat the agent like a tireless junior dev—give it small, well-scoped tickets, check its outputs, and let it self-improve via evals. And yes, prompt writing is now a legit engineering subskill. We need more open-source, eval-first agentic frameworks (like what Anthropic is quietly shipping) and less black-box auto-magic.</p>\n\n<p><strong>Why it matters:</strong> This is what AI-native engineering looks like. If you're not looping, prompting, and evaluating with agents, you're shipping slower. That's the bottom line.</p>",
+  "sources": [
+   {
+    "title": "Agentic Workflows With Claude Code",
+    "url": "https://www.anthropic.com/news/claude-code-workflows"
+   },
+   {
+    "title": "Spec-Driven Prompt Engineering",
+    "url": "https://www.promptingguide.ai/techniques/spec-prompts"
+   },
+   {
+    "title": "Evals and Agent-Based Development",
+    "url": "https://gradient.pub/agentic-coding/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-13-chips-inference-costs-energy-reality",
+  "date": "2026-11-13",
+  "category": "Compute",
+  "title": "Chips, Inference Costs, and the Energy Reality for AI Engineers",
+  "summary": "GPU and custom silicon news keeps breaking, but for developers, three numbers matter: latency, dollars per 1M inferences, and watt-hours. Here’s how the current chip and datacenter landscape actually impacts what you build and deploy.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>We're living in the age of silicon arms races. Nvidia keeps pumping out Blackwell boards, Google’s TPU v6 is hitting production, and every hyperscaler is designing their own AI ASICs. But as an engineer, the only real questions are: Can I run my model fast enough? Is inference affordable? And will my CFO (or planet) freak out at the energy bill?</p>\n\n<h2>The State of GPU/TPU Supply</h2>\n<p>Supply is still tight—the Blackwell launch helped, but hyperscalers hoard the new stuff, and spot prices are up. If you need A100s, or even H100s, for real-time inference, expect to wait and pay. This means most companies—except the biggest—are stuck running on older silicon, or forced to optimize their models ferociously. TPUs are great, but Google jealously guards them for first-party workloads; third-party access is better, but nowhere near enough for the flood of demand.</p>\n\n<h2>Inference Costs and Energy</h2>\n<p>Inference cost per token is trending down, but not fast enough. Every new LLM release brings claims of 2x-5x efficiency, but in practice, you have to ruthlessly prune, quantize, or distill your models to hit cost targets. For anything high-volume (think: chat, code completions, image gen at scale), you cannot ignore energy math. Kilowatt-hours per million inferences is a real metric now, especially if you’re in Europe or California. Some teams are moving to custom silicon (Groq, Tenstorrent, AWS Inferentia) for cost and energy wins, but that means new software stacks and integration hell.</p>\n\n<h2>What Engineers Actually Do</h2>\n<p>The smart teams ruthlessly profile, batch requests, and tune their model configs for cheaper silicon—or even hybrid cloud/on-prem setups. Nobody gets to ignore the ops costs. If you want to deploy AI to real users, you have to get good at \"model right-sizing,\" tight pipeline engineering, and tracking real-time spend versus user value. Chip news is cool, but your daily reality is budgeting for silicon you can actually get.</p>\n\n<p><strong>Why it matters:</strong> AI isn't magic—it's math and logistics. If you can't ship cost-effective, energy-sane inference, your roadmap is fiction. Compute constraints are now product constraints.</p>",
+  "sources": [
+   {
+    "title": "Nvidia Blackwell: The Next Leap in AI Chips",
+    "url": "https://www.semianalysis.com/p/nvidia-blackwell-deep-dive"
+   },
+   {
+    "title": "AI Datacenters' Growing Energy Appetite",
+    "url": "https://www.ft.com/content/70b72af5-6c2a-44c6-a22e-e1b0aee5b1c8"
+   },
+   {
+    "title": "The Real Cost of AI Inference",
+    "url": "https://arstechnica.com/information-technology/2026/06/inference-costs-ai/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-13-microsoft-should-steal-openai-anthropic-tricks",
+  "date": "2026-11-13",
+  "category": "Microsoft",
+  "title": "What Microsoft Must Copy Next: Open Memory APIs, Agent Protocols, and Eval-Driven Dev",
+  "summary": "Microsoft is making moves, but it’s time to take a page from OpenAI and Anthropic: open memory APIs, agent protocols, and eval-first developer workflows are where the puck is going. Here’s what Redmond should ship if it wants to lead engineers, not just enterprises.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>Let’s be blunt: Microsoft’s Copilot and Azure AI suite are solid, but if you’re shipping AI-powered products as an engineer, you crave the new hotness—stuff we’re seeing hinted at by OpenAI and Anthropic. What’s missing? Three things: open memory APIs, agentic protocol standards, and eval-first workflows baked into the platform.</p>\n\n<h2>Memory APIs: State Beyond the Session</h2>\n<p>Right now, Copilot and Azure OpenAI mostly treat sessions as stateless. But look at OpenAI’s direction: real developer-level memory APIs for persistent, user-scoped, and tool-addressable state. This is how you make genuinely helpful agents that can learn, personalize, and act contextually, not just autocomplete the next line. Microsoft needs to standardize and ship memory primitives—think memory slots, scratchpads, and shareable state objects—for devs to build true multi-turn, context-aware AI. </p>\n\n<h2>Agent Protocols: Don’t Reinvent, Interoperate</h2>\n<p>Anthropic and OpenAI are both pushing toward open agent protocols—modular interfaces for tools, environments, and multi-agent orchestration. Microsoft should embrace these, not wall off with proprietary extensions. Imagine if Copilot or Azure AI agents could plug-and-play with OSS tools, third-party APIs, or even cross-cloud agents. That’s what engineers want: composability, not lock-in. </p>\n\n<h2>Eval-Driven Development: From Theory to Default</h2>\n<p>Every serious AI dev now builds with eval loops—continuous, automated harnesses that test, score, and let agents self-improve. Microsoft’s eval features are buried, inconsistent, and not a first-class part of the Copilot or Azure dev story. That’s a huge miss. Engineers need battle-tested eval flows, not \"trust us\" black boxes. </p>\n\n<p><strong>Why it matters:</strong> If Microsoft really wants to win developer mindshare, not just enterprises, it needs to build for agentic, memory-aware, eval-native workflows. Don’t wait for OpenAI and Anthropic to define the future. Steal their best ideas, open it up, and let engineers run wild.</p>",
+  "sources": [
+   {
+    "title": "OpenAI's Memory API Announcement",
+    "url": "https://platform.openai.com/docs/guides/memory"
+   },
+   {
+    "title": "Anthropic's Agent Protocol Approach",
+    "url": "https://www.anthropic.com/research/agent-protocols"
+   },
+   {
+    "title": "Eval-Driven AI Development",
+    "url": "https://www.latent.space/p/eval-everywhere"
+   }
+  ]
  }
 ]
