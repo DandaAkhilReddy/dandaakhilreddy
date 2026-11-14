@@ -10188,5 +10188,74 @@
     "url": "https://www.cnbc.com/2023/07/20/airbnb-scams-short-term-rental-fraud.html"
    }
   ]
+ },
+ {
+  "slug": "2026-11-14-agentic-coding-spec-eval-workflows",
+  "date": "2026-11-14",
+  "category": "AI & Developers",
+  "title": "Agentic Coding Moves Mainstream: Claude Code Loops, Spec-Driven Prompts, and Eval-First Dev",
+  "summary": "Agentic coding isn’t hype—it's solidifying as the default way devs wrangle AI. Here’s how real engineers are weaving Claude Code, spec-driven prompting, and eval loops into daily workflows.",
+  "image": "https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?w=1200&h=600&fit=crop",
+  "body": "<p>Agentic coding is no longer a playground for experimentalists—it’s shaping how everyday engineers build, ship, and debug code. The buzz has shifted: from <strong>can agents code?</strong> to <strong>how do we get them to code well, reliably, and safely</strong>.</p><h2>Claude Code and Agentic Loops, in Reality</h2><p>I’ve been watching devs move from vanilla prompting to agentic, eval-driven flows. With <strong>Claude Code</strong> (Anthropic’s take on codegen agents), engineers aren’t just asking for snippets—they’re leveraging <em>plan → act → verify → fix</em> cycles in one session. The agent writes a plan, implements, checks, and patches, all under your supervision. It matters because it shrinks the feedback loop that used to burn hours in local dev and CI runs.</p><h2>Spec-Driven Prompting and MCP Servers</h2><p>Spec-driven prompting is more than “write the doc first”—it’s about feeding explicit requirements, edge cases, and interface guides into the agent. This isn’t optional: ambiguous prompts yield spaghetti. Engineers now run their own <strong>MCP tool servers</strong> (multi-capability plugins), so agents can call real utilities, run linters, hit test endpoints, and report back. It’s like a dev environment for your agent, not just your IDE.</p><h2>Eval and Pair-Programming with AI</h2><p>No one trusts a black-box agent. So “eval-driven development” is the new default: every agent commit triggers auto-tests, static analysis, and feedback loops. Failures generate clarifying prompts. The upshot: AI pair-programming no longer means just “generate code” but “collaboratively pass evals, with the agent learning on the fly.” For engineers, this means less yak-shaving over rote code and more time on actual problem-solving—if you design your prompts and evals right.</p><p>Bottom line: the agentic loop is now the backbone of serious AI coding. If you’re not using evals, specs, and tool integrations, you’re not getting the productivity the hype promised. The workflows are maturing fast—but the best results still come when you treat the agent like a junior dev: clear specs, robust evals, and constant feedback.</p>",
+  "sources": [
+   {
+    "title": "Anthropic: Claude Code and the Evolution of Coding Agents",
+    "url": "https://www.anthropic.com/index/introducing-claude-code"
+   },
+   {
+    "title": "Bennett Institute: The Spec-Eval Revolution in LLM Development",
+    "url": "https://www.bennettinstitute.cam.ac.uk/blog/spec-eval-llm/"
+   },
+   {
+    "title": "Martin Fowler: Prompt Engineering Patterns for Autocoding Agents",
+    "url": "https://martinfowler.com/articles/prompt-patterns.html"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-14-gpu-market-supply-inference-energy",
+  "date": "2026-11-14",
+  "category": "Compute",
+  "title": "GPUs, Supply Chain Squeeze, and the Real Cost of Inference in 2026",
+  "summary": "GPU bottlenecks are back—only now, inference costs and energy ceilings dictate what engineers can feasibly ship. The news: why chips and datacenter economics directly shape what gets built.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>It’s November 2026, and the GPU market is as much about geopolitics and supply chains as about FLOPS. Nvidia’s next-gen parts (Blackwell and beyond) are snapped up before they leave the fab, and custom silicon (think Google’s Axion, Meta’s Artemis) is now table stakes for hyperscalers.</p><h2>Inference Costs: The New Bottleneck</h2><p>For engineers, the old refrain of “just scale with more GPUs” is dead. Inference, not training, is the choke point now. The economics matter: every model deployment is a line item on the P&L, and power costs are now a key metric on product roadmaps. If you ship a product with a 70B-parameter LLM, every call eats a few cents—fine at low scale, ruinous at consumer volume. Engineers must now ask: which models can we afford to run, and when do we have to get clever with distillation, quantization, or even edge deployment?</p><h2>Datacenter Buildouts and Energy Math</h2><p>Azure, Google, and AWS are building data centers as fast as the grid allows, but energy constraints are biting. It’s not just about chips—it’s power budgets, cooling, and grid contracts. If you’re shipping AI, know your provider’s region, failover, and energy profile. <strong>Cheap inference is a locality problem now.</strong></p><h2>Why Engineers Need to Care</h2><p>This all means: you can’t just design for “SOTA model, scale up later.” The new reality is making hard choices up front—smaller models, smarter routing, caching, and good-enough accuracy. Ignore the chip and energy story, and you’ll get burned at launch or, worse, during a sudden surge. Understanding the cost and supply chain math is as core to AI engineering as knowing your loss function.</p>",
+  "sources": [
+   {
+    "title": "The Verge: Nvidia, Google, and the Race for Custom AI Chips",
+    "url": "https://www.theverge.com/2026/10/17/nvidia-google-custom-ai-chips"
+   },
+   {
+    "title": "Financial Times: Energy Crunch Threatens AI Expansion",
+    "url": "https://www.ft.com/content/energy-crunch-ai"
+   },
+   {
+    "title": "TechCrunch: The Real Costs of AI Inference in Production",
+    "url": "https://techcrunch.com/2026/09/05/ai-inference-costs/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-14-microsoft-frontier-lessons-ai-stack",
+  "date": "2026-11-14",
+  "category": "Microsoft",
+  "title": "What Microsoft Needs to Learn Next: Eval-First APIs, Open Agent Memory, and Transparent Sandboxes",
+  "summary": "Microsoft is shipping AI everywhere, but OpenAI and Anthropic’s latest releases expose gaps in eval-driven APIs, agent memory protocols, and sane sandboxing. Here's what devs at Microsoft should copy—yesterday.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>Let’s be real: Microsoft is in full AI mode, pushing Copilot across Windows, Azure, and everything in between. But the latest moves from OpenAI (GPT-5, eval APIs, “open agent memory”) and Anthropic (Claude’s tool API, full traceability sandboxes) highlight where Microsoft’s stack lags, at least from a dev-first perspective.</p><h2>Eval-First APIs and Continuous Feedback</h2><p>OpenAI’s new eval APIs aren’t just about benchmarks—they’re about making every API call testable, with built-in regression tracking and model drift alerts. Microsoft’s Copilot stack needs this, <em>especially</em> in enterprise: if I can’t validate what Copilot or a model is doing over time, I can’t trust it in CI/CD or prod. Eval as a service, please.</p><h2>Open Agent Memory and Interoperable Protocols</h2><p>Anthropic’s “open agent memory” protocol means agents can retain, recall, and share context across sessions and even apps, with a clear spec. GitHub Copilot, Azure Agents, and Power Platform AI all need this: right now, they’re siloed, with memory as a black box. Open protocols (think: embedding stores, prompt histories, cross-app recall) would make Microsoft’s ecosystem far more composable—and let devs build agent workflows that aren’t locked in.</p><h2>Transparent Sandboxing</h2><p>One thing the frontier labs get right is developer trust: Anthropic and OpenAI both ship sandboxes that expose exactly what the agent did, what tools it called, and why. Microsoft’s agent products often hide this (or bury it in logs). To win devs, Microsoft needs transparent, tamper-proof sandboxes—so every agent action is inspectable, auditable, and testable.</p><p>Bottom line: Microsoft is shipping fast, but if it wants to win the next wave of devs, it needs to steal eval-first APIs, open agent memory, and transparent sandboxes—because engineers care about trust, extensibility, and debugging, not just “powered by GPT.”</p>",
+  "sources": [
+   {
+    "title": "OpenAI Blog: Eval APIs and Agent Memory Protocols",
+    "url": "https://openai.com/blog/eval-apis-agent-memory"
+   },
+   {
+    "title": "Anthropic: Transparent Sandbox and Agent Traceability",
+    "url": "https://www.anthropic.com/articles/sandbox-traceability"
+   },
+   {
+    "title": "ZDNet: Microsoft Copilot vs. OpenAI Agents — Developer Trust and Extensibility",
+    "url": "https://www.zdnet.com/article/microsoft-copilot-vs-openai-agents/"
+   }
+  ]
  }
 ]
