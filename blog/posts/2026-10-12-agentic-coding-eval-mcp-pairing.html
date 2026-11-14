@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Coding in Practice: Claude Code, Loop Engineering, and the Rise of MCP Servers | Reddy Pulse</title>
+<meta name="description" content="Agentic coding is no longer hype—it&#x27;s how engineers are actually building and shipping. Here’s how daily dev workflows are evolving with Claude Code, multi-loop engineering, and eval-driven development.">
+<meta property="og:title" content="Agentic Coding in Practice: Claude Code, Loop Engineering, and the Rise of MCP Servers">
+<meta property="og:description" content="Agentic coding is no longer hype—it&#x27;s how engineers are actually building and shipping. Here’s how daily dev workflows are evolving with Claude Code, multi-loop engineering, and eval-driven development.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">AI &amp; Developers</span>
+  <h1>Agentic Coding in Practice: Claude Code, Loop Engineering, and the Rise of MCP Servers</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 12th October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop" alt="Agentic Coding in Practice: Claude Code, Loop Engineering, and the Rise of MCP Servers">
+  <p>The last six months have been a tipping point for agentic coding. It’s no longer just a research meme—engineers are running actual delivery pipelines powered by models like Claude Code and GPT-5, but the <strong>methods</strong> matter more than the models. If you’re still prompting a single LLM call, you’re behind.</p><h2>Here’s What’s Actually Working</h2><p><strong>1. Loop engineering:</strong> The dominant workflow now is plan → act → verify → fix. Whether you’re running this in a notebook or behind a fastapi endpoint, the core is chaining LLM calls with automated checks—specs, unit tests, type signatures—at every step. This isn’t “prompt the LLM until it works.” It’s orchestrating loops that catch errors, refine outputs, and retry autonomously. The dev’s job: design the process, not just write the prompt.</p><p><strong>2. Spec-driven prompting:</strong> Instead of hand-holding LLMs with verbose instructions, devs are handing them structured specs—OpenAPI, TypeScript types, JSON schemas—and letting the loop enforce them. This greatly reduces hallucination and forces tighter integration with backends, which is critical for anything non-trivial.</p><p><strong>3. MCP tool servers:</strong> The Multi-Component Protocol (MCP) server boom is real. These tool servers let agentic coders wire up <em>real</em> code execution, testing, data scraping, and even cloud deploys directly into the LLM’s action loop. Open-source stacks like ToolJet-MCP or Azure ActionHub are now table stakes for any agent-based workflow.</p><p><strong>4. Eval-driven development:</strong> Forget manual QA. Every code or config change triggers evals: codegen accuracy, pass@k, hallucination rate, and custom business checks. This is now the main way teams ship reliable AI features, and it’s tightly integrated with CI/CD. If you aren’t automated-testing your agents, you’re shipping bugs—period.</p><h2>Why This Matters</h2><p>Engineers shipping AI today spend most of their mental energy on <strong>designing loops, specs, and evals</strong>—not prompt-crafting or hand-patching outputs. The bar is higher: if you don’t treat LLMs as unreliable collaborators needing checks, you’re gambling with prod. The teams who get this are shipping faster, with fewer regressions, and iterating on real customer feedback at LLM speed.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-12-agentic-coding-eval-mcp-pairing.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-12-agentic-coding-eval-mcp-pairing.html&text=Agentic%20Coding%20in%20Practice%3A%20Claude%20Code%2C%20Loop%20Engineering%2C%20and%20the%20Rise%20of%20MCP%20Servers" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/index/agentic-coding-practices" target="_blank" rel="noopener">Anthropic Blog: The Emerging Practice of Agentic Coding</a></li><li><a href="https://githubnext.com/posts/llm-loop-engineering/" target="_blank" rel="noopener">GitHub Next: Loop Engineering for LLMs</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

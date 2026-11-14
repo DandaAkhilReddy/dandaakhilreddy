@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARM Neuromesh: DRAM-Logic Fusion Goes Mainstream for Edge AI | Reddy Pulse</title>
+<meta name="description" content="ARM’s Neuromesh architecture fuses DRAM tiles with logic at the die level, slashing data movement and unlocking a new class of efficient edge AI systems. The practical impact: huge speed and battery gains for on-device LLMs.">
+<meta property="og:title" content="ARM Neuromesh: DRAM-Logic Fusion Goes Mainstream for Edge AI">
+<meta property="og:description" content="ARM’s Neuromesh architecture fuses DRAM tiles with logic at the die level, slashing data movement and unlocking a new class of efficient edge AI systems. The practical impact: huge speed and battery gains for on-device LLMs.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Semiconductors</span>
+  <h1>ARM Neuromesh: DRAM-Logic Fusion Goes Mainstream for Edge AI</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 21st September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="ARM Neuromesh: DRAM-Logic Fusion Goes Mainstream for Edge AI">
+  <p>Cutting-edge AI hardware isn’t just about shrinking nodes—it's about collapsing the distance between memory and compute. Enter ARM’s <strong>Neuromesh</strong> architecture. Instead of the old paradigm—CPU/NPUs here, DRAM over there—Neuromesh brings DRAM tiles right onto the logic die, interconnected by ultra-short mesh fabrics. The result: <strong>latency that’s an order of magnitude lower</strong> than even HBM3e, and bandwidth that finally matches what transformer models crave.</p><h2>Why does this matter for engineers?</h2><p>Because running LLMs (or any modern AI) on edge devices has been bottlenecked by memory bandwidth and energy draw. Every token generated means gigabytes shuffled back and forth between chip and DRAM—wasteful and slow. Neuromesh means your on-device models run local, fast, and cool. ARM claims 3x speedups and 40% better battery life on real workloads, not just benchmarks. For anyone building mobile, AR, or embedded AI, this is the difference between 'cloud fallback' and 'truly offline' inference.</p><h2>System design implications</h2><p>With Neuromesh, you architect for locality: <strong>keep the weights, activations, and even attention cache resident</strong>, minimize PCIe or bus traffic, and let agents run real-time, always-on. This changes what’s feasible for product teams—imagine privacy-preserving, offline copilots in wearables, or complex vision models in drones that don’t need to call home. If you’re targeting ARM silicon, start reading up: the API and memory model are different, and you’ll want to tune your software to take advantage of this locality rather than let the scheduler guess.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-21-arm-neuromesh-dram-logic-fusion.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-21-arm-neuromesh-dram-logic-fusion.html&text=ARM%20Neuromesh%3A%20DRAM-Logic%20Fusion%20Goes%20Mainstream%20for%20Edge%20AI" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anandtech.com/show/neuromesh-arm-dram-logic-fusion" target="_blank" rel="noopener">AnandTech — ARM Neuromesh: DRAM-Logic Fusion for Edge AI</a></li><li><a href="https://www.eetimes.com/arm-neuromesh-architectures-for-ai" target="_blank" rel="noopener">EE Times — DRAM-in-Logic Architectures Reboot Edge AI</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

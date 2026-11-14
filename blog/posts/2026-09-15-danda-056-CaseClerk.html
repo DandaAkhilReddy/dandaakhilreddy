@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #056 — CaseClerk: AI Agents to End Small Claims Court Paperwork Nightmares | Reddy Pulse</title>
+<meta name="description" content="Millions are locked out of justice by small claims court paperwork and process confusion. My agentic AI startup automates filings, reminders, and evidence collection, unlocking access to speedy, fair resolutions for everyday disputes.">
+<meta property="og:title" content="DANDA #056 — CaseClerk: AI Agents to End Small Claims Court Paperwork Nightmares">
+<meta property="og:description" content="Millions are locked out of justice by small claims court paperwork and process confusion. My agentic AI startup automates filings, reminders, and evidence collection, unlocking access to speedy, fair resolutions for everyday disputes.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #056 — CaseClerk: AI Agents to End Small Claims Court Paperwork Nightmares</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 15th September, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #056 — CaseClerk: AI Agents to End Small Claims Court Paperwork Nightmares">
+  <p>Justice isn’t just for the wealthy or business-savvy. Yet, for millions of Americans, small claims court—meant to resolve disputes quickly and affordably—remains a bureaucratic maze. People give up on collecting debts, landlords lose out on damages, tenants suffer unlawful withholdings, and freelancers write off unpaid invoices. The root cause: paperwork nightmares, confusing requirements, and missed deadlines that make the process harder than the dispute itself.</p>
+
+<h2>The problem</h2>
+<p>Every year, over <b>20 million small claims cases</b> are filed in the US alone. But for every case filed, <b>1-2 more are abandoned</b> due to paperwork confusion, procedural errors, or missing deadlines. The average American spends <b>10-15 hours</b> navigating forms, assembling evidence, and deciphering court rules, only to be tripped up by procedural mistakes or missed hearings. Lost claims and dismissed cases cost individuals and small businesses an estimated <b>$13 billion</b> annually in uncollected judgments and unrecovered damages. The courts themselves are swamped: nearly <b>30% of small claims cases</b> are dismissed for incomplete or incorrect filings, wasting everyone’s time.</p>
+
+<h2>The idea: CaseClerk</h2>
+<p><b>CaseClerk</b> is an AI-powered agent that acts as a user’s personal clerk for small claims cases. It automates paperwork prep, deadline tracking, evidence collection, and communication with court staff—demystifying each step. Users simply describe their dispute ("My landlord didn’t return my deposit"), upload basic documents, and CaseClerk orchestrates everything: selecting the right forms, pre-filling details, scheduling reminders, and even generating polite, court-ready emails or printouts. For evidence, it creates a visual timeline, extracts key facts, and bundles exhibits—no more mess of screenshots or missing receipts. The agent updates users on case status and court communications, ensuring no deadline or hearing is missed. It’s the justice system—finally made simple, accessible, and human.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;border-radius:10px' width='100%' height='440'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='8' markerHeight='8' orient='auto' markerUnits='strokeWidth'><polygon points='0,0 10,5 0,10' fill='#f5c518'/></marker>
+    <linearGradient id='goldGrad' x1='0' x2='1' y1='0' y2='1'>
+      <stop stop-color='#f5c518' offset='0%'/><stop stop-color='#fffbe6' offset='100%'/>
+    </linearGradient>
+  </defs>
+  <!-- Inputs -->
+  <rect x='40' y='180' width='110' height='80' rx='14' fill='#222'/>
+  <text x='95' y='225' fill='#f5c518' font-family='sans-serif' font-size='19' text-anchor='middle'>Inputs</text>
+  <text x='95' y='250' fill='#eee' font-size='13' font-family='sans-serif' text-anchor='middle'>User, Docs, Photos</text>
+  <!-- Ingestion -->
+  <rect x='170' y='180' width='120' height='80' rx='14' fill='#222'/>
+  <text x='230' y='215' fill='#f5c518' font-family='sans-serif' font-size='19' text-anchor='middle'>Ingestion</text>
+  <text x='230' y='240' fill='#eee' font-size='13' font-family='sans-serif' text-anchor='middle'>OCR, Extraction</text>
+  <!-- Memory/Graph -->
+  <rect x='320' y='140' width='130' height='80' rx='14' fill='#222'/>
+  <text x='385' y='175' fill='url(#goldGrad)' font-family='sans-serif' font-size='19' text-anchor='middle'>Case Graph</text>
+  <text x='385' y='200' fill='#eee' font-size='13' font-family='sans-serif' text-anchor='middle'>Facts, Timeline</text>
+  <!-- Agent Orchestrator -->
+  <rect x='320' y='260' width='130' height='80' rx='14' fill='#222'/>
+  <text x='385' y='295' fill='url(#goldGrad)' font-family='sans-serif' font-size='19' text-anchor='middle'>Agent Orchestrator</text>
+  <text x='385' y='320' fill='#eee' font-size='13' font-family='sans-serif' text-anchor='middle'>Workflow, Deadlines</text>
+  <!-- Human Gate -->
+  <rect x='480' y='200' width='110' height='70' rx='14' fill='#222'/>
+  <text x='535' y='235' fill='#f5c518' font-family='sans-serif' font-size='19' text-anchor='middle'>Human Gate</text>
+  <text x='535' y='255' fill='#eee' font-size='13' font-family='sans-serif' text-anchor='middle'>User Review</text>
+  <!-- Action Layer -->
+  <rect x='620' y='200' width='100' height='70' rx='14' fill='#222'/>
+  <text x='670' y='235' fill='url(#goldGrad)' font-family='sans-serif' font-size='19' text-anchor='middle'>Action Layer</text>
+  <text x='670' y='255' fill='#eee' font-size='13' font-family='sans-serif' text-anchor='middle'>Forms, Notices</text>
+  <!-- Arrows -->
+  <line x1='150' y1='220' x2='170' y2='220' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)' />
+  <line x1='290' y1='220' x2='320' y2='180' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)' />
+  <line x1='290' y1='220' x2='320' y2='300' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)' />
+  <line x1='450' y1='180' x2='480' y2='235' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)' />
+  <line x1='450' y1='340' x2='480' y2='235' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)' />
+  <line x1='590' y1='235' x2='620' y2='235' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)' />
+</svg>
+<p>CaseClerk receives user inputs—plain language, receipts, emails, or photos. The Ingestion layer parses and extracts details via OCR and LLMs, feeding structured facts into a case-specific knowledge graph (timeline, parties, amounts, deadlines). The Agent Orchestrator plans the workflow: forms to prepare, evidence to request, and key dates. Whenever a legal decision or submission is needed, the Human Gate asks for user confirmation or edits. The Action Layer then generates court forms, notices, and reminders, ready for e-filing or printing—keeping the user on track, error-free.</p>
+
+<h2>Build plan (90 days)</h2>
+<p>The wedge: single jurisdiction pilot (e.g., Los Angeles County), focused on tenant-landlord disputes and unpaid invoices. Integrate court form templates, rules, and deadlines into ingestion and agentic flows. Stack: expand to additional case types (auto, consumer, gig work), add integrations with e-filing portals and SMS/email reminders. Pricing: $19/case for DIY, $99/case for white-glove review, with volume rates for legal aid orgs and small business bundles.</p>
+
+<h2>Why now</h2>
+<p>Courts are finally digitizing, and consumers are demanding access to justice without lawyers. GenAI can now parse evidence and optimize workflows with accuracy lawyers charge $200/hr for. The stakes—billions in lost claims, millions frustrated—are immediate. With agentic automation and a human-reviewed action layer, we unlock justice for all, not just the few.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-15-danda-056-CaseClerk.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-15-danda-056-CaseClerk.html&text=DANDA%20%23056%20%E2%80%94%20CaseClerk%3A%20AI%20Agents%20to%20End%20Small%20Claims%20Court%20Paperwork%20Nightmares" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.courtstatistics.org/publications/civil" target="_blank" rel="noopener">How Many Civil Cases Are Filed Each Year in State Courts?</a></li><li><a href="https://www.ncsc.org/__data/assets/pdf_file/0017/23730/small-claims-trends.pdf" target="_blank" rel="noopener">Small Claims Court: Trends and Challenges</a></li><li><a href="https://www.americanbar.org/groups/legal_aid_indigent_defendants/initiatives/access-to-justice/" target="_blank" rel="noopener">The Access-to-Justice Gap &amp; Civil Legal Needs</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

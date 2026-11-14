@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Coding in the Trenches: How Developers Are Actually Shipping with AI in October 2026 | Reddy Pulse</title>
+<meta name="description" content="Agentic coding has moved from hype to habit: Claude Code, loop engineering, and eval-driven dev are now part of daily workflows for engineers building serious software. Here’s what these methods actually look like from a practitioner’s seat—and why they matter.">
+<meta property="og:title" content="Agentic Coding in the Trenches: How Developers Are Actually Shipping with AI in October 2026">
+<meta property="og:description" content="Agentic coding has moved from hype to habit: Claude Code, loop engineering, and eval-driven dev are now part of daily workflows for engineers building serious software. Here’s what these methods actually look like from a practitioner’s seat—and why they matter.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">AI &amp; Developers</span>
+  <h1>Agentic Coding in the Trenches: How Developers Are Actually Shipping with AI in October 2026</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 7th October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="Agentic Coding in the Trenches: How Developers Are Actually Shipping with AI in October 2026">
+  <p><strong>Agentic coding isn’t just a buzzword anymore—it’s the default way many engineers (myself included) are getting things shipped in 2026. The big news this week: Anthropic rolled out Claude Code 2.5, and it’s not just about bigger context; it’s about making agent loops reliable at scale. But what does that mean for those of us on the ground, merging pull requests and fixing production bugs?</strong></p> <h2>Loop Engineering: It’s Not Optional Now</h2> <p>Engineers are running tight <strong>plan→act→verify→fix</strong> loops, often with Claude Code or GPT-4o as a core agent. The trick is chaining these loops, not just prompting once. For example, we spec a new API, have Claude Code generate an implementation plan, write code, run tests, review errors, and iterate—without ever leaving the agent’s “flow.” It’s faster than code generation alone and far less error-prone, because the agent is actively trying to close gaps, not just spit out blobs of code.</p> <h2>Spec-Driven Prompting: Goodbye Vague Intents</h2> <p>We’ve learned the hard way: agents only work well with precise specs. Spec-driven prompting—writing structured, machine- and human-readable requirements—lets the agent reason about edge cases, generate tighter code, and even self-evaluate. I see more teams using simple YAML or Markdown specs piped directly into prompt templates, then reusing those specs to drive evals. It’s about reducing ambiguity; otherwise, the agent just hallucinates.</p> <h2>MCP Tool Servers and Eval-Driven Dev</h2> <p>The “MCP” (Multi-Context Process) tool server is the new backend workhorse—basically, a thin API layer that lets agentic code invoke internal linters, CI/CD, or even production rollouts. It’s eval-driven development at its core: you run your agent, it triggers real evals (unit and integration tests), and uses results to loop until it passes. This changes the way we think about TDD; the agent owns the red-green-refactor flow, not just the dev.</p> <p><strong>Why does this matter?</strong> It’s not about replacing engineers—it’s about amplifying productivity and reliability, so you can spend more time thinking about architecture and less time grinding through boilerplate or chasing flaky tests.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-07-agentic-coding-day-to-day.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-07-agentic-coding-day-to-day.html&text=Agentic%20Coding%20in%20the%20Trenches%3A%20How%20Developers%20Are%20Actually%20Shipping%20with%20AI%20in%20October%202026" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/news/claude-2-5" target="_blank" rel="noopener">Anthropic launches Claude 2.5 with better code capabilities</a></li><li><a href="https://www.semaphoreci.com/blog/agentic-dev-workflows" target="_blank" rel="noopener">The Rise of Agentic Workflows for Developers</a></li><li><a href="https://martinfowler.com/articles/spec-driven-prompting.html" target="_blank" rel="noopener">Why Spec-Driven Prompting Works (and Where It Breaks)</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

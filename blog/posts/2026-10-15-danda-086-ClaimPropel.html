@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #086 — ClaimPropel: AI Agents to End Property Insurance Underpayment and Denial Nightmares | Reddy Pulse</title>
+<meta name="description" content="Tens of millions of US homeowners face property insurance claim underpayments, denials, and endless delays, losing billions every year. ClaimPropel deploys autonomous AI agents to collect, document, and negotiate fair insurance settlements, ending the claim chaos.">
+<meta property="og:title" content="DANDA #086 — ClaimPropel: AI Agents to End Property Insurance Underpayment and Denial Nightmares">
+<meta property="og:description" content="Tens of millions of US homeowners face property insurance claim underpayments, denials, and endless delays, losing billions every year. ClaimPropel deploys autonomous AI agents to collect, document, and negotiate fair insurance settlements, ending the claim chaos.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #086 — ClaimPropel: AI Agents to End Property Insurance Underpayment and Denial Nightmares</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 15th October, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #086 — ClaimPropel: AI Agents to End Property Insurance Underpayment and Denial Nightmares">
+  <p>Every year, homeowners and small landlords are thrown into financial chaos when disaster strikes—their property insurance claim process is a black box of lost evidence, unreadable policy language, and carrier tactics designed to underpay or deny legitimate claims. The result: billions lost, homes unrepaired, and families stretched to the breaking point. I’m attacking this head-on with agentic automation that arms regular people with the firepower of a top-tier public adjuster—at the speed of AI.</p>
+
+<h2>The problem</h2>
+<ul>
+<li>Over 5.8 million property insurance claims are filed in the US each year. Among major carriers, 25% of claims are underpaid, and 10% are outright denied, leaving policyholders on the hook for repairs or stranded in legal limbo.</li>
+<li>Homeowners lose $11 billion annually from underpaid or denied claims. Most never appeal because the process is complex, evidence is scattered, and policies are unreadable.</li>
+<li>Average time to settle a disputed claim: 180+ days. For those who hire a public adjuster, fees eat up 10-20% of their settlement, and adjusters are in short supply after disasters.</li>
+</ul>
+
+<h2>The idea: ClaimPropel</h2>
+<p>ClaimPropel is an autonomous AI agent built for homeowners and small landlords. It ingests policy documents, claim forms, receipts, and visual evidence (photos, videos), maps damage to policy language, and generates a dynamic, evidence-backed claim brief. The agent negotiates directly with insurance portals, tracks all carrier communications, and identifies underpayment tactics automatically. Human experts are looped in only for exceptions or legal escalation. The result: faster, larger, and less-stressful settlements—without adjuster fees.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius:16px;'>
+  <defs>
+    <marker id='arrow' markerWidth='10' markerHeight='7' refX='10' refY='3.5' orient='auto' markerUnits='strokeWidth'>
+      <polygon points='0 0, 10 3.5, 0 7' fill='#f5c518' />
+    </marker>
+  </defs>
+  <!-- Inputs Layer -->
+  <rect x='30' y='60' width='130' height='70' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='95' y='100' fill='#f5c518' font-size='19' text-anchor='middle' font-family='sans-serif'>Inputs</text>
+  <text x='95' y='122' fill='#bbb' font-size='13' text-anchor='middle' font-family='sans-serif'>Policy, Photos, Receipts</text>
+
+  <!-- Ingestion -->
+  <rect x='180' y='80' width='130' height='50' rx='14' fill='#222' stroke='#444' stroke-width='2'/>
+  <text x='245' y='110' fill='#fff' font-size='17' text-anchor='middle' font-family='sans-serif'>Ingestion</text>
+  <text x='245' y='127' fill='#bbb' font-size='12' text-anchor='middle'>OCR, Vision, Parsing</text>
+
+  <!-- Memory / Graph -->
+  <rect x='340' y='60' width='140' height='70' rx='14' fill='#222' stroke='#444' stroke-width='2'/>
+  <text x='410' y='95' fill='#fff' font-size='17' text-anchor='middle' font-family='sans-serif'>Memory / Graph</text>
+  <text x='410' y='115' fill='#bbb' font-size='12' text-anchor='middle'>Claim+Policy Map</text>
+
+  <!-- Agent Orchestrator -->
+  <rect x='510' y='80' width='140' height='50' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='580' y='110' fill='#f5c518' font-size='17' text-anchor='middle' font-family='sans-serif'>Agent Orchestrator</text>
+  <text x='580' y='127' fill='#bbb' font-size='12' text-anchor='middle'>Claim Generation, Negotiation</text>
+
+  <!-- Human Gate -->
+  <rect x='340' y='170' width='140' height='50' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='410' y='200' fill='#f5c518' font-size='16' text-anchor='middle' font-family='sans-serif'>Human Gate</text>
+  <text x='410' y='217' fill='#bbb' font-size='12' text-anchor='middle'>Expert Review, Escalations</text>
+
+  <!-- Action Layer -->
+  <rect x='530' y='300' width='110' height='50' rx='14' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='585' y='330' fill='#f5c518' font-size='16' text-anchor='middle' font-family='sans-serif'>Action Layer</text>
+  <text x='585' y='347' fill='#bbb' font-size='12' text-anchor='middle'>E-filing, Messaging, Portal</text>
+
+  <!-- Arrows -->
+  <line x1='160' y1='95' x2='180' y2='105' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='310' y1='105' x2='340' y2='95' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='480' y1='105' x2='510' y2='105' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='580' y1='130' x2='580' y2='300' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='410' y1='130' x2='410' y2='170' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='480' y1='195' x2='530' y2='325' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+</svg>
+<p>The user uploads all relevant evidence—policy PDFs, images of damage, repair estimates, and correspondence. The Ingestion layer uses OCR and vision models to structure and label every item. Memory/Graph maps damages and evidence to policy sections and coverage limits. The Agent Orchestrator builds a claim packet, drafts negotiation messages, and interacts with insurer portals. The Human Gate is triggered only if the agent detects an impasse, fraud risk, or legal escalation, using expert adjusters on demand. The Action Layer handles filings, tracks status, and pushes real-time updates back to the user.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Target homeowners in disaster-prone states (Florida, Texas, California) dealing with hail, flood, and fire claims under $100k—high frequency, low-touch cases that are typically underpaid or delayed. Build integrations with top 5 carrier portals for status tracking and e-filing.</p>
+<p><b>Stack:</b> Add agentic auto-negotiation with insurers, advanced evidence correlation, and multi-language support. Expand to landlord portfolios and small commercial claims. Integrate with public adjusters for legal handoff and develop an expert marketplace.</p>
+<p><b>Pricing:</b> Free for claim assessment and claim packet generation. 4% success fee on increased settlement amount, capped at $2,500. Optional $249 flat fee for expert escalation if needed (bypassing standard 10-20% adjuster cut).</p>
+
+<h2>Why now</h2>
+<p>Property insurance claim disputes are surging, fueled by climate change and coverage gaps. Carriers are automating denials and underpayments with their own AI—homeowners need agentic firepower to fight back. Recent regulatory changes mandate faster claim response times and digital access, making direct agent-insurer interactions feasible. The tech is here—vision, LLMs, and agentic workflows are robust enough to handle unstructured evidence and real-time negotiation. ClaimPropel flips the balance of power to the homeowner, unlocking billions for families and ending the post-disaster claim nightmare.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-15-danda-086-ClaimPropel.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-15-danda-086-ClaimPropel.html&text=DANDA%20%23086%20%E2%80%94%20ClaimPropel%3A%20AI%20Agents%20to%20End%20Property%20Insurance%20Underpayment%20and%20Denial%20Nightmares" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.forbes.com/advisor/homeowners-insurance/claims-denied-or-underpaid/" target="_blank" rel="noopener">The Truth About Insurance Claim Denials and Underpayments</a></li><li><a href="https://www.iii.org/fact-statistic/facts-statistics-homeowners-and-renters-insurance" target="_blank" rel="noopener">Home Insurance Claims Statistics (US)</a></li><li><a href="https://www.nolo.com/legal-encyclopedia/using-a-public-insurance-adjuster-29713.html" target="_blank" rel="noopener">What to Know About Public Insurance Adjusters</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

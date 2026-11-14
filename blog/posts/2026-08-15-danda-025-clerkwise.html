@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #025 — ClerkWise: AI Agents to End Municipal Court Case Backlog Chaos | Reddy Pulse</title>
+<meta name="description" content="Municipal courts are drowning—over 75 million low-level cases a year, with paper-heavy, manual processing driving years-long backlogs and harming millions. ClerkWise is an AI agent platform that digests filings, automates routine workflows, and expedites case routing—giving court clerks superpowers to cut wait times from months to days.">
+<meta property="og:title" content="DANDA #025 — ClerkWise: AI Agents to End Municipal Court Case Backlog Chaos">
+<meta property="og:description" content="Municipal courts are drowning—over 75 million low-level cases a year, with paper-heavy, manual processing driving years-long backlogs and harming millions. ClerkWise is an AI agent platform that digests filings, automates routine workflows, and expedites case routing—giving court clerks superpowers to cut wait times from months to days.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #025 — ClerkWise: AI Agents to End Municipal Court Case Backlog Chaos</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 15th August, 2026 · 3 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #025 — ClerkWise: AI Agents to End Municipal Court Case Backlog Chaos">
+  <p>Every American city depends on municipal courts to resolve the everyday disputes that keep local society functioning: traffic offenses, landlord-tenant issues, code violations, small claims, and more. Yet right now, these courts are overwhelmed—drowning in filings and paperwork, buried under a deluge of routine cases processed almost entirely by hand. The result? Justice delayed, denied, and derailed for millions.</p>
+
+<h2>The problem</h2>
+<p>Municipal courts handle over <b>75 million cases annually</b> in the U.S. alone, the vast majority for low-level matters—traffic tickets, fines, code enforcement, and small claims. The median time to resolve a simple case can stretch from <b>2 to 9 months</b> in major cities. In places like New York and Los Angeles, backlogs can exceed <b>1 million unresolved cases</b> at a time. Clerks spend <b>60% of their week</b> on manual data entry, shuffling paper filings, and basic communication. Missed deadlines, lost documents, and slow responses result in <b>over $10 billion in unpaid fines</b>, mounting public frustration, and, worst of all, court outcomes that hinge on administrative error rather than justice.</p>
+
+<h2>The idea: ClerkWise</h2>
+<p>ClerkWise is an AI agent platform built for municipal court clerks. It ingests digital filings, scans paper documents, and automatically classifies, extracts, and routes case data. Routine tasks—scheduling, reminder calls, form verification, public inquiries—are handled instantly by agents. Every action is logged and audited, with human clerks always in the loop for oversight and exceptions. The result: Case processing times drop from months to days, fines are collected on time, and citizens actually get clear, timely court communications.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius:10px; color:#fff'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'>
+      <path d='M 0 0 L 10 5 L 0 10 z' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <!-- Inputs -->
+  <rect x='35' y='80' width='110' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='90' y='120' font-size='18' fill='#fff' text-anchor='middle'>Inputs</text>
+  <text x='90' y='140' font-size='13' fill='#ccc' text-anchor='middle'>eFile, Scans, Email, Calls</text>
+
+  <!-- Ingestion -->
+  <rect x='170' y='80' width='110' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='225' y='120' font-size='18' fill='#fff' text-anchor='middle'>Ingestion</text>
+  <text x='225' y='140' font-size='13' fill='#ccc' text-anchor='middle'>OCR, Parsing, NLP</text>
+
+  <!-- Memory/Graph -->
+  <rect x='325' y='60' width='110' height='60' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='380' y='90' font-size='16' fill='#fff' text-anchor='middle'>Memory / Graph</text>
+  <text x='380' y='110' font-size='13' fill='#ccc' text-anchor='middle'>Case DB, Timeline</text>
+
+  <!-- Agent Orchestrator -->
+  <rect x='325' y='170' width='110' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='380' y='210' font-size='16' fill='#fff' text-anchor='middle'>Agent Orchestrator</text>
+  <text x='380' y='230' font-size='13' fill='#ccc' text-anchor='middle'>Task Router, Rules, LLMs</text>
+
+  <!-- Human Gate -->
+  <rect x='470' y='170' width='110' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='525' y='210' font-size='16' fill='#fff' text-anchor='middle'>Human Gate</text>
+  <text x='525' y='230' font-size='13' fill='#ccc' text-anchor='middle'>Clerk Review, Audit</text>
+
+  <!-- Action Layer -->
+  <rect x='615' y='170' width='110' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='670' y='210' font-size='16' fill='#fff' text-anchor='middle'>Action Layer</text>
+  <text x='670' y='230' font-size='13' fill='#ccc' text-anchor='middle'>Filing, Notify, Collect</text>
+
+  <!-- Arrows -->
+  <line x1='145' y1='120' x2='170' y2='120' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='280' y1='120' x2='325' y2='90' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='280' y1='120' x2='325' y2='200' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='380' y1='140' x2='380' y2='170' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='435' y1='210' x2='470' y2='210' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='580' y1='210' x2='615' y2='210' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+</svg>
+<p>Filings—digital or scanned—enter the system via the <b>Inputs</b> layer, feeding into the <b>Ingestion</b> module for OCR, parsing, and NLP-based extraction of case details. Information is then represented in a <b>Memory/Graph</b> layer—each case with its timeline, parties, and status. The <b>Agent Orchestrator</b> triggers task-specific agents to handle scheduling, verification, communication, or escalations. All automated actions pass through a <b>Human Gate</b> for clerk review and audit trails, before surfacing in the <b>Action Layer</b>—sending notifications, updating records, or collecting payments.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Launch with traffic citation processing for midsize city courts (>100k cases/year), automating intake, docketing, and citizen text/email notifications. <b>Stack:</b> Add modules for code violations, small claims, and multilingual support. <b>Pricing:</b> Subscription per court ($4k/month baseline), plus volume overage and success-based fee on fine collection increases.</p>
+
+<h2>Why now</h2>
+<p>Courts are under unprecedented pressure: post-pandemic backlogs, staff shortages, digital transformation mandates, and new AI-friendly regulations (like e-filing standards) make agentic automation not just viable, but urgent. Municipalities are desperate for solutions that make government work at the speed of citizens’ lives—ClerkWise is the catalyst to finally deliver that promise.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-15-danda-025-clerkwise.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-15-danda-025-clerkwise.html&text=DANDA%20%23025%20%E2%80%94%20ClerkWise%3A%20AI%20Agents%20to%20End%20Municipal%20Court%20Case%20Backlog%20Chaos" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.courtstatistics.org/court-statistics/state-court-caseload-statistics" target="_blank" rel="noopener">State Court Caseload Statistics</a></li><li><a href="https://www.ncsc.org/research-and-resources/court-administration/municipal-courts" target="_blank" rel="noopener">National Center for State Courts — Municipal Court Data</a></li><li><a href="https://www.pewtrusts.org/en/research-and-analysis/articles/2022/10/20/how-municipal-courts-work-and-why-it-matters" target="_blank" rel="noopener">Pew — How Municipal Courts Work and Why It Matters</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

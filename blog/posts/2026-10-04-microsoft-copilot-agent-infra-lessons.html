@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>If I Ran Copilot: Lessons from Anthropic’s Agent Infra, OpenAI’s Eval Chaining | Reddy Pulse</title>
+<meta name="description" content="Microsoft’s Copilot and Foundry stack are thriving, but could learn a ton from Anthropic’s tool API discipline and OpenAI’s live eval chaining. Here’s how MSFT should evolve, engineer-to-engineer.">
+<meta property="og:title" content="If I Ran Copilot: Lessons from Anthropic’s Agent Infra, OpenAI’s Eval Chaining">
+<meta property="og:description" content="Microsoft’s Copilot and Foundry stack are thriving, but could learn a ton from Anthropic’s tool API discipline and OpenAI’s live eval chaining. Here’s how MSFT should evolve, engineer-to-engineer.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>If I Ran Copilot: Lessons from Anthropic’s Agent Infra, OpenAI’s Eval Chaining</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 4th October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&h=600&fit=crop" alt="If I Ran Copilot: Lessons from Anthropic’s Agent Infra, OpenAI’s Eval Chaining">
+  <p>I use Copilot and other Microsoft AI stuff every day, but if I were running the show, I’d steal a few key ideas from the frontier labs. <strong>First: Anthropic’s agent infrastructure, built around explicit tool APIs and telemetry, is just cleaner than anything in Copilot today.</strong> Instead of hidden plugin layers and vague logging, Claude agents get crystal-clear tool boundaries, controllable permissions, and full audit trails. <strong>MSFT should double down on open, auditable, composable tool APIs—especially for Copilot and Foundry.</strong></p><p>Second, OpenAI’s live <strong>eval chaining</strong> is a game-changer for iterative agent work. Instead of tacked-on tests, every step and every action is evaluated, and failures cascade into repair routines or human review. This makes autonomous agent deployments less risky and far easier to debug. Copilot (especially in enterprise) needs this—imagine PRs that can show not just the generated code, but a full eval trace with repair attempts, context, and agent decision logs. That’s how you build trust in agentic automation.</p><p>This isn’t a dunk on Microsoft’s AI stack—it’s solid, and the deep Azure integration is unmatched. But if we want Copilot and Agents to be robust, transparent, and safe at scale, <strong>we need more frontier-lab rigor: explicit tool server APIs, real-time eval chaining, and agent workflows that humans can reason about</strong>. That’s what will separate reliable engineering tools from black-box magic tricks that break in prod.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-04-microsoft-copilot-agent-infra-lessons.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-04-microsoft-copilot-agent-infra-lessons.html&text=If%20I%20Ran%20Copilot%3A%20Lessons%20from%20Anthropic%E2%80%99s%20Agent%20Infra%2C%20OpenAI%E2%80%99s%20Eval%20Chaining" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/news/claude-agents" target="_blank" rel="noopener">Anthropic’s Claude Agents: A Technical Dive</a></li><li><a href="https://platform.openai.com/docs/evals" target="_blank" rel="noopener">OpenAI’s Eval Chaining for Autonomous Agents</a></li><li><a href="https://techcommunity.microsoft.com/t5/microsoft-copilot-blog/" target="_blank" rel="noopener">Microsoft Copilot Roadmap Update</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

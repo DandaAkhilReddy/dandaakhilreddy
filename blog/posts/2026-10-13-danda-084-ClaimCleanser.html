@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #084 — ClaimCleanser: AI Agents to End Healthcare Fraud Claim Waste in Private Practice | Reddy Pulse</title>
+<meta name="description" content="Healthcare fraud drains over $100 billion annually in the US, crushing private practices with audits and false positives. ClaimCleanser uses agentic AI to preemptively audit and flag suspect claims before submission, finally flipping the script for millions of doctors and their staff.">
+<meta property="og:title" content="DANDA #084 — ClaimCleanser: AI Agents to End Healthcare Fraud Claim Waste in Private Practice">
+<meta property="og:description" content="Healthcare fraud drains over $100 billion annually in the US, crushing private practices with audits and false positives. ClaimCleanser uses agentic AI to preemptively audit and flag suspect claims before submission, finally flipping the script for millions of doctors and their staff.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #084 — ClaimCleanser: AI Agents to End Healthcare Fraud Claim Waste in Private Practice</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 13th October, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #084 — ClaimCleanser: AI Agents to End Healthcare Fraud Claim Waste in Private Practice">
+  <p>Every year, private medical practices in the US are hammered by billing errors, rejected claims, and a worsening wave of fraud investigations. The true villain? Inefficient, error-prone, and manual claim submission processes that can't keep up with payer rules, regulatory changes, or fraud detection—leading to billions lost, endless staff burnout, and even practice closures.</p>
+
+<h2>The problem</h2>
+<p>Healthcare fraud and abuse is a $100–300 billion annual drain in the US, with 3–10% of all healthcare spending lost to improper claims. Yet for honest private practices, the cost isn't just financial: over 70% endure repeated payer audits, with 35% facing claim denials due to minor errors or suspected fraud—even if unintentional. Small practices can lose 15% or more of revenue to claim clawbacks, prepayment audits, and delayed payments. Manual compliance checks and error reviews eat up 30–40% of admin staff time, and escalating compliance anxiety is driving consolidation and burnout among independent providers. In 2025, over 420,000 private practice physicians submitted nearly 1.5 billion claims—every one a minefield for error, fraud flags, or costly delays.</p>
+
+<h2>The idea: ClaimCleanser</h2>
+<p>ClaimCleanser deploys an autonomous AI agent that acts as a pre-submission claims auditor, fraud detector, and compliance coach for private medical practices. It ingests claims data in real time, cross-checks coding, documentation, and payer rules, flags likely fraud triggers, and generates point-by-point corrective actions—before the claim ever hits the payer. The agent learns the unique patterns of each practice, helps staff resolve issues instantly, and provides intelligent audit trails that protect providers and speed up payments. ClaimCleanser turns every staffer into a compliance pro and reduces audit risk by up to 90% while slashing admin overhead.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius: 12px; width: 100%; height: auto;'>
+  <defs>
+    <marker id='arrow' markerWidth='8' markerHeight='8' refX='6' refY='4' orient='auto' markerUnits='strokeWidth'>
+      <path d='M0,0 L8,4 L0,8 Z' fill='#f5c518'/>
+    </marker>
+    <style>
+      .dan-label{fill:#f5c518;font-size:17px;font-family:sans-serif;font-weight:bold}
+      .dan-box{fill:#181818;stroke:#f5c518;stroke-width:2;rx:12;}
+      .dan-arrow{stroke:#f5c518;stroke-width:3;marker-end:url(#arrow)}
+      .dan-sub{fill:#ccc;font-size:14px;font-family:sans-serif}
+    </style>
+  </defs>
+  <!-- Inputs -->
+  <rect x='40' y='70' width='110' height='60' class='dan-box'/>
+  <text x='55' y='100' class='dan-label'>Inputs</text>
+  <text x='58' y='120' class='dan-sub'>EHR Export, 837P, OCR Docs</text>
+
+  <!-- Ingestion Layer -->
+  <rect x='180' y='70' width='130' height='60' class='dan-box'/>
+  <text x='200' y='100' class='dan-label'>Ingestion</text>
+  <text x='190' y='120' class='dan-sub'>Parsing, Validation, OCR</text>
+
+  <!-- Memory/Graph -->
+  <rect x='340' y='60' width='130' height='80' class='dan-box' />
+  <text x='355' y='95' class='dan-label'>Memory/Graph</text>
+  <text x='350' y='115' class='dan-sub'>Claims, Codes,
+ Rules, Provider Risk</text>
+
+  <!-- Agent Orchestrator -->
+  <rect x='500' y='60' width='130' height='80' class='dan-box' />
+  <text x='530' y='95' class='dan-label'>Agent Orchestrator</text>
+  <text x='510' y='115' class='dan-sub'>Fraud/Compliance AI,
+ LLM Reasoning</text>
+
+  <!-- Human Gate -->
+  <rect x='340' y='190' width='130' height='60' class='dan-box' />
+  <text x='358' y='225' class='dan-label'>Human Gate</text>
+  <text x='345' y='245' class='dan-sub'>Staff Review & Fixes</text>
+
+  <!-- Action Layer -->
+  <rect x='500' y='190' width='130' height='60' class='dan-box' />
+  <text x='525' y='225' class='dan-label'>Action Layer</text>
+  <text x='510' y='245' class='dan-sub'>Submission, Reports,
+ Audit Trail</text>
+
+  <!-- Arrows -->
+  <line x1='150' y1='100' x2='180' y2='100' class='dan-arrow'/>
+  <line x1='310' y1='100' x2='340' y2='100' class='dan-arrow'/>
+  <line x1='470' y1='100' x2='500' y2='100' class='dan-arrow'/>
+  <line x1='565' y1='140' x2='565' y2='190' class='dan-arrow'/>
+  <line x1='405' y1='140' x2='405' y2='190' class='dan-arrow'/>
+  <line x1='470' y1='220' x2='500' y2='220' class='dan-arrow'/>
+  <line x1='470' y1='100' x2='405' y2='190' class='dan-arrow' style='stroke-dasharray:6,4;stroke:#f5c518'/>
+</svg>
+<p>The flow: Claims data from EHRs or 837P files enters the Ingestion Layer for parsing and validation, including OCR for scanned docs. Parsed claims and context are mapped into a dynamic Memory/Graph layer that learns payer rules, past denials, and provider risk. The Agent Orchestrator applies LLM-driven fraud and compliance checks, proactively flagging errors or suspicious patterns. The Human Gate presents actionable issues and suggestions to staff for review and fix—nothing is auto-submitted without human signoff. The Action Layer handles claim submission, generates compliance reports, and builds a defensible audit trail for every claim.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Integrate with top 2 EHRs used by small practices; focus on automating pre-submission fraud checks and common error detection for 4 high-claim specialties (e.g., family med, ortho, derm, OB-GYN).</p>
+<p><b>Stack:</b> Python backend + FHIR/HL7 parsers, OpenAI/Anthropic LLMs for compliance/fraud, Postgres + vector DB for claim graph, React dashboard, EHR/837P connectors.</p>
+<p><b>Pricing:</b> $299/month per provider (unlimited staff seats), with higher tiers for multi-location groups and audit defense add-ons.</p>
+
+<h2>Why now</h2>
+<p>Claim fraud has reached an all-time high, while honest providers are punished by constant audits and payment delays. Regulatory crackdowns, payer AI, and shrinking margins mean small practices must get proactive—automated, agent-driven compliance and fraud defense is now table stakes. AI agent infrastructure and healthcare LLMs are finally accurate enough to deploy safely for real-time, high-stakes claims review. ClaimCleanser is how independent medicine survives—and wins—in the age of algorithmic payers.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-13-danda-084-ClaimCleanser.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-13-danda-084-ClaimCleanser.html&text=DANDA%20%23084%20%E2%80%94%20ClaimCleanser%3A%20AI%20Agents%20to%20End%20Healthcare%20Fraud%20Claim%20Waste%20in%20Private%20Practice" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.fbi.gov/investigate/white-collar-crime/health-care-fraud" target="_blank" rel="noopener">The Impact of Healthcare Fraud in the United States</a></li><li><a href="https://oig.hhs.gov/fraud/medicare-fraud/" target="_blank" rel="noopener">Medicare and Medicaid Fraud and Abuse</a></li><li><a href="https://www.ama-assn.org/practice-management/economics/ama-physician-practice-benchmark-surveys" target="_blank" rel="noopener">2025 Physician Practice Benchmark Survey</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

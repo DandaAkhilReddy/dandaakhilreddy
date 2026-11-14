@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google’s Delta-V: Parameter-Efficient LLMs Learn to Self-Refine in Deployment | Reddy Pulse</title>
+<meta name="description" content="Google Research just published Delta-V, an LLM finetuning approach that adapts model weights in production by observing user corrections—without retraining from scratch. This blurs the lines between static and adaptive LLMs.">
+<meta property="og:title" content="Google’s Delta-V: Parameter-Efficient LLMs Learn to Self-Refine in Deployment">
+<meta property="og:description" content="Google Research just published Delta-V, an LLM finetuning approach that adapts model weights in production by observing user corrections—without retraining from scratch. This blurs the lines between static and adaptive LLMs.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Google’s Delta-V: Parameter-Efficient LLMs Learn to Self-Refine in Deployment</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 28th July, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop" alt="Google’s Delta-V: Parameter-Efficient LLMs Learn to Self-Refine in Deployment">
+  <p>Google’s new Delta-V method is shaking up LLM research: it lets deployed models update specific parameters in real time, based on user feedback, without rebooting or running full retraining jobs. This isn’t just RLHF or retrieval-augmented generation; it’s model weights actually shifting as you interact with the system.</p><h2>What’s Different About Delta-V?</h2><p>At its core, Delta-V leverages low-rank adaptation (LoRA) layers and a distributed gradient queue. Instead of logging corrections and then retraining in batches, it streams micro-weight updates directly into a production model. Engineers can set update frequency, freeze core layers, and monitor drift with built-in tools. Think hot patching for LLMs, but at the weight level.</p><p>This matters because real-world use always diverges from pretraining data. Previously, you needed huge retraining pipelines to fix systematic errors. With Delta-V, corrections start working <strong>immediately</strong> for users who generated them. For enterprise and developer teams, this means you can finally close the loop between product feedback and model behavior—without burning GPU weeks or introducing shadow deployments.</p><h2>Tradeoffs and Risks</h2><p>Of course, it’s not magic. Live weight updates can cause instability or performance regressions if unsupervised. Google’s implementation ships with guardrails—rate limiting, anomaly detection, and a “rollback” switch for bad updates. But this is the first serious stab at true online learning in production LLMs. If you care about models that improve with real usage, not just dataset scale, keep your eyes on Delta-V. It’s the most practical step toward adaptive AI since RLHF.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-28-google-delta-v.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-28-google-delta-v.html&text=Google%E2%80%99s%20Delta-V%3A%20Parameter-Efficient%20LLMs%20Learn%20to%20Self-Refine%20in%20Deployment" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://ai.googleblog.com/2026/07/delta-v-adaptive-llm-finetuning.html" target="_blank" rel="noopener">Delta-V: Google’s Breakthrough in Adaptive LLM Finetuning</a></li><li><a href="https://arxiv.org/abs/2607.12588" target="_blank" rel="noopener">How Google’s Delta-V Puts LLMs on an Adaptive Path</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

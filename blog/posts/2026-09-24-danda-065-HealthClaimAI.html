@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #065 — HealthClaimAI: AI Agents to End FSA/HSA Reimbursement Rejection Hell | Reddy Pulse</title>
+<meta name="description" content="Americans forfeit over $1.7 billion annually in unused Flexible Spending Account (FSA) and Health Savings Account (HSA) funds, frequently due to claim submission mistakes, missing receipts, or misunderstood eligibility rules. HealthClaimAI is an autonomous AI agent that intercepts, validates, and files health-related purchases in real-time—eliminating rejected claims, lost savings, and paperwork frustration for 70+ million FSA/HSA holders.">
+<meta property="og:title" content="DANDA #065 — HealthClaimAI: AI Agents to End FSA/HSA Reimbursement Rejection Hell">
+<meta property="og:description" content="Americans forfeit over $1.7 billion annually in unused Flexible Spending Account (FSA) and Health Savings Account (HSA) funds, frequently due to claim submission mistakes, missing receipts, or misunderstood eligibility rules. HealthClaimAI is an autonomous AI agent that intercepts, validates, and files health-related purchases in real-time—eliminating rejected claims, lost savings, and paperwork frustration for 70+ million FSA/HSA holders.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #065 — HealthClaimAI: AI Agents to End FSA/HSA Reimbursement Rejection Hell</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 24th September, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop" alt="DANDA #065 — HealthClaimAI: AI Agents to End FSA/HSA Reimbursement Rejection Hell">
+  <p>Every year, millions of Americans lose money they’ve set aside for health expenses because of the broken, paperwork-laden process behind FSA and HSA reimbursements. Navigating eligibility rules, chasing receipts, and resubmitting rejected claims is a nightmare—one that leaves billions of hard-earned dollars stranded and families frustrated. It’s time to automate away the chaos and deliver the savings people have already earned.</p>
+
+<h2>The problem</h2>
+<p>In the US, over 35 million workers contribute to Flexible Spending Accounts (FSAs), and 38 million more use Health Savings Accounts (HSAs). Despite a combined $150 billion in annual contributions, at least $1.7 billion in FSA funds expire unused every year—most often because of preventable claim denials, missing documentation, or misunderstanding what qualifies for reimbursement. HSA users, too, routinely miss out: more than 25% admit to never submitting claims for eligible expenses, and 1 in 5 lose receipts or struggle with arcane portals. The result: Americans forfeit billions each year, while spending hours on error-prone paperwork and appeals. The system is failing both savers and employers.</p>
+
+<h2>The idea: HealthClaimAI</h2>
+<p>HealthClaimAI is a fully autonomous AI agent that acts as your proactive reimbursement assistant. It intercepts eligible health purchases in real time, validates receipts via email or SMS, cross-checks eligibility against IRS and employer plan rules, and auto-files claims directly with FSA/HSA administrators. For edge cases, it engages users via text to clarify or request missing info—then resubmits, tracks status, and notifies users on resolution. No more lost receipts, rejected claims, or missed deadlines—just maximum reimbursement, unlocked with zero friction.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;border-radius:12px' width='100%' height='440'><defs><marker id='arrow' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#f5c518'/></marker></defs>
+<!-- Input Layer -->
+<rect x='40' y='60' width='120' height='60' rx='14' fill='#222' stroke='#444' stroke-width='2'/>
+<text x='100' y='90' font-size='16' fill='#f5c518' font-weight='bold' text-anchor='middle'>Inputs</text>
+<text x='100' y='110' font-size='12' fill='#bbb' text-anchor='middle'>Receipts, Bank Feeds, E-mail, SMS</text>
+<!-- Ingestion Layer -->
+<rect x='200' y='60' width='120' height='60' rx='14' fill='#222' stroke='#444' stroke-width='2'/>
+<text x='260' y='90' font-size='16' fill='#f5c518' font-weight='bold' text-anchor='middle'>Ingestion</text>
+<text x='260' y='110' font-size='12' fill='#bbb' text-anchor='middle'>Parsing & OCR</text>
+<!-- Memory/Graph Layer -->
+<rect x='360' y='60' width='120' height='60' rx='14' fill='#222' stroke='#444' stroke-width='2'/>
+<text x='420' y='90' font-size='16' fill='#f5c518' font-weight='bold' text-anchor='middle'>Memory / Graph</text>
+<text x='420' y='110' font-size='12' fill='#bbb' text-anchor='middle'>Rules, IRS Codes, Purchase History</text>
+<!-- Agent Orchestrator -->
+<rect x='520' y='60' width='120' height='60' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+<text x='580' y='90' font-size='16' fill='#f5c518' font-weight='bold' text-anchor='middle'>Agent Orchestrator</text>
+<text x='580' y='110' font-size='12' fill='#bbb' text-anchor='middle'>Eligibility, Filing, Status</text>
+<!-- Human Gate -->
+<rect x='200' y='180' width='120' height='60' rx='14' fill='#222' stroke='#444' stroke-width='2'/>
+<text x='260' y='210' font-size='16' fill='#f5c518' font-weight='bold' text-anchor='middle'>Human Gate</text>
+<text x='260' y='230' font-size='12' fill='#bbb' text-anchor='middle'>Edge-Case User Prompts</text>
+<!-- Action Layer -->
+<rect x='520' y='300' width='120' height='60' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+<text x='580' y='330' font-size='16' fill='#f5c518' font-weight='bold' text-anchor='middle'>Action Layer</text>
+<text x='580' y='350' font-size='12' fill='#bbb' text-anchor='middle'>Claim Submissions, Notifications</text>
+<!-- Arrows -->
+<line x1='160' y1='90' x2='200' y2='90' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+<line x1='320' y1='90' x2='360' y2='90' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+<line x1='480' y1='90' x2='520' y2='90' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+<line x1='640' y1='90' x2='640' y2='300' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+<line x1='580' y1='120' x2='580' y2='300' stroke='#f5c518' stroke-dasharray='8' stroke-width='2' marker-end='url(#arrow)'/>
+<line x1='420' y1='120' x2='260' y2='180' stroke='#f5c518' stroke-dasharray='6,4' stroke-width='2' marker-end='url(#arrow)'/>
+<line x1='320' y1='210' x2='520' y2='90' stroke='#f5c518' stroke-dasharray='6,4' stroke-width='2' marker-end='url(#arrow)'/>
+</svg>
+<p>Receipts, bank feeds, and user messages flow into the Ingestion layer, where parsing and OCR extract purchase data. This data is matched against a dynamic Memory/Graph of IRS rules and purchase history. The Agent Orchestrator determines eligibility and auto-files claims; for complex or ambiguous cases, it invokes the Human Gate to prompt users for clarification or missing documents, then routes the claim to the Action Layer for direct submission and real-time notification back to the user. Everything is stitched together for seamless, hands-free reimbursement and maximum user savings.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><strong>Wedge:</strong> Start with Gmail/Outlook integration for automated receipt parsing and FSA claim filing, targeting mid-sized employers with high-deductible plans. <br><strong>Stack:</strong> Expand to bank feed parsing, SMS/MMS ingestion, HSA eligibility rules, multi-admin platform support, and integration with digital wallets. <br><strong>Pricing:</strong> B2B2C—$4-7 per employee/month SaaS for employers/benefit platforms. D2C—freemium (first 10 claims/year), then $24/year or $4/month for unlimited automation and proactive eligibility alerts.</p>
+
+<h2>Why now</h2>
+<p>FSA/HSA adoption is at record highs as out-of-pocket health costs soar. Employers want to maximize benefit ROI and employee satisfaction. Recent advances in receipt OCR, real-time bank API access, and agentic workflow orchestration finally make hands-off, accurate automation possible. The market is primed for an AI agent that actually gets Americans their money—before it expires.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-24-danda-065-HealthClaimAI.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-24-danda-065-HealthClaimAI.html&text=DANDA%20%23065%20%E2%80%94%20HealthClaimAI%3A%20AI%20Agents%20to%20End%20FSA/HSA%20Reimbursement%20Rejection%20Hell" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.nytimes.com/2023/11/24/business/money-flexible-spending-accounts.html" target="_blank" rel="noopener">Billions Go Unused in Flexible Spending Accounts Every Year</a></li><li><a href="https://www.ebri.org/docs/default-source/ebri-issue-brief/ebri_ib_608_fsahsa_2nov23.pdf" target="_blank" rel="noopener">2024 Employee Benefits Survey: FSA/HSA Participation and Utilization</a></li><li><a href="https://www.irs.gov/publications/p969" target="_blank" rel="noopener">IRS: Health Savings Accounts and Other Tax-Favored Health Plans</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

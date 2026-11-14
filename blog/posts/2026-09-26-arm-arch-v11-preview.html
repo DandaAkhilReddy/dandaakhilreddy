@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARM Unveils v11 Architecture: First-Class Inference Accelerators and Dataflow Cores | Reddy Pulse</title>
+<meta name="description" content="ARM just dropped the technical preview for v11—a sweeping new architecture with native on-die inference accelerators and the first real dataflow cores in a mainstream CPU.">
+<meta property="og:title" content="ARM Unveils v11 Architecture: First-Class Inference Accelerators and Dataflow Cores">
+<meta property="og:description" content="ARM just dropped the technical preview for v11—a sweeping new architecture with native on-die inference accelerators and the first real dataflow cores in a mainstream CPU.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Semiconductors</span>
+  <h1>ARM Unveils v11 Architecture: First-Class Inference Accelerators and Dataflow Cores</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 26th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop" alt="ARM Unveils v11 Architecture: First-Class Inference Accelerators and Dataflow Cores">
+  <p>ARM’s v11 isn’t just a microarchitecture tweak; it’s their first real attempt at fusing neural and classical compute in the same ISA. <strong>Each v11 core now has a dedicated, low-latency inference accelerator</strong> (think: Apple’s NPU but for the ARM ecosystem) directly addressable from user-space code. You don’t have to go through vendor-specific toolchains—just invoke standard ARM SVE2+ instructions, and the hardware does the rest.</p>
+
+<p>But the real bombshell: <strong>ARM’s new 'Streamlet' dataflow cores</strong>. Imagine a world where certain critical-path ops—like token streaming, matrix multiply, or even I/O-bound preprocessing—run on a specialized dataflow engine inside the CPU die, not as offloaded co-processors. This means you can pipeline neural and classical workloads with much less context-switching or bus contention. For anyone who’s ever profiled CPU bottlenecks in AI inference, this is finally an answer to the age-old 'should we run this on CPU or NPU' question.</p>
+
+<h2>Why Does This Matter for Engineers?</h2>
+<p>The upshot: <strong>mass-market phones, laptops, and embedded systems get real-time, on-die AI with no vendor lock-in</strong>. You can code to a portable ARM interface, target v11, and know your code will just work—no more SoC-specific SDKs. For edge AI, this is the beginning of the end for brittle, device-specific acceleration hacks.</p>
+
+<p>Even better, this <strong>lowers the barrier to running RAG pipelines, on-device LLMs, or multi-modal inference at the edge</strong>. Engineers get deterministic performance and power efficiency, without getting trapped in the Qualcomm or MediaTek ecosystem quagmire. I expect this to accelerate AI at the edge—especially for privacy-first and latency-sensitive workloads.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-26-arm-arch-v11-preview.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-26-arm-arch-v11-preview.html&text=ARM%20Unveils%20v11%20Architecture%3A%20First-Class%20Inference%20Accelerators%20and%20Dataflow%20Cores" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://community.arm.com/arm-community-blogs" target="_blank" rel="noopener">ARM Community: v11 Technical Preview</a></li><li><a href="https://www.anandtech.com/" target="_blank" rel="noopener">AnandTech: ARM v11 Analysis</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
