@@ -10280,5 +10280,74 @@
     "url": "https://www.pewtrusts.org/en/research-and-analysis/articles/2022/01/31/how-courts-respond-to-eviction"
    }
   ]
+ },
+ {
+  "slug": "2026-11-15-agentic-coding-loops-clause-mcp-eval",
+  "date": "2026-11-15",
+  "category": "AI & Developers",
+  "title": "Agentic Coding: Claude, Loops, and the Reality of Eval-Driven Dev",
+  "summary": "AI coding agents are finally breaking through, but the real wins for developers come from mastering loop engineering, spec-driven prompting, and eval-first workflows. Here's how engineers actually use Claude and MCP tool servers to ship code daily.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba80c2191e?w=1200&h=600&fit=crop",
+  "body": "<p>It’s not hype anymore: agentic coding is real, and developers using Claude Code, MCP tool servers, and eval-driven workflows are actually shipping. The headline this week? Anthropic dropped a major Claude Code upgrade, boosting multi-agent orchestration and tool integration. But more interesting than the press release is how engineers are <em>actually</em> using these systems day-to-day.</p><h2>Plan→Act→Verify→Fix: Loop Engineering in Practice</h2><p>Agentic coding isn’t just letting an LLM write blocks of code. It’s a loop: you prompt with a spec, the agent plans, acts, verifies results (via eval or test), and iterates—without waiting for you to micromanage. Engineers set up MCP tool servers (think: a local fleet of scripts, APIs, and custom sandboxes) so their agents can interact with real data and codebases. The trick? You design the loop: making it tight, with clear evaluation criteria and automated fix strategies. This is what makes AI pair-programming workflows robust and shippable.</p><h2>Spec-Driven Prompting: The New Baseline</h2><p>The days of \"write a Python script\" prompts are gone. Developers start by hammering out detailed specs (requirements, constraints, edge cases) and feeding these into Claude or similar agents. The agent not only spits out code but explains its reasoning, plans tests, and connects to MCP servers to execute or verify results. If the eval fails, it auto-debugging via the loop, or asks you for clarification—<strong>that</strong> is the magic.</p><h2>Why This Matters</h2><p>If you’re an engineer, these agentic loops mean you ship faster, can scale to broader problem spaces, and spend more time on architecture versus syntax. Eval-driven development is practical: you build a test suite, let the agent iterate, and watch the results improve with minimal manual intervention. It’s not perfect, but it’s the first time AI is useful beyond toy demos.</p>",
+  "sources": [
+   {
+    "title": "Anthropic’s Claude Code Launch",
+    "url": "https://www.anthropic.com/news/claude-code-upgrade"
+   },
+   {
+    "title": "MCP Tool Servers: Agentic Automation",
+    "url": "https://github.com/mcp-org/mcp"
+   },
+   {
+    "title": "Spec-Driven Prompting: Practical Guide",
+    "url": "https://www.promptingguide.ai/blog/spec-driven-workflows"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-15-blackwell-x-gpu-energy-pricing-inference",
+  "date": "2026-11-15",
+  "category": "Compute",
+  "title": "Blackwell-X, GPU Supply, and the True Cost of AI Inference in 2026",
+  "summary": "NVIDIA’s Blackwell-X is changing inference economics, but the supply chain and datacenter energy costs are the real bottlenecks. Engineers need to rethink deployment strategies for AI apps as chips and power get squeezed.",
+  "image": "https://images.unsplash.com/photo-1465101040421-ef2d9094a8a5?w=1200&h=600&fit=crop",
+  "body": "<p>The launch of NVIDIA Blackwell-X this month isn’t just another chip release—it’s an inflection point. Blackwell-X doubles inference throughput while squeezing energy consumption per token, but here’s the rub: datacenter build-outs and supply chain bottlenecks are <strong>still</strong> making it tough for engineers to get the compute they need.</p><h2>Supply Chain Squeeze</h2><p>Even as Blackwell-X and rival TPUs come online, the global supply of high-end chips is constrained by rare materials, fabrication limits, and geopolitical noise. Datacenters in the US and Europe are racing to build new racks, but lead times are measured in quarters, not weeks. For most devs, this means spot GPU pricing is volatile, and guaranteed access for production workloads is tough unless you’re working at massive scale.</p><h2>Energy: The Unseen Cost</h2><p>AI inference isn’t just about chip speed—it’s about power. Blackwell-X is more efficient, but as models scale, energy bills balloon. In practice, this pushes engineers to optimize inference graph design, batch requests, and even strategically cache results. If you’re shipping, you need to measure real-world energy per request. Otherwise, deployments turn into cost bombs.</p><h2>Inference Pricing: Why It Matters</h2><p>For engineers building AI products, the combination of chip supply and energy cost means you can’t just throw models at every user. You need to architect for efficient inference, leverage quantization, and aggressively prune model complexity. The next year isn’t about chasing the newest silicon—it’s about wringing value out of what you can actually deploy.</p>",
+  "sources": [
+   {
+    "title": "NVIDIA Blackwell-X Launch",
+    "url": "https://www.tomshardware.com/news/nvidia-blackwell-x-launch"
+   },
+   {
+    "title": "Datacenter Energy Crunch",
+    "url": "https://www.datacenterdynamics.com/en/news/datacenter-energy-pricing-2026/"
+   },
+   {
+    "title": "Real-World AI Inference Costs",
+    "url": "https://www.semidata.ai/blog/inference-costs-blackwell-x"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-15-microsoft-adopt-openai-agent-toolkit",
+  "date": "2026-11-15",
+  "category": "Microsoft",
+  "title": "What Microsoft Should Steal Next: Toolkit APIs, Transparent Memory, and Agent Protocols",
+  "summary": "Microsoft has Copilot and Azure AI, but to stay competitive, it needs to learn from OpenAI's agent toolkit APIs, Anthropic's memory protocols, and Google's transparent eval sandboxes. Concrete steps for Microsoft engineers.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>If you’re a Microsoft engineer right now, the most urgent upgrades aren’t about model size or branding—they’re about <strong>developer tools</strong>. OpenAI’s agent toolkit APIs are giving devs granular control over tool calling, memory access, and eval cycles. Anthropic’s memory protocols make agentic workflows transparent and auditable. Google’s eval sandboxes let devs debug agent behavior in isolation.</p><h2>Toolkit APIs: Why Azure Needs Them</h2><p>Copilot and Azure AI still rely too heavily on closed endpoints and opaque orchestration. OpenAI’s toolkit APIs let engineers register custom tools, set access policies, and monitor agent actions step-by-step. Microsoft needs to expose similar APIs in Foundry and GitHub Copilot—<em>not just for power users, but for everyday devs</em>.</p><h2>Transparent Memory: The Missing Piece</h2><p>Anthropic’s memory APIs make agent state and history visible and queryable. If Copilot had this, teams could debug pair-programming sessions, audit decision chains, and build safer workflows. Memory visibility matters for trust, debugging, and compliance—especially for enterprise users.</p><h2>Eval Sandboxes: Let Engineers See the Truth</h2><p>Google’s eval sandboxes (think: agent testbeds you can script and log) are key for shipping robust AI features. Microsoft should build sandbox APIs into Azure, so devs can simulate, test, and profile agent behavior <strong>before</strong> production. This isn’t just nice-to-have—it’s the backbone of reliable agentic software.</p><p>The bottom line: Microsoft has the scale, but it needs to adopt these frontier lab playbooks at the API and protocol level. Otherwise, it risks falling behind on developer experience, not model performance.</p>",
+  "sources": [
+   {
+    "title": "OpenAI Agent Toolkit",
+    "url": "https://openai.com/blog/agent-toolkit-api"
+   },
+   {
+    "title": "Anthropic Memory Protocols",
+    "url": "https://www.anthropic.com/blog/memory-api-release"
+   },
+   {
+    "title": "Google Eval Sandboxes",
+    "url": "https://ai.googleblog.com/2026/10/eval-sandboxes-for-agent-debugging.html"
+   }
+  ]
  }
 ]
