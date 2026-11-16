@@ -10372,5 +10372,74 @@
     "url": "https://www.ncsc.org/sco"
    }
   ]
+ },
+ {
+  "slug": "2026-11-16-agentic-loops-spec-evals",
+  "date": "2026-11-16",
+  "category": "AI & Developers",
+  "title": "From Spec to Eval: How Engineers Live in Agentic Coding Loops Now",
+  "summary": "Agentic coding isn’t just hype—developers are building with Claude Code, spec-driven prompts, and eval-first loops to ship real products faster. The future is all about loop engineering and AI pair programming workflows.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>Here’s the real story: engineers aren’t waiting for magic AGI, but are hell-bent on using today’s AI to ship more reliably. Claude Code (especially v3.5) is the mainstream agentic IDE—devs send a spec, get a plan, watch code get written, verify, then loop back for fixes. It’s not linear anymore. And that matters because code quality only improves when the developer is orchestrating—plan→act→verify→fix—these loops with AI as a teammate, not an oracle.</p><h2>MCP Tool Servers & Spec-Driven Prompts</h2><p>The best teams are now running local MCP (Multi-Component Prompt) tool servers. Instead of hand-rolling Python glue for every code generation task, you spec what you want and let the AI orchestrate tool calls and subtasks. This approach means your code review cycles go from days to hours, since the AI summarizes diffs, generates tests, and flags edge cases as it goes. Spec-driven prompting is about giving the AI the right context and constraints, so you get code that’s closer to the target—less hallucination, more traceability. Why does this matter for engineers? It’s the difference between babysitting AI output and actually offloading grunt work.</p><h2>Eval-Driven Development & Workflows</h2><p>Eval-driven dev is real, not theory. Teams run their own eval servers, keeping a bank of tests and benchmarks that the AI must pass before a PR goes live. If things break, the AI loops back, fixes, and re-verifies—sometimes faster than a junior dev. Pair-programming is now a hybrid of human intuition and AI speed, with engineers leaning on AI for refactoring, test coverage, and even spec negotiation (the AI suggests clarifications before it writes code!). This isn’t just productivity—it’s how you avoid surprises in prod.</p><strong>Bottom line:</strong><p>If you’re not designing your own agentic loops, you’re stuck in old linear workflows. Engineer your prompts, build your evals, and treat the AI as a teammate—because this is the new baseline.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code Documentation",
+    "url": "https://docs.anthropic.com/claude/code"
+   },
+   {
+    "title": "OpenAI Agent Protocol Discussion",
+    "url": "https://openai.com/blog/agent-protocol"
+   },
+   {
+    "title": "GitHub Copilot Pair Programming Study",
+    "url": "https://github.blog/2026/08/19/copilot-pair-programming-research"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-16-gpu-costs-quantum-energy-supply",
+  "date": "2026-11-16",
+  "category": "Compute",
+  "title": "Quantum GPUs, Energy Wars, and Supply Chain Reality for AI Engineers",
+  "summary": "New quantum-hybrid GPUs are here, energy constraints are tightening, and supply chain delays are the biggest bottleneck for AI projects. Engineers need to rethink their inference and deployment strategies in 2026.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7fcd7c?w=1200&h=600&fit=crop",
+  "body": "<p>Look, the biggest compute news this week is the commercial roll-out of quantum-hybrid GPUs from NVIDIA and startups like IonQ. These chips promise up to 10x lower inference latency for certain AI workloads—if you can actually get your hands on them. The catch? Global supply chains are still a mess, with fabrication and shipping delays stretching lead times to six months or more. For engineers, this means hosting your model on the 'latest' hardware might just be a pipe dream unless you’re in a hyperscaler’s privileged queue.</p><h2>Datacenter Build-Outs & Energy Realities</h2><p>Datacenter expansion is slowing in Europe and North America as energy constraints bite. Power allocation is becoming the #1 limiting factor—AI shops are now forced to optimize their models for inference efficiency, not just accuracy. The new discipline: measure your tokens per watt, not just tokens per second. This matters because your cloud bill is increasingly dictated by the energy math, not just the raw compute pricing.</p><h2>Inference Costs & Chip Supply Chain</h2><p>NVIDIA Blackwell-X and Google’s new TPUv6 are both in full deployment mode, but only at select hyperscale datacenters. If you’re outside the Azure/Google/AWS inner circle, expect to pay a premium or wait. Engineers need to plan for fallback options: older silicon, region-specific deployments, and even on-prem clusters. The supply chain squeeze means your release velocity is often gated by hardware you don’t control.</p><strong>So why does this matter?</strong><p>Every AI engineer must become a supply chain and energy nerd—because inference cost, deployment feasibility, and model tuning all depend on what silicon you can actually use, and how much energy your ops will burn. If you’re not building fallback and optimization logic into your deployment scripts, you’re risking downtime and runaway costs.</p>",
+  "sources": [
+   {
+    "title": "NVIDIA Quantum GPU Launch",
+    "url": "https://www.nvidia.com/en-us/blog/nvidia-quantum-gpus-2026"
+   },
+   {
+    "title": "IonQ Quantum AI Chips",
+    "url": "https://ionq.com/news/2026-quantum-ai-gpu"
+   },
+   {
+    "title": "DataCenter Energy Crunch Report",
+    "url": "https://datacenterdynamics.com/en/news/energy-crisis-ai/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-16-microsoft-agent-memory-api-evals",
+  "date": "2026-11-16",
+  "category": "Microsoft",
+  "title": "What Microsoft Must Embrace: Open Agent Memory APIs and Eval-Driven Dev",
+  "summary": "Microsoft has the scale, but needs to adopt open agent memory APIs and eval-driven development from the frontier labs. Engineers want more transparency, modularity, and real-time feedback in Copilot, Azure, and Foundry.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft’s Copilot stack, Azure ML, Foundry, and GitHub are powerful—but they’re behind on two fronts: open agent memory APIs and eval-driven development. OpenAI and Anthropic release agent protocols that let you plug in custom memory objects, expose agent state, and build workflows that are auditable. Microsoft’s APIs are still largely black-boxed, with limited hooks for memory, context, and step-wise agent execution.</p><h2>Why Open Agent Memory APIs Matter</h2><p>Engineers need transparency and modularity. If Copilot or Foundry exposed agent memory via API—so you could inspect, patch, and persist it—you’d unlock new dev workflows: debugging agentic loops, building custom evaluators, and creating persistent task histories. Anthropic’s open agent memory lets you see exactly how the AI reasons across plan→act→verify loops, and OpenAI’s agent protocol lets you swap agent memory objects for continuous tasks.</p><h2>Eval-Driven Dev: The Missing Link</h2><p>Frontier labs let you run evals as first-class citizens. Microsoft should make eval servers a native feature—integrated into PR pipelines, Copilot suggestions, and Azure deployments. Imagine if every Copilot-generated PR came with eval results and real-time feedback, not just static code reviews. That’s what engineers need to trust, iterate, and debug faster.</p><strong>Concrete Takeaway:</strong><p>Microsoft should open up agent memory APIs, support eval-driven dev natively, and let engineers inject their own evaluators and memory objects. It’s not just a feature battle—it’s about empowering devs to build and debug agentic workflows that match the speed and transparency of the best labs.</p>",
+  "sources": [
+   {
+    "title": "OpenAI Agent Protocol Spec",
+    "url": "https://openai.com/blog/agent-protocol"
+   },
+   {
+    "title": "Anthropic Agent Memory API Docs",
+    "url": "https://docs.anthropic.com/claude/agent-memory"
+   },
+   {
+    "title": "Microsoft Copilot GitHub Discussions",
+    "url": "https://github.com/microsoft/copilot/discussions"
+   }
+  ]
  }
 ]
