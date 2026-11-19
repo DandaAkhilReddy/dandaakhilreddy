@@ -10648,5 +10648,74 @@
     "url": "https://www.nortonrosefulbright.com/en/knowledge/publications/3c7e4200/litigation-trends-annual-survey"
    }
   ]
+ },
+ {
+  "slug": "2026-11-19-agentic-coding-claude-spec-eval",
+  "date": "2026-11-19",
+  "category": "AI & Developers",
+  "title": "Claude Code, Loop Engineering, and the New Reality of Spec-Driven Dev",
+  "summary": "Agentic coding is no longer hype: Claude Code’s latest update makes spec-driven workflows practical. Engineers are building, testing, and verifying in live loops—here’s how this changes daily dev life.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>The biggest AI news right now is Claude Code’s step-change: with the November release, Anthropic has nailed agentic loop engineering for coding. It’s not just about writing functions—now, devs can hand over full specs, and Claude builds, tests, verifies, and iterates until it passes evals. Why does this matter? Because the gap between 'describe what you want' and 'ship production code' is shrinking fast.</p><h2>Loop Engineering: Plan→Act→Verify→Fix</h2><p>Agentic coding isn’t a buzzword anymore. Most devs in my circles are running spec-driven prompting: feed Claude detailed requirements, and get not just code but working test suites. The key is the loop: Claude plans out the job, acts (writes code), verifies (runs tests or static analysis), and fixes errors automatically. That cycle isn’t just convenient—it accelerates iteration and cuts out boilerplate. The difference is night and day versus old-school codegen, which dumped code and walked away.</p><h2>MCP Tool Servers: Real World Utility</h2><p>The new trend is MCP tool servers—think persistent agent endpoints that coordinate local and remote tools. I’ve seen teams use these to run eval-driven development: Claude executes code, triggers evals on spec compliance, and self-corrects. It’s not magic, but it’s real—engineers are delegating tedious test creation, dependency wrangling, and even refactoring to agentic loops.</p><h2>AI Pair-Programming: More Than a Chatbot</h2><p>The workflow isn’t 'chat with AI,' it’s 'define the spec, let Claude iterate, intervene only when evaluation fails.' The pairing is tight: devs focus on architecture and high-level logic; Claude handles grunt work and repetitive checks. The upshot? Faster onboarding, fewer trivial bugs, and more time for actual problem-solving. Spec-driven prompting means engineers spend less time on glue code, more on what matters. That’s why every dev should be experimenting with agentic loops now—not waiting for the next big framework.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code Update",
+    "url": "https://www.anthropic.com/news/claude-code-november-release"
+   },
+   {
+    "title": "AI-Powered Software Engineering: Spec-Driven Loops",
+    "url": "https://www.thoughtworks.com/insights/blog/ai-spec-driven-loops"
+   },
+   {
+    "title": "Agentic Development in Practice",
+    "url": "https://www.benjamin-harper.com/blog/agentic-ai-coding"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-19-gpu-supply-energy-inference-costs",
+  "date": "2026-11-19",
+  "category": "Compute",
+  "title": "Datacenter Expansion, Energy Squeeze, and the Real Cost of AI Compute",
+  "summary": "GPU and custom silicon supply is reshaping inference economics—datacenter build-outs are bumping up against energy limits. Here’s what engineers need to know about hardware, costs, and reliability when shipping AI.",
+  "image": "https://images.unsplash.com/photo-1518770660439-ec2f29cdc80f?w=1200&h=600&fit=crop",
+  "body": "<p>This week, the compute story is all about the tension between GPU supply, datacenter growth, and energy constraints. Nvidia’s latest shipments are delayed (again), and hyperscalers are scrambling for custom silicon to offset Blackwell shortages. Why should you care? Because inference costs aren’t theoretical anymore—they’re the bottleneck for shipping AI features, especially outside the big clouds.</p><h2>GPU and Custom Chip Crunch</h2><p>Nvidia and AMD are both struggling to meet demand; even Google and Amazon’s in-house silicon (TPU, Inferentia) is rationed. Engineers shipping AI apps are feeling this directly: queues are longer, burst capacity is sketchy, and pricing is up 20-30% quarter-over-quarter. The bottleneck isn’t just silicon; it’s power and cooling. New datacenter build-outs (especially in Texas and Northern Europe) are hitting local energy allocation ceilings. If your stack needs real-time inference, expect latency spikes and outages unless you have guaranteed slots.</p><h2>Inference Economics: Know Your Real Cost</h2><p>Shipping new AI features means modeling actual inference cost: not just hourly compute, but power, cooling, networking, and (now) chip allocation fees. Engineers are baking these costs into product specs, and it’s changing how we think about model selection. Smaller, more efficient models are winning out in production—even if they aren’t as shiny—because they’re shippable.</p><h2>Supply Chain Reality: What You Can Do</h2><p>If you’re building anything agentic or heavy on inference, don’t assume unlimited compute. Pre-book slots, build fallback plans, and consider hybrid inference (local + cloud) where feasible. The age of 'just scale up' is over; engineers who understand the hardware, energy, and supply chain landscape can ship reliably while others get stuck waiting for a GPU allocation.</p>",
+  "sources": [
+   {
+    "title": "Nvidia GPU Shipment Delays",
+    "url": "https://www.theverge.com/2026/11/15/nvidia-gpu-shipment-delays"
+   },
+   {
+    "title": "Datacenter Energy Crunch",
+    "url": "https://www.datacenterdynamics.com/en/news/datacenter-energy-supply-constraints/"
+   },
+   {
+    "title": "AI Inference Economics",
+    "url": "https://www.sematext.com/blog/ai-inference-costs-2026/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-19-microsoft-learn-agent-memory-eval-apis",
+  "date": "2026-11-19",
+  "category": "Microsoft",
+  "title": "Microsoft’s Next Move: Open Agent Memory and Eval APIs That Matter",
+  "summary": "Microsoft needs to build open agent memory and eval APIs, learning from Anthropic and OpenAI’s best releases. Engineers want seamless persistent context and real eval-driven interfaces—not just Copilot tweaks.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7e7c9c?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft is winning hearts with Copilot and Foundry, but the next step is clear: open agent memory APIs and spec-eval driven interfaces. Anthropic’s Claude Code and OpenAI’s agent protocols are setting the bar. Why does this matter for engineers? Because persistent memory—across sessions and tools—unlocks real agent workflows, not just flash-in-the-pan chatbots.</p><h2>Open Agent Memory: Beyond Copilot’s Context</h2><p>Copilot’s context window is nice, but persistent agent memory is what developers crave. Imagine an API that lets agents remember and reference past project states, code diffs, or bug reports—across weeks, not just sessions. Anthropic’s agent endpoints already do this, and it’s dramatically improving pair-programming and code review quality. Microsoft needs to ship agent memory APIs that are open, interoperable, and documented—not just bolted onto Visual Studio or GitHub.</p><h2>Eval APIs: Spec-Driven Integration is the Future</h2><p>Eval-driven development is finally practical, thanks to OpenAI and Anthropic’s new APIs. Engineers can prompt with specs, run automated tests, and get actionable agent feedback—all in one loop. Azure’s developer tools lag behind here. What we need: public eval APIs tied to project specs, not just Copilot’s suggestion engine. This would let agents verify code, self-correct, and report compliance, giving teams measurable gains in velocity and reliability.</p><h2>Constructive, Not Fanboy: Why This Matters</h2><p>Microsoft shouldn’t just chase features—it should learn from the best and build what engineers actually use. Open, persistent agent memory, robust eval APIs, and tool server integration are what frontier labs are pushing. If Microsoft adopts these—rather than incremental Copilot tweaks—every engineer wins: better productivity, tighter workflows, and more reliable agentic coding.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code APIs",
+    "url": "https://www.anthropic.com/api/claude-code"
+   },
+   {
+    "title": "OpenAI Agent Protocols",
+    "url": "https://platform.openai.com/docs/agents"
+   },
+   {
+    "title": "Microsoft Copilot: Developer Feedback",
+    "url": "https://devblogs.microsoft.com/copilot-feedback/"
+   }
+  ]
  }
 ]
