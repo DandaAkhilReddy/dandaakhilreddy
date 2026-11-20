@@ -10740,5 +10740,74 @@
     "url": "https://www.kff.org/health-costs/press-release/over-100-million-people-in-america-are-saddled-with-health-care-debt/"
    }
   ]
+ },
+ {
+  "slug": "2026-11-20-agentic-ai-coding-loops-specs",
+  "date": "2026-11-20",
+  "category": "AI & Developers",
+  "title": "Agentic Coding: Beyond Prompts, Into Loops, Specs, and Eval-Driven Dev",
+  "summary": "AI coding has moved past simple prompt-and-response, with developers now wielding loop engineering, spec-driven prompting, and eval-driven workflows. Claude Code’s agentic features are redefining how we build and debug.",
+  "image": "https://images.unsplash.com/photo-1461749288772-4f6e1c1babc9?w=1200&h=600&fit=crop",
+  "body": "<p>If you’re building with AI in late 2026, you’re probably not slinging one-off prompts anymore. The news: Claude Code just shipped a tighter plan-act-verify loop API, and devs are wiring agents to MCP tool servers for bespoke workflows.</p><h2>Agentic Coding: Real Loops, Not Just Chat</h2><p>What matters is that these agents now <strong>plan</strong> out a coding task, <strong>act</strong> by writing or refactoring, <strong>verify</strong> via evals or tests, and then <strong>fix</strong> based on failures. Engineers are chaining these loops—not just for coding, but for CI/CD, infra, and even doc generation. You see this in the wild with Claude’s new loop APIs and Anthropic’s spec-driven prompting, where you feed a formal spec or test suite and the agent iterates until passing.</p><h2>MCP Tool Servers: Bring Your Own Toolchain</h2><p>The rise of MCP tool servers means you aren’t stuck with the agent’s built-in tools. You expose your dev tools, infra scripts, or even linters as API endpoints—agents call them, verify output, and adapt. This flexibility is critical for engineers: your stack, your conventions, your testing philosophy.</p><h2>Eval-Driven Development</h2><p>Eval-driven development is now table stakes. Devs set up evals (unit tests, scenario checks, static analysis), agents run them continuously as part of the loop, and you get a feedback-driven dev cycle. This reduces hallucinations and helps agents align to your org’s quality bar. When you pair-program with AI, it’s not about auto-completion—it’s about collaborative, spec-first workflows.</p><p>Why does this matter? Because it’s finally closing the gap between “AI as an assistant” and “AI as a reliable, test-driven coder.” If you care about shipping robust code, you want agents that follow spec, adapt to feedback, and play nice with your tools.</p>",
+  "sources": [
+   {
+    "title": "Claude Code: Loop API Docs",
+    "url": "https://docs.anthropic.com/claude-code/loop-api"
+   },
+   {
+    "title": "Spec-Driven Prompting: Anthropic Blog",
+    "url": "https://www.anthropic.com/blog/spec-driven-prompting"
+   },
+   {
+    "title": "Agentic Coding with AI: ACM Queue",
+    "url": "https://queue.acm.org/detail.cfm?id=3552404"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-20-gpu-supply-energy-costs-engineers",
+  "date": "2026-11-20",
+  "category": "Compute",
+  "title": "GPU Crunch, Energy Squeeze, and What It Means for AI Engineers",
+  "summary": "GPU supply, custom silicon, and datacenter energy constraints are reshaping how engineers ship AI. You can’t ignore inference costs or the silicon arms race if you’re deploying at scale.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>The big news: NVIDIA’s new Hopper Next chips are delayed, and Google’s Axion TPUs are rolling out to select datacenters with power-saving features. Meanwhile, datacenter operators are rationing energy and prioritizing AI customers with deep pockets.</p><h2>Silicon Supply and Custom Chips</h2><p>Engineers face real friction right now: GPU and TPU availability isn’t just about money—it’s about booking compute slots months ahead, or porting models to whatever silicon is available (sometimes switching frameworks on the fly). Startups have to consider custom ASICs or cloud FPGA instances, which means more code rewrites and QA headaches.</p><h2>Energy Constraints and Inference Costs</h2><p>Datacenter energy squeeze isn’t a theoretical problem. Providers in North America and Europe are limiting inference windows for big models, jacking up spot pricing, and nudging devs to optimize batch sizes or quantize weights. If you’re not measuring inference cost per user, you’re missing a critical metric. It affects product margins, SLA reliability, and even your ability to launch new features.</p><h2>What Engineers Need to Do</h2><p>You must treat compute as a product constraint, not just a tech detail. Profile your model’s inference, keep fallback paths ready, and look for vendor-agnostic deployment (think ONNX or TorchScript). If your AI isn’t portable, or your energy profile isn’t optimized, your launch is at risk. This isn’t FUD—it’s the reality if you want to ship and scale in 2026.</p>",
+  "sources": [
+   {
+    "title": "NVIDIA Hopper Next Delay: EE Times",
+    "url": "https://www.eetimes.com/nvidia-hopper-next-delayed/"
+   },
+   {
+    "title": "Google Axion TPU Launch",
+    "url": "https://cloud.google.com/blog/products/ai-machine-learning/introducing-axion-tpu"
+   },
+   {
+    "title": "Datacenter Energy Crisis: Datacenter Dynamics",
+    "url": "https://www.datacenterdynamics.com/en/news/datacenter-energy-crisis-ai/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-20-microsoft-adopt-openai-anthropic-google",
+  "date": "2026-11-20",
+  "category": "Microsoft",
+  "title": "What Microsoft Needs to Learn: OpenAI Loop APIs, Anthropic Spec Prompts, Google Model Routing",
+  "summary": "To stay competitive, Microsoft should build native loop APIs, spec-driven prompting, and model routing into Azure/Copilot. Engineers want these features—don’t let frontier labs set the bar alone.",
+  "image": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft is shipping Copilot updates, Azure ML enhancements, and GitHub Actions integrations. But if you’re an engineer using OpenAI, Anthropic, or Google, you notice what’s missing: native loop APIs for plan-act-verify work, formal spec-driven prompting, and seamless model routing.</p><h2>OpenAI’s Loop APIs: Why Microsoft Needs Them</h2><p>OpenAI’s loop APIs let devs define custom plan-act-verify cycles, not just fire-and-forget prompts. As an engineer, this is everything: you want your agent to retry, check tests, and adapt. Microsoft needs to expose similar APIs in Copilot, Azure Functions, and GitHub Actions—not just ‘suggest code’, but ‘iterate until passing’.</p><h2>Anthropic’s Spec-Driven Prompting</h2><p>Anthropic lets you feed agents formal specs or test suites. The agent adapts, checks compliance, and emits reliable output. Microsoft should make spec-driven prompting a first-class citizen in Copilot, Azure ML, and Foundry. Why? Because enterprise devs need provable correctness, not just plausible code generation.</p><h2>Google’s Model Routing</h2><p>Google is rolling out model routing APIs in Vertex AI—pick the best model per task, fallback if latency spikes, adapt to cost. Microsoft should expose similar routing in Azure ML and Copilot, so engineers can mix-and-match GPT, Claude, custom LLMs, or even classical ML models. Flexibility is king when compute is scarce or costs spike.</p><p>As engineers, we need real APIs—not just surface-level Copilot prompts. Loop APIs, spec-driven evals, and model routing aren’t just cool features—they’re the backbone for reliable, scalable, and affordable AI dev in 2026. Microsoft, don’t let the frontier labs define the baseline. Build it, or devs will route around you.</p>",
+  "sources": [
+   {
+    "title": "OpenAI Loop APIs: OpenAI Blog",
+    "url": "https://openai.com/blog/loop-apis"
+   },
+   {
+    "title": "Anthropic Spec Prompting: Anthropic Docs",
+    "url": "https://docs.anthropic.com/spec-driven-prompting"
+   },
+   {
+    "title": "Google Vertex AI Model Routing",
+    "url": "https://cloud.google.com/vertex-ai/docs/model-routing"
+   }
+  ]
  }
 ]
