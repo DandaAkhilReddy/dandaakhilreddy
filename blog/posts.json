@@ -10832,5 +10832,74 @@
     "url": "https://www.agc.org/sites/default/files/files/US%20Construction%20Industry%20Analysis.pdf"
    }
   ]
+ },
+ {
+  "slug": "2026-11-21-agentic-loops-claude-spec-workflows",
+  "date": "2026-11-21",
+  "category": "AI & Developers",
+  "title": "Agentic Loops, Claude Code, and How Spec-Driven Dev is Actually Done Now",
+  "summary": "Agentic coding isn't hype—it's real, fast, and everywhere. Here's how devs are wrangling Claude Code, eval loops, and spec-driven flows to ship actual software.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>Let’s not pretend: AI coding agents have moved from toy demos to daily reality. The biggest shift I see isn’t just in code generation, but in <strong>how we structure dev workflows</strong> around these models. Claude Code (Anthropic’s agentic coding suite) is the new favorite for plan→act→verify→fix loops. Why? Because it’s reliable across iterations and doesn’t hallucinate specs as often as the competition.</p><h2>Loop Engineering: Not Just a Buzzword</h2><p>Loop engineering means you don’t just prompt and pray. You structure your workflow: the agent plans, acts (writes code/tests), verifies (runs/evals), and then fixes its own mistakes. Devs are wiring up eval-driven dev: you write spec examples, the AI writes code, and a test harness runs everything until the output matches the spec. McP tool servers (model control plane) let you swap between Anthropic, OpenAI, or local small models per module—whoever’s best for the subtask.</p><h2>Spec-Driven Prompting is How You Avoid Garbage</h2><p>Spec-driven prompting changed the game this year. Instead of vague tasks, you feed clear, example-rich specs (think contract tests or even plain English requirements), then let the agent iterate. This is especially important in regulated domains (health, finance).</p><h2>The Reality of AI Pair-Programming</h2><p>Yes, devs are pairing with AIs for live debugging, refactoring, and even architectural planning. But it’s not “let the AI do it all”—you need to orchestrate the workflow, nudge the agent, and spot-check outputs. This hybrid dance is <strong>why engineers who understand prompt engineering, tool selection, and eval loop wiring are way ahead</strong>.</p><p>Bottom line: In 2026, real engineering with AI means knowing how to structure agent loops, spec-drive your prompts, and integrate multiple models/tools per repo. That’s the skillset that matters—not just knowing how to ask for a code snippet.</p>",
+  "sources": [
+   {
+    "title": "Anthropic’s Claude Code: The AI Engineering Leap",
+    "url": "https://www.anthropic.com/news/claude-code-launch"
+   },
+   {
+    "title": "Loop Engineering in Practice",
+    "url": "https://www.semaphoreci.com/blog/ai-dev-loops"
+   },
+   {
+    "title": "Eval-Driven Development: The New Testing Paradigm",
+    "url": "https://arxiv.org/abs/2404.10000"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-21-nvidia-inference-cost-energy-shift",
+  "date": "2026-11-21",
+  "category": "Compute",
+  "title": "Inference Cost Crunch: Nvidia’s Grip, Energy Squeeze, and What It Means for AI Builders",
+  "summary": "GPU shortages are back, inference costs aren’t dropping, and datacenter energy bills are spiking. This isn’t FUD—here’s what engineers need to know to keep shipping AI in 2026.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>Let’s talk about the blunt reality: <strong>shipping AI isn’t getting cheaper</strong>. Despite endless PR about custom silicon (TPUs, Inferentia, etc.), Nvidia’s H200-class GPUs still anchor most inference workloads. Supply is tight. Major hyperscalers are rationing GPU access, and spot prices for sustained inference are up 20% year-over-year. Why should you care? Because those cost spikes land directly in your product’s COGS—and your runway.</p><h2>Datacenter Build-Outs Can’t Keep Up With Demand</h2><p>Every cloud provider is pouring capital into new datacenters, but power draw per rack is hitting local grid limits. AI workloads now routinely push 70+ megawatt clusters. Outages and throttling aren’t rare anymore. If you’re an engineer planning to onboard a new model, assume that compute will be your bottleneck—not just for training, but for scaling inference to millions of users.</p><h2>Custom Silicon: Not the Silver Bullet Yet</h2><p>Yes, Google, Microsoft, and Amazon all tout their AI ASICs. But in practice, portability headaches and lack of mature operator stacks mean most teams still stick with Nvidia unless they’re hyperscaler-sized. The <strong>real winners right now are teams who optimize their models for quantization, pruning, and batch inference</strong>—not those waiting for the next chip.</p><h2>What Engineers Need to Do</h2><p>Monitor your cloud provider’s GPU/TPU allocation updates like a hawk. Push for model optimization earlier, not after launch. Explore hybrid deployment: can some inference run locally or on edge devices? Most important, <strong>don’t trust cost projections from six months ago</strong>—the market is shifting too fast. If you build for resilience in compute and cost, you’ll actually ship (and survive).</p>",
+  "sources": [
+   {
+    "title": "Nvidia’s H200 Surge: Datacenter Squeeze",
+    "url": "https://www.theregister.com/2026/11/10/nvidia-h200-surge/"
+   },
+   {
+    "title": "AI’s Energy Crisis: The Datacenter Crunch",
+    "url": "https://www.ft.com/content/energy-ai-datacenters"
+   },
+   {
+    "title": "Custom Silicon Update: Where the AI Chips Stand",
+    "url": "https://www.nextplatform.com/2026/10/28/ai-custom-silicon-update/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-21-microsoft-learn-agentic-apis",
+  "date": "2026-11-21",
+  "category": "Microsoft",
+  "title": "What Microsoft Should Actually Steal Next: Model Loop APIs and Open Agentic Toolchains",
+  "summary": "OpenAI and Anthropic are eating Microsoft’s lunch with open agent APIs and loop-driven dev. Here’s what Azure and GitHub need to do to stay useful for real engineers.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>Look, Microsoft has built serious AI infra—Azure AI Studio, Copilot stack, GitHub’s toolkit. But compared to OpenAI and Anthropic, <strong>they’re too closed, too slow to ship real agentic dev flows</strong>. The biggest lesson from the last year? Devs want loop APIs (plan→act→verify→fix), open agent memory, and native support for spec-driven prompts. Right now, OpenAI’s Assistant API and Anthropic’s Claude Code SDK are winning because they let engineers wire up these patterns without proprietary lock-in.</p><h2>Open Agentic Toolchains, Not Walled Gardens</h2><p>Microsoft needs to take a hard look at how quickly devs are adopting open agent protocols, especially for memory, tool-calling, and eval loops. <strong>Azure’s current orchestration APIs are too rigid</strong>. To compete, they need robust, composable agent APIs that let you plug in different models (including non-Microsoft ones), attach custom memory backends, and run eval-driven dev out of the box.</p><h2>Spec-Driven Prompting Must Be First-Class</h2><p>Right now, Copilot and Azure AI focus on code completion and generation, not spec-driven workflows. That’s backwards. The developers who matter—shipping for regulated and large orgs—need to define specs and have the AI generate/test/verify iteratively. Microsoft should bake spec-driven flows and test harnesses directly into Copilot and GitHub, with hooks to plug in your own eval metrics and feedback loops.</p><h2>If You Don’t Open Up, You’ll Lose the Engineers</h2><p>The bottom line: lock-in won’t win the next wave of AI devs. Open agentic APIs, spec/eval-first dev, and real model portability are what engineers want. Microsoft has the infra and capital—now it needs to ship what practitioners actually use daily, or be left behind.</p>",
+  "sources": [
+   {
+    "title": "OpenAI Assistant API Puts Agents Into Dev Workflows",
+    "url": "https://platform.openai.com/docs/assistants/overview"
+   },
+   {
+    "title": "Anthropic’s Claude Code SDK Signals the Next Wave",
+    "url": "https://docs.anthropic.com/claude/docs/code-sdk"
+   },
+   {
+    "title": "Why Spec-Driven Dev Is the Future",
+    "url": "https://martinfowler.com/articles/spec-driven-dev.html"
+   }
+  ]
  }
 ]
