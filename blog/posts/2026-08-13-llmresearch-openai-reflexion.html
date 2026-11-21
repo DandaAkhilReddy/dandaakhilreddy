@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenAI Reflexion: LLMs That Iterate on Their Own Reasoning | Reddy Pulse</title>
+<meta name="description" content="OpenAI just released Reflexion, a framework where LLMs can revise and retry their outputs by self-critiquing and improving their own reasoning—without human labels.">
+<meta property="og:title" content="OpenAI Reflexion: LLMs That Iterate on Their Own Reasoning">
+<meta property="og:description" content="OpenAI just released Reflexion, a framework where LLMs can revise and retry their outputs by self-critiquing and improving their own reasoning—without human labels.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>OpenAI Reflexion: LLMs That Iterate on Their Own Reasoning</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 13th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop" alt="OpenAI Reflexion: LLMs That Iterate on Their Own Reasoning">
+  <p>If you care about reliable, truthful LLMs, OpenAI’s Reflexion is the drop this summer. It’s not a new model, but a novel architecture: LLMs generate answers, <em>then</em> self-assess, revise, and retry, all in a feedback loop. The big idea: LLMs can learn to spot and fix their own mistakes, using only their outputs—no extra human annotation needed.</p><h2>Why This Matters</h2><p>Today’s LLMs hallucinate, get stuck, or subtly err. Fine-tuning helps, but it’s expensive and slow. Reflexion is like giving the model a notepad and some introspection: "Here’s my answer, does it hold up? If not, where did I go wrong?" The model gets to retry—sometimes three or four iterations—until it’s confident in its own answer. This dramatically boosts accuracy on math, logic, and multi-hop reasoning tasks.</p><h2>Technical Stuff</h2><p>Reflexion works by coupling a base LLM with a critiquing head—often the same architecture, but with a different prompt. The critique is not just "right or wrong"—it asks "why," makes corrections, and sometimes rewrites the whole chain of thought. There’s also a memory: failed attempts and corrections are stored and fed back in subsequent sessions, so the model steadily improves.</p><h2>Why Engineers Should Care</h2><p>If you build AI apps in finance, law, or anything where errors matter, Reflexion gives you a tool for self-improving agents. Instead of waiting for human relabeling or RLHF, your LLM can adapt on the fly. For evals and monitoring, this loop exposes reasoning breakdowns—so you can debug prompts <strong>and</strong> model behaviors. The mission: AI that’s not just bigger, but genuinely smarter. Reflexion is a giant leap in that direction.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-13-llmresearch-openai-reflexion.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-13-llmresearch-openai-reflexion.html&text=OpenAI%20Reflexion%3A%20LLMs%20That%20Iterate%20on%20Their%20Own%20Reasoning" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://openai.com/research/reflexion" target="_blank" rel="noopener">OpenAI Research Blog: Announcing Reflexion</a></li><li><a href="https://venturebeat.com/ai/openai-reflexion-framework/" target="_blank" rel="noopener">VentureBeat: OpenAI Launches Reflexion</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

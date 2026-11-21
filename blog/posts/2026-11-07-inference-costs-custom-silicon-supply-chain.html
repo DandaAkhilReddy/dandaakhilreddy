@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inference Costs, Custom Silicon, and the Compute Supply Chain Crunch | Reddy Pulse</title>
+<meta name="description" content="GPU shelves are empty, inference prices are swinging, and custom silicon is both a blessing and a curse. If you’re shipping AI in 2026, here’s what the real compute story means for you.">
+<meta property="og:title" content="Inference Costs, Custom Silicon, and the Compute Supply Chain Crunch">
+<meta property="og:description" content="GPU shelves are empty, inference prices are swinging, and custom silicon is both a blessing and a curse. If you’re shipping AI in 2026, here’s what the real compute story means for you.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>Inference Costs, Custom Silicon, and the Compute Supply Chain Crunch</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 7th November, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="Inference Costs, Custom Silicon, and the Compute Supply Chain Crunch">
+  <p>We’re in a weird phase of the AI compute arms race. Demand for LLM inference is utterly relentless—yet, actual access to top-end GPUs (like NVIDIA H200s or AMD’s Instinct MI400 series) is spotty unless you’re a hyperscaler or deep-pocketed unicorn. Everyone else? You’re bidding against hedge funds and ad giants for time slices.</p>
+
+<h2>Custom Silicon: Not a Silver Bullet</h2>
+<p>Yes, Google and Microsoft are pushing custom chips (like Axion and Azure Maia) into their clouds, promising lower energy and better cost-per-token. But for most engineers, those are black boxes with opaque pricing. Worse: if your workloads aren’t tuned to their quirks, you might see worse price/perf than last-gen A100s. Chip supply is still chained up by foundry capacity and geopolitics—so don’t expect the silicon squeeze to end soon.</p>
+
+<h2>Inference Cost Volatility</h2>
+<p>With spot market pricing and energy surcharges now standard in major clouds, inference cost is no longer predictable. You have to architect for burstiness—think autoscaling across heterogeneous hardware, AI model quantization, and caching partial outputs. I know teams who split traffic by model size and use evals to route commodity queries to smaller, cheaper LLMs, saving the big silicon for only mission-critical paths. It’s ugly, but it works.</p>
+
+<h2>What Engineers Need to Do</h2>
+<p>If you’re building AI products, the new baseline is: design for hardware volatility, expect cost spikes, and build a real-time feedback loop on your infra spend. The devs who thrive are treating compute like a precious, dynamic resource—instrumenting everything, optimizing inference graphs, and treating every extra millisecond as a moral tax. The days of cloud GPU abundance are gone. Get used to it—or get left behind.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-07-inference-costs-custom-silicon-supply-chain.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-07-inference-costs-custom-silicon-supply-chain.html&text=Inference%20Costs%2C%20Custom%20Silicon%2C%20and%20the%20Compute%20Supply%20Chain%20Crunch" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.theinformation.com/articles/gpu-shortages-2026" target="_blank" rel="noopener">The Information: GPU Shortages Are Back</a></li><li><a href="https://www.semianalysis.com/p/custom-ai-chips-cloud" target="_blank" rel="noopener">SemiAnalysis: Custom Silicon in Major Clouds</a></li><li><a href="https://datacenterfrontier.com/inference-cost-2026/" target="_blank" rel="noopener">Data Center Frontier: Inference Cost Swings</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

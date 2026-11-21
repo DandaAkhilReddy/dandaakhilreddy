@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPUs, TPUs, and Custom Silicon: The Compute Crunch Is Real for AI Engineers | Reddy Pulse</title>
+<meta name="description" content="Datacenter GPU shortages, rising inference costs, and energy limitations are forcing engineers to rethink how—and where—they deploy AI models. Custom silicon is promising but still hard to access.">
+<meta property="og:title" content="GPUs, TPUs, and Custom Silicon: The Compute Crunch Is Real for AI Engineers">
+<meta property="og:description" content="Datacenter GPU shortages, rising inference costs, and energy limitations are forcing engineers to rethink how—and where—they deploy AI models. Custom silicon is promising but still hard to access.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7c7f6e?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>GPUs, TPUs, and Custom Silicon: The Compute Crunch Is Real for AI Engineers</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 4th November, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7c7f6e?w=1200&h=600&fit=crop" alt="GPUs, TPUs, and Custom Silicon: The Compute Crunch Is Real for AI Engineers">
+  <p>If you’re deploying AI models in production, chances are you’re feeling the squeeze: datacenter GPU/TPU availability is patchy, inference costs are spiking, and energy budgets are now a hard constraint. The big news is that hyperscalers are accelerating custom silicon rollouts—Google’s TPU v6, NVIDIA’s Blackwell chips, and new ASICs from startups like Tenstorrent. But unless you’re a Fortune 500, you probably can’t get bulk access. Engineers need practical strategies.</p><h2>Why This Matters</h2><p>Shipping AI means dealing with unpredictable compute: models are getting bigger (think 200B+ parameters), but hardware supply isn’t keeping up. Inference costs are now a line-item on every project’s P&L. Engineers must optimize model size, quantize aggressively, and use batch inference to hit latency/price targets. But here’s the catch—energy use is the silent bottleneck. Datacenters are bumping against local power limits, and governments are capping new builds. This means <strong>deployments are increasingly location-dependent</strong>: the same model might be cheap in Iowa but unaffordable in London.</p><h2>What Engineers Should Do</h2><p>Plan for compute scarcity: profile your workloads, test on multiple hardware types, and expect your favorite GPU SKU to go out of stock. Use open hardware abstraction layers (like ROCm, Triton) so you can switch backends fast. Track inference costs <em>per test</em>—not just per batch—because spikes often come from edge-case queries. Finally, keep an eye on emerging custom silicon: if your use-case fits (like transformer inference or search reranking), early pilots can deliver massive energy savings.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-04-gpu-supply-inference-costs-energy.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-04-gpu-supply-inference-costs-energy.html&text=GPUs%2C%20TPUs%2C%20and%20Custom%20Silicon%3A%20The%20Compute%20Crunch%20Is%20Real%20for%20AI%20Engineers" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.wired.com/story/gpu-shortage-2026/" target="_blank" rel="noopener">The Global GPU Shortage: Why AI Companies Are Scrambling</a></li><li><a href="https://cloud.google.com/blog/products/compute/the-tpu-v6-story" target="_blank" rel="noopener">TPU v6 and Custom Silicon: Google’s Datacenter Playbook</a></li><li><a href="https://www.semianalysis.com/p/datacenter-energy-bottleneck-2026" target="_blank" rel="noopener">Datacenter Energy Crunch: The New AI Bottleneck</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

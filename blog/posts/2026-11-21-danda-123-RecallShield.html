@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #123 — RecallShield: AI Agents to End Medical Device Recall Notification Failures for Patients | Reddy Pulse</title>
+<meta name="description" content="Up to 80% of recalled implanted medical devices go unreported to affected patients, putting millions at risk. RecallShield is an AI-driven agentic automation platform that connects EHRs, device registries, and direct patient communication to instantly identify and notify at-risk patients and their care teams, closing the recall awareness gap in days—not months.">
+<meta property="og:title" content="DANDA #123 — RecallShield: AI Agents to End Medical Device Recall Notification Failures for Patients">
+<meta property="og:description" content="Up to 80% of recalled implanted medical devices go unreported to affected patients, putting millions at risk. RecallShield is an AI-driven agentic automation platform that connects EHRs, device registries, and direct patient communication to instantly identify and notify at-risk patients and their care teams, closing the recall awareness gap in days—not months.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519494026892-c89fa3d85c7b?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #123 — RecallShield: AI Agents to End Medical Device Recall Notification Failures for Patients</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 21st November, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519494026892-c89fa3d85c7b?w=1200&h=600&fit=crop" alt="DANDA #123 — RecallShield: AI Agents to End Medical Device Recall Notification Failures for Patients">
+  <p>Every year, thousands of medical devices—pacemakers, joint replacements, insulin pumps—are recalled due to serious safety defects. But most patients never find out. Hospitals and clinics still rely on outdated, manual processes to match recall lists to patient records. The result is a recurring nightmare: patients with dangerous devices remain unaware, and preventable injuries or deaths occur for months or years after a recall. It’s a hidden crisis at the heart of healthcare safety.</p>
+
+<h2>The problem</h2>
+<p>In the US alone, over 310 million medical devices are implanted or used every year. The FDA issues an average of 1,200 device recalls annually, but up to <b>80% of impacted patients are never directly notified</b>. Hospitals struggle to trace device serial numbers in fragmented EHRs, and manual contact efforts miss patients, especially those who move or change providers. The result: in one high-profile case, <b>170,000 patients were left unaware of a pacemaker recall for over a year</b>. Lawsuits, avoidable injuries, and trust erosion have cost the system over $1.6B annually in litigation and remediation. This is a problem that spans every hospital network, device manufacturer, and patient in the country.</p>
+
+<h2>The idea: RecallShield</h2>
+<p><b>RecallShield</b> is an agentic automation platform that acts as a "recall concierge" for healthcare networks. It directly integrates with hospital EHRs, national device registries, and FDA recall feeds. When a recall is issued, RecallShield’s AI agents instantly map affected device serials to patient records, verify contact details, and orchestrate personalized notifications to patients, caregivers, and their physicians—by text, email, or phone, with tracked acknowledgment. Agents also update care plans, flag at-risk patients in the EHR, and provide guided next steps. No more missed recalls or weeks of manual matching. For regulators and device makers, RecallShield delivers real-time compliance dashboards and audit trails, closing the loop from recall to resolution in days—not months.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius:12px;' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'>
+      <path d='M 0 0 L 10 5 L 0 10 z' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <rect x='40' y='60' width='120' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='100' y='95' text-anchor='middle' fill='#fff' font-size='16'>Inputs</text>
+  <text x='100' y='115' text-anchor='middle' fill='#888' font-size='13'>EHR, Device Registry, FDA Recalls</text>
+
+  <rect x='190' y='60' width='120' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='250' y='95' text-anchor='middle' fill='#fff' font-size='16'>Ingestion Engine</text>
+  <text x='250' y='115' text-anchor='middle' fill='#888' font-size='13'>Data Mapping & Cleaning</text>
+
+  <rect x='340' y='40' width='120' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='400' y='75' text-anchor='middle' fill='#fff' font-size='16'>Graph Memory</text>
+  <text x='400' y='95' text-anchor='middle' fill='#888' font-size='13'>Patient–Device–Recall Graph</text>
+
+  <rect x='340' y='140' width='120' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='400' y='175' text-anchor='middle' fill='#fff' font-size='16'>Agent Orchestrator</text>
+  <text x='400' y='195' text-anchor='middle' fill='#888' font-size='13'>RecallAI Agents</text>
+
+  <rect x='490' y='110' width='110' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='545' y='145' text-anchor='middle' fill='#fff' font-size='16'>Human Gate</text>
+  <text x='545' y='165' text-anchor='middle' fill='#888' font-size='13'>Care Team Review</text>
+
+  <rect x='630' y='80' width='90' height='120' rx='12' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='675' y='120' text-anchor='middle' fill='#fff' font-size='16'>Action Layer</text>
+  <text x='675' y='140' text-anchor='middle' fill='#888' font-size='13'>Patient Notifications</text>
+  <text x='675' y='160' text-anchor='middle' fill='#888' font-size='13'>EHR Updates</text>
+  <text x='675' y='180' text-anchor='middle' fill='#888' font-size='13'>Audit Logs</text>
+
+  <!-- arrows -->
+  <line x1='160' y1='90' x2='190' y2='90' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='310' y1='90' x2='340' y2='70' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='310' y1='90' x2='340' y2='170' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='400' y1='100' x2='400' y2='140' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='460' y1='170' x2='490' y2='140' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='600' y1='140' x2='630' y2='140' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+</svg>
+<p>RecallShield ingests FDA recall feeds, national device registry data, and EHRs. The ingestion engine maps devices to patients, builds a knowledge graph linking patients, devices, and recalls, and triggers RecallAI agents. The Agent Orchestrator matches recalls to individual patients, drafts notifications, and routes cases flagged for human review (e.g., complex cases, ambiguity) to care teams via the Human Gate. Once approved, the Action Layer delivers personalized notifications to patients (SMS, email, portal), updates EHRs, and logs all actions for audit and compliance. The process is end-to-end automated, with human oversight where required for clinical or ethical judgment.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Target mid-size hospital systems with high implant volumes (joint replacements, cardiac devices). Integrate with top 2 EHRs (Epic, Cerner) and FDA recall API. <b>Stack:</b> Layer device registry connectors (UDI, GUDID), notification modules (Twilio/email), and dashboarding. <b>Pricing:</b> Per-patient annual license ($1–3/patient/year), plus compliance/audit module upsells for larger health systems. Expand to include device manufacturers for direct recall compliance and analytics.</p>
+
+<h2>Why now</h2>
+<p>The regulatory landscape is shifting: hospitals are facing new requirements to prove recall notification compliance, while device recalls are on the rise and interoperability standards (FHIR, UDI) finally make cross-system matching feasible. Patient safety is a board-level issue, and recent litigation has turned C-suite attention to this "last mile" liability. AI agentic automation can finally close the recall gap—at the speed and scale modern healthcare demands.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-21-danda-123-RecallShield.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-21-danda-123-RecallShield.html&text=DANDA%20%23123%20%E2%80%94%20RecallShield%3A%20AI%20Agents%20to%20End%20Medical%20Device%20Recall%20Notification%20Failures%20for%20Patients" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.fda.gov/medical-devices/medical-device-recalls/annual-recall-statistics" target="_blank" rel="noopener">FDA Medical Device Recalls Annual Report</a></li><li><a href="https://www.reuters.com/investigates/special-report/medical-devices-recalls/" target="_blank" rel="noopener">Hospitals struggle to notify patients about recalled implants</a></li><li><a href="https://www.pewtrusts.org/en/research-and-analysis/articles/2021/03/31/fda-needs-to-improve-patient-notification-for-medical-device-recalls" target="_blank" rel="noopener">Medical Device Recalls: A Call for Improved Patient Notification</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

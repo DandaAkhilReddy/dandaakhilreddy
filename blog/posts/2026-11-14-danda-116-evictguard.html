@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #116 — EvictGuard: AI Agents to Slash Eviction Filing Errors and Prevent Wrongful Displacement | Reddy Pulse</title>
+<meta name="description" content="EvictGuard is an AI-powered automation platform for local governments and housing courts that eliminates wrongful or erroneous eviction filings before they reach vulnerable tenants—saving tens of thousands from displacement each month and streamlining case management for all stakeholders.">
+<meta property="og:title" content="DANDA #116 — EvictGuard: AI Agents to Slash Eviction Filing Errors and Prevent Wrongful Displacement">
+<meta property="og:description" content="EvictGuard is an AI-powered automation platform for local governments and housing courts that eliminates wrongful or erroneous eviction filings before they reach vulnerable tenants—saving tens of thousands from displacement each month and streamlining case management for all stakeholders.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #116 — EvictGuard: AI Agents to Slash Eviction Filing Errors and Prevent Wrongful Displacement</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 14th November, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #116 — EvictGuard: AI Agents to Slash Eviction Filing Errors and Prevent Wrongful Displacement">
+  <p>Every year, millions of Americans face eviction—and a shocking number of those filings are legally invalid, contain clerical errors, or target the wrong tenants. For local governments, courts, and non-profits, the administrative burden of sorting valid from wrongful cases is immense. Most tenants have little legal support and may be displaced before mistakes are caught.</p>
+<h2>The problem</h2>
+<p>In 2025, over 3.6 million eviction cases were filed across the United States. Studies show that 24% of filings contain significant legal or procedural errors—ranging from missing documentation, misidentified tenants, improper notice, or filings based on paid-up rent. In some cities, as many as 15% of all eviction filings result in cases being dismissed due to errors, but not before tenants experience job loss, credit damage, or homelessness. The administrative cost to courts is staggering: eviction-related hearings and corrections consume up to 20% of urban court dockets in peak months, and local governments spend over $2 billion a year managing housing instability fallout. Yet, most municipalities still rely on manual case review and error-prone document intake.</p>
+<h2>The idea: EvictGuard</h2>
+<p>EvictGuard is an agentic automation platform that screens, validates, and routes eviction filings for local governments, housing authorities, and courts—before they ever reach vulnerable tenants. Using a blend of document AI, statutory logic engines, and knowledge graphs of local housing law, EvictGuard flags incomplete, inaccurate, or legally deficient filings in real time. It alerts both landlords and government staff, auto-generates missing notices or corrections, and integrates with court systems and tenant legal aid. The result: wrongful displacement is slashed, tenants are protected, and bureaucratic overhead falls dramatically. EvictGuard empowers cities to act proactively, not reactively, for housing justice.</p>
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;border-radius:10px'><defs><marker id='arrow' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#f5c518'/></marker></defs>
+  <rect x='40' y='40' width='130' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='105' y='70' fill='#f5c518' font-size='17' font-weight='bold' text-anchor='middle'>Eviction Inputs</text>
+  <text x='105' y='92' fill='#fff' font-size='12' text-anchor='middle'>PDFs, E-filing, Court APIs</text>
+
+  <rect x='200' y='40' width='160' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='280' y='70' fill='#f5c518' font-size='17' font-weight='bold' text-anchor='middle'>Ingestion & OCR</text>
+  <text x='280' y='92' fill='#fff' font-size='12' text-anchor='middle'>Parsing, Normalizing</text>
+
+  <rect x='390' y='40' width='130' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='455' y='70' fill='#f5c518' font-size='17' font-weight='bold' text-anchor='middle'>Eviction Graph DB</text>
+  <text x='455' y='92' fill='#fff' font-size='12' text-anchor='middle'>Tenant, Landlord, Statute Links</text>
+
+  <rect x='550' y='40' width='160' height='60' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='630' y='60' fill='#f5c518' font-size='17' font-weight='bold' text-anchor='middle'>Agent Orchestrator</text>
+  <text x='630' y='82' fill='#fff' font-size='12' text-anchor='middle'>Validation, Correction, Routing</text>
+
+  <rect x='200' y='160' width='140' height='55' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='270' y='188' fill='#f5c518' font-size='16' font-weight='bold' text-anchor='middle'>Human Gate</text>
+  <text x='270' y='208' fill='#fff' font-size='12' text-anchor='middle'>Clerk Review/Override</text>
+
+  <rect x='390' y='300' width='280' height='65' rx='12' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='530' y='330' fill='#f5c518' font-size='17' font-weight='bold' text-anchor='middle'>Action Layer</text>
+  <text x='530' y='350' fill='#fff' font-size='12' text-anchor='middle'>Court Filing, Alerts, Legal Aid Sync</text>
+
+  <!-- Arrows -->
+  <line x1='170' y1='70' x2='200' y2='70' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='360' y1='70' x2='390' y2='70' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='520' y1='70' x2='550' y2='70' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='630' y1='100' x2='630' y2='160' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='270' y1='215' x2='270' y2='300' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='630' y1='100' x2='530' y2='300' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+</svg>
+<p>Eviction filings from landlords or court APIs enter via the Inputs layer. The Ingestion & OCR module parses, normalizes, and extracts entities from varied documents, feeding case data into the Eviction Graph DB, which connects tenants, landlords, properties, and law references. The Agent Orchestrator validates filings against statutory logic, flags errors, and routes exceptions to the Human Gate (clerks and housing staff) for intervention. Cleared actions are pushed to the Action Layer for filing, alerts to tenants/landlords, and syncs with legal aid.</p>
+<h2>Build plan (90 days)</h2>
+<p><strong>Wedge:</strong> Launch in one midsize city court with a direct-to-government SaaS pilot—offer rapid deployment for high-volume eviction months. <strong>Stack:</strong> Add integrations with major court CMSs, expand to state-level housing authorities, and enable plug-ins for nonprofit legal aid. <strong>Pricing:</strong> Per-case monthly SaaS fee (e.g., $3–7/case), annual contracts for municipalities, and tiered support for non-profit partners.</p>
+<h2>Why now</h2>
+<p>Eviction rates are rising post-pandemic, and courts are under immense pressure to prevent wrongful displacement amid housing shortages. The technology to automate document validation and statutory checks now exists at scale. And with new federal and state mandates for due process in housing, government buyers are searching for proactive AI tools—not just digital case management. EvictGuard meets the moment, saving cities money while protecting citizens from crisis.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-14-danda-116-evictguard.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-14-danda-116-evictguard.html&text=DANDA%20%23116%20%E2%80%94%20EvictGuard%3A%20AI%20Agents%20to%20Slash%20Eviction%20Filing%20Errors%20and%20Prevent%20Wrongful%20Displacement" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://evictionlab.org/eviction-tracking/" target="_blank" rel="noopener">The Eviction Lab: National Database</a></li><li><a href="https://www.urban.org/policy-centers/housing-finance-policy-center/projects/high-cost-eviction-and-unstable-housing" target="_blank" rel="noopener">Urban Institute: The High Cost of Eviction and Unstable Housing</a></li><li><a href="https://www.pewtrusts.org/en/research-and-analysis/articles/2022/01/31/how-courts-respond-to-eviction" target="_blank" rel="noopener">Pew Charitable Trusts: How Courts Respond to Eviction</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

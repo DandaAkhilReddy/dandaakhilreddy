@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chips, Inference Costs, and the Energy Reality for AI Engineers | Reddy Pulse</title>
+<meta name="description" content="GPU and custom silicon news keeps breaking, but for developers, three numbers matter: latency, dollars per 1M inferences, and watt-hours. Here’s how the current chip and datacenter landscape actually impacts what you build and deploy.">
+<meta property="og:title" content="Chips, Inference Costs, and the Energy Reality for AI Engineers">
+<meta property="og:description" content="GPU and custom silicon news keeps breaking, but for developers, three numbers matter: latency, dollars per 1M inferences, and watt-hours. Here’s how the current chip and datacenter landscape actually impacts what you build and deploy.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>Chips, Inference Costs, and the Energy Reality for AI Engineers</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 13th November, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop" alt="Chips, Inference Costs, and the Energy Reality for AI Engineers">
+  <p>We're living in the age of silicon arms races. Nvidia keeps pumping out Blackwell boards, Google’s TPU v6 is hitting production, and every hyperscaler is designing their own AI ASICs. But as an engineer, the only real questions are: Can I run my model fast enough? Is inference affordable? And will my CFO (or planet) freak out at the energy bill?</p>
+
+<h2>The State of GPU/TPU Supply</h2>
+<p>Supply is still tight—the Blackwell launch helped, but hyperscalers hoard the new stuff, and spot prices are up. If you need A100s, or even H100s, for real-time inference, expect to wait and pay. This means most companies—except the biggest—are stuck running on older silicon, or forced to optimize their models ferociously. TPUs are great, but Google jealously guards them for first-party workloads; third-party access is better, but nowhere near enough for the flood of demand.</p>
+
+<h2>Inference Costs and Energy</h2>
+<p>Inference cost per token is trending down, but not fast enough. Every new LLM release brings claims of 2x-5x efficiency, but in practice, you have to ruthlessly prune, quantize, or distill your models to hit cost targets. For anything high-volume (think: chat, code completions, image gen at scale), you cannot ignore energy math. Kilowatt-hours per million inferences is a real metric now, especially if you’re in Europe or California. Some teams are moving to custom silicon (Groq, Tenstorrent, AWS Inferentia) for cost and energy wins, but that means new software stacks and integration hell.</p>
+
+<h2>What Engineers Actually Do</h2>
+<p>The smart teams ruthlessly profile, batch requests, and tune their model configs for cheaper silicon—or even hybrid cloud/on-prem setups. Nobody gets to ignore the ops costs. If you want to deploy AI to real users, you have to get good at "model right-sizing," tight pipeline engineering, and tracking real-time spend versus user value. Chip news is cool, but your daily reality is budgeting for silicon you can actually get.</p>
+
+<p><strong>Why it matters:</strong> AI isn't magic—it's math and logistics. If you can't ship cost-effective, energy-sane inference, your roadmap is fiction. Compute constraints are now product constraints.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-13-chips-inference-costs-energy-reality.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-13-chips-inference-costs-energy-reality.html&text=Chips%2C%20Inference%20Costs%2C%20and%20the%20Energy%20Reality%20for%20AI%20Engineers" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.semianalysis.com/p/nvidia-blackwell-deep-dive" target="_blank" rel="noopener">Nvidia Blackwell: The Next Leap in AI Chips</a></li><li><a href="https://www.ft.com/content/70b72af5-6c2a-44c6-a22e-e1b0aee5b1c8" target="_blank" rel="noopener">AI Datacenters&#x27; Growing Energy Appetite</a></li><li><a href="https://arstechnica.com/information-technology/2026/06/inference-costs-ai/" target="_blank" rel="noopener">The Real Cost of AI Inference</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

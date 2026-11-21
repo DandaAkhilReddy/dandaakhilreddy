@@ -92,11 +92,27 @@ describe("browse.html — Main Portfolio Page", () => {
       expect(btn.classList.contains("btn-info")).toBe(true);
     });
 
-    it("Try Stock Analyzer button exists in hero with correct href", () => {
-      const btn = doc.querySelector('.hero-buttons a[href="projects/day-8-stock-analyzer.html"]');
+    it("Secureddy button exists in hero and links to secureddy.com", () => {
+      const btn = doc.querySelector('.hero-buttons a[href="https://secureddy.com"]');
       expect(btn).not.toBeNull();
-      expect(btn.textContent).toContain("Try Stock Analyzer");
-      expect(btn.classList.contains("btn-play")).toBe(true);
+      expect(btn.textContent).toContain("Secureddy");
+      expect(btn.getAttribute("target")).toBe("_blank");
+    });
+
+    it("hero no longer has Stock Analyzer, Reddy-Fit or Reddy Pulse buttons", () => {
+      const text = doc.querySelector(".hero-buttons").textContent;
+      expect(text).not.toContain("Try Stock Analyzer");
+      expect(text).not.toContain("Try Reddy-Fit");
+      expect(text).not.toContain("Reddy Pulse");
+    });
+
+    it("Projects section has a Secureddy card that is not called free", () => {
+      const card = [...doc.querySelectorAll(".daily-card")].find((c) =>
+        c.querySelector("h3")?.textContent.includes("Secureddy")
+      );
+      expect(card).toBeTruthy();
+      expect(card.querySelector('a[href="https://secureddy.com"]')).not.toBeNull();
+      expect(card.textContent.toLowerCase()).not.toContain("free");
     });
 
     it(".hero-title text contains 'Akhil Reddy Danda'", () => {

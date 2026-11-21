@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Mocha: Causal Memory for LLMs That Actually Persists | Reddy Pulse</title>
+<meta name="description" content="Meta AI’s ‘Mocha’ architecture introduces world-class persistent in-context memory for LLMs—enabling models to track entities and plans across thousands of turns without explicit retrievers. Here’s what’s different and how it could reshape agentic AI.">
+<meta property="og:title" content="Meta Mocha: Causal Memory for LLMs That Actually Persists">
+<meta property="og:description" content="Meta AI’s ‘Mocha’ architecture introduces world-class persistent in-context memory for LLMs—enabling models to track entities and plans across thousands of turns without explicit retrievers. Here’s what’s different and how it could reshape agentic AI.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Meta Mocha: Causal Memory for LLMs That Actually Persists</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 5th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop" alt="Meta Mocha: Causal Memory for LLMs That Actually Persists">
+  <p>Most LLMs have the memory of a goldfish—fine for one-shot tasks, terrible for long conversations or multi-step planning. Meta’s new Mocha architecture changes the game: it adds a persistent, differentiable memory bank, letting the model encode, retrieve, and update facts and plans across arbitrarily long dialogs. Unlike standard context windows or external retrievers (which break differentiability and introduce latency), Mocha’s memory is trained end-to-end and scalable.</p><h2>What’s Tech Behind Mocha?</h2><p>Mocha attaches a learnable memory matrix to each transformer layer. As the model processes input, it writes entity states and causal links to memory, and retrieves relevant slices for each forward pass. The key trick: instead of using a naive attention over all memory, Mocha samples memory slots using a Gumbel-softmax trick, making both memory use and updates efficient and differentiable. This lets the model learn to remember relevant facts, not just recent tokens.</p><h2>Why It Matters</h2><p>This isn’t just a marginal improvement. For agentic AI—especially anything that needs to remember a user’s goals, ongoing plans, or world state—robust long-range memory is critical. With Mocha, you can build LLM-powered agents that actually remember what they promised two hundred turns ago, or track ongoing projects over weeks, without an awkward database bolted on the side. <strong>For engineers, this means less hacky glue code and more reliable behavior out of the box.</strong></p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-05-meta-mocha-llm-causal-memory.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-05-meta-mocha-llm-causal-memory.html&text=Meta%20Mocha%3A%20Causal%20Memory%20for%20LLMs%20That%20Actually%20Persists" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://ai.facebook.com/blog/meta-mocha-memory-architecture/" target="_blank" rel="noopener">Meta AI Research Blog: Introducing Mocha</a></li><li><a href="https://arxiv.org/abs/2607.12345" target="_blank" rel="noopener">arXiv: Mocha—Causal Memory for LLMs</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

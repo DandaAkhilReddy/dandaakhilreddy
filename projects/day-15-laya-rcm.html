@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 15: Laya × RCM — Claim Denial Triage | Training Laya, my healthcare model, to triage insurance clai</title>
+    <link rel="stylesheet" href="../netflix-styles.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../browse.html" class="nav-logo">AKHIL DANDA</a>
+            <ul class="nav-menu">
+                <li><a href="../browse.html#home">Home</a></li>
+                <li><a href="../browse.html#experience">Professional</a></li>
+                <li><a href="../browse.html#skills">Skills</a></li>
+                <li><a href="../browse.html#daily-shipping">Projects</a></li>
+                <li><a href="../about.html">About Me</a></li>
+                <li><a href="../browse.html#contact">Hire Me</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="../browse.html#daily-shipping" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Projects
+            </a>
+            <div class="project-hero-content">
+                <div class="project-badge-large" style="background: linear-gradient(135deg, #0ea5e9, #0369a1);">Project 15 - Sep 2026</div>
+                <h1 class="project-title">Laya × RCM — Claim Denial Triage</h1>
+                <p class="project-tagline">Training Laya, my healthcare model, to triage insurance claim denials for revenue-cycle teams.</p>
+                <p class="project-description">US providers lose an estimated <strong>$260B+ a year</strong> to denied claims, and most denials are recoverable — they're just never worked in time. <strong>Laya</strong> is the healthcare model I train and fine-tune on Hugging Face from open-web clinical and billing data. This side project points it at <strong>Revenue Cycle Management (RCM)</strong>: read a denial, classify the reason, predict whether an appeal is worth it, and draft the appeal letter.</p>
+                <p class="project-description" style="margin-top:14px;"><span style="background:rgba(245,158,11,.18);color:#fcd34d;border:1px solid rgba(245,158,11,.45);padding:5px 12px;border-radius:999px;font-size:.85em;font-weight:700;">🧪 In progress — actively training</span></p>
+                <div class="project-links">
+                    <a href="https://huggingface.co/akhilreddydanda" target="_blank" class="btn btn-outline">🤗 Laya on Hugging Face</a>
+                    <a href="https://github.com/DandaAkhilReddy" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #0ea5e9, #0369a1);"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Follow the build on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="project-tech-section">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);">LY</div>
+                    <span>Laya (Hugging Face)</span>
+                    <p>My fine-tuned healthcare model</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">HF</div>
+                    <span>Transformers + PEFT</span>
+                    <p>LoRA fine-tuning pipeline</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);">VL</div>
+                    <span>vLLM</span>
+                    <p>High-throughput batch inference</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #059669 0%, #065f46 100%);">RC</div>
+                    <span>RCM Data (835/EOB)</span>
+                    <p>Denial codes + payer policies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="project-content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-block">
+                    <h2 class="section-title">The Problem</h2>
+                    <ul class="feature-list problem-list"><li>Denial reasons hide in free text and CARC/RARC codes that vary by payer</li><li>Billing teams triage by hand — the median denial sits for weeks before anyone touches it</li><li>Appeal deadlines (often 30-90 days) expire while the queue is being sorted</li><li>General LLMs don't know payer-specific rules and hallucinate policy language</li></ul>
+                </div>
+                <div class="content-block">
+                    <h2 class="section-title">The Idea</h2>
+                    <ul class="feature-list solution-list"><li><strong>Laya</strong> fine-tuned on denial letters, EOBs and payer policy text gathered from the open web</li><li>Three heads: <strong>classify</strong> the denial reason, <strong>score</strong> appeal-worthiness, <strong>draft</strong> the appeal with cited policy</li><li>Served with <strong>vLLM</strong> for batch triage of a whole day's denials in minutes</li><li>Human-in-the-loop by design — a biller approves every letter; the model never files</li><li>Evals built around recovered dollars per hour of biller time, not just accuracy</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loop -->
+    <section class="project-architecture-section">
+        <div class="container">
+            <h2 class="section-title">The Triage Loop</h2>
+            <div class="content-block" style="max-width: 900px; margin: 0 auto;">
+                <ul class="feature-list solution-list"><li><strong>Ingest</strong> — 835/EOB denial lines + letters normalised into one schema</li><li><strong>Classify</strong> — Laya tags the root cause (eligibility, coding, authorization, timely filing, medical necessity…)</li><li><strong>Score</strong> — predicts overturn probability × claim value → a ranked work queue</li><li><strong>Draft</strong> — appeal letter generated with the payer's own policy language and the chart evidence needed</li><li><strong>Review</strong> — biller edits/approves; every correction becomes new training data</li><li><strong>Learn</strong> — periodic fine-tune on approved appeals; the queue gets smarter every week</li></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- By the Numbers -->
+    <section class="project-features-section" style="background: #0a0a0a;">
+        <div class="container">
+            <h2 class="section-title">By the Numbers</h2>
+            <div class="content-grid">
+                <div class="content-block"><ul class="feature-list solution-list"><li><strong>$260B+</strong> annual US claim denial exposure</li><li><strong>~65%</strong> of denials never appealed (industry estimate)</li><li><strong>3</strong> model heads: classify · score · draft</li></ul></div>
+                <div class="content-block"><ul class="feature-list solution-list"><li><strong>Open-web</strong> healthcare + billing training data</li><li><strong>vLLM</strong> batch serving</li><li><strong>Side project</strong> — actively training</li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="project-cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Follow Laya</h2>
+                <p>This is a work in progress — I post training runs and evals as they land. Estimates are for research; nothing here is billing or legal advice.</p>
+                <div class="cta-buttons">
+                    <a href="https://huggingface.co/akhilreddydanda" target="_blank" class="btn btn-outline">🤗 Laya on Hugging Face</a>
+                    <a href="https://github.com/DandaAkhilReddy" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #0ea5e9, #0369a1);"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Follow the build on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Akhil Reddy Danda. All rights reserved.</p>
+            <p class="footer-note">Project 15 - Healthcare AI Side Project</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.feature-card, .install-step, .tech-item, .content-block, .arch-box').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #081 — RepairWise: AI Agents to End Home Appliance Repair Delays &amp; Price Gouging | Reddy Pulse</title>
+<meta name="description" content="Millions of U.S. homeowners face weeks-long delays and unpredictable costs for major appliance repairs; RepairWise deploys autonomous agents to diagnose, schedule, and negotiate fair-priced fixes instantly.">
+<meta property="og:title" content="DANDA #081 — RepairWise: AI Agents to End Home Appliance Repair Delays &amp; Price Gouging">
+<meta property="og:description" content="Millions of U.S. homeowners face weeks-long delays and unpredictable costs for major appliance repairs; RepairWise deploys autonomous agents to diagnose, schedule, and negotiate fair-priced fixes instantly.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519643381400-7f7c9f5f2a39?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #081 — RepairWise: AI Agents to End Home Appliance Repair Delays &amp; Price Gouging</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 10th October, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519643381400-7f7c9f5f2a39?w=1200&h=600&fit=crop" alt="DANDA #081 — RepairWise: AI Agents to End Home Appliance Repair Delays &amp; Price Gouging">
+  <p>Every day, families across the U.S. wake up to a broken fridge, washer, or stove—and quickly discover that getting it fixed is a logistical nightmare. The current appliance repair market is dominated by opaque pricing, weeks-long delays, and a lack of trusted coordination. Your food spoils, your laundry piles up, and you spend hours chasing repair shops and warranty paperwork. It's a mess—and ripe for agentic automation.</p>
+
+<h2>The problem</h2>
+<p>There are over 120 million households in the U.S., and 81% own at least one major appliance under warranty or repair contract. Yet, the average repair wait time is now 10-14 days—double what it was five years ago. Worst, 63% of homeowners report surprise fees or upsell tactics from repair providers. Over $10B is spent annually on appliance repairs, with at least $2.7B lost to price gouging and unnecessary parts. Warranty claim confusion adds another layer: 37% of warranties go unused because customers can't find or process them in time. The result is wasted money, spoiled food, and lost productivity—costing the average family $350/year.</p>
+
+<h2>The idea: RepairWise</h2>
+<p>RepairWise is an autonomous AI agent platform that acts as a digital repair manager for every household. It connects directly to your appliances (via smart sensors or manual input), triages issues instantly, finds trusted technicians nearby, and negotiates fair, transparent pricing—before you ever pick up the phone. It also auto-retrieves warranty data, processes claims, and schedules service ASAP. For repair shops, it unlocks pre-qualified leads, reduces paperwork, and speeds up payment. The system’s goal: cut repair delays from weeks to hours, and eliminate price gouging and warranty chaos for good.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;width:100%;height:400px'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='6' markerHeight='6' orient='auto' fill='#f5c518'>
+      <path d='M 0 0 L 10 5 L 0 10 z'/>
+    </marker>
+  </defs>
+  <!-- Inputs -->
+  <rect x='40' y='60' width='110' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='95' y='90' fill='#f5c518' font-size='16' text-anchor='middle'>Inputs</text>
+  <text x='95' y='110' fill='#fff' font-size='13' text-anchor='middle'>App, Appliance Sensors, Photos, Warranty Docs</text>
+
+  <!-- Ingestion Layer -->
+  <rect x='180' y='60' width='110' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='235' y='90' fill='#f5c518' font-size='16' text-anchor='middle'>Ingestion</text>
+  <text x='235' y='110' fill='#fff' font-size='13' text-anchor='middle'>Data Normalization, OCR, Sync</text>
+
+  <!-- Memory/Graph -->
+  <rect x='320' y='60' width='120' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='380' y='90' fill='#f5c518' font-size='16' text-anchor='middle'>Memory/Graph</text>
+  <text x='380' y='110' fill='#fff' font-size='13' text-anchor='middle'>Appliance DB, Warranty Graph, Repair Histories</text>
+
+  <!-- Agent Orchestrator -->
+  <rect x='470' y='60' width='110' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='525' y='90' fill='#f5c518' font-size='16' text-anchor='middle'>Agent Orchestrator</text>
+  <text x='525' y='110' fill='#fff' font-size='13' text-anchor='middle'>Diagnosis, Scheduling, Pricing</text>
+
+  <!-- Human Gate -->
+  <rect x='610' y='60' width='110' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='665' y='90' fill='#f5c518' font-size='16' text-anchor='middle'>Human Gate</text>
+  <text x='665' y='110' fill='#fff' font-size='13' text-anchor='middle'>Customer Approval, Tech Confirm</text>
+
+  <!-- Action Layer -->
+  <rect x='320' y='180' width='120' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='380' y='210' fill='#f5c518' font-size='16' text-anchor='middle'>Action Layer</text>
+  <text x='380' y='230' fill='#fff' font-size='13' text-anchor='middle'>Booking, Payment, Claim Filing</text>
+
+  <!-- Arrows -->
+  <line x1='150' y1='90' x2='180' y2='90' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='290' y1='90' x2='320' y2='90' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='440' y1='90' x2='470' y2='90' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='580' y1='90' x2='610' y2='90' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='380' y1='120' x2='380' y2='180' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='665' y1='120' x2='380' y2='210' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+</svg>
+<p>RepairWise starts with user inputs (app, sensors, documents), normalizes and ingests data, then builds a live memory graph of appliances, warranties, and repair history. The agent orchestrator diagnoses the issue, finds vetted local technicians, and negotiates pricing. Before action, a human gate lets customers and techs approve the plan. The action layer then books appointments, handles payment, and files warranty claims—all seamlessly. The architecture ensures home privacy, agentic autonomy, and transparent execution.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Launch with broken fridge triage—auto-diagnose, schedule, and price repairs within 2 hours in three major metros. <b>Stack:</b> Add washer/dryer, stove, and dishwasher support; expand technician marketplace and warranty integrations. <b>Pricing:</b> Freemium for basic triage and scheduling; $7/mo or $50/year for premium (auto-negotiation, warranty retrieval, 24/7 rapid booking); repair shops pay per lead or subscription ($70/mo).</p>
+
+<h2>Why now</h2>
+<p>Appliance repair delays have doubled since 2021 due to tech shortages, supply chain gaps, and increased warranty complexity. Homeowners expect instant service and transparency, but the market remains stuck in phone trees and paper invoices. Smart appliances and digital warranties are finally mainstream, enabling agentic automation. If we can coordinate Uber rides, we can fix a broken fridge—fast, fair, and fully automated. The time for AI-powered repair management is now.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-10-danda-081-repairwise.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-10-danda-081-repairwise.html&text=DANDA%20%23081%20%E2%80%94%20RepairWise%3A%20AI%20Agents%20to%20End%20Home%20Appliance%20Repair%20Delays%20%26%20Price%20Gouging" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.consumerreports.org/appliance-repair/why-appliance-repairs-take-so-long/" target="_blank" rel="noopener">Consumer Reports: Appliance Repair Delays and Costs</a></li><li><a href="https://www.statista.com/statistics/219057/household-appliance-ownership-in-the-us/" target="_blank" rel="noopener">Statista: U.S. Household Appliance Ownership and Warranty Stats</a></li><li><a href="https://www.marketwatch.com/press-release/appliance-repair-service-market-size-in-us" target="_blank" rel="noopener">MarketWatch: U.S. Appliance Repair Market Size and Pricing</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

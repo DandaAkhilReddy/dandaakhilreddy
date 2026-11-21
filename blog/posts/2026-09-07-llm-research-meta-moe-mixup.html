@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta’s MoE-MixUp: Swapping Experts On the Fly for Smarter LLMs | Reddy Pulse</title>
+<meta name="description" content="Meta AI just released MoE-MixUp, a new way to combine mixture-of-experts with dynamic routing and context mixing. It’s a leap in LLM efficiency and reasoning.">
+<meta property="og:title" content="Meta’s MoE-MixUp: Swapping Experts On the Fly for Smarter LLMs">
+<meta property="og:description" content="Meta AI just released MoE-MixUp, a new way to combine mixture-of-experts with dynamic routing and context mixing. It’s a leap in LLM efficiency and reasoning.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Meta’s MoE-MixUp: Swapping Experts On the Fly for Smarter LLMs</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 7th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=1200&h=600&fit=crop" alt="Meta’s MoE-MixUp: Swapping Experts On the Fly for Smarter LLMs">
+  <p>Mixture-of-Experts (MoE) models let LLMs scale by activating only relevant subnetworks (experts) for each input. But static routing and under-trained experts have plagued MoE deployment at scale. Meta’s new MoE-MixUp approach combines expert selection with learned dynamic mixing—think of it as both choosing and blending experts based on context, not just input tokens.</p><h2>The Technical Leap</h2><p>MoE-MixUp introduces two things: (1) a context-conditioned router that analyzes not just token-level input but the broader dialogue/instruction, and (2) a gated mixing mechanism that creates ‘virtual experts’ by interpolating between real ones. This solves the “dead expert” problem and lets the LLM use nuanced capabilities (e.g., math + code + reasoning) in a single pass.</p><p>Benchmarks show 18-30% lower FLOPs per output token at parity accuracy, and Meta’s evals on reasoning tasks (MATH, GSM8K, HumanEval) show strong boosts vs. static MoE models. Even more interesting: model size is now less bottlenecked by expert redundancy, so you can scale the number of experts and still train efficiently.</p><h2>Why It Matters for Engineers</h2><p>If you’re building or fine-tuning LLMs, MoE-MixUp means you can run larger, more capable models at lower cost and with more flexible reasoning. It paves the way for LLMs that can blend skills on the fly—think chatbots that fluidly switch between coding, summarizing, and logical reasoning, all without context windows blowing up.</p><strong>Hot Take:</strong> Expect every major lab to chase dynamic MoE in their next-gen architectures. For engineers, this means rethinking prompt design (since the model is now more context-reactive) and exploring how to target custom experts for domain-specific tasks.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-07-llm-research-meta-moe-mixup.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-07-llm-research-meta-moe-mixup.html&text=Meta%E2%80%99s%20MoE-MixUp%3A%20Swapping%20Experts%20On%20the%20Fly%20for%20Smarter%20LLMs" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://ai.facebook.com/research/publications/moe-mixup-2026" target="_blank" rel="noopener">Meta AI: MoE-MixUp Whitepaper</a></li><li><a href="https://www.semisupervised.com/p/moe-mixup-meta-2026" target="_blank" rel="noopener">Mixture-of-Experts in LLMs: The New Scaling Frontier</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

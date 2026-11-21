@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #049 — TransitGuard: AI Agents to End Public School Bus Routing Nightmares | Reddy Pulse</title>
+<meta name="description" content="TransitGuard deploys AI agents to automate and optimize daily school bus routing, instantly adapting to absences, breakdowns, and new enrollments—slashing late buses and ride times for millions of students.">
+<meta property="og:title" content="DANDA #049 — TransitGuard: AI Agents to End Public School Bus Routing Nightmares">
+<meta property="og:description" content="TransitGuard deploys AI agents to automate and optimize daily school bus routing, instantly adapting to absences, breakdowns, and new enrollments—slashing late buses and ride times for millions of students.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #049 — TransitGuard: AI Agents to End Public School Bus Routing Nightmares</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 8th September, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #049 — TransitGuard: AI Agents to End Public School Bus Routing Nightmares">
+  <p>Every morning, parents, students, and school districts brace for the unpredictable world of school transportation: last-minute bus changes, missed stops, and unpredictable delays. Behind the scenes, routing teams scramble to juggle manual spreadsheets, phone calls, and outdated software, battling a logistical maze that directly impacts student safety, district budgets, and family sanity. There’s a staggering operational cost to every missed pickup and extended ride—one that’s been accepted as ‘just how it’s always been’ for decades.</p>
+
+<h2>The problem</h2>
+<p>School bus routing is a chaos engine: in the US, over 480,000 school buses move 25 million kids daily, but legacy routing and dispatch tools can’t keep up with staff shortages, vehicle breakdowns, and constantly shifting rosters. 1 in 5 districts report driver shortages so severe that entire routes are canceled. Average student ride times often exceed 50 minutes per trip, with 17% of students regularly late due to routing inefficiency. Each missed stop triggers a domino of manual calls, frantic rerouting, and lost class time. Districts spend up to 10% of total budgets—over $28 billion nationally—on transportation, yet an estimated $2B/year is wasted on inefficiency, detours, and underutilized routes.</p>
+
+<h2>The idea: TransitGuard</h2>
+<p>I’m building TransitGuard: always-on AI agents that operate as digital dispatchers for school transportation. The system ingests live data—driver attendance, student ridership, vehicle health, traffic—and instantly recalculates optimal bus routes and assignments. When a driver calls out, a student moves, or a bus breaks down, agents coordinate with a human dispatcher, suggest precise re-routing, notify families, and push live updates to drivers’ tablets. The result: fewer late buses, happier families, and millions saved in operational inefficiency. Unlike static routing platforms, TransitGuard is dynamic, agentic, and easily integrates with district SIS, GPS, and fleet management tools.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius:8px;'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'>
+      <path d='M 0 0 L 10 5 L 0 10 z' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <!-- Inputs Layer -->
+  <rect x='40' y='70' width='120' height='60' fill='#222' stroke='#444' stroke-width='2' rx='10'/>
+  <text x='100' y='105' fill='#f5c518' font-size='16' text-anchor='middle'>Inputs</text>
+  <text x='100' y='125' fill='#ccc' font-size='12' text-anchor='middle'>Attendance, GPS, SIS, Traffic</text>
+  <!-- Ingestion -->
+  <rect x='180' y='70' width='120' height='60' fill='#222' stroke='#444' stroke-width='2' rx='10'/>
+  <text x='240' y='105' fill='#f5c518' font-size='16' text-anchor='middle'>Ingestion</text>
+  <text x='240' y='125' fill='#ccc' font-size='12' text-anchor='middle'>Data Clean & Sync</text>
+  <!-- Memory/Graph -->
+  <rect x='340' y='60' width='120' height='80' fill='#222' stroke='#444' stroke-width='2' rx='10'/>
+  <text x='400' y='95' fill='#f5c518' font-size='16' text-anchor='middle'>Memory/Graph</text>
+  <text x='400' y='115' fill='#ccc' font-size='12' text-anchor='middle'>Route State, Student-Bus Map</text>
+  <!-- Agent Orchestrator -->
+  <rect x='500' y='70' width='120' height='60' fill='#222' stroke='#444' stroke-width='2' rx='10'/>
+  <text x='560' y='100' fill='#f5c518' font-size='16' text-anchor='middle'>Agent Orchestrator</text>
+  <text x='560' y='120' fill='#ccc' font-size='12' text-anchor='middle'>Dynamic Routing AI</text>
+  <!-- Human Gate -->
+  <rect x='500' y='170' width='120' height='60' fill='#222' stroke='#444' stroke-width='2' rx='10'/>
+  <text x='560' y='200' fill='#f5c518' font-size='16' text-anchor='middle'>Human Gate</text>
+  <text x='560' y='220' fill='#ccc' font-size='12' text-anchor='middle'>Dispatcher Review</text>
+  <!-- Action Layer -->
+  <rect x='660' y='130' width='60' height='120' fill='#f5c518' stroke='#f5c518' stroke-width='2' rx='10'/>
+  <text x='690' y='175' fill='#222' font-size='16' text-anchor='middle'>Action Layer</text>
+  <text x='690' y='195' fill='#222' font-size='12' text-anchor='middle'>Push Updates<br/>to Apps, SMS, Tablets</text>
+  <!-- Arrows -->
+  <line x1='160' y1='100' x2='180' y2='100' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='300' y1='100' x2='340' y2='100' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='460' y1='100' x2='500' y2='100' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='560' y1='130' x2='560' y2='170' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='620' y1='200' x2='660' y2='190' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+</svg>
+<p>All relevant inputs—driver and student attendance, live GPS data, SIS changes, and real-time traffic—are ingested and synchronized, then mapped into a constantly updated graph of routes, students, and buses. The Agent Orchestrator runs AI-driven optimization and scenario planning, pushing recommendations to a human dispatcher (the Human Gate) for rapid review, override, or approval. Once approved, the Action Layer delivers instant, multi-channel updates to bus drivers (tablets), parents (apps/SMS), and the district dashboard. This cycle repeats as conditions change, ensuring the system is both dynamic and accountable.</p>
+
+<h2>Build plan (90 days)</h2>
+<ul>
+  <li><b>Wedge:</b> Launch pilot with a mid-sized district (~80 buses), focusing on AI-driven daily driver absenteeism re-routing and live parent notifications. Integrate with existing GPS and SIS.</li>
+  <li><b>Stack:</b> Expand to full dynamic routing (inc. multi-school, traffic-aware), add driver app, dispatcher dashboard, automated compliance reporting, and analytics on cost savings and on-time rates.</li>
+  <li><b>Pricing:</b> Annual SaaS, $6-10 per student/year, with tiered support. Quick ROI: even a 3% efficiency gain covers cost.</li>
+</ul>
+
+<h2>Why now</h2>
+<p>School transportation faces a perfect storm: persistent driver shortages, increasing ridership, and parent demand for real-time accountability. Districts are desperate for operational wins and cost savings. Recent advances in real-time AI, graph-based optimization, and agentic automation make it possible—finally—to solve school bus chaos without massive IT overhauls. Families, students, and districts can’t afford another year of lost learning and wasted time due to outdated logistics. It's time to make daily school transportation as reliable and efficient as possible.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-08-danda-049-TransitGuard.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-08-danda-049-TransitGuard.html&text=DANDA%20%23049%20%E2%80%94%20TransitGuard%3A%20AI%20Agents%20to%20End%20Public%20School%20Bus%20Routing%20Nightmares" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.schoolbusfleet.com/fact-book" target="_blank" rel="noopener">School Bus Fleet Fact Book — 2024</a></li><li><a href="https://nces.ed.gov/pubs2024/2024073.pdf" target="_blank" rel="noopener">Public School Transportation Statistics</a></li><li><a href="https://www.napt.org/files/2023%20NAPT%20Operations%20Survey.pdf" target="_blank" rel="noopener">School Transportation Operations Survey</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

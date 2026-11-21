@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta &amp; Mistral Go Modular: Multimodal Mosaic Models Arrive | Reddy Pulse</title>
+<meta name="description" content="Meta and Mistral just published the first large-scale open-source multimodal LLMs with true plug-and-play adapters. Here’s why this next-gen architecture shakes up how devs will build AI apps.">
+<meta property="og:title" content="Meta &amp; Mistral Go Modular: Multimodal Mosaic Models Arrive">
+<meta property="og:description" content="Meta and Mistral just published the first large-scale open-source multimodal LLMs with true plug-and-play adapters. Here’s why this next-gen architecture shakes up how devs will build AI apps.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Meta &amp; Mistral Go Modular: Multimodal Mosaic Models Arrive</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 12th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="Meta &amp; Mistral Go Modular: Multimodal Mosaic Models Arrive">
+  <p>We’ve seen LLMs that 'sort of' do vision, audio, and language, but they’re always giant monoliths or hacky late-fusion jobs. Meta and Mistral just dropped a joint paper (and code) on Mosaic—a modular LLM where each modality (text, speech, vision, code) is an adapter. Adapters can be hot-swapped at runtime, even downloaded from a registry. This is the first large open model (100B+) to do this with unified tokenization.</p><h2>Why This Is a Big Deal</h2><p>If you’re building AI apps, Mosaic means you can add new modalities without retraining the entire model. For example, want to process radiology scans, chat in Hindi, and answer coding questions? Just slot in the relevant adapters. The core LLM never changes. This enables rapid community contributions, like Hugging Face for modalities.</p><h2>Technical Highlights</h2><p>Mosaic uses cross-attention 'adapter bridges'—tiny transformer blocks that let each modality query others. That means you actually <em>get</em> cross-modal reasoning, not just parallel outputs. They’ve open-sourced the backbone and a bunch of adapters, with a PyTorch/FSDP pipeline for custom training. What’s wild: you can even freeze the LLM and fine-tune just the adapters, keeping deployment cheap and updatable. This is a huge leap toward real, extensible AI systems. If you’re not prototyping with this, you’re missing the next big phase shift in open AI.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-12-llm-research-meta-mistral-multimodal-mosaic.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-12-llm-research-meta-mistral-multimodal-mosaic.html&text=Meta%20%26%20Mistral%20Go%20Modular%3A%20Multimodal%20Mosaic%20Models%20Arrive" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://ai.facebook.com/blog/meta-mistral-mosaic-multimodal-llm/" target="_blank" rel="noopener">Meta AI Blog: Introducing Mosaic Multimodal LLM</a></li><li><a href="https://arxiv.org/abs/2609.04567" target="_blank" rel="noopener">ArXiv: Mosaic—Modular Multimodal LLMs</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

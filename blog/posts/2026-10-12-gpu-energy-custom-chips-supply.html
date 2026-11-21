@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Chips, Energy Squeeze, and the New Inference Math (October 2026 Edition) | Reddy Pulse</title>
+<meta name="description" content="The silicon arms race is reshaping everything from inference costs to what models engineers can realistically deploy. Here’s what’s changed in GPUs, custom chips, energy, and why devs need to think supply chain-first.">
+<meta property="og:title" content="Custom Chips, Energy Squeeze, and the New Inference Math (October 2026 Edition)">
+<meta property="og:description" content="The silicon arms race is reshaping everything from inference costs to what models engineers can realistically deploy. Here’s what’s changed in GPUs, custom chips, energy, and why devs need to think supply chain-first.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>Custom Chips, Energy Squeeze, and the New Inference Math (October 2026 Edition)</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 12th October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop" alt="Custom Chips, Energy Squeeze, and the New Inference Math (October 2026 Edition)">
+  <p>It finally happened: the GPU glut has turned into a targeted famine, but only if you’re not plugged into the right datacenter network. Nvidia’s Blackwell Ultra is technically everywhere, but actual <strong>access</strong> is bottlenecked by power, networking, and—most stubbornly—energy costs. Custom AI silicon (Google Axion, Microsoft Maia, Meta Artemis) is everywhere, but you need to tailor your stack to even <em>use</em> them.</p><h2>Custom Chips Mean Custom Stacks</h2><p>Every hyperscaler now offers their own flavor of LLM-optimized silicon. The catch? Each one comes with weird constraints: tensor layouts, quantization quirks, ops you can’t use if you want maximum throughput. Engineers can’t just ship a PyTorch model and call it a day. The new normal is writing custom kernel shims, tuning model graphs for device quirks, and picking your inference batch sizes based on real-time fleet telemetry.</p><h2>Inference Cost Isn’t Just $/Token—It’s $/Watt</h2><p>In 2026, the big cost isn’t just renting silicon, it’s paying for the power envelope. Some clouds (hello, Azure East US 3) are now metering energy as a first-class resource. If your model runs on a less efficient chip, your bill can spike 2x-3x, even if you’re getting “discount” GPU time. This forces engineers to get serious about quantization, distillation, and throughput-aware batching—not just for latency, but to avoid blowing the budget.</p><h2>The Supply Chain Angle</h2><p>Silicon shortages are still real for anything below 4nm. The lesson: <strong>design for chip availability, not just spec</strong>. Have a fallback plan (multi-backend, model shims), or risk being dead in the water when your preferred chip runs dry. If you don’t architect for silicon churn, your AI is one container restart away from a fire drill.</p><p>The bottom line: engineers can’t be compute-agnostic anymore. You need to know your chip, your energy profile, and your fallback stack. If you’re not tuning for the realities of 2026 hardware, you’re not shipping AI at scale.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-12-gpu-energy-custom-chips-supply.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-12-gpu-energy-custom-chips-supply.html&text=Custom%20Chips%2C%20Energy%20Squeeze%2C%20and%20the%20New%20Inference%20Math%20%28October%202026%20Edition%29" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.semianalysis.com/p/ai-chip-wars-2026" target="_blank" rel="noopener">SemiAnalysis: The AI Chip Wars Escalate</a></li><li><a href="https://www.datacenterdynamics.com/en/analysis/power-gpus-ai-costs-2026/" target="_blank" rel="noopener">Data Center Dynamics: Power, GPUs, and the Cost of AI</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

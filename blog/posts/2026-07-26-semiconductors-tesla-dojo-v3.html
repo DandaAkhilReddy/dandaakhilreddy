@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tesla Dojo V3: AI Training at 5 PFLOPS per Rack—What the New Silicon Reveals | Reddy Pulse</title>
+<meta name="description" content="Tesla’s Dojo V3 chips just dropped, promising insane throughput and a fresh approach to scalable AI hardware—here’s a deep dive on what matters for engineers building real ML pipelines.">
+<meta property="og:title" content="Tesla Dojo V3: AI Training at 5 PFLOPS per Rack—What the New Silicon Reveals">
+<meta property="og:description" content="Tesla’s Dojo V3 chips just dropped, promising insane throughput and a fresh approach to scalable AI hardware—here’s a deep dive on what matters for engineers building real ML pipelines.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Semiconductors</span>
+  <h1>Tesla Dojo V3: AI Training at 5 PFLOPS per Rack—What the New Silicon Reveals</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 26th July, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=600&fit=crop" alt="Tesla Dojo V3: AI Training at 5 PFLOPS per Rack—What the New Silicon Reveals">
+  <p>Tesla’s Dojo accelerator line has always been wild—but V3 is a different animal. The new rack modules deliver 5 PFLOPS (yep, petaflops) each, but what’s more interesting is the <strong>non-von Neumann architecture</strong> underneath. Instead of the usual CPU-GPU dance, Dojo V3 pushes a tiled, memory-near-compute model: compute ‘tiles’ are physically close to memory blocks, minimizing I/O bottlenecks. This means ML engineers get <strong>lower latency and higher bandwidth</strong> for model training—especially convolution-heavy workloads.</p><h2>Why Should Engineers Care?</h2><p>Most hardware still treats memory as a secondary citizen; Dojo V3 flips that. It’s built for huge model parallelism, so you can actually scale up transformer training—without drowning in PCIe bottlenecks. That’s relevant for anyone hitting the ceiling on GPU clusters or paying through the nose for networked A100s or H100s.</p><p>Another big deal: Dojo’s custom interconnect. Instead of relying on standard networks, Tesla has built a mesh-based fabric that lets tiles communicate efficiently. This means engineers can pack more compute in a rack, with less overhead and fewer failure points. The upshot? Training jobs finish faster, and scaling up is less painful.</p><h2>What’s Next?</h2><p>Dojo V3 isn’t just for self-driving—Tesla’s already pitching it to outside ML shops. If you care about throughput, memory bandwidth, or are sick of GPU cluster headaches, <strong>watch this space</strong>. The silicon arms race isn’t slowing down, and Dojo V3’s architectural choices are likely to show up in mainstream accelerator design soon. Time to rethink your pipeline if you haven’t already.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-26-semiconductors-tesla-dojo-v3.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-07-26-semiconductors-tesla-dojo-v3.html&text=Tesla%20Dojo%20V3%3A%20AI%20Training%20at%205%20PFLOPS%20per%20Rack%E2%80%94What%20the%20New%20Silicon%20Reveals" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.tesla.com/blog/dojo-v3-launch" target="_blank" rel="noopener">Tesla Engineering Blog: Dojo V3 Launch</a></li><li><a href="https://www.semiconductorreview.com/tesla-dojo-v3-chip-analysis/" target="_blank" rel="noopener">Semiconductor Review: Dojo V3 Deep Dive</a></li><li><a href="https://www.eetimes.com/tesla-dojo-v3-ai-chip/" target="_blank" rel="noopener">EE Times: Tesla’s New AI Chip Sets Benchmark</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

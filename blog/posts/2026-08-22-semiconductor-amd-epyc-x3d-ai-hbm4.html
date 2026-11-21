@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMD’s EPYC X3D AI: HBM4 and 3D V-Cache Go Mainstream for AI Inference | Reddy Pulse</title>
+<meta name="description" content="AMD just dropped EPYC X3D AI chips with integrated HBM4 and stacked 3D V-Cache—an architecture tipping point that forces every engineer to rethink memory as the bottleneck for AI workloads.">
+<meta property="og:title" content="AMD’s EPYC X3D AI: HBM4 and 3D V-Cache Go Mainstream for AI Inference">
+<meta property="og:description" content="AMD just dropped EPYC X3D AI chips with integrated HBM4 and stacked 3D V-Cache—an architecture tipping point that forces every engineer to rethink memory as the bottleneck for AI workloads.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Semiconductors</span>
+  <h1>AMD’s EPYC X3D AI: HBM4 and 3D V-Cache Go Mainstream for AI Inference</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 22nd August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop" alt="AMD’s EPYC X3D AI: HBM4 and 3D V-Cache Go Mainstream for AI Inference">
+  <p>AMD has put HBM4 (High Bandwidth Memory gen 4) and 3D V-Cache on their new EPYC X3D AI CPUs—and it’s not just a spec bump. It’s a tectonic shift in how compute and memory interact for AI inference. With up to 2TB/s memory bandwidth <em>on-package</em> and 1.5GB L3 cache per socket, latency for model inference drops off a cliff. AI models that thrashed DRAM before can now live almost entirely in cache or HBM, which means your bottleneck is finally compute, not memory bandwidth.</p><h2>Why Engineers Should Care</h2><p>This isn’t just for academic ML engineers. If you’re building anything from recommendation engines to real-time analytics, memory locality is now the biggest determinant of throughput and cost. The move to HBM4 and massive stacked L3 means you can host larger models per socket, with lower power and fewer nodes—so your infrastructure gets radically simpler.</p><p>Another critical point: <strong>Programmability</strong>. AMD’s ROCm stack and PyTorch integration now expose memory hierarchy as first-class citizens. You can hand-place weights in cache (L3 vs HBM), or even fuse ops that exploit bandwidth locality. That’s a huge deal for fine-tuned deployments.</p><p>Now that HBM4 is on mainstream server CPUs (not just GPUs), classic CPU-based inference is relevant again—especially for low-latency, high-concurrency tasks where GPUs are overkill. I expect to see a whole wave of inference engines, vector DBs, and edge AI appliances built around this memory-centric design. The age of treating memory as a flat space is officially over.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-22-semiconductor-amd-epyc-x3d-ai-hbm4.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-22-semiconductor-amd-epyc-x3d-ai-hbm4.html&text=AMD%E2%80%99s%20EPYC%20X3D%20AI%3A%20HBM4%20and%203D%20V-Cache%20Go%20Mainstream%20for%20AI%20Inference" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anandtech.com/show/20622/amd-epyc-x3d-ai-hbm4" target="_blank" rel="noopener">AMD Unveils EPYC X3D AI Processors with HBM4</a></li><li><a href="https://semianalysis.com/hbm4-epyc-x3d-ai" target="_blank" rel="noopener">HBM4 and AI Workloads: What Changes?</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

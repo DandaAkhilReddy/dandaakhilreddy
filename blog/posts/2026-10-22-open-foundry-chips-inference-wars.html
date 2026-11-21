@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Foundry Chips and Inference Wars: What the New AI Silicon Landscape Means for Us | Reddy Pulse</title>
+<meta name="description" content="Open foundries are shaking up the GPU/TPU market, and inference costs are moving fast. Here&#x27;s what engineers actually shipping AI should know about chips, supply chains, and new energy realities.">
+<meta property="og:title" content="Open Foundry Chips and Inference Wars: What the New AI Silicon Landscape Means for Us">
+<meta property="og:description" content="Open foundries are shaking up the GPU/TPU market, and inference costs are moving fast. Here&#x27;s what engineers actually shipping AI should know about chips, supply chains, and new energy realities.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>Open Foundry Chips and Inference Wars: What the New AI Silicon Landscape Means for Us</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 22nd October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop" alt="Open Foundry Chips and Inference Wars: What the New AI Silicon Landscape Means for Us">
+  <p>The AI chip wars have a new player: <strong>open foundries</strong>. For the first time, multiple startups (plus China’s big silicon players) are taping out custom AI inference chips without Nvidia or TSMC in the loop. Why should you care? Because it means we’ll see <strong>inference costs drop</strong>—but not everywhere, and not for every use case.</p><h2>GPUs, TPUs, and Custom Silicon: The New Reality</h2><p>Nvidia’s H200s are still king for multi-modal, >100B parameter models, but inference APIs (from Cohere, Groq, even Google’s Trillium) are now quoting sub-$0.10/1M tokens for standard LLMs. The catch: You have to re-write your model runners or even change your operator graph to target new silicon.</p><h2>Datacenter Build-Outs and Supply Chain Chaos</h2><p>Data center build-outs are still frenetic—Microsoft and Google can drop $10B on a new region, but smaller players are betting on specialist silicon and <strong>local inference clusters</strong>. Open foundry chips (see Rivos, Tenstorrent, and others) mean some teams are spinning up inference-only racks at 1/5th the energy per token—but only if your codebase can target their SDK.</p><h2>What Engineers Need to Do Now</h2><p><strong>Portability is existential.</strong> If you’re not writing with an abstraction layer (or at least containerizing your runners so you can swap chips), you’re going to get crushed by cost curves by 2027. Also, expect more outages and supply hiccups—new silicon means new bottlenecks, and SRE isn’t ready.</p><p><strong>Why it matters:</strong> If you ship AI at scale, silicon choices are now product choices. Infer cheaper, infer local, or get priced out.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-22-open-foundry-chips-inference-wars.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-22-open-foundry-chips-inference-wars.html&text=Open%20Foundry%20Chips%20and%20Inference%20Wars%3A%20What%20the%20New%20AI%20Silicon%20Landscape%20Means%20for%20Us" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.semianalysis.com/p/open-foundry-ai-chips" target="_blank" rel="noopener">Startups Move to Open 5nm Foundries for Custom AI Chips</a></li><li><a href="https://www.reuters.com/technology/ai-infrastructure-supply-chain-2026" target="_blank" rel="noopener">AI Datacenter Build-Outs Face New Supply Chain Risks</a></li><li><a href="https://www.datacenterdynamics.com/en/analysis/ai-inference-costs-2026/" target="_blank" rel="noopener">The New Economics of AI Inference</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
