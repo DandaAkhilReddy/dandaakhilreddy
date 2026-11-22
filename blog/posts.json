@@ -10924,5 +10924,74 @@
     "url": "https://www.pewtrusts.org/en/research-and-analysis/articles/2021/03/31/fda-needs-to-improve-patient-notification-for-medical-device-recalls"
    }
   ]
+ },
+ {
+  "slug": "2026-11-22-agentic-loops-spec-prompts-eval-ai-workflows",
+  "date": "2026-11-22",
+  "category": "AI & Developers",
+  "title": "Agentic Loops, Spec Prompts, and Eval Workflows: How AI Is Actually Used by Developers Now",
+  "summary": "The news isn't just about more capable models—it's about the shift in how devs are harnessing agentic loops, spec-driven prompting, and eval-based workflows with tools like Claude Code. Here’s what’s changed, and why it matters for engineers shipping real features.",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p>The headline AI news this week isn’t a new model, but the way devs are actually using existing ones. Claude Code and similar agentic coding tools have gone from novelty to necessity. Instead of simple prompts, engineers are engineering <strong>loop-driven workflows</strong>—plan→act→verify→fix cycles, often kicked off by spec-driven prompts. Why? Because the naive \"just prompt the model and hope\" approach doesn’t cut it for production code.</p><h2>Agentic Coding Is Real</h2><p>Agentic frameworks (think Claude Code, OpenAI Functions, and new MCP tool servers) aren’t just hype. We’re seeing devs orchestrate multi-step plans, track goals, and run evals as part of their coding flow. The big win: you get repeatability and reliability, not just clever completions.</p><h2>Loop Engineering and Spec-Driven Prompting</h2><p>Loop engineering is how you get the model to debug, verify, and iterate until the output matches your requirements. Spec-driven prompts (explicit instructions, acceptance tests, etc.) let the AI reason about intent before code. The combo is deadly for productivity: you can ship features with fewer regressions, faster iteration, and real world guardrails.</p><h2>MCP Tool Servers and Eval-Driven Development</h2><p>Server-side orchestration (MCP: Model Control Plane) lets teams run the agentic loops, keep state, and integrate evals directly. Eval-driven dev (continuous QA based on LLM output) is now a standard part of CI/CD in big shops. The result: less manual review, more automated safety, and code that meets the real spec—not just \"looks plausible.\"</p><h2>AI Pair-Programming: It’s a Workflow, Not a Product</h2><p>The real insight: AI pair programming is a <strong>workflow</strong>. Devs aren’t passively prompting—they’re designing loops, running evals, using MCPs for orchestration, and shaping prompts for spec compliance. It matters because the future isn’t just \"AI writing code\", it’s engineers architecting how AI fits into their loop. That’s the new productivity stack.</p>",
+  "sources": [
+   {
+    "title": "Anthropic launches Claude Code for agentic workflows",
+    "url": "https://www.anthropic.com/news/claude-code-agentic-workflows"
+   },
+   {
+    "title": "OpenAI's Model Control Plane: Engineering AI Toolchains",
+    "url": "https://www.openai.com/research/model-control-plane"
+   },
+   {
+    "title": "GitHub Next: Spec-driven prompting and evals",
+    "url": "https://githubnext.com/projects/spec-driven-prompting-evals"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-22-gpu-supply-inference-cost-datacenter-scale",
+  "date": "2026-11-22",
+  "category": "Compute",
+  "title": "GPU Supply, Inference Cost, and Datacenter Scale: What Engineers Need to Know Now",
+  "summary": "GPU/TPU supply is still tight, inference costs are climbing, and datacenter buildouts are getting more creative. The latest compute news has direct consequences for anyone shipping AI-powered apps—here's what to watch and why it matters.",
+  "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=600&fit=crop",
+  "body": "<p>The GPU supply chain is still messier than most execs admit. Nvidia’s H200s are sold out until Q2 2027, and even Google’s custom TPUs are seeing allocation delays. If you’re building anything that needs inference at scale, you’re feeling the squeeze—either in higher bills or slower deployment cycles.</p><h2>Inference Costs: Not Just a Line Item</h2><p>Inference costs are up 35% YoY, driven by both silicon scarcity and energy squeeze. Engineers must now design for <strong>resource-aware inference</strong>: batching, model routing, and adaptive compute. This isn’t just optimization—it’s survival. Build for lower overhead, or your app won’t scale when it gets traction.</p><h2>Datacenter Build-Out: Edge and Co-Location</h2><p>Hyperscalers are pivoting to edge micro-datacenters and creative co-location strategies. Why? Energy constraints and rural silicon shortages. Azure and GCP both have new contracts for renewable-powered edge nodes. For devs, this means you have to track <strong>where</strong> your models run; latency, energy availability, and regional allocation are now part of the deployment story.</p><h2>Custom Silicon and Supply Chain Moves</h2><p>Meta and Amazon are doubling down on custom AI chips, but fab capacity is lagging. Engineers should care because even \"cloud-first\" apps may see regional outages or performance spikes based on chip allocation. Devs need to build for failover—think model fallback, routing, and dynamic scaling.</p><p>The bottom line: if you’re not tracking compute costs and supply chain signals, your AI feature could grind to a halt, or bankrupt your cloud budget. The era of \"just ship and let the cloud scale\" is over. Awareness is a must.</p>",
+  "sources": [
+   {
+    "title": "Nvidia GPU supply crunch: What it means for AI",
+    "url": "https://www.reuters.com/technology/nvidia-gpu-supply-crunch"
+   },
+   {
+    "title": "Datacenter buildout and energy squeeze",
+    "url": "https://www.datacenterdynamics.com/en/news/datacenter-energy-supply-chain/"
+   },
+   {
+    "title": "Custom silicon and cloud inference costs",
+    "url": "https://www.semi.org/en/news-resources/press-releases/custom-silicon-inference-costs"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-22-microsoft-learn-adopt-openai-anthropic-google",
+  "date": "2026-11-22",
+  "category": "Microsoft",
+  "title": "What Microsoft Should Learn Next: Eval APIs, Memory Protocols, and Multi-Model Routing",
+  "summary": "Microsoft’s stack is strong, but OpenAI, Anthropic, and Google are pushing boundaries with eval APIs, open agent memory, and smart model routing. Here’s what Microsoft should adopt—and why engineers care.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7d4d41?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft’s engineering culture moves fast, but we’re seeing OpenAI, Anthropic, and Google ship features that matter for devs building real AI-powered products—especially around eval, memory, and routing. The point isn’t to copy cool ideas; it’s to solve the right problems.</p><h2>Eval APIs: Continuous QA That Ships</h2><p>OpenAI’s eval APIs let teams automate acceptance tests on LLM output. This isn’t just for researchers; it’s how you ship safe features at scale. Azure and GitHub Copilot need native eval hooks for CI/CD—so devs can push, test, and ship with automated LLM QA. No more manual review or \"hope the model did the right thing.\"</p><h2>Agent Memory Protocols: No More Stateless Agents</h2><p>Anthropic’s open agent memory lets LLMs keep state between steps, and Google’s Routing API pushes models to context-aware execution. Azure AI needs to expose standardized memory and routing APIs so engineers can build <strong>stateful agent chains</strong>—not just stateless completions. This enables workflows that actually match user intent and business logic.</p><h2>Multi-Model Routing and Spec-Prompt APIs</h2><p>Google’s model routing (switching between Gemini, Claude, and custom models) means devs aren’t locked into a single LLM. Azure should expose routing primitives and spec-driven prompt APIs to let engineers mix and match models based on task, cost, and accuracy. Flexibility beats lock-in every time.</p><p>The ask: Microsoft should build open eval, memory, and routing APIs directly into Azure, Copilot, and Foundry. Engineers need more than \"cool features\"—they need primitives for reliability and control.</p>",
+  "sources": [
+   {
+    "title": "OpenAI launches eval API for automated LLM QA",
+    "url": "https://www.openai.com/blog/eval-api-release"
+   },
+   {
+    "title": "Anthropic releases agent memory protocol",
+    "url": "https://www.anthropic.com/news/agent-memory-protocol"
+   },
+   {
+    "title": "Google Gemini model routing API",
+    "url": "https://cloud.google.com/blog/products/ai/ml-model-routing-gemini"
+   }
+  ]
  }
 ]
