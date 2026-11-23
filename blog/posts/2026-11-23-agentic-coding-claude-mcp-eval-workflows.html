@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Coding in Practice: Claude, Loops, Specs, and Eval-Driven Dev—What’s Actually Working | Reddy Pulse</title>
+<meta name="description" content="Developers aren&#x27;t just slapping prompts into chatbots anymore. Real-world AI engineering now means chaining agents, spec-driven prompting, eval loops, and plugging into tools via MCP servers. Here’s how it looks from the trenches.">
+<meta property="og:title" content="Agentic Coding in Practice: Claude, Loops, Specs, and Eval-Driven Dev—What’s Actually Working">
+<meta property="og:description" content="Developers aren&#x27;t just slapping prompts into chatbots anymore. Real-world AI engineering now means chaining agents, spec-driven prompting, eval loops, and plugging into tools via MCP servers. Here’s how it looks from the trenches.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">AI &amp; Developers</span>
+  <h1>Agentic Coding in Practice: Claude, Loops, Specs, and Eval-Driven Dev—What’s Actually Working</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 23rd November, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop" alt="Agentic Coding in Practice: Claude, Loops, Specs, and Eval-Driven Dev—What’s Actually Working">
+  <p>The big AI news: agentic coding is no longer a theoretical sideshow—it's rapidly becoming the baseline for dev teams, especially with the recent Claude Code 3.5 drop and the open MCP server protocol. Rather than just prompting, engineers are building workflows where AI agents actually plan, act, verify, and self-correct in tight human-in-the-loop cycles.</p><h2>Loop Engineering Is Real</h2><p>The plan→act→verify→fix loop used to mean 'AI does a thing, you review.' Now, with Claude (or GPT-4o, but Claude’s reasoning is less prone to hallucination), the agent itself proposes plans, invokes code tools via MCP, tests its own output, and reiterates. Developers are writing eval suites <em>before</em> the agent codes—like TDD but for LLMs. This forces the AI to check its work as it goes. Why does this matter? Because it finally lets us trust AI to automate nontrivial code and infra changes without baby-sitting every keystroke.</p><h2>Spec-Driven Prompting and Tool Servers</h2><p>Specs are back, but in a new form: you give the agent a formal contract (OpenAPI, JSON Schema, or a markdown block), and it prompts itself against that. No more relying on vibes—specs keep output reliable and testable. The MCP protocol—think a Swiss Army knife of tool APIs for LLMs—lets you wire in linters, custom build tools, or even issue trackers, and the agent routes tasks as needed.</p><h2>Eval-Driven Development</h2><p>This is the biggest shift: developers now maintain eval sets for every feature, and the agent’s code is judged (and auto-corrected) by passing those, not just by human review. It’s not perfect—agents still stall or take scenic routes—but day-to-day, it means less yak-shaving and more shipping. If you’re not running your own eval-driven loops, you’re behind.</p><strong>Bottom line:</strong> Agents are moving from copilots to automation engines, and prompt engineering is giving way to <em>loop</em> engineering. Get on board or get left behind.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-23-agentic-coding-claude-mcp-eval-workflows.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-23-agentic-coding-claude-mcp-eval-workflows.html&text=Agentic%20Coding%20in%20Practice%3A%20Claude%2C%20Loops%2C%20Specs%2C%20and%20Eval-Driven%20Dev%E2%80%94What%E2%80%99s%20Actually%20Working" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/news/claude-code-3-5-release" target="_blank" rel="noopener">Anthropic Debuts Claude Code 3.5</a></li><li><a href="https://mcp-protocol.org/blog/mcp-specification" target="_blank" rel="noopener">MCP: The Emerging Tool Server Protocol for LLMs</a></li><li><a href="https://www.latent.space/p/evaluation-driven-development" target="_blank" rel="noopener">Eval-Driven Development with LLMs</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

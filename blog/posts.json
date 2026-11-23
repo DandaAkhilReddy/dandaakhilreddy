@@ -11016,5 +11016,74 @@
     "url": "https://www.woodworkingnetwork.com/news/woodworking-industry-news/pallet-prices-hit-record-highs"
    }
   ]
+ },
+ {
+  "slug": "2026-11-23-agentic-coding-claude-mcp-eval-workflows",
+  "date": "2026-11-23",
+  "category": "AI & Developers",
+  "title": "Agentic Coding in Practice: Claude, Loops, Specs, and Eval-Driven Dev—What’s Actually Working",
+  "summary": "Developers aren't just slapping prompts into chatbots anymore. Real-world AI engineering now means chaining agents, spec-driven prompting, eval loops, and plugging into tools via MCP servers. Here’s how it looks from the trenches.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>The big AI news: agentic coding is no longer a theoretical sideshow—it's rapidly becoming the baseline for dev teams, especially with the recent Claude Code 3.5 drop and the open MCP server protocol. Rather than just prompting, engineers are building workflows where AI agents actually plan, act, verify, and self-correct in tight human-in-the-loop cycles.</p><h2>Loop Engineering Is Real</h2><p>The plan→act→verify→fix loop used to mean 'AI does a thing, you review.' Now, with Claude (or GPT-4o, but Claude’s reasoning is less prone to hallucination), the agent itself proposes plans, invokes code tools via MCP, tests its own output, and reiterates. Developers are writing eval suites <em>before</em> the agent codes—like TDD but for LLMs. This forces the AI to check its work as it goes. Why does this matter? Because it finally lets us trust AI to automate nontrivial code and infra changes without baby-sitting every keystroke.</p><h2>Spec-Driven Prompting and Tool Servers</h2><p>Specs are back, but in a new form: you give the agent a formal contract (OpenAPI, JSON Schema, or a markdown block), and it prompts itself against that. No more relying on vibes—specs keep output reliable and testable. The MCP protocol—think a Swiss Army knife of tool APIs for LLMs—lets you wire in linters, custom build tools, or even issue trackers, and the agent routes tasks as needed.</p><h2>Eval-Driven Development</h2><p>This is the biggest shift: developers now maintain eval sets for every feature, and the agent’s code is judged (and auto-corrected) by passing those, not just by human review. It’s not perfect—agents still stall or take scenic routes—but day-to-day, it means less yak-shaving and more shipping. If you’re not running your own eval-driven loops, you’re behind.</p><strong>Bottom line:</strong> Agents are moving from copilots to automation engines, and prompt engineering is giving way to <em>loop</em> engineering. Get on board or get left behind.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Debuts Claude Code 3.5",
+    "url": "https://www.anthropic.com/news/claude-code-3-5-release"
+   },
+   {
+    "title": "MCP: The Emerging Tool Server Protocol for LLMs",
+    "url": "https://mcp-protocol.org/blog/mcp-specification"
+   },
+   {
+    "title": "Eval-Driven Development with LLMs",
+    "url": "https://www.latent.space/p/evaluation-driven-development"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-23-gpu-custom-chips-inference-supply",
+  "date": "2026-11-23",
+  "category": "Compute",
+  "title": "Custom Silicon, Inference Costs, and the Scramble for Supply",
+  "summary": "Between Nvidia’s new H100X2 ramp, Google’s open-source TPUv7 stack, and startups flooding in with verticalized AI chips, compute economics are shifting—fast. Here’s what engineers shipping AI need to know.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>Every engineering team deploying AI is feeling it: the supply chain for compute is still tight, but the market is fragmenting. Nvidia’s H100X2 is everywhere in the news, but access is patchy, and costs are sticking. At the same time, Google just released details (and open drivers) for TPUv7, making vertical AI deployment less of a walled garden than before. Meanwhile, Groq and Tenstorrent are pushing their own silicon into the cloud via partnerships.</p><h2>Inference Costs: Still Spiky, But Getting Smarter</h2><p>The real shift is in inference economics. Yes, on-demand GPU prices are high, but toolchains are finally catching up with model quantization, speculative decoding, and smart routing. That means teams can run more on smaller nodes, and even spin up inference on custom edge silicon (think: automotive or on-prem).</p><h2>Supply Chain: Two Worlds</h2><p>For US/EU hyperscalers, the supply chain is stabilizing, but Asia-Pacific teams are still feeling squeeze—thanks to export controls and local demand. Why does this matter? Because as open-source LLMs (like Llama 4 and Gemma 3B) get better, more teams will run their own models—and hardware choice becomes a strategic decision, not just 'grab the next A100'.</p><h2>What to Watch</h2><p>If you’re building for scale, start investing in profiling and quantization pipelines—don’t just chase the latest GPU. Evaluate TPUs (if you’re GCP-native) or emerging chips, since vendor lock-in is getting more expensive. And keep an eye on inference cost calculators—not just list prices, but real end-to-end costs including energy and networking. Compute is the new bottleneck, and the teams who solve for it will win.</p>",
+  "sources": [
+   {
+    "title": "Nvidia H100X2 Launches Amid Supply Crunch",
+    "url": "https://www.tomshardware.com/news/nvidia-h100x2-launch"
+   },
+   {
+    "title": "Google Open-Sources TPUv7 Stack",
+    "url": "https://cloud.google.com/blog/products/ai-machine-learning/tpu-v7-open-source"
+   },
+   {
+    "title": "Groq and Tenstorrent: The AI Chip Race",
+    "url": "https://www.semiwiki.com/semiconductor-manufacturers/tenstorrent-groq-ai-chips/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-23-microsoft-openai-anthropic-google-takeaways",
+  "date": "2026-11-23",
+  "category": "Microsoft",
+  "title": "What Microsoft Needs to Internalize from the Latest Frontier Labs",
+  "summary": "Microsoft’s AI ecosystem is strong, but the latest advances from OpenAI, Anthropic, and Google show where Copilot, GitHub, and Azure need to push further. Here’s my constructive engineer-to-engineer take.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>I spend a lot of time with Microsoft’s developer stack—Copilot, Azure ML, GitHub, and the new Foundry platform. But watching the last month of moves from OpenAI, Anthropic, and Google, it’s clear Redmond needs to internalize a few lessons—or risk falling behind as engineers start chaining agents and tools in the wild.</p><h2>Lesson 1: Open, Hackable Loop APIs</h2><p>Anthropic and OpenAI are leading here, exposing loop APIs and eval endpoints for agentic workflows. Microsoft: let devs plug in custom toolchains, eval suites, or even their own agent memory backends directly into Copilot and Azure agents—without having to wait for internal schema updates or slow approvals. Otherwise, teams will just wire up Claude or GPT-4o externally.</p><h2>Lesson 2: Spec-First Workflows, Not Just Prompts</h2><p>Anthropic’s spec-driven prompting is changing the game. I want to hand Copilot a markdown OpenAPI block and get contract-verified code or infra, not just 'best-effort' natural language. This is a solvable product gap and would deeply help every engineer working in regulated or mission-critical domains.</p><h2>Lesson 3: Model Routing, Not Monoculture</h2><p>Google’s Gemini stack now routes tasks between models based on eval outcomes and cost—something Microsoft should copy. Let us route Copilot calls through Mixtral, Phi, or LLama, all inside Azure, and optimize for latency/cost/accuracy dynamically. Otherwise, the platform risks becoming a monoculture just as the field is going multi-model fast.</p><strong>Verdict:</strong> Microsoft has the talent and infra to lead, but needs to move from product monoculture to open, composable, eval-driven AI workflows—borrow aggressively or get leapfrogged.</p>",
+  "sources": [
+   {
+    "title": "Spec-Driven Prompting: Anthropic and the Next Step for LLMs",
+    "url": "https://www.anthropic.com/news/spec-driven-ai-development"
+   },
+   {
+    "title": "OpenAI Loop and Eval APIs",
+    "url": "https://platform.openai.com/docs/loop-api"
+   },
+   {
+    "title": "Google Gemini: Multi-Model Routing in Production",
+    "url": "https://ai.googleblog.com/2026/10/model-routing-gemini-stack.html"
+   }
+  ]
  }
 ]
