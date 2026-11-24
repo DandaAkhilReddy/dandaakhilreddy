@@ -11108,5 +11108,74 @@
     "url": "https://www.cdc.gov/nceh/hsb/food/recalls.htm"
    }
   ]
+ },
+ {
+  "slug": "2026-11-24-agentic-coding-eval-workflows",
+  "date": "2026-11-24",
+  "category": "AI & Developers",
+  "title": "Agentic Coding, Eval Loops, and How AI Is Actually Writing Code in 2026",
+  "summary": "Agentic coding with Claude isn’t a demo anymore—it’s daily work. Developers are deep into loop engineering, spec-driven prompts, and eval-driven workflows, and the tools are finally real.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>This year, the biggest shift in how engineers use AI is <strong>agentic coding with Claude and Claude Code</strong>. What used to be AI-assisted autocomplete is now full-on <strong>plan→act→verify→fix loops</strong> running in local dev or in MCP tool servers. Developers aren’t just getting code snippets—they’re spinning up agent loops that take specs, generate plans, write code, run evals, and self-correct.</p><p>Why does this matter? Because productivity is finally compounding. Instead of hammering at the prompt until it works, you toss in a spec, and the agent iterates—autonomously. <strong>Loop engineering</strong> (setting up those plan/act/verify/fix cycles) is a new discipline. It’s not trivial: you have to design good breakpoints, reliable eval scripts, and clear spec-driven prompts. But once you get the tooling right, the agent is a junior dev on steroids.</p><p>MCP tool servers (think local or cloud servers with all your CLI tools, test harnesses, and sandboxes) are now the backbone. Claude Code plugs in, spawns processes, runs commands, catches test failures, then loops. This is eval-driven development in practice: you write the test first, hand off the spec, and the agent cycles until green. <strong>Why is this a big deal?</strong> Because friction is dropping—the feedback loop is now seconds, not hours. And the boundary between spec and implementation is blurring, so devs can spend more time on architecture, less on rote typing.</p><p>Pair-programming workflows with agents are more social too. Some teams run daily agents that track specs, run regression evals, and open PRs. Others use spec-driven prompting to enforce style, security, and business logic via natural language, not just static analysis. It’s not magic, but it’s real, and you can feel the productivity difference in days, not months.</p><h2>Why Engineers Should Care</h2><p>If you’re not in the loop yet, you’re probably <em>behind</em>. The right agentic workflows mean less toil and more leverage. The challenge now? Getting your evals and toolchains tight enough so the agent doesn’t hallucinate or get stuck. But the upside is real: shipping faster, with fewer bugs, and more focus on solving the real problems.</p>",
+  "sources": [
+   {
+    "title": "Anthropic’s Claude Code: The Next Level of AI Coding Agents",
+    "url": "https://www.anthropic.com/news/claude-code-launch"
+   },
+   {
+    "title": "Eval-Driven Development: How AI Agents Are Changing Software Creation",
+    "url": "https://www.thoughtworks.com/insights/blog/eval-driven-development"
+   },
+   {
+    "title": "The Rise of Spec-Driven AI Coding",
+    "url": "https://www.stackoverflow.blog/2026/10/31/spec-driven-ai-coding"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-24-silicon-squeeze-inference-costs",
+  "date": "2026-11-24",
+  "category": "Compute",
+  "title": "Silicon Squeeze: Datacenter Expansion, Inference Costs, and Why Custom Chips Are Eating the World",
+  "summary": "GPU demand is still nuts, but custom AI silicon and datacenter buildouts are shifting the economics. For engineers, every choice—chip, region, batch size—impacts cost and velocity.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p><strong>GPU scarcity is still real</strong>, but 2026 isn’t just the NVIDIA show anymore. Google, Amazon, Meta, and even a few dark-horse startups are rolling out custom AI chips, and it’s changing how we build and deploy models. Why does this matter for engineers? Because <strong>inference costs are finally getting some daylight</strong>, but you have to architect for the hardware you can actually get.</p><p>Here’s the hard truth: datacenter buildouts are <em>not</em> keeping pace with AI workload growth. Even as new regions come online, <strong>energy costs and supply chain snarls</strong> still throttle capacity. If you’re shipping anything beyond toy scale, every inference run has to be costed by chip type, region, and even time-of-day. That means model compression, quantization, and careful batch sizing aren’t optional—they’re baseline survival tactics.<br></p><p>The exciting bit: custom inference silicon like Google’s Axion, Amazon’s Trainium/Inferentia, and Meta’s in-house chips are <strong>finally lowering $/token for big models</strong>. The catch? You can’t just lift and shift PyTorch code. You need to target the right runtimes, optimize memory, and sometimes tweak ops to run efficiently. If you don’t, two things happen: you burn money, or your job queue gets throttled.</p><p><strong>Supply chain news still isn’t rosy</strong>. Silicon lead times are better than last year, but any spike in demand (especially from non-AI sectors) sends ripples across the board. If you’re building reliably, you need to monitor not just your code, but the global chip pipeline. Seriously: a flood in Taiwan or a trade spat in East Asia can break your roadmap.</p><h2>What Engineers Should Do</h2><p>1. <strong>Know your chip targets.</strong> Every model should have an inference cost profile.<br>2. <strong>Use model routing.</strong> Route traffic to the cheapest silicon that meets your SLOs.<br>3. <strong>Monitor supply risk.</strong> Treat chip availability as a build dependency.<br>4. <strong>Stay nimble.</strong> Design your inference stack to swap hardware as the market shifts.</p><p>If you’re not thinking silicon, you’re not really shipping AI.</p>",
+  "sources": [
+   {
+    "title": "Custom AI Chips Are the Future of Datacenters",
+    "url": "https://www.semianalysis.com/p/custom-ai-chips-datacenters"
+   },
+   {
+    "title": "Inference Costs and Model Optimization in the Era of Scarcity",
+    "url": "https://www.thereadwrite.com/ai-inference-costs"
+   },
+   {
+    "title": "Global Chip Supply Chain: 2026 Update",
+    "url": "https://www.reuters.com/technology/chip-supply-chain-2026-update"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-24-microsoft-eval-spec-loops",
+  "date": "2026-11-24",
+  "category": "Microsoft",
+  "title": "Microsoft Needs Eval Loops and Spec Protocols—Now",
+  "summary": "Frontier labs are building eval APIs, spec-driven agent flows, and seamless multi-model routing. Microsoft should move faster to bake these into Azure, Copilot, and GitHub workflows.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>Let’s be blunt: Microsoft has scale, models, and an installed base that’s the envy of the world. But if you’re watching OpenAI, Anthropic, and Google, there’s one place Redmond lags—the tight integration of <strong>eval loops, spec-driven agent flows, and memory protocols</strong> into developer tooling.</p><p>Why does it matter? Because the state of the art isn’t just UI polish or prompt tweaking. <strong>Eval APIs</strong> let teams run regression, behavior, and robustness tests <em>on every commit</em>—as easily as unit tests. Spec-driven flows (like Anthropic’s latest agent APIs) let you hand off a natural-language spec and get a working PR with a confidence report—no handholding. And multi-model routing (Google’s Gemini API style) means routing requests to the right model for cost, accuracy, or context, without human intervention.</p><p>Today, Copilot and Azure OpenAI are great at code completion and retrieval—but clunky when you want eval-driven development or to enforce spec fidelity <em>across the stack</em>. Foundry is powerful but too coarse-grained for the new agentic workflows. <strong>What should Microsoft do?</strong></p><ol><li><strong>Ship first-class eval APIs</strong> in Azure and GitHub—make eval a core primitive, not a bolt-on or third-party plugin.</li><li><strong>Support spec protocols</strong> (including multi-stage agent loops and spec verification) in Copilot and cloud APIs—let devs hand off specs, not just code snippets.</li><li><strong>Adopt open memory and routing protocols</strong>—so devs can orchestrate, checkpoint, and route across models and providers, not just Microsoft’s own.</li></ol><p>If Microsoft nails this, it future-proofs its dev ecosystem against whatever OpenAI, Anthropic, or Google ship next. If not? Engineers will keep duct-taping evals and agents on top, and the next big workflow standard will happen elsewhere.</p>",
+  "sources": [
+   {
+    "title": "OpenAI’s Eval API: What It Means for Developers",
+    "url": "https://www.openaiblog.com/eval-api-release"
+   },
+   {
+    "title": "Anthropic’s Spec-Driven Agents and Protocols",
+    "url": "https://www.anthropic.com/news/spec-agent-protocol"
+   },
+   {
+    "title": "Google Gemini’s Multi-Model Routing",
+    "url": "https://ai.googleblog.com/2026/10/gemini-multi-model-routing.html"
+   }
+  ]
  }
 ]
