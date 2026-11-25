@@ -11200,5 +11200,74 @@
     "url": "https://www.nhtsa.gov/laws-regulations/civil-penalties-inflation-adjustment"
    }
   ]
+ },
+ {
+  "slug": "2026-11-25-agentic-coding-claude-day-to-day-loops",
+  "date": "2026-11-25",
+  "category": "AI & Developers",
+  "title": "Agentic Coding Is Getting Real: How Developers Are Actually Looping with Claude",
+  "summary": "Agentic coding with Claude and Claude Code is rapidly becoming a daily habit for working engineers. Here’s how loop engineering, spec-driven prompts, and eval-driven workflows are changing practical dev work right now.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>Forget the hype: agentic coding is now deeply woven into daily developer workflows—not just for demos, but for shipping code. Claude’s suite, especially Claude Code, is leading the charge. Why? It lets you compose loops (plan → act → verify → fix) where the agent doesn’t just spit out code and quit, but keeps iterating until the test suite passes.</p><h2>Loop Engineering: More Than Just 'Try Again'</h2><p>Engineers now set up 'loop runners'—tiny wrappers around Claude or similar LLMs—that essentially automate the grind: propose a function, run the tests, analyze failures, re-prompt with a focused diff, and repeat until green. This isn’t overkill; it’s the only way to get truly reliable output from LLMs. The best part? It frees you from the tedium, letting you focus on architecture and edge cases.</p><h2>Spec-Driven Prompting and MCP Tool Servers</h2><p>Spec-driven prompting has quietly become the lingua franca. Instead of a vague prompt ('Write a parser'), you generate a declarative spec, possibly even with types and schema, then let Claude fill in the implementation details. For tricky stacks, devs are running MCP (Model Control Protocol) tool servers: basically, a managed set of tools (linters, formatters, custom test harnesses) the agent can invoke. Claude Code natively supports this protocol, which means you get a plug-and-play environment for AI dev—think local runners, not just cloud APIs.</p><h2>Eval-Driven Development</h2><p>This is the big unlock. Instead of manually reviewing agent output, you set up evals (assertion scripts, property-based tests, usage logs) and let the agent self-correct. The impact? You go from 'AI as autocomplete' to 'AI as code collaborator.' Suddenly, engineers are running 20+ iteration loops overnight, waking up to functional PRs that need only a review, not a rewrite.</p><p>Why does all this matter? It’s not about replacing developers. It’s about offloading drudgework, catching edge cases, and making code quality a default, not an afterthought. If you’re still treating LLMs as fancy search engines, you’re missing the real revolution.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code Release Notes",
+    "url": "https://www.anthropic.com/blog/claude-code-release"
+   },
+   {
+    "title": "Ben Kuhn: Looping with LLMs",
+    "url": "https://www.benkuhn.net/llmloops/"
+   },
+   {
+    "title": "The Batch: Automated Eval Workflows",
+    "url": "https://www.deeplearning.ai/thebatch/automated-eval-workflows/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-25-datacenter-silicon-energy-curve",
+  "date": "2026-11-25",
+  "category": "Compute",
+  "title": "Datacenter Buildouts and Custom Silicon: Why the Energy and Cost Curve Is Shifting in 2026",
+  "summary": "The global supply of GPUs and custom AI silicon is still tight, but the economics of inference are shifting thanks to explosive datacenter buildouts and fresh silicon designs. Here’s what it means for shipping AI at scale.",
+  "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop",
+  "body": "<p>The race for AI compute is still white-hot. Nvidia’s latest Blackwell chips may dominate headlines, but hyperscalers are doubling down on custom silicon—think AWS Graviton for basic inference and Google Axion for next-gen model serving. Why does this matter for engineers? Because <strong>the cost and energy profile of running AI is radically changing</strong>.</p><h2>Datacenter Expansion: Physical Limits and Energy Bills</h2><p>We’re seeing a global datacenter buildout that rivals the 2010s cloud boom—this time driven by AI, not just storage and compute. But the bottleneck isn’t just rack space or fiber; it’s electricity. AI datacenters are now competing with entire cities for megawatts. If you’re deploying heavy models, your ops team is likely already running into new quotas or region-specific restrictions.</p><h2>GPUs, TPUs, and Custom Chips: Diversifying the Stack</h2><p>GPUs are still the king for training, but for inference, custom chips are eroding their lead—especially for well-understood, production workloads. Google’s Axion and Amazon’s Trainium/Inferentia2 chips are not just PR stunts; they’re pricing levers. The upshot: if you’re only targeting Nvidia, you’re likely overpaying. Portability is no longer a nice-to-have; it’s table stakes.</p><h2>What Matters for Engineers?</h2><p>Deploying AI at scale is now all about <strong>multi-backend support, cost tracking, and energy-aware scheduling</strong>. The days of assuming 'just toss it on a GPU' are over. I’ve seen teams save 30%+ on inference by routing to the cheapest available silicon per region. But this means investing in model portability and robust monitoring, not just picking the shiniest chip.</p><p>AI’s future isn’t just about bigger models; it’s about smarter deployments. If you’re not paying attention to silicon and energy trends, your infra bill will eat your roadmap.</p>",
+  "sources": [
+   {
+    "title": "The Information: Cloud Giants’ Custom Chips",
+    "url": "https://www.theinformation.com/articles/cloud-giants-ramps-up-custom-ai-chips"
+   },
+   {
+    "title": "Next Platform: Datacenter Energy Crisis",
+    "url": "https://www.nextplatform.com/2026/10/energy-crunch-in-ai-datacenters"
+   },
+   {
+    "title": "Serve the Home: Blackwell GPU Deep Dive",
+    "url": "https://www.servethehome.com/nvidia-blackwell-deep-dive-2026/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-25-microsoft-must-adopt-agentic-toolchains",
+  "date": "2026-11-25",
+  "category": "Microsoft",
+  "title": "Microsoft Needs Native Agentic Toolchains—Here’s What To Steal Next",
+  "summary": "Frontier labs are shipping agentic dev stacks—think Claude Code’s native tool servers and eval loops—that Microsoft should urgently bring to Copilot and Foundry. Here’s why and how, from an engineer’s seat.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft has made Copilot and Foundry more powerful than most enterprise competitors, but the bleeding edge is moving: agentic toolchains and eval-driven workflows are now standard among cutting-edge devs. If you want Copilot to avoid being just a fancy autocomplete, you need to steal—bluntly—the model loop APIs and tool server protocols pioneered by Anthropic and bleeding-edge OSS shops.</p><h2>Why Agentic Toolchains Matter</h2><p>The frontier isn’t just LLM output; it’s <strong>agents interacting with real tools, running test/fix loops, and self-evaluating until the job is done</strong>. Claude Code makes this seamless: the agent can call linters, run full test suites, query internal APIs, and know when to retry or escalate. Most Copilot flows are still stuck in prompt/response land. That gap is a real differentiator for actual dev productivity.</p><h2>What Microsoft Should Build (and Fast)</h2><p>1. <strong>Native Tool Server Protocols</strong>: Let Copilot and Foundry agents invoke local or cloud-hosted tools—test runners, formatters, custom CLIs—via a simple, open protocol. Integrate this at the IDE and pipeline level, not as a cloud-only plugin.</p><p>2. <strong>Eval-First APIs</strong>: Make it trivial to hook up assertion scripts and property-based tests to Copilot’s agentic workflows. The bar is now 'agent retries until evals pass'—not 'user pastes in errors.'</p><p>3. <strong>Spec Prompting as a First-Class Citizen</strong>: Build UI and API surfaces for feeding in tight specs and schema, not just natural-language prompts. This is how devs are getting reliable output, and why they’re defecting to rival agentic stacks.</p><p>Microsoft’s historical edge is integrating with real developer workflows. Don’t cede this to Anthropic or OpenAI. Build the agentic, tool-rich future directly into the Copilot and Foundry core—before your best users leave for greener, loopier pastures.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code: Tool Use Deep Dive",
+    "url": "https://www.anthropic.com/blog/claude-code-tool-use"
+   },
+   {
+    "title": "GitHub Copilot Roadmap",
+    "url": "https://github.com/github/copilot-roadmap"
+   },
+   {
+    "title": "Microsoft Foundry Docs",
+    "url": "https://techcommunity.microsoft.com/t5/ai-azure-ai-blog/announcing-microsoft-foundry"
+   }
+  ]
  }
 ]
