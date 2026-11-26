@@ -11292,5 +11292,74 @@
     "url": "https://www.census.gov/topics/population/migration/guidance/geographic-mobility.html"
    }
   ]
+ },
+ {
+  "slug": "2026-11-26-agentic-spec-loop-workflows",
+  "date": "2026-11-26",
+  "category": "AI & Developers",
+  "title": "Agentic Coding Gets Real: Claude Code, Spec-Driven Loops, and Eval-First Dev",
+  "summary": "Developers are ditching old prompt hacks for agentic coding loops, spec-driven prompting, and eval-first workflows—especially with Claude Code. Here’s what’s actually working, day-to-day.",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p>AI for coding isn’t hype anymore—it’s a daily grind. The big news: Claude Code 3.5’s agentic capabilities are finally usable for real loop engineering. Engineers are no longer just stuffing instructions into prompts. It’s plan→act→verify→fix, with agentic loops that actually <em>close</em> the gap between spec and output.</p><h2>Why This Matters</h2><p>We’re seeing a shift where devs treat AI as a co-worker, not just a code generator. The best teams use <strong>spec-driven prompting</strong>: write the formal spec, feed it to Claude or GPT, and let the agent plan and code. The loop is tight—write, execute, verify, fix—often automatically. Eval-driven development is now standard; evals aren’t just for model testing, they’re the heartbeat of the coding loop.</p><h2>Tool Servers and Workflows</h2><p>MCP tool servers (multi-component protocol) are hot: devs run local servers where agents can call APIs, run Python snippets, and even launch shell commands. This means AI can actually <em>ship</em> code, not just draft it. The best teams are using eval APIs—custom scripts that verify code outputs, sending pass/fail signals right back to the agentic loop. It’s making AI pair-programming feel less like magic, more like a junior engineer with infinite patience.</p><h2>Concrete Wins</h2><p>Agentic coding isn’t just for hobbyists. At startups, it’s fueling rapid prototyping, and at big shops, it’s slashing tech debt. Most productive devs are running 10–20 loops per feature, with at least 3 eval scripts. The “spec first, loop fast” philosophy is replacing prompt tinkering.</p><p>If you’re not using agentic loops with eval and tool servers yet, you’re behind—start with Claude Code, spec-driven prompts, and see how far you can push eval APIs.</p>",
+  "sources": [
+   {
+    "title": "Anthropic Claude Code Announcement",
+    "url": "https://www.anthropic.com/news/claude-code"
+   },
+   {
+    "title": "OpenAI Automated Tool Use Research",
+    "url": "https://openai.com/research/automated-tool-use"
+   },
+   {
+    "title": "AI Pair Programming: Reality Check",
+    "url": "https://www.thoughtworks.com/insights/blog/ai-pair-programming"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-26-gpu-supply-inference-energy",
+  "date": "2026-11-26",
+  "category": "Compute",
+  "title": "GPU Supply, Custom Chips, and Datacenter Energy: The Real Bottlenecks for AI Engineers",
+  "summary": "GPU shortages, custom silicon ramp, and energy constraints are reshaping how engineers deploy AI—especially inference. Here’s what you need to know to ship in 2026.",
+  "image": "https://images.unsplash.com/photo-1465101162946-4377e6a7f553?w=1200&h=600&fit=crop",
+  "body": "<p>If you’re deploying AI, you’ve felt the crunch: GPU pricing is volatile, and custom inference chips are starting to dominate. The news cycle is full of NVIDIA H100 shortages, but the real story is datacenter energy and supply chain risk. Engineers need to rethink how (and where) they ship models.</p><h2>Custom Silicon Is Eating the World</h2><p>Google’s TPUv6, Meta’s Artemis, and Amazon’s Inferentia 3 are now in production, and they’re cheap for inference. This isn’t just vendor marketing: if you want to ship AI at scale, you <strong>must</strong> optimize for LLMs and vision models on whatever silicon is cheapest. The days of \"just use CUDA\" are over—engineers who don’t profile for custom chips are burning both money and latency.</p><h2>Energy and Location</h2><p>Energy is the new bottleneck. Datacenters are maxing out grid capacity in Virginia, Sweden, and even India. Engineers need to care because inference costs are now dominated by energy, not silicon. It matters whether your model runs in Mumbai or Dallas—latency and cost vary by local grid and chip supply. Smart teams are using geo-routing and hybrid deployment (mixing cloud and edge) to chase cheaper power.</p><h2>Shipping Decisions</h2><p>The best engineers are benchmarking their LLMs on both GPU and custom chip endpoints before launch. If you’re still hardcoding CUDA, you’re missing out on 20–50% cost savings. If you don’t know your datacenter’s grid constraints, expect outages or throttling.</p><p>Bottom line: custom silicon and datacenter energy are now as important as your model architecture. Profile, benchmark, and route—don’t just deploy.</p>",
+  "sources": [
+   {
+    "title": "Data Center Energy Crunch",
+    "url": "https://www.datacenterdynamics.com/en/analysis/datacenter-energy-grid-crunch/"
+   },
+   {
+    "title": "Google TPUv6 Launch",
+    "url": "https://cloud.google.com/blog/products/ai-machine-learning/introducing-tpu-v6"
+   },
+   {
+    "title": "NVIDIA GPU Supply Update",
+    "url": "https://www.tomshardware.com/news/nvidia-h100-gpu-supply"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-26-microsoft-copilot-foundry-openai-anthropic",
+  "date": "2026-11-26",
+  "category": "Microsoft",
+  "title": "Microsoft Needs to Steal: Spec-Driven Prompting, Agent Tool Servers, and Eval APIs",
+  "summary": "Microsoft’s Copilot and Foundry are solid, but they’re missing spec-driven prompting, agent tool servers, and eval APIs that OpenAI and Anthropic are running at scale. Here’s how—and why—they should close the gap.",
+  "image": "https://images.unsplash.com/photo-1549921296-3a4b6c2efd4c?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft is playing catch-up. Copilot and Foundry are good, but they’re behind OpenAI and Anthropic’s agentic coding leadership. Here’s what Microsoft needs to learn, fast.</p><h2>Spec-Driven Prompting</h2><p>OpenAI and Anthropic have moved past static prompts. They’re using <strong>spec-driven prompting</strong>: agents consume formal specs, plan tasks, and write code, all in tight loops. Copilot is still too \"autocomplete\" focused—it needs to let devs supply specs and have agents plan and verify, not just suggest code.</p><h2>Agent Tool Servers</h2><p>Anthropic’s Claude Code and OpenAI’s tool APIs let agents call APIs, run scripts, and manage files autonomously. Microsoft’s Copilot Studio is too sandboxed; it should expose secure tool servers so agents can act in real environments, not just simulate IDEs. Engineers need agents that can ship code, not just write it.</p><h2>Eval APIs—Why They Matter</h2><p>Eval-driven development is now mainstream. OpenAI lets devs write custom eval scripts that gate progress in agentic loops. Microsoft needs to build native eval APIs into Copilot and Foundry, so agents can verify output and auto-fix. Otherwise, devs are stuck in manual review, missing the productivity leap.</p><p>Engineers want agentic workflows that move fast, verify automatically, and act in the real world. Microsoft needs to steal these ideas—and build them into Copilot and Foundry, pronto.</p>",
+  "sources": [
+   {
+    "title": "OpenAI Eval API Demo",
+    "url": "https://platform.openai.com/docs/guides/evals"
+   },
+   {
+    "title": "Anthropic Claude Code Tooling",
+    "url": "https://www.anthropic.com/news/claude-code"
+   },
+   {
+    "title": "Microsoft Copilot Studio Docs",
+    "url": "https://learn.microsoft.com/en-us/copilot-studio/"
+   }
+  ]
  }
 ]
