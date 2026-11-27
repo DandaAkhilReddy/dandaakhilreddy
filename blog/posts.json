@@ -11384,5 +11384,66 @@
     "url": "https://www.bbc.com/news/health-66038444"
    }
   ]
+ },
+ {
+  "slug": "2026-11-27-agentic-loops-spec-pairing",
+  "date": "2026-11-27",
+  "category": "AI & Developers",
+  "title": "Agentic Loops, Spec-Driven Prompts, and the New AI Pairing Reality",
+  "summary": "AI isn't just autocomplete for code anymore. Developers are using agentic loops, spec-driven prompting, and eval-based workflows with tools like Claude Code to build and ship real features—faster and with fewer human bottlenecks.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>There's a shift happening in how we write code, and it's more profound than the leap from Vim to VSCode. The big news: <strong>agentic coding</strong> is moving from hype to hands-on. With tools like Claude Code and Mosaic's LLM agents, we're not just getting code suggestions—AI is running full plan-act-verify-fix <strong>loops</strong> on real production tasks. This matters because it’s a radically different workflow: you describe a spec, the agent decomposes, implements, tests, and iterates autonomously, and you review.</p><h2>Loop Engineering In Practice</h2><p>The most effective teams I see now start with a <strong>spec-driven prompt</strong>. You lay out the problem (say, 'add OAuth2 to our Go backend'), hand it to Claude or a local open-weight agent, and let it plan the steps. Each step's code, tests, and even review comments are generated in a loop: plan → act → verify → fix. If evals fail, the agent self-corrects—no more 'just autocomplete my function' baby steps.</p><h2>MCP Tool Servers and Eval-Driven Dev</h2><p>To make agentic coding reliable, people are running <strong>MCP tool servers</strong> (think: an API surface for the AI to call your linters, test runners, and build tools) and integrating with <strong>eval-driven development</strong>—automatic checks on every suggestion, with AI refactoring based on test outcomes. This isn't theoretical: I shipped two features this week by pairing with an eval-first agent, spending more time writing specs and less time fighting with stack traces.</p><h2>Why It Matters</h2><p>If you’re an engineer looking for leverage, agentic loops and spec-driven prompts put you closer to the 'describe the what, let the AI handle the how' workflow. The bottleneck shifts to clear specs and good test coverage, but that's a trade worth making. The best AI devs in 2026 are already spending half their day pairing—sometimes competitively—with an agent, and the productivity jump is real.</p>",
+  "sources": [
+   {
+    "title": "Anthropic’s Claude Code: How Agents Are Changing Software Engineering",
+    "url": "https://www.anthropic.com/blog/claude-code-launch"
+   },
+   {
+    "title": "Evaluation-Driven Development and LLMs",
+    "url": "https://www.latent.space/p/eval-driven-dev"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-27-inference-costs-energy-silicon",
+  "date": "2026-11-27",
+  "category": "Compute",
+  "title": "Inference Costs, Energy, and the Silicon Arms Race: What Matters for Engineers Now",
+  "summary": "GPU allocation isn't the only pain point anymore—custom silicon, inference energy overhead, and datacenter heat budgets are re-wiring how and where we run AI. Here’s the engineer’s take on the latest compute shifts.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>It’s 2026 and the AI chip market is pure chaos. <strong>NVIDIA Blackwell</strong> is shipping but backordered six months. Google’s latest <strong>TPUv7</strong> is optimized for inference, but only if you run inside their cloud. Meanwhile, every hyperscaler and frontier AI lab is rolling out custom silicon—Meta has its own Inferno ASICs, Anthropic’s agents run best on hardware-optimized clusters, and Azure is doubling down on <strong>Maya chips</strong> for Copilot workloads. Why does this matter? Because if you’re shipping AI, your cost structure and even your deployment region are now dictated by <strong>silicon supply chains</strong> and <strong>energy economics</strong> as much as by code.</p><h2>Inference Cost Isn’t Just GPU Price</h2><p>Inference today is as much about <strong>energy and cooling</strong> as it is about silicon. I’ve seen feature launches get paused not due to GPU shortages, but because the datacenter hit its monthly heat budget. <strong>Inference cost per token</strong> is ballooning for non-trivial models—the OpenAI GPT-4+ tier now charges a premium for high-availability and low-latency regions, while mid-market clouds undercut with less reliable, slower inference. Engineers now need to know not just what model to use, but <em>where</em> it’ll run cheapest and fastest.</p><h2>Chips and Code: What’s the Impact?</h2><p>If you’re building with AI, you have to care about <strong>model size</strong>, <strong>quantization</strong>, and <strong>deployment locality</strong>. Custom silicon can halve your per-inference wattage, but only if you adapt your code to use the right ops and memory patterns. Model distillation and pruning aren’t just academic—they’re the difference between a feature that ships and one that sits in backlog, waiting on capacity.</p><h2>What Engineers Should Watch</h2><p>Keep a close eye on which silicon is available in your region, and push for model/ops flexibility in your stack. <strong>Energy constraints</strong> are now a first-class concern in system design. If your boss isn’t talking about inference ops costs for your next AI feature, they will be soon—get ahead by tracking both hardware and energy trends.</p>",
+  "sources": [
+   {
+    "title": "Nvidia Blackwell: The Next-Gen AI Superchip",
+    "url": "https://www.nextplatform.com/2026/10/20/nvidia-blackwell-launch/"
+   },
+   {
+    "title": "Datacenters, AI, and the Energy Squeeze",
+    "url": "https://www.datacenterdynamics.com/en/analysis/ai-datacenter-energy-2026/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-11-27-microsoft-agentic-workflows-frontier-steals",
+  "date": "2026-11-27",
+  "category": "Microsoft",
+  "title": "What Microsoft Needs to Steal Next: Agentic Workflows and Eval APIs from the Frontier",
+  "summary": "Frontier labs are shipping eval-first APIs, spec-driven agent protocols, and seamless tool server architectures. Microsoft still lags in giving engineers native support for these workflows—here’s what needs to change.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>If you’re building inside the Microsoft stack (I am), you know we have great infra—Copilot, Azure AI Studio, GitHub Codespaces—but the <strong>native agentic dev workflow</strong> is still a mess. Meanwhile, OpenAI, Anthropic, and even open-source labs are rolling out <strong>eval-driven APIs</strong> and <strong>spec-first agent protocols</strong> that let you connect your tools, run full plan-act-verify loops, and treat the AI as a team member, not just a fancy autocomplete.</p><h2>What Microsoft Needs to Learn—Fast</h2><p>The best LLM platforms in 2026 let you plug in tool servers (think: shell, HTTP, evals), set behavioral constraints, and run full agentic workflows out of the box. <strong>Anthropic’s MCP protocol</strong> and OpenAI’s function-calling toolkit set the bar here—they give you primitives for agent planning, self-healing evals, and seamless test integrations. <strong>Microsoft needs to ship this natively</strong>: a unified spec-driven API in Azure, and tight Copilot/GitHub integration for running agentic loops with your own toolchains and evals.</p><h2>Concrete Steps, No Fanboying</h2><p>We need (1) <strong>first-class eval APIs</strong>—let me define eval suites and have Copilot/GitHub trigger self-correction loops, (2) <strong>agentic tool server support</strong>—plug in my build, lint, and deploy tools via a standard protocol, and (3) <strong>spec-driven workflows</strong>—let me write a Markdown spec and have the agent run the whole plan-act-verify pipeline, not just codegen. The frontier labs are already doing this. Microsoft should steal these ideas and make them native, not bolted on.</p><h2>Why Engineers Should Care</h2><p>Right now, building agentic workflows on Azure or GitHub means duct-taping together APIs and wrangling with half-baked Copilot CLI betas. If Microsoft gets this right, it’ll mean less yak shaving and more time spent actually shipping. Until then, I’ll keep stealing whatever I can from the frontier labs, and so should you.</p>",
+  "sources": [
+   {
+    "title": "Anthropic’s Protocols for Agentic AI",
+    "url": "https://www.anthropic.com/research/mcp-protocol"
+   },
+   {
+    "title": "OpenAI Function Calling and Eval APIs",
+    "url": "https://platform.openai.com/docs/guides/function-calling"
+   },
+   {
+    "title": "GitHub Copilot and the Future of Pair Programming",
+    "url": "https://github.blog/2026-08-15-copilot-agentic-development/"
+   }
+  ]
  }
 ]
