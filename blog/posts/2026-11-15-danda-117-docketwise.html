@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #117 — DocketWise: AI Agents to End Small Law Firm Court Filing Nightmares | Reddy Pulse</title>
+<meta name="description" content="DocketWise: Autonomous AI agents streamline court filing, deadline tracking, and document compliance for 250,000+ small law firms drowning in paperwork, cost, and risk.">
+<meta property="og:title" content="DANDA #117 — DocketWise: AI Agents to End Small Law Firm Court Filing Nightmares">
+<meta property="og:description" content="DocketWise: Autonomous AI agents streamline court filing, deadline tracking, and document compliance for 250,000+ small law firms drowning in paperwork, cost, and risk.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #117 — DocketWise: AI Agents to End Small Law Firm Court Filing Nightmares</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 15th November, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&h=600&fit=crop" alt="DANDA #117 — DocketWise: AI Agents to End Small Law Firm Court Filing Nightmares">
+  <p>Every day, small law firms and solo practitioners face a mountain of administrative chaos: court deadlines, filing requirements, and constantly shifting local rules. Unlike big firms with armies of paralegals, these lawyers juggle hundreds of tasks themselves, risking missed deadlines, rejected filings, and stressed clients. Today, the legal playing field is anything but level.</p>
+
+<h2>The problem</h2>
+<p>There are over <strong>250,000 small law firms and solo attorneys</strong> in the US alone, representing millions of cases across state and federal courts. A single filing error—wrong format, missed fee, outdated local rule—can get a case tossed or a client penalized. Over <strong>70% of legal malpractice claims stem from administrative errors</strong> like missed deadlines or misfiled documents. Court e-filing systems are fragmented: there are <strong>3,000+ county and state portals</strong>, each with unique rules and quirks. Solo and small firm lawyers report spending <strong>2–4 hours daily</strong> on court paperwork and compliance tasks, time that could be spent on case strategy or client work. The stakes are huge: a single deadline slip can mean <strong>malpractice payouts averaging $50,000+</strong>, not to mention reputational damage and stress. Clients lose faith and access to justice suffers—just because the paperwork got in the way.</p>
+
+<h2>The idea: DocketWise</h2>
+<p><strong>DocketWise</strong> is a buildable, agentic automation platform that acts as an AI paralegal—handling court deadline tracking, e-filing prep, compliance verification, and real-time rule change alerts for small law firms. Lawyers forward filings, receive auto-generated compliance checklists, and get instant, context-specific alerts about deadlines and rule changes. DocketWise integrates with practice management tools (like Clio or MyCase), scrapes court portals, and leverages LLM-powered agents to read, reformat, and validate legal documents before submission. The result: fewer rejections, zero missed deadlines, and more time for actual lawyering. It’s like hiring a superhuman legal admin for $99/month.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;border-radius:14px' width='100%' height='350'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='8' markerHeight='8' orient='auto' markerUnits='strokeWidth'>
+      <polygon points='0,0 10,5 0,10' fill='#f5c518' />
+    </marker>
+  </defs>
+  <!-- Inputs -->
+  <rect x='30' y='120' width='115' height='80' rx='18' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='87.5' y='160' text-anchor='middle' fill='#f5c518' font-size='16' font-weight='bold'>Inputs</text>
+  <text x='87.5' y='177' text-anchor='middle' fill='#fff' font-size='13'>Emails, PDFs,</text>
+  <text x='87.5' y='193' text-anchor='middle' fill='#fff' font-size='13'>Court Portals</text>
+  <!-- Ingestion Layer -->
+  <rect x='170' y='110' width='120' height='100' rx='18' fill='#181818' stroke='#f5c518' stroke-width='2'/>
+  <text x='230' y='145' text-anchor='middle' fill='#f5c518' font-size='16' font-weight='bold'>Ingestion</text>
+  <text x='230' y='170' text-anchor='middle' fill='#fff' font-size='13'>Extractor, OCR,</text>
+  <text x='230' y='188' text-anchor='middle' fill='#fff' font-size='13'>Scraper</text>
+  <!-- Memory/Graph -->
+  <rect x='320' y='60' width='140' height='90' rx='18' fill='#181818' stroke='#f5c518' stroke-width='2'/>
+  <text x='390' y='95' text-anchor='middle' fill='#f5c518' font-size='16' font-weight='bold'>Memory/Graph</text>
+  <text x='390' y='115' text-anchor='middle' fill='#fff' font-size='13'>Case, Deadlines,</text>
+  <text x='390' y='132' text-anchor='middle' fill='#fff' font-size='13'>Local Rules</text>
+  <!-- Agent Orchestrator -->
+  <rect x='320' y='180' width='140' height='100' rx='18' fill='#181818' stroke='#f5c518' stroke-width='2'/>
+  <text x='390' y='215' text-anchor='middle' fill='#f5c518' font-size='16' font-weight='bold'>Agent Orchestrator</text>
+  <text x='390' y='235' text-anchor='middle' fill='#fff' font-size='13'>LLM Agents:</text>
+  <text x='390' y='253' text-anchor='middle' fill='#fff' font-size='13'>Analyze, Validate,</text>
+  <text x='390' y='271' text-anchor='middle' fill='#fff' font-size='13'>Schedule</text>
+  <!-- Human Gate -->
+  <rect x='500' y='165' width='100' height='70' rx='16' fill='#181818' stroke='#f5c518' stroke-width='2'/>
+  <text x='550' y='200' text-anchor='middle' fill='#f5c518' font-size='15' font-weight='bold'>Human Gate</text>
+  <text x='550' y='218' text-anchor='middle' fill='#fff' font-size='13'>Attorney Review</text>
+  <!-- Action Layer -->
+  <rect x='630' y='145' width='100' height='110' rx='20' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='680' y='190' text-anchor='middle' fill='#f5c518' font-size='16' font-weight='bold'>Action Layer</text>
+  <text x='680' y='210' text-anchor='middle' fill='#fff' font-size='13'>E-filing,</text>
+  <text x='680' y='230' text-anchor='middle' fill='#fff' font-size='13'>Notifications,</text>
+  <text x='680' y='250' text-anchor='middle' fill='#fff' font-size='13'>Case Mgmt</text>
+  <!-- Arrows -->
+  <line x1='145' y1='160' x2='170' y2='160' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='290' y1='140' x2='320' y2='105' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='290' y1='180' x2='320' y2='210' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='390' y1='150' x2='390' y2='180' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='460' y1='230' x2='500' y2='200' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='600' y1='200' x2='630' y2='200' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+</svg>
+<p>Work starts on the left: lawyers email filings and documents or sync their practice management system (Inputs). Ingestion OCRs, parses, and pulls court data. Case, deadline, and rule info is synced into a modern graph (Memory/Graph). The Agent Orchestrator—a fleet of LLM agents—checks deadlines, reads document type, compares with local rules, and generates a tailored compliance checklist and filing plan. If all is green, the Human Gate prompts the lawyer for a fast review. The Action Layer automatically e-files, sends deadline reminders, and syncs with case management tools.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><strong>Wedge:</strong> Focus on California state trial courts—massive volume, fragmented portals, and painful filing rules. Build direct integrations for top 10 counties.<br><strong>Stack:</strong> Start with auto-deadline extraction, real-time rule alerts, and compliance checklists. Layer on filing automation and deep practice management integration.<br><strong>Pricing:</strong> $99/month per lawyer for solo/small firms, with team and per-filing enterprise tiers for scaling.</p>
+
+<h2>Why now</h2>
+<p>Law firm margins are shrinking, while administrative burden keeps rising, and courts are accelerating digitization. LLMs are finally capable of parsing legal text, forms, and rules at scale. The legal industry is desperate for AI that doesn’t just suggest—but does the work. DocketWise levels the playing field for small firms, automates the grind, and gives every lawyer a fighting chance—without breaking the bank.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-15-danda-117-docketwise.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-15-danda-117-docketwise.html&text=DANDA%20%23117%20%E2%80%94%20DocketWise%3A%20AI%20Agents%20to%20End%20Small%20Law%20Firm%20Court%20Filing%20Nightmares" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.americanbar.org/content/dam/aba/administrative/news/2023/legal-profession-profile-2023.pdf" target="_blank" rel="noopener">ABA 2023 Profile of the Legal Profession</a></li><li><a href="https://www.americanbar.org/groups/lawyers_professional_liability/resources/claims_studies/" target="_blank" rel="noopener">Lawyers&#x27; Malpractice Claims Frequency Study</a></li><li><a href="https://www.ncsc.org/sco" target="_blank" rel="noopener">National Center for State Courts: State Court Organization</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

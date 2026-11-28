@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic’s Claude-A4: Context Expansion Meets Real-World RAG | Reddy Pulse</title>
+<meta name="description" content="Anthropic’s Claude-A4 model sets a new bar for gigantic context windows (up to 2M tokens), but what’s more interesting is its native support for Retrieval-Augmented Generation (RAG) at scale.">
+<meta property="og:title" content="Anthropic’s Claude-A4: Context Expansion Meets Real-World RAG">
+<meta property="og:description" content="Anthropic’s Claude-A4 model sets a new bar for gigantic context windows (up to 2M tokens), but what’s more interesting is its native support for Retrieval-Augmented Generation (RAG) at scale.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Anthropic’s Claude-A4: Context Expansion Meets Real-World RAG</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 24th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop" alt="Anthropic’s Claude-A4: Context Expansion Meets Real-World RAG">
+  <p>Everyone likes to talk about context windows, but Anthropic’s new Claude-A4 model has made the leap from slick demos to <strong>practical, high-accuracy RAG</strong> on genuinely huge corpora. Engineers can now feed millions of tokens from enterprise knowledge bases straight into the model—without hacks, batch jobs, or weird truncation schemes.</p><h2>What changed with A4?</h2><p>Claude-A4’s architecture uses a hybrid of sparse attention and learned memory retrieval: it efficiently picks relevant chunks from enormous input sets, using a native retrieval layer <em>inside</em> the model. This is not your grandpa’s vector database bolted onto an LLM; it’s a tightly-coupled RAG pipeline where retrieval and generation are trained together end-to-end.</p><p>Why do I care as an engineer? Most RAG solutions today break at scale—too slow, lots of hallucination, or brittle to knowledge updates. A4’s trick is making the retrieval process <strong>differentiable</strong> and context-aware, so it learns what to fetch and when. This means better grounding (hallucinate less), more up-to-date answers, and potentially, <em>faster</em> LLM pipelines because you don’t have to pay the latency tax of a separate retrieval call.</p><p>Bottom line: A4 isn’t just a bigger model; it’s an architectural shift. If you’re building AI that has to stay current—think support bots, compliance search, or any app where facts matter—this is what you should be experimenting with next.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-24-llm-research-anthropic-claude-a4-rag.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-24-llm-research-anthropic-claude-a4-rag.html&text=Anthropic%E2%80%99s%20Claude-A4%3A%20Context%20Expansion%20Meets%20Real-World%20RAG" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.anthropic.com/news/claude-a4-release" target="_blank" rel="noopener">Anthropic Claude-A4 Release Blog</a></li><li><a href="https://arxiv.org/abs/2608.03422" target="_blank" rel="noopener">arXiv: Retrieval-Augmented Generation at Scale</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

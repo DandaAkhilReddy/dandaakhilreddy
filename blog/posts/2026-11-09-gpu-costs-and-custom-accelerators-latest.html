@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPU Costs, Custom Accelerators, and the Compute Squeeze: What Matters Now | Reddy Pulse</title>
+<meta name="description" content="Nvidia’s H200 pricing just spiked (again), and Google’s new TPUv6 is live in limited regions. But the real shift is custom silicon and AI inference costs pushing engineers to rethink every deployment decision.">
+<meta property="og:title" content="GPU Costs, Custom Accelerators, and the Compute Squeeze: What Matters Now">
+<meta property="og:description" content="Nvidia’s H200 pricing just spiked (again), and Google’s new TPUv6 is live in limited regions. But the real shift is custom silicon and AI inference costs pushing engineers to rethink every deployment decision.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>GPU Costs, Custom Accelerators, and the Compute Squeeze: What Matters Now</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 9th November, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop" alt="GPU Costs, Custom Accelerators, and the Compute Squeeze: What Matters Now">
+  <p>The headline: GPU supply is tight, and pricing is wild. Nvidia H200s are pushing $40,000 per card in some datacenter contracts—<strong>if</strong> you can even get allocation. Meanwhile, Google’s TPUv6 is officially rolling out, but only to select GCP customers. If you’re an engineer shipping AI, this matters more than ever: the cost and shape of compute will dictate your product’s capabilities and business model.</p><h2>Why GPUs Still Rule (But for How Long?)</h2><p>Yes, Nvidia still dominates. But hyperscalers are pouring billions into custom silicon—Amazon Trainium/Inferentia, Microsoft Maia, and Google’s TPUs. The reason is obvious: inference costs are now rivaling training costs for high-usage apps. If you run a production LLM, inference is where your margin disappears. Engineers are starting to count FLOPs per user, not just per model.</p><h2>Inference Cost: The Uncomfortable Truth</h2><p>Here’s what most headlines miss: every new model release gets <em>cheaper</em> to train per parameter, but inference costs are up. Why? Models are bigger, context windows are wider, and user demand for “agentic” (multi-step, tool-using) behavior means more compute-hungry loops. Multi-modal? Even worse. Shipping AI means designing for cost constraints <em>first</em>, and that means using right-sized models, quantization, and offloading to cheaper silicon whenever possible.</p><h2>What Engineers Should Do Now</h2><p>Don’t trust your cloud bill to stay static. Build with model modularity: swap in smaller, cheaper models for routine tasks; use agents to offload to local or edge compute; design eval loops to catch quality issues before you burn expensive inference cycles. And start tracking which silicon your workloads land on—Azure, AWS, and GCP are all quietly shifting jobs to their silicon, and that can break toolchains if you aren’t careful.</p><p><strong>Compute isn’t just a deployment detail; it’s a core engineering constraint. Ignore it at your peril.</strong></p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-09-gpu-costs-and-custom-accelerators-latest.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-09-gpu-costs-and-custom-accelerators-latest.html&text=GPU%20Costs%2C%20Custom%20Accelerators%2C%20and%20the%20Compute%20Squeeze%3A%20What%20Matters%20Now" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.tomshardware.com/news/nvidia-h200-gpu-supply" target="_blank" rel="noopener">Nvidia H200 pricing and supply update</a></li><li><a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-tpu-v6" target="_blank" rel="noopener">Google launches TPUv6 to select customers</a></li><li><a href="https://www.semafor.com/article/2026/10/18/the-true-cost-of-running-ai" target="_blank" rel="noopener">The high cost of AI inference</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

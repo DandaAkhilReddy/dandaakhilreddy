@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #053 — Casewise: AI Agents to End Social Worker Case Overload and Lost Kids | Reddy Pulse</title>
+<meta name="description" content="Overwhelmed social workers miss critical risks, delay interventions, and lose track of families—leaving millions of children at risk. Casewise is an AI-powered case triage and workflow agent to detect urgent needs, automate paperwork, and prevent children from falling through the cracks.">
+<meta property="og:title" content="DANDA #053 — Casewise: AI Agents to End Social Worker Case Overload and Lost Kids">
+<meta property="og:description" content="Overwhelmed social workers miss critical risks, delay interventions, and lose track of families—leaving millions of children at risk. Casewise is an AI-powered case triage and workflow agent to detect urgent needs, automate paperwork, and prevent children from falling through the cracks.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #053 — Casewise: AI Agents to End Social Worker Case Overload and Lost Kids</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 12th September, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&h=600&fit=crop" alt="DANDA #053 — Casewise: AI Agents to End Social Worker Case Overload and Lost Kids">
+  <p>Every day, social workers juggle impossibly large caseloads, manually updating reports, chasing missing information, and struggling to spot urgent risks before it’s too late. The system is buckling—and families pay the price. It’s not a technology gap; it’s an AI failure. I’m solving that now.</p>
+
+<h2>The problem</h2>
+<p>In the US alone, there are over 430,000 children in foster care on any given day. One in five social worker positions is unfilled, and the average child welfare worker manages 24–31 open cases—well above the recommended maximum of 15. Nearly 50% of social workers quit within two years due to burnout fueled by administrative overload and traumatic outcomes. Tragically, over 2,000 children die from abuse and neglect each year, and many high-profile cases directly cite missed warnings or paperwork delays.<br><br>Social services agencies are drowning in fragmented files, manual reporting, and endless compliance documentation. Critical warning signs—missed school visits, repeat ER trips, domestic violence calls—are buried in the noise. Families slip through. Child safety is compromised, trust is destroyed, and preventable tragedies persist.</p>
+
+<h2>The idea: Casewise</h2>
+<p>Casewise is an AI agent platform for children’s social services. It connects to agency case management systems, email, court schedules, and public data to:</p>
+<ul>
+  <li>Continuously triage all open cases for urgency and risk, flagging high-priority families for rapid human review</li>
+  <li>Autonomously draft and file required case notes, compliance reports, and court forms from call transcripts and structured data</li>
+  <li>Summarize multi-source events (school, medical, police) into one timeline per child/family—no more missed context</li>
+  <li>Route urgent alerts to supervisors and coordinate emergency interventions, with a human always in the loop</li>
+  <li>Learn agency preferences and auto-adapt report style to local needs</li>
+</ul>
+<p>The impact: More time with families, fewer missed risks, and the power to save lives.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' xmlns='http://www.w3.org/2000/svg' style='background:#111; border-radius:12px;'>
+  <defs>
+    <marker id='arrow' markerWidth='10' markerHeight='7' refX='10' refY='3.5' orient='auto' markerUnits='strokeWidth'>
+      <polygon points='0 0, 10 3.5, 0 7' fill='#f5c518' />
+    </marker>
+  </defs>
+  <!-- Inputs -->
+  <rect x='35' y='70' width='110' height='60' fill='#232323' stroke='#f5c518' stroke-width='2'/>
+  <text x='90' y='105' text-anchor='middle' fill='#fff' font-size='16'>Inputs</text>
+  <text x='90' y='125' text-anchor='middle' fill='#f5c518' font-size='12'>Case mgmt, Email,</text>
+  <text x='90' y='140' text-anchor='middle' fill='#f5c518' font-size='12'>School/Police/Medical data</text>
+  <!-- Ingestion -->
+  <rect x='170' y='90' width='110' height='50' fill='#232323' stroke='#f5c518' stroke-width='2'/>
+  <text x='225' y='120' text-anchor='middle' fill='#fff' font-size='16'>Ingestion</text>
+  <text x='225' y='138' text-anchor='middle' fill='#f5c518' font-size='12'>ETL + NLP</text>
+  <!-- Memory/Graph -->
+  <rect x='320' y='70' width='110' height='60' fill='#232323' stroke='#f5c518' stroke-width='2'/>
+  <text x='375' y='102' text-anchor='middle' fill='#fff' font-size='16'>Memory / Graph</text>
+  <text x='375' y='122' text-anchor='middle' fill='#f5c518' font-size='12'>Child/Family Timeline</text>
+  <!-- Agent Orchestrator -->
+  <rect x='480' y='60' width='110' height='80' fill='#232323' stroke='#f5c518' stroke-width='2'/>
+  <text x='535' y='100' text-anchor='middle' fill='#fff' font-size='16'>Agent Orchestrator</text>
+  <text x='535' y='120' text-anchor='middle' fill='#f5c518' font-size='12'>Triage, Draft, Alert</text>
+  <!-- Human Gate -->
+  <rect x='630' y='60' width='95' height='80' fill='#232323' stroke='#f5c518' stroke-width='2'/>
+  <text x='677' y='100' text-anchor='middle' fill='#fff' font-size='16'>Human Gate</text>
+  <text x='677' y='120' text-anchor='middle' fill='#f5c518' font-size='12'>Supervisor Review</text>
+  <!-- Action Layer -->
+  <rect x='630' y='190' width='95' height='80' fill='#232323' stroke='#f5c518' stroke-width='2'/>
+  <text x='677' y='230' text-anchor='middle' fill='#fff' font-size='16'>Action Layer</text>
+  <text x='677' y='250' text-anchor='middle' fill='#f5c518' font-size='12'>File, Notify, Escalate</text>
+  <!-- Arrows -->
+  <line x1='145' y1='100' x2='170' y2='115' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='280' y1='115' x2='320' y2='100' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='430' y1='100' x2='480' y2='100' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='590' y1='100' x2='630' y2='100' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+  <line x1='677' y1='140' x2='677' y2='190' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+</svg>
+<p>Data from agency case management, school, police, and medical sources enters the Ingestion layer (ETL + NLP extractors). The Memory/Graph engine builds a real-time timeline view for every child and family, linking incidents and context. The Agent Orchestrator runs risk triage, drafts paperwork, and generates alerts. Any flagged urgent case is routed to a Human Gate for supervisor review and override. Approved actions (reporting, notifications, escalation) are executed in the Action Layer, with a full audit trail for compliance. Always human-in-the-loop for safety and accountability.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Partner with a single midsize county child welfare agency (2,500 cases) to pilot AI case triage and auto-draft reporting for their most overloaded team.<br>
+<b>Stack:</b> Expand to full agency, add multi-source context (school, police, ER data), and unlock advanced supervisor alerting and compliance dashboards.<br>
+<b>Pricing:</b> Per-case or per-seat SaaS fees ($30–$70/mo/worker), with agency-wide annual contracts and government procurement support.</p>
+
+<h2>Why now</h2>
+<p>Regulatory pressure is rising for social service agencies to prove effective oversight and reduce worker burnout. AI agentic automation finally makes it possible to cut paperwork time, triage thousands of cases daily, and surface urgent risks—safely, with humans in the loop. The public demands accountability and faster action. Social workers are ready for tools that help them save kids, not just check boxes.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-12-danda-053-Casewise.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-12-danda-053-Casewise.html&text=DANDA%20%23053%20%E2%80%94%20Casewise%3A%20AI%20Agents%20to%20End%20Social%20Worker%20Case%20Overload%20and%20Lost%20Kids" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.childwelfare.gov/resources/foster-care-statistics/" target="_blank" rel="noopener">Child Welfare Information Gateway: Foster Care Statistics</a></li><li><a href="https://www.acf.hhs.gov/cb/research-data-technology/statistics-research/child-maltreatment" target="_blank" rel="noopener">Children’s Bureau: Child Maltreatment Annual Report</a></li><li><a href="https://www.socialworkers.org/News/Research-Data/Social-Work-Salaries/High-Turnover-in-Child-Welfare" target="_blank" rel="noopener">NASW: High Turnover in Child Welfare Social Work</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

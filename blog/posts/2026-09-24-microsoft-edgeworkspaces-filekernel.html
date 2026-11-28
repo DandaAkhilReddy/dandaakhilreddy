@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edge Workspaces FileKernel: The New Filesystem for the Web Era | Reddy Pulse</title>
+<meta name="description" content="Microsoft’s Edge team just announced FileKernel, a radical browser-native filesystem that blurs the line between web apps and the local OS. This changes how engineers should think about file APIs and user data handling.">
+<meta property="og:title" content="Edge Workspaces FileKernel: The New Filesystem for the Web Era">
+<meta property="og:description" content="Microsoft’s Edge team just announced FileKernel, a radical browser-native filesystem that blurs the line between web apps and the local OS. This changes how engineers should think about file APIs and user data handling.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Edge Workspaces FileKernel: The New Filesystem for the Web Era</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 24th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&h=600&fit=crop" alt="Edge Workspaces FileKernel: The New Filesystem for the Web Era">
+  <p>Microsoft just dropped FileKernel for Edge Workspaces, and it’s much more than a sync or cloud drive. Under the hood, FileKernel exposes an object-based, transactional filesystem directly to browser contexts, with tight integration into the Windows Storage Stack. Think IndexedDB meets NTFS, but with proper permissions, cross-process fencing, and transaction logs you can query from JavaScript.</p><h2>Why This Matters for Devs</h2><p>Until now, browser file APIs have been a mess — sandboxed, slow, and constantly hitting permission walls. With FileKernel, you get atomic commit/rollback, file watching in the browser (finally!), and the ability to hand off file descriptors between web workers and native extensions. You can build serious collaborative editing, media processing, or even local-first AI apps that run in Edge, but feel native.</p><p>Engineering teams should care because the FileKernel API looks like POSIX, not a crippled abstraction. You can mmap browser files, lock regions, or set up background sync triggers — all from TypeScript. Windows 12 systems even expose FileKernel volumes, so your web app’s files are visible in Explorer (if the user opts in). Security is handled by a new TrustBroker layer, which is like OAuth for filesystems: fine-grained, revocable, and auditable.</p><h2>My Take</h2><p>This is a shot across the bow for Chrome’s File System Access API and Apple’s sandboxing. Microsoft is betting that serious productivity and AI apps want to live in a hybrid world — part web, part OS, and with fewer permission dialogs. If you build for the browser, it’s time to rethink how you store, sync, and share user data.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-24-microsoft-edgeworkspaces-filekernel.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-24-microsoft-edgeworkspaces-filekernel.html&text=Edge%20Workspaces%20FileKernel%3A%20The%20New%20Filesystem%20for%20the%20Web%20Era" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://blogs.windows.com/msedgedev/latest/filekernel" target="_blank" rel="noopener">Microsoft Edge Blog: Introducing FileKernel</a></li><li><a href="https://www.zdnet.com/article/microsoft-filekernel-browser-filesystem" target="_blank" rel="noopener">ZDNet: Microsoft’s FileKernel Blurs Browser and OS</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

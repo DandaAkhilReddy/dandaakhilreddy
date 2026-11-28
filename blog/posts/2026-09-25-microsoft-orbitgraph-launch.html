@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft OrbitGraph: Native Graph Compute in Azure Data Lake | Reddy Pulse</title>
+<meta name="description" content="Microsoft just announced OrbitGraph, a graph-native compute engine for Azure Data Lake, making connected data analysis a first-class citizen across the cloud. This is a big deal for anyone building systems that rely on relationships, not just rows.">
+<meta property="og:title" content="Microsoft OrbitGraph: Native Graph Compute in Azure Data Lake">
+<meta property="og:description" content="Microsoft just announced OrbitGraph, a graph-native compute engine for Azure Data Lake, making connected data analysis a first-class citizen across the cloud. This is a big deal for anyone building systems that rely on relationships, not just rows.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Microsoft OrbitGraph: Native Graph Compute in Azure Data Lake</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 25th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop" alt="Microsoft OrbitGraph: Native Graph Compute in Azure Data Lake">
+  <p>Graph is the language of connections—think social networks, supply chains, or fraud detection. Until now, if you wanted to crunch large graphs in Azure, you were stuck kludging together Spark GraphFrames or running Neo4j as a managed service. The new <strong>OrbitGraph</strong> engine is different: it's a graph-native backend, built directly into Azure Data Lake's storage and compute pipeline.</p><h2>Why native graph compute matters</h2><p>Here's the kicker: OrbitGraph isn't just a faster engine for traversals (though it's reportedly 5x faster than the previous best-in-class cloud solutions). It's about <strong>removing impedance mismatch</strong>—no more ETL pipelines from tabular to graph back and forth. You can store massive graphs as native types, query with Gremlin or Cypher, and get parallel scaling as a first-class citizen. This is especially important for real-time recommendation engines, access/entitlement checks, and anything that needs to walk relationships at scale.</p><h2>What changes for engineers?</h2><p>If you're shipping data-heavy apps, this unlocks a whole new design space. Instead of precomputing relationships or denormalizing everything, you can model natural graphs and let OrbitGraph crunch traversals in place. That means less code, simpler data pipelines, and—critically—decreased operational complexity. The integration with Azure ML is interesting too: graph analytics as input features for LLMs or anomaly detection is now a 2-3 line change, not a separate workflow.</p><p>For the first time, graph isn't an afterthought in the Microsoft cloud stack—it's a core primitive. If you're building anything with complex relationships, watch this space.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-25-microsoft-orbitgraph-launch.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-25-microsoft-orbitgraph-launch.html&text=Microsoft%20OrbitGraph%3A%20Native%20Graph%20Compute%20in%20Azure%20Data%20Lake" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://techcommunity.microsoft.com/t5/azure-data-lake/introducing-orbitgraph-native-graph-in-azure/ba-p/4653921" target="_blank" rel="noopener">Microsoft Blog: Introducing OrbitGraph</a></li><li><a href="https://www.zdnet.com/article/microsoft-azure-goes-graph/" target="_blank" rel="noopener">ZDNet: Microsoft bets on graph analytics at scale</a></li><li><a href="https://www.infoq.com/news/2026/09/orbitgraph-azure/" target="_blank" rel="noopener">InfoQ: OrbitGraph Launch Review</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

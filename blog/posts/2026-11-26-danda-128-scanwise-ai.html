@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #128 — ScanWise AI: Autonomous Agents to End Radiology Backlogs and Diagnostic Errors | Reddy Pulse</title>
+<meta name="description" content="AI-powered agentic automation that ingests, triages, and flags medical scans to eliminate radiology report delays and reduce missed diagnoses for millions of patients.">
+<meta property="og:title" content="DANDA #128 — ScanWise AI: Autonomous Agents to End Radiology Backlogs and Diagnostic Errors">
+<meta property="og:description" content="AI-powered agentic automation that ingests, triages, and flags medical scans to eliminate radiology report delays and reduce missed diagnoses for millions of patients.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1511174511562-5f97f4f4b3c0?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #128 — ScanWise AI: Autonomous Agents to End Radiology Backlogs and Diagnostic Errors</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 26th November, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1511174511562-5f97f4f4b3c0?w=1200&h=600&fit=crop" alt="DANDA #128 — ScanWise AI: Autonomous Agents to End Radiology Backlogs and Diagnostic Errors">
+  <p>Every year, millions of Americans wait days or even weeks for radiology results, with delays leading to missed or late diagnoses that worsen patient outcomes. Radiology departments are drowning in a tsunami of CTs, MRIs, and X-rays, with too few specialists and surging scan volumes. The result? Real people fall through the cracks—and some never recover.</p>
+
+<h2>The problem</h2>
+<p>Across the U.S., over <b>1 billion imaging exams</b> are performed annually. Radiologist shortages are acute—nearly <b>50% of U.S. counties have zero local radiologist</b>. Report turnarounds often exceed <b>24-48 hours</b> in busy hospitals, and in some cases, even non-urgent scans wait weeks. In the U.K., the backlog for reporting scans exceeded <b>626,000 patients</b> in 2023. Diagnostic errors are even more troubling—missed findings in imaging contribute to an estimated <b>40,000-80,000 deaths per year</b> in the U.S. alone. This backlog has human costs: late-stage cancer diagnoses, missed strokes, and unnecessary suffering.</p>
+
+<h2>The idea: ScanWise AI</h2>
+<p>ScanWise AI is an agentic automation platform for radiology teams. It deploys specialized autonomous agents to:</p>
+<ul>
+  <li>Continuously ingest all new imaging scans (CT, MRI, X-ray, ultrasound) from PACS/RIS systems in real-time</li>
+  <li>Auto-triage studies for urgency using AI models (e.g., flag suspected bleeds, masses, fractures, pneumothorax, etc.)</li>
+  <li>Surface high-risk cases for immediate review by a radiologist, reducing critical delays</li>
+  <li>Flag potentially missed findings in finalized reports, using AI to cross-check scan images against dictated text</li>
+  <li>Orchestrate follow-ups: directly notify referring clinicians and coordinate with human staff for patient outreach</li>
+  <li>Provide analytics dashboards to hospital admins on backlog, turnaround, and error rates</li>
+</ul>
+<p>This is not just "AI reading images"—it’s an agentic workflow engine that eliminates bottlenecks and catches what humans miss, all while keeping radiologists in the loop and in control.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111; border-radius:12px;'>
+  <defs>
+    <marker id='arrow' markerWidth='8' markerHeight='8' refX='7' refY='4' orient='auto' markerUnits='strokeWidth'>
+      <polygon points='0 0, 8 4, 0 8' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <rect x='40' y='60' width='120' height='60' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='100' y='93' font-size='17' fill='#f5c518' text-anchor='middle'>Inputs</text>
+  <text x='100' y='113' font-size='13' fill='#fff' text-anchor='middle'>PACS / RIS</text>
+  <rect x='200' y='60' width='130' height='60' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='265' y='90' font-size='17' fill='#f5c518' text-anchor='middle'>Ingestion</text>
+  <text x='265' y='111' font-size='13' fill='#fff' text-anchor='middle'>DICOM, HL7, FHIR</text>
+  <rect x='370' y='50' width='90' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='415' y='82' font-size='17' fill='#f5c518' text-anchor='middle'>Memory /</text>
+  <text x='415' y='102' font-size='17' fill='#f5c518' text-anchor='middle'>Case Graph</text>
+  <rect x='490' y='30' width='110' height='120' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='545' y='72' font-size='17' fill='#f5c518' text-anchor='middle'>Agent</text>
+  <text x='545' y='94' font-size='17' fill='#f5c518' text-anchor='middle'>Orchestrator</text>
+  <text x='545' y='114' font-size='13' fill='#fff' text-anchor='middle'>Triage, Flag,</text>
+  <text x='545' y='130' font-size='13' fill='#fff' text-anchor='middle'>Route, Notify</text>
+  <rect x='620' y='60' width='100' height='60' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='670' y='93' font-size='17' fill='#f5c518' text-anchor='middle'>Human Gate</text>
+  <text x='670' y='113' font-size='13' fill='#fff' text-anchor='middle'>Radiologist</text>
+  <rect x='490' y='180' width='230' height='80' rx='14' fill='#222' stroke='#f5c518' stroke-width='3'/>
+  <text x='605' y='220' font-size='17' fill='#f5c518' text-anchor='middle'>Action Layer</text>
+  <text x='605' y='240' font-size='13' fill='#fff' text-anchor='middle'>EHR Update, Notification, Analytics</text>
+
+  <g stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'>
+    <line x1='160' y1='90' x2='200' y2='90'/>
+    <line x1='330' y1='90' x2='370' y2='90'/>
+    <line x1='460' y1='90' x2='490' y2='90'/>
+    <line x1='600' y1='90' x2='620' y2='90'/>
+    <line x1='670' y1='120' x2='670' y2='180'/>
+    <line x1='545' y1='150' x2='545' y2='180'/>
+  </g>
+</svg>
+<p>ScanWise AI plugs directly into hospital imaging (PACS/RIS) and EHR systems. As new scans come in, they're ingested, parsed, and stored in a case graph. The Agent Orchestrator analyzes each scan, triages for urgency, flags possible findings, and routes high-risk cases to the human radiologist gate. Cleared actions—such as updating the EHR, notifying clinicians, or surfacing analytics—are then executed by the Action Layer. Throughout, every step is audited and feedback loops improve the agents' accuracy over time.</p>
+
+<h2>Build plan (90 days)</h2>
+<ul>
+  <li><b>Wedge:</b> Sell to mid-sized hospital systems overwhelmed by CT/X-ray backlogs—start with AI-powered triage for acute findings (e.g., intracranial bleeds, pneumothorax)</li>
+  <li><b>Stack:</b> Expand to cover MRI, mammography, ultrasound. Layer in agent-driven analytics, missed finding detection, and automated clinician notification. Build integrations for Epic, Cerner, and leading PACS/RIS providers</li>
+  <li><b>Pricing:</b> SaaS, $5-15 per case analyzed (volume-based), or $10k/mo/site for unlimited with SLAs, audit, and analytics dashboards. Enterprise compliance and support add-ons</li>
+</ul>
+
+<h2>Why now</h2>
+<p>Radiology scan volumes are exploding, but the number of radiologists is flatlining. Recent advances in multimodal foundation models and agentic automation mean AI can now reliably flag life-threatening findings and automate workflow, not just "read images." Hospitals are under regulatory and reputational pressure to reduce diagnostic errors and backlogs. With reimbursement models moving to value-based care, eliminating delays and errors isn't just good medicine—it's good business. ScanWise AI unlocks a step-change in how radiology teams operate, saving lives and reducing burnout, right when the system needs it most.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-26-danda-128-scanwise-ai.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-26-danda-128-scanwise-ai.html&text=DANDA%20%23128%20%E2%80%94%20ScanWise%20AI%3A%20Autonomous%20Agents%20to%20End%20Radiology%20Backlogs%20and%20Diagnostic%20Errors" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.rsna.org/news/2023/november/radiologist-workforce-shortage" target="_blank" rel="noopener">Radiologist Supply and Imaging Demand: A Real Crisis (RSNA, 2023)</a></li><li><a href="https://www.improvediagnosis.org/news/diagnostic-errors-in-medical-imaging/" target="_blank" rel="noopener">Diagnostic Error in Imaging — Impact and Statistics (Society to Improve Diagnosis in Medicine)</a></li><li><a href="https://www.bbc.com/news/health-66038444" target="_blank" rel="noopener">NHS Radiology Reporting Backlogs Surge Past 600,000 (UK NHS 2023)</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

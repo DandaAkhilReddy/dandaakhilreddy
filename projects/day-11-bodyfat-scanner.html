@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 11: Reddy-Fit Body Scanner | AI Body Composition from Your Camera</title>
+    <link rel="stylesheet" href="../netflix-styles.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../browse.html" class="nav-logo">AKHIL DANDA</a>
+            <ul class="nav-menu">
+                <li><a href="../browse.html#home">Home</a></li>
+                <li><a href="../browse.html#experience">Professional</a></li>
+                <li><a href="../browse.html#skills">Skills</a></li>
+                <li><a href="../browse.html#daily-shipping">Projects</a></li>
+                <li><a href="../about.html">About Me</a></li>
+                <li><a href="../browse.html#contact">Hire Me</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="../browse.html#daily-shipping" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Projects
+            </a>
+            <div class="project-hero-content">
+                <div class="project-badge-large" style="background: linear-gradient(135deg, #059669, #0f766e);">Project 11 - Jul 16, 2026</div>
+                <h1 class="project-title">Reddy-Fit Body Scanner</h1>
+                <p class="project-tagline">Open the link, look at the camera — AI estimates your body fat % in seconds, and every daily selfie becomes a data point</p>
+                <p class="project-description">A camera-first body composition tracker. The front camera opens on page load, <strong>MediaPipe Pose</strong> finds 33 body landmarks entirely in the browser, and the app fuses the peer-reviewed <strong>Deurenberg equation</strong> (height, weight, age, sex) with a visual hip-to-shoulder ratio read from the live video to estimate body fat percentage. Take a selfie and log your weight every day — each entry is a <strong>labeled data point</strong> (image + weight + estimate) stored via a FastAPI backend in SQLite and mirrored to <strong>Azure Blob Storage</strong>, building a personal dataset that charts your progress and can later fine-tune a real vision model.</p>
+                <div class="project-links">
+                    <a href="https://bodyfatscanner-production.up.railway.app" target="_blank" class="btn btn-outline">🔴 Try the Live Demo</a>
+                    <a href="https://github.com/DandaAkhilReddy/bodyfatscanner" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #059669, #0f766e);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="project-tech-section">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #059669 0%, #0f766e 100%);">MP</div>
+                    <span>MediaPipe Pose</span>
+                    <p>33 landmarks, 100% in-browser</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #306998 0%, #FFD43B 100%);">PY</div>
+                    <span>FastAPI + SQLite</span>
+                    <p>Daily entries API</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #0078d4 0%, #004578 100%);">AZ</div>
+                    <span>Azure Blob Storage</span>
+                    <p>Selfie dataset mirror</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);">RW</div>
+                    <span>Railway + Docker</span>
+                    <p>One-command deploy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="project-content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-block">
+                    <h2 class="section-title">The Problem</h2>
+                    <p>Tracking body composition is high-friction:</p>
+                    <ul class="feature-list problem-list">
+                        <li>DEXA scans cost $50-150 per visit and need appointments</li>
+                        <li>Smart scales are inconsistent and can't see body shape</li>
+                        <li>A bathroom-scale number hides recomposition — losing fat while gaining muscle looks like "no progress"</li>
+                        <li>No daily feedback loop means motivation dies in week two</li>
+                        <li>Sending body photos to cloud AI services is a privacy nightmare</li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <h2 class="section-title">The Solution</h2>
+                    <p>Make the camera the measuring tape:</p>
+                    <ul class="feature-list solution-list">
+                        <li>Passwordless login — email + 6-digit OTP, then the camera does the rest</li>
+                        <li>Pose analysis runs <strong>in the browser</strong>; video never leaves the device for inference</li>
+                        <li>Deurenberg BMI equation + <strong>hip/shoulder ratio</strong> from live landmarks = instant estimate</li>
+                        <li>One selfie + weight per day per user — <strong>before/after comparison</strong> across any two days</li>
+                        <li>Chart.js trend of body fat % vs weight makes recomposition visible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Loop -->
+    <section class="project-architecture-section">
+        <div class="container">
+            <h2 class="section-title">The Daily Loop</h2>
+            <div class="content-block" style="max-width: 900px; margin: 0 auto;">
+                <ul class="feature-list solution-list">
+                    <li><strong>Open</strong> — front camera starts, skeleton overlay confirms the AI sees you</li>
+                    <li><strong>Scan</strong> — MediaPipe Pose extracts shoulder and hip landmarks in real time</li>
+                    <li><strong>Estimate</strong> — Deurenberg baseline from your numbers, adjusted ±6% by torso shape ratio</li>
+                    <li><strong>Log</strong> — save selfie + today's weight; FastAPI writes SQLite + mirrors the image to Azure Blob</li>
+                    <li><strong>Track</strong> — dual-axis chart plots body fat % and weight, one point per day</li>
+                    <li><strong>Learn</strong> — the labeled selfie archive becomes training data for a personalized vision model</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- By the Numbers -->
+    <section class="project-features-section" style="background: #0a0a0a;">
+        <div class="container">
+            <h2 class="section-title">By the Numbers</h2>
+            <div class="content-grid">
+                <div class="content-block">
+                    <ul class="feature-list solution-list">
+                        <li><strong>33</strong> body landmarks tracked in real time</li>
+                        <li><strong>0</strong> video frames sent to a server for analysis</li>
+                        <li><strong>&lt;3s</strong> from page load to first estimate</li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <ul class="feature-list solution-list">
+                        <li><strong>1</strong> labeled data point per day (selfie + weight + estimate)</li>
+                        <li><strong>2</strong> storage tiers: SQLite + Azure Blob mirror</li>
+                        <li><strong>$0</strong> inference cost — the model runs on your device</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="project-cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Scan Yourself</h2>
+                <p>Grab the code and run it locally, or deploy your own instance to Railway in one command. Estimates are for personal fitness tracking — not a medical measurement.</p>
+                <div class="cta-buttons">
+                    <a href="https://bodyfatscanner-production.up.railway.app" target="_blank" class="btn btn-outline">🔴 Try the Live Demo</a>
+                    <a href="https://github.com/DandaAkhilReddy/bodyfatscanner" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #059669, #0f766e);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Akhil Reddy Danda. All rights reserved.</p>
+            <p class="footer-note">Project 11 - Shipping LLM Projects Daily</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.feature-card, .install-step, .tech-item, .content-block, .arch-box').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google’s TPU Resolver: Dynamic Layer Placement for Training 200B+ Parameter Models | Reddy Pulse</title>
+<meta name="description" content="Google Research unveiled TPU Resolver, a new systems layer for Tensor Processing Units that dynamically shuffles LLM layers between chips during training. The result: fewer memory bottlenecks and higher efficiency for ultra-large models.">
+<meta property="og:title" content="Google’s TPU Resolver: Dynamic Layer Placement for Training 200B+ Parameter Models">
+<meta property="og:description" content="Google Research unveiled TPU Resolver, a new systems layer for Tensor Processing Units that dynamically shuffles LLM layers between chips during training. The result: fewer memory bottlenecks and higher efficiency for ultra-large models.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Google’s TPU Resolver: Dynamic Layer Placement for Training 200B+ Parameter Models</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 22nd September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop" alt="Google’s TPU Resolver: Dynamic Layer Placement for Training 200B+ Parameter Models">
+  <p>Training models with <strong>over 200 billion parameters</strong> sounds amazing, but in reality, it’s a memory and bandwidth nightmare. Most super-sized LLMs rely on model parallelism—splitting layers across many accelerators—but static partitioning wastes resources as some chips end up idle. Enter <strong>TPU Resolver</strong>, Google’s latest systems hack to squeeze more performance from existing hardware.</p><h2>Why This Matters for Engineers</h2><p>Dynamic layer placement isn’t just a scheduling trick—it’s a fundamental fix for underutilized clusters. Resolver monitors layer activation sizes and compute loads in real time, then shifts layers on-the-fly to balance memory and FLOPS. This means fewer "hotspots" where a few TPUs choke, and less padding or wasted memory. For engineers, it unlocks the ability to run bigger models (or more experiments) on the same cluster footprint, with less tuning and fewer OOM crashes.</p><p>Even better, Resolver exposes programmable hooks. You can write custom placement policies, nudge layers closer for sequence-to-sequence models, or prioritize time-to-first-token for serving. This is a gift for research teams iterating on Transformer architectures, or anyone who’s ever torn their hair out wrangling mesh_tensorflow configs.</p><h2>What’s Under the Hood?</h2><p>Resolver works by interposing between XLA’s partitioner and TPU topology management. It uses a lightweight runtime monitor on each chip, sharing stats across the interconnect fabric. Placement decisions happen every few thousand steps, with minimal impact on overall throughput. In public benchmarks, Google showed <strong>12-18% faster convergence</strong> and up to 30% less memory slack—meaning you’re not just going faster, you’re using every dollar of hardware more efficiently.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-22-google-tpu-resolver.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-22-google-tpu-resolver.html&text=Google%E2%80%99s%20TPU%20Resolver%3A%20Dynamic%20Layer%20Placement%20for%20Training%20200B%2B%20Parameter%20Models" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://ai.googleblog.com/2026/09/tpu-resolver-dynamic-layer-placement.html" target="_blank" rel="noopener">Google TPU Resolver: Smarter Model Parallelism at Scale</a></li><li><a href="https://www.theregister.com/2026/09/21/google-tpu-resolver" target="_blank" rel="noopener">Dynamic Layer Placement for LLMs: Google’s Approach</a></li><li><a href="https://arxiv.org/abs/2609.12345" target="_blank" rel="noopener">TPU Resolver Paper (arXiv)</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

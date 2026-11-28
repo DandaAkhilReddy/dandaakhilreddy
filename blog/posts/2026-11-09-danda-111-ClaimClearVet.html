@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #111 — ClaimClearVet: AI Agents to End Veterinary Pet Insurance Claim Nightmares | Reddy Pulse</title>
+<meta name="description" content="ClaimClearVet deploys autonomous AI agents to automate, clarify, and accelerate veterinary pet insurance claims—eliminating denial confusion, paperwork delays, and lost reimbursements for clinics and pet owners.">
+<meta property="og:title" content="DANDA #111 — ClaimClearVet: AI Agents to End Veterinary Pet Insurance Claim Nightmares">
+<meta property="og:description" content="ClaimClearVet deploys autonomous AI agents to automate, clarify, and accelerate veterinary pet insurance claims—eliminating denial confusion, paperwork delays, and lost reimbursements for clinics and pet owners.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1518717758536-85ae290feac1?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #111 — ClaimClearVet: AI Agents to End Veterinary Pet Insurance Claim Nightmares</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 9th November, 2026 · 3 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1518717758536-85ae290feac1?w=1200&h=600&fit=crop" alt="DANDA #111 — ClaimClearVet: AI Agents to End Veterinary Pet Insurance Claim Nightmares">
+  <p>Pet owners expect their pet insurance to work as smoothly as human healthcare. The reality? Veterinary clinics and pet parents face endless claim denials, delays, and paperwork chaos. Nearly a third of pet insurance claims are delayed or denied not because of medical reasons, but due to missing documentation, unclear eligibility, or procedural errors. This pain hits both the 25,000+ clinics and the 6 million+ insured pets in the US—and wastes millions of hours annually.</p>
+
+<h2>The problem</h2>
+<p>Pet insurance is booming: as of 2026, over 6 million American pets have insurance, up 20% year-on-year. Yet, nearly <b>32% of claims are delayed or denied</b> due to paperwork mistakes, missing medical history, or eligibility confusion. Clinics spend up to <b>5 hours per claim</b> chasing paperwork and clarifications, while pet owners wait weeks for reimbursement or are hit with unexpected denials. The average clinic processes 50-100 claims/month, equating to <b>150,000 hours wasted monthly nationwide</b>. Industry data shows <b>$300M+</b> in legitimate reimbursements go unpaid each year. The result: frustrated staff, angry pet parents, lost revenue, and—worst—pets not getting timely care.</p>
+
+<h2>The idea: ClaimClearVet</h2>
+<p>ClaimClearVet is an agentic automation platform that acts as the autonomous AI "claims concierge" for veterinary clinics and pet owners. It ingests medical records, invoices, and insurance policy details, instantly identifies eligibility, flags documentation gaps, and submits claims with compliant, insurer-ready packets. It tracks each claim in real time, proactively resolves insurer queries, and keeps both clinics and pet owners updated. If human intervention is needed, the agent loops in staff or owners—otherwise, it acts fully autonomously, slashing delays and denials.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <marker id='arrow' markerWidth='10' markerHeight='7' refX='8' refY='3.5' orient='auto'>
+      <polygon points='0 0, 10 3.5, 0 7' fill='#f5c518'/>
+    </marker>
+  </defs>
+  <rect x='40' y='50' width='120' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='60' y='85' fill='#fff' font-size='16'>Inputs</text>
+  <text x='43' y='115' fill='#aaa' font-size='13'>Clinic EMR, Policy, Invoice</text>
+
+  <rect x='190' y='50' width='120' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='210' y='85' fill='#fff' font-size='16'>Ingestion</text>
+  <text x='195' y='115' fill='#aaa' font-size='13'>OCR, API, Parsing</text>
+
+  <rect x='340' y='50' width='120' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='360' y='85' fill='#fff' font-size='16'>Memory/Graph</text>
+  <text x='345' y='115' fill='#aaa' font-size='13'>Pet history, Policy DB</text>
+
+  <rect x='490' y='50' width='120' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='510' y='85' fill='#fff' font-size='16'>Agent Orchestrator</text>
+  <text x='493' y='115' fill='#aaa' font-size='13'>Eligibility, Compliance</text>
+
+  <rect x='640' y='50' width='80' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='655' y='85' fill='#fff' font-size='15'>Human Gate</text>
+  <text x='642' y='115' fill='#aaa' font-size='13'>Alerts, Review</text>
+
+  <rect x='340' y='170' width='180' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='350' y='205' fill='#fff' font-size='16'>Action Layer</text>
+  <text x='365' y='235' fill='#aaa' font-size='13'>Claim Submission, Tracking, Response</text>
+
+  <line x1='160' y1='80' x2='190' y2='80' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='310' y1='80' x2='340' y2='80' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='460' y1='80' x2='490' y2='80' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='610' y1='80' x2='640' y2='80' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+  <line x1='550' y1='110' x2='430' y2='170' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+
+  <line x1='380' y1='110' x2='430' y2='170' stroke='#f5c518' stroke-width='3' marker-end='url(#arrow)'/>
+</svg>
+<p>The architecture starts with Inputs—EMR data, insurance policy, invoices from clinics. Ingestion layer parses and normalizes these. The Memory/Graph layer builds a persistent profile of pet history, policy details, and prior claims. Agent Orchestrator applies eligibility logic, compliance rules, and claim requirements, then routes via Human Gate for staff or owner review when needed. The Action Layer submits claims to insurers, tracks status, and manages responses, all in real time. The gold-accented arrows highlight data flow and agent-driven automation.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><b>Wedge:</b> Integrate with top 3 veterinary EMR platforms (eVetPractice, AVImark, Cornerstone) for 1-click claim prep and submission.<br>
+<b>Stack:</b> Cloud-based agentic platform, HIPAA-compliant, with API hooks for insurance portals. LLMs for eligibility/denial prediction, document parsing, and response generation. Real-time claim tracking for clinics and owners.<br>
+<b>Pricing:</b> SaaS: $129/month/clinic for unlimited claims; $2/claim for solo practices; Freemium for pet owners (first 3 claims free, then $1/claim).</p>
+
+<h2>Why now</h2>
+<p>Pet insurance adoption is exploding, but claim complexity is rising even faster. Clinics are drowning in paperwork—and insurers are tightening eligibility and documentation requirements. AI document parsing, agentic orchestration, and real-time tracking are finally robust enough to automate this multi-party chaos. Clinics want operational relief, insurers want clean claims, and pet owners want fast, predictable reimbursements. ClaimClearVet delivers—all at the perfect intersection of pet health, insurance, and AI automation.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-09-danda-111-ClaimClearVet.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-09-danda-111-ClaimClearVet.html&text=DANDA%20%23111%20%E2%80%94%20ClaimClearVet%3A%20AI%20Agents%20to%20End%20Veterinary%20Pet%20Insurance%20Claim%20Nightmares" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://naphia.org/wp-content/uploads/2024/04/NAPHIA-State-of-the-Industry-Report-2024.pdf" target="_blank" rel="noopener">North American Pet Health Insurance Association 2024 Industry Report</a></li><li><a href="https://todaysveterinarypractice.com/economic-impact-insurance-claims/" target="_blank" rel="noopener">Veterinary Practice Economics: Claims Processing Headaches</a></li><li><a href="https://www.grandviewresearch.com/industry-analysis/us-pet-insurance-market" target="_blank" rel="noopener">US Pet Insurance Market Size &amp; Trends, 2026 Forecast</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

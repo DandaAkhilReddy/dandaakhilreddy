@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blackwell, Inferencing Costs, and the Real Energy Math for AI Deployments | Reddy Pulse</title>
+<meta name="description" content="Nvidia’s Blackwell chips are shipping, Google’s Axion CPUs are live, and inference economics are shifting fast. For engineers, the big story is not just speed—it&#x27;s power, energy, and what you can actually afford to deploy.">
+<meta property="og:title" content="Blackwell, Inferencing Costs, and the Real Energy Math for AI Deployments">
+<meta property="og:description" content="Nvidia’s Blackwell chips are shipping, Google’s Axion CPUs are live, and inference economics are shifting fast. For engineers, the big story is not just speed—it&#x27;s power, energy, and what you can actually afford to deploy.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>Blackwell, Inferencing Costs, and the Real Energy Math for AI Deployments</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 12th November, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop" alt="Blackwell, Inferencing Costs, and the Real Energy Math for AI Deployments">
+  <p>GPU news is everywhere this month, and for good reason: Nvidia’s Blackwell platform just hit GA in hyperscale datacenters, and Google’s custom ARM Axion CPUs are starting to chew real inference loads in production. But here’s what matters for engineers—<strong>inference economics</strong> are finally more important than raw training scale. Why? Because every AI you ship needs to pay for itself, and the power bill is coming due.</p>
+
+<h2>Blackwell: Not Just About TOPS</h2>
+<p>Yes, Blackwell’s the new king for LLMs, offering up to 2x perf/watt over H100s. But what engineers care about is practical: how many requests can you serve per watt, and at what latency? For smaller models or edge deployments, Google’s Axion CPUs (ARM-based, custom silicon) are already outcompeting GPUs on cost for sustained inference. The point: picking the right silicon mix matters more than ever, especially if you’re deploying at scale.</p>
+
+<h2>Energy and Datacenter Reality</h2>
+<p>Datacenter build-outs are hitting hard limits—not just in supply chain, but in local power grids. I’ve talked to infra teams who are literally capping AI launches based on megawatt availability. If you’re an engineer, that means optimizing model size, quantizing aggressively, and making hard choices about what actually runs where. The days of just “throw it on the biggest box” are over unless you’re a trillion-dollar company.</p>
+
+<h2>What You Should Do</h2>
+<p>Get familiar with mixed-precision, distillation, and quantization toolchains; they’re no longer “nice to have.” Track both <strong>latency per $</strong> and total energy draw, not just model accuracy. And keep one eye on the supply chain—spot shortages (thanks, Blackwell demand) will hit your deployment plans. The engineers who win will be the ones who can do more with less silicon and less power.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-12-nvidia-blackwell-inference-energy.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-12-nvidia-blackwell-inference-energy.html&text=Blackwell%2C%20Inferencing%20Costs%2C%20and%20the%20Real%20Energy%20Math%20for%20AI%20Deployments" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.hpcwire.com/2026/10/nvidia-blackwell-debuts" target="_blank" rel="noopener">Nvidia Blackwell Data Center Rollout Begins</a></li><li><a href="https://cloud.google.com/blog/products/infrastructure/axion-cpu" target="_blank" rel="noopener">Google Unveils Axion CPUs for AI Inference</a></li><li><a href="https://www.semiwiki.com/ai/hidden-ai-inference-costs-2026" target="_blank" rel="noopener">The Hidden Costs of AI Inference</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hidden Bottlenecks: GPU Scarcity, Inference Costs, and the Power Wall in 2026 | Reddy Pulse</title>
+<meta name="description" content="Custom silicon and datacenter buildouts aren’t enough: energy, supply chain, and inference economics are the real bottlenecks for AI teams. Here’s what engineers need to watch.">
+<meta property="og:title" content="Hidden Bottlenecks: GPU Scarcity, Inference Costs, and the Power Wall in 2026">
+<meta property="og:description" content="Custom silicon and datacenter buildouts aren’t enough: energy, supply chain, and inference economics are the real bottlenecks for AI teams. Here’s what engineers need to watch.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>Hidden Bottlenecks: GPU Scarcity, Inference Costs, and the Power Wall in 2026</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 2nd November, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop" alt="Hidden Bottlenecks: GPU Scarcity, Inference Costs, and the Power Wall in 2026">
+  <p><strong>The GPU arms race isn’t over</strong>—it’s morphing. NVIDIA’s Blackwell chips are everywhere, but lead times are still months. Google’s Trillium TPUs, Amazon’s Trainium2, and a wave of open RISC-V custom silicon are crowding the field. But here’s what matters: <em>compute supply is no longer the only constraint</em>. The new bottleneck is power, cooling, and (yes) the total cost of inference.</p><p>Datacenters are hitting the physical “power wall.” Projects get delayed not for lack of silicon, but because cities can’t deliver megawatts fast enough. This means your AI deployment might be compute-rich in theory but energy-starved in practice. For engineers, it’s forcing hard choices: do you ship with smaller, cheaper models, or wait for the next datacenter ramp?</p><h2>Inference Costs and Supply Chains</h2><p>Don’t be fooled by the “AI is getting cheaper” story. Model sizes balloon, inference costs climb, and every watt counts. Even hyperscalers are rate-limiting API calls and prioritizing their own workloads. If you’re shipping AI at scale, track not just cloud GPU pricing but also latency, throughput, and the energy footprint of each model run. Supply chain hiccups—from substrate shortages to cooling system delays—hit rollout schedules as much as chip launches.</p><p><strong>Why it matters:</strong> Engineering decisions now hinge on economics, not just benchmarks. If you build for a Blackwell but deploy on last-gen silicon because of power limits, you need robust model distillation, quantization, and fallback strategies. Shipping AI means thinking end-to-end, from chip choice to datacenter power draw to the API bill at 10k QPS. Ignore this at your (and your users’) peril.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-02-gpu-inference-energy-bottlenecks.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-02-gpu-inference-energy-bottlenecks.html&text=Hidden%20Bottlenecks%3A%20GPU%20Scarcity%2C%20Inference%20Costs%2C%20and%20the%20Power%20Wall%20in%202026" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.semianalysis.com/p/nvidia-blackwell-supply-chain" target="_blank" rel="noopener">NVIDIA Blackwell supply chain challenges persist</a></li><li><a href="https://www.ft.com/content/6d8b7d98-b0e7-4b8f-b7b5-7f7e2b19e3c2" target="_blank" rel="noopener">Datacenters hit the power wall</a></li><li><a href="https://www.cnbc.com/2026/10/20/ai-inference-costs-analysis.html" target="_blank" rel="noopener">Why AI inference costs won&#x27;t drop anytime soon</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

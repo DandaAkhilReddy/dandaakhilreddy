@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #124 — PalletPilot: AI Agents to End Warehouse Pallet Shortages and Costly Shipping Delays | Reddy Pulse</title>
+<meta name="description" content="Pallet shortages are crippling supply chains, costing billions in lost sales and delays. PalletPilot deploys autonomous AI agents to forecast, procure, and optimize pallet inventory across warehouses—ending costly bottlenecks and keeping goods flowing.">
+<meta property="og:title" content="DANDA #124 — PalletPilot: AI Agents to End Warehouse Pallet Shortages and Costly Shipping Delays">
+<meta property="og:description" content="Pallet shortages are crippling supply chains, costing billions in lost sales and delays. PalletPilot deploys autonomous AI agents to forecast, procure, and optimize pallet inventory across warehouses—ending costly bottlenecks and keeping goods flowing.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #124 — PalletPilot: AI Agents to End Warehouse Pallet Shortages and Costly Shipping Delays</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 22nd November, 2026 · 3 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="DANDA #124 — PalletPilot: AI Agents to End Warehouse Pallet Shortages and Costly Shipping Delays">
+  <p>Every day, warehouses and logistics companies experience costly disruptions from pallet shortages. Wooden and plastic pallets are the backbone of goods transport—from food to retail—and sudden gaps in supply trigger shipment delays, lost revenue, and even stockouts for retailers.</p>
+<h2>The problem</h2>
+<p>It’s a known reality: the global pallet pool is under intense strain. Over 2 billion pallets are in circulation in the US alone, and a single missed shipment can cost a retailer tens of thousands in lost sales. In 2021, pallet shortages caused estimated losses of $1.5 billion for US manufacturers and distributors due to delayed shipments and forced order cancellations. Prices for basic wood pallets, once $9/unit, have fluctuated up to $25/unit since 2021. Warehouses scramble for last-minute buys, often paying 2-3x normal rates and burning hours in phone/email negotiations. Inventory managers lack real-time visibility on incoming/outgoing pallet flows, and even large 3PLs routinely lose track of hundreds. Meanwhile, food and drug safety standards demand strict pallet accountability—failure here leads to fines or recalls.</p>
+<h2>The idea: PalletPilot</h2>
+<p>PalletPilot is an autonomous AI agent platform that integrates with warehouse management systems (WMS), pallet rental, and procurement channels. It monitors pallet flows in real time, predicts shortages, auto-triggers procurement or rental requests, and reconciles digital vs. physical inventory. It also flags pallet mismatches (wrong type, contaminated) and coordinates with suppliers if disruptions are detected. Unlike traditional procurement bots, PalletPilot acts as a cross-warehouse orchestrator: it can recommend intra-company pallet transfers, negotiate with brokers, and manage complex return flows (e.g., CHEP exchange, pooled pallets) without human bottlenecks.</p>
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111'><defs><marker id='arrow' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='6' markerHeight='6' orient='auto'><polygon points='0,3 10,5 0,7' fill='#f5c518'/></marker></defs>
+<rect x='40' y='40' width='120' height='70' fill='#222' stroke='#f5c518' stroke-width='3'/><text x='100' y='85' fill='#f5c518' font-weight='bold' font-size='18' text-anchor='middle'>Inputs</text><text x='100' y='65' fill='#fff' font-size='13' text-anchor='middle'>WMS, Pallet Trackers, ERP
+Procurement APIs</text>
+<rect x='180' y='40' width='140' height='70' fill='#222' stroke='#f5c518' stroke-width='3'/><text x='250' y='85' fill='#f5c518' font-weight='bold' font-size='18' text-anchor='middle'>Ingestion</text><text x='250' y='65' fill='#fff' font-size='13' text-anchor='middle'>API Poller, Event Stream,
+OCR/EDI Parser</text>
+<rect x='340' y='40' width='120' height='70' fill='#222' stroke='#f5c518' stroke-width='3'/><text x='400' y='85' fill='#f5c518' font-weight='bold' font-size='18' text-anchor='middle'>Memory/Graph</text><text x='400' y='65' fill='#fff' font-size='13' text-anchor='middle'>Real-time Pallet State,
+Supplier Links, History</text>
+<rect x='480' y='40' width='120' height='70' fill='#222' stroke='#f5c518' stroke-width='3'/><text x='540' y='85' fill='#f5c518' font-weight='bold' font-size='18' text-anchor='middle'>Agent Orchestrator</text><text x='540' y='65' fill='#fff' font-size='13' text-anchor='middle'>Shortage Prediction,
+Auto-Procurement, Routing</text>
+<rect x='620' y='40' width='90' height='70' fill='#222' stroke='#f5c518' stroke-width='3'/><text x='665' y='85' fill='#f5c518' font-weight='bold' font-size='18' text-anchor='middle'>Human Gate</text><text x='665' y='65' fill='#fff' font-size='13' text-anchor='middle'>Override,
+Alerts, Approval</text>
+<rect x='480' y='150' width='230' height='70' fill='#222' stroke='#f5c518' stroke-width='3'/><text x='595' y='195' fill='#f5c518' font-weight='bold' font-size='18' text-anchor='middle'>Action Layer</text><text x='595' y='175' fill='#fff' font-size='13' text-anchor='middle'>Procurement API Calls,
+Supplier Messaging,
+Warehouse Transfer</text>
+<line x1='160' y1='75' x2='180' y2='75' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+<line x1='320' y1='75' x2='340' y2='75' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+<line x1='460' y1='75' x2='480' y2='75' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+<line x1='600' y1='75' x2='620' y2='75' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+<line x1='540' y1='110' x2='540' y2='150' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+<line x1='665' y1='110' x2='665' y2='150' stroke='#f5c518' stroke-width='4' marker-end='url(#arrow)'/>
+</svg>
+<p>Inputs capture live data from warehouse management systems, pallet trackers (RFID, barcodes), and procurement APIs. The ingestion layer standardizes these streams, parsing EDI and emails. Memory/Graph holds real-time pallet state, supplier links, and historical flow. The Agent Orchestrator predicts shortages, triggers procurement, and suggests intra-warehouse transfers. Human Gate allows managers to override, approve, or review agent actions. Action Layer executes orders, contacts suppliers, and flags critical mismatches—all in real time.</p>
+<h2>Build plan (90 days)</h2>
+<p><strong>Wedge:</strong> Target mid-size regional warehouses (50k-250k sq ft) with chronic pallet shortages. Integrate with their WMS (e.g., Fishbowl, NetSuite) and one pooled pallet rental provider. <strong>Stack:</strong> Ingestion built on Azure Event Grid, Memory/Graph on Cosmos DB, Agent Orchestrator in Python with LLM (GPT-4), Action Layer via Twilio + email + API triggers. <strong>Pricing:</strong> $950/mo base for up to 5 warehouses; $0.03 per pallet tracked or moved; premium for advanced procurement negotiation. Expansion: larger 3PL fleets, retail DCs.</p>
+<h2>Why now</h2>
+<p>Pallet shortages have become mission-critical as supply chains face ongoing volatility from weather, labor strikes, and global disruptions. Warehouses can no longer rely on manual forecasting or phone/email procurement. AI agentic automation enables real-time, cross-warehouse orchestration—keeping goods moving, lowering procurement costs, and preventing catastrophic shipment delays. Market urgency, data accessibility, and rising pallet costs make this the decisive moment for PalletPilot.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-22-danda-124-PalletPilot.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-22-danda-124-PalletPilot.html&text=DANDA%20%23124%20%E2%80%94%20PalletPilot%3A%20AI%20Agents%20to%20End%20Warehouse%20Pallet%20Shortages%20and%20Costly%20Shipping%20Delays" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.wsj.com/articles/pallet-shortage-disrupts-supply-chain-11620532200" target="_blank" rel="noopener">Pallet Shortages Are Causing Supply Chain Headaches</a></li><li><a href="https://www.palletone.com/blog/how-many-pallets-are-in-use-in-the-u-s/" target="_blank" rel="noopener">How Many Pallets Are In Use In The US?</a></li><li><a href="https://www.woodworkingnetwork.com/news/woodworking-industry-news/pallet-prices-hit-record-highs" target="_blank" rel="noopener">Pallet Market Prices and Trends</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosmos DB AI Indexes: Vector Search Goes Native in Azure | Reddy Pulse</title>
+<meta name="description" content="Microsoft just launched native AI-powered indexes in Azure Cosmos DB, making hybrid search and retrieval-augmented generation (RAG) far simpler for engineers building global-scale apps.">
+<meta property="og:title" content="Cosmos DB AI Indexes: Vector Search Goes Native in Azure">
+<meta property="og:description" content="Microsoft just launched native AI-powered indexes in Azure Cosmos DB, making hybrid search and retrieval-augmented generation (RAG) far simpler for engineers building global-scale apps.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Cosmos DB AI Indexes: Vector Search Goes Native in Azure</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 9th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop" alt="Cosmos DB AI Indexes: Vector Search Goes Native in Azure">
+  <p>Microsoft is pushing the envelope on data infrastructure again. This week, Cosmos DB rolled out native AI indexes: you can now store, search, and retrieve embeddings directly inside your distributed database, with blazing-fast, globally consistent vector queries. This is a big deal for any engineer wrestling with hybrid search or trying to wire up RAG pipelines at scale.</p><h2>Why this matters</h2><p>Until now, building RAG systems meant bolting on extra layers: vector databases, custom pipelines, and complicated data sync. Most teams glued together Cosmos, Pinecone/Qdrant, and Azure OpenAI, fighting latency and consistency bugs. Now, Microsoft’s integrating high-dimensional vector indexes into the core Cosmos DB engine itself. Your operational data and your embeddings live in the same place, with enterprise-grade SLAs and global geo-replication.</p><h2>The engineering impact</h2><p>Under the hood, Cosmos DB leverages hardware-accelerated similarity search—think SIMD-optimized HNSW graphs, tuned for high concurrency and multitenancy. Indexes are auto-sharded and support upserts at the write-path speed Cosmos DB is famous for. Consistency models and RBAC policies still apply. You can swap from classic SQL queries to hybrid keyword/vector search via a new SQL extension—and yes, this works transparently with Azure OpenAI and Copilot plugins.</p><p>The biggest win: fewer moving parts, lower latency, and easier ops. Engineers can ship RAG features to production without wrangling extra infra. For companies already standardized on Cosmos DB, onboarding vectors is a no-brainer. Expect this to drive rapid upgrades for any SaaS running on Azure.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-09-microsoft-cosmos-db-ai-indexes.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-09-microsoft-cosmos-db-ai-indexes.html&text=Cosmos%20DB%20AI%20Indexes%3A%20Vector%20Search%20Goes%20Native%20in%20Azure" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://techcommunity.microsoft.com/t5/azure-cosmos-db/bg-p/AzureCosmosDB" target="_blank" rel="noopener">Microsoft Cosmos DB Blog: August 2026 Product Updates</a></li><li><a href="https://techcrunch.com/2026/09/08/microsoft-cosmos-db-ai-indexes/" target="_blank" rel="noopener">TechCrunch: Microsoft Brings AI Indexes to Cosmos DB</a></li><li><a href="https://venturebeat.com/data-infrastructure/microsoft-cosmos-db-ai-indexes-2026/" target="_blank" rel="noopener">VentureBeat: Native Vector Search in Cosmos DB</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

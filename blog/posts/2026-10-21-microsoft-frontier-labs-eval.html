@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Microsoft Should Learn Next: Tool Trust, Eval APIs, and Open NFN Patterns | Reddy Pulse</title>
+<meta name="description" content="With OpenAI, Anthropic, and Google doubling down on open eval APIs and tool trust infrastructure, Microsoft needs to rethink how Copilot and Azure approach agentic workflows. Here’s what engineers inside Redmond should adopt—pronto.">
+<meta property="og:title" content="What Microsoft Should Learn Next: Tool Trust, Eval APIs, and Open NFN Patterns">
+<meta property="og:description" content="With OpenAI, Anthropic, and Google doubling down on open eval APIs and tool trust infrastructure, Microsoft needs to rethink how Copilot and Azure approach agentic workflows. Here’s what engineers inside Redmond should adopt—pronto.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>What Microsoft Should Learn Next: Tool Trust, Eval APIs, and Open NFN Patterns</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 21st October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?w=1200&h=600&fit=crop" alt="What Microsoft Should Learn Next: Tool Trust, Eval APIs, and Open NFN Patterns">
+  <p>Microsoft has shipped a ton of AI—Copilot, Azure AI Studio, Foundry, GitHub’s new agentic features. But as OpenAI, Anthropic, and Google deploy truly open evaluation APIs and sandboxed tool trust patterns, it’s time for Microsoft to play catch-up in a few specific areas.</p><h2>What Needs to Change?</h2><p>First, <strong>Eval-first APIs</strong>: OpenAI’s model eval endpoints and Anthropic’s agent test harnesses let devs plug in custom evals, directly in the agentic loop. Microsoft’s eval flows are still too closed, buried in internal telemetry. Engineers want to wire up their own tests, run local evals, and get granular scores—just like they would with CI/CD. Without this, Copilot workflows struggle at scale.</p><p>Second, <strong>Tool Trust Infrastructure</strong>: Google’s Vertex NFN (Named Function Network) gives devs fine-grained controls for what AI agents can call, and a transparent log of every action. The current Azure and Copilot agent toolchains aren’t robust enough here—too many opaque permissions, not enough developer-facing guarantees or auditability. If an agent is going to call a billing API, I need to know, log, and limit that, period.</p><p>Engineers inside Microsoft: push for these changes. Open eval APIs and transparent tool trust will make Copilot and Azure agents not just powerful, but <em>safe</em> and <em>verifiable</em>.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-21-microsoft-frontier-labs-eval.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-21-microsoft-frontier-labs-eval.html&text=What%20Microsoft%20Should%20Learn%20Next%3A%20Tool%20Trust%2C%20Eval%20APIs%2C%20and%20Open%20NFN%20Patterns" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://platform.openai.com/docs/api-reference/evals" target="_blank" rel="noopener">OpenAI launches eval API for agentic workflows</a></li><li><a href="https://cloud.google.com/blog/products/ai-machine-learning/vertex-ai-named-function-network" target="_blank" rel="noopener">Google Vertex introduces Named Function Network</a></li><li><a href="https://github.blog/2026-06-30-copilot-agent-toolchain-eval/" target="_blank" rel="noopener">GitHub Copilot Agent gets new eval and toolchain APIs</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

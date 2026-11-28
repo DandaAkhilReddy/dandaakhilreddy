@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azure Flex Containers: Serverless Goes Truly Stateful | Reddy Pulse</title>
+<meta name="description" content="Microsoft just rolled out Azure Flex Containers—serverless, stateful containers with built-in persistent storage. This is a leap for engineering teams who want elasticity and zero ops juggling.">
+<meta property="og:title" content="Azure Flex Containers: Serverless Goes Truly Stateful">
+<meta property="og:description" content="Microsoft just rolled out Azure Flex Containers—serverless, stateful containers with built-in persistent storage. This is a leap for engineering teams who want elasticity and zero ops juggling.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Azure Flex Containers: Serverless Goes Truly Stateful</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 27th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop" alt="Azure Flex Containers: Serverless Goes Truly Stateful">
+  <p>Microsoft is shaking up cloud-native development again—the new <strong>Azure Flex Containers</strong> are here, and they're a direct response to the headaches engineers have with serverless. The headline: you get all the serverless scaling and event-driven magic, but your containers are fully stateful, with persistent SSD volumes baked in. No more ugly hacks to bolt on Redis or S3 just to hold on to user sessions or cache data.</p><h2>Why This Actually Matters</h2><p>Most 'serverless' platforms are stateless by design. That was fine for simple APIs or batch jobs, but as soon as you wanted to hold state (shopping carts, game sessions, even fast ML inferencing), you'd end up with fragile glue code, latency, and cost bloat. Flex Containers let you run <strong>real apps</strong> that need to hold onto state, but you also get the zero-to-hero scaling, cold start optimizations, and managed security patches—exactly what makes serverless appealing in the first place.</p><p>Microsoft's tech stack matters here: they layered Flex Containers right on top of their high-speed NVMe-backed storage fabric, so you can spin up thousands of stateful instances in seconds. And it's all accessible from the same Azure Container Apps APIs we're already using, so migration friction is low.</p><h2>What to Watch</h2><p>I'm watching two things: first, how billing shakes out, because persistent storage + serverless is tricky to price fairly. Second, how the Azure team handles <strong>multi-region replication</strong>—that's the real test for stateful workloads at scale. But if they pull it off, this closes the loop on what serverless should have been all along: stateless when you want it, stateful when you need it, no mental overhead.</p><p>This is one to prototype with—especially for anyone sick of stitching together stateful microservices with duct tape.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-27-microsoft-azure-flex-containers.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-27-microsoft-azure-flex-containers.html&text=Azure%20Flex%20Containers%3A%20Serverless%20Goes%20Truly%20Stateful" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://azure.microsoft.com/en-us/blog/announcing-azure-flex-containers/" target="_blank" rel="noopener">Microsoft Azure Blog — Announcing Azure Flex Containers</a></li><li><a href="https://www.infoq.com/news/2026/08/serverless-state-azure/" target="_blank" rel="noopener">InfoQ — Serverless State: The Next Big Step</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

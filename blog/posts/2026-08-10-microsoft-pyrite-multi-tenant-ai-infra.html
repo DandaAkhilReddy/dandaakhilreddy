@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Pyrite: Multi-Tenant AI Infrastructure Gets Real | Reddy Pulse</title>
+<meta name="description" content="Microsoft just unveiled Project Pyrite, a multi-tenant AI infrastructure layer built for hyperscale Azure customers running proprietary LLMs side by side. This is a big deal for cloud engineers and anyone wrestling with AI workload security and efficiency.">
+<meta property="og:title" content="Microsoft Pyrite: Multi-Tenant AI Infrastructure Gets Real">
+<meta property="og:description" content="Microsoft just unveiled Project Pyrite, a multi-tenant AI infrastructure layer built for hyperscale Azure customers running proprietary LLMs side by side. This is a big deal for cloud engineers and anyone wrestling with AI workload security and efficiency.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Microsoft</span>
+  <h1>Microsoft Pyrite: Multi-Tenant AI Infrastructure Gets Real</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 10th August, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop" alt="Microsoft Pyrite: Multi-Tenant AI Infrastructure Gets Real">
+  <p><strong>Project Pyrite</strong> is not just another AI platform branding exercise from Microsoft. It’s a rearchitecture of how Azure handles AI workloads, letting multiple enterprise tenants safely run hyper-scale LLMs and custom foundation models on shared GPU clusters—without leaking data or destroying performance.</p><h2>Why Does It Matter?</h2><p>Until now, the dirty secret with AI cloud platforms was that isolation between tenants was both expensive and imperfect. Enterprises paying millions for GPU hours want to keep their models (and data) truly private. With Pyrite, Microsoft is baking in encrypted memory regions, dynamic kernel scheduling, and workload-aware bandwidth slicing directly into Azure’s AI clusters. For engineers, this means:</p><ul><li>True memory-level isolation between tenants—no more side-channel attacks via shared VRAM.</li><li>Much higher hardware utilization because Pyrite orchestrates containerized LLM jobs, maximizing GPU packing efficiency.</li><li>Support for custom LLM toolchains and non-PyTorch stacks, making Azure less opinionated and more welcoming to OSS and proprietary frameworks.</li></ul><h2>What’s Under the Hood?</h2><p>Pyrite is built atop a new microvisor for NVIDIA Blackwell and AMD Instinct platforms, leveraging hardware extensions to partition GPU cores and memory in real time. Engineers get access to Pyrite APIs for job submission, telemetry, and security attestation. The upshot? You can guarantee your model’s weights never touch another customer’s memory, and you can run low-latency, high-throughput LLM inference at scale—without overpaying for idle silicon.</p><p>This is the direction hyperscale AI infrastructure has to go. No more trade-off between security and efficiency. If you’re building for regulated industries or deploying sensitive RAG apps in the cloud, Pyrite just jumped to the top of your must-watch list.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-10-microsoft-pyrite-multi-tenant-ai-infra.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-08-10-microsoft-pyrite-multi-tenant-ai-infra.html&text=Microsoft%20Pyrite%3A%20Multi-Tenant%20AI%20Infrastructure%20Gets%20Real" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://techcrunch.com/2026/08/08/microsoft-pyrite-multi-tenant-ai" target="_blank" rel="noopener">Microsoft unveils Pyrite: Multi-tenant AI infrastructure at scale</a></li><li><a href="https://www.theregister.com/2026/08/09/microsoft-pyrite-ai-cloud/" target="_blank" rel="noopener">How Microsoft Pyrite is changing the rules for AI cloud security</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

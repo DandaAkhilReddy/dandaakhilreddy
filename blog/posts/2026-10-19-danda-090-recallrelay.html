@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANDA #090 — RecallRelay: AI Agents to Eliminate Critical Medical Device Recall Communication Delays | Reddy Pulse</title>
+<meta name="description" content="RecallRelay is an AI-powered agentic automation platform that instantly identifies, triages, and routes medical device recall alerts to the right clinical teams, frontline staff, and patient records—closing the dangerous gap between FDA recall announcements and action at the point of care.">
+<meta property="og:title" content="DANDA #090 — RecallRelay: AI Agents to Eliminate Critical Medical Device Recall Communication Delays">
+<meta property="og:description" content="RecallRelay is an AI-powered agentic automation platform that instantly identifies, triages, and routes medical device recall alerts to the right clinical teams, frontline staff, and patient records—closing the dangerous gap between FDA recall announcements and action at the point of care.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd23?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat cat-danda">Project DANDA</span>
+  <h1>DANDA #090 — RecallRelay: AI Agents to Eliminate Critical Medical Device Recall Communication Delays</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 19th October, 2026 · 4 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd23?w=1200&h=600&fit=crop" alt="DANDA #090 — RecallRelay: AI Agents to Eliminate Critical Medical Device Recall Communication Delays">
+  <p>Every year, hospitals and clinics scramble to identify and respond to urgent medical device recalls—defibrillators, infusion pumps, implants, diagnostics—often with tragic delays. In the chaos of fragmented data, overloaded compliance staff, and siloed hospital systems, critical recall notices frequently reach clinicians and patients weeks or months late. The result: preventable injuries, mounting regulatory fines, and billions lost to lawsuits and redundant device replacement.</p>
+
+<h2>The problem</h2>
+<p>The FDA initiated 1,685 medical device recalls in 2023 alone—averaging more than four per day. Over 80% of hospitals admit they struggle to rapidly identify patients or departments affected by a recall, due to fragmented inventory records and disconnected EHRs. In one infamous 2022 recall, 5 million sleep apnea devices were flagged as hazardous, yet less than 52% of patients were notified within six months. Delayed recall actions cost the healthcare system over $2.5 billion annually and put tens of thousands at risk for harm or death every year.</p>
+
+<h2>The idea: RecallRelay</h2>
+<p>RecallRelay is an autonomous AI agent platform that ingests live FDA recall data, cross-references it with hospital inventory and EHR systems, and instantly triggers targeted workflows: auto-alerting supply chain, clinical leads, biomedical engineers, and even directly messaging at-risk patients. It closes the gap between recall alert and action—no more generic emails lost in inboxes, no more manual cross-checking of serial numbers or supplier databases. RecallRelay’s intelligent agent can triage device risk, escalate to human gatekeepers for clinical review, and audit downstream actions for compliance reporting.</p>
+
+<h2>Architecture</h2>
+<svg viewBox='0 0 760 440' style='background:#111;border-radius:8px' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <marker id='arrow' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='6' markerHeight='6' orient='auto'>
+      <path d='M 0 0 L 10 5 L 0 10 z' fill='#f5c518'/>
+    </marker>
+    <linearGradient id='gold' x1='0' y1='0' x2='1' y2='0'>
+      <stop offset='0%' stop-color='#fff7da'/>
+      <stop offset='100%' stop-color='#f5c518'/>
+    </linearGradient>
+  </defs>
+
+  <!-- Input Layer -->
+  <rect x='40' y='80' width='140' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='60' y='110' fill='#fff' font-size='17'>FDA Recall Feeds</text>
+  <rect x='40' y='160' width='140' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='59' y='195' fill='#fff' font-size='17'>Hospital Inventory</text>
+  <rect x='40' y='240' width='140' height='60' fill='#222' stroke='#f5c518' stroke-width='2'/>
+  <text x='67' y='275' fill='#fff' font-size='17'>EHR Systems</text>
+
+  <!-- Ingestion Layer -->
+  <rect x='210' y='125' width='140' height='60' fill='#232a2f' stroke='#f5c518' stroke-width='2'/>
+  <text x='235' y='160' fill='#f5c518' font-size='17'>Ingestion & NLP</text>
+
+  <!-- Memory/Graph Layer -->
+  <rect x='390' y='125' width='140' height='60' fill='#232a2f' stroke='#f5c518' stroke-width='2'/>
+  <text x='405' y='160' fill='#f5c518' font-size='17'>Knowledge Graph</text>
+
+  <!-- Agent Orchestrator -->
+  <rect x='570' y='80' width='140' height='60' fill='#232a2f' stroke='#f5c518' stroke-width='2'/>
+  <text x='590' y='115' fill='#fff' font-size='17'>Agent Orchestrator</text>
+
+  <!-- Human Gate -->
+  <rect x='570' y='170' width='140' height='60' fill='url(#gold)' stroke='#f5c518' stroke-width='2'/>
+  <text x='598' y='205' fill='#222' font-size='17'>Human Gate</text>
+
+  <!-- Action Layer -->
+  <rect x='570' y='260' width='140' height='60' fill='#232a2f' stroke='#f5c518' stroke-width='2'/>
+  <text x='592' y='295' fill='#fff' font-size='17'>Action Layer</text>
+
+  <!-- Arrows -->
+  <!-- Input to Ingestion -->
+  <line x1='180' y1='110' x2='210' y2='155' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <line x1='180' y1='190' x2='210' y2='155' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <line x1='180' y1='270' x2='210' y2='185' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <!-- Ingestion to Memory -->
+  <line x1='350' y1='155' x2='390' y2='155' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <!-- Memory to Agent -->
+  <line x1='530' y1='155' x2='570' y2='110' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <!-- Agent to Human Gate -->
+  <line x1='640' y1='140' x2='640' y2='170' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <!-- Human Gate to Action -->
+  <line x1='640' y1='230' x2='640' y2='260' stroke='#f5c518' stroke-width='5' marker-end='url(#arrow)'/>
+  <!-- Action Layer Outputs -->
+  <text x='720' y='280' fill='#f5c518' font-size='15'>Alerts, Tasks,</text>
+  <text x='720' y='300' fill='#f5c518' font-size='15'>Audit Trails</text>
+</svg>
+<p>The flow: Live FDA recall feeds, hospital inventory, and EHR data feed into the Ingestion & NLP layer, which normalizes and extracts key identifiers. These are mapped in a graph database connecting devices, departments, and patients. The Agent Orchestrator matches recall notices to impacted assets and care teams, then triggers workflows. Critical actions pass through a Human Gate for review and sign-off, before the Action Layer executes targeted communications, inventory quarantine, patient notification, and audit trail creation.</p>
+
+<h2>Build plan (90 days)</h2>
+<p><strong>Wedge:</strong> Start with midsize hospital groups managing 100–500 beds, offering plug-and-play ingestion from common FDA feeds, hospital inventory, and Epic/Cerner FHIR APIs. <strong>Stack:</strong> Add support for direct patient SMS/email, complex biomedical inventory integrations, automated compliance documentation, and recall risk scoring. <strong>Pricing:</strong> Subscription model—$3,000/month/hospital plus usage-based tiers for patient notifications and compliance audit modules. Instant ROI by reducing recall response times from weeks to hours, slashing regulatory risk and liability.</p>
+
+<h2>Why now</h2>
+<p>Medical device recalls are accelerating as supply chains globalize and regulatory scrutiny tightens. Hospitals face mounting penalties for slow or incomplete recall response—and manual processes simply can’t keep up. With API access to EHRs and inventory systems now standard, agentic automation like RecallRelay can close a lethal gap in patient safety, regulatory compliance, and hospital liability, just as healthcare leaders scramble for AI-powered risk solutions.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-19-danda-090-recallrelay.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-19-danda-090-recallrelay.html&text=DANDA%20%23090%20%E2%80%94%20RecallRelay%3A%20AI%20Agents%20to%20Eliminate%20Critical%20Medical%20Device%20Recall%20Communication%20Delays" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm" target="_blank" rel="noopener">FDA Medical Device Recalls Database</a></li><li><a href="https://www.modernhealthcare.com/supply-chain/hospitals-device-recall-management" target="_blank" rel="noopener">Hospitals Struggle to Manage Medical Device Recalls</a></li><li><a href="https://www.fda.gov/medical-devices/safety-communications/update-philips-respironics-recall-ongoing-issues" target="_blank" rel="noopener">Philips CPAP Recall Notification Failures</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

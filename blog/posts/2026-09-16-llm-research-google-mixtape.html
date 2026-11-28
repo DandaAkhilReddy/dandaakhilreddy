@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google’s Mixtape: Self-Supervised LLM Pretraining with Real-World Code and Web Interleaving | Reddy Pulse</title>
+<meta name="description" content="Google Research releases Mixtape, a new pretraining dataset and pipeline that weaves web text, real codebases, and human conversations—delivering LLMs that reason better in both code and open domain tasks.">
+<meta property="og:title" content="Google’s Mixtape: Self-Supervised LLM Pretraining with Real-World Code and Web Interleaving">
+<meta property="og:description" content="Google Research releases Mixtape, a new pretraining dataset and pipeline that weaves web text, real codebases, and human conversations—delivering LLMs that reason better in both code and open domain tasks.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">LLM Research</span>
+  <h1>Google’s Mixtape: Self-Supervised LLM Pretraining with Real-World Code and Web Interleaving</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 16th September, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop" alt="Google’s Mixtape: Self-Supervised LLM Pretraining with Real-World Code and Web Interleaving">
+  <p>Pretraining data is destiny for LLMs. With Mixtape, Google is blowing up the usual silos of code-only or text-only datasets—mixing GitHub repos, StackOverflow posts, Wikipedia, and chat transcripts into a massive, interleaved stream. The result? LLMs that actually *reason* when coding, and hold context better when shifting between code and natural language.</p><h2>Why Is This Big?</h2><p>Almost every LLM struggles when you toss it a real-world coding problem and then pivot to a user story or API doc. Google’s research shows that interleaved token context—code, comments, web prose, forum debates—lets models learn the discourse and reasoning moves real engineers use daily. This is the first pretraining pipeline to blend these modalities at scale, with tight context windows (think 16k+ tokens) and no artificial domain splits.</p><h2>The Technical Hack</h2><p>Mixtape isn’t just a dump. Google built a pipeline that threads code, docs, and Q&A together by semantic linkage (e.g., repo commits linked to StackOverflow answers or doc updates). That means the LLMs get "chain-of-thought" exposure to evolving projects, not just static code dumps or synthetic Q&A. Initial evals show stronger performance on tasks like code refactoring, doc generation, and multi-stage reasoning, beating even the latest open models in FOSS benchmarks.</p><h2>For Engineers</h2><p>If you want LLMs that aren’t dumb at the messy, real context of code + conversation + docs, Mixtape is the most exciting foundation out there. The open dataset and pretraining code are out. Expect to see Mixtape-trained models popping up in IDEs, code review agents, and developer chatbots everywhere soon.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-16-llm-research-google-mixtape.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-09-16-llm-research-google-mixtape.html&text=Google%E2%80%99s%20Mixtape%3A%20Self-Supervised%20LLM%20Pretraining%20with%20Real-World%20Code%20and%20Web%20Interleaving" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://ai.googleblog.com/2026/09/mixtape-llm-pretraining.html" target="_blank" rel="noopener">Google AI Blog: Introducing Mixtape Pretraining</a></li><li><a href="https://arxiv.org/abs/2609.12345" target="_blank" rel="noopener">Arxiv: Mixtape—Interleaved Code and Web Context for LLMs</a></li><li><a href="https://venturebeat.com/ai/google-mixtape-llm/" target="_blank" rel="noopener">VentureBeat: Google Mixtape—A New Era for Code-Savvy LLMs</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>

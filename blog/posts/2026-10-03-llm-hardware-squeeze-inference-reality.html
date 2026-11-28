@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM Hardware Squeeze: Why Inference Costs Are Still the Real Wall | Reddy Pulse</title>
+<meta name="description" content="New custom chips and datacenter announcements are everywhere, but the real question for engineers is: will you actually get the compute you need—and can you afford to run your AI in prod?">
+<meta property="og:title" content="LLM Hardware Squeeze: Why Inference Costs Are Still the Real Wall">
+<meta property="og:description" content="New custom chips and datacenter announcements are everywhere, but the real question for engineers is: will you actually get the compute you need—and can you afford to run your AI in prod?">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>LLM Hardware Squeeze: Why Inference Costs Are Still the Real Wall</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 3rd October, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=600&fit=crop" alt="LLM Hardware Squeeze: Why Inference Costs Are Still the Real Wall">
+  <p>The hardware hype cycle never ends—Nvidia launches another Blackwell, Google shows off a new TPU, and every cloud vendor is building out datacenter megafarms. But here’s what actually matters for those of us shipping AI: <strong>inference is still too expensive, too volatile, and too tightly coupled to the opaque supply chain of GPUs and custom silicon.</strong> </p><p>Even with optimized transformer engines, most AI SaaS teams are stuck rationing context windows or batching requests, just to avoid cost blowouts. New custom silicon from startups (think d-Matrix, Groq, and Cerebras) is promising, but integration into cloud APIs is slow, and actual per-token inference cost hasn’t dropped as fast as the press releases claim. The GPU supply chain is still a chokepoint; if your product launch is tied to spot instance availability, you’re gambling with your roadmap. </p><p>There’s also the <strong>energy crunch</strong>: big LLMs are hungry, and datacenter ops teams are now forced into energy-aware scheduling, especially as regulators clamp down on runaway power footprints. For engineers, this means you can’t just "scale up"—you have to code for <strong>compute scarcity</strong>: smarter batching, context window tuning, and fallback modes. Shipping AI now means thinking like an infra engineer, not just a model-wrangler. </p><p><strong>So why does this matter?</strong> If you’re building real products, you’re living in this squeeze. The only way out is ruthless optimization at every layer: quantization, speculative decoding, or even shifting some workloads onto non-Nvidia silicon. And if you’re not tracking your actual inference bill every week, you’re flying blind. Hardware isn’t magic—it’s your biggest constraint, and the best engineers treat it as such. </p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-03-llm-hardware-squeeze-inference-reality.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-10-03-llm-hardware-squeeze-inference-reality.html&text=LLM%20Hardware%20Squeeze%3A%20Why%20Inference%20Costs%20Are%20Still%20the%20Real%20Wall" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.semianalysis.com/p/gpu-supply-chain-2026" target="_blank" rel="noopener">SemiAnalysis: The GPU Supply Chain and AI Compute Costs</a></li><li><a href="https://www.nextplatform.com/2026/09/20/ai-datacenter-buildouts/" target="_blank" rel="noopener">The Next Platform: Inside Google and AWS’s Next-Gen AI Datacenters</a></li><li><a href="https://spectrum.ieee.org/ai-inference-energy" target="_blank" rel="noopener">IEEE Spectrum: Energy Bottlenecks in AI Inference</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
