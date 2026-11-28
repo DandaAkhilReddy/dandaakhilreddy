@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inference Costs, Datacenter Energy, and the New Silicon Arms Race | Reddy Pulse</title>
+<meta name="description" content="GPU scarcity is old news—the new bottlenecks are energy, inference costs, and custom silicon supply. Engineers building AI products need to care about datacenter buildouts and silicon economics more than ever.">
+<meta property="og:title" content="Inference Costs, Datacenter Energy, and the New Silicon Arms Race">
+<meta property="og:description" content="GPU scarcity is old news—the new bottlenecks are energy, inference costs, and custom silicon supply. Engineers building AI products need to care about datacenter buildouts and silicon economics more than ever.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css?v=3">
+</head>
+<body>
+<nav class="pnav"><span class="brandmark">⚡ Reddy<b>Pulse</b></span><a href="../../browse.html">Portfolio</a><a href="../index.html">All Posts</a><a href="../feed.xml">RSS</a></nav>
+<article>
+  <span class="cat">Compute</span>
+  <h1>Inference Costs, Datacenter Energy, and the New Silicon Arms Race</h1>
+  <div class="byline"><span class="avatar">AR</span> Akhil Reddy Danda · 28th November, 2026 · 2 min read</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop" alt="Inference Costs, Datacenter Energy, and the New Silicon Arms Race">
+  <p>In 2026, the compute story isn’t just about who has the biggest GPU pod. It’s about rapidly escalating <strong>inference costs</strong>, datacenter energy constraints, and the custom silicon arms race. Nvidia's Blackwell chips remain king for general AI, but Google, Amazon, even Meta are doubling down on their own silicon for model inference and training—because buying power from the grid is now almost as expensive as buying the chips themselves.</p><h2>Datacenter Expansion and Its Limits</h2><p>Datacenter buildouts are hitting physical and regulatory limits in North America and Europe. Energy tariffs are being renegotiated quarterly. If you’re an engineer, that means you can’t naively scale your app by slapping a bigger model behind an API and calling it a day. Inference cost per token now impacts your margin directly, and you’ll need to factor in where and how your inference actually runs.</p><h2>Custom Silicon and the New Stack</h2><p>TPUs, Inferentia, even custom ASICs built by startups, are being tuned for specific model architectures (think: transformer variants, quantized LLMs, or diffusion models). This matters for engineers because <strong>model portability isn’t guaranteed</strong> anymore. Your model may run cheap on Nvidia, but be slow or even unsupported on a cloud’s custom chip. You have to optimize for silicon as much as for model weights now.</p><h2>What Should You Do?</h2><p>First: measure inference cost early, not after launch. Second: push for model architectures that can be quantized and sparsified. Third: don’t ignore the physical reality of compute—datacenter location, energy cost, and chip supply will affect everything you ship. Silicon is now a first-class engineering concern, not just a line item for finance or ops.</p>
+  <div class="sharebar">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-28-inference-costs-datacenter-energy.html" target="_blank">in Share on LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.dandaakhilreddy.com%2Fblog%2Fposts%2F2026-11-28-inference-costs-datacenter-energy.html&text=Inference%20Costs%2C%20Datacenter%20Energy%2C%20and%20the%20New%20Silicon%20Arms%20Race" target="_blank">𝕏 Post</a>
+  </div>
+  <div class="sources"><strong>Sources I read for this:</strong><ul><li><a href="https://www.semianalysis.com/p/custom-silicon-ai-economics" target="_blank" rel="noopener">SemiAnalysis: Custom Silicon and AI Compute Economics</a></li><li><a href="https://www.theinformation.com/articles/ai-datacenter-energy" target="_blank" rel="noopener">The Information: Datacenter Energy Crunch</a></li><li><a href="https://www.anandtech.com/show/blackwell-nvidia" target="_blank" rel="noopener">AnandTech: Nvidia Blackwell and Market Impact</a></li></ul></div>
+  <a class="backlink" href="../index.html">← More from Reddy Pulse</a>
+</article>
+<footer>© Akhil Reddy Danda · <a href="../index.html">Reddy Pulse</a> · <a href="../feed.xml">Follow via RSS</a></footer>
+</body></html>
